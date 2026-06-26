@@ -1,0 +1,32 @@
+{
+  "slug": "dotnet-webapi",
+  "description": "ASP.NET Core 9 Minimal API + EF Core + XForge.MediatR + AutoMapper",
+  "tags": [
+    "dotnet",
+    "api",
+    "clean-architecture"
+  ],
+  "skills": [
+    "dotnet-standards",
+    "csharp-clean-code-expert",
+    "xforge-mediatr-cqrs-expert",
+    "automapper-mapping-expert",
+    "database-efcore-expert",
+    "endpoints-cqrs-dtos-architecture-expert",
+    "pdf-questpdf-expert"
+  ],
+  "files": [
+    "src/MyApp.Api/MyApp.Api.csproj",
+    "src/MyApp.Api/Program.cs",
+    "src/MyApp.Domain/MyApp.Domain.csproj",
+    "src/MyApp.Infrastructure/MyApp.Infrastructure.csproj",
+    "tests/MyApp.Tests/MyApp.Tests.csproj",
+    ".gitignore",
+    "README.md",
+    "Dockerfile",
+    ".dockerignore",
+    ".github/workflows/ci.yml"
+  ],
+  "includes_docker": true,
+  "includes_ci": true
+}

@@ -1,0 +1,64 @@
+{
+  "name": "xforge-policy-engine",
+  "version": "1.0.0",
+  "description": "Executable policy rules. Each policy is a JSONLogic-style expression evaluated at runtime against the request (actor, action, resource, context).",
+  "evaluationOrder": ["rbac_check", "policies", "global_deny"],
+  "policies": [
+    {
+      "id": "P001",
+      "name": "fiscal-changes-require-reviewer",
+      "description": "Any modification to files under .xforge/knowledge/curated-operational/fiscal/** must be approved by a reviewer or higher role.",
+      "effect": "require",
+      "action": ["update_file", "create_file", "delete_file"],
+      "resourcePattern": "^\\.xforge/knowledge/curated-operational/fiscal/.*",
+      "requiredRole": "reviewer",
+      "appliesTo": ["developer"],
+      "reason": "Fiscal changes affect Brazilian tax calculations; reviewer approval is mandatory."
+    },
+    {
+      "id": "P002",
+      "name": "immutable-scoring-is-readonly",
+      "description": "The xfs scoring system (defined in .kilo/rules/immutable-scoring.md) cannot be modified by anyone except owner, and every modification requires audit.",
+      "effect": "deny",
+      "action": ["update_file", "delete_file", "alter"],
+      "resourcePattern": "^\\.kilo/rules/immutable-scoring\\.md$",
+      "appliesTo": ["viewer", "developer", "reviewer", "admin"],
+      "allowRoles": ["owner"],
+      "auditRequired": true,
+      "reason": "xfs scoring is immutable; only owner can modify, with full audit."
+    },
+    {
+      "id": "P003",
+      "name": "global-memory-promotion-needs-admin",
+      "description": "Promoting knowledge to enterprise-standard or altering global memory requires admin or higher.",
+      "effect": "require",
+      "action": ["promote_knowledge", "alter_global_memory"],
+      "resourcePattern": ".*",
+      "requiredRole": "admin",
+      "appliesTo": ["viewer", "developer", "reviewer"],
+      "reason": "Global memory and enterprise knowledge promotion are admin-level operations."
+    },
+    {
+      "id": "P004",
+      "name": "breaking-change-needs-human-review",
+      "description": "Workflows that have 'breaking-change' or 'migration' in their name, or that touch shared APIs, require explicit human review approval.",
+      "effect": "require",
+      "action": ["run_workflow"],
+      "resourcePattern": "W012-|breaking|migration",
+      "requiredRole": "reviewer",
+      "reason": "Breaking changes and migrations need human review before execution."
+    },
+    {
+      "id": "P005",
+      "name": "lgpd-fiscal-needs-premium-ai",
+      "description": "Operations involving LGPD (data subject rights) or fiscal calculation logic must not be processed by local-only or economy AI providers — premium (or human) is required.",
+      "effect": "require",
+      "action": ["ai_route", "fiscal_calc", "lgpd_request"],
+      "resourcePattern": ".*",
+      "requiredProvider": "premium",
+      "reason": "LGPD and fiscal accuracy demand zero-tolerance — premium provider or human required."
+    }
+  ],
+  "globalDeny": [],
+  "evaluation": "first-deny-wins; if a require-policy matches, action is allowed but flagged for the required reviewer"
+}

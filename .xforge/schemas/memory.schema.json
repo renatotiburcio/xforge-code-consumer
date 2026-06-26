@@ -1,0 +1,78 @@
+﻿{
+  "layers": {
+    "episodic": {
+      "description": "Session history, recent context",
+      "ttlDays": 30,
+      "persistence": ".xforge/memory/sessions/",
+      "schema": {
+        "sessionId": "string",
+        "date": "iso8601",
+        "summary": "string",
+        "filesChanged": "number",
+        "tasksCompleted": "number",
+        "keyLearnings": ["string"]
+      }
+    },
+    "semantic": {
+      "description": "Learned concepts, patterns",
+      "ttlDays": 90,
+      "persistence": ".xforge/learning/",
+      "schema": {
+        "id": "string",
+        "concept": "string",
+        "source": "string",
+        "trustScore": "number",
+        "useCount": "number"
+      }
+    },
+    "project": {
+      "description": "Project-level preferences and decisions",
+      "ttlDays": null,
+      "persistence": ".xforge/memory/project-preferences.md",
+      "schema": {
+        "key": "string",
+        "value": "string",
+        "source": "user-correction|observed-pattern|explicit",
+        "confidence": "number"
+      }
+    },
+    "agent": {
+      "description": "Per-agent state, routing context",
+      "ttlDays": 7,
+      "persistence": ".xforge/memory/agent-state/",
+      "schema": {
+        "agentId": "string",
+        "lastUsed": "iso8601",
+        "currentTask": "string?",
+        "contextTokens": "number"
+      }
+    },
+    "decision": {
+      "description": "Architectural Decision Records (ADRs)",
+      "ttlDays": null,
+      "persistence": ".xforge/decisions/",
+      "schema": {
+        "id": "ADR-NNNN",
+        "date": "iso8601",
+        "context": "string",
+        "options": ["string"],
+        "chosen": "string",
+        "reason": "string",
+        "consequences": "string"
+      }
+    },
+    "learning": {
+      "description": "Extracted lessons, error-solution patterns",
+      "ttlDays": 180,
+      "persistence": ".xforge/learning/",
+      "schema": {
+        "id": "string",
+        "error": "string",
+        "solution": "string",
+        "preventionRule": "string?",
+        "trustScore": "number"
+      }
+    }
+  },
+  "operations": ["recover", "apply", "detect", "save", "index", "consolidate", "archive", "compress", "deprecate"]
+}

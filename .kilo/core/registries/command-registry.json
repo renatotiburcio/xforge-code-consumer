@@ -1,0 +1,94 @@
+{
+    "publicCommands":  [
+                           {
+                               "name":  "forge",
+                               "routes":  [
+                                              "forge"
+                                          ]
+                           },
+                           {
+                               "name":  "xforge",
+                               "routes":  [
+                                              "xforge"
+                                          ]
+                           },
+                           {
+                               "name":  "xforge-init",
+                               "routes":  [
+                                              "xforge-init"
+                                          ]
+                           },
+                           {
+                               "name":  "create",
+                               "routes":  [
+                                              "create"
+                                          ]
+                           },
+                           {
+                               "name":  "develop",
+                               "routes":  [
+                                              "develop"
+                                          ]
+                           },
+                           {
+                               "name":  "analyze",
+                               "routes":  [
+                                              "analyze"
+                                          ]
+                           },
+                           {
+                               "name":  "testar",
+                               "routes":  [
+                                              "testar"
+                                          ]
+                           },
+                           {
+                               "name":  "qualidade",
+                               "routes":  [
+                                              "quality"
+                                          ]
+                           },
+                           {
+                               "name":  "seguranca",
+                               "routes":  [
+                                              "security"
+                                          ]
+                           },
+                           {
+                               "name":  "release",
+                               "routes":  [
+                                              "release"
+                                          ]
+                           },
+                           {
+                               "name":  "documentar",
+                               "routes":  [
+                                              "documentar"
+                                          ]
+                           },
+                           {
+                               "name":  "dominio",
+                               "routes":  [
+                                              "dominio"
+                                          ]
+                           },
+                           {
+                               "name":  "melhorar",
+                               "routes":  [
+                                              "melhorar"
+                                          ]
+                           },
+                           {
+                               "name":  "configurar",
+                               "routes":  [
+                                              "configurar"
+                                          ]
+                           },
+                           {
+                               "name":  "aprender",
+                               "routes":  [
+                                              "aprender"
+                                          ]
+                           }
+                       ]
+}

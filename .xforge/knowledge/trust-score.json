@@ -1,0 +1,34 @@
+﻿{
+  "name": "xforge-trust-score",
+  "version": "1.0.0",
+  "scale": "0-100",
+  "defaultScores": {
+    "official-documentation": 100,
+    "production-telemetry": 95,
+    "current-source-code": 90,
+    "senior-dev-architect": 85,
+    "internal-doc-current": 80,
+    "blog-tutorial": 60,
+    "ai-generated-unvalidated": 40,
+    "legacy-unvalidated": 40,
+    "hypothesis": 20
+  },
+  "ttl": {
+    "legislation": 180,
+    "fiscal": 90,
+    "labor": 180,
+    "security": 30,
+    "architecture": 365,
+    "ui-ux": 180,
+    "default": 180
+  },
+  "retrocompatibilidade": {
+    "onUpdate": "preserve old score for 30d (deprecated flag)",
+    "onDeprecate": "score becomes informational only"
+  },
+  "operations": {
+    "compute": "trust_score(source, age, useCount, validationCount)",
+    "promote": "requires score >= 80 + validation",
+    "demote": "automatic on age > ttl without revalidation"
+  }
+}

@@ -1,0 +1,16 @@
+﻿{
+  "name": "xforge-self-healing-rules",
+  "version": "2.0.0",
+  "rules": [
+    {"id": "SH-013", "name": "Sql injection via FromSqlRaw", "severity": "critical", "autoFix": true, "pattern": "FromSqlRaw($\"", "fix": "FromSqlRaw with {0} param"},
+    {"id": "SH-014", "name": "Hardcoded secret in code", "severity": "critical", "autoFix": true, "pattern": "(apiKey|password|token)\\s*=\\s*\"[^\"]+\"", "fix": "IConfiguration[]"},
+    {"id": "SH-015", "name": "Missing CancellationToken in async", "severity": "medium", "autoFix": true, "pattern": "async Task\\w+\\([^)]*\\)", "fix": "add CancellationToken ct = default"},
+    {"id": "SH-016", "name": "IHttpClientFactory new HttpClient()", "severity": "high", "autoFix": false, "pattern": "new HttpClient\\(\\)", "fix": "inject IHttpClientFactory"},
+    {"id": "SH-017", "name": "ConfigureAwait missing in lib", "severity": "low", "autoFix": true, "pattern": "^\\s*await ", "fix": ".ConfigureAwait(false)"},
+    {"id": "SH-018", "name": "FirstOrDefault without null check", "severity": "high", "autoFix": true, "pattern": "FirstOrDefaultAsync\\([^)]+\\)\\s*;", "fix": "add null check"},
+    {"id": "SH-019", "name": "SaveChanges sync in async context", "severity": "high", "autoFix": true, "pattern": "_context\\.SaveChanges\\(\\)", "fix": "_context.SaveChangesAsync(ct)"},
+    {"id": "SH-020", "name": "N+1 query in foreach", "severity": "high", "autoFix": false, "pattern": "foreach.*\\n.*\\.ToListAsync", "fix": "use Include/ThenInclude"}
+  ],
+  "executionOrder": ["critical", "high", "medium", "low"],
+  "autoFixThreshold": 0.95
+}

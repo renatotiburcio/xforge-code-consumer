@@ -1,0 +1,66 @@
+{
+  "id": "xforge-tributos",
+  "name": "xforge-tributos",
+  "title": "Tributos - Calculo Completo ICMS/IPI/PIS/COFINS/IRPJ/CSLL",
+  "version": "1.0.0",
+  "domain": "fiscal",
+  "category": "calculo-fiscal",
+  "description": "Calculo completo de tributos brasileiros: ICMS (normal, ST, difal), IPI, PIS/COFINS (cumulativo e nao-cumulativo), IRPJ/CSLL (lucro real, presumido, simples), ISS por municipio. Reforma tributaria IBS/CBS ja em modo compatibilidade.",
+  "author": "XForge",
+  "license": "MIT",
+  "trustScore": 91,
+  "tags": [
+    "fiscal",
+    "tributos",
+    "icms",
+    "pis",
+    "cofins",
+    "irpj",
+    "csll",
+    "ibs",
+    "cbs",
+    "reforma-tributaria",
+    "brasil"
+  ],
+  "dependencies": [
+    "xforge-core",
+    "xforge-nfe"
+  ],
+  "knowledgeEntries": [
+    {
+      "path": "knowledge/packs/xforge-tributos/icms-base-calculo.md",
+      "trustScore": 92,
+      "title": "ICMS Base de Calculo"
+    },
+    {
+      "path": "knowledge/packs/xforge-tributos/pis-cofins.md",
+      "trustScore": 90,
+      "title": "PIS/COFINS Cumulativo e Nao-Cumulativo"
+    },
+    {
+      "path": "knowledge/packs/xforge-tributos/irpj-csll-lucro-real.md",
+      "trustScore": 89,
+      "title": "IRPJ/CSLL Lucro Real"
+    },
+    {
+      "path": "knowledge/packs/xforge-tributos/reforma-ibs-cbs.md",
+      "trustScore": 88,
+      "title": "Reforma Tributaria IBS/CBS"
+    }
+  ],
+  "tools": [
+    "calcular-icms",
+    "calcular-pis-cofins",
+    "calcular-irpj-csll"
+  ],
+  "workflows": [
+    "apuracao-mensal-icms",
+    "apuracao-pis-cofins",
+    "apuracao-irpj-csll"
+  ],
+  "schemas": [
+    "tributos-v1"
+  ],
+  "installable": true,
+  "size_kb": 528
+}

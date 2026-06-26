@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 Extensions - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html" class="active">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Componentes</h3><ul><li><a href="04-skills.html">Skills</a></li><li><a href="05-agents.html">Agents</a></li><li><a href="06-commands.html">Commands</a></li><li><a href="07-rules.html">Rules</a></li><li><a href="08-knowledge.html">Knowledge</a></li><li><a href="09-decisions.html">Decisões</a></li><li><a href="10-extensions.html" class="active">Extensions</a></li><li><a href="cat-skills.html">Skills (catálogo)</a></li><li><a href="cat-agents.html">Agents (catálogo)</a></li><li><a href="cat-commands.html">Commands (catálogo)</a></li><li><a href="cat-rules.html">Rules (catálogo)</a></li><li><a href="cat-knowledge.html">Knowledge (catálogo)</a></li><li><a href="cat-decisions.html">Decisões (catálogo)</a></li><li><a href="cat-extensions.html">Extensions (catálogo)</a></li></ul></aside>
+<main>
+<h1>10 - Extensions (MCPs + Wizards + Workflows + Automation)</h1>
+
+<h2>O que e</h2>
+<p><strong>Extensions</strong> sao 4 tipos de extensibilidade: MCPs (3 servers), Wizards (10), Workflows (20 YAMLs), Automation scripts (90+). Diferente de skills (referencia) e commands (slash), extensions sao <strong>integracoes externas</strong> e <strong>workflows estruturados</strong>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce precisa de <strong>integracao externa</strong> (MCP para product/market/compliance)</li>
+  <li>Quando quer seguir um <strong>wizard</strong> guiado (10 wizards canonicos)</li>
+  <li>Quando quer criar <strong>workflow</strong> versionado (YAML)</li>
+  <li>Quando quer automatizar via <strong>scripts</strong> PowerShell/Python</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code># MCPs (3 servers)
+.kilo/mcp/product-engineering/   # SDD/PRD/backlog auto-gerados
+.kilo/mcp/market-intelligence/  # reviews, features, concorrentes
+.kilo/mcp/compliance-intelligence/ # legislacao atualizada
+
+# Wizards (10)
+.kilo/wizards/forge, learn, domain, genius, knowledge, governance, release, incident, quality, onboard
+
+# Workflows (20 YAMLs)
+.kilo/workflows/W001-W019/
+
+# Automation scripts (90+)
+.kilo/automation/scripts/</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>name</code></td><td>string</td><td>obrigatorio</td><td>Identificador. kebab-case en.</td></tr>
+<tr><td><code>type</code></td><td>string</td><td>obrigatorio</td><td>mcp, wizard, workflow, automation.</td></tr>
+<tr><td><code>version</code></td><td>string</td><td>1.0.0</td><td>SemVer. Incremental em breaking.</td></tr>
+<tr><td><code>dependencies</code></td><td>array</td><td>[]</td><td>Skills, agents, commands usados.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: MCP product-engineering (SDD/PRD auto)</h3>
+<p><strong>Contexto</strong>: Voce quer gerar SDD completo a partir de descricao de feature.</p>
+<pre><code># Invocar tool MCP
+mcp__product-engineering__generate_sdd
+/feature: "criar modulo fiscal com NFe"
+/stack: "dotnet"
+/complexity: "L"
+
+# Output: SDD v1.0 com 12 secoes
+# - Metadata, Context, Personas, Requisitos, Arquitetura, Dados
+# - API, UI/UX, Testes, Observabilidade, Seguranca, Entrega</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[product-engineering] SDD gerado
+[SDD] Salvo em .xforge/analysis/&lt;feature&gt;/06-sdd.md
+[done] 12 secoes, 2,500 tokens, 85% completeness</code></pre>
+<p><strong>Edge case</strong>: SDD generator precisa de input rico (feature, stack, complexidade). Input vago gera SDD generico.</p>
+
+<h3>Cenario 2: Wizard /forge (criar projeto do zero)</h3>
+<p><strong>Contexto</strong>: Voce quer seguir wizard para criar projeto novo com escolhas guiadas.</p>
+<pre><code>/forge
+# [wizard] Bem-vindo. 7 passos.
+# [1/7] Stack? [dotnet, node, python, ...]
+# [2/7] Dominio? [erp, blog, api, ...]
+# [3/7] LGPD? (y/n)
+# [4/7] Time size? [&lt;5, 5-20, &gt;20]
+# [5/7] Infra? [cloud, on-prem, hybrid]
+# [6/7] Knowledge custom? (path)
+# [7/7] Confirmacao + execucao
+# [done] Projeto bootstrapado</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[forge] Wizard completo
+[plan] .kilo/ + .xforge/ + docs/ criados
+[plan] 12 knowledge entries pre-criadas
+[plan] 3 DRs sugeridas
+[done] Pronto para commit</code></pre>
+<p><strong>Edge case</strong>: Wizards sao interativos. Para automacao, use commands individuais (criar-api, criar-projeto).</p>
+
+<h3>Cenario 3: Workflow versionado (W019 execution loop)</h3>
+<p><strong>Contexto</strong>: Voce quer criar workflow custom para sua equipe.</p>
+<pre><code>cat &gt; .xforge/workflows/W020-meu-workflow.yaml &lt;&lt;EOF
+name: meu-workflow
+description: Workflow customizado para deploy
+version: 1.0.0
+steps:
+  - name: build
+    type: command
+    command: dotnet build
+  - name: test
+    type: command
+    command: dotnet test
+  - name: deploy
+    type: command
+    command: ./deploy.sh production
+    when: "{{ steps.test.exitCode == 0 }}"
+  - name: notify
+    type: command
+    command: ./notify-slack.sh "Deploy done"
+triggers:
+  - push:main
+EOF
+
+# Invocar
+.\.xforge\workflows\run.ps1 W020</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[workflow] W020 iniciado
+[step 1/4] build: OK (12s)
+[step 2/4] test: OK (45s, 87 testes passaram)
+[step 3/4] deploy: OK (30s)
+[step 4/4] notify: OK
+[done] Workflow completo em 87s</code></pre>
+<p><strong>Edge case</strong>: Workflows com schema invalido sao rejeitados. Valide com <code>workflow.schema.json</code>.</p>
+
+<h3>Cenario 3 (alternativa): Automation scripts (doctor.ps1)</h3>
+<p><strong>Contexto</strong>: Voce quer rodar quality gates manualmente.</p>
+<pre><code>.\.kilo\automation\scripts\doctor.ps1
+
+# Output: 156 checks, 0 errors
+# Gate 4 (manual canonico): 24/24 OK
+# Gate 5 (content depth): 17/17 OK
+# [done] CI green</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[doctor] 5 gates executados
+[gate 1] required structure: 25 OK
+[gate 2] registries: 17 OK
+[gate 3] commands/agents/skills: 369 OK
+[gate 4] manual canonico: 24 OK
+[gate 5] content depth: 17 OK
+[done] 0 errors, 1 warning, 452 OKs</code></pre>
+<p><strong>Edge case</strong>: <code>doctor.ps1</code> roda em segundos. Use em pre-commit/push hooks.</p>
+
+<h3>Cenario 4: MCP market-intelligence (analise de competidor)</h3>
+<p><strong>Contexto</strong>: Voce quer extrair features de um concorrente para o seu PRD.</p>
+<pre><code># Invocar tool
+mcp__market-intelligence__extract_reviews
+/url: "https://concurrent.com/reviews"
+/limit: 100
+
+# Output: reviews extraidos com NLP
+# Top features: "integracao SAP", "mobile offline", "BI"
+# Pain points: "lentidao", "preco alto", "suporte fraco"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[market-intelligence] 100 reviews extraidos
+[features] 8 top features com frequency %
+[pain-points] 5 top com frequency %
+[opportunity] 3 gaps para explorar
+[done] Relatorio em .xforge/analysis/competitor-XXX/</code></pre>
+<p><strong>Edge case</strong>: Web scraping pode falhar (rate limit, anti-bot). Use --delay e --rotate-user-agent.</p>
+
+<h3>Cenario 5: MCP compliance-intelligence (legislacao)</h3>
+<p><strong>Contexto</strong>: Voce quer atualizar knowledge com legislacao 2025 (Reforma Tributaria).</p>
+<pre><code># Invocar tool
+mcp__compliance-intelligence__knowledge_append
+/source: "EC 132/2023 + PL 368/2024"
+/statement: "Reforma Tributaria 2025: IBS + CBS substitui ICMS + PIS/COFINS a partir 2026"
+/domain: "fiscal"
+/trustScore: 100
+/keywords: [reforma, ibs, cbs, icms, pis, cofins]
+
+# Output: knowledge entry criada
+# + genius AG040 notificado para self-learning
+# + INDEX.json atualizado
+# + RAG reindex</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[compliance] Knowledge entry criada
+[path] .xforge/knowledge/dominios/fiscal/reforma-tributaria-2025.md
+[INDEX] 321 entries (era 320, +1)
+[RAG] reindex 749 docs
+[genius] AG040 notified
+[done] Memoria do genio atualizada</code></pre>
+<p><strong>Edge case</strong>: MCP valida trustScore. Fontes &lt; 50 sao rejeitadas (DR-0034).</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>MCP tool nao encontrado</h3>
+<p><strong>Causa</strong>: MCP nao inicializado ou tool name errado.</p>
+<p><strong>Solucao</strong>: <code>ls .kilo/mcp/</code> para ver 3 servers. Cada server tem tools.json com lista de tools.</p>
+
+<h3>Wizard trava em loop</h3>
+<p><strong>Causa</strong>: Resposta invalida em alguma etapa.</p>
+<p><strong>Solucao</strong>: Ctrl+C para abortar. Reveja o que voce respondeu. Wizards validam cada step.</p>
+
+<h3>Workflow falha em step 3 (deploy)</h3>
+<p><strong>Causa</strong>: Step 2 (test) falhou OU deploy.sh nao tem permissao.</p>
+<p><strong>Solucao</strong>: Rode step 2 manual primeiro. Verifique permissoes do deploy.sh.</p>
+
+<h3>Script PowerShell nao roda</h3>
+<p><strong>Causa</strong>: ExecutionPolicy.</p>
+<p><strong>Solucao</strong>: <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code>. Ou use <code>pwsh</code> (PowerShell Core) com <code>-File</code>.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

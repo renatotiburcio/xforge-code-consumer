@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-accounting",
+    "name":  "Accounting",
+    "version":  "1.0.0",
+    "description":  "Plano contas, ECD, ECF, DRE, balanco",
+    "files":  3,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "accounting"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/accounting/"
+}

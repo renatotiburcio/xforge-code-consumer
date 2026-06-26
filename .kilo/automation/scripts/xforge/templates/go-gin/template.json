@@ -1,0 +1,20 @@
+{
+  "slug": "go-gin",
+  "description": "Go 1.23 + Gin + sqlc + pgx + testify",
+  "tags": [
+    "go",
+    "api"
+  ],
+  "skills": [
+    "go-modern",
+    "testing-qa-expert",
+    "data-protection-lgpd-expert"
+  ],
+  "files": [
+    "go.mod",
+    "main.go",
+    "main_test.go",
+    ".gitignore",
+    "README.md"
+  ]
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /governance - Auditar Governanca - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html" class="active">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html" class="active">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /governance - Auditar Governanca</h1>
+
+<h2>O que e</h2>
+<p><strong>/governance</strong> roda checks automaticos em todos os aspectos de governanca do projeto: RBAC permissions, LGPD compliance, policy violations, audit trail integrity, e reporta gaps com sugestoes de DR. Gera relatorio em human-readable, JSON, ou JUnit.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando vai publicar projeto em producao (auditoria final)</li><li>Quando LGPD precisa ser verificada</li><li>Quando quer garantir que policies estao sendo seguidas</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>/governance --scope all --severity low --format junit --output ./audit/</code></pre>
+<p>Para invocar: abra o XForge Code CLI e digite o comando. O wizard guia via Q&A interativo.</p>
+
+<h2>Parametros</h2>
+<table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th><th>Obrigatorio?</th></tr>
+<tr><td><code>--scope</code></td><td>string</td><td>all</td><td>rbac, lgpd, policies, audit, all</td><td>Nao</td></tr>
+<tr><td><code>--severity</code></td><td>string</td><td>medium</td><td>low, medium, high, critical</td><td>Nao</td></tr>
+<tr><td><code>--format</code></td><td>string</td><td>human</td><td>human, json, junit</td><td>Nao</td></tr>
+<tr><td><code>--output</code></td><td>string</td><td>.xforge/audit/</td><td>Diretorio de saida</td><td>Nao</td></tr>
+<tr><td><code>--fix</code></td><td>bool</td><td>false</td><td>Aplicar auto-fix quando possivel</td><td>Nao</td></tr>
+<tr><td><code>--strict</code></td><td>bool</td><td>false</td><td>Falha em qualquer warning (CI)</td><td>Nao</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Auditoria pre-producao (completa)</h3>
+<p><strong>Contexto</strong>: Vai publicar MeuProjeto em producao. Quer auditoria completa antes do deploy.</p>
+<pre><code>/governance --scope all --severity low --format junit --output ./audit/</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[governance] 47 checks executados...
+  [OK] RBAC: 3 roles (Admin, Manager, User) com permissoes corretas
+  [OK] LGPD: DPO configurado, retencao 5 anos, consent flow ativo
+  [OK] Policies: 12 policies ativas, 0 violacoes
+  [OK] Audit trail: .xforge/audit/ com 23 entries
+  [WARN] CORS: AllowAnyOrigin() em Development (OK para dev)
+  [WARN] JWT: Secret < 32 chars (recomendado: openssl rand -hex 32)
+  [OK] Tests: 87% coverage (target 85%)
+  [OK] Build: 0 errors, 2 warnings
+
+[governance] Relatorio: ./audit/governance-report.junit.xml
+[governance] Resultado: 45 OK, 2 WARN, 0 FAIL. Pronto para producao.</code></pre>
+<p><strong>Edge case</strong>: Use --strict em CI para falhar em qualquer warning.</p>
+
+<h3>Cenario 2: Auditoria LGPD apenas</h3>
+<p><strong>Contexto</strong>: Precisa verificar LGPD compliance antes de auditoria externa.</p>
+<pre><code>/governance --scope lgpd --format json --output ./lgpd-report.json</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[governance] 12 checks LGPD...
+  [OK] DPO: dpo@meuprojeto.com configurado
+  [OK] Retencao: 5 anos (Identity + audit logs)
+  [OK] Consent: Identity consent flow ativo
+  [OK] Privacy by Design: .xforge/knowledge/compliance/ entries presentes
+  [WARN] Cookie consent: nao implementado (recomendado para frontend)
+  [OK] Data export: endpoint /api/me/export implementado
+  [OK] Right to deletion: endpoint /api/me/delete implementado
+
+[governance] Gap: cookie consent. Sugestao: DR-0201-cookie-consent.md</code></pre>
+<p><strong>Edge case</strong>: LGPD exige retencao < 5 anos para dados pessoais. Identity config: 5 anos.</p>
+
+<h3>Cenario 3: Auto-fix de permissoes RBAC</h3>
+<p><strong>Contexto</strong>: Time adicionou roles sem permissoes explicitas.</p>
+<pre><code>/governance --scope rbac --fix</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[governance] 8 permissoes faltantes detectadas...
+  [FIX] Role "User": adicionado "ReadOwnProfile"
+  [FIX] Role "Manager": adicionado "ReadAllProfiles"
+  [FIX] Role "Admin": adicionado "DeleteUser"
+  [FIX] Role "User": adicionado "UpdateOwnProfile"
+  [MANUAL] Role "Manager": "DeleteUser" requer revisao manual (perigoso)
+
+[governance] 6 permissoes auto-fixadas. 2 precisam revisao manual.</code></pre>
+<p><strong>Edge case</strong>: Auto-fix NAO remove permissoes existentes (apenas adiciona faltantes).</p>
+
+
+
+<h2>Troubleshooting</h2>
+
+
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

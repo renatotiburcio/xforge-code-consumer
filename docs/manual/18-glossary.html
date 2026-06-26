@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>18 Glossario - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html">Quickstart</a></li><li><a href="02-architecture.html">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html">xforge-init</a></li><li><a href="11-faq.html">FAQ</a></li><li><a href="18-glossary.html" class="active">Glossario</a></li><li><a href="19-changelog.html">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html">Troubleshooting</a></li><li><a href="21-faq-extended.html">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>18 - Glossario XForge (termos e conceitos)</h1><h2>O que e</h2><p>O Glossario XForge e uma referencia consolidada de termos, siglas, comandos e conceitos usados em toda a documentacao. Inclui termos do Genio Council (38+ figuras), DRs (Decision Records), skills, agents, MCPs, RAG, loops, e termos brasileiros (fiscal, contabil, trabalhista). Este glossario NAO substitui o glossario do dominio especifico (ex: termos de NF-e estao em /xforge/knowledge/dominios/fiscal/) - ele cobre apenas termos meta (sobre a propria plataforma XForge).</p><h2>Quando usar</h2><ul><li>Quando voce encontra uma sigla desconhecida em qualquer documentacao XForge (ex: GCF, DR, MCP, RAG)</li><li>Quando precisa entender o significado exato de um termo (ex: o que e Genius Council?)</li><li>Quando voce quer pesquisar um conceito especifico da plataforma</li><li>Quando esta traduzindo entre terminologia tecnica e termos brasileiros de dominio</li><li>NAO use para procurar comandos ou sintaxe - va em /commands ou /skills</li></ul><h2>Como usar</h2><p>O glossario esta organizado alfabeticamente. Cada termo tem: definicao curta (1 linha), referencia ao DR/skill/regra que o define, e links para secoes relevantes.</p><pre><code># Para encontrar um termo:
+# 1. Use Ctrl+F e procure pelo termo
+# 2. Ou navegue pela categoria (A-F, G-L, M-R, S-Z)
+# 3. Ou use o aside para pular para secao especifica</code></pre><p>Termos estao em PT-BR (siglas preservadas em EN quando canonicas). Ex: Decision Record (DR) aparece como Decision Record em portugues mas mantem a sigla DR para buscas.</p><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--termo</code></td><td>string</td><td>nenhum</td><td>Nome do termo a buscar (case-insensitive)</td></tr><tr><td><code>--categoria</code></td><td>string</td><td>todas</td><td>Filtra por categoria: a-f, g-l, m-r, s-z</td></tr><tr><td><code>--idioma</code></td><td>string</td><td>pt-BR</td><td>Exibe termos em portugues (default) ou ingles</td></tr><tr><td><code>--json</code></td><td>bool</td><td>false</td><td>Output em JSON estruturado</td></tr><tr><td><code>--links</code></td><td>bool</td><td>true</td><td>Mostra links para DRs e skills relacionados</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Busca simples por termo</h3><p><strong>Contexto</strong>: Voce encontrou GCF em uma pagina e nao sabe o que significa.</p><pre><code># Acesse /docs/manual/18-glossary.html e procure por GCF
+# Ou use Ctrl+F no navegador</code></pre><p><strong>Output esperado</strong>:</p><pre><code>GCF (Genius Council Framework): Regra de Ouro Suprema do XForge desde 2026-06-17. Toda decisao nao-trivial passa por 38 genios + 5 guardioes + Devils Advocate.</code></pre><p><strong>Edge case</strong>: Se Ctrl+F nao encontrar, tente busca parcial (ex: genio em vez de GCF).</p><h3>Cenario 2: Termos do dominio brasileiro</h3><p><strong>Contexto</strong>: Voce esta trabalhando em uma pagina sobre NF-e e nao entende CFOP.</p><pre><code># No glossario, procure por CFOP
+# Veja tambem .xforge/knowledge/dominios/fiscal/icms/</code></pre><p><strong>Output esperado</strong>:</p><pre><code>CFOP (Codigo Fiscal de Operacoes e Prestacoes): Codigo de 4 digitos que identifica a natureza da operacao. Ex: 6101 = venda de producao propria.</code></pre><p><strong>Edge case</strong>: CFOPs especificos por UF estao em tabelas separadas (SP, RJ, MG, etc.)</p><h3>Cenario 3: Siglas MCPs</h3><p><strong>Contexto</strong>: Voce leu MCP mas nao sabe qual servidor significa.</p><pre><code># Busque por MCP no glossario</code></pre><p><strong>Output esperado</strong>:</p><pre><code>MCP (Model Context Protocol): Protocolo padrao para expor ferramentas a LLMs. XForge tem 14 MCPs: 11 NATIVE (toggle on/off) + 3 OPTIONAL (install via /mcp-lifecycle).</code></pre><p><strong>Edge case</strong>: Cada MCP tem DR especifico. Para detalhes, siga o link do MCP de interesse.</p><h3>Cenario 4: Termos de loop e qualidade</h3><p><strong>Contexto</strong>: Voce ve xfs em logs e nao sabe o que e.</p><pre><code># Busque por xfs ou scoring</code></pre><p><strong>Output esperado</strong>:</p><pre><code>xfs (XForge Score): Metrica composta de 5 dimensoes (correctness 30%, performance 20%, quality 20%, simplicity 15%, prevention 15%). Calculada por script externo que o agente NAO pode modificar.</code></pre><p><strong>Edge case</strong>: O agente nunca pode modificar o scoring - so reportar resultados.</p><h3>Cenario 5: Decisao arquitetural recente</h3><p><strong>Contexto</strong>: Voce ve DR-0208 em um commit e quer saber o que foi decidido.</p><pre><code># No glossario, procure por DR-0208 ou root-cleanup</code></pre><p><strong>Output esperado</strong>:</p><pre><code>DR-0208 (Root Cleanup, v50.25.0): Reorganizou estrutura do root do projeto (14 arquivos canonicos max). Moveu 11 scripts Python para scripts/manual_gen/. Deletou 98MB de bloat.</code></pre><p><strong>Edge case</strong>: Para ver TODOS os 208 DRs, va em docs/manual/09-decisions.html</p><h3>Cenario 6: Termos do Agent Loop</h3><p><strong>Contexto</strong>: Voce ve checkpoint e resume em mensagens de erro.</p><pre><code># Busque por checkpoint no glossario</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Checkpoint: Snapshot do estado da tarefa salvo quando o contexto atinge 90%+. Permite retomar tarefa em nova sessao. Limite: max 10 retomadas por tarefa.</code></pre><p><strong>Edge case</strong>: Checkpoints sao diferentes de snapshots - checkpoint e da tarefa, snapshot e da memoria.</p><h2>Troubleshooting</h2><h3>Termo nao aparece no glossario</h3><p><strong>Causa</strong>: Termo e especifico de um dominio e esta apenas em /xforge/knowledge/dominios/</p><p><strong>Solucao</strong>: Procure pelo termo em /xforge/knowledge/dominios/<dominio>/. O glossario XForge cobre apenas termos meta.</p><h3>Definicao parece desatualizada</h3><p><strong>Causa</strong>: Termo evoluiu mas glossario nao foi atualizado (TTL expirado)</p><p><strong>Solucao</strong>: Verifique o DR correspondente (cada termo referencia um DR). Se ainda estiver errado, abra um issue ou sugira correcao via /governance wizard.</p><h3>Termo em ingles mas documentacao em portugues</h3><p><strong>Causa</strong>: Termos tecnicos canonicos mantem sigla original mesmo em docs PT-BR</p><p><strong>Solucao</strong>: Use Ctrl+F para buscar pela sigla. Glossario mantem sigla canonica + traducao.</p><h3>Link para DR nao funciona</h3><p><strong>Causa</strong>: DR foi renomeado ou arquivado</p><p><strong>Solucao</strong>: Veja .xforge/decisions/ADR-INDEX.md para lista atualizada. DRs antigos estao em .xforge/decisions/archive/.</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

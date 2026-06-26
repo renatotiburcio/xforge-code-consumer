@@ -1,0 +1,12 @@
+id,domain,documentType,code,title,status,trustScore,humanReviewRequired
+nfe-rejeicao-204-duplicidade,fiscal.nfe,NF-e/NFC-e,204,Duplicidade de NF-e,community-hint,65,True
+nfe-rejeicao-539-duplicidade-chave-diferente,fiscal.nfe,NF-e/NFC-e,539,Duplicidade de NF-e com diferença na Chave de Acesso,community-hint,65,True
+nfe-rejeicao-972-responsavel-tecnico,fiscal.nfe,NF-e/NFC-e,972,Obrigatória as informações do responsável técnico,official-uf,80,True
+nfe-timeout-sefaz-reenvio,fiscal.nfe,NF-e/NFC-e,TIMEOUT,Timeout SEFAZ seguido de reenvio incorreto,derived-operational,55,False
+nfse-e0312-codigo-tributacao-nacional-nao-administrado,fiscal.nfse,NFS-e Nacional,E0312,Código de tributação nacional não administrado,community-hint,60,True
+nfse-e0314-codigo-tributacao-municipal-inexistente,fiscal.nfse,NFS-e,E0314,Código de tributação municipal inexistente,community-hint,60,True
+nfse-e351-nbs-nao-informado,fiscal.nfse,NFS-e Nacional,E351,Código NBS não informado,community-hint,60,True
+nfse-e400-januaria-mg-validacao-dados,fiscal.nfse,NFS-e Municipal,E400,Erro de validação de dados em Januária/MG,community-hint,55,True
+esocial-codcateg-invalido-ret,trabalhista.esocial,eSocial S-1.3,codCateg,Código de categoria inválido/incompatível com RET,official,100,True
+esocial-afastamento-data-invalida,trabalhista.esocial,eSocial S-1.3,dtIniAfast,Data de início de afastamento inválida,official,100,True
+sped-efd-icms-ipi-registro-d750-pva-603,sped.efd-icms-ipi,EFD ICMS/IPI,D750,Correção PVA 6.0.3 relacionada ao registro D750,needs-validation,55,True

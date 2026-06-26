@@ -1,0 +1,5934 @@
+{
+  "version": "1.2.1",
+  "generatedAt": "2026-06-14T12:19:29Z",
+  "totalEntries": 319,
+  "domains": [
+    "architecture",
+    "arquitetura",
+    "comercial",
+    "compliance",
+    "curated-operational",
+    "decisoes",
+    "dominios",
+    "financeiro",
+    "fiscal",
+    "fluxos",
+    "glossario",
+    "packs",
+    "padroes",
+    "projeto",
+    "rh",
+    "seguranca",
+    "trabalhista"
+  ],
+  "entries": [
+    {
+      "id": "knowledge-decisoes-event-sourcing",
+      "type": "knowledge",
+      "title": "ADR-0016: Event Sourcing para Dominios Criticos",
+      "domain": "architecture",
+      "path": "decisoes/event-sourcing.md",
+      "trustScore": 80,
+      "source": "human-expert",
+      "tags": [
+        "[adr",
+        "event-sourcing",
+        "architecture",
+        "audit]"
+      ],
+      "status": "active",
+      "size": 2786,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-projeto-observability-strategy",
+      "type": "knowledge",
+      "title": "Estrategia de Observabilidade XForge",
+      "domain": "architecture",
+      "path": "projeto/observability-strategy.md",
+      "trustScore": 75,
+      "source": "human-expert",
+      "tags": [
+        "[observability",
+        "monitoring",
+        "logging",
+        "metrics",
+        "tracing]"
+      ],
+      "status": "active",
+      "size": 3374,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-0017-event-sourcing-formal",
+      "type": "decisao",
+      "title": "ADR-0017: Event Sourcing para Dominios Fiscais e Folha",
+      "domain": "arquitetura",
+      "path": "decisoes/adr-0017-event-sourcing-formal.md",
+      "trustScore": 85,
+      "source": "ADR formal + XForge team",
+      "tags": [
+        "[adr",
+        "event-sourcing",
+        "cqrs]"
+      ],
+      "status": "active",
+      "size": 2207,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-0018-cache-estrategia",
+      "type": "decisao",
+      "title": "ADR-0018: Estrategia de Cache Multinivel (L1 Memory + L2 Distributed)",
+      "domain": "arquitetura",
+      "path": "decisoes/adr-0018-cache-estrategia.md",
+      "trustScore": 82,
+      "source": "ADR formal + XForge v1.1.1 learnings",
+      "tags": [
+        "[adr",
+        "cache",
+        "performance]"
+      ],
+      "status": "active",
+      "size": 2302,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "aspnet-core-identity-completo",
+      "type": "conhecimento",
+      "title": "Aspnet Core Identity Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/aspnet-core-identity-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[identity",
+        "auth",
+        "jwt",
+        "cookie",
+        "oauth2",
+        "oidc",
+        "mfa",
+        "claims",
+        "roles",
+        "policies]"
+      ],
+      "status": "active",
+      "size": 14691,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "aspnet-core-minimal-apis",
+      "type": "conhecimento",
+      "title": "Aspnet Core Minimal Apis",
+      "domain": "arquitetura",
+      "path": "arquitetura/aspnet-core-minimal-apis.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[aspnetcore",
+        "minimal-apis",
+        "webapi",
+        "performance",
+        "di",
+        "middleware]"
+      ],
+      "status": "active",
+      "size": 6229,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "azure-services-completo",
+      "type": "conhecimento",
+      "title": "Azure Services Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/azure-services-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[azure",
+        "app-service",
+        "functions",
+        "cosmos-db",
+        "key-vault",
+        "devops",
+        "pipeline",
+        "monitoring]"
+      ],
+      "status": "active",
+      "size": 7387,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "clean-architecture",
+      "type": "knowledge",
+      "title": "Clean Architecture",
+      "domain": "arquitetura",
+      "path": "arquitetura/clean-architecture.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[arquitetura",
+        "clean-architecture",
+        "dotnet",
+        "camadas]"
+      ],
+      "status": "active",
+      "size": 4144,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "cqrs-ddd-event-sourcing",
+      "type": "conhecimento",
+      "title": "Cqrs Ddd Event Sourcing",
+      "domain": "arquitetura",
+      "path": "arquitetura/cqrs-ddd-event-sourcing.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[cqrs",
+        "ddd",
+        "event-sourcing",
+        "domain-events",
+        "aggregates",
+        "value-objects]"
+      ],
+      "status": "active",
+      "size": 7147,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "deploy-net",
+      "type": "knowledge",
+      "title": "Deploy Net",
+      "domain": "arquitetura",
+      "path": "arquitetura/deploy-net.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[deploy",
+        "docker",
+        "cicd",
+        "kubernetes",
+        "azure",
+        "dotnet",
+        "infraestrutura]"
+      ],
+      "status": "active",
+      "size": 5780,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "design-patterns-erp",
+      "type": "knowledge",
+      "title": "Design Patterns Erp",
+      "domain": "arquitetura",
+      "path": "arquitetura/design-patterns-erp.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[design-patterns",
+        "erp",
+        "repository",
+        "cqrs",
+        "domain-events",
+        "aggregate",
+        "dotnet]"
+      ],
+      "status": "active",
+      "size": 6859,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "design-patterns-gof",
+      "type": "knowledge",
+      "title": "Design Patterns Gof",
+      "domain": "arquitetura",
+      "path": "arquitetura/design-patterns-gof.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[design-patterns",
+        "gof",
+        "padroes-criacionais",
+        "padroes-estruturais",
+        "padroes-comportamentais",
+        "dotnet]"
+      ],
+      "status": "active",
+      "size": 5767,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "docker-kubernetes-devops",
+      "type": "conhecimento",
+      "title": "Docker Kubernetes Devops",
+      "domain": "arquitetura",
+      "path": "arquitetura/docker-kubernetes-devops.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[docker",
+        "kubernetes",
+        "container",
+        "ci-cd",
+        "github-actions",
+        "azure-devops]"
+      ],
+      "status": "active",
+      "size": 5510,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "dotnet-maui-completo",
+      "type": "conhecimento",
+      "title": "Dotnet Maui Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/dotnet-maui-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[maui",
+        "mobile",
+        "desktop",
+        "xaml",
+        "blazor",
+        "hybrid",
+        "android",
+        "ios",
+        "windows",
+        "macos]"
+      ],
+      "status": "active",
+      "size": 13422,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "dotnet10-csharp-best-practices",
+      "type": "conhecimento",
+      "title": "Dotnet10 Csharp Best Practices",
+      "domain": "arquitetura",
+      "path": "arquitetura/dotnet10-csharp-best-practices.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[dotnet",
+        "csharp",
+        "dotnet10",
+        "best-practices",
+        "clean-code",
+        "performance]"
+      ],
+      "status": "active",
+      "size": 6605,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "gRPC-dotnet-completo",
+      "type": "conhecimento",
+      "title": "Grpc Dotnet Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/grpc-dotnet-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[grpc",
+        "protobuf",
+        "grpc-web",
+        "load-balancing",
+        "streaming",
+        "microservices]"
+      ],
+      "status": "active",
+      "size": 11432,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "gaps-analysis-backlog-roadmap",
+      "type": "arquitetura",
+      "title": "Gaps Analysis Backlog Roadmap",
+      "domain": "arquitetura",
+      "path": "arquitetura/gaps-analysis-backlog-roadmap.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[analise",
+        "gaps",
+        "backlog",
+        "roadmap",
+        "sprint",
+        "melhoria",
+        "continua]"
+      ],
+      "status": "active",
+      "size": 17868,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "microservices-messaging-patterns",
+      "type": "conhecimento",
+      "title": "Microservices Messaging Patterns",
+      "domain": "arquitetura",
+      "path": "arquitetura/microservices-messaging-patterns.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[microservices",
+        "rabbitmq",
+        "kafka",
+        "messaging",
+        "event-driven",
+        "saga",
+        "retry]"
+      ],
+      "status": "active",
+      "size": 6415,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "multi-tenancy",
+      "type": "knowledge",
+      "title": "Multi Tenancy",
+      "domain": "arquitetura",
+      "path": "arquitetura/multi-tenancy.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[multi-tenancy",
+        "erp",
+        "saas",
+        "isolamento",
+        "tenant",
+        "dotnet",
+        "ef-core]"
+      ],
+      "status": "active",
+      "size": 7087,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "multi-tenant-architecture",
+      "type": "conhecimento",
+      "title": "Multi Tenant Patterns",
+      "domain": "arquitetura",
+      "path": "arquitetura/multi-tenant-patterns.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[multi-tenant",
+        "arquitetura",
+        "shared-database",
+        "rls",
+        "saas]"
+      ],
+      "status": "active",
+      "size": 5684,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "observabilidade",
+      "type": "knowledge",
+      "title": "Observabilidade",
+      "domain": "arquitetura",
+      "path": "arquitetura/observabilidade.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[observabilidade",
+        "logging",
+        "metricas",
+        "tracing",
+        "serilog",
+        "opentelemetry",
+        "health-checks",
+        "dotnet]"
+      ],
+      "status": "active",
+      "size": 7063,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "performance-optimization-dotnet",
+      "type": "conhecimento",
+      "title": "Performance Optimization Dotnet",
+      "domain": "arquitetura",
+      "path": "arquitetura/performance-optimization-dotnet.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[performance",
+        "benchmark",
+        "memory",
+        "cache",
+        "pooling",
+        "async",
+        "dotnet]"
+      ],
+      "status": "active",
+      "size": 5805,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "razor-pages-mvc-completo",
+      "type": "conhecimento",
+      "title": "Razor Pages Mvc Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/razor-pages-mvc-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[razor",
+        "mvc",
+        "controllers",
+        "views",
+        "tag-helpers",
+        "view-components",
+        "filters]"
+      ],
+      "status": "active",
+      "size": 9473,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "redis-completo",
+      "type": "conhecimento",
+      "title": "Redis Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/redis-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[redis",
+        "cache",
+        "distributed-lock",
+        "pub-sub",
+        "session",
+        "queue",
+        "sentinel",
+        "cluster]"
+      ],
+      "status": "active",
+      "size": 9475,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "signalr-realtime-completo",
+      "type": "conhecimento",
+      "title": "Signalr Realtime Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/signalr-realtime-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[signalr",
+        "realtime",
+        "websocket",
+        "hub",
+        "notifications",
+        "chat",
+        "live]"
+      ],
+      "status": "active",
+      "size": 9828,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tailwind-css-completo",
+      "type": "conhecimento",
+      "title": "Tailwind Css Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/tailwind-css-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tailwind",
+        "css",
+        "utility-first",
+        "responsive",
+        "dark-mode",
+        "components",
+        "v4]"
+      ],
+      "status": "active",
+      "size": 9767,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tauri-desktop-completo",
+      "type": "conhecimento",
+      "title": "Tauri Desktop Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/tauri-desktop-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tauri",
+        "rust",
+        "desktop",
+        "webview",
+        "frontend",
+        "backend",
+        "cross-platform]"
+      ],
+      "status": "active",
+      "size": 7984,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "wpf-winforms-desktop-completo",
+      "type": "conhecimento",
+      "title": "Wpf Winforms Desktop Completo",
+      "domain": "arquitetura",
+      "path": "arquitetura/wpf-winforms-desktop-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[wpf",
+        "winforms",
+        "xaml",
+        "data-binding",
+        "mvvm",
+        "desktop",
+        "windows]"
+      ],
+      "status": "active",
+      "size": 10092,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ordem-compra-fornecedor",
+      "type": "fluxo",
+      "title": "Ordem de Compra: Fluxo Completo do Aprovado ao Recebido",
+      "domain": "comercial",
+      "path": "fluxos/ordem-compra-fornecedor.md",
+      "trustScore": 88,
+      "source": "XForge ERP + pratica de mercado",
+      "tags": [
+        "[ordem-compra",
+        "compras",
+        "aprovacao]"
+      ],
+      "status": "active",
+      "size": 1518,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "auditoria-interna-anual",
+      "type": "fluxo",
+      "title": "Auditoria Interna Anual: Checklist de Compliance para ERP",
+      "domain": "compliance",
+      "path": "fluxos/auditoria-interna-anual.md",
+      "trustScore": 85,
+      "source": "XForge + SOX/ISO 27001/27002",
+      "tags": [
+        "[auditoria",
+        "compliance",
+        "sox]"
+      ],
+      "status": "active",
+      "size": 2858,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "compliance-lgpd",
+      "type": "compliance",
+      "title": "Lgpd",
+      "domain": "compliance",
+      "path": "compliance/lgpd.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[lgpd",
+        "compliance",
+        "dados-pessoais",
+        "privacidade",
+        "anpd",
+        "brasil]"
+      ],
+      "status": "active",
+      "size": 9741,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-compliance-audit-trail",
+      "type": "knowledge",
+      "title": "Trilha de Auditoria LGPD (Audit Trail)",
+      "domain": "compliance",
+      "path": "compliance/audit-trail.md",
+      "trustScore": 85,
+      "source": "human-expert",
+      "tags": [
+        "[lgpd",
+        "audit",
+        "compliance",
+        "log",
+        "immutable]"
+      ],
+      "status": "active",
+      "size": 2575,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-compliance-breach-notification",
+      "type": "knowledge",
+      "title": "Notificacao de Incidentes LGPD",
+      "domain": "compliance",
+      "path": "compliance/breach-notification.md",
+      "trustScore": 90,
+      "source": "human-expert",
+      "tags": [
+        "[lgpd",
+        "breach",
+        "incident",
+        "anpd",
+        "notification]"
+      ],
+      "status": "active",
+      "size": 1765,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-compliance-consent-management",
+      "type": "knowledge",
+      "title": "Gestao de Consentimento LGPD",
+      "domain": "compliance",
+      "path": "compliance/consent-management.md",
+      "trustScore": 85,
+      "source": "human-expert",
+      "tags": [
+        "[lgpd",
+        "consent",
+        "compliance",
+        "privacy]"
+      ],
+      "status": "active",
+      "size": 2137,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-compliance-data-classification",
+      "type": "knowledge",
+      "title": "Classificacao de Dados (LGPD)",
+      "domain": "compliance",
+      "path": "compliance/data-classification.md",
+      "trustScore": 88,
+      "source": "human-expert",
+      "tags": [
+        "[lgpd",
+        "classification",
+        "data",
+        "sensitive",
+        "pii]"
+      ],
+      "status": "active",
+      "size": 3735,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "lgpd-cookies-rastreamento",
+      "type": "compliance",
+      "title": "LGPD Cookies e Rastreamento: Conformidade em Websites e Apps",
+      "domain": "compliance",
+      "path": "compliance/lgpd-cookies-rastreamento.md",
+      "trustScore": 85,
+      "source": "LGPD Art. 7-9 + ANPD Orientacoes 02/2022",
+      "tags": [
+        "[lgpd",
+        "cookies",
+        "rastreamento]"
+      ],
+      "status": "active",
+      "size": 1547,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "lgpd-direitos-titular",
+      "type": "compliance",
+      "title": "LGPD Direitos do Titular: Atendimento aos Arts. 17-22",
+      "domain": "compliance",
+      "path": "compliance/lgpd-direitos-titular.md",
+      "trustScore": 90,
+      "source": "LGPD Arts. 17-22 + ANPD Regulamento",
+      "tags": [
+        "[lgpd",
+        "direitos-titular",
+        "atendimento]"
+      ],
+      "status": "active",
+      "size": 1699,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "lgpd-dpia-ripd",
+      "type": "compliance",
+      "title": "LGPD DPIA e RIPD: Avaliacao de Impacto a Protecao de Dados",
+      "domain": "compliance",
+      "path": "compliance/lgpd-dpia-ripd.md",
+      "trustScore": 88,
+      "source": "LGPD Art. 38 + ANPD Resolucao 4/2023",
+      "tags": [
+        "[lgpd",
+        "dpia",
+        "ripd]"
+      ],
+      "status": "active",
+      "size": 1714,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "termos-lgpd",
+      "type": "glossario",
+      "title": "Glossario de Termos da LGPD (Lei Geral de Protecao de Dados)",
+      "domain": "compliance",
+      "path": "glossario/termos-lgpd.md",
+      "trustScore": 88,
+      "source": "LGPD Lei 13.709/2018",
+      "tags": [
+        "[lgpd",
+        "glossario",
+        "dados-pessoais]"
+      ],
+      "status": "active",
+      "size": 3993,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-blazor-tailwind-ux-patterns-ENTERPRISE-FORM-PATTERN",
+      "type": "knowledge",
+      "title": "Enterprise Form Pattern",
+      "domain": "curated-operational",
+      "path": "curated-operational/blazor-tailwind/ux-patterns/ENTERPRISE-FORM-PATTERN.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 966,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-collectors-README",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "curated-operational",
+      "path": "curated-operational/collectors/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 982,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-dotnet-anti-patterns-MEDIATR-MAPSTER-PREVIEW-PACKAGES",
+      "type": "knowledge",
+      "title": "Mediatr Mapster Preview Packages",
+      "domain": "curated-operational",
+      "path": "curated-operational/dotnet/anti-patterns/MEDIATR-MAPSTER-PREVIEW-PACKAGES.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 714,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-dotnet-approved-patterns-MINIMAL-API-CLEAN-ENDPOINT",
+      "type": "knowledge",
+      "title": "Minimal Api Clean Endpoint",
+      "domain": "curated-operational",
+      "path": "curated-operational/dotnet/approved-patterns/MINIMAL-API-CLEAN-ENDPOINT.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 968,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfe-nfce-divergencias-uf-UF-DIVERGENCE-MATRIX",
+      "type": "knowledge",
+      "title": "Uf Divergence Matrix",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/divergencias-uf/UF-DIVERGENCE-MATRIX.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1166,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfe-nfce-edge-cases-NFE-NFCE-EDGE-CASES",
+      "type": "knowledge",
+      "title": "Nfe Nfce Edge Cases",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/edge-cases/NFE-NFCE-EDGE-CASES.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1070,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfe-nfce-playbooks-nfe-rejeicao-204-duplicidade",
+      "type": "knowledge",
+      "title": "Nfe Rejeicao 204 Duplicidade",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-rejeicao-204-duplicidade.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1943,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfe-nfce-playbooks-nfe-rejeicao-539-duplicidade-chave-diferente",
+      "type": "knowledge",
+      "title": "Nfe Rejeicao 539 Duplicidade Chave Diferente",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-rejeicao-539-duplicidade-chave-diferente.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1896,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfe-nfce-playbooks-nfe-rejeicao-972-responsavel-tecnico",
+      "type": "knowledge",
+      "title": "Nfe Rejeicao 972 Responsavel Tecnico",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-rejeicao-972-responsavel-tecnico.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1635,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfe-nfce-playbooks-nfe-timeout-sefaz-reenvio",
+      "type": "knowledge",
+      "title": "Nfe Timeout Sefaz Reenvio",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-timeout-sefaz-reenvio.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1481,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfse-rejeicoes-nfse-e0312-codigo-tributacao-nacional-nao-administrado",
+      "type": "knowledge",
+      "title": "Nfse E0312 Codigo Tributacao Nacional Nao Administrado",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfse/rejeicoes/nfse-e0312-codigo-tributacao-nacional-nao-administrado.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1429,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfse-rejeicoes-nfse-e0314-codigo-tributacao-municipal-inexistente",
+      "type": "knowledge",
+      "title": "Nfse E0314 Codigo Tributacao Municipal Inexistente",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfse/rejeicoes/nfse-e0314-codigo-tributacao-municipal-inexistente.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1348,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfse-rejeicoes-nfse-e351-nbs-nao-informado",
+      "type": "knowledge",
+      "title": "Nfse E351 Nbs Nao Informado",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfse/rejeicoes/nfse-e351-nbs-nao-informado.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1207,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-fiscal-nfse-rejeicoes-nfse-e400-januaria-mg-validacao-dados",
+      "type": "knowledge",
+      "title": "Nfse E400 Januaria Mg Validacao Dados",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfse/rejeicoes/nfse-e400-januaria-mg-validacao-dados.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1328,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-playbook-code-review-erp",
+      "type": "knowledge",
+      "title": "Playbook Code Review Erp",
+      "domain": "curated-operational",
+      "path": "curated-operational/playbook-code-review-erp.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 977,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-playbook-debug-fiscal",
+      "type": "knowledge",
+      "title": "Playbook Debug Fiscal",
+      "domain": "curated-operational",
+      "path": "curated-operational/playbook-debug-fiscal.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1021,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-playbook-deploy-api",
+      "type": "knowledge",
+      "title": "Playbook Deploy Api",
+      "domain": "curated-operational",
+      "path": "curated-operational/playbook-deploy-api.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1211,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-sped-efd-icms-ipi-sped-efd-icms-ipi-registro-d750-pva-603",
+      "type": "knowledge",
+      "title": "Sped Efd Icms Ipi Registro D750 Pva 603",
+      "domain": "curated-operational",
+      "path": "curated-operational/sped/efd-icms-ipi/sped-efd-icms-ipi-registro-d750-pva-603.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1432,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-trabalhista-esocial-validacoes-esocial-afastamento-data-invalida",
+      "type": "knowledge",
+      "title": "Esocial Afastamento Data Invalida",
+      "domain": "curated-operational",
+      "path": "curated-operational/trabalhista/esocial/validacoes/esocial-afastamento-data-invalida.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1352,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "curated-operational-trabalhista-esocial-validacoes-esocial-codcateg-invalido-ret",
+      "type": "knowledge",
+      "title": "Esocial Codcateg Invalido Ret",
+      "domain": "curated-operational",
+      "path": "curated-operational/trabalhista/esocial/validacoes/esocial-codcateg-invalido-ret.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 1436,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-db-migration-zero-downtime",
+      "type": "playbook",
+      "title": "Database Migration Sem Downtime (Expand-Contract)",
+      "domain": "curated-operational",
+      "path": "curated-operational/database/migration/zero-downtime-migration-expand-contract.md",
+      "trustScore": 93,
+      "source": "prisma-db + stripe-migrations",
+      "tags": [
+        "[\"database\"",
+        "\"migration\"",
+        "\"zero-downtime\"",
+        "\"expand-contract\"",
+        "\"blue-green\"]"
+      ],
+      "status": "validated",
+      "size": 5073,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-db-restore-point-in-time",
+      "type": "playbook",
+      "title": "PostgreSQL Point-in-Time Recovery (PITR)",
+      "domain": "curated-operational",
+      "path": "curated-operational/database/backup-restore/postgres-pitr-restore.md",
+      "trustScore": 92,
+      "source": "operacao-real + postgresql-docs",
+      "tags": [
+        "[\"database\"",
+        "\"postgresql\"",
+        "\"backup\"",
+        "\"pitr\"",
+        "\"restore\"",
+        "\"disaster-recovery\"]"
+      ],
+      "status": "validated",
+      "size": 4713,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-deploy-emergency-rollback",
+      "type": "playbook",
+      "title": "Deploy Falhou - Rollback de Emergencia",
+      "domain": "curated-operational",
+      "path": "curated-operational/deployment/rollback/emergency-rollback.md",
+      "trustScore": 94,
+      "source": "devops-best-practices + operacao-real",
+      "tags": [
+        "[\"deployment\"",
+        "\"rollback\"",
+        "\"blue-green\"",
+        "\"kubernetes\"",
+        "\"incident\"]"
+      ],
+      "status": "validated",
+      "size": 4550,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-dotnet-circuit-breaker",
+      "type": "playbook",
+      "title": ".NET Circuit Breaker + Retry + Fallback com Polly",
+      "domain": "curated-operational",
+      "path": "curated-operational/dotnet/resilience/circuit-breaker-retry-fallback-polly.md",
+      "trustScore": 91,
+      "source": "polly-docs + operacao-real",
+      "tags": [
+        "[\"dotnet\"",
+        "\"resilience\"",
+        "\"polly\"",
+        "\"circuit-breaker\"",
+        "\"retry\"",
+        "\"fallback\"]"
+      ],
+      "status": "validated",
+      "size": 8045,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-dotnet-gc-pause-tuning",
+      "type": "playbook",
+      "title": ".NET GC Pauses Longas - Diagnosticar e Tunar",
+      "domain": "curated-operational",
+      "path": "curated-operational/dotnet/performance/dotnet-gc-pause-tuning.md",
+      "trustScore": 89,
+      "source": "dotnet-docs + maoni-blog",
+      "tags": [
+        "[\"dotnet\"",
+        "\"gc\"",
+        "\"performance\"",
+        "\"tuning\"",
+        "\"memory\"]"
+      ],
+      "status": "validated",
+      "size": 7255,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-dotnet-memory-leak",
+      "type": "playbook",
+      "title": ".NET Memory Leak - Diagnosticar e Resolver",
+      "domain": "curated-operational",
+      "path": "curated-operational/dotnet/memory/dotnet-memory-leak.md",
+      "trustScore": 92,
+      "source": "dotnet-docs + operacao-real",
+      "tags": [
+        "[\"dotnet\"",
+        "\"memory-leak\"",
+        "\"performance\"",
+        "\"gc\"",
+        "\"diagnostic\"]"
+      ],
+      "status": "validated",
+      "size": 6682,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-erp-estoque-negativo",
+      "type": "playbook",
+      "title": "ERP Estoque Negativo (venda > saldo)",
+      "domain": "curated-operational",
+      "path": "curated-operational/erp/edge-cases/estoque-negativo-venda-maior-que-saldo.md",
+      "trustScore": 87,
+      "source": "operacao-real + best-practices",
+      "tags": [
+        "[\"erp\"",
+        "\"estoque\"",
+        "\"edge-case\"",
+        "\"saldo-negativo\"",
+        "\"venda\"]"
+      ],
+      "status": "validated",
+      "size": 3051,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-erp-venda-simultanea-race",
+      "type": "playbook",
+      "title": "ERP Venda Simultanea Mesma Unidade (race condition)",
+      "domain": "curated-operational",
+      "path": "curated-operational/erp/edge-cases/venda-simultanea-race-condition.md",
+      "trustScore": 89,
+      "source": "operacao-real + best-practices",
+      "tags": [
+        "[\"erp\"",
+        "\"venda\"",
+        "\"concorrencia\"",
+        "\"race-condition\"",
+        "\"estoque\"",
+        "\"lock\"]"
+      ],
+      "status": "validated",
+      "size": 2748,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-esocial-cpf-invalido",
+      "type": "playbook",
+      "title": "eSocial Rejeicao CPF do Trabalhador Invalido",
+      "domain": "curated-operational",
+      "path": "curated-operational/trabalhista/esocial/validacoes/esocial-cpf-invalido-rejeicao.md",
+      "trustScore": 90,
+      "source": "esocial-oficial + suporte",
+      "tags": [
+        "[\"esocial\"",
+        "\"cpf\"",
+        "\"validacao\"",
+        "\"rejeicao\"",
+        "\"trabalhista\"]"
+      ],
+      "status": "validated",
+      "size": 3795,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-esocial-vinculo-duplicado",
+      "type": "playbook",
+      "title": "eSocial Rejeicao Vinculo Empregaticio Duplicado",
+      "domain": "curated-operational",
+      "path": "curated-operational/trabalhista/esocial/validacoes/esocial-vinculo-duplicado-rejeicao.md",
+      "trustScore": 91,
+      "source": "esocial-oficial + suporte",
+      "tags": [
+        "[\"esocial\"",
+        "\"vinculo\"",
+        "\"duplicado\"",
+        "\"s-2200\"",
+        "\"s-2300\"",
+        "\"trabalhista\"]"
+      ],
+      "status": "validated",
+      "size": 5051,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-nfe-cancelamento-fora-prazo",
+      "type": "playbook",
+      "title": "NFe Cancelamento Fora do Prazo (24h)",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-cancelamento-fora-prazo.md",
+      "trustScore": 89,
+      "source": "sefaz-oficial + suporte",
+      "tags": [
+        "[\"nfe\"",
+        "\"sefaz\"",
+        "\"cancelamento\"",
+        "\"prazo\"",
+        "\"fiscal\"]"
+      ],
+      "status": "validated",
+      "size": 2754,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-nfe-rejeicao-120-cfop-invalido",
+      "type": "playbook",
+      "title": "NFe Rejeicao 120 CFOP Invalido",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-rejeicao-120-cfop-invalido.md",
+      "trustScore": 90,
+      "source": "sefaz-oficial + operacao-real",
+      "tags": [
+        "[\"nfe\"",
+        "\"sefaz\"",
+        "\"rejeicao\"",
+        "\"120\"",
+        "\"cfop\"",
+        "\"fiscal\"]"
+      ],
+      "status": "validated",
+      "size": 2392,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-nfe-rejeicao-297-cnpj-destinatario",
+      "type": "playbook",
+      "title": "NFe Rejeicao 297 CNPJ Destinatario Invalido",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-rejeicao-297-cnpj-destinatario.md",
+      "trustScore": 92,
+      "source": "sefaz-oficial + operacao-real",
+      "tags": [
+        "[\"nfe\"",
+        "\"sefaz\"",
+        "\"rejeicao\"",
+        "\"297\"",
+        "\"cnpj\"",
+        "\"fiscal\"]"
+      ],
+      "status": "validated",
+      "size": 2204,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-nfe-rejeicao-610-total-diverge-somatorio",
+      "type": "playbook",
+      "title": "NFe Rejeicao 610 Total Diverge do Somatorio",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-rejeicao-610-total-diverge-somatorio.md",
+      "trustScore": 91,
+      "source": "sefaz-oficial + suporte-producao",
+      "tags": [
+        "[\"nfe\"",
+        "\"sefaz\"",
+        "\"rejeicao\"",
+        "\"610\"",
+        "\"total\"",
+        "\"fiscal\"]"
+      ],
+      "status": "validated",
+      "size": 2707,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-nfe-rejeicao-999-erro-nao-catalogado",
+      "type": "playbook",
+      "title": "NFe Rejeicao 999 Erro Nao Catalogado (generico)",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfe-nfce/playbooks/nfe-rejeicao-999-erro-nao-catalogado.md",
+      "trustScore": 88,
+      "source": "sefaz-oficial + suporte-producao",
+      "tags": [
+        "[\"nfe\"",
+        "\"sefaz\"",
+        "\"rejeicao\"",
+        "\"999\"",
+        "\"generico\"",
+        "\"fiscal\"]"
+      ],
+      "status": "validated",
+      "size": 2850,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-nfse-e0301-municipio-nao-habilitado",
+      "type": "playbook",
+      "title": "NFS-e Rejeicao e0301 Municipio Nao Habilitado",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfse/rejeicoes/nfse-e0301-municipio-nao-habilitado.md",
+      "trustScore": 90,
+      "source": "nfse-oficial + suporte",
+      "tags": [
+        "[\"nfse\"",
+        "\"rejeicao\"",
+        "\"e0301\"",
+        "\"municipio\"",
+        "\"fiscal\"]"
+      ],
+      "status": "validated",
+      "size": 2466,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-nfse-e0501-servico-nao-permitido",
+      "type": "playbook",
+      "title": "NFS-e Rejeicao e0501 Servico Nao Permitido no Municipio",
+      "domain": "curated-operational",
+      "path": "curated-operational/fiscal/nfse/rejeicoes/nfse-e0501-servico-nao-permitido.md",
+      "trustScore": 88,
+      "source": "nfse-oficial + suporte",
+      "tags": [
+        "[\"nfse\"",
+        "\"rejeicao\"",
+        "\"e0501\"",
+        "\"servico\"",
+        "\"fiscal\"]"
+      ],
+      "status": "validated",
+      "size": 2805,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-obs-high-error-rate",
+      "type": "playbook",
+      "title": "AlertManager: Error Rate Acima do Threshold",
+      "domain": "curated-operational",
+      "path": "curated-operational/observability/alerts/high-error-rate-alert.md",
+      "trustScore": 91,
+      "source": "prometheus-oficial + sre-handbook",
+      "tags": [
+        "[\"observability\"",
+        "\"alertmanager\"",
+        "\"prometheus\"",
+        "\"error-rate\"",
+        "\"sre\"",
+        "\"incident\"]"
+      ],
+      "status": "validated",
+      "size": 6211,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-obs-saturation-cpu",
+      "type": "playbook",
+      "title": "CPU Saturation - Investigar e Resolver",
+      "domain": "curated-operational",
+      "path": "curated-operational/observability/alerts/high-cpu-saturation.md",
+      "trustScore": 88,
+      "source": "sre-handbook + operacao-real",
+      "tags": [
+        "[\"observability\"",
+        "\"cpu\"",
+        "\"saturation\"",
+        "\"performance\"",
+        "\"sre\"]"
+      ],
+      "status": "validated",
+      "size": 6436,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-perf-n-plus-1-query",
+      "type": "playbook",
+      "title": "N+1 Query Problem - Identificar e Resolver",
+      "domain": "curated-operational",
+      "path": "curated-operational/performance/database/n-plus-1-query-problem.md",
+      "trustScore": 93,
+      "source": "dotnet-docs + operacao-real",
+      "tags": [
+        "[\"performance\"",
+        "\"n+1\"",
+        "\"orm\"",
+        "\"ef-core\"",
+        "\"database\"",
+        "\"query\"]"
+      ],
+      "status": "validated",
+      "size": 5626,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-security-ransomware-response",
+      "type": "playbook",
+      "title": "Ransomware Attack - Contencao e Recuperacao",
+      "domain": "curated-operational",
+      "path": "curated-operational/security/incidents/ransomware-attack-response.md",
+      "trustScore": 95,
+      "source": "incident-response-playbook + cisa-nist",
+      "tags": [
+        "[\"security\"",
+        "\"ransomware\"",
+        "\"incident\"",
+        "\"contencao\"",
+        "\"disaster-recovery\"]"
+      ],
+      "status": "validated",
+      "size": 7220,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "playbook-security-secret-leaked-github",
+      "type": "playbook",
+      "title": "Secret (API Key, Password) Vazado no GitHub",
+      "domain": "curated-operational",
+      "path": "curated-operational/security/incidents/secret-leaked-github.md",
+      "trustScore": 95,
+      "source": "incidente-real + best-practices",
+      "tags": [
+        "[\"security\"",
+        "\"secret\"",
+        "\"github\"",
+        "\"leak\"",
+        "\"lgpd\"",
+        "\"incident\"]"
+      ],
+      "status": "validated",
+      "size": 3830,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-001",
+      "type": "tech-stack",
+      "title": "Adr 001 Tech Stack",
+      "domain": "decisoes",
+      "path": "decisoes/adr-001-tech-stack.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[.NET",
+        "Blazor",
+        "stack",
+        "-frontend",
+        "backend]"
+      ],
+      "status": "accepted",
+      "size": 1923,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-002",
+      "type": "architecture",
+      "title": "Adr 002 Architecture",
+      "domain": "decisoes",
+      "path": "decisoes/adr-002-architecture.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[clean-architecture",
+        "CQRS",
+        "XForge.MediatR",
+        "design-patterns]"
+      ],
+      "status": "accepted",
+      "size": 2028,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-003",
+      "type": "database",
+      "title": "Adr 003 Database",
+      "domain": "decisoes",
+      "path": "decisoes/adr-003-database.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[PostgreSQL",
+        "EF Core",
+        "banco-dados",
+        "ORM]"
+      ],
+      "status": "accepted",
+      "size": 1803,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-004",
+      "type": "auth",
+      "title": "Adr 004 Auth",
+      "domain": "decisoes",
+      "path": "decisoes/adr-004-auth.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[JWT",
+        "autenticação",
+        "autorização",
+        "segurança]"
+      ],
+      "status": "accepted",
+      "size": 1902,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-005",
+      "type": "frontend",
+      "title": "Adr 005 Frontend",
+      "domain": "decisoes",
+      "path": "decisoes/adr-005-frontend.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[Blazor",
+        "WASM",
+        "Server",
+        "híbrido",
+        "UI]"
+      ],
+      "status": "accepted",
+      "size": 1798,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "adr-006",
+      "type": "multi-tenancy",
+      "title": "Adr 006 Multi Tenancy",
+      "domain": "decisoes",
+      "path": "decisoes/adr-006-multi-tenancy.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[multi-tenant",
+        "SaaS",
+        "PostgreSQL",
+        "RLS",
+        "isolamento]"
+      ],
+      "status": "accepted",
+      "size": 1868,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "afastamentos",
+      "type": "knowledge",
+      "title": "Afastamentos",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/afastamentos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[afastamento",
+        "auxilio-doenca",
+        "licenca-maternidade",
+        "cat",
+        "estabilidade",
+        "inss",
+        "esocial]"
+      ],
+      "status": "active",
+      "size": 5855,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "beneficios",
+      "type": "knowledge",
+      "title": "Beneficios",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/beneficios.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "beneficios",
+        "vt",
+        "va",
+        "vr",
+        "saude",
+        "previdencia",
+        "pat",
+        "esocial]"
+      ],
+      "status": "active",
+      "size": 13712,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "calculos-folha-pagamento",
+      "type": "conhecimento",
+      "title": "Calculos Folha Pagamento",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/calculos-folha-pagamento.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "folha",
+        "calculo",
+        "inss",
+        "irrf",
+        "ferias",
+        "13o",
+        "rescisao]"
+      ],
+      "status": "active",
+      "size": 5364,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "clt",
+      "type": "knowledge",
+      "title": "Clt",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/clt.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "clt",
+        "legislacao",
+        "contratos",
+        "jornada",
+        "rescisao",
+        "estabilidade]"
+      ],
+      "status": "active",
+      "size": 20582,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "cnab-boletos",
+      "type": "conhecimento",
+      "title": "Cnab Boletos",
+      "domain": "dominios",
+      "path": "dominios/financeiro/cnab-boletos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "cnab",
+        "boleto",
+        "pix",
+        "integracao-bancaria]"
+      ],
+      "status": "active",
+      "size": 3141,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "cnpj-alfanumerico",
+      "type": "conhecimento",
+      "title": "Cnpj Alfanumerico",
+      "domain": "dominios",
+      "path": "dominios/fiscal/cnpj-alfanumerico.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "cnpj",
+        "alfanumerico",
+        "cadastro",
+        "2026]"
+      ],
+      "status": "active",
+      "size": 5719,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "concorrentes-contabeis-empresariais",
+      "type": "conhecimento",
+      "title": "Concorrentes Analise Completa",
+      "domain": "dominios",
+      "path": "dominios/erp/concorrentes-analise-completa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[concorrentes",
+        "contabilidade",
+        "erp",
+        "mercado",
+        "benchmark",
+        "features]"
+      ],
+      "status": "active",
+      "size": 13649,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-avaliacao-estoque",
+      "type": "domain",
+      "title": "Avaliacao Estoque",
+      "domain": "dominios",
+      "path": "dominios/contabil/avaliacao-estoque.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "estoque",
+        "avaliacao",
+        "peps",
+        "cmps",
+        "ueps",
+        "cmv",
+        "cpc-16",
+        "nbc-tg-16]"
+      ],
+      "status": "active",
+      "size": 3944,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-centro-de-custo",
+      "type": "domain",
+      "title": "Centro De Custo",
+      "domain": "dominios",
+      "path": "dominios/contabil/centro-de-custo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "centro-de-custo",
+        "rateio",
+        "custos",
+        "dres-por-cc",
+        "rh",
+        "fiscal]"
+      ],
+      "status": "active",
+      "size": 3640,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-demonstracoes",
+      "type": "domain",
+      "title": "Demonstracoes Contabeis",
+      "domain": "dominios",
+      "path": "dominios/contabil/demonstracoes-contabeis.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "demonstracoes",
+        "dre",
+        "bp",
+        "dfc",
+        "dmpl",
+        "dva",
+        "notas-explicativas",
+        "lei-6404]"
+      ],
+      "status": "active",
+      "size": 5198,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-ecd",
+      "type": "domain",
+      "title": "Ecd",
+      "domain": "dominios",
+      "path": "dominios/contabil/ecd.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "ecd",
+        "sped-contabil",
+        "sped",
+        "escrituracao-digital",
+        "rfb]"
+      ],
+      "status": "active",
+      "size": 4148,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-ecf",
+      "type": "domain",
+      "title": "Ecf",
+      "domain": "dominios",
+      "path": "dominios/contabil/ecf.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "ecf",
+        "sped-fiscal",
+        "irpj",
+        "csll",
+        "lalur",
+        "sped",
+        "rfb]"
+      ],
+      "status": "active",
+      "size": 3615,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-escrituracao",
+      "type": "domain",
+      "title": "Escrituracao Contabil",
+      "domain": "dominios",
+      "path": "dominios/contabil/escrituracao-contabil.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "escrituracao",
+        "partidas-dobradas",
+        "lancamentos",
+        "competencia]"
+      ],
+      "status": "active",
+      "size": 4103,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-lancamentos-automatizados",
+      "type": "domain",
+      "title": "Lancamentos Automatizados",
+      "domain": "dominios",
+      "path": "dominios/contabil/lancamentos-automatizados.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "lancamentos",
+        "automatizados",
+        "vendas",
+        "compras",
+        "folha",
+        "financeiro",
+        "erp]"
+      ],
+      "status": "active",
+      "size": 4216,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-normas",
+      "type": "domain",
+      "title": "Normas Contabeis",
+      "domain": "dominios",
+      "path": "dominios/contabil/normas-contabeis.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "normas",
+        "nbc",
+        "cpc",
+        "ifrs",
+        "lei-6404",
+        "lei-11638",
+        "mcasp",
+        "cfc]"
+      ],
+      "status": "active",
+      "size": 4039,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabil-plano-de-contas",
+      "type": "domain",
+      "title": "Plano De Contas",
+      "domain": "dominios",
+      "path": "dominios/contabil/plano-de-contas.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "plano-de-contas",
+        "sped",
+        "ecd",
+        "rfb",
+        "erp]"
+      ],
+      "status": "active",
+      "size": 4580,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contabilidade-completa",
+      "type": "conhecimento",
+      "title": "Contabilidade Completa",
+      "domain": "dominios",
+      "path": "dominios/contabil/contabilidade-completa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "partidas-dobradas",
+        "encerramento",
+        "conciliacao",
+        "balancete",
+        "diario",
+        "razao]"
+      ],
+      "status": "active",
+      "size": 7425,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "cte",
+      "type": "knowledge",
+      "title": "Cte",
+      "domain": "dominios",
+      "path": "dominios/fiscal/cte.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "cte",
+        "transporte",
+        "carga",
+        "eletronico",
+        "dacte]"
+      ],
+      "status": "active",
+      "size": 4481,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "danfe-dacte",
+      "type": "knowledge",
+      "title": "Danfe Dacte",
+      "domain": "dominios",
+      "path": "dominios/fiscal/danfe-dacte.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "danfe",
+        "dacte",
+        "documento-auxiliar",
+        "impressao",
+        "nfe",
+        "cte]"
+      ],
+      "status": "active",
+      "size": 5683,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "dctfweb-completo",
+      "type": "conhecimento",
+      "title": "Dctfweb Completo",
+      "domain": "dominios",
+      "path": "dominios/fiscal/dctfweb-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[dctfweb",
+        "declaracao",
+        "credito",
+        "pis",
+        "cofins",
+        "contribuicao",
+        "esocial]"
+      ],
+      "status": "active",
+      "size": 5802,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "decimo-terceiro",
+      "type": "knowledge",
+      "title": "Decimo Terceiro",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/decimo-terceiro.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[decimo-terceiro",
+        "gratificacao-natalina",
+        "13-salario",
+        "calculo",
+        "parcelas",
+        "esocial]"
+      ],
+      "status": "active",
+      "size": 4967,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "decimo-terceiro-calculos",
+      "type": "conhecimento",
+      "title": "Decimo Terceiro Calculos",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/decimo-terceiro-calculos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "decimo-terceiro",
+        "13o",
+        "salario",
+        "calculo]"
+      ],
+      "status": "active",
+      "size": 3676,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "departamento-pessoal-v2",
+      "type": "knowledge",
+      "title": "Departamento Pessoal",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/departamento-pessoal.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[dp",
+        "departamento-pessoal",
+        "admissao",
+        "demissao",
+        "contratacao",
+        "esocial",
+        "folha",
+        "clt",
+        "rh",
+        "exames",
+        "estabilidade]"
+      ],
+      "status": "active",
+      "size": 10974,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "efd-contribuicoes",
+      "type": "knowledge",
+      "title": "Efd Contribuicoes",
+      "domain": "dominios",
+      "path": "dominios/fiscal/efd-contribuicoes.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "efd",
+        "sped",
+        "pis",
+        "cofins",
+        "contribuicoes",
+        "escrituracao]"
+      ],
+      "status": "active",
+      "size": 5611,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "efd-icms-ipi",
+      "type": "knowledge",
+      "title": "Efd Icms Ipi",
+      "domain": "dominios",
+      "path": "dominios/fiscal/efd-icms-ipi.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "efd",
+        "sped",
+        "icms",
+        "ipi",
+        "escrituracao",
+        "bloco]"
+      ],
+      "status": "active",
+      "size": 4887,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-agronegocio",
+      "type": "knowledge",
+      "title": "Agronegocio",
+      "domain": "dominios",
+      "path": "dominios/erp/agronegocio.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "agronegocio",
+        "lcdpr",
+        "itr",
+        "irpf",
+        "safra",
+        "rebanho",
+        "produtor-rural]"
+      ],
+      "status": "active",
+      "size": 3352,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-crm",
+      "type": "knowledge",
+      "title": "Crm",
+      "domain": "dominios",
+      "path": "dominios/erp/crm.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "crm",
+        "clientes",
+        "pipeline-vendas",
+        "interacoes",
+        "segmentacao",
+        "relatorios]"
+      ],
+      "status": "active",
+      "size": 3114,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-estoque",
+      "type": "knowledge",
+      "title": "Estoque",
+      "domain": "dominios",
+      "path": "dominios/erp/estoque.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "estoque",
+        "custos",
+        "inventario",
+        "movimentacoes",
+        "peps",
+        "ueps",
+        "cm]"
+      ],
+      "status": "active",
+      "size": 3116,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-faturamento",
+      "type": "knowledge",
+      "title": "Faturamento",
+      "domain": "dominios",
+      "path": "dominios/erp/faturamento.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "faturamento",
+        "nfe",
+        "nfce",
+        "cte",
+        "mdfe",
+        "nfs-e",
+        "fiscal",
+        "sefaz",
+        "impostos]"
+      ],
+      "status": "active",
+      "size": 3231,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-fluxo-compras",
+      "type": "knowledge",
+      "title": "Fluxo Compras",
+      "domain": "dominios",
+      "path": "dominios/erp/fluxo-compras.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "compras",
+        "procure-to-pay",
+        "cotacao",
+        "pedido-compra",
+        "recebimento",
+        "3-way-match]"
+      ],
+      "status": "active",
+      "size": 3029,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-fluxo-vendas",
+      "type": "knowledge",
+      "title": "Fluxo Vendas",
+      "domain": "dominios",
+      "path": "dominios/erp/fluxo-vendas.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "vendas",
+        "pipeline",
+        "pedido",
+        "faturamento",
+        "comissoes",
+        "crm",
+        "nfe]"
+      ],
+      "status": "active",
+      "size": 3432,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-ged",
+      "type": "knowledge",
+      "title": "Ged",
+      "domain": "dominios",
+      "path": "dominios/erp/ged.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "ged",
+        "gestao-documentos",
+        "nfe",
+        "ct-e",
+        "contratos",
+        "rh",
+        "indexacao",
+        "retencao",
+        "lgpd]"
+      ],
+      "status": "active",
+      "size": 3560,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-orcamentos",
+      "type": "knowledge",
+      "title": "Orcamentos",
+      "domain": "dominios",
+      "path": "dominios/erp/orcamentos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "orcamentos",
+        "proposta-comercial",
+        "aprovacao",
+        "desconto",
+        "pipeline",
+        "conversao-pedido]"
+      ],
+      "status": "active",
+      "size": 3510,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-pdv-frente-caixa",
+      "type": "knowledge",
+      "title": "Pdv Frente Caixa",
+      "domain": "dominios",
+      "path": "dominios/erp/pdv-frente-caixa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "pdv",
+        "frente-caixa",
+        "vendas",
+        "fiscal",
+        "nfc-e",
+        "sat",
+        "pagamentos]"
+      ],
+      "status": "active",
+      "size": 2799,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-producao",
+      "type": "knowledge",
+      "title": "Producao",
+      "domain": "dominios",
+      "path": "dominios/erp/producao.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "producao",
+        "pcp",
+        "mrp",
+        "mps",
+        "bom",
+        "roteiro",
+        "op",
+        "oee",
+        "qualidade]"
+      ],
+      "status": "active",
+      "size": 3190,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "erp-trocas-devolucoes",
+      "type": "knowledge",
+      "title": "Trocas Devolucoes",
+      "domain": "dominios",
+      "path": "dominios/erp/trocas-devolucoes.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "trocas",
+        "devolucoes",
+        "estorno",
+        "nfe-devolucao",
+        "cdc",
+        "comissoes",
+        "estoque]"
+      ],
+      "status": "active",
+      "size": 3188,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "escrituracao-fiscal-completa",
+      "type": "conhecimento",
+      "title": "Escrituracao Fiscal Completa",
+      "domain": "dominios",
+      "path": "dominios/fiscal/escrituracao-fiscal-completa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[escrituracao",
+        "sped",
+        "efd",
+        "ecd",
+        "ecf",
+        "apuracao",
+        "icms",
+        "pis",
+        "cofins",
+        "irpj",
+        "csll]"
+      ],
+      "status": "active",
+      "size": 8572,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "esocial-empregadores",
+      "type": "knowledge",
+      "title": "Esocial Empregadores",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/esocial-empregadores.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[esocial",
+        "empregador",
+        "tabela",
+        "s1000",
+        "s1080",
+        "eventos",
+        "obrigacoes]"
+      ],
+      "status": "active",
+      "size": 4719,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "esocial-folha",
+      "type": "knowledge",
+      "title": "Esocial Folha",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/esocial-folha.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[esocial",
+        "folha",
+        "pagamento",
+        "s1200",
+        "s1299",
+        "remuneracao",
+        "fechamento]"
+      ],
+      "status": "active",
+      "size": 5687,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "esocial-geral",
+      "type": "knowledge",
+      "title": "Esocial Geral",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/esocial-geral.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[esocial",
+        "escrituracao",
+        "obrigacoes",
+        "fiscais",
+        "previdenciarias",
+        "trabalhistas",
+        "layout]"
+      ],
+      "status": "active",
+      "size": 6814,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "esocial-layout",
+      "type": "dominio",
+      "title": "Esocial Layout",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/esocial-layout.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[esocial",
+        "layout",
+        "xml",
+        "eventos",
+        "prazos]"
+      ],
+      "status": "active",
+      "size": 6009,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "esocial-trabalhadores",
+      "type": "knowledge",
+      "title": "Esocial Trabalhadores",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/esocial-trabalhadores.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[esocial",
+        "trabalhador",
+        "cadastro",
+        "s2190",
+        "s3000",
+        "vinculo",
+        "tsve",
+        "cat",
+        "afastamento]"
+      ],
+      "status": "active",
+      "size": 5359,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "estoque-completo",
+      "type": "conhecimento",
+      "title": "Estoque Completo",
+      "domain": "dominios",
+      "path": "dominios/erp/estoque-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[estoque",
+        "curva-abc",
+        "mrp",
+        "wms",
+        "custo-medio",
+        "fifo",
+        "lote",
+        "validade",
+        "kardex]"
+      ],
+      "status": "active",
+      "size": 7021,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ferias",
+      "type": "knowledge",
+      "title": "Ferias",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/ferias.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[ferias",
+        "periodo-aquisitivo",
+        "periodo-concessivo",
+        "abono-pecuniario",
+        "calculo",
+        "esocial]"
+      ],
+      "status": "active",
+      "size": 5311,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ferias-calculos-completos",
+      "type": "conhecimento",
+      "title": "Ferias Calculos Completos",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/ferias-calculos-completos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "ferias",
+        "calculo",
+        "13",
+        "abono",
+        "licenca-premio]"
+      ],
+      "status": "active",
+      "size": 3830,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fgts",
+      "type": "knowledge",
+      "title": "Fgts",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/fgts.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "fgts",
+        "dirf",
+        "dctfweb",
+        "efd-reinf",
+        "obrigacoes",
+        "tributos]"
+      ],
+      "status": "active",
+      "size": 16893,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fgts-regras-calculos",
+      "type": "conhecimento",
+      "title": "Fgts Regras Calculos",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/fgts-regras-calculos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "fgts",
+        "deposito",
+        "multa",
+        "saque",
+        "rescisao]"
+      ],
+      "status": "active",
+      "size": 3141,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fin-conciliacao-bancaria",
+      "type": "dominio",
+      "title": "Conciliacao Bancaria",
+      "domain": "dominios",
+      "path": "dominios/financeiro/conciliacao-bancaria.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "conciliacao",
+        "banco",
+        "extrato",
+        "ofx",
+        "cnab]"
+      ],
+      "status": "active",
+      "size": 2840,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fin-contas-pagar",
+      "type": "dominio",
+      "title": "Contas A Pagar",
+      "domain": "dominios",
+      "path": "dominios/financeiro/contas-a-pagar.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "contas-a-pagar",
+        "fornecedores",
+        "pagamento]"
+      ],
+      "status": "active",
+      "size": 3148,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fin-contas-receber",
+      "type": "dominio",
+      "title": "Contas A Receber",
+      "domain": "dominios",
+      "path": "dominios/financeiro/contas-a-receber.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "contas-a-receber",
+        "clientes",
+        "recebimento",
+        "cobranca]"
+      ],
+      "status": "active",
+      "size": 3264,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fin-fluxo-caixa",
+      "type": "dominio",
+      "title": "Fluxo De Caixa",
+      "domain": "dominios",
+      "path": "dominios/financeiro/fluxo-de-caixa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "fluxo-caixa",
+        "dfc",
+        "projecao",
+        "tesouraria]"
+      ],
+      "status": "active",
+      "size": 3099,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fin-pagamentos-digitais",
+      "type": "dominio",
+      "title": "Pagamentos Digitais",
+      "domain": "dominios",
+      "path": "dominios/financeiro/pagamentos-digitais.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "pix",
+        "open-finance",
+        "boleto",
+        "cnab",
+        "pagamento]"
+      ],
+      "status": "active",
+      "size": 3014,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "financeiro-completo",
+      "type": "conhecimento",
+      "title": "Financeiro Completo",
+      "domain": "dominios",
+      "path": "dominios/financeiro/financeiro-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "centros-custo",
+        "rateios",
+        "orcamentos",
+        "forecast",
+        "dre",
+        "kpis]"
+      ],
+      "status": "active",
+      "size": 6104,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "folha-pagamento",
+      "type": "knowledge",
+      "title": "Folha Pagamento",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/folha-pagamento.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[folha",
+        "pagamento",
+        "proventos",
+        "descontos",
+        "inss",
+        "irrf",
+        "fgts",
+        "encargos",
+        "contabil]"
+      ],
+      "status": "active",
+      "size": 5884,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "historico-salario-minimo",
+      "type": "conhecimento",
+      "title": "Historico Salario Minimo",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/historico-salario-minimo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "salario-minimo",
+        "historico",
+        "2010-2026]"
+      ],
+      "status": "active",
+      "size": 3759,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "historico-tabelas-inss",
+      "type": "conhecimento",
+      "title": "Historico Tabelas Inss",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/historico-tabelas-inss.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "inss",
+        "historico",
+        "tabelas",
+        "2020-2026]"
+      ],
+      "status": "active",
+      "size": 4401,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "historico-tabelas-irrf",
+      "type": "conhecimento",
+      "title": "Historico Tabelas Irrf",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/historico-tabelas-irrf.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "irrf",
+        "historico",
+        "tabelas",
+        "2020-2025]"
+      ],
+      "status": "active",
+      "size": 4323,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "holerite-v2",
+      "type": "knowledge",
+      "title": "Holerite",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/holerite.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[holerite",
+        "contracheque",
+        "recibo-pagamento",
+        "proventos",
+        "descontos",
+        "inss",
+        "irrf",
+        "fgts",
+        "folha",
+        "esocial]"
+      ],
+      "status": "active",
+      "size": 10088,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "inss-irrf",
+      "type": "knowledge",
+      "title": "Inss Irrf",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/inss-irrf.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[inss",
+        "irrf",
+        "contribuicao-previdenciaria",
+        "imposto-renda",
+        "tabelas",
+        "retencao",
+        "dirf",
+        "dctfweb]"
+      ],
+      "status": "active",
+      "size": 6949,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "integracao-sefaz-pgfn",
+      "type": "conhecimento",
+      "title": "Integracao Sefaz Pgfn",
+      "domain": "dominios",
+      "path": "dominios/fiscal/integracao-sefaz-pgfn.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "integracao",
+        "sefaz",
+        "pgfn",
+        "cnd",
+        "gov]"
+      ],
+      "status": "active",
+      "size": 2899,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "irpf-calculo-completo-todas-funcoes",
+      "type": "conhecimento",
+      "title": "Irpf Calculo Completo Todas Funcoes",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/irpf-calculo-completo-todas-funcoes.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "irrf",
+        "calculo",
+        "ferias",
+        "13o",
+        "rescisao",
+        "todas-funcoes]"
+      ],
+      "status": "active",
+      "size": 7569,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "irpf-isencao-5000-2025",
+      "type": "conhecimento",
+      "title": "Irpf Isencao 5000 2025",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/irpf-isencao-5000-2025.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "irrf",
+        "isencao",
+        "5000",
+        "nova-tabela",
+        "2025]"
+      ],
+      "status": "active",
+      "size": 5830,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "lcpr-livro-caixa-produtor-rural",
+      "type": "conhecimento",
+      "title": "Lcpr Livro Caixa Produtor Rural",
+      "domain": "dominios",
+      "path": "dominios/contabil/lcpr-livro-caixa-produtor-rural.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[lcpr",
+        "produtor-rural",
+        "contabilidade-rural",
+        "itr",
+        "car",
+        "ccir",
+        "safra]"
+      ],
+      "status": "active",
+      "size": 5883,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "lucro-presumido-regras",
+      "type": "conhecimento",
+      "title": "Lucro Presumido Regras",
+      "domain": "dominios",
+      "path": "dominios/fiscal/lucro-presumido-regras.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "lucro-presumido",
+        "presuncao",
+        "irpj",
+        "csll",
+        "pis",
+        "cofins]"
+      ],
+      "status": "active",
+      "size": 5215,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "mdfe",
+      "type": "knowledge",
+      "title": "Mdfe",
+      "domain": "dominios",
+      "path": "dominios/fiscal/mdfe.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "mdfe",
+        "manifesto",
+        "transporte",
+        "carga",
+        "consolidacao]"
+      ],
+      "status": "active",
+      "size": 5036,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "nfce",
+      "type": "knowledge",
+      "title": "Nfce",
+      "domain": "dominios",
+      "path": "dominios/fiscal/nfce.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "nfce",
+        "consumidor",
+        "eletronico",
+        "varejo",
+        "qrcode]"
+      ],
+      "status": "active",
+      "size": 3951,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "nfe",
+      "type": "knowledge",
+      "title": "Nfe",
+      "domain": "dominios",
+      "path": "dominios/fiscal/nfe.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "nfe",
+        "nota-fiscal",
+        "eletronico",
+        "sefaz]"
+      ],
+      "status": "active",
+      "size": 3643,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "nfse",
+      "type": "knowledge",
+      "title": "Nfse",
+      "domain": "dominios",
+      "path": "dominios/fiscal/nfse.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "nfse",
+        "servico",
+        "iss",
+        "municipal",
+        "eletronico]"
+      ],
+      "status": "active",
+      "size": 5167,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "obrigacoes-acessorias-v2",
+      "type": "knowledge",
+      "title": "Obrigacoes Acessorias",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/obrigacoes-acessorias.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[obrigacoes-acessorias",
+        "dirf",
+        "dctfweb",
+        "efd-reinf",
+        "esocial",
+        "ecf",
+        "ecd",
+        "dirpf",
+        "rais",
+        "caged",
+        "gfip",
+        "dirpj",
+        "dasn-simei",
+        "carne-leao",
+        "sped",
+        "rfb]"
+      ],
+      "status": "active",
+      "size": 12622,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ponto-eletronico",
+      "type": "knowledge",
+      "title": "Ponto Eletronico",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/ponto-eletronico.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[ponto-eletronico",
+        "rep",
+        "jornada",
+        "horas-extras",
+        "banco-horas",
+        "esocial",
+        "portaria-671]"
+      ],
+      "status": "active",
+      "size": 5444,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "reforma-tributaria-completa",
+      "type": "conhecimento",
+      "title": "Reforma Tributaria Completa",
+      "domain": "dominios",
+      "path": "dominios/fiscal/reforma-tributaria-completa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "reforma",
+        "ibs",
+        "cbs",
+        "split-payment",
+        "transicao",
+        "2026-2033]"
+      ],
+      "status": "active",
+      "size": 8300,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "reforma-tributaria-ibs-cbs",
+      "type": "conhecimento",
+      "title": "Reforma Tributaria Ibs Cbs",
+      "domain": "dominios",
+      "path": "dominios/fiscal/reforma-tributaria-ibs-cbs.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "reforma",
+        "ibs",
+        "cbs",
+        "isento",
+        "split-payment]"
+      ],
+      "status": "active",
+      "size": 3394,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "reinf-completo",
+      "type": "conhecimento",
+      "title": "Reinf Completo",
+      "domain": "dominios",
+      "path": "dominios/fiscal/reinf-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[reinf",
+        "contribuicao-previdenciaria",
+        "servicos-tomados",
+        "servicos-prestados",
+        "produtor-rural]"
+      ],
+      "status": "active",
+      "size": 5188,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "rescisao-calculos-completos",
+      "type": "conhecimento",
+      "title": "Rescisao Calculos Completos",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/rescisao-calculos-completos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "rescisao",
+        "aviso-previo",
+        "multa-fgts",
+        "verbas]"
+      ],
+      "status": "active",
+      "size": 4550,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "salario-minimo-historico",
+      "type": "conhecimento",
+      "title": "Salario Minimo Historico",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/salario-minimo-historico.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "salario-minimo",
+        "legislação",
+        "historico]"
+      ],
+      "status": "active",
+      "size": 3308,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "sat-cfe",
+      "type": "knowledge",
+      "title": "Sat Cfe",
+      "domain": "dominios",
+      "path": "dominios/fiscal/sat-cfe.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "sat",
+        "cfe",
+        "cupom-fiscal",
+        "sao-paulo",
+        "sefaz-sp]"
+      ],
+      "status": "active",
+      "size": 4640,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "saude-trabalho-v2",
+      "type": "knowledge",
+      "title": "Saude Trabalho",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/saude-trabalho.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[saude-trabalho",
+        "pcmso",
+        "pgr",
+        "ltcat",
+        "ppp",
+        "cipa",
+        "epi",
+        "sesmt",
+        "aposentadoria-especial",
+        "nr",
+        "sst",
+        "esocial",
+        "cat]"
+      ],
+      "status": "active",
+      "size": 8227,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "simples-nacional-regras",
+      "type": "conhecimento",
+      "title": "Simples Nacional Regras",
+      "domain": "dominios",
+      "path": "dominios/fiscal/simples-nacional-regras.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "simples-nacional",
+        "anexo",
+        "faixa",
+        "fator-r",
+        "isencao]"
+      ],
+      "status": "active",
+      "size": 4984,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "sped-overview",
+      "type": "dominio",
+      "title": "Sped Overview",
+      "domain": "dominios",
+      "path": "dominios/fiscal/sped-overview.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[sped",
+        "escrituracao",
+        "digital",
+        "receita-federal]"
+      ],
+      "status": "active",
+      "size": 4425,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tabela-inss-2025",
+      "type": "conhecimento",
+      "title": "Tabela Inss 2025",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/tabela-inss-2025.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "inss",
+        "contribuicao",
+        "faixas",
+        "2025]"
+      ],
+      "status": "active",
+      "size": 3568,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tabela-irrf-2025",
+      "type": "conhecimento",
+      "title": "Tabela Irrf 2025",
+      "domain": "dominios",
+      "path": "dominios/trabalhista/tabela-irrf-2025.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "irrf",
+        "imposto-renda",
+        "faixas",
+        "2025]"
+      ],
+      "status": "active",
+      "size": 3895,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tributos-cnpj-alfanumerico",
+      "type": "knowledge",
+      "title": "Cnpj Alfanumerico",
+      "domain": "dominios",
+      "path": "dominios/tributos/cnpj-alfanumerico.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tributos",
+        "cnpj",
+        "alfanumerico",
+        "receita-federal",
+        "identificacao]"
+      ],
+      "status": "active",
+      "size": 3993,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tributos-icms",
+      "type": "knowledge",
+      "title": "Icms",
+      "domain": "dominios",
+      "path": "dominios/tributos/icms.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tributos",
+        "icms",
+        "estadual",
+        "substituicao-tributaria",
+        "difal]"
+      ],
+      "status": "active",
+      "size": 3736,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tributos-ipi-iss",
+      "type": "knowledge",
+      "title": "Ipi Iss",
+      "domain": "dominios",
+      "path": "dominios/tributos/ipi-iss.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tributos",
+        "ipi",
+        "iss",
+        "federal",
+        "municipal",
+        "industrial",
+        "servicos]"
+      ],
+      "status": "active",
+      "size": 4182,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tributos-irpj-csll",
+      "type": "knowledge",
+      "title": "Irpj Csll",
+      "domain": "dominios",
+      "path": "dominios/tributos/irpj-csll.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tributos",
+        "irpj",
+        "csll",
+        "federal",
+        "lucro",
+        "renda]"
+      ],
+      "status": "active",
+      "size": 4214,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tributos-pis-cofins",
+      "type": "knowledge",
+      "title": "Pis Cofins",
+      "domain": "dominios",
+      "path": "dominios/tributos/pis-cofins.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tributos",
+        "pis",
+        "cofins",
+        "federal",
+        "cumulativo",
+        "nao-cumulativo]"
+      ],
+      "status": "active",
+      "size": 3648,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tributos-reforma-tributaria",
+      "type": "knowledge",
+      "title": "Reforma Tributaria",
+      "domain": "dominios",
+      "path": "dominios/tributos/reforma-tributaria.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tributos",
+        "reforma",
+        "cbs",
+        "ibs",
+        "imposto-seletivo",
+        "transicao]"
+      ],
+      "status": "active",
+      "size": 4387,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "tributos-regimes-tributarios",
+      "type": "knowledge",
+      "title": "Regimes Tributarios",
+      "domain": "dominios",
+      "path": "dominios/tributos/regimes-tributarios.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[tributos",
+        "regimes",
+        "simples-nacional",
+        "lucro-presumido",
+        "lucro-real",
+        "mei]"
+      ],
+      "status": "active",
+      "size": 4238,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-pagamentos-boleto",
+      "type": "knowledge",
+      "title": "Boleto Bancario - Sistema de Cobranca",
+      "domain": "financeiro",
+      "path": "packs/xforge-pagamentos-digitais/boleto.md",
+      "trustScore": 85,
+      "source": "febraban / bancos",
+      "tags": [
+        "[boleto",
+        "febraban",
+        "cobranca",
+        "cnab",
+        "banco]"
+      ],
+      "status": "curated",
+      "size": 1265,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-pagamentos-cartao",
+      "type": "knowledge",
+      "title": "Processamento de Cartao de Credito e Debito",
+      "domain": "financeiro",
+      "path": "packs/xforge-pagamentos-digitais/cartao.md",
+      "trustScore": 88,
+      "source": "banderias / adquirentes",
+      "tags": [
+        "[cartao",
+        "credito",
+        "debito",
+        "adquirente",
+        "bandeira",
+        "pci-dss]"
+      ],
+      "status": "curated",
+      "size": 1480,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-pagamentos-gateways",
+      "type": "knowledge",
+      "title": "Comparativo de Gateways de Pagamento",
+      "domain": "financeiro",
+      "path": "packs/xforge-pagamentos-digitais/gateways-comparison.md",
+      "trustScore": 78,
+      "source": "documentacao oficial dos gateways",
+      "tags": [
+        "[gateway",
+        "stripe",
+        "pagarme",
+        "mercado-pago",
+        "asaas",
+        "pagseguro",
+        "comparativo]"
+      ],
+      "status": "curated",
+      "size": 1958,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-pagamentos-pix",
+      "type": "knowledge",
+      "title": "PIX - Sistema de Pagamentos Instantaneos",
+      "domain": "financeiro",
+      "path": "packs/xforge-pagamentos-digitais/pix.md",
+      "trustScore": 92,
+      "source": "bacen.gov.br / ispb-rules",
+      "tags": [
+        "[pix",
+        "pagamentos",
+        "bacen",
+        "qr-code",
+        "spi]"
+      ],
+      "status": "curated",
+      "size": 1586,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fechamento-fiscal-mensal",
+      "type": "fluxo",
+      "title": "Fechamento Fiscal Mensal: Checklist Completo ate o SPED",
+      "domain": "fiscal",
+      "path": "fluxos/fechamento-fiscal-mensal.md",
+      "trustScore": 90,
+      "source": "XForge ERP + legislacao tributaria BR",
+      "tags": [
+        "[fechamento",
+        "fiscal",
+        "sped]"
+      ],
+      "status": "active",
+      "size": 2177,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "icms-st-substituicao-tributaria",
+      "type": "dominio",
+      "title": "ICMS-ST: Substituicao Tributaria Detalhada com Exemplos",
+      "domain": "fiscal",
+      "path": "dominios/fiscal/icms-st-substituicao-tributaria.md",
+      "trustScore": 88,
+      "source": "XForge + CONFAZ + legislacao estadual",
+      "tags": [
+        "[icms",
+        "st",
+        "confa]"
+      ],
+      "status": "active",
+      "size": 3268,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-glossario-cfop",
+      "type": "knowledge",
+      "title": "CFOP - Codigo Fiscal de Operacoes e Prestacoes",
+      "domain": "fiscal",
+      "path": "glossario/cfop.md",
+      "trustScore": 90,
+      "source": "human-expert",
+      "tags": [
+        "[cfop",
+        "fiscal",
+        "icms",
+        "nfe",
+        "sped]"
+      ],
+      "status": "active",
+      "size": 2425,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-xforge-fiscal-estados - icms por uf-details",
+      "type": "knowledge",
+      "title": "xforge-fiscal-estados - icms por uf - Details",
+      "domain": "fiscal",
+      "path": "packs/xforge-fiscal-estados - icms por uf/details.md",
+      "trustScore": 80,
+      "source": "autoresearch-authored",
+      "tags": [
+        "[]"
+      ],
+      "status": "stub",
+      "size": 404,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-xforge-fiscal-estados - icms por uf-overview",
+      "type": "knowledge",
+      "title": "xforge-fiscal-estados - icms por uf - Overview",
+      "domain": "fiscal",
+      "path": "packs/xforge-fiscal-estados - icms por uf/overview.md",
+      "trustScore": 80,
+      "source": "autoresearch-authored",
+      "tags": [
+        "[]"
+      ],
+      "status": "stub",
+      "size": 407,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-xforge-nfce - nfc-e varejo-details",
+      "type": "knowledge",
+      "title": "xforge-nfce - nfc-e varejo - Details",
+      "domain": "fiscal",
+      "path": "packs/xforge-nfce - nfc-e varejo/details.md",
+      "trustScore": 85,
+      "source": "autoresearch-authored",
+      "tags": [
+        "[]"
+      ],
+      "status": "stub",
+      "size": 377,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-xforge-nfce - nfc-e varejo-overview",
+      "type": "knowledge",
+      "title": "xforge-nfce - nfc-e varejo - Overview",
+      "domain": "fiscal",
+      "path": "packs/xforge-nfce - nfc-e varejo/overview.md",
+      "trustScore": 85,
+      "source": "autoresearch-authored",
+      "tags": [
+        "[]"
+      ],
+      "status": "stub",
+      "size": 380,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-xforge-nfse - nfs-e municipal-details",
+      "type": "knowledge",
+      "title": "xforge-nfse - nfs-e municipal - Details",
+      "domain": "fiscal",
+      "path": "packs/xforge-nfse - nfs-e municipal/details.md",
+      "trustScore": 82,
+      "source": "autoresearch-authored",
+      "tags": [
+        "[]"
+      ],
+      "status": "stub",
+      "size": 386,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-xforge-nfse - nfs-e municipal-overview",
+      "type": "knowledge",
+      "title": "xforge-nfse - nfs-e municipal - Overview",
+      "domain": "fiscal",
+      "path": "packs/xforge-nfse - nfs-e municipal/overview.md",
+      "trustScore": 82,
+      "source": "autoresearch-authored",
+      "tags": [
+        "[]"
+      ],
+      "status": "stub",
+      "size": 389,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "admissao-funcionario",
+      "type": "fluxo",
+      "title": "Admissao Funcionario",
+      "domain": "fluxos",
+      "path": "fluxos/admissao-funcionario.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[admissao",
+        "rh",
+        "esocial",
+        "s-2190",
+        "s-2200",
+        "contrato",
+        "beneficios]"
+      ],
+      "status": "active",
+      "size": 3884,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "compra-completa",
+      "type": "fluxo",
+      "title": "Compra Completa",
+      "domain": "fluxos",
+      "path": "fluxos/compra-completa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[compras",
+        "procure-to-pay",
+        "3-way-match",
+        "estoque",
+        "contas-pagar]"
+      ],
+      "status": "active",
+      "size": 3550,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "folha-pagamento",
+      "type": "fluxo",
+      "title": "Folha Pagamento",
+      "domain": "fluxos",
+      "path": "fluxos/folha-pagamento.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[folha",
+        "esocial",
+        "inss",
+        "irrf",
+        "fgts",
+        "remuneração",
+        "13o",
+        "ferias",
+        "rescisao]"
+      ],
+      "status": "active",
+      "size": 4025,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "pdv-venda",
+      "type": "fluxo",
+      "title": "Pdv Venda",
+      "domain": "fluxos",
+      "path": "fluxos/pdv-venda.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[pdv",
+        "frente-caixa",
+        "nfc-e",
+        "sat",
+        "pagamento",
+        "varejo]"
+      ],
+      "status": "active",
+      "size": 3463,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "producao-ordem",
+      "type": "fluxo",
+      "title": "Producao Ordem",
+      "domain": "fluxos",
+      "path": "fluxos/producao-ordem.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[producao",
+        "pcp",
+        "mrp",
+        "op",
+        "qualidade",
+        "custo",
+        "wip",
+        "refugo]"
+      ],
+      "status": "active",
+      "size": 3813,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "rescisao-funcionario",
+      "type": "fluxo",
+      "title": "Rescisao Funcionario",
+      "domain": "fluxos",
+      "path": "fluxos/rescisao-funcionario.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[rescisao",
+        "desligamento",
+        "esocial",
+        "s-2299",
+        "aviso-previo",
+        "fgts",
+        "homologacao]"
+      ],
+      "status": "active",
+      "size": 4207,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "venda-completa",
+      "type": "fluxo",
+      "title": "Venda Completa",
+      "domain": "fluxos",
+      "path": "fluxos/venda-completa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[vendas",
+        "faturamento",
+        "nf-e",
+        "comissão",
+        "recebimento]"
+      ],
+      "status": "active",
+      "size": 3436,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "glossario-001",
+      "type": "glossary",
+      "title": "Termos Fiscais",
+      "domain": "glossario",
+      "path": "glossario/termos-fiscais.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "tributos",
+        "nfe",
+        "sped",
+        "icms",
+        "pis",
+        "cofins",
+        "regime-tributario]"
+      ],
+      "status": "active",
+      "size": 8770,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "glossario-002",
+      "type": "glossary",
+      "title": "Termos Contabeis",
+      "domain": "glossario",
+      "path": "glossario/termos-contabeis.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabilidade",
+        "demonstracoes-financeiras",
+        "escrituracao",
+        "regime-contabil]"
+      ],
+      "status": "active",
+      "size": 8582,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "glossario-003",
+      "type": "glossary",
+      "title": "Termos Trabalhistas",
+      "domain": "glossario",
+      "path": "glossario/termos-trabalhistas.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[trabalhista",
+        "esocial",
+        "clt",
+        "folha-pagamento",
+        "inss",
+        "fgts",
+        "cat",
+        "pcmso]"
+      ],
+      "status": "active",
+      "size": 11422,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "glossario-004",
+      "type": "glossary",
+      "title": "Termos Arquitetura",
+      "domain": "glossario",
+      "path": "glossario/termos-arquitetura.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[arquitetura",
+        "design-patterns",
+        "dotnet",
+        "clean-architecture",
+        "cqrs",
+        "ddd",
+        "web-api]"
+      ],
+      "status": "active",
+      "size": 9233,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "glossario-005",
+      "type": "glossary",
+      "title": "Termos Erp",
+      "domain": "glossario",
+      "path": "glossario/termos-erp.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[erp",
+        "negocio",
+        "pdv",
+        "estoque",
+        "financeiro",
+        "fiscal",
+        "crm",
+        "producao]"
+      ],
+      "status": "active",
+      "size": 8599,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "accounting-overview",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "packs",
+      "path": "packs/xforge-accounting/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "accounting",
+        "plano-contas",
+        "sped]"
+      ],
+      "status": "active",
+      "size": 704,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "agro-overview",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "packs",
+      "path": "packs/xforge-agro/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[agro",
+        "rural",
+        "lcpr",
+        "produtor]"
+      ],
+      "status": "active",
+      "size": 862,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "commercial-overview",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "packs",
+      "path": "packs/xforge-commercial/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[comercial",
+        "crm",
+        "vendas]"
+      ],
+      "status": "active",
+      "size": 693,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "compliance",
+      "type": "knowledge",
+      "title": "Compliance",
+      "domain": "packs",
+      "path": "packs/xforge-investments/compliance.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[compliance",
+        "suitability",
+        "aml",
+        "kyc]"
+      ],
+      "status": "active",
+      "size": 1385,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "contas-pagar-receber",
+      "type": "knowledge",
+      "title": "Pagar Receber",
+      "domain": "packs",
+      "path": "packs/xforge-finance/contas/pagar-receber.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contas-pagar",
+        "contas-receber",
+        "aging]"
+      ],
+      "status": "active",
+      "size": 833,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "crm-pipeline",
+      "type": "knowledge",
+      "title": "Pipeline",
+      "domain": "packs",
+      "path": "packs/xforge-commercial/crm/pipeline.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[crm",
+        "pipeline",
+        "kanban]"
+      ],
+      "status": "active",
+      "size": 932,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "custos-agricolas",
+      "type": "knowledge",
+      "title": "Custos",
+      "domain": "packs",
+      "path": "packs/xforge-agro/custos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[agro",
+        "custos",
+        "safra",
+        "mecanizacao]"
+      ],
+      "status": "active",
+      "size": 1023,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ecd-ecf-prazos",
+      "type": "knowledge",
+      "title": "Ecd Ecf",
+      "domain": "packs",
+      "path": "packs/xforge-accounting/sped/ecd-ecf.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[sped",
+        "contabil",
+        "ecd",
+        "ecf",
+        "prazos]"
+      ],
+      "status": "active",
+      "size": 1077,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "esocial-events",
+      "type": "knowledge",
+      "title": "Events",
+      "domain": "packs",
+      "path": "packs/xforge-hr/esocial/events.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[esocial",
+        "rh",
+        "eventos]"
+      ],
+      "status": "active",
+      "size": 773,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "finance-overview",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "packs",
+      "path": "packs/xforge-finance/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[financeiro",
+        "fluxo-caixa",
+        "contas]"
+      ],
+      "status": "active",
+      "size": 684,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fiscal-overview",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "packs",
+      "path": "packs/xforge-fiscal/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fiscal",
+        "br",
+        "overview]"
+      ],
+      "status": "active",
+      "size": 532,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fluxo-caixa",
+      "type": "knowledge",
+      "title": "Fluxo Caixa",
+      "domain": "packs",
+      "path": "packs/xforge-finance/fluxo/fluxo-caixa.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fluxo-caixa",
+        "previsao",
+        "tesouraria]"
+      ],
+      "status": "active",
+      "size": 950,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "folha-calculo",
+      "type": "knowledge",
+      "title": "Calculo",
+      "domain": "packs",
+      "path": "packs/xforge-hr/folha/calculo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[folha",
+        "calculo",
+        "inss",
+        "irrf",
+        "fgts]"
+      ],
+      "status": "active",
+      "size": 697,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "hr-overview",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "packs",
+      "path": "packs/xforge-hr/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[hr",
+        "rh",
+        "br",
+        "overview]"
+      ],
+      "status": "active",
+      "size": 558,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ibs-cbs-reforma",
+      "type": "knowledge",
+      "title": "Reforma",
+      "domain": "packs",
+      "path": "packs/xforge-fiscal/ibs-cbs/reforma.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[reforma-tributaria",
+        "ibs",
+        "cbs",
+        "fiscal]"
+      ],
+      "status": "active",
+      "size": 569,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "investments-overview",
+      "type": "knowledge",
+      "title": "Readme",
+      "domain": "packs",
+      "path": "packs/xforge-investments/README.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[investimentos",
+        "renda-fixa",
+        "renda-variavel",
+        "compliance]"
+      ],
+      "status": "active",
+      "size": 944,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-conciliacao",
+      "type": "knowledge",
+      "title": "Conciliacao Bancaria Automatica",
+      "domain": "packs",
+      "path": "packs/xforge-banking/conciliacao.md",
+      "trustScore": 80,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 3038,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-esocial-s1000",
+      "type": "knowledge",
+      "title": "eSocial S-1000 Informacoes do Empregador",
+      "domain": "packs",
+      "path": "packs/xforge-esocial/s-1000-iniciais.md",
+      "trustScore": 82,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 3025,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-esocial-s1200",
+      "type": "knowledge",
+      "title": "eSocial S-1200 Remuneracao Mensal",
+      "domain": "packs",
+      "path": "packs/xforge-esocial/s-1200-folha.md",
+      "trustScore": 80,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 3015,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-esocial-s3000",
+      "type": "knowledge",
+      "title": "eSocial SST \\u2014 S-3000 Exclusao",
+      "domain": "packs",
+      "path": "packs/xforge-esocial/s-3000-sst.md",
+      "trustScore": 81,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 3383,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-open-finance",
+      "type": "knowledge",
+      "title": "Open Finance Brasil \\u2014 Visao Geral",
+      "domain": "packs",
+      "path": "packs/xforge-banking/open-finance.md",
+      "trustScore": 82,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 2382,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-pix",
+      "type": "knowledgesummary: \"Arquitetura PIX: SPI (liquidacao), DICT (chaves), QR dinamico/estatico, webhooks",
+      "title": "PIX \\u2014 SPI, DICT, QR Codes e Webhooks",
+      "domain": "packs",
+      "path": "packs/xforge-banking/pix.md",
+      "trustScore": 85,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 2073,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-sped-ecd-ecf",
+      "type": "knowledge",
+      "title": "ECD e ECF \\u2014 Escrituracoes Contabeis Digitais",
+      "domain": "packs",
+      "path": "packs/xforge-sped-fiscal/ecd-ecf.md",
+      "trustScore": 80,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 4601,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-sped-efd-contribuicoes",
+      "type": "knowledge",
+      "title": "EFD Contribuicoes \\u2014 PIS COFINS",
+      "domain": "packs",
+      "path": "packs/xforge-sped-fiscal/efd-contribuicoes.md",
+      "trustScore": 82,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 3724,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "knowledge-sped-efd-icms-ipi",
+      "type": "knowledge",
+      "title": "EFD ICMS IPI \\u2014 SPED Fiscal",
+      "domain": "packs",
+      "path": "packs/xforge-sped-fiscal/efd-icms-ipi.md",
+      "trustScore": 83,
+      "source": "internal",
+      "tags": [],
+      "status": "active",
+      "size": 3363,
+      "lastValidated": "2026-06-13"
+    },
+    {
+      "id": "lcpr-lcdpr",
+      "type": "knowledge",
+      "title": "Lcpr Lcdpr",
+      "domain": "packs",
+      "path": "packs/xforge-agro/livr/lcpr-lcdpr.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[agro",
+        "lcpr",
+        "lcdpr",
+        "sped]"
+      ],
+      "status": "active",
+      "size": 1167,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "nfe-basics",
+      "type": "knowledge",
+      "title": "Basics",
+      "domain": "packs",
+      "path": "packs/xforge-fiscal/nfe/basics.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[nfe",
+        "fiscal",
+        "br]"
+      ],
+      "status": "active",
+      "size": 569,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "plano-contas-referencial",
+      "type": "knowledge",
+      "title": "Referencial",
+      "domain": "packs",
+      "path": "packs/xforge-accounting/plano/referencial.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[contabil",
+        "plano-contas",
+        "cpc]"
+      ],
+      "status": "active",
+      "size": 1179,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "renda-fixa",
+      "type": "knowledge",
+      "title": "Produtos",
+      "domain": "packs",
+      "path": "packs/xforge-investments/renda-fixa/produtos.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[renda-fixa",
+        "cdb",
+        "lci",
+        "tesouro-direto]"
+      ],
+      "status": "active",
+      "size": 1515,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "sped-icms-ipi",
+      "type": "knowledge",
+      "title": "Efd Icms Ipi",
+      "domain": "packs",
+      "path": "packs/xforge-fiscal/sped/efd-icms-ipi.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[sped",
+        "fiscal",
+        "icms",
+        "ipi",
+        "efd]"
+      ],
+      "status": "active",
+      "size": 607,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "vendas-pedido",
+      "type": "knowledge",
+      "title": "Ciclo Pedido",
+      "domain": "packs",
+      "path": "packs/xforge-commercial/vendas/ciclo-pedido.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[vendas",
+        "pedido",
+        "orcamento]"
+      ],
+      "status": "active",
+      "size": 753,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "autenticacao-autorizacao",
+      "type": "pattern",
+      "title": "Autenticacao Autorizacao",
+      "domain": "padroes",
+      "path": "padroes/autenticacao-autorizacao.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[auth",
+        "jwt",
+        "identity",
+        "blazor",
+        "security",
+        "oauth2",
+        "oidc]"
+      ],
+      "status": "active",
+      "size": 4968,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "automapper-completo",
+      "type": "conhecimento",
+      "title": "Automapper Completo",
+      "domain": "padroes",
+      "path": "padroes/automapper-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[automapper",
+        "mapping",
+        "profiles",
+        "dto",
+        "entity",
+        "project",
+        "reverse]"
+      ],
+      "status": "active",
+      "size": 7821,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "bdd-completo",
+      "type": "conhecimento",
+      "title": "Bdd Completo",
+      "domain": "padroes",
+      "path": "padroes/bdd-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[bdd",
+        "specflow",
+        "cucumber",
+        "gherkin",
+        "scenarios",
+        "acceptance",
+        "behave]"
+      ],
+      "status": "active",
+      "size": 9050,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "blazor-server-wasm-patterns",
+      "type": "conhecimento",
+      "title": "Blazor Server Wasm Patterns",
+      "domain": "padroes",
+      "path": "padroes/blazor-server-wasm-patterns.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[blazor",
+        "server",
+        "wasm",
+        "componentes",
+        "renderizacao",
+        "state",
+        "signalr]"
+      ],
+      "status": "active",
+      "size": 6697,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "componentes-blazor",
+      "type": "pattern",
+      "title": "Componentes Blazor",
+      "domain": "padroes",
+      "path": "padroes/componentes-blazor.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[blazor",
+        "components",
+        "ui",
+        "erp",
+        "razor",
+        "input",
+        "display",
+        "navigation]"
+      ],
+      "status": "active",
+      "size": 4124,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ef-core-patterns",
+      "type": "pattern",
+      "title": "Ef Core Patterns",
+      "domain": "padroes",
+      "path": "padroes/ef-core-patterns.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[ef-core",
+        "repository",
+        "unit-of-work",
+        "performance",
+        "database",
+        "sql]"
+      ],
+      "status": "active",
+      "size": 4298,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fluentvalidation-completo",
+      "type": "conhecimento",
+      "title": "Fluentvalidation Completo",
+      "domain": "padroes",
+      "path": "padroes/fluentvalidation-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[fluentvalidation",
+        "validacao",
+        "rules",
+        "validators",
+        "custom",
+        "async",
+        "inheritance]"
+      ],
+      "status": "active",
+      "size": 8662,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "hangfire-completo",
+      "type": "conhecimento",
+      "title": "Hangfire Completo",
+      "domain": "padroes",
+      "path": "padroes/hangfire-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[hangfire",
+        "background-jobs",
+        "recurring",
+        "fire-and-forget",
+        "delayed",
+        "dashboard]"
+      ],
+      "status": "active",
+      "size": 7808,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ia-erp",
+      "type": "pattern",
+      "title": "Ia Erp",
+      "domain": "padroes",
+      "path": "padroes/ia-erp.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[ia",
+        "ml",
+        "llm",
+        "nlp",
+        "rag",
+        "forecasting",
+        "anomaly-detection",
+        "agent-framework]"
+      ],
+      "status": "active",
+      "size": 5942,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "logging",
+      "type": "pattern",
+      "title": "Logging",
+      "domain": "padroes",
+      "path": "padroes/logging.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[logging",
+        "serilog",
+        "structured-logging",
+        "seq",
+        "enrichers",
+        "sinks]"
+      ],
+      "status": "active",
+      "size": 5533,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "mysql-pomelo-efcore-completo",
+      "type": "conhecimento",
+      "title": "Mysql Pomelo Efcore Completo",
+      "domain": "padroes",
+      "path": "padroes/mysql-pomelo-efcore-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[mysql",
+        "pomelo",
+        "ef-core",
+        "migrations",
+        "performance",
+        "charset",
+        "utf8mb4]"
+      ],
+      "status": "active",
+      "size": 7167,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "owasp-security-deep-dive",
+      "type": "conhecimento",
+      "title": "Owasp Security Deep Dive",
+      "domain": "padroes",
+      "path": "padroes/owasp-security-deep-dive.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[seguranca",
+        "owasp",
+        "jwt",
+        "oauth2",
+        "criptografia",
+        "lgpd",
+        "pentest]"
+      ],
+      "status": "active",
+      "size": 6971,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "seguranca-api",
+      "type": "pattern",
+      "title": "Seguranca Api",
+      "domain": "padroes",
+      "path": "padroes/seguranca-api.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[security",
+        "api",
+        "cors",
+        "rate-limiting",
+        "https",
+        "headers",
+        "xss",
+        "csrf",
+        "sql-injection]"
+      ],
+      "status": "active",
+      "size": 5640,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "seguranca-dados",
+      "type": "padrao",
+      "title": "Seguranca Dados",
+      "domain": "padroes",
+      "path": "padroes/seguranca-dados.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[seguranca",
+        "criptografia",
+        "backup",
+        "auditoria",
+        "lgpd",
+        "dados]"
+      ],
+      "status": "active",
+      "size": 8273,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "sql-server-postgresql-patterns",
+      "type": "conhecimento",
+      "title": "Sql Server Postgresql Patterns",
+      "domain": "padroes",
+      "path": "padroes/sql-server-postgresql-patterns.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[sql",
+        "sqlserver",
+        "postgresql",
+        "performance",
+        "index",
+        "query",
+        "migration]"
+      ],
+      "status": "active",
+      "size": 5877,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "swagger-openapi-net10-completo",
+      "type": "conhecimento",
+      "title": "Swagger Openapi Net10 Completo",
+      "domain": "padroes",
+      "path": "padroes/swagger-openapi-net10-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[swagger",
+        "openapi",
+        "nswag",
+        "api-docs",
+        "net10",
+        "minimal-apis]"
+      ],
+      "status": "active",
+      "size": 7223,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "testes",
+      "type": "pattern",
+      "title": "Testes",
+      "domain": "padroes",
+      "path": "padroes/testes.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[testes",
+        "xunit",
+        "nsubstitute",
+        "fluent-assertions",
+        "testcontainers",
+        "integration]"
+      ],
+      "status": "active",
+      "size": 5305,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "ui-ux",
+      "type": "padrao",
+      "title": "Ui Ux",
+      "domain": "padroes",
+      "path": "padroes/ui-ux.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[ui",
+        "ux",
+        "design",
+        "interface",
+        "usabilidade",
+        "acessibilidade]"
+      ],
+      "status": "active",
+      "size": 4905,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "unit-testing-completo",
+      "type": "conhecimento",
+      "title": "Unit Testing Completo",
+      "domain": "padroes",
+      "path": "padroes/unit-testing-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[testes",
+        "xunit",
+        "nunit",
+        "moq",
+        "nsubstitute",
+        "fluentassertions",
+        "testcontainers",
+        "bdd",
+        "tdd]"
+      ],
+      "status": "active",
+      "size": 10333,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "validacao",
+      "type": "pattern",
+      "title": "Validacao",
+      "domain": "padroes",
+      "path": "padroes/validacao.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[validation",
+        "fluentvalidation",
+        "blazor",
+        "cpf",
+        "cnpj",
+        "erp",
+        "input]"
+      ],
+      "status": "active",
+      "size": 5332,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "xforge-mediatr-cqrs-completo",
+      "type": "conhecimento",
+      "title": "Xforge Mediatr Cqrs Completo",
+      "domain": "padroes",
+      "path": "padroes/xforge-mediatr-cqrs-completo.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[xforge-mediatr",
+        "mediatr",
+        "cqrs",
+        "commands",
+        "queries",
+        "handlers",
+        "pipelines",
+        "behaviors]"
+      ],
+      "status": "active",
+      "size": 9431,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "onboarding-prompts",
+      "type": "conhecimento",
+      "title": "Onboarding Prompts",
+      "domain": "projeto",
+      "path": "projeto/onboarding-prompts.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[onboarding",
+        "prompts",
+        "getting-started",
+        "quickstart",
+        "examples]"
+      ],
+      "status": "active",
+      "size": 8179,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "proj-stack",
+      "type": "projeto",
+      "title": "Stack Tecnologico",
+      "domain": "projeto",
+      "path": "projeto/stack-tecnologico.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[projeto",
+        "tecnologia",
+        "stack",
+        "dotnet",
+        "blazor]"
+      ],
+      "status": "active",
+      "size": 3087,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "proj-visao-geral",
+      "type": "projeto",
+      "title": "Visao Geral",
+      "domain": "projeto",
+      "path": "projeto/visao-geral.md",
+      "trustScore": 70,
+      "source": "internal",
+      "tags": [
+        "[projeto",
+        "visao",
+        "escopo",
+        "erp",
+        "brasil]"
+      ],
+      "status": "active",
+      "size": 3219,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "knowledge-fluxos-exame-medico-admissional",
+      "type": "knowledge",
+      "title": "Fluxo de Exame Medico Admissional (ASO)",
+      "domain": "rh",
+      "path": "fluxos/exame-medico-admissional.md",
+      "trustScore": 85,
+      "source": "human-expert",
+      "tags": [
+        "[rh",
+        "aso",
+        "exame",
+        "admissional",
+        "medico",
+        "esocial]"
+      ],
+      "status": "active",
+      "size": 2255,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "termos-seguranca",
+      "type": "glossario",
+      "title": "Glossario de Termos de Seguranca da Informacao",
+      "domain": "seguranca",
+      "path": "glossario/termos-seguranca.md",
+      "trustScore": 82,
+      "source": "XForge + OWASP + NIST",
+      "tags": [
+        "[seguranca",
+        "glossario",
+        "owasp]"
+      ],
+      "status": "active",
+      "size": 4164,
+      "lastValidated": "2026-06-14"
+    },
+    {
+      "id": "fgts-multa-rescisao",
+      "type": "dominio",
+      "title": "FGTS e Multa 40% na Rescisao: Calculo Completo e Casos Especiais",
+      "domain": "trabalhista",
+      "path": "dominios/trabalhista/fgts-multa-rescisao.md",
+      "trustScore": 90,
+      "source": "CLT Art. 18 Lei 8.036/90 + Lei 13.932/19",
+      "tags": [
+        "[fgts",
+        "rescisao",
+        "multa",
+        "trabalhista]"
+      ],
+      "status": "active",
+      "size": 4614,
+      "lastValidated": "2026-06-14"
+    }
+  ],
+  "files": [
+    {
+      "domain": "pack",
+      "relevance": "medium",
+      "path": ".xforge\\knowledge\\packs\\xforge-fiscal\\README.md",
+      "summary": "From pack xforge-fiscal - 18 lines",
+      "category": "pack",
+      "keywords": [
+        "tags",
+        "fiscal",
+        "br",
+        "overview",
+        "xforge-fiscal"
+      ],
+      "lines": 18,
+      "pack": "xforge-fiscal"
+    },
+    {
+      "domain": "pack",
+      "relevance": "medium",
+      "path": ".xforge\\knowledge\\packs\\xforge-fiscal\\ibs-cbs\\reforma.md",
+      "summary": "From pack xforge-fiscal - 23 lines",
+      "category": "pack",
+      "keywords": [
+        "tags",
+        "reforma-tributaria",
+        "ibs",
+        "cbs",
+        "fiscal",
+        "xforge-fiscal"
+      ],
+      "lines": 23,
+      "pack": "xforge-fiscal"
+    },
+    {
+      "domain": "pack",
+      "relevance": "medium",
+      "path": ".xforge\\knowledge\\packs\\xforge-fiscal\\nfe\\basics.md",
+      "summary": "From pack xforge-fiscal - 25 lines",
+      "category": "pack",
+      "keywords": [
+        "tags",
+        "nfe",
+        "fiscal",
+        "br",
+        "xforge-fiscal"
+      ],
+      "lines": 25,
+      "pack": "xforge-fiscal"
+    },
+    {
+      "domain": "pack",
+      "relevance": "medium",
+      "path": ".xforge\\knowledge\\packs\\xforge-fiscal\\sped\\efd-icms-ipi.md",
+      "summary": "From pack xforge-fiscal - 24 lines",
+      "category": "pack",
+      "keywords": [
+        "tags",
+        "sped",
+        "fiscal",
+        "icms",
+        "ipi",
+        "efd",
+        "xforge-fiscal"
+      ],
+      "lines": 24,
+      "pack": "xforge-fiscal"
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-accounting/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: accounting-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 23,
+      "pack": "xforge-accounting",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-accounting/plano/referencial.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: plano-contas-referencial",
+      "category": "pack",
+      "keywords": [],
+      "lines": 41,
+      "pack": "xforge-accounting",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-accounting/sped/ecd-ecf.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: ecd-ecf-prazos",
+      "category": "pack",
+      "keywords": [],
+      "lines": 34,
+      "pack": "xforge-accounting",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-agro/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: agro-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 24,
+      "pack": "xforge-agro",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-agro/custos.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: custos-agricolas",
+      "category": "pack",
+      "keywords": [],
+      "lines": 37,
+      "pack": "xforge-agro",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-agro/livr/lcpr-lcdpr.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: lcpr-lcdpr",
+      "category": "pack",
+      "keywords": [],
+      "lines": 28,
+      "pack": "xforge-agro",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-architecture/README.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Clean Architecture, DDD, Bounded Contexts, CQRS, Ports & Adapters no contexto XForge.",
+      "category": "pack",
+      "keywords": [
+        "architecture",
+        "ddd",
+        "clean-architecture",
+        "cqrs",
+        "ports-adapters",
+        "solid"
+      ],
+      "lines": 16,
+      "pack": "xforge-architecture",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-architecture/clean-architecture.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Camadas, regras de dependencia, organizacao de pastas.",
+      "category": "pack",
+      "keywords": [
+        "architecture",
+        "clean-architecture",
+        "ddd",
+        "solid",
+        "ports-adapters",
+        "dotnet"
+      ],
+      "lines": 115,
+      "pack": "xforge-architecture",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-architecture/cqrs-ports.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Padroes de Commands, Queries, Handlers e Ports no XForge.",
+      "category": "pack",
+      "keywords": [
+        "cqrs",
+        "xforge-mediatr",
+        "commands",
+        "queries",
+        "handlers",
+        "ports",
+        "adapters",
+        "validation"
+      ],
+      "lines": 89,
+      "pack": "xforge-architecture",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-architecture/ddd-bounded-contexts.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Como dividir dominios grandes em contextos independentes.",
+      "category": "pack",
+      "keywords": [
+        "ddd",
+        "bounded-context",
+        "context-map",
+        "anti-corruption-layer",
+        "shared-kernel",
+        "events"
+      ],
+      "lines": 69,
+      "pack": "xforge-architecture",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-banking/conciliacao.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"Conciliacao Bancaria Automatica\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 84,
+      "pack": "xforge-banking",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-banking/open-finance.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"Open Finance Brasil \\u2014 Visao Geral\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 55,
+      "pack": "xforge-banking",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-banking/pix.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"PIX \\u2014 SPI, DICT, QR Codes e Webhooks\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 64,
+      "pack": "xforge-banking",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-blazor/README.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Cobertura completa de Blazor no contexto XForge Enterprise Development OS.",
+      "category": "pack",
+      "keywords": [
+        "blazor",
+        "dotnet",
+        "frontend",
+        "ui",
+        "wasm",
+        "server",
+        "hybrid"
+      ],
+      "lines": 20,
+      "pack": "xforge-blazor",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-blazor/component-architecture.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Guia de design de componentes Blazor para apps enterprise.",
+      "category": "pack",
+      "keywords": [
+        "blazor",
+        "components",
+        "razor",
+        "lifecycle",
+        "performance",
+        "srp"
+      ],
+      "lines": 61,
+      "pack": "xforge-blazor",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-blazor/server-vs-webassembly.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Guia de decisao para escolher o modelo de hospedagem Blazor certo para cada cenario.",
+      "category": "pack",
+      "keywords": [
+        "blazor",
+        "server",
+        "webassembly",
+        "hybrid",
+        "maui",
+        "signalr",
+        "performance",
+        "architecture"
+      ],
+      "lines": 51,
+      "pack": "xforge-blazor",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-blazor/state-management.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Padroes para gerenciar estado em apps Blazor enterprise.",
+      "category": "pack",
+      "keywords": [
+        "blazor",
+        "state",
+        "cascadingparameter",
+        "fluxor",
+        "redux",
+        "persistence"
+      ],
+      "lines": 60,
+      "pack": "xforge-blazor",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-cnab/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "CNAB 240/400, remessa, retorno, boleto bancario, integracao bancaria.",
+      "category": "pack",
+      "keywords": [
+        "cnab",
+        "banco",
+        "boleto",
+        "br",
+        "integracao",
+        "pagamento",
+        "febraban"
+      ],
+      "lines": 15,
+      "pack": "xforge-cnab",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-cnab/boleto.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "Calculo do codigo de barras, linha digitavel e DAC.",
+      "category": "pack",
+      "keywords": [
+        "boleto",
+        "codigo-barras",
+        "dac",
+        "modulo-11",
+        "banco",
+        "br"
+      ],
+      "lines": 56,
+      "pack": "xforge-cnab",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-cnab/cnab-240.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "Layout padrao para troca de arquivos com bancos brasileiros.",
+      "category": "pack",
+      "keywords": [
+        "cnab",
+        "febraban",
+        "layout",
+        "banco",
+        "br",
+        "integracao"
+      ],
+      "lines": 50,
+      "pack": "xforge-cnab",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-cnab/cnab-400.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "Layout antigo, ainda usado por alguns bancos.",
+      "category": "pack",
+      "keywords": [
+        "cnab",
+        "febraban",
+        "layout",
+        "banco",
+        "legado",
+        "br"
+      ],
+      "lines": 29,
+      "pack": "xforge-cnab",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-commercial/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: commercial-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 22,
+      "pack": "xforge-commercial",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-commercial/crm/pipeline.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: crm-pipeline",
+      "category": "pack",
+      "keywords": [],
+      "lines": 31,
+      "pack": "xforge-commercial",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-commercial/vendas/ciclo-pedido.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: vendas-pedido",
+      "category": "pack",
+      "keywords": [],
+      "lines": 26,
+      "pack": "xforge-commercial",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-esocial/s-1000-iniciais.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"eSocial S-1000 Informacoes do Empregador\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 90,
+      "pack": "xforge-esocial",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-esocial/s-1200-folha.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"eSocial S-1200 Remuneracao Mensal\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 101,
+      "pack": "xforge-esocial",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-esocial/s-3000-sst.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"eSocial SST \\u2014 S-3000 Exclusao\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 112,
+      "pack": "xforge-esocial",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-finance/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: finance-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 21,
+      "pack": "xforge-finance",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-finance/contas/pagar-receber.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: contas-pagar-receber",
+      "category": "pack",
+      "keywords": [],
+      "lines": 32,
+      "pack": "xforge-finance",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-finance/fluxo/fluxo-caixa.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: fluxo-caixa",
+      "category": "pack",
+      "keywords": [],
+      "lines": 42,
+      "pack": "xforge-finance",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-fiscal/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: fiscal-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 17,
+      "pack": "xforge-fiscal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-fiscal/ibs-cbs/reforma.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: ibs-cbs-reforma",
+      "category": "pack",
+      "keywords": [],
+      "lines": 21,
+      "pack": "xforge-fiscal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-fiscal/nfe/basics.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: nfe-basics",
+      "category": "pack",
+      "keywords": [],
+      "lines": 23,
+      "pack": "xforge-fiscal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-fiscal/sped/efd-icms-ipi.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: sped-icms-ipi",
+      "category": "pack",
+      "keywords": [],
+      "lines": 22,
+      "pack": "xforge-fiscal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-fiscal-estados - icms por uf/details.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-xforge-fiscal-estados - icms por uf-details",
+      "category": "pack",
+      "keywords": [],
+      "lines": 15,
+      "pack": "xforge-fiscal-estados - icms por uf",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-fiscal-estados - icms por uf/overview.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-xforge-fiscal-estados - icms por uf-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 15,
+      "pack": "xforge-fiscal-estados - icms por uf",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-hr/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: hr-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 20,
+      "pack": "xforge-hr",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-hr/esocial/events.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: esocial-events",
+      "category": "pack",
+      "keywords": [],
+      "lines": 29,
+      "pack": "xforge-hr",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-hr/folha/calculo.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: folha-calculo",
+      "category": "pack",
+      "keywords": [],
+      "lines": 24,
+      "pack": "xforge-hr",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-investments/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: investments-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 25,
+      "pack": "xforge-investments",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-investments/compliance.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: compliance",
+      "category": "pack",
+      "keywords": [],
+      "lines": 37,
+      "pack": "xforge-investments",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-investments/renda-fixa/produtos.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: renda-fixa",
+      "category": "pack",
+      "keywords": [],
+      "lines": 43,
+      "pack": "xforge-investments",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-nfce - nfc-e varejo/details.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-xforge-nfce - nfc-e varejo-details",
+      "category": "pack",
+      "keywords": [],
+      "lines": 15,
+      "pack": "xforge-nfce - nfc-e varejo",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-nfce - nfc-e varejo/overview.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-xforge-nfce - nfc-e varejo-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 15,
+      "pack": "xforge-nfce - nfc-e varejo",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-nfse - nfs-e municipal/details.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-xforge-nfse - nfs-e municipal-details",
+      "category": "pack",
+      "keywords": [],
+      "lines": 15,
+      "pack": "xforge-nfse - nfs-e municipal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-nfse - nfs-e municipal/overview.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-xforge-nfse - nfs-e municipal-overview",
+      "category": "pack",
+      "keywords": [],
+      "lines": 15,
+      "pack": "xforge-nfse - nfs-e municipal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pagamentos-digitais/boleto.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-pagamentos-boleto",
+      "category": "pack",
+      "keywords": [],
+      "lines": 34,
+      "pack": "xforge-pagamentos-digitais",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pagamentos-digitais/cartao.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-pagamentos-cartao",
+      "category": "pack",
+      "keywords": [],
+      "lines": 39,
+      "pack": "xforge-pagamentos-digitais",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pagamentos-digitais/gateways-comparison.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-pagamentos-gateways",
+      "category": "pack",
+      "keywords": [],
+      "lines": 43,
+      "pack": "xforge-pagamentos-digitais",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pagamentos-digitais/pix.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "id: knowledge-pagamentos-pix",
+      "category": "pack",
+      "keywords": [],
+      "lines": 36,
+      "pack": "xforge-pagamentos-digitais",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pix/README.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "Integracao PIX + Open Finance no contexto XForge.",
+      "category": "pack",
+      "keywords": [
+        "pix",
+        "open-finance",
+        "pagamento",
+        "integracao",
+        "webhook",
+        "mtls"
+      ],
+      "lines": 16,
+      "pack": "xforge-pix",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pix/open-finance.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "Visao geral do Open Finance Brasil e integracao com ecossistema.",
+      "category": "pack",
+      "keywords": [
+        "open-finance",
+        "br",
+        "oauth",
+        "mtls",
+        "integracao",
+        "lgpd",
+        "consent"
+      ],
+      "lines": 43,
+      "pack": "xforge-pix",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pix/pix-pad.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "Guia de integracao com a API padrao PIX do Banco Central do Brasil.",
+      "category": "pack",
+      "keywords": [
+        "pix",
+        "bcb",
+        "mtls",
+        "oauth",
+        "integracao",
+        "br"
+      ],
+      "lines": 53,
+      "pack": "xforge-pix",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-pix/webhook-handling.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "Padroes para receber e processar webhooks PIX com seguranca.",
+      "category": "pack",
+      "keywords": [
+        "pix",
+        "webhook",
+        "idempotencia",
+        "signature",
+        "mtls",
+        "br"
+      ],
+      "lines": 66,
+      "pack": "xforge-pix",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-sped-fiscal/ecd-ecf.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"ECD e ECF \\u2014 Escrituracoes Contabeis Digitais\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 141,
+      "pack": "xforge-sped-fiscal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-sped-fiscal/efd-contribuicoes.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"EFD Contribuicoes \\u2014 PIS COFINS\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 92,
+      "pack": "xforge-sped-fiscal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-sped-fiscal/efd-icms-ipi.md",
+      "domain": "pack",
+      "relevance": "medium",
+      "summary": "title: \"EFD ICMS IPI \\u2014 SPED Fiscal\"",
+      "category": "pack",
+      "keywords": [],
+      "lines": 90,
+      "pack": "xforge-sped-fiscal",
+      "trustScore": 90
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-testing/README.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Stack de testes padrao XForge: xUnit, FluentAssertions, Moq, Testcontainers, Bogus.",
+      "category": "pack",
+      "keywords": [
+        "testing",
+        "xunit",
+        "moq",
+        "fluentassertions",
+        "testcontainers",
+        "coverage"
+      ],
+      "lines": 19,
+      "pack": "xforge-testing",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-testing/integration-tests.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Padroes para testes de integracao reais com Docker.",
+      "category": "pack",
+      "keywords": [
+        "testing",
+        "testcontainers",
+        "docker",
+        "postgres",
+        "redis",
+        "rabbitmq",
+        "integration"
+      ],
+      "lines": 66,
+      "pack": "xforge-testing",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-testing/property-based.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Testes baseados em propriedades: gere inputs aleatorios e verifique invariantes.",
+      "category": "pack",
+      "keywords": [
+        "testing",
+        "property-based",
+        "hypothesis",
+        "fscheck",
+        "dotnet"
+      ],
+      "lines": 59,
+      "pack": "xforge-testing",
+      "trustScore": 88
+    },
+    {
+      "path": ".xforge/knowledge/packs/xforge-testing/unit-tests.md",
+      "domain": "pack",
+      "relevance": "high",
+      "summary": "Padrao XForge para testes unitarios em .NET.",
+      "category": "pack",
+      "keywords": [
+        "testing",
+        "xunit",
+        "moq",
+        "fluentassertions",
+        "aaa",
+        "faker",
+        "dotnet"
+      ],
+      "lines": 58,
+      "pack": "xforge-testing",
+      "trustScore": 88
+    }
+  ],
+  "areas": {
+    "fiscal": {
+      "name": "Fiscal/Tributario",
+      "description": "ICMS, NFe, SPED",
+      "entries": 25
+    },
+    "trabalhista": {
+      "name": "Trabalhista",
+      "description": "CLT, FGTS, INSS",
+      "entries": 20
+    },
+    "contabil": {
+      "name": "Contabil",
+      "description": "ECD, ECF, DRE",
+      "entries": 9
+    },
+    "rh": {
+      "name": "RH/DP",
+      "description": "Folha, ponto",
+      "entries": 5
+    },
+    "financeiro": {
+      "name": "Financeiro",
+      "description": "Fluxo caixa",
+      "entries": 10
+    },
+    "comercial": {
+      "name": "Comercial/CRM",
+      "description": "Leads, pedidos",
+      "entries": 1
+    },
+    "estoque": {
+      "name": "Estoque",
+      "description": "Kardex",
+      "entries": 4
+    },
+    "pix": {
+      "name": "PIX",
+      "description": "PIX API",
+      "entries": 2
+    },
+    "lgpd": {
+      "name": "LGPD",
+      "description": "Privacidade",
+      "entries": 9
+    },
+    "seguranca": {
+      "name": "Seguranca",
+      "description": "OWASP, auth",
+      "entries": 4
+    },
+    "arquitetura": {
+      "name": "Arquitetura",
+      "description": "DDD, SOLID",
+      "entries": 2
+    },
+    "devops": {
+      "name": "DevOps",
+      "description": "CI/CD",
+      "entries": 1
+    },
+    "qualidade": {
+      "name": "Qualidade/Testes",
+      "description": "Unit, e2e",
+      "entries": 1
+    },
+    "documentacao": {
+      "name": "Documentacao",
+      "description": "SDD, ADR",
+      "entries": 8
+    },
+    "compliance": {
+      "name": "Compliance",
+      "description": "SOX, ISO",
+      "entries": 2
+    }
+  },
+  "areaCount": 15,
+  "lastUpdated": "2026-06-18T04:43:00Z"
+}

@@ -1,0 +1,13 @@
+#!/bin/sh
+# XForge pre-push hook: runs RAG health check
+# Install: git config core.hooksPath .githooks
+
+echo "XForge pre-push: checking RAG health..."
+if [ -f ".kilo/automation/scripts/rag/rag_local.py" ]; then
+    python .kilo/automation/scripts/rag/rag_local.py status
+    if [ $? -ne 0 ]; then
+        echo "WARN: RAG health check failed. Reindex recommended."
+    fi
+fi
+echo "Pre-push checks complete."
+exit 0

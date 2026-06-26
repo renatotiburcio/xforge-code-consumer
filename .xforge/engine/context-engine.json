@@ -1,0 +1,17 @@
+﻿{
+  "name": "xforge-context-engine",
+  "version": "1.0.0",
+  "stages": [
+    {"id": 1, "name": "intent_analysis", "tool": "route_provider", "latencyMs": 50, "output": "intent"},
+    {"id": 2, "name": "workflow_selection", "tool": "search_knowledge", "latencyMs": 100, "output": "workflow"},
+    {"id": 3, "name": "knowledge_retrieval", "tool": "search_knowledge", "latencyMs": 300, "output": "knowledge_chunks"},
+    {"id": 4, "name": "memory_retrieval", "tool": "recall", "latencyMs": 200, "output": "memory_context"},
+    {"id": 5, "name": "rag_retrieval", "tool": "rag_query", "latencyMs": 500, "output": "rag_chunks", "modes": ["lexical","vector","graph","hybrid"]},
+    {"id": 6, "name": "project_analysis", "tool": "read_file", "latencyMs": 100, "output": "project_context"},
+    {"id": 7, "name": "context_compression", "tool": "summarize", "latencyMs": 300, "triggers": [{"at": "80pct", "action": "evict"}, {"at": "90pct", "action": "summarize"}, {"at": "95pct", "action": "truncate"}, {"at": "98pct", "action": "compact"}]},
+    {"id": 8, "name": "prompt_assembly", "tool": null, "latencyMs": 50, "output": "prompt"},
+    {"id": 9, "name": "llm", "tool": "route_provider", "latencyMs": 5000, "output": "response", "providers": ["local","cloud-standard","premium"]},
+    {"id": 10, "name": "post_execution", "tools": ["validate","memorize","snapshot","emit_event"], "latencyMs": 200}
+  ],
+  "totals": {"maxLatencyMs": 6800, "tokensSavedByCompression": 0.30}
+}

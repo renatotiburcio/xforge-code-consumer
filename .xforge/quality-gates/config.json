@@ -1,0 +1,50 @@
+﻿{
+  "version": "2.0.0",
+  "stages": [
+    {
+      "id": "pre-commit",
+      "name": "Pre-Commit",
+      "maxLatencySec": 2,
+      "checks": [
+        {"name": "format", "command": "dotnet format --verify-no-changes", "severity": "error"},
+        {"name": "lint", "command": "dotnet format style --verify-no-changes", "severity": "error"},
+        {"name": "secrets", "command": "gitleaks protect --staged", "severity": "critical"},
+        {"name": "self-healing", "rules": ["SH-001","SH-002","SH-003","SH-004","SH-005","SH-007","SH-008"], "severity": "high"}
+      ]
+    },
+    {
+      "id": "pre-build",
+      "name": "Pre-Build",
+      "maxLatencySec": 30,
+      "checks": [
+        {"name": "restore", "command": "dotnet restore", "severity": "error"},
+        {"name": "build", "command": "dotnet build --no-restore", "severity": "error"},
+        {"name": "warnings", "command": "dotnet build -warnaserror", "severity": "error"},
+        {"name": "async-safety", "rules": ["SH-005","SH-010"], "severity": "high"}
+      ]
+    },
+    {
+      "id": "pre-push",
+      "name": "Pre-Push",
+      "maxLatencySec": 60,
+      "checks": [
+        {"name": "unit-tests", "command": "dotnet test --no-build", "severity": "error"},
+        {"name": "coverage", "command": "dotnet test --collect:XPlat Code Coverage", "minimum": 85, "severity": "error"},
+        {"name": "security-scan", "command": "dotnet list package --vulnerable", "severity": "critical"},
+        {"name": "xfs-score", "minimum": 0.80, "severity": "error"}
+      ]
+    },
+    {
+      "id": "post-merge",
+      "name": "Post-Merge",
+      "maxLatencySec": 300,
+      "checks": [
+        {"name": "full-build", "command": "dotnet build", "severity": "error"},
+        {"name": "full-tests", "command": "dotnet test", "severity": "error"},
+        {"name": "integration-tests", "command": "dotnet test --filter Category=Integration", "severity": "error"},
+        {"name": "docker-build", "command": "docker build", "severity": "error"},
+        {"name": "audit-trail", "command": "audit-verify", "severity": "high"}
+      ]
+    }
+  ]
+}

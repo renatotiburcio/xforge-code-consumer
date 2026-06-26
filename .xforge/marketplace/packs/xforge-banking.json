@@ -1,0 +1,20 @@
+{
+    "id":  "xforge-banking",
+    "name":  "Banking BR",
+    "version":  "1.0.0",
+    "description":  "Open Finance Brasil, PIX (SPI, DICT, QR), CNAB 240/400, conciliacao bancaria automatica",
+    "files":  3,
+    "trustScore":  78,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "banking",
+                 "open-finance",
+                 "pix",
+                 "cnab"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/banking/"
+}

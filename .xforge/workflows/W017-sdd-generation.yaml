@@ -1,0 +1,23 @@
+id: W017
+name: sdd-generation
+version: 1.0.0
+description: Geracao focada de SDD a partir de requisitos existentes
+type: focused
+agent: fullstack-analysis-architect
+estimatedDuration: 2h
+entrypoint: S0
+terminalStates: [DONE, BLOCKED]
+states: [S0, S1, S2, S3, DONE, BLOCKED]
+transitions:
+  - {from: S0, to: S1, event: onSuccess}
+  - {from: S1, to: S2, event: onSuccess}
+  - {from: S2, to: S3, event: onSuccess}
+  - {from: S2, to: BLOCKED, event: onFailure}
+  - {from: S3, to: DONE, event: onSuccess}
+  - {from: S3, to: BLOCKED, event: onFailure}
+metadata:
+  states:
+    S0: {description: Coleta requirements, architecture, data-model, api-contract}
+    S1: {agent: sdd-author, output: sdd-draft.md}
+    S2: {agent: gap-detector, gate: clarityScore >= 80}
+    S3: {description: Aprovacao humana obrigatoria, gate: humanApproval == true}

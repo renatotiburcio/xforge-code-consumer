@@ -1,0 +1,19 @@
+{
+  "slug": "rust-actix",
+  "description": "Rust 1.83 + Actix-web 4 + sqlx + Tokio",
+  "tags": [
+    "rust",
+    "api"
+  ],
+  "skills": [
+    "rust-modern",
+    "testing-qa-expert",
+    "data-protection-lgpd-expert"
+  ],
+  "files": [
+    "Cargo.toml",
+    "src/main.rs",
+    ".gitignore",
+    "README.md"
+  ]
+}

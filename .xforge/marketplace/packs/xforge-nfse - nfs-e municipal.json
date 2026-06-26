@@ -1,0 +1,16 @@
+{
+  "name": "xforge-nfse - nfs-e municipal",
+  "version": "1.0.0",
+  "author": "Renato Tiburcio",
+  "trustScore": 82,
+  "tags": [],
+  "domain": "fiscal",
+  "description": "NFS-e municipal - layouts, validacoes, integracao com prefeituras",
+  "files": [
+    "overview.md",
+    "details.md"
+  ],
+  "dependencies": [],
+  "kbVersion": "1.0",
+  "lastUpdated": "2026-06-13"
+}

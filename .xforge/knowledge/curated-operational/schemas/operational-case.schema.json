@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "XForge Operational Case",
+  "type": "object",
+  "required": [
+    "id",
+    "domain",
+    "title",
+    "status",
+    "trustScore",
+    "sources",
+    "diagnosis",
+    "recommendedActions"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "documentType": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "official",
+        "validated",
+        "community-hint",
+        "draft",
+        "needs-validation",
+        "deprecated"
+      ]
+    },
+    "trustScore": {
+      "type": "integer"
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "symptoms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diagnosis": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendedActions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prevention": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "edgeCases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ufBehavior": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "humanReviewRequired": {
+      "type": "boolean"
+    }
+  }
+}

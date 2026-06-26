@@ -1,0 +1,291 @@
+{
+  "version": "1.0.0",
+  "description": "Fontes oficiais monitoradas pelo XForge Engineer para manter conhecimento atualizado",
+  "lastCheck": null,
+  "checkFrequency": "weekly",
+  "sources": {
+    "fiscal": {
+      "receita-federal": {
+        "name": "Receita Federal do Brasil",
+        "urls": [
+          "https://www.gov.br/receitafederal/pt-br",
+          "https://www.gov.br/receitafederal/pt-br/assuntos/orientacao-tributaria"
+        ],
+        "checkFor": ["tabelas-irrf", "tabelas-inss", "simples-nacional", "lucro-presumido"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "esocial": {
+        "name": "eSocial",
+        "urls": [
+          "https://www.esocial.gov.br",
+          "https://www.gov.br/esocial/pt-br"
+        ],
+        "checkFor": ["eventos", "prazos", "tabelas", "-layouts"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "sped": {
+        "name": "Portal SPED",
+        "urls": [
+          "https://sped.fazenda.gov.br",
+          "https://www.sped.fazenda.gov.br"
+        ],
+        "checkFor": ["layouts", "validadores", "manuais"],
+        "frequency": "quarterly",
+        "lastUpdate": null
+      },
+      "sefaz": {
+        "name": "SEFAZ dos Estados",
+        "urls": [
+          "https://www.sefaz.rs.gov.br",
+          "https://www.sefaz.sp.gov.br",
+          "https://www.fazenda.mg.gov.br"
+        ],
+        "checkFor": ["nfe", "nfce", "cte", "mdfe", "schemas"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "encat": {
+        "name": "ENCAT",
+        "urls": ["https://www.encat.org.br"],
+        "checkFor": ["simples-nacional", "regulamentos"],
+        "frequency": "quarterly",
+        "lastUpdate": null
+      },
+      "comite-simples": {
+        "name": "Comitê Gestor do Simples Nacional",
+        "urls": ["https://www12.receita.fazenda.gov.br/SimplesNacional/"],
+        "checkFor": ["tabelas", "faixas", "fator-r"],
+        "frequency": "annual",
+        "lastUpdate": null
+      }
+    },
+    "trabalhista": {
+      "ministerio-trabalho": {
+        "name": "Ministério do Trabalho e Emprego",
+        "urls": ["https://www.gov.br/trabalho-e-emprego/pt-br"],
+        "checkFor": ["salario-minimo", "cct", "legislacao"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "inss": {
+        "name": "INSS",
+        "urls": ["https://www.gov.br/inss/pt-br"],
+        "checkFor": ["tabelas-beneficios", "aliquotas", "teto"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "caixa": {
+        "name": "Caixa Econômica Federal",
+        "urls": ["https://www.caixa.gov.br"],
+        "checkFor": ["fgts", "sac-fgts"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      }
+    },
+    "contabilidade": {
+      "cfc": {
+        "name": "Conselho Federal de Contabilidade",
+        "urls": ["https://cfc.org.br"],
+        "checkFor": ["cpcs", "normas", "resolucoes"],
+        "frequency": "quarterly",
+        "lastUpdate": null
+      },
+      "ifrs": {
+        "name": "IFRS Foundation",
+        "urls": ["https://www.ifrs.org", "https://ifrs.org/issued-standards/list-of-standards/"],
+        "checkFor": ["novas-normas", "emendas"],
+        "frequency": "quarterly",
+        "lastUpdate": null
+      }
+    },
+    "dotnet": {
+      "microsoft-docs": {
+        "name": "Microsoft Docs",
+        "urls": [
+          "https://docs.microsoft.com/dotnet",
+          "https://docs.microsoft.com/aspnet/core",
+          "https://docs.microsoft.com/ef/core",
+          "https://docs.microsoft.com/dotnet/maui"
+        ],
+        "checkFor": ["novas-versoes", "breaking-changes", "features"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "github-dotnet": {
+        "name": "GitHub .NET",
+        "urls": [
+          "https://github.com/dotnet/core/releases",
+          "https://github.com/dotnet/efcore/releases",
+          "https://github.com/dotnet/aspnetcore/releases"
+        ],
+        "checkFor": ["releases", "cve", "breaking-changes"],
+        "frequency": "weekly",
+        "lastUpdate": null
+      },
+      "nuget": {
+        "name": "NuGet",
+        "urls": ["https://www.nuget.org"],
+        "checkFor": ["versoes", "vulnerabilidades"],
+        "frequency": "weekly",
+        "lastUpdate": null
+      }
+    },
+    "frameworks": {
+      "hangfire": {
+        "name": "Hangfire",
+        "urls": ["https://github.com/HangfireIO/Hangfire/releases"],
+        "checkFor": ["releases"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "mediatr": {
+        "name": "MediatR",
+        "urls": ["https://github.com/jbogard/MediatR/releases"],
+        "checkFor": ["releases"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "fluentvalidation": {
+        "name": "FluentValidation",
+        "urls": ["https://github.com/FluentValidation/FluentValidation/releases"],
+        "checkFor": ["releases"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "automapper": {
+        "name": "AutoMapper",
+        "urls": ["https://github.com/AutoMapper/AutoMapper/releases"],
+        "checkFor": ["releases"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      }
+    },
+    "security": {
+      "owasp": {
+        "name": "OWASP",
+        "urls": [
+          "https://owasp.org/www-project-top-ten/",
+          "https://owasp.org/www-project-application-security-verification-standard/"
+        ],
+        "checkFor": ["top-10", "asvs", "cheatsheets"],
+        "frequency": "quarterly",
+        "lastUpdate": null
+      },
+      "nvd": {
+        "name": "NIST NVD",
+        "urls": ["https://nvd.nist.gov"],
+        "checkFor": ["cve", "vulnerabilidades"],
+        "frequency": "daily",
+        "lastUpdate": null
+      },
+      "cve": {
+        "name": "CVE Details",
+        "urls": ["https://www.cvedetails.com"],
+        "checkFor": ["dotnet", "aspnet", "efcore"],
+        "frequency": "weekly",
+        "lastUpdate": null
+      }
+    },
+    "databases": {
+      "postgresql": {
+        "name": "PostgreSQL",
+        "urls": ["https://www.postgresql.org/docs/", "https://www.postgresql.org/support/security/"],
+        "checkFor": ["releases", "security"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "mysql": {
+        "name": "MySQL",
+        "urls": ["https://dev.mysql.com/doc/"],
+        "checkFor": ["releases", "security"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "redis": {
+        "name": "Redis",
+        "urls": ["https://redis.io/docs/"],
+        "checkFor": ["releases", "commands"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      }
+    },
+    "azure": {
+      "azure-docs": {
+        "name": "Azure Docs",
+        "urls": [
+          "https://docs.microsoft.com/azure",
+          "https://docs.microsoft.com/azure/app-service",
+          "https://docs.microsoft.com/azure/azure-functions"
+        ],
+        "checkFor": ["updates", "new-services"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "azure-updates": {
+        "name": "Azure Updates",
+        "urls": ["https://azure.microsoft.com/en-us/updates/"],
+        "checkFor": ["new-features", "deprecations"],
+        "frequency": "weekly",
+        "lastUpdate": null
+      }
+    },
+    "legislacao": {
+      "planalto": {
+        "name": "Planalto - Legislação",
+        "urls": [
+          "https://www.planalto.gov.br/ccivil_03/",
+          "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/"
+        ],
+        "checkFor": ["novas-leis", "emendas"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "diario-oficial": {
+        "name": "Diário Oficial da União",
+        "urls": ["https://www.in.gov.br/"],
+        "checkFor": ["legislacao", "regulamentacao"],
+        "frequency": "weekly",
+        "lastUpdate": null
+      }
+    },
+    "concorrentes": {
+      "conta-azul": {
+        "name": "Conta Azul",
+        "urls": ["https://contaazul.com/funcionalidades/", "https://contaazul.com/planos/"],
+        "checkFor": ["novas-funcionalidades", "precos", "integracoes"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "totvs": {
+        "name": "TOTVS",
+        "urls": ["https://www.totvs.com/sistema-de-gestao/", "https://produtos.totvs.com/"],
+        "checkFor": ["novos-modulos", "reforma-tributaria", "precos"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "omie": {
+        "name": "Omie",
+        "urls": ["https://omie.com.br/funcionalidades/", "https://omie.com.br/planos/"],
+        "checkFor": ["novas-funcionalidades", "precos"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "dominio": {
+        "name": "Domínio",
+        "urls": ["https://www.dominioweb.com.br/"],
+        "checkFor": ["novas-funcionalidades", "atualizacoes"],
+        "frequency": "monthly",
+        "lastUpdate": null
+      },
+      "senior": {
+        "name": "Senior",
+        "urls": ["https://www.senior.com.br/"],
+        "checkFor": ["novos-modulos", "precos"],
+        "frequency": "quarterly",
+        "lastUpdate": null
+      }
+    }
+  }
+}

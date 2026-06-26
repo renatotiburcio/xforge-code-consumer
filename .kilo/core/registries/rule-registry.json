@@ -1,0 +1,400 @@
+{
+    "rules":  [
+                  {
+                      "id":  "00-xforge-rule-index",
+                      "name":  "00-xforge-rule-index",
+                      "title":  "00-xforge-rule-index",
+                      "description":  "Guia rápido para encontrar a rule correta. O agente deve ler este arquivo PRIMEIRO antes de carregar qualquer rule.",
+                      "path":  ".kilo/rules/00-xforge-rule-index.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "01-xforge-golden-rules",
+                      "name":  "01-xforge-golden-rules",
+                      "title":  "01-xforge-golden-rules",
+                      "description":  "O sistema NAO assume stack. Cada projeto tem seu proprio stack.",
+                      "path":  ".kilo/rules/01-xforge-golden-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "02-genius-council-framework",
+                      "name":  "02-genius-council-framework",
+                      "title":  "02-genius-council-framework",
+                      "description":  "\u003e **Precedencia**: esta regra tem prioridade sobre todas as outras regras, comandos, agentes, skills, workflows e decisoes. Qualquer excecao deve ser registrada como ADR especial com prazo de validade.",
+                      "path":  ".kilo/rules/02-genius-council-framework.md",
+                      "type":  "rule",
+                      "category":  "DevOps"
+                  },
+                  {
+                      "id":  "active-project-root-rules",
+                      "name":  "active-project-root-rules",
+                      "title":  "active-project-root-rules",
+                      "description":  "\u003e **DR-0180**: Stack-agnostic. O sistema NAO assume stack. Cada novo projeto tem seu proprio stack, detectado por sinais do projeto ativo.",
+                      "path":  ".kilo/rules/active-project-root-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "audit-trail-rules",
+                      "name":  "audit-trail-rules",
+                      "title":  "audit-trail-rules",
+                      "description":  "Toda mudanÃ§a relevante deve registrar:",
+                      "path":  ".kilo/rules/audit-trail-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "auto-discover-macros",
+                      "name":  "auto-discover-macros",
+                      "title":  "auto-discover-macros",
+                      "description":  "\u003e Regra institucional: o template aprende com uso. Detecta chains recorrentes e SUGERE criar macros. Nunca cria sem consentimento explÃ­cito do usuÃ¡rio.",
+                      "path":  ".kilo/rules/auto-discover-macros.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "autonomous-experiment-loop",
+                      "name":  "autonomous-experiment-loop",
+                      "title":  "autonomous-experiment-loop",
+                      "description":  "Inspirado no [karpathy/autoresearch](https://github.com/karpathy/autoresearch). O agente roda um loop autÃ´nomo de experimentos: tenta uma mudanÃ§a, mede o resultado, keeps ou discards, e repete. O humano programe o agente (program.md), o agente executa.",
+                      "path":  ".kilo/rules/autonomous-experiment-loop.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "auto-retry-recovery",
+                      "name":  "auto-retry-recovery",
+                      "title":  "auto-retry-recovery",
+                      "description":  "Quando o agente encontra um erro durante execuÃ§Ã£o, ele deve tentar se recuperar automaticamente antes de parar. Este sistema define o fluxo de recuperaÃ§Ã£o.",
+                      "path":  ".kilo/rules/auto-retry-recovery.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "checkpoint-resume",
+                      "name":  "checkpoint-resume",
+                      "title":  "checkpoint-resume",
+                      "description":  "Quando o contexto atinge o limite mesmo apÃ³s compactaÃ§Ã£o, o agente salva um **checkpoint** com o estado completo da tarefa e continua em uma nova sessÃ£o. Isso permite tarefas ilimitadas que excedem qualquer janela de contexto.",
+                      "path":  ".kilo/rules/checkpoint-resume.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "cost-rules",
+                      "name":  "cost-rules",
+                      "title":  "cost-rules",
+                      "description":  "Uso de providers pagos deve registrar:",
+                      "path":  ".kilo/rules/cost-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "curation-rules",
+                      "name":  "curation-rules",
+                      "title":  "curation-rules",
+                      "description":  "Curadoria de memÃ³ria e conhecimento Ã© obrigatÃ³ria e contÃ­nua.",
+                      "path":  ".kilo/rules/curation-rules.md",
+                      "type":  "rule",
+                      "category":  "Conhecimento e MemÃ³ria"
+                  },
+                  {
+                      "id":  "dependency-intelligence",
+                      "name":  "dependency-intelligence",
+                      "title":  "dependency-intelligence",
+                      "description":  "Monitoramento proativo de TODAS as dependencias do projeto, independente de stack. Detecta CVEs, atualizacoes, breaking changes, e incompatibilidades para .NET, Node, Python, Go, Rust, Java, e outros.",
+                      "path":  ".kilo/rules/dependency-intelligence.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "diagram-quality-rules",
+                      "name":  "diagram-quality-rules",
+                      "title":  "diagram-quality-rules",
+                      "description":  "- Max 15 nos por diagrama",
+                      "path":  ".kilo/rules/diagram-quality-rules.md",
+                      "type":  "rule",
+                      "category":  "Qualidade"
+                  },
+                  {
+                      "id":  "documentation-clarity-rules",
+                      "name":  "documentation-clarity-rules",
+                      "title":  "documentation-clarity-rules",
+                      "description":  "- Verbos no infinitivo: Criar, Validar, Calcular",
+                      "path":  ".kilo/rules/documentation-clarity-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "enterprise-architecture-rules",
+                      "name":  "enterprise-architecture-rules",
+                      "title":  "enterprise-architecture-rules",
+                      "description":  "Arquitetura enterprise exige disciplina, desacoplamento e rastreabilidade.",
+                      "path":  ".kilo/rules/enterprise-architecture-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "event-bus-rules",
+                      "name":  "event-bus-rules",
+                      "title":  "event-bus-rules",
+                      "description":  "Eventos obrigatÃ³rios:",
+                      "path":  ".kilo/rules/event-bus-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "fullstack-analysis-rules",
+                      "name":  "fullstack-analysis-rules",
+                      "title":  "fullstack-analysis-rules",
+                      "description":  "Padronizar a analise e documentacao de sistemas fullstack para que qualquer agente implemente sem ambiguidade.",
+                      "path":  ".kilo/rules/fullstack-analysis-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "handoff-readiness-rules",
+                      "name":  "handoff-readiness-rules",
+                      "title":  "handoff-readiness-rules",
+                      "description":  "- Clarity score \u003c 80",
+                      "path":  ".kilo/rules/handoff-readiness-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "human-review-rules",
+                      "name":  "human-review-rules",
+                      "title":  "human-review-rules",
+                      "description":  "Exigir aprovaÃ§Ã£o humana para:",
+                      "path":  ".kilo/rules/human-review-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "immutable-scoring",
+                      "name":  "immutable-scoring",
+                      "title":  "immutable-scoring",
+                      "description":  "Sistema de pontuacao que o agente **NAO pode modificar ou manipular**. A pontuacao eh calculada por um processo externo (validador) que o agente nao controla. A unica excecao eh quando o humano solicita alteracao explicitamente.",
+                      "path":  ".kilo/rules/immutable-scoring.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "interaction-intelligence",
+                      "name":  "interaction-intelligence",
+                      "title":  "interaction-intelligence",
+                      "description":  "Cinco sistemas que governam como o agente interage com o humano: pergunta antes de agir, apresenta opÃ§Ãµes, confirma resultados, coleta contexto e sugere melhorias.",
+                      "path":  ".kilo/rules/interaction-intelligence.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "knowledge-rules",
+                      "name":  "knowledge-rules",
+                      "title":  "knowledge-rules",
+                      "description":  "Todo conhecimento deve ter origem, confianÃ§a e rastreabilidade.",
+                      "path":  ".kilo/rules/knowledge-rules.md",
+                      "type":  "rule",
+                      "category":  "Conhecimento e MemÃ³ria"
+                  },
+                  {
+                      "id":  "legacy-import-rules",
+                      "name":  "legacy-import-rules",
+                      "title":  "legacy-import-rules",
+                      "description":  "1. ConteÃºdo legado nunca entra direto no Engineer atual.",
+                      "path":  ".kilo/rules/legacy-import-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "loop-discipline",
+                      "name":  "loop-discipline",
+                      "title":  "loop-discipline",
+                      "description":  "\u003e **Precedence**: this rule augments (does not replace) the existing autonomous-experiment-loop and research-document-execute rules. When a conflict appears, this rule wins because it codifies a real failure mode (FB-001).",
+                      "path":  ".kilo/rules/loop-discipline.md",
+                      "type":  "rule",
+                      "category":  "DevOps"
+                  },
+                  {
+                      "id":  "manual-sync-rules",
+                      "name":  "manual-sync-rules",
+                      "title":  "manual-sync-rules",
+                      "description":  "Toda mudanca significativa no Engineer DEVE ser verificada contra o manual canonico em `docs/`.",
+                      "path":  ".kilo/rules/manual-sync-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "memory-namespace",
+                      "name":  "memory-namespace",
+                      "title":  "memory-namespace",
+                      "description":  "id: memory-namespace",
+                      "path":  ".kilo/rules/memory-namespace.md",
+                      "type":  "rule",
+                      "category":  "Conhecimento e MemÃ³ria"
+                  },
+                  {
+                      "id":  "multi-agent-orchestration",
+                      "name":  "multi-agent-orchestration",
+                      "title":  "multi-agent-orchestration",
+                      "description":  "Quando uma tarefa Ã© complexa o suficiente, o sistema coordena mÃºltiplos agentes trabalhando em paralelo. Um **Orchestrator** coordena, e agentes especializados executam suas partes.",
+                      "path":  ".kilo/rules/multi-agent-orchestration.md",
+                      "type":  "rule",
+                      "category":  "OrquestraÃ§Ã£o"
+                  },
+                  {
+                      "id":  "policy-rules",
+                      "name":  "policy-rules",
+                      "title":  "policy-rules",
+                      "description":  "PolÃ­ticas sÃ£o obrigatÃ³rias antes da execuÃ§Ã£o.",
+                      "path":  ".kilo/rules/policy-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "proactive-intelligence",
+                      "name":  "proactive-intelligence",
+                      "title":  "proactive-intelligence",
+                      "description":  "O agente XForge nÃ£o Ã© apenas reativo â€” ele analisa o contexto e sugere aÃ§Ãµes preventivas antes que problemas aconteÃ§am. Baseado no grafo de erros (errors-solutions-graph.json) e no padrÃ£o de trabalho do usuÃ¡rio.",
+                      "path":  ".kilo/rules/proactive-intelligence.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "proactive-quality-gates",
+                      "name":  "proactive-quality-gates",
+                      "title":  "proactive-quality-gates",
+                      "description":  "Quality gates automaticos stack-aware que rodam silenciosamente a cada mudanca de codigo, sem intervencao manual. Antes de qualquer gate, o sistema DETECTA o stack do projeto e roda os comandos apropriados.",
+                      "path":  ".kilo/rules/proactive-quality-gates.md",
+                      "type":  "rule",
+                      "category":  "Qualidade"
+                  },
+                  {
+                      "id":  "promotion-rules",
+                      "name":  "promotion-rules",
+                      "title":  "promotion-rules",
+                      "description":  "Pipeline:",
+                      "path":  ".kilo/rules/promotion-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "provider-routing-rules",
+                      "name":  "provider-routing-rules",
+                      "title":  "provider-routing-rules",
+                      "description":  "- Default: ollama/llama3 (local, no token cost, 128k context)",
+                      "path":  ".kilo/rules/provider-routing-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "rbac-rules",
+                      "name":  "rbac-rules",
+                      "title":  "rbac-rules",
+                      "description":  "AÃ§Ãµes crÃ­ticas exigem permissÃ£o:",
+                      "path":  ".kilo/rules/rbac-rules.md",
+                      "type":  "rule",
+                      "category":  "SeguranÃ§a"
+                  },
+                  {
+                      "id":  "release-immutability",
+                      "name":  "release-immutability",
+                      "title":  "release-immutability",
+                      "description":  "id: release-immutability",
+                      "path":  ".kilo/rules/release-immutability.md",
+                      "type":  "rule",
+                      "category":  "DevOps"
+                  },
+                  {
+                      "id":  "research-document-execute",
+                      "name":  "research-document-execute",
+                      "title":  "research-document-execute",
+                      "description":  "Sistema de duas fases com LOOP OBRIGATÃ“RIO:",
+                      "path":  ".kilo/rules/research-document-execute.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "sdd-authoring-rules",
+                      "name":  "sdd-authoring-rules",
+                      "title":  "sdd-authoring-rules",
+                      "description":  "1. Metadata",
+                      "path":  ".kilo/rules/sdd-authoring-rules.md",
+                      "type":  "rule",
+                      "category":  "SeguranÃ§a"
+                  },
+                  {
+                      "id":  "security-rules",
+                      "name":  "security-rules",
+                      "title":  "security-rules",
+                      "description":  "- segredos nunca devem ir para memÃ³ria pÃºblica;",
+                      "path":  ".kilo/rules/security-rules.md",
+                      "type":  "rule",
+                      "category":  "SeguranÃ§a"
+                  },
+                  {
+                      "id":  "self-healing-rules",
+                      "name":  "self-healing-rules",
+                      "title":  "self-healing-rules",
+                      "description":  "Regras de correÃ§Ã£o automÃ¡tica que detectam e corrigem problemas comuns sem intervenÃ§Ã£o humana. Rodam como prÃ©-checks antes de commit, build e deploy.",
+                      "path":  ".kilo/rules/self-healing-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "self-learning-genius",
+                      "name":  "self-learning-genius",
+                      "title":  "self-learning-genius",
+                      "description":  "\u003e Regra institucional: cada Genius aprende continuamente com novo conhecimento que entra no sistema.",
+                      "path":  ".kilo/rules/self-learning-genius.md",
+                      "type":  "rule",
+                      "category":  "Conhecimento e MemÃ³ria"
+                  },
+                  {
+                      "id":  "session-memory",
+                      "name":  "session-memory",
+                      "title":  "session-memory",
+                      "description":  "Sistema de memÃ³ria de longo prazo que persiste preferÃªncias, decisÃµes e padrÃµes do usuÃ¡rio entre sessÃµes. Quando o usuÃ¡rio retorna, o sistema jÃ¡ conhece suas preferÃªncias e nÃ£o precisa perguntar novamente.",
+                      "path":  ".kilo/rules/session-memory.md",
+                      "type":  "rule",
+                      "category":  "Conhecimento e MemÃ³ria"
+                  },
+                  {
+                      "id":  "simplicity-criterion",
+                      "name":  "simplicity-criterion",
+                      "title":  "simplicity-criterion",
+                      "description":  "Inspirado no autoresearch: \"All else being equal, simpler is better.\" Uma melhoria mÃ­nima que adiciona complexidade feia nÃ£o vale a pena. Uma melhoria de ~0 mas cÃ³digo muito mais simples? Vale muito.",
+                      "path":  ".kilo/rules/simplicity-criterion.md",
+                      "type":  "rule",
+                      "category":  "DevOps"
+                  },
+                  {
+                      "id":  "state-machine-rules",
+                      "name":  "state-machine-rules",
+                      "title":  "state-machine-rules",
+                      "description":  "1. Todo workflow deve iniciar em estado conhecido.",
+                      "path":  ".kilo/rules/state-machine-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "trust-score-rules",
+                      "name":  "trust-score-rules",
+                      "title":  "trust-score-rules",
+                      "description":  "Score recomendado:",
+                      "path":  ".kilo/rules/trust-score-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  },
+                  {
+                      "id":  "ttl-rules",
+                      "name":  "ttl-rules",
+                      "title":  "ttl-rules",
+                      "description":  "Conhecimento tem validade e deve ser revalidado periodicamente.",
+                      "path":  ".kilo/rules/ttl-rules.md",
+                      "type":  "rule",
+                      "category":  "Geral"
+                  }
+              ]
+}

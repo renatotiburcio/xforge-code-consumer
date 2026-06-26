@@ -1,0 +1,23 @@
+# Coverage.py config (DR-0105 v3.15.0)
+# Measures real coverage, not cherry-picked.
+
+[run]
+source = .xforge/engine
+omit =
+    .xforge/engine/tests/*
+    .xforge/engine/__pycache__/*
+    .xforge/engine/tools/__pycache__/*
+
+[report]
+show_missing = True
+skip_covered = False
+precision = 1
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    pass
+    raise NotImplementedError
+    if TYPE_CHECKING:
+
+[html]
+directory = .xforge/coverage_html

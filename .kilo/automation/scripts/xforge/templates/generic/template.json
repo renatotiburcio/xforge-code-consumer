@@ -1,0 +1,16 @@
+{
+  "slug": "generic",
+  "description": "Generic minimal starter (any stack) - only AGENTS.md + .gitignore",
+  "tags": [
+    "any",
+    "starter"
+  ],
+  "skills": [
+    "genius-council",
+    "software-development-expert"
+  ],
+  "files": [
+    ".gitignore",
+    "README.md"
+  ]
+}

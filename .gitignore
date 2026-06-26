@@ -1,0 +1,10 @@
+﻿# XForge Code Consumer - Gitignore
+node_modules/
+.kilo/node_modules/
+.env
+.env.local
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*.log

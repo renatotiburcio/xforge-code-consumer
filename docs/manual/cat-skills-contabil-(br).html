@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cat-skills-contabil-(br) - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Skills (Categorias)</h3><ul><li><a href="cat-skills-backend.html">Backend (.NET/Go/Rust)</a></li><li><a href="cat-skills-frontend.html">Frontend (React/Vue/Angular)</a></li><li><a href="cat-skills-python.html">Python</a></li><li><a href="cat-skills-ai.html">AI/ML</a></li><li><a href="cat-skills-seguranca.html">Seguranca</a></li><li><a href="cat-skills-conhecimento.html">Conhecimento</a></li><li><a href="cat-skills-devops.html">DevOps</a></li><li><a href="cat-skills-gestao.html">Gestao</a></li><li><a href="cat-skills-produto.html">Produto</a></li><li><a href="cat-skills-qualidade.html">Qualidade</a></li><li><a href="cat-skills-outros.html">Outros</a></li><li><a href="cat-skills-lgpd.html">LGPD / Privacidade</a></li><li><a href="cat-skills-fiscal-(br).html">Fiscal (BR)</a></li><li><a href="cat-skills-contabil-(br).html" class="active">Contabil (BR)</a></li><li><a href="cat-skills-trabalhista-(br).html">Trabalhista (BR)</a></li><li><a href="cat-skills-arquitetura.html">Arquitetura</a></li></ul></aside>
+<main>
+<h1>Cat-skills Contabil (BR) - ECD, ECF, Plano de Contas</h1><h2>O que e</h2><p>Catalogo de skills para contabilidade brasileira. Inclui: SPED Contabil (ECD), SPED Contribuicoes (ECF), plano de contas referencial (CPC/ITG), dre (demonstracao de resultados), balanco patrimonial, lancamentos contabilisticos (debito/credito, partidas dobradas), contabilizacao de folha, provisao de impostos (IRPJ, CSLL), ativo imobilizado, depreciacao, folha de pagamento contabil. Skills canonicas: accounting-expert, sped-fiscal-expert.</p><h2>Quando usar</h2><ul><li>Quando precisa gerar ECD (Escrituracao Contabil Digital) mensal/anual</li><li>Quando precisa gerar ECF (Escrituracao Contabil Fiscal) anual</li><li>Quando precisa implementar plano de contas</li><li>Quando precisa calcular DRE ou balanco</li><li>Quando precisa contabilizar folha de pagamento</li></ul><h2>Como usar</h2><p>Skills contabeis seguem CPC (Comite de Pronunciamentos Contabeis) e ITG (Interpretacoes Tecnicas). Tabelas de plano de contas referencial estao em /xforge/knowledge/dominios/contabil/.</p><pre><code># Gerar ECD do mes
+/ecd-gerar --periodo 2025-06 --tipo completo
+# Gerar ECF anual
+/ecf-gerar --ano-calendario 2024 --tipo completa
+# Validar plano de contas
+/contabil-plano-validar --arquivo <path></code></pre><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--regime</code></td><td>string</td><td>auto</td><td>Regime contabil: competencia, caixa, misto, auto</td></tr><tr><td><code>--periodo</code></td><td>YYYY-MM</td><td>atual</td><td>Periodo contabil</td></tr><tr><td><code>--ano-calendario</code></td><td>YYYY</td><td>atual</td><td>Ano-calendario para ECF</td></tr><tr><td><code>--cnpj</code></td><td>string</td><td>auto</td><td>CNPJ da empresa para ECD/ECF</td></tr><tr><td><code>--plano</code></td><td>string</td><td>referencial</td><td>Plano de contas: referencial, customizado, mix</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Gerar ECD mensal</h3><p><strong>Contexto</strong>: Voce precisa escriturar o mes no ECD.</p><pre><code>/ecd-gerar --periodo 2025-06 --tipo completo --validar</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Arquivo TXT do ECD gerado. Validacao: 0 erros. Bloco 0 (abertura), Bloco I (lancamentos), Bloco J (demonstracoes), Bloco 9 (encerramento).</code></pre><p><strong>Edge case</strong>: ECD mensal substitui o antigo livro diario. Para ECD anual, inclui bloco K (plano de contas) e bloco L (escrituracao contabil simplificada para ME/EPP).</p><h3>Cenario 2: Calcular DRE mensal</h3><p><strong>Contexto</strong>: Voce precisa fechar o mes e gerar DRE.</p><pre><code>/contabil-dre --periodo 2025-06 --formato json</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Receita bruta: R$ X. Deducoes: R$ Y. Receita liquida: R$ Z. Custos: R$ A. Lucro bruto: R$ B. Despesas operacionais: R$ C. Lucro liquido: R$ D.</code></pre><p><strong>Edge case</strong>: DRE pode ser por natureza (padrao BR) ou por funcao. DRE por natureza e obrigatoria para publicacao.</p><h3>Cenario 3: Contabilizar folha de pagamento</h3><p><strong>Contexto</strong>: Voce fechou a folha do mes e precisa contabilizar.</p><pre><code>/contabil-folha --periodo 2025-06 --plano contas-folha</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Lancamentos gerados: D-Despesa Salarios / C-Salarios a Pagar, D-INSS Empresa / C-INSS a Recolher, D-FGTS / C-FGTS a Recolher, etc. Total: ~15 lancamentos.</code></pre><p><strong>Edge case</strong>: Para ME no Simples Nacional, ha simplificacoes. Para industria, considerar custo de producao (MOD+mat+GIF).</p><h3>Cenario 4: Provisionar IRPJ e CSLL</h3><p><strong>Contexto</strong>: Voce precisa calcular e provisionar IRPJ/CSLL trimestralmente.</p><pre><code>/contabil-ir-csll --periodo 2025-Q2 --regime real</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Lucro real: R$ X. IRPJ (15% + 10% adicional sobre R$ 240k/trim) = R$ Y. CSLL (9%) = R$ Z. Total provisao: R$ Y+Z.</code></pre><p><strong>Edge case</strong>: Para lucro presumido, base = receita x presuncao (8% comercio, 32% servicos). Lucro arbitrado se irregular.</p><h3>Cenario 5: Depreciar ativo imobilizado</h3><p><strong>Contexto</strong>: Voce comprou uma maquina de R$ 100k com vida util de 10 anos.</p><pre><code>/contabil-depreciacao --ativo 'Maquina XYZ' --valor 100000 --vida 10 --metodo linear</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Depreciacao mensal: R$ 833.33. Lancamento: D-Despesa Depreciacao / C-Depreciacao Acumulada. Vida util fiscal: 10 anos (maquina).</code></pre><p><strong>Edge case</strong>: Aceleracao fiscal: pode dobrar quota em turnos 16h+. Edificacoes: 25 anos. Veiculos: 5 anos.</p><h2>Troubleshooting</h2><h3>ECD rejeitado pela Receita Federal</h3><p><strong>Causa</strong>: Erros de validacao PVA (Programa Validador e Assinador)</p><p><strong>Solucao</strong>: Use /sped-validar --arquivo <path> para ver erros detalhados. Comuns: CNPJ invalido, conta sem natureza, valor negativo</p><h3>DRE nao fecha com balanco</h3><p><strong>Causa</strong>: Diferenca entre regime de competencia e caixa, ou lancamentos incompletos</p><p><strong>Solucao</strong>: Verifique que TODOS os lancamentos do periodo estao contabilizados. Use /contabil-balancete --fechamento para verificar saldo final</p><h3>ECF nao compila</h3><p><strong>Causa</strong>: Bloco K (plano de contas) ou bloco M (lancamentos) inconsistente</p><p><strong>Solucao</strong>: Compare ECF com ECD do mesmo ano-calendario. Diferencas indicam lancamentos errados ou conta errada</p><h3>Plano de contas nao bate com referencial</h3><p><strong>Causa</strong>: Contas customizadas sem vinculo com plano referencial</p><p><strong>Solucao</strong>: Use /contabil-plano-mapear para vincular contas customizadas as contas referenciais correspondentes</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

@@ -1,0 +1,205 @@
+{
+  "generatedAt": "2026-05-27",
+  "purpose": "Curated operational knowledge base seed. Official sources are preferred; community/vendor support content is used only as operational hints with lower trust.",
+  "trustPolicy": {
+    "official": 100,
+    "official_project": 90,
+    "vendor_support": 65,
+    "community_forum": 45,
+    "ai_inferred": 20
+  },
+  "sources": [
+    {
+      "id": "moc-nfe-7-visao-geral-confaz",
+      "type": "official",
+      "url": "https://www.confaz.fazenda.gov.br/legislacao/arquivo-manuais/moc7-visao-geral.pdf",
+      "trustScore": 100,
+      "domain": "nfe",
+      "use": "MOC visão geral NF-e/NFC-e"
+    },
+    {
+      "id": "moc-nfe-anexo-i",
+      "type": "official",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=J+I+v4eN00E%3D",
+      "trustScore": 100,
+      "domain": "nfe",
+      "use": "MOC Anexo I leiaute e regras de validação"
+    },
+    {
+      "id": "svrs-nfe-docs",
+      "type": "official",
+      "url": "https://dfe-portal.svrs.rs.gov.br/Nfe/Documentos",
+      "trustScore": 100,
+      "domain": "nfe",
+      "use": "Documentos NF-e/NFC-e, contingência e schemas"
+    },
+    {
+      "id": "nfe-nt-2025-002-rtc",
+      "type": "official",
+      "url": "https://www.nfe.fazenda.gov.br/portal/listaConteudo.aspx?tipoConteudo=04BIflQt1aY%3D",
+      "trustScore": 100,
+      "domain": "nfe",
+      "use": "Reforma Tributária do Consumo NF-e/NFC-e"
+    },
+    {
+      "id": "nfe-nt-2025-001-simplificacao",
+      "type": "official",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=trSXReoZPuY%3D",
+      "trustScore": 100,
+      "domain": "nfe",
+      "use": "Simplificação operacional e regras obrigatórias"
+    },
+    {
+      "id": "nfe-nt-2011-004",
+      "type": "official",
+      "url": "https://www.nfe.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=Z1ivX0aahCM%3D",
+      "trustScore": 100,
+      "domain": "nfe",
+      "use": "Histórico rejeição 539 e regras"
+    },
+    {
+      "id": "sefaz-pe-rejeicoes-comuns",
+      "type": "official_uf",
+      "url": "https://www.sefaz.pe.gov.br/Servicos/nota-fiscal-eletronica/Paginas/Noticias.aspx",
+      "trustScore": 80,
+      "domain": "nfe",
+      "use": "Erros/rejeições comuns; ex.: 972 responsável técnico"
+    },
+    {
+      "id": "oobj-rejeicao-204",
+      "type": "vendor_support",
+      "url": "https://oobj.com.br/bc/rejeicao-204-como-resolver/",
+      "trustScore": 65,
+      "domain": "nfe",
+      "use": "Operacional: causa e solução rejeição 204"
+    },
+    {
+      "id": "totalerp-rejeicao-204",
+      "type": "vendor_support",
+      "url": "https://suporte.totalerp.com.br/portal/pt/kb/articles/rejeicao-204-duplicidade-de-nf-e-nrec-999999999999999",
+      "trustScore": 65,
+      "domain": "nfe",
+      "use": "Operacional: causa e solução rejeição 204/539"
+    },
+    {
+      "id": "webmania-rejeicao-539",
+      "type": "vendor_support",
+      "url": "https://ajuda.webmania.com.br/pt-BR/articles/12681252-rejeicao-539-duplicidade-de-nf-e-com-diferenca-na-chave-de-acesso",
+      "trustScore": 65,
+      "domain": "nfe",
+      "use": "Operacional: duplicidade de NF-e com diferença de chave"
+    },
+    {
+      "id": "bling-rejeicao-204",
+      "type": "vendor_support",
+      "url": "https://ajuda.bling.com.br/hc/pt-br/articles/360037033134-Rejei%C3%A7%C3%A3o-204-Duplicidade-de-NF-e",
+      "trustScore": 60,
+      "domain": "nfe",
+      "use": "Operacional: 204 e instabilidade SEFAZ como hipótese"
+    },
+    {
+      "id": "acbr-forum-204-539-uf",
+      "type": "community_forum",
+      "url": "https://www.projetoacbr.com.br/forum/topic/79997-sefaz-n%C3%A3o-valida-mais-rejei%C3%A7%C3%B5es-539-e-204-permitindo-autorizar-notas-com-mesma-numera%C3%A7%C3%A3o-e-s%C3%A9rie-em-datas-diferentes/",
+      "trustScore": 45,
+      "domain": "nfe",
+      "use": "Sinal de comportamento divergente por UF; exige validação"
+    },
+    {
+      "id": "nfse-documentacao-tecnica",
+      "type": "official",
+      "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica",
+      "trustScore": 100,
+      "domain": "nfse",
+      "use": "Documentação técnica NFS-e nacional"
+    },
+    {
+      "id": "nfse-documentacao-atual",
+      "type": "official",
+      "url": "https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica/documentacao-atual",
+      "trustScore": 100,
+      "domain": "nfse",
+      "use": "Documentação atual NFS-e produção"
+    },
+    {
+      "id": "tecnospeed-nfse-rejeicoes",
+      "type": "vendor_support",
+      "url": "https://blog.tecnospeed.com.br/principais-rejeicoes-da-nfs-e/",
+      "trustScore": 60,
+      "domain": "nfse",
+      "use": "Operacional: rejeições NFS-e comuns"
+    },
+    {
+      "id": "enotas-nfse-e400",
+      "type": "vendor_support",
+      "url": "https://atendimento.enotas.com.br/hc/pt-br/articles/35773897805197-Rejei%C3%A7%C3%A3o-ao-emitir-NFS-e-em-Janu%C3%A1ria-MG-C%C3%B3digo-E400-Erro-de-validacao-de-dados-Corre%C3%A7%C3%A3o-Verifique-as-informacoes-enviadas",
+      "trustScore": 55,
+      "domain": "nfse",
+      "use": "Caso municipal E400; específico por município"
+    },
+    {
+      "id": "esocial-documentacao-tecnica",
+      "type": "official",
+      "url": "https://www.gov.br/esocial/pt-br/documentacao-tecnica",
+      "trustScore": 100,
+      "domain": "esocial",
+      "use": "Documentação técnica oficial eSocial"
+    },
+    {
+      "id": "esocial-layout-s13",
+      "type": "official",
+      "url": "https://www.gov.br/esocial/pt-br/documentacao-tecnica/leiautes-esocial-v-1.3/index.html",
+      "trustScore": 100,
+      "domain": "esocial",
+      "use": "Leiautes e validações S-1.3"
+    },
+    {
+      "id": "esocial-versoes-anteriores",
+      "type": "official",
+      "url": "https://www.gov.br/esocial/pt-br/documentacao-tecnica/versoes-anteriores-da-documentacao-tecnica",
+      "trustScore": 100,
+      "domain": "esocial",
+      "use": "Retrocompatibilidade e versões anteriores"
+    },
+    {
+      "id": "sped-efd-icms-ipi-guias",
+      "type": "official",
+      "url": "https://sped.rfb.gov.br/item/show/1573",
+      "trustScore": 100,
+      "domain": "sped",
+      "use": "Guias práticos EFD ICMS/IPI"
+    },
+    {
+      "id": "sped-efd-icms-ipi-projeto",
+      "type": "official",
+      "url": "https://sped.rfb.gov.br/item/show/274",
+      "trustScore": 100,
+      "domain": "sped",
+      "use": "Projeto EFD ICMS/IPI"
+    },
+    {
+      "id": "sped-efd-contribuicoes",
+      "type": "official",
+      "url": "https://sped.rfb.gov.br/item/show/268",
+      "trustScore": 100,
+      "domain": "sped",
+      "use": "Projeto EFD Contribuições"
+    },
+    {
+      "id": "sped-ecf-manuais",
+      "type": "official",
+      "url": "https://sped.rfb.gov.br/item/show/1644",
+      "trustScore": 100,
+      "domain": "sped",
+      "use": "ECF manuais e planos"
+    },
+    {
+      "id": "fenacon-pva-603-d750",
+      "type": "professional_news",
+      "url": "https://fenacon.org.br/noticias/receita-publica-versao-6-0-3-do-pva-da-efd-icms-ipi-e-atualiza-guia-pratico/",
+      "trustScore": 55,
+      "domain": "sped",
+      "use": "Sinal operacional: PVA 6.0.3 e registro D750; confirmar no SPED"
+    }
+  ]
+}

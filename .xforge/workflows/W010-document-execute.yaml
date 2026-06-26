@@ -1,0 +1,16 @@
+﻿id: W010
+version: 1.0.0
+name: document-execute
+description: Execute backlog tasks with compaction
+states: [planning, executing, validating, memorizing, done, blocked]
+transitions:
+  - {from: planning, to: executing, event: plan_ready}
+  - {from: executing, to: validating, event: task_completed, guard: xfs>=0.80}
+  - {from: executing, to: blocked, event: error_unrecoverable}
+  - {from: validating, to: memorizing, event: validation_passed}
+  - {from: memorizing, to: executing, event: memory_saved, guard: more_tasks_pending}
+  - {from: memorizing, to: done, event: all_tasks_done}
+agents: [executor-tarefas, chief-architect-orchestrator]
+tools: [read_file, create_file, update_file, checkpoint, memorize]
+entrypoint: planning
+terminalStates: [done, blocked]

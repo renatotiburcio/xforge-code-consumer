@@ -1,0 +1,17 @@
+﻿id: W007
+version: 1.0.0
+name: knowledge-update
+description: Update knowledge base with new information
+states: [detected, validating, ingesting, indexing, promoting, done, failed, rejected]
+transitions:
+  - {from: detected, to: validating, event: source_received, guard: source!=null}
+  - {from: validating, to: rejected, event: trust<50}
+  - {from: validating, to: ingesting, event: trust>=50}
+  - {from: ingesting, to: indexing, event: content_stored}
+  - {from: indexing, to: promoting, event: index_updated}
+  - {from: promoting, to: done, event: promotion_decided}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [knowledge-curator, knowledge-graph-engineer]
+tools: [validate_knowledge, update_knowledge, rag_index]
+entrypoint: detected
+terminalStates: [done, failed, rejected]

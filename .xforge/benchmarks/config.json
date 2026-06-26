@@ -1,0 +1,32 @@
+﻿{
+  "name": "xforge-benchmark-framework",
+  "version": "1.0.0",
+  "targets": ["prompts", "models", "providers", "workflows", "tools", "agents"],
+  "metrics": {
+    "quality": {"xfs": 0.30, "human_eval": 0.40, "consistency": 0.30},
+    "performance": {"latency_p50": 0.30, "latency_p95": 0.30, "tokens": 0.20, "cost": 0.20},
+    "reliability": {"success_rate": 0.50, "error_recovery": 0.30, "consistency": 0.20}
+  },
+  "datasets": {
+    "prompts": ".xforge/benchmarks/prompts.jsonl",
+    "code_tasks": ".xforge/benchmarks/code-tasks.jsonl",
+    "fiscal_scenarios": ".xforge/benchmarks/fiscal-scenarios.jsonl"
+  },
+  "execution": {
+    "isolated": true,
+    "warmup": 3,
+    "iterations": 10,
+    "parallel": false,
+    "report": ".xforge/benchmarks/report.html"
+  },
+  "comparisons": {
+    "sideBySide": true,
+    "consensus": "voting across 3+ providers",
+    "winner": "highest xfs with cost budget"
+  },
+  "tools": {
+    "run": "xforge benchmark run --target=<prompts|models|workflows>",
+    "compare": "xforge benchmark compare --a=<id> --b=<id>",
+    "report": "xforge benchmark report --format=html|json|md"
+  }
+}

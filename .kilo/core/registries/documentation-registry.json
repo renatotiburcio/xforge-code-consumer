@@ -1,0 +1,77 @@
+{
+  "sections": [
+    {
+      "id": "start",
+      "title": "Começar agora"
+    },
+    {
+      "id": "concept",
+      "title": "Como funciona"
+    },
+    {
+      "id": "install",
+      "title": "Instalação"
+    },
+    {
+      "id": "backup",
+      "title": "Backup e restore"
+    },
+    {
+      "id": "new-project",
+      "title": "Novo projeto"
+    },
+    {
+      "id": "existing",
+      "title": "Projeto existente"
+    },
+    {
+      "id": "legacy-engineer",
+      "title": "Migrar Engineer antigo"
+    },
+    {
+      "id": "knowledge",
+      "title": "Agregar conhecimento"
+    },
+    {
+      "id": "urls",
+      "title": "URLs e páginas web"
+    },
+    {
+      "id": "repos",
+      "title": "Repositórios GitHub"
+    },
+    {
+      "id": "local-files",
+      "title": "Arquivos locais"
+    },
+    {
+      "id": "development",
+      "title": "Desenvolvimento diário"
+    },
+    {
+      "id": "e2e",
+      "title": "Teste real E2E"
+    },
+    {
+      "id": "security",
+      "title": "Segurança contínua"
+    },
+    {
+      "id": "postgres",
+      "title": "PostgreSQL"
+    },
+    {
+      "id": "examples",
+      "title": "Exemplos práticos"
+    },
+    {
+      "id": "troubleshooting",
+      "title": "Dúvidas comuns"
+    },
+    {
+      "id": "reference",
+      "title": "Referência"
+    }
+  ],
+  "criticalGuides": []
+}

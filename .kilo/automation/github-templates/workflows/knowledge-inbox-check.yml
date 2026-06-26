@@ -1,0 +1,15 @@
+name: Knowledge Inbox Check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check-inbox:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Warn about pending inbox documents
+        run: |
+          count=$(find engineer/knowledge/inbox/documents -type f | wc -l)
+          echo "Pending documents in inbox: $count"

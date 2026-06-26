@@ -1,0 +1,76 @@
+{
+  "id": "xforge-financeiro",
+  "name": "xforge-financeiro",
+  "title": "Financeiro - Contas, Fluxo de Caixa, Conciliacao, Investimentos",
+  "version": "1.0.0",
+  "domain": "financeiro",
+  "category": "gestao-financeira",
+  "description": "Gestao financeira completa: contas a pagar/receber com multi-moeda, fluxo de caixa projetado (DRE/DFC), conciliacao bancaria automatica (CNAB 240/400 + Open Finance), investimentos (renda fixa/variavel/fundos) com marcao a mercado, integracao PIX, boletos e cartoes.",
+  "author": "XForge",
+  "license": "MIT",
+  "trustScore": 90,
+  "tags": [
+    "financeiro",
+    "contas",
+    "fluxo-caixa",
+    "conciliacao",
+    "cnab",
+    "open-finance",
+    "pix",
+    "boleto",
+    "investimentos",
+    "brasil"
+  ],
+  "dependencies": [
+    "xforge-core",
+    "xforge-banking"
+  ],
+  "knowledgeEntries": [
+    {
+      "path": "knowledge/packs/xforge-financeiro/contas-pagar-receber.md",
+      "trustScore": 91,
+      "title": "Contas a Pagar e Receber"
+    },
+    {
+      "path": "knowledge/packs/xforge-financeiro/fluxo-caixa-projetado.md",
+      "trustScore": 90,
+      "title": "Fluxo de Caixa Projetado (DFC)"
+    },
+    {
+      "path": "knowledge/packs/xforge-financeiro/conciliacao-bancaria.md",
+      "trustScore": 92,
+      "title": "Conciliacao Bancaria CNAB + Open Finance"
+    },
+    {
+      "path": "knowledge/packs/xforge-financeiro/investimentos-mtm.md",
+      "trustScore": 89,
+      "title": "Investimentos com Marcacao a Mercado"
+    },
+    {
+      "path": "knowledge/packs/xforge-financeiro/multi-moeda-cambio.md",
+      "trustScore": 88,
+      "title": "Multi-moeda e Cambio"
+    }
+  ],
+  "tools": [
+    "calcular-juros",
+    "calcular-correcao",
+    "conciliar-extrato",
+    "projetar-fluxo",
+    "marcar-mercado"
+  ],
+  "workflows": [
+    "contas-pagar-fechamento",
+    "contas-receber-cobranca",
+    "fluxo-caixa-diario",
+    "conciliacao-mensal",
+    "investimentos-rebalanceamento"
+  ],
+  "schemas": [
+    "conta-financeira-v1",
+    "extrato-bancario-v1",
+    "investimento-v1"
+  ],
+  "installable": true,
+  "size_kb": 892
+}

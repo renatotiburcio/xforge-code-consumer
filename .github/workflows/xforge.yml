@@ -1,0 +1,55 @@
+name: xforge-validate
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+
+      - name: Install dependencies
+        shell: pwsh
+        run: python -m pip install --upgrade pip pytest pytest-anyio pyyaml hypothesis
+
+      - name: Run doctor
+        shell: pwsh
+        run: powershell -ExecutionPolicy Bypass -File .kilo/automation/scripts/doctor.ps1
+
+      - name: Run pytest
+        shell: pwsh
+        run: python -m pytest .xforge/engine/tests/ -m not slow --tb=short
+
+      - name: Run validate_all
+        shell: pwsh
+        run: python .xforge/engine/xforge_engine.py xforge_validate_all
+
+      - name: Install pip-audit
+        shell: pwsh
+        run: python -m pip install --quiet pip-audit
+
+      - name: Run pip-audit
+        shell: pwsh
+        run: python -m pip_audit --strict --disable-pip
+
+      - name: Run security-audit
+        shell: pwsh
+        run: python .kilo/automation/scripts/security-audit.py
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xforge-results
+          path: .xforge/autoresearch/results.tsv
+          if-no-files-found: ignore

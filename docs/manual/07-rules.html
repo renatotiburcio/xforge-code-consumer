@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>07 Rules - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html" class="active">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Componentes</h3><ul><li><a href="04-skills.html">Skills</a></li><li><a href="05-agents.html">Agents</a></li><li><a href="06-commands.html">Commands</a></li><li><a href="07-rules.html" class="active">Rules</a></li><li><a href="08-knowledge.html">Knowledge</a></li><li><a href="09-decisions.html">Decisões</a></li><li><a href="10-extensions.html">Extensions</a></li><li><a href="cat-skills.html">Skills (catálogo)</a></li><li><a href="cat-agents.html">Agents (catálogo)</a></li><li><a href="cat-commands.html">Commands (catálogo)</a></li><li><a href="cat-rules.html">Rules (catálogo)</a></li><li><a href="cat-knowledge.html">Knowledge (catálogo)</a></li><li><a href="cat-decisions.html">Decisões (catálogo)</a></li><li><a href="cat-extensions.html">Extensions (catálogo)</a></li></ul></aside>
+<main>
+<h1>07 - Rules (41 regras comportamentais)</h1>
+
+<h2>O que e</h2>
+<p><strong>Rules</strong> sao regras comportamentais carregadas no system prompt do LLM. XForge tem 41 rules em 5 niveis de precedencia. Diferente de skills (referencia) ou commands (workflows), rules sao <strong>restricoes</strong>: violacoes devem ser explicadas ou corrigidas antes de prosseguir.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce precisa entender a <strong>precedencia</strong> (GCF &gt; Golden &gt; Security &gt; Quality &gt; Operational)</li>
+  <li>Quando quer criar rule custom para sua equipe</li>
+  <li>Quando uma rule e violada e voce precisa do racional</li>
+  <li>Quando quer auditar rules desatualizadas</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica (rules sao carregadas automaticamente):</p>
+<pre><code># Rules sao carregadas no system prompt
+# Para ver regras ativas:
+Get-ChildItem .kilo/rules/
+
+# Ler regra especifica
+cat .kilo/rules/02-genius-council-framework.md
+
+# Criar rule nova
+cat &gt; .kilo/rules/minha-rule.md &lt;&lt;EOF
+---
+id: minha-rule
+priority: medium
+applicabilityScope: ["dotnet"]
+status: approved
+---
+# Minha Rule
+[conteudo...]
+EOF
+
+regenerate-registries.ps1</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>id</code></td><td>string</td><td>obrigatorio</td><td>Identificador unico. kebab-case en.</td></tr>
+<tr><td><code>priority</code></td><td>string</td><td>medium</td><td>critical, high, medium, low.</td></tr>
+<tr><td><code>applicabilityScope</code></td><td>array</td><td>["*"]</td><td>Stacks compativeis. Router filtra.</td></tr>
+<tr><td><code>status</code></td><td>string</td><td>draft</td><td>draft, approved, deprecated.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Precedencia (5 niveis)</h3>
+<p><strong>Contexto</strong>: Voce tem duvida sobre qual regra vence em conflito.</p>
+<pre><code># Hierarquia canonica
+1. GCF (Regra de Ouro Suprema)
+   - .kilo/rules/02-genius-council-framework.md
+2. Golden Rules (stack-agnostic)
+   - .kilo/rules/01-xforge-golden-rules.md (SOLID, pacotes estaveis, stack-agnostic)
+3. Governanca (RBAC, security, LGPD, audit)
+   - .kilo/rules/policy-rules.md, rbac-rules.md, security-rules.md
+4. Qualidade (gates, loop, scoring)
+   - .kilo/rules/proactive-quality-gates.md, loop-discipline.md
+5. Memoria & Conhecimento
+   - .kilo/rules/session-memory.md, knowledge-rules.md
+
+# Conflito: Golden Rule diz "use AutoMapper", Skill diz "use XForge.MediatR"
+# Resolucao: Golden Rule vence (N2 &gt; N4)
+# Mas: Skill canonica XForge.MediatR eh excecao documentada (golden-rules.md)</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[rule-precedence] Conflito detectado: golden-rules vs xforge-mediatr
+[resolution] GCF N1 + Golden N2 + XForge.MediatR (skill canonica)
+[verdict] AutoMapper para mapping, XForge.MediatR para CQRS. Nao confundir.</code></pre>
+<p><strong>Edge case</strong>: Em caso de empate, DR recente vence. Se conflito nao resolvido, acione GCF.</p>
+
+<h3>Cenario 2: Golden Rules (stack-agnostic)</h3>
+<p><strong>Contexto</strong>: Voce quer entender o que NUNCA quebrar em qualquer stack.</p>
+<pre><code>cat .kilo/rules/01-xforge-golden-rules.md
+
+# Principais regras
+# 1. Stack-agnostic (DR-0180) - XForge NAO assume stack
+# 2. SOLID + SRP (todos stacks)
+# 3. Pacotes estaveis (NUNCA preview, beta, rc, alpha, nightly)
+# 4. Clean Code
+# 5. Documentacao (README 5 min, XML comments, OpenAPI)
+# 6. Diagramas C4 L1/L2/L3 para sistemas &gt; 3 modulos</code></pre>
+<p><strong>Output esperado</strong> (resumo da rule):</p>
+<pre><code>## Regra de ouro 0 - Stack-agnostic
+- Detectar stack antes de sugerir patterns
+- Perguntar quando ambiguo (max 3 opcoes)
+- Diretores especialistas sao OPT-IN por stack
+- Comandos genericos suportam TODOS os stacks
+
+## Regra de ouro 1 - SOLID e SRP
+- Cada arquivo: uma unica responsabilidade
+- Services gigantes PROIBIDOS
+- Handlers com multiplas responsabilidades PROIBIDOS</code></pre>
+<p><strong>Edge case</strong>: Golden Rules sao inviolaveis. Violacao =&gt; GCF obrigatorio + DR formal.</p>
+
+<h3>Cenario 3: Self-Healing Rules (SH-001 a SH-012)</h3>
+<p><strong>Contexto</strong>: Voce quer entender correcoes automaticas pre-commit.</p>
+<pre><code># 12 regras self-healing
+SH-001: Unused imports (remove)
+SH-002: Missing Async suffix (adiciona)
+SH-003: Null-conditional access (adiciona ?.)
+SH-004: Missing null check (adiciona if null return)
+SH-005: Async over sync (substitui .Result por await)
+SH-006: Missing using declaration (adiciona await using)
+SH-007: Parameterized query (security: SQL injection)
+SH-008: Secret detection (move para .env)
+SH-009: CancellationToken (adiciona param)
+SH-010: IHttpClientFactory (substitui new HttpClient)
+SH-011: ConfigureAwait(false) (lib/service)
+SH-012: Disposable pattern (GC.SuppressFinalize)</code></pre>
+<p><strong>Output esperado</strong> (exemplo SH-008):</p>
+<pre><code>## SH-008: Secret Detection
+- Detecta: API key, password, token em codigo
+- Acao: Move para variavel de ambiente ou appsettings.json
+- Severidade: critical (security)
+- Auto-fix: parcial (move, nao substitui valor)
+
+# Exemplo
+// ANTES (detectado):
+var apiKey = "sk-1234567890abcdef";
+
+// DEPOIS (auto-fix):
+var apiKey = _configuration["ExternalServices:ApiKey"]
+    ?? throw new InvalidOperationException("ApiKey not configured");</code></pre>
+<p><strong>Edge case</strong>: SH-007 (SQL injection) e SH-008 (secrets) sao critical e SEMPRE aplicados.</p>
+
+<h3>Cenario 4: Quality Gates (proactive)</h3>
+<p><strong>Contexto</strong>: Voce quer entender checks automaticos stack-aware.</p>
+<pre><code>cat .kilo/rules/proactive-quality-gates.md
+
+# Stack detection (15 sinais)
+*.csproj -&gt; dotnet
+package.json -&gt; node
+pyproject.toml -&gt; python
+go.mod -&gt; go
+Cargo.toml -&gt; rust
+angular.json -&gt; angular
+next.config.* -&gt; next
+...
+
+# Gates
+Pre-Commit: format + secrets + self-healing (&lt; 2s)
+Pre-Build: restore + build + warn-as-error (&lt; 30s)
+Pre-Push: test + coverage 85% + security (&lt; 60s)
+Post-Merge: full build + test + audit (&lt; 5min)
+
+# .NET specific
+dotnet format --verify-no-changes
+dotnet test --collect:"XPlat Code Coverage"
+dotnet list package --vulnerable</code></pre>
+<p><strong>Output esperado</strong> (gate pre-commit):</p>
+<pre><code>[pre-commit] dotnet format --verify-no-changes
+[pre-commit] gitleaks detect
+[pre-commit] SH rules (auto-fix)
+[done] &lt; 2s, commit allowed</code></pre>
+<p><strong>Edge case</strong>: Em monorepo, gates rodam em cada stack. CI pode ser lento.</p>
+
+<h3>Cenario 5: Criar rule custom para equipe</h3>
+<p><strong>Contexto</strong>: Sua equipe quer rule especifica (ex: sempre usar Xunit).</p>
+<pre><code>cat &gt; .kilo/rules/minha-equipe-xunit.md &lt;&lt;EOF
+---
+id: minha-equipe-xunit
+priority: medium
+applicabilityScope: ["dotnet"]
+status: approved
+---
+# Xunit como padrao
+Sempre use Xunit (NUNCA NUnit ou MSTest).
+Use FluentAssertions para asserts.
+Use Moq para mocks.
+Use Testcontainers para integracao.
+Cobertura minima: 85% (linhas), 80% (branches).
+EOF
+
+regenerate-registries.ps1
+doctor.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[regenerate] 45 rules (era 44)
+[doctor] 0 errors
+[done] Rule custom ativa em projetos .NET</code></pre>
+<p><strong>Edge case</strong>: Rules sao globais para o template. Para regras por-projeto, use <code>.kilo/.stack-context.json</code> overrides.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Rule nao carrega</h3>
+<p><strong>Causa</strong>: applicabilityScope nao bate com stack.</p>
+<p><strong>Solucao</strong>: <code>stack-detector.ps1 --check-scope .kilo/rules/</code> para ver quais carregam.</p>
+
+<h3>Conflito entre rules</h3>
+<p><strong>Causa</strong>: Multiplas rules cobrem o mesmo topico.</p>
+<p><strong>Solucao</strong>: Hierarquia canonica (5 niveis). Em empate, DR recente vence. Se ainda ambiguo, acione GCF.</p>
+
+<h3>Rule impede acao necessaria</h3>
+<p><strong>Causa</strong>: Rule muito restritiva para seu caso.</p>
+<p><strong>Solucao</strong>: Documente excecao em DR formal. Aicione ao applicabilityScope se a rule for especifica demais. Ou use <code>--no-verify</code> em commit (emergencias).</p>
+
+<h3>Rule deprecated mas ainda carrega</h3>
+<p><strong>Causa</strong>: Frontmatter nao foi atualizado para <code>status: deprecated</code>.</p>
+<p><strong>Solucao</strong>: Edite frontmatter. Rules deprecated sao ignoradas pelo router mas ainda existem no filesystem.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

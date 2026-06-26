@@ -1,0 +1,17 @@
+graph LR
+  Visitor[Visitante/Recrutador<br/>Pessoa]
+  Site[Landing Page<br/>HTML+Tailwind CDN<br/>1 arquivo index.html]
+  Form[Formspree.io<br/>ou mailto:]
+  CDN[cdn.tailwindcss.com<br/>CDN global]
+
+  Visitor -->|HTTPS GET| Site
+  Site -->|carrega CSS| CDN
+  Site -.->|POST opcional| Form
+
+  classDef external fill:#e1f5ff,stroke:#0066cc
+  classDef system fill:#d4edda,stroke:#28a745
+  classDef externalService fill:#fff3cd,stroke:#ffc107
+
+  class Visitor external
+  class Site system
+  class Form,CDN externalService

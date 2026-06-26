@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-finance",
+    "name":  "Finance",
+    "version":  "1.0.0",
+    "description":  "CP/CR, fluxo caixa, conciliacao, DDA",
+    "files":  3,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "finance"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/finance/"
+}

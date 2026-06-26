@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>19 Changelog - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html">Quickstart</a></li><li><a href="02-architecture.html">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html">xforge-init</a></li><li><a href="11-faq.html">FAQ</a></li><li><a href="18-glossary.html">Glossario</a></li><li><a href="19-changelog.html" class="active">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html">Troubleshooting</a></li><li><a href="21-faq-extended.html">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>19 - Changelog Detalhado (v50.x)</h1><h2>O que e</h2><p>O Changelog Detalhado lista TODAS as versoes v50.x do XForge com descricao das mudancas, links para DRs e PRs, e impacto (breaking/major/minor/patch). Diferente do /CHANGELOG.md (que segue SemVer e e imutavel por DR-0087), esta pagina e editavel e detalhada. Para versoes v3.x (anteriores a v50), consulte /CHANGELOG.md.</p><h2>Quando usar</h2><ul><li>Quando precisa saber o que mudou entre duas versoes (ex: v50.20.0 vs v50.31.0)</li><li>Quando quer entender quando uma feature foi adicionada (ex: quando surgiu o Linear MCP?)</li><li>Quando precisa identificar breaking changes antes de fazer upgrade</li><li>Quando esta escrevendo relatorio de auditoria de mudancas</li><li>NAO use para versoes v3.x - va em /CHANGELOG.md ou git log</li></ul><h2>Como usar</h2><p>Cada entrada segue formato: versao, data, tipo (MAJOR/MINOR/PATCH), resumo, lista de DRs incluidos, breaking changes, link para release notes.</p><pre><code># Exemplo de uso:
+git log --oneline v50.25.0..v50.33.0
+# Para detalhes: leia este changelog a partir da versao v50.33.0 ate v50.25.0</code></pre><p>Filtros: use Ctrl+F para buscar por BREAKING ou numero de DR especifico. Tags estao em ordem decrescente (mais recente primeiro).</p><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--de</code></td><td>versao</td><td>v50.0.0</td><td>Versao inicial do range</td></tr><tr><td><code>--ate</code></td><td>versao</td><td>HEAD</td><td>Versao final. Default = ultima tag</td></tr><tr><td><code>--tipo</code></td><td>string</td><td>todos</td><td>Filtra: major, minor, patch, ou todos</td></tr><tr><td><code>--dr</code></td><td>int</td><td>nenhum</td><td>Busca versao que contem DR especifico</td></tr><tr><td><code>--breaking-only</code></td><td>bool</td><td>false</td><td>Mostra apenas versoes com breaking changes</td></tr><tr><td><code>--json</code></td><td>bool</td><td>false</td><td>Output em JSON para integracao CI</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Diff entre duas versoes</h3><p><strong>Contexto</strong>: Voce atualizou de v50.20.0 para v50.33.0 e quer saber o que mudou.</p><pre><code>git log --oneline v50.20.0..v50.33.0</code></pre><p><strong>Output esperado</strong>:</p><pre><code>v50.33.0 aside links corrigidos
+v50.32.0 force-close details on load
+v50.31.0 layout com aside esquerda
+v50.30.0 aside sticky por categoria (broken - reverted in v50.29)
+v50.29.0 revert v50.28 layout
+v50.28.0 refactor layout (REVERTIDO)
+v50.27.0 mojibake fix index
+v50.26.0 mojibake fix 39 pages
+v50.25.0 root cleanup DR-0208
+v50.24.0 Slack MCP DR-0207
+v50.23.0 Linear MCP DR-0206
+v50.22.0 MarkItDown MCP DR-0205
+v50.21.0 Brave Search MCP DR-0204
+v50.20.0 Sequential Thinking MCP DR-0203</code></pre><p><strong>Edge case</strong>: Use --stat para ver numero de arquivos alterados em cada commit.</p><h3>Cenario 2: Breaking changes recentes</h3><p><strong>Contexto</strong>: Voce precisa saber quais versoes exigem migracao manual.</p><pre><code># Filtrar changelog por breaking changes apenas</code></pre><p><strong>Output esperado</strong>:</p><pre><code>v50.25.0 BREAKING: estrutura do root mudou. Scripts .py movidos para scripts/manual_gen/. Diretorios .opencode/, .kilo/node_modules/, etc deletadas.
+v50.20.0 BREAKING: ordem de campos em INDEX.json mudou (applicabilityScope agora obrigatorio)</code></pre><p><strong>Edge case</strong>: Para BREAKING antes de upgrade, faca backup de .kilo/ e .xforge/ antes de fazer pull.</p><h3>Cenario 3: Quando X feature foi adicionada</h3><p><strong>Contexto</strong>: Voce quer saber quando o Slack MCP foi adicionado.</p><pre><code>grep -l 'Slack' docs/manual/19-changelog.html</code></pre><p><strong>Output esperado</strong>:</p><pre><code>v50.24.0 - Slack MCP (DR-0207): OPTIONAL Node-based, env SLACK_BOT_TOKEN + SLACK_TEAM_ID, ~15 tools (canais, mensagens, reacoes, files)</code></pre><p><strong>Edge case</strong>: Para encontrar DR especifico, procure por DR-0XXX no changelog.</p><h3>Cenario 4: Timeline por tipo</h3><p><strong>Contexto</strong>: Voce quer ver apenas minor/patch releases (sem majors que exigem migracao).</p><pre><code># Filtrar changelog por tipo minor ou patch</code></pre><p><strong>Output esperado</strong>:</p><pre><code>v50.33.0 PATCH: aside link fixes
+v50.32.0 PATCH: force-close details on load
+v50.31.0 PATCH: layout aside + section cards
+v50.30.0 PATCH: aside por categoria (broken)
+v50.29.0 PATCH: revert v50.28
+v50.27.0 PATCH: mojibake fix index
+v50.26.0 PATCH: mojibake fix 39 pages</code></pre><p><strong>Edge case</strong>: PATCH releases sao sempre safe to upgrade. MINOR pode ter breaking - verifique.</p><h3>Cenario 5: Buscar DR especifico</h3><p><strong>Contexto</strong>: Voce quer saber em qual versao o DR-0208 foi implementado.</p><pre><code>grep 'DR-0208' docs/manual/19-changelog.html</code></pre><p><strong>Output esperado</strong>:</p><pre><code>v50.25.0 MAJOR: DR-0208 (Root Cleanup). 11 .py scripts movidos para scripts/manual_gen/, deletadas 98MB de bloat (.opencode/, .kilo/node_modules/, reports/visual/), atualizada .gitignore, nova regra temp-files-organization.md</code></pre><p><strong>Edge case</strong>: Para detalhes do DR, va em .xforge/decisions/DR-0208-root-cleanup.md</p><h2>Troubleshooting</h2><h3>Changelog nao atualiza automaticamente</h3><p><strong>Causa</strong>: Esta pagina e editavel manualmente, nao gerada de git log</p><p><strong>Solucao</strong>: Para gerar de git log: git log v50.0.0..HEAD --oneline. Para sincronizar changelog, edite este arquivo apos cada release.</p><h3>Versao nao aparece no changelog</h3><p><strong>Causa</strong>: Release foi feita direto em main sem tag (improvavel dado o pipeline)</p><p><strong>Solucao</strong>: Verifique git tag --list v50.*. Se faltando, recriar tag ou adicionar entrada manualmente aqui.</p><h3>Link para DR quebrado</h3><p><strong>Causa</strong>: DR foi removido ou movido para archive</p><p><strong>Solucao</strong>: Veja .xforge/decisions/ADR-INDEX.md para lista atualizada. DRs antigos estao em .xforge/decisions/archive/.</p><h3>Diff entre versoes muito grande</h3><p><strong>Causa</strong>: Span muito largo (ex: v50.0.0 vs HEAD)</p><p><strong>Solucao</strong>: Reduza o range: changelog --de v50.25.0 --ate v50.33.0. Para spans maiores, use git log com --stat para ter nocao do tamanho.</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

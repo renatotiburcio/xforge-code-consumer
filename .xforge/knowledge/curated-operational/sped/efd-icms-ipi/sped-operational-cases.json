@@ -1,0 +1,39 @@
+[
+  {
+    "id": "sped-efd-icms-ipi-registro-d750-pva-603",
+    "domain": "sped.efd-icms-ipi",
+    "documentType": "EFD ICMS/IPI",
+    "code": "D750",
+    "title": "Correção PVA 6.0.3 relacionada ao registro D750",
+    "status": "needs-validation",
+    "trustScore": 55,
+    "sources": [
+      "fenacon-pva-603-d750",
+      "sped-efd-icms-ipi-guias",
+      "sped-efd-icms-ipi-projeto"
+    ],
+    "symptoms": [
+      "Validação PVA relacionada ao registro D750"
+    ],
+    "diagnosis": [
+      "Notícia profissional indica correção no processo de validação do registro D750 no PVA 6.0.3",
+      "Confirmar no portal SPED antes de tratar como regra"
+    ],
+    "recommendedActions": [
+      "Verificar versão atual do PVA no SPED",
+      "Reprocessar arquivo com versão atual",
+      "Consultar Guia Prático vigente"
+    ],
+    "prevention": [
+      "Versionar PVA e Guia Prático",
+      "Registrar versão usada em validações"
+    ],
+    "edgeCases": [
+      "Erro do PVA vs erro do arquivo",
+      "Alteração de guia prático"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  }
+]

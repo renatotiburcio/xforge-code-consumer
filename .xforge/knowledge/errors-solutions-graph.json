@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-06-25T20:38:03.295Z",
+  "nodes": {
+    "errors": [
+      {
+        "id": "n1",
+        "type": "error",
+        "label": "Build Error CS0246",
+        "category": "build"
+      },
+      {
+        "id": "n3",
+        "type": "error",
+        "label": "NullReferenceException",
+        "category": "runtime"
+      }
+    ],
+    "solutions": [
+      {
+        "lessonId": "LESSON-TEST-001",
+        "type": "solucao-validada",
+        "taskType": "testar",
+        "title": "Test lesson",
+        "trustScore": 50,
+        "tags": [
+          "test"
+        ]
+      },
+      {
+        "lessonId": "LESSON-TEST-001",
+        "type": "solucao-validada",
+        "taskType": "testar",
+        "title": "Test lesson",
+        "trustScore": 50,
+        "tags": [
+          "test"
+        ]
+      },
+      {
+        "lessonId": "LESSON-TEST-001",
+        "type": "solucao-validada",
+        "taskType": "testar",
+        "title": "Test lesson",
+        "trustScore": 50,
+        "tags": [
+          "test"
+        ]
+      },
+      {
+        "lessonId": "LESSON-TEST-001",
+        "type": "solucao-validada",
+        "taskType": "testar",
+        "title": "Test lesson",
+        "trustScore": 50,
+        "tags": [
+          "test"
+        ]
+      },
+      {
+        "lessonId": "LESSON-TEST-001",
+        "type": "solucao-validada",
+        "taskType": "testar",
+        "title": "Test lesson",
+        "trustScore": 50,
+        "tags": [
+          "test"
+        ]
+      },
+      {
+        "lessonId": "LESSON-TEST-001",
+        "type": "solucao-validada",
+        "taskType": "testar",
+        "title": "Test lesson",
+        "trustScore": 50,
+        "tags": [
+          "test"
+        ]
+      }
+    ],
+    "antiPatterns": [],
+    "goldenRules": []
+  },
+  "edges": [
+    {
+      "source": "n1",
+      "target": "n2",
+      "type": "resolves"
+    },
+    {
+      "source": "n3",
+      "target": "n4",
+      "type": "resolves"
+    }
+  ],
+  "stats": {
+    "totalErrors": 2,
+    "resolvedErrors": 2,
+    "topCategories": []
+  },
+  "indexes": {
+    "byTaskType": {},
+    "byErrorType": {},
+    "byTag": {}
+  }
+}

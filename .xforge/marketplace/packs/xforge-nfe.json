@@ -1,0 +1,52 @@
+{
+  "id": "xforge-nfe",
+  "name": "xforge-nfe",
+  "title": "NFe - Nota Fiscal Eletronica",
+  "version": "1.0.0",
+  "domain": "fiscal",
+  "category": "fiscal-emission",
+  "description": "Emissao completa de NFe modelo 55 e 65/ NFCe: layout, validacao, certificado digital, SEFAZ autorizacao, eventos (cancelamento, carta de correcao, manifestacao do destinatario).",
+  "author": "XForge",
+  "license": "MIT",
+  "trustScore": 90,
+  "tags": [
+    "fiscal",
+    "nfe",
+    "sefaz",
+    "certificado-a1",
+    "sped",
+    "brasil"
+  ],
+  "dependencies": [
+    "xforge-core"
+  ],
+  "knowledgeEntries": [
+    {
+      "path": "knowledge/packs/xforge-nfe/layout.md",
+      "trustScore": 92,
+      "title": "Layout NFe 4.00"
+    },
+    {
+      "path": "knowledge/packs/xforge-nfe/validacao.md",
+      "trustScore": 90,
+      "title": "Validacoes SEFAZ"
+    },
+    {
+      "path": "knowledge/packs/xforge-nfe/eventos.md",
+      "trustScore": 88,
+      "title": "Eventos da NFe"
+    }
+  ],
+  "tools": [],
+  "workflows": [
+    "emitir-nfe",
+    "cancelar-nfe",
+    "carta-correcao",
+    "manifestacao-destinatario"
+  ],
+  "schemas": [
+    "nfe-schema"
+  ],
+  "installable": true,
+  "size_kb": 245
+}

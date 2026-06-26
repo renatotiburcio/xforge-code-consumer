@@ -1,0 +1,9 @@
+{
+  "commands": [],
+  "thresholds": {
+    "coverageMinimum": 85,
+    "strykerMinimum": 80,
+    "recommended": 90,
+    "critical": 95
+  }
+}

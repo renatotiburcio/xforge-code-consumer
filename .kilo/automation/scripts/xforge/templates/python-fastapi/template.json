@@ -1,0 +1,29 @@
+{
+  "slug": "python-fastapi",
+  "description": "FastAPI + SQLAlchemy 2.0 + Pydantic + pytest",
+  "tags": [
+    "python",
+    "api",
+    "async"
+  ],
+  "skills": [
+    "python-modern",
+    "testing-qa-expert",
+    "data-protection-lgpd-expert",
+    "observability-runtime-expert"
+  ],
+  "files": [
+    "pyproject.toml",
+    "src/myapp/__init__.py",
+    "src/myapp/main.py",
+    "tests/__init__.py",
+    "tests/test_main.py",
+    ".gitignore",
+    "README.md",
+    "Dockerfile",
+    ".dockerignore",
+    ".github/workflows/ci.yml"
+  ],
+  "includes_docker": true,
+  "includes_ci": true
+}

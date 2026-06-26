@@ -1,0 +1,419 @@
+{
+  "edges": [
+    {
+      "target": "n2",
+      "source": "n1",
+      "type": "has"
+    },
+    {
+      "target": "n3",
+      "source": "n2",
+      "type": "evolved_to"
+    },
+    {
+      "target": "n4",
+      "source": "n1",
+      "type": "uses"
+    },
+    {
+      "target": "n5",
+      "source": "n1",
+      "type": "enforces"
+    },
+    {
+      "target": "n6",
+      "source": "n4",
+      "type": "instantiated_as"
+    },
+    {
+      "target": "n7",
+      "source": "n1",
+      "type": "provides"
+    },
+    {
+      "target": "n8",
+      "source": "n1",
+      "type": "provides"
+    },
+    {
+      "target": "n9",
+      "source": "n1",
+      "type": "provides"
+    },
+    {
+      "target": "n10",
+      "source": "n1",
+      "type": "documents"
+    },
+    {
+      "target": "n11",
+      "source": "n1",
+      "type": "validates"
+    },
+    {
+      "target": "n12",
+      "source": "n1",
+      "type": "measured_by"
+    },
+    {
+      "target": "n13",
+      "source": "n1",
+      "type": "documented_in"
+    },
+    {
+      "target": "n14",
+      "source": "n1",
+      "type": "indexed_in"
+    },
+    {
+      "target": "n4",
+      "source": "n2",
+      "type": "contextualizes"
+    },
+    {
+      "target": "n6",
+      "source": "n5",
+      "type": "isolates"
+    },
+    {
+      "source": "skill-dotnet",
+      "target": "n2",
+      "type": "implements"
+    },
+    {
+      "source": "skill-react",
+      "target": "n2",
+      "type": "implements"
+    },
+    {
+      "source": "skill-efcore",
+      "target": "skill-dotnet",
+      "type": "extends"
+    },
+    {
+      "source": "skill-blazor",
+      "target": "skill-dotnet",
+      "type": "extends"
+    },
+    {
+      "source": "skill-nextjs",
+      "target": "skill-react",
+      "type": "extends"
+    },
+    {
+      "source": "skill-purify",
+      "target": "n5",
+      "type": "enforces"
+    },
+    {
+      "source": "skill-stack-detect",
+      "target": "n2",
+      "type": "implements"
+    },
+    {
+      "source": "skill-multi-stack",
+      "target": "n3",
+      "type": "implements"
+    },
+    {
+      "source": "skill-knowledge-pack",
+      "target": "n4",
+      "type": "instantiates"
+    },
+    {
+      "source": "skill-security-gate",
+      "target": "n1",
+      "type": "validates"
+    }
+  ],
+  "lastUpdated": "2026-06-25T23:06:17.487Z",
+  "version": "1.1.0",
+  "indexes": {
+    "byType": {
+      "entity": [
+        "n6",
+        "n7",
+        "n8",
+        "n9",
+        "n10",
+        "n11"
+      ],
+      "metric": [
+        "n12",
+        "n13",
+        "n14"
+      ],
+      "concept": [
+        "n1",
+        "n2",
+        "n3",
+        "n4",
+        "n5"
+      ]
+    },
+    "byDomain": {
+      "architecture": [
+        "n2",
+        "n3",
+        "n5",
+        "skill-stack-detect",
+        "skill-multi-stack"
+      ],
+      "decisions": [
+        "n10"
+      ],
+      "skills": [
+        "n7"
+      ],
+      "rules": [
+        "n11"
+      ],
+      "knowledge": [
+        "n4",
+        "n6",
+        "n14",
+        "skill-knowledge-pack"
+      ],
+      "commands": [
+        "n9"
+      ],
+      "quality": [
+        "n12"
+      ],
+      "documentation": [
+        "n13"
+      ],
+      "agents": [
+        "n8"
+      ],
+      "backend": [
+        "skill-dotnet",
+        "skill-python",
+        "skill-go",
+        "skill-node"
+      ],
+      "frontend": [
+        "skill-react",
+        "skill-angular",
+        "skill-blazor",
+        "skill-nextjs"
+      ],
+      "data": [
+        "skill-efcore"
+      ],
+      "memory": [
+        "skill-purify"
+      ],
+      "security": [
+        "skill-security-gate"
+      ]
+    }
+  },
+  "nodes": [
+    {
+      "label": "XForge",
+      "domain": "platform",
+      "description": "Enterprise Development OS",
+      "id": "n1",
+      "type": "concept"
+    },
+    {
+      "label": "Stack-Aware",
+      "domain": "architecture",
+      "description": "DR-0180 Stack detection",
+      "id": "n2",
+      "type": "concept"
+    },
+    {
+      "label": "Multi-Stack",
+      "domain": "architecture",
+      "description": "DR-0181 Multi-stack workspace",
+      "id": "n3",
+      "type": "concept"
+    },
+    {
+      "label": "Knowledge Pack",
+      "domain": "knowledge",
+      "description": "Packaged knowledge",
+      "id": "n4",
+      "type": "concept"
+    },
+    {
+      "label": "Bounded Context",
+      "domain": "architecture",
+      "description": "Memory namespace isolation",
+      "id": "n5",
+      "type": "concept"
+    },
+    {
+      "id": "n6",
+      "label": "Knowledge Packs",
+      "domain": "knowledge",
+      "description": "20 knowledge packs installed",
+      "type": "entity",
+      "count": 20
+    },
+    {
+      "id": "n7",
+      "label": "Skills",
+      "domain": "skills",
+      "description": "187 skills available",
+      "type": "entity",
+      "count": 187
+    },
+    {
+      "id": "n8",
+      "label": "Agents",
+      "domain": "agents",
+      "description": "56 agents defined",
+      "type": "entity",
+      "count": 56
+    },
+    {
+      "id": "n9",
+      "label": "Commands",
+      "domain": "commands",
+      "description": "160 commands available",
+      "type": "entity",
+      "count": 160
+    },
+    {
+      "id": "n10",
+      "label": "DRs",
+      "domain": "decisions",
+      "description": "105 Decision Records",
+      "type": "entity",
+      "count": 105
+    },
+    {
+      "id": "n11",
+      "label": "Test Rules",
+      "domain": "rules",
+      "description": "46 test rules",
+      "type": "entity",
+      "count": 46
+    },
+    {
+      "id": "n12",
+      "label": "Tests",
+      "domain": "quality",
+      "value": "162 passed",
+      "type": "metric",
+      "description": "162 tests passing"
+    },
+    {
+      "id": "n13",
+      "label": "Manual Pages",
+      "domain": "documentation",
+      "value": "57 pages",
+      "type": "metric",
+      "description": "57 manual pages B-090 compliant"
+    },
+    {
+      "id": "n14",
+      "label": "RAG Index",
+      "domain": "knowledge",
+      "value": "794 docs",
+      "type": "metric",
+      "description": "794 documents indexed"
+    },
+    {
+      "id": "skill-dotnet",
+      "type": "skill",
+      "label": ".NET/C#",
+      "domain": "backend",
+      "stack": "dotnet"
+    },
+    {
+      "id": "skill-react",
+      "type": "skill",
+      "label": "React",
+      "domain": "frontend",
+      "stack": "react"
+    },
+    {
+      "id": "skill-angular",
+      "type": "skill",
+      "label": "Angular",
+      "domain": "frontend",
+      "stack": "angular"
+    },
+    {
+      "id": "skill-python",
+      "type": "skill",
+      "label": "Python",
+      "domain": "backend",
+      "stack": "python"
+    },
+    {
+      "id": "skill-go",
+      "type": "skill",
+      "label": "Go",
+      "domain": "backend",
+      "stack": "go"
+    },
+    {
+      "id": "skill-node",
+      "type": "skill",
+      "label": "Node.js",
+      "domain": "backend",
+      "stack": "node"
+    },
+    {
+      "id": "skill-blazor",
+      "type": "skill",
+      "label": "Blazor",
+      "domain": "frontend",
+      "stack": "blazor"
+    },
+    {
+      "id": "skill-nextjs",
+      "type": "skill",
+      "label": "Next.js",
+      "domain": "frontend",
+      "stack": "next"
+    },
+    {
+      "id": "skill-efcore",
+      "type": "skill",
+      "label": "EF Core",
+      "domain": "data",
+      "stack": "dotnet"
+    },
+    {
+      "id": "skill-purify",
+      "type": "skill",
+      "label": "Purify",
+      "domain": "memory",
+      "stack": "agnostic"
+    },
+    {
+      "id": "skill-stack-detect",
+      "type": "skill",
+      "label": "Stack Detector",
+      "domain": "architecture",
+      "stack": "agnostic"
+    },
+    {
+      "id": "skill-multi-stack",
+      "type": "skill",
+      "label": "Multi-Stack",
+      "domain": "architecture",
+      "stack": "agnostic"
+    },
+    {
+      "id": "skill-knowledge-pack",
+      "type": "skill",
+      "label": "Knowledge Packs",
+      "domain": "knowledge",
+      "stack": "agnostic"
+    },
+    {
+      "id": "skill-security-gate",
+      "type": "skill",
+      "label": "Security Gates",
+      "domain": "security",
+      "stack": "agnostic"
+    }
+  ]
+}

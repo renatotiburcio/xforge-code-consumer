@@ -1,0 +1,377 @@
+﻿{
+  "$schema": "https://app.kilo.ai/config.json",
+  "permission": {
+    "*": "ask",
+    "bash": "allow",
+    "edit": {
+      "*": "allow",
+      ".xforge/decisions/**": "deny",
+      ".kilo/rules/**": "deny"
+    },
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "webfetch": "allow",
+    "task": "allow",
+    "list": "allow",
+    "external_directory": "ask",
+    "todowrite": "allow",
+    "question": "allow",
+    "websearch": "ask",
+    "lsp": "ask",
+    "doom_loop": "ask",
+    "skill": "allow"
+  },
+  "instructions": [
+    "AGENTS.md",
+    ".kilo/rules/*.md"
+  ],
+  "agent": {
+    "code": {
+      "description": "Modo padrao de desenvolvimento"
+    },
+    "plan": {
+      "description": "Planejamento e arquitetura"
+    },
+    "ask": {
+      "description": "Perguntas rapidas"
+    },
+    "debug": {
+      "description": "Debug e troubleshooting"
+    },
+    "review": {
+      "description": "Code review - performance, seguranca, qualidade"
+    },
+    "explore": {
+      "description": "Exploracao de codigo"
+    },
+    "general": {
+      "description": "Tarefas gerais com acesso a todas as ferramentas",
+      "model": "anthropic/claude-sonnet-4-20250514"
+    },
+    "fullstack-analysis-architect": {
+      "description": "Especialista em analise fullstack + documentacao (SDD, C4, OpenAPI, ER, UX). Gera docs completas para handoff zero-ambiguidade",
+      "mode": "subagent",
+      "temperature": 0.2,
+      "permission": {
+        "edit": {
+          ".kilo/agent/**/*.md": "allow",
+          ".kilo/specs/**/*.md": "allow",
+          ".xforge/analysis/**/*.md": "allow",
+          ".xforge/analysis/**/*.yaml": "allow",
+          ".xforge/analysis/**/*.mmd": "allow",
+          "*.md": "allow",
+          "*.yaml": "allow",
+          "*.mmd": "allow",
+          "*": "deny"
+        },
+        "bash": "allow"
+      }
+    },
+    "docs-writer": {
+      "description": "Especialista em documentacao tecnica",
+      "mode": "subagent",
+      "temperature": 0.2,
+      "permission": {
+        "edit": {
+          "*.md": "allow",
+          "*": "deny"
+        },
+        "bash": "deny"
+      }
+    }
+  },
+  "skills": {
+    "paths": [
+      ".kilo/skills", ".kilo/skills-internal"
+    ]
+  },
+  "commands": {
+    "paths": [
+      ".kilo/commands"
+    ]
+  },
+  "workflows": {
+    "paths": [
+      ".kilo/workflows"
+    ]
+  },
+  "routing": {
+    "provider": "openrouter",
+    "model": "anthropic/claude-sonnet-4-20250514",
+    "contextWindow": 131072,
+    "complexityRouting": {
+      "tiers": {
+        "economy": {
+          "provider": "ollama",
+          "model": "llama3",
+          "fallback": "openrouter/anthropic/claude-sonnet-4-20250514",
+          "complexity": "S",
+          "priority": "cost",
+          "contextWindow": 131072
+        },
+        "standard": {
+          "provider": "openrouter",
+          "model": "anthropic/claude-sonnet-4-20250514",
+          "fallback": "ollama/llama3",
+          "complexity": "M",
+          "priority": "balanced",
+          "contextWindow": 131072
+        },
+        "premium": {
+          "provider": "openrouter",
+          "model": "anthropic/claude-opus-4",
+          "fallback": "openrouter/anthropic/claude-sonnet-4-20250514",
+          "complexity": "L",
+          "priority": "quality",
+          "contextWindow": 200000,
+          "temperature": 0.2
+        },
+        "ultra": {
+          "provider": "openrouter",
+          "model": "anthropic/claude-opus-4",
+          "fallback": "openrouter/anthropic/claude-sonnet-4-20250514",
+          "complexity": "CRITICA",
+          "priority": "accuracy",
+          "contextWindow": 200000,
+          "temperature": 0.1
+        }
+      },
+      "specialRules": {
+        "security": "ultra",
+        "lgpd": "ultra",
+        "fiscal": "ultra",
+        "architecture": "premium",
+        "simpleEdit": "economy"
+      }
+    },
+    "providers": {
+      "economy": {
+        "provider": "ollama",
+        "model": "llama3"
+      },
+      "standard": {
+        "provider": "openrouter",
+        "model": "anthropic/claude-sonnet-4-20250514"
+      },
+      "premium": {
+        "provider": "openrouter",
+        "model": "anthropic/claude-opus-4"
+      },
+      "ultra": {
+        "provider": "openrouter",
+        "model": "anthropic/claude-opus-4"
+      }
+    }
+  },
+  "mcp": {
+    "xforge": {
+      "type": "local",
+      "command": [
+        "node",
+        ".xforge/mcp/server.js"
+      ],
+      "enabled": true
+    },
+    "github": {
+      "_native": true,
+      "_note": "DR-0191: native MCP (cannot be installed/uninstalled; only enabled toggle). GitHub maintains the upstream server at https://github.com/github/github-mcp-server",
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${env:GITHUB_MCP_PAT}"
+      },
+      "enabled": false
+    },
+    "filesystem": {
+      "_native": true,
+      "_note": "DR-0194: native MCP (filesystem is core for any agent). Anthropic maintains the upstream server at https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem. Access restricted to workspace root via Roots protocol.",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "D:\\\\dev\\\\XForge-Development-New"
+      ],
+      "env": {},
+      "enabled": false
+    },
+    "context7": {
+      "_native": true,
+      "_note": "DR-0195: native MCP for upstream library docs (Next.js, Supabase, MongoDB, etc). Complements XForge internal RAG. Free API key at context7.com/dashboard.",
+      "type": "http",
+      "url": "https://mcp.context7.com/mcp",
+      "headers": {
+        "CONTEXT7_API_KEY": "${env:CONTEXT7_API_KEY}"
+      },
+      "enabled": false
+    },
+    "playwright": {
+      "_native": true,
+      "_note": "DR-0196: native MCP for browser automation. Microsoft maintains @playwright/mcp. 50+ tools (click, navigate, snapshot, evaluate, route, cookies, etc). Default --headless --isolated --caps=core for safety.",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--isolated",
+        "--caps=core"
+      ],
+      "env": {
+        "PLAYWRIGHT_BROWSERS_PATH": "0"
+      },
+      "enabled": false
+    },
+    "dbhub": {
+      "_native": true,
+      "_note": "DR-0197: native MCP for multi-database (PostgreSQL, MySQL, MariaDB, SQL Server, SQLite). Bytebase maintains @bytebase/dbhub. ONLY 2 tools (execute_sql, search_objects) for token efficiency. CRITICAL: use stdio transport to avoid 0.0.0.0 HTTP bind. Default DSN is SQLite (zero setup).",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "@bytebase/dbhub@latest",
+        "--dsn",
+        "sqlite://./.xforge/db/xforge.db"
+      ],
+      "env": {},
+      "enabled": false
+    },
+    "mermaid": {
+      "_native": true,
+      "_note": "DR-0200: native MCP for runtime Mermaid diagram generation + export (base64/svg/png). hustcc maintains mcp-mermaid. Complementary to XForge mermaid-diagrams (static templates).",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "mcp-mermaid"
+      ],
+      "env": {},
+      "enabled": false
+    },
+    "firecrawl": {
+      "_native": true,
+      "_note": "DR-0199: native MCP for web scraping, search, crawl, extract. Firecrawl maintains @firecrawl/firecrawl-mcp-server. API key required (cloud) or self-hosted. ~20 tools (scrape, batch_scrape, map, search, crawl, extract, agent, monitor_*).",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "${env:FIRECRAWL_API_KEY}"
+      },
+      "enabled": false
+    },
+    "plantuml": {
+      "_native": true,
+      "_note": "DR-0201: native MCP for PlantUML diagrams (UML class/sequence/component, C4 architecture). Infobip maintains plantuml-mcp-server. Complementary to Mermaid MCP (DR-0200); PlantUML for enterprise/UML, Mermaid for flowcharts. Public plantuml.com server default; self-host via PLANTUML_SERVER_URL.",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "plantuml-mcp-server"
+      ],
+      "env": {
+        "PLANTUML_SERVER_URL": "${env:PLANTUML_SERVER_URL}"
+      },
+      "enabled": false
+    },
+    "sequential-thinking": {
+      "_native": true,
+      "_note": "DR-0203: native MCP for structured step-by-step reasoning (thoughts, revisions, branching). Anthropic maintains @modelcontextprotocol/server-sequential-thinking.",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "env": {
+        "DISABLE_THOUGHT_LOGGING": "false"
+      },
+      "enabled": false
+    },
+    "brave-search": {
+      "_native": true,
+      "_note": "DR-0204: native MCP for web search (8 tools: web/local/video/image/news/summarizer/place/llm_context). Brave maintains @brave/brave-search-mcp-server. API key required (BRAVE_API_KEY). Complementary to Firecrawl (DR-0199).",
+      "type": "stdio",
+      "command": [
+        "npx",
+        "-y",
+        "@brave/brave-search-mcp-server",
+        "--transport",
+        "stdio"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "${env:BRAVE_API_KEY}"
+      },
+      "enabled": false
+    }
+  },
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      ".git/**",
+      "dist/**",
+      "build/**",
+      ".next/**",
+      "__pycache__/**",
+      "vendor/**",
+      "target/**",
+      ".xforge-backups/**",
+      ".xforge/rag/cache/**"
+    ]
+  },
+  "experimental": {
+    "openTelemetry": false,
+    "codebase_search": true,
+    "mcp_timeout": 30000,
+    "_note": "Official schema (app.kilo.ai/config.json v7.3.50) also supports: auto_expand_history, auto_collapse_reasoning, terminal_command_display, code_edit_display, hide_prompt_training_models. Local doctor.ps1 is stricter and may not recognize them; remove if pre-commit hook fails."
+  },
+  "provider": {
+    "anthropic": {
+      "options": {
+        "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "baseURL": "https://api.anthropic.com",
+        "timeout": 300000
+      },
+      "models": {}
+    },
+    "openai": {
+      "options": {
+        "apiKey": "{env:OPENAI_API_KEY}",
+        "timeout": 300000
+      }
+    },
+    "openrouter": {
+      "options": {
+        "apiKey": "{env:OPENROUTER_API_KEY}",
+        "baseURL": "https://openrouter.ai/api/v1",
+        "timeout": 300000
+      }
+    },
+    "kilo": {
+      "options": {
+        "baseURL": "https://api.kilo.ai",
+        "timeout": 300000
+      }
+    }
+  },
+  "tools": {
+    "read": true,
+    "edit": true,
+    "glob": true,
+    "grep": true,
+    "list": true,
+    "bash": true,
+    "task": true,
+    "external_directory": true,
+    "todowrite": true,
+    "question": true,
+    "webfetch": true,
+    "websearch": true,
+    "lsp": true,
+    "doom_loop": true,
+    "skill": true
+  }
+}

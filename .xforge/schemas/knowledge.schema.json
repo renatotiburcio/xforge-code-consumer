@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "XForge Knowledge File (Markdown frontmatter)",
+  "description": "Validates YAML-style frontmatter in .xforge/knowledge/**/*.md. Schema reflects the REAL format used by 177 existing files: id, type, tags, owner, version, updated. Optional fields are optional. type accepts all observed values (English + Portuguese) without restriction.",
+  "type": "object",
+  "required": ["id", "type"],
+  "properties": {
+    "id":       { "type": "string", "minLength": 1, "description": "Unique identifier (kebab-case, no spaces)" },
+    "type":     { "type": "string", "minLength": 1, "description": "Knowledge type — free-form. Observed values: knowledge, conhecimento, pattern, padrao, fluxo, glossary, domain, dominio, resumo, projeto, arquitetura, architecture, auth, frontend, database, tech-stack, multi-tenancy, compliance" },
+    "tags":     { "type": "array",  "items": { "type": "string" } },
+    "owner":    { "type": "string" },
+    "version":  { "type": ["string", "number"] },
+    "updated":  { "type": "string" },
+    "domain":   { "type": "string", "description": "Optional — usually derived from parent directory" },
+    "title":    { "type": "string" },
+    "trustScore": { "type": "number", "minimum": 0, "maximum": 100 },
+    "source":   { "type": "string" },
+    "deprecated": { "type": "boolean" }
+  },
+  "additionalProperties": true
+}

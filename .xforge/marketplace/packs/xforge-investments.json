@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-investments",
+    "name":  "Investments",
+    "version":  "1.0.0",
+    "description":  "Renda fixa, variavel, fundos, cripto",
+    "files":  3,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "investments"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/investments/"
+}

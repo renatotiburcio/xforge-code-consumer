@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cat-skills-lgpd - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Skills (Categorias)</h3><ul><li><a href="cat-skills-backend.html">Backend (.NET/Go/Rust)</a></li><li><a href="cat-skills-frontend.html">Frontend (React/Vue/Angular)</a></li><li><a href="cat-skills-python.html">Python</a></li><li><a href="cat-skills-ai.html">AI/ML</a></li><li><a href="cat-skills-seguranca.html">Seguranca</a></li><li><a href="cat-skills-conhecimento.html">Conhecimento</a></li><li><a href="cat-skills-devops.html">DevOps</a></li><li><a href="cat-skills-gestao.html">Gestao</a></li><li><a href="cat-skills-produto.html">Produto</a></li><li><a href="cat-skills-qualidade.html">Qualidade</a></li><li><a href="cat-skills-outros.html">Outros</a></li><li><a href="cat-skills-lgpd.html" class="active">LGPD / Privacidade</a></li><li><a href="cat-skills-fiscal-(br).html">Fiscal (BR)</a></li><li><a href="cat-skills-contabil-(br).html">Contabil (BR)</a></li><li><a href="cat-skills-trabalhista-(br).html">Trabalhista (BR)</a></li><li><a href="cat-skills-arquitetura.html">Arquitetura</a></li></ul></aside>
+<main>
+<h1>Cat-skills LGPD - Privacidade e Protecao de Dados</h1><h2>O que e</h2><p>Catalogo de skills relacionadas a LGPD (Lei Geral de Protecao de Dados - Lei 13.709/2018) e protecao de dados pessoais. Inclui skills para: implementacao de consentimento, gestao de direitos do titular (acesso, correcao, eliminacao, portabilidade), privacy by design, DPO (Data Protection Officer), adequacao a GDPR (europeia), e compliance com ANPD. Skills canonicas: lgpd-expert, data-protection-lgpd-expert, security-lgpd-expert.</p><h2>Quando usar</h2><ul><li>Quando precisa implementar coleta de consentimento em formularios</li><li>Quando esta desenhando fluxo de dados pessoais (banco, log, API)</li><li>Quando precisa responder a um titular que solicitou acesso/eliminacao dos dados</li><li>Quando esta fazendo auditoria LGPD do projeto</li><li>NAO use para legislacao internacional (GDPR tem skills proprias)</li></ul><h2>Como usar</h2><p>Skills LGPD sao loaded automaticamente quando o projeto tem dados pessoais. Para carregar manualmente:</p><pre><code># Carregar skill LGPD
+/load-skill lgpd-expert
+# Ver checklist LGPD
+/check-lgpd
+# Gerar relatorio de adequacao
+/lgpd-audit</code></pre><p>Skills LGPD seguem DR-0180 (memory namespace) - so carregam em projetos com dados pessoais BR.</p><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--skill</code></td><td>string</td><td>todas</td><td>Carrega skill especifica: lgpd-expert, data-protection-lgpd-expert</td></tr><tr><td><code>--auditoria</code></td><td>bool</td><td>false</td><td>Executa auditoria LGPD completa do projeto</td></tr><tr><td><code>--relatorio</code></td><td>string</td><td>console</td><td>Formato de saida: console, markdown, json</td></tr><tr><td><code>--idioma</code></td><td>string</td><td>pt-BR</td><td>Idioma do output</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Coletar consentimento LGPD em formulario</h3><p><strong>Contexto</strong>: Voce tem formulario de cadastro e precisa adequar a LGPD.</p><pre><code><form>
+  <input type='checkbox' id='consent' required>
+  <label for='consent'>Eu li e aceito a Politica de Privacidade</label>
+  <input type='checkbox' id='marketing'>
+  <label for='marketing'>Aceito receber comunicacoes de marketing</label>
+</form></code></pre><p><strong>Output esperado</strong>:</p><pre><code>Formulario com consentimento explicito (opt-in) + link para politica. Granularidade: marketing separado do consentimento geral.</code></pre><p><strong>Edge case</strong>: Pre-tick boxes (ja marcados) sao PROIBIDOS pela LGPD art. 8. Use sempre opt-in.</p><h3>Cenario 2: Implementar direito de acesso</h3><p><strong>Contexto</strong>: Um usuario solicitou acesso aos dados pessoais armazenados.</p><pre><code>GET /api/lgpd/meus-dados
+Authorization: Bearer {user-token}</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Resposta em ate 15 dias (prazo legal) com: nome, email, CPF parcial, historico de consentimentos, logs de acesso.</code></pre><p><strong>Edge case</strong>: Implemente tambem direito de ELIMINACAO (Art. 18 VI) - nao apenas acesso.</p><h3>Cenario 3: Privacy by Design</h3><p><strong>Contexto</strong>: Voce esta desenhando nova feature que coleta dados.</p><pre><code># Checklist PbD:
+# - Apenas dados necessarios (minimizacao)
+# - Criptografia at-rest e in-transit
+# - Retencao definida
+# - Logs de acesso ao dado
+# - Anonimizacao para analytics
+# - Consentimento granular</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Feature adequa a LGPD antes do deploy. Documenta decisoes no DR.</code></pre><p><strong>Edge case</strong>: PbD deve estar no design ANTES de codar. Revisao de codigo deve validar privacy.</p><h3>Cenario 4: Relatar incidente de dados</h3><p><strong>Contexto</strong>: Voce detectou vazamento de dados e precisa notificar ANPD.</p><pre><code># Workflow obrigatorio:
+# 1. Imediatamente: isolar sistemas afetados
+# 2. Em 2 dias uteis: notificar ANPD via portal
+# 3. Em paralelo: notificar titulares afetados
+# 4. Documentar: causa, dados expostos, numero de afetados
+# 5. Implementar: correcao + prevencao</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Conformidade com Art. 48 LGPD. ANPD analisa e pode aplicar sancao se houver negligencia.</code></pre><p><strong>Edge case</strong>: Atraso na notificacao = multa adicional. Documente TUDO.</p><h3>Cenario 5: Adequacao a GDPR (europeia)</h3><p><strong>Contexto</strong>: Sua empresa tem clientes na Europa, precisa adequar tambem a GDPR.</p><pre><code># Diff LGPD vs GDPR:
+# LGPD: ANPD fiscaliza (Brasil)
+# GDPR: CNIL/ICO fiscaliza (Europa)
+# Ambas exigem: consentimento, direito ao esquecimento, DPO
+# GDPR tem: privacy by design MAIS rigoroso
+# LGPD: DPO obrigatorio para empresas que tratam dados sensiveis em escala</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Implementar pratica mais rigorosa (GDPR) cobre ambas. Use skill data-protection-lgpd-expert que cobre LGPD+GDPR.</code></pre><p><strong>Edge case</strong>: Considere tambem CCPA (California) em paralelo.</p><h2>Troubleshooting</h2><h3>Skill LGPD nao carrega no projeto</h3><p><strong>Causa</strong>: DR-0180 (memory namespace) - skill so carrega em projetos com dados pessoais</p><p><strong>Solucao</strong>: Adicione campo data_classification em .xforge/project-dna/PROJECT-DNA.md. Use classification: personal</p><h3>Duvida se campo X e dado pessoal</h3><p><strong>Causa</strong>: LGPD define dado pessoal como qualquer info que identifique pessoa (direta ou indiretamente)</p><p><strong>Solucao</strong>: Em duvida, trate como pessoal. CPF, email, IP, geolocalizacao, cookie ID sao pessoais.</p><h3>Como obter DPO se empresa pequena</h3><p><strong>Causa</strong>: DPO pode ser terceirizado (pessoa fisica ou juridica)</p><p><strong>Solucao</strong>: Contrate DPO as a service. Skills incluem templates de contrato e checklist.</p><h3>Titular pede exclusao mas dados estao em log</h3><p><strong>Causa</strong>: Logs sao necessarios para auditoria/seguranca, mas contem dados pessoais</p><p><strong>Solucao</strong>: Anonimize logs (substitua CPF por hash, email por user-id). Mantenha log mas remova dado pessoal.</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

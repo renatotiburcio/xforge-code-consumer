@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-agro",
+    "name":  "Agro",
+    "version":  "1.0.0",
+    "description":  "Safra, gado, commodities, LCPR",
+    "files":  3,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "agro"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/agro/"
+}

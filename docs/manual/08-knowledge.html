@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>08 Knowledge - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html" class="active">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Componentes</h3><ul><li><a href="04-skills.html">Skills</a></li><li><a href="05-agents.html">Agents</a></li><li><a href="06-commands.html">Commands</a></li><li><a href="07-rules.html">Rules</a></li><li><a href="08-knowledge.html" class="active">Knowledge</a></li><li><a href="09-decisions.html">Decisões</a></li><li><a href="10-extensions.html">Extensions</a></li><li><a href="cat-skills.html">Skills (catálogo)</a></li><li><a href="cat-agents.html">Agents (catálogo)</a></li><li><a href="cat-commands.html">Commands (catálogo)</a></li><li><a href="cat-rules.html">Rules (catálogo)</a></li><li><a href="cat-knowledge.html">Knowledge (catálogo)</a></li><li><a href="cat-decisions.html">Decisões (catálogo)</a></li><li><a href="cat-extensions.html">Extensions (catálogo)</a></li></ul></aside>
+<main>
+<h1>08 - Knowledge Base (319 entries)</h1>
+
+<h2>O que e</h2>
+<p><strong>Knowledge</strong> e' a base indexada de 319 entries em <code>.xforge/knowledge/</code>, fonte do RAG. Cada entry tem frontmatter YAML (path, domain, applicabilityScope, trustScore, keywords) + corpo markdown. Router filtra por stack ativo via applicabilityScope (DR-0180). Em projeto .NET medio, 187 de 319 entries carregam (58.7%).</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce quer consultar conhecimento especifico (NFe, LGPD, EF Core)</li>
+  <li>Quando quer auditar quais entries carregam no seu projeto</li>
+  <li>Quando quer criar knowledge entry nova</li>
+  <li>Quando quer filtrar por dominio (fiscal, contabil, lgpd)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica (consulta programatica):</p>
+<pre><code># Ver INDEX.json
+cat .xforge/knowledge/INDEX.json | python -m json.tool | head -50
+
+# Filtrar por stack
+stack-detector.ps1 --check-scope .xforge/knowledge/INDEX.json
+
+# Listar por dominio
+ls .xforge/knowledge/dominios/
+# fiscal/ contabil/ trabalhista/ rh/ financeiro/ agro/ comercial/
+
+# Criar entry nova
+echo &gt; .xforge/knowledge/dominios/meu-dominio/topico.md
+# [frontmatter + corpo]
+# Adicionar ao INDEX.json
+python .xforge/scripts/rag_local.py reindex</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>path</code></td><td>string</td><td>obrigatorio</td><td>Caminho relativo a .xforge/knowledge/.</td></tr>
+<tr><td><code>domain</code></td><td>string</td><td>obrigatorio</td><td>Dominio: fiscal, contabil, lgpd, erp, etc.</td></tr>
+<tr><td><code>applicabilityScope</code></td><td>array</td><td>["*"]</td><td>Stacks compativeis. Router filtra.</td></tr>
+<tr><td><code>trustScore</code></td><td>int (0-100)</td><td>80</td><td>100=oficial, 90=codigo, 80=blog senior.</td></tr>
+<tr><td><code>keywords</code></td><td>array</td><td>[]</td><td>3-7 termos para busca RAG.</td></tr>
+<tr><td><code>relevance</code></td><td>string</td><td>medium</td><td>high, medium, low.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Knowledge por dominio BR (fiscal)</h3>
+<p><strong>Contexto</strong>: Voce trabalha em projeto ERP fiscal. Quais knowledge entries carregam?</p>
+<pre><code>ls .xforge/knowledge/dominios/fiscal/ | head -10
+# nfe/basics.md
+# sped/efd-icms-ipi.md
+# ibs-cbs/reforma.md
+# estados-icms-por-uf/details.md
+# icms-st/calculo.md
+
+# Ver uma entry
+cat .xforge/knowledge/dominios/fiscal/nfe/basics.md</code></pre>
+<p><strong>Output esperado</strong> (excerpt):</p>
+<pre><code># NFe Basics
+- Schema 4.00 (NT 2025.002)
+- SEFAZ contingencia: EPEC, SVC-AN, SVC-RS
+- Certificado A1/A3 obrigatorio
+- Validacoes: schema, regras de negocio, certificado
+- Eventos: cancelamento, carta de correcao, manifestacao</code></pre>
+<p><strong>Edge case</strong>: Entries tem TTL. Reformas (IBS/CBS 2025) tem expiresAt. Rode <code>knowledge-ttl-validation</code> para limpar stale.</p>
+
+<h3>Cenario 2: Knowledge universal (LGPD)</h3>
+<p><strong>Contexto</strong>: LGPD aplica a qualquer stack. Use <code>["*"]</code>.</p>
+<pre><code>ls .xforge/knowledge/compliance/
+# lgpd-basics.md
+# lgpd-direitos-titular.md
+# lgpd-operacional.md
+# privacy-by-design.md
+# encarregado-dpo.md
+# transferencia-internacional.md
+# bases-legais.md
+# retencao-documentos.md
+
+# Entry com scope ["*"]
+cat .xforge/knowledge/compliance/lgpd-basics.md | head -10
+---
+domain: lgpd
+applicabilityScope: ["*"]
+trustScore: 95
+source: "LGPL Lei 13.709/2018 + ANPD guidelines"
+---</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code># LGPD Basics
+- Lei 13.709/2018 (vigente desde 2020)
+- 10 bases legais para tratamento
+- 9 direitos do titular
+- DPO obrigatorio
+- ANPD pode multar ate 2% do faturamento (max R$ 50M por infracao)
+- Privacy by Design (Cavoukian)</code></pre>
+<p><strong>Edge case</strong>: Use ["*"] com cuidado. Duvida? Escolha 2-3 stacks especificos.</p>
+
+<h3>Cenario 3: Knowledge por stack (EF Core patterns)</h3>
+<p><strong>Contexto</strong>: Voce trabalha em projeto .NET com EF Core. Quais patterns carregam?</p>
+<pre><code>stack-detector.ps1 --check-scope .xforge/knowledge/
+# Em projeto .NET 8, carregam:
+# 187 entries (58.7% de 319)
+
+# Breakdown por dominio:
+# - arquitetura/patterns: 45
+# - dominios/fiscal: 25
+# - dominios/contabil: 9
+# - dominios/lgpd: 9
+# - packs/xforge-efcore: 12
+# - packs/xforge-blazor: 15
+# ... etc
+
+# Ver pattern especifico
+cat .xforge/knowledge/padroes/repository-pattern.md</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code># Repository Pattern com EF Core
+- Interface IRepository&lt;T&gt; com operacoes basicas
+- UnitOfWork para transacoes multi-aggregate
+- Specification pattern para queries complexas
+- DTOs separados de entities (AutoMapper)
+- NUNCA expor DbContext diretamente ao controller</code></pre>
+<p><strong>Edge case</strong>: Knowledge router cacheia resultado por 24h. Para forcar refresh, delete <code>.kilo/.stack-context.json</code>.</p>
+
+<h3>Cenario 4: Criar knowledge entry nova</h3>
+<p><strong>Contexto</strong>: Voce aprendeu um padrao de feature flags. Quer generalizar como knowledge.</p>
+<pre><code># 1. Criar arquivo
+cat &gt; .xforge/knowledge/padroes/feature-flags.md &lt;&lt;EOF
+---
+domain: padroes
+applicabilityScope: ["dotnet", "node", "python"]
+trustScore: 85
+keywords: [feature-flags, toggle, deploy]
+relevance: high
+---
+# Feature Flags
+Feature flags permitem toggling de funcionalidades sem deploy...
+
+## Quando usar
+- A/B testing
+- Kill switches (desabilitar feature em prod)
+- Progressive rollout
+EOF
+
+# 2. Adicionar ao INDEX.json
+# (entry: path, domain, applicabilityScope, trustScore, keywords)
+
+# 3. Reindexar RAG
+python .xforge/scripts/rag_local.py reindex
+# Output: 748 docs (era 747, +1)</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[reindex] 320 entries (era 319, +1)
+[reindex] feature-flags.md: scope=3 stacks, trustScore=85
+[done] Knowledge router recarregado</code></pre>
+<p><strong>Edge case</strong>: Edicao do INDEX.json e manual. Para bulk add, use skill <code>knowledge-ingestion</code>.</p>
+
+<h3>Cenario 5: Validar TTL (knowledge stale)</h3>
+<p><strong>Contexto</strong>: Voce quer saber quais knowledge entries precisam revalidacao (legislacao mudou).</p>
+<pre><code>powershell .kilo/automation/scripts/memory-ttl-validation.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[ttl-validation] Varrendo .xforge/knowledge/
+[ttl] 67 entries com TTL &gt; 6 meses
+[ttl] 23 entries com TTL &gt; 1 ano (REVALIDAR)
+
+# Breakdown por dominio
+[ttl] fiscal: 12 (Reforma Tributaria 2025 mudou muita coisa)
+[ttl] contabil: 5 (NBC TG atualizadas)
+[ttl] lgpd: 3 (ANPD guidelines 2024)
+[ttl] trabalhista: 3 (CLT 2024 + eSocial 2025)
+
+[done] 67 stale entries, 23 critical
+       Recomendado: knowledge-curation skill</code></pre>
+<p><strong>Edge case</strong>: TTL por dominio: legislacao 3-6 meses, API 3 meses, pattern 6 meses, arquitetura 12 meses.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Knowledge nao carrega</h3>
+<p><strong>Causa</strong>: applicabilityScope nao bate com stack.</p>
+<p><strong>Solucao</strong>: <code>stack-detector.ps1 --check-scope .xforge/knowledge/INDEX.json</code> para ver quais carregam.</p>
+
+<h3>Entry existe mas INDEX.json nao lista</h3>
+<p><strong>Causa</strong>: RAG reindex rodou mas INDEX.json nao foi atualizado.</p>
+<p><strong>Solucao</strong>: Edite INDEX.json e adicione entry. RAG chunks.jsonl ja tem (apenas reindex adiciona). Mas router usa INDEX.json para carregar no contexto.</p>
+
+<h3>Knowledge stale (legislacao mudou)</h3>
+<p><strong>Causa</strong>: TTL expirado, legislacao mudou (ex: Reforma Tributaria).</p>
+<p><strong>Solucao</strong>: Use skill <code>curated-operational-knowledge-expert</code> para revalidar. Ou <code>knowledge-ttl-validation</code> para bulk cleanup.</p>
+
+<h3>"Knowledge INDEX.json corrompido"</h3>
+<p><strong>Causa</strong>: JSON mal-formado (editor salvou mal, virgula faltando).</p>
+<p><strong>Solucao</strong>: <code>python -c "import json; json.load(open('.xforge/knowledge/INDEX.json'))"</code> para localizar erro. Backup em <code>INDEX.json.bak-YYYYMMDD-HHMM</code>.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

@@ -1,0 +1,42 @@
+﻿{
+  "name": "xforge-knowledge-curation",
+  "version": "1.0.0",
+  "actions": {
+    "deduplication": {
+      "method": "semantic-similarity",
+      "threshold": 0.85,
+      "mergeStrategy": "keep-newer-with-history",
+      "tool": "consolidate_knowledge"
+    },
+    "compression": {
+      "trigger": "wordCount > 500",
+      "target": "100-200 words",
+      "preserve": ["decision", "reason", "result", "source"],
+      "tool": "summarize"
+    },
+    "coldStorage": {
+      "trigger": "lastUsed > 30d OR createdAt > 90d and useCount == 0",
+      "destination": ".xforge/knowledge/archive/",
+      "retrieval": "on-demand"
+    },
+    "deprecation": {
+      "triggers": [
+        "trustScore < 30 for 60d",
+        "superseded by newer knowledge",
+        "explicitly marked deprecated",
+        "source URL dead for 30d"
+      ],
+      "action": "mark deprecated, link to replacement"
+    },
+    "promotion": {
+      "pipeline": ["experimental", "validated", "approved", "enterprise-standard"],
+      "criteria": {
+        "validated": "used 3+ times, trust >= 70",
+        "approved": "validated + manual review",
+        "enterprise-standard": "approved + used in 2+ projects"
+      }
+    }
+  },
+  "schedule": "weekly",
+  "audit": "all actions logged to .xforge/audit/audit.jsonl"
+}

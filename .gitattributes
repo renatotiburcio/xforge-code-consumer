@@ -1,0 +1,48 @@
+# Auto detect text files and normalize line endings
+* text=auto
+
+# Force LF for specific file types
+*.md text eol=lf
+*.json text eol=lf
+*.jsonc text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.txt text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+
+# Force LF for KiloCode files
+.kilo/** text eol=lf
+AGENTS.md text eol=lf
+kilo.jsonc text eol=lf
+
+# Keep CRLF for Windows-specific files
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files - no conversion
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.zip binary
+*.tar.gz binary
+*.7z binary
+*.exe binary
+*.dll binary
+
+# Prevent BOM in JSON files
+*.json working-tree-encoding=UTF-8
+

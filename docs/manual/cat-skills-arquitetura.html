@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cat-skills-arquitetura - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Skills (Categorias)</h3><ul><li><a href="cat-skills-backend.html">Backend (.NET/Go/Rust)</a></li><li><a href="cat-skills-frontend.html">Frontend (React/Vue/Angular)</a></li><li><a href="cat-skills-python.html">Python</a></li><li><a href="cat-skills-ai.html">AI/ML</a></li><li><a href="cat-skills-seguranca.html">Seguranca</a></li><li><a href="cat-skills-conhecimento.html">Conhecimento</a></li><li><a href="cat-skills-devops.html">DevOps</a></li><li><a href="cat-skills-gestao.html">Gestao</a></li><li><a href="cat-skills-produto.html">Produto</a></li><li><a href="cat-skills-qualidade.html">Qualidade</a></li><li><a href="cat-skills-outros.html">Outros</a></li><li><a href="cat-skills-lgpd.html">LGPD / Privacidade</a></li><li><a href="cat-skills-fiscal-(br).html">Fiscal (BR)</a></li><li><a href="cat-skills-contabil-(br).html">Contabil (BR)</a></li><li><a href="cat-skills-trabalhista-(br).html">Trabalhista (BR)</a></li><li><a href="cat-skills-arquitetura.html" class="active">Arquitetura</a></li></ul></aside>
+<main>
+<h1>Cat-skills Arquitetura - DDD, Clean, Performance</h1><h2>O que e</h2><p>Catalogo de skills para design e arquitetura de software. Inclui: Domain-Driven Design (DDD - bounded contexts, aggregates, entities, value objects), Clean Architecture (entities, use cases, interface adapters, frameworks), Hexagonal Architecture (ports & adapters), CQRS (Command Query Responsibility Segregation), Event Sourcing, Saga Pattern, Microservices vs Monolith, performance (profiling, caching, indexing), scalability (horizontal/vertical), patterns GoF, SOLID, GRASP. Skills canonicas: architecture-enterprise-expert, csharp-clean-code-expert, dotnet-standards, software-development-expert.</p><h2>Quando usar</h2><ul><li>Quando precisa desenhar um sistema novo do zero</li><li>Quando precisa refatorar um monolito em microservicos</li><li>Quando precisa melhorar performance (profiling + caching)</li><li>Quando precisa modelar dominio complexo (DDD)</li><li>Quando precisa revisar arquitetura existente</li></ul><h2>Como usar</h2><p>Skills arquitetura funcionam como consultores: fazem perguntas sobre o dominio, sugerem patterns, identificam code smells. Use /arquitetura-consultar para diagnostico inicial.</p><pre><code># Consultoria inicial
+/arquitetura-consultar --projeto <path>
+# Aplicar DDD bounded context
+/ddd-bounded-context --domain 'Vendas' --entities Pedido,Cliente,Produto
+# Analise de performance
+/performance-profile --app <nome> --duration 30s</code></pre><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--pattern</code></td><td>string</td><td>ddd</td><td>Pattern a aplicar: ddd, clean, hexagonal, cqrs, event-sourcing, saga</td></tr><tr><td><code>--projeto</code></td><td>path</td><td>atual</td><td>Path do projeto a analisar</td></tr><tr><td><code>--scope</code></td><td>string</td><td>all</td><td>Escopo: entities, use-cases, interfaces, infrastructure, all</td></tr><tr><td><code>--metricas</code></td><td>string</td><td>performance</td><td>Metricas: performance, memory, latency, throughput</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Aplicar DDD em projeto novo</h3><p><strong>Contexto</strong>: Voce esta comecando ERP e precisa modelar o dominio.</p><pre><code>/ddd-bounded-context --domain 'ERP' --subdomains 'Vendas,Estoque,Financeiro,Fiscal'</code></pre><p><strong>Output esperado</strong>:</p><pre><code>4 bounded contexts identificados. Cada um com: aggregate root, entities, value objects, domain events. Mapeamento de contextos (Context Map).</code></pre><p><strong>Edge case</strong>: DDD nao e obrigatorio para todo projeto - use para dominios complexos. Para CRUD simples, KISS.</p><h3>Cenario 2: Refatorar monolito para Clean Architecture</h3><p><strong>Contexto</strong>: Voce tem projeto .NET antigo e quer separar camadas.</p><pre><code>/clean-architecture-refactor --projeto <path> --camadas 'Domain,Application,Infrastructure,API'</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Estrutura criada: src/Domain (entities, value objects), src/Application (use cases, services), src/Infrastructure (DB, external APIs), src/API (controllers). Dependencias apontam para Domain.</code></pre><p><strong>Edge case</strong>: NUNCA referencie Infrastructure de Domain. Domain deve ser pure C# (sem dependencias externas, exceto interfaces).</p><h3>Cenario 3: Profiling de performance</h3><p><strong>Contexto</strong>: Sua API esta lenta. Quer identificar o gargalo.</p><pre><code>/performance-profile --app MyAPI --duration 30s --samples 100</code></pre><p><strong>Output esperado</strong>:</p><pre><code>CPU: 45% gasto em JsonSerializer.Deserialize (18%), DB query X (12%), HTTP client Y (8%). Alocacoes: 12 MB/s. Top 5 metodos gastam 73% do tempo.</code></pre><p><strong>Edge case</strong>: Profile em ambiente REPRESENTATIVO (producao ou staging). Profile em dev pode ser enganoso (dados, configuracoes).</p><h3>Cenario 4: Cache com Redis</h3><p><strong>Contexto</strong>: API tem endpoint GET /produtos chamado 1000x/s, banco sobrecarregado.</p><pre><code>/cache-strategy --endpoint /produtos --ttl 300 --invalidacao manual</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Cache Redis adicionado (StackExchange.Redis). Key: 'produtos:all'. TTL 300s. Invalidacao: via pub/sub quando produto e criado/atualizado. Cache hit ratio esperado: 85%.</code></pre><p><strong>Edge case</strong>: Para dados altamente dinamicos, considere cache write-through (atualiza cache junto com DB). Para read-heavy estatico, cache simple TTL funciona.</p><h3>Cenario 5: CQRS com Event Sourcing</h3><p><strong>Contexto</strong>: Voce precisa de auditoria completa de mudancas (banco, fiscal, compliance).</p><pre><code>/cqrs-event-sourcing --aggregates Pedido,Cliente --events 'PedidoCriado,PedidoPago,PedidoEnviado'</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Event Store (tabela eventos) + Command side (write) + Query side (read projections). Cada mudanca e um evento imutavel. Replay possivel.</code></pre><p><strong>Edge case</strong>: Event Sourcing e complexo - use so quando auditoria completa e necessaria. Para 90% dos casos, log de mudancas + auditoria simples basta.</p><h2>Troubleshooting</h2><h3>Onde coloco a validacao (Domain ou Application)?</h3><p><strong>Causa</strong>: Regra do DDD: validacao de invariantes do agregado vai no Domain. Validacao de input vai na Application (DTOs).</p><p><strong>Solucao</strong>: Se validacao e regra de negocio (ex: pedido nao pode ter mais de 100 itens), vai no Domain (no entity ou value object). Se e validacao tecnica (ex: campo obrigatorio, formato), vai na Application (com FluentValidation).</p><h3>Quando usar Clean Architecture vs DDD vs Hexagonal?</h3><p><strong>Causa</strong>: Sao complementares, nao excludentes</p><p><strong>Solucao</strong>: Clean = separacao de camadas (dependencias). DDD = modelagem do dominio. Hexagonal = isolacao do dominio via ports/adapters. Combine: Clean Architecture + DDD + Hexagonal ports = ideal para projetos complexos.</p><h3>Performance ruim mesmo com Clean Architecture</h3><p><strong>Causa</strong>: Clean Architecture adiciona indirecao (interfaces, adapters), pode ter overhead</p><p><strong>Solucao</strong>: Para microservicos de alta performance, simplifique. Para dominios complexos, mantenha. Meça com profiler antes de otimizar prematuramente.</p><h3>CQRS adiciona complexidade desnecessaria</h3><p><strong>Causa</strong>: CQRS resolve problemas especificos (read vs write muito diferentes, event sourcing). Nem todo projeto precisa.</p><p><strong>Solucao</strong>: Comece com CRUD simples. Adicione CQRS quando: read e write tem modelos muito diferentes, ou precisa de auditoria completa, ou precisa escalar reads independentemente.</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

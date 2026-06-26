@@ -1,0 +1,278 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
+
+env:
+  DOTNET_VERSION: '10.0.x'
+  NODE_VERSION: '20'
+  PYTHON_VERSION: '3.12'
+
+jobs:
+  # ============================================
+  # FASE 1: VALIDAÇÃO
+  # ============================================
+  validate:
+    name: 🔍 Validate
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Setup PowerShell
+      run: sudo apt-get install -y powershell
+
+    - name: Install Python deps
+      run: pip install pyyaml pytest
+
+    # XForge Validation
+    - name: Run Doctor
+      run: pwsh .kilo/automation/scripts/doctor.ps1
+
+    - name: Validate Kilo Strict
+      run: pwsh .kilo/automation/scripts/validate-kilo-strict.ps1
+
+    - name: Validate Engineer
+      run: pwsh .kilo/automation/scripts/validate-engineer.ps1
+
+    # RAG Validation
+    - name: Validate RAG Index
+      run: python .kilo/automation/scripts/rag/rag_local.py index
+
+    - name: Secret Scan
+      run: python .kilo/automation/scripts/rag/rag_local.py secret-scan
+
+    - name: Privacy Scan
+      run: pwsh .xforge/scripts/verify-privacy.ps1
+
+    - name: RAG Unit Tests
+      run: python -m pytest .xforge/tests/rag -v
+
+  # ============================================
+  # FASE 2: BUILD & TEST
+  # ============================================
+  build:
+    name: 🔨 Build & Test
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --no-restore -c Release
+
+    - name: Run Unit Tests
+      run: dotnet test --no-build -c Release --verbosity normal --logger "trx;LogFileName=test-results.trx"
+
+    - name: Run Tests with Coverage
+      run: |
+        dotnet test --no-build -c Release \
+          --collect:"XPlat Code Coverage" \
+          --results-directory ./coverage
+
+    - name: Generate Coverage Report
+      run: |
+        dotnet tool install --global dotnet-reportgenerator-globaltool 2>/dev/null || true
+        reportgenerator -reports:./coverage/**/coverage.cobertura.xml -targetdir:./coverage/report -reporttypes:Html
+
+    - name: Upload Coverage
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: ./coverage/report
+        retention-days: 7
+
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-results
+        path: '**/*.trx'
+        retention-days: 7
+
+  # ============================================
+  # FASE 3: SECURITY SCAN
+  # ============================================
+  security:
+    name: 🔒 Security Scan
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: Restore
+      run: dotnet restore
+
+    - name: Check Vulnerable Packages
+      run: dotnet list package --vulnerable --include-transitive
+
+    - name: Check Outdated Packages
+      run: dotnet list package --outdated
+
+    - name: Secret Scan (Gitleaks)
+      uses: gitleaks/gitleaks-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: OWASP Dependency Check
+      uses: dependency-check/Dependency-Check_Action@main
+      with:
+        path: '.'
+        format: 'HTML'
+
+    - name: Upload Security Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: security-report
+        path: reports/
+        retention-days: 7
+
+  # ============================================
+  # FASE 4: DOCKER BUILD
+  # ============================================
+  docker:
+    name: 🐳 Docker Build
+    needs: [build, security]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Login to Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Extract metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ghcr.io/${{ github.repository }}
+        tags: |
+          type=sha,prefix=
+          type=ref,event=branch
+          type=semver,pattern={{version}}
+
+    - name: Build and Push
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+  # ============================================
+  # FASE 5: DEPLOY STAGING
+  # ============================================
+  deploy-staging:
+    name: 🚀 Deploy Staging
+    needs: [build, security, docker]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: staging
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Deploy to Azure App Service (Staging)
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: ${{ vars.AZURE_APP_NAME }}-staging
+        publish-profile: ${{ secrets.AZURE_STAGING_PUBLISH_PROFILE }}
+        images: ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+    - name: Run Smoke Tests
+      run: |
+        sleep 30
+        curl -sf "${{ vars.STAGING_URL }}/health" || exit 1
+
+    - name: Notify Slack (Success)
+      if: success()
+      uses: slackapi/slack-github-action@v1
+      with:
+        payload: |
+          {"text": "✅ Staging deploy successful for ${{ github.repository }}@${{ github.sha }}"}
+
+  # ============================================
+  # FASE 6: DEPLOY PRODUCTION
+  # ============================================
+  deploy-production:
+    name: 🚀 Deploy Production
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production'
+    environment: production
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Deploy to Azure App Service (Production)
+      uses: azure/webapps-deploy@v3
+      with:
+        app-name: ${{ vars.AZURE_APP_NAME }}
+        publish-profile: ${{ secrets.AZURE_PROD_PUBLISH_PROFILE }}
+        images: ghcr.io/${{ github.repository }}:${{ github.sha }}
+
+    - name: Run Smoke Tests
+      run: |
+        sleep 30
+        curl -sf "${{ vars.PRODUCTION_URL }}/health" || exit 1
+
+    - name: Create Release Tag
+      run: |
+        VERSION=$(date +%Y%m%d-%H%M%S)
+        git tag -a "v$VERSION" -m "Release $VERSION"
+        git push origin "v$VERSION"
+
+    - name: Notify Slack (Success)
+      if: success()
+      uses: slackapi/slack-github-action@v1
+      with:
+        payload: |
+          {"text": "🎉 Production deploy successful for ${{ github.repository }}@${{ github.sha }}"}

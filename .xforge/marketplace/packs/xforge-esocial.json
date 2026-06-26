@@ -1,0 +1,20 @@
+{
+    "id":  "xforge-esocial",
+    "name":  "eSocial BR",
+    "version":  "1.0.0",
+    "description":  "eSocial: eventos S-1000 a S-3000, folha, SST, prazos e validacoes",
+    "files":  3,
+    "trustScore":  82,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "esocial",
+                 "folha",
+                 "trabalhista",
+                 "sst"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/esocial/"
+}

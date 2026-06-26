@@ -1,0 +1,26 @@
+id: W018
+name: handoff-readiness
+version: 1.0.0
+description: Validacao final de handoff (Teste do Desenvolvedor Cego)
+type: validation
+agent: fullstack-analysis-architect
+estimatedDuration: 30m
+entrypoint: S0
+terminalStates: [READY, NOT_READY]
+states: [S0, S1, S2, S3, S4, S5, READY, NOT_READY]
+transitions:
+  - {from: S0, to: S1, event: onSuccess}
+  - {from: S1, to: S2, event: onSuccess}
+  - {from: S2, to: S3, event: onSuccess}
+  - {from: S3, to: S4, event: onSuccess}
+  - {from: S4, to: S5, event: onSuccess}
+  - {from: S5, to: READY, event: onSuccess}
+  - {from: "*", to: NOT_READY, event: onFailure}
+metadata:
+  states:
+    S0: {gate: filesCount == 11, description: 11 arquivos presentes}
+    S1: {gate: clarityScore >= 80 && todoCount == 0, description: Zero ambiguidades}
+    S2: {gate: rfsWithExample / totalRfs == 1.0, description: 100% RFs com exemplo}
+    S3: {gate: c4ContextRendered && diagramCount >= 5, description: C4 L1 + diagramas renderizados}
+    S4: {gate: hasRollbackPlan == true, description: Plano de rollback explicito}
+    S5: {gate: humanApproval == true, description: Aprovacao humana obrigatoria}

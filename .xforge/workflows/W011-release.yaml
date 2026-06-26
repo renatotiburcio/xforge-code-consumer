@@ -1,0 +1,18 @@
+id: W011
+version: 1.0.0
+name: release
+description: Release with quality gates
+states: [planned, version_bump, changelog, quality_gates, security_scan, publishing, done, failed, rolled_back]
+transitions:
+  - {from: planned, to: version_bump, event: approved}
+  - {from: version_bump, to: changelog, event: version_set}
+  - {from: changelog, to: quality_gates, event: changelog_written}
+  - {from: quality_gates, to: security_scan, event: all_gates_passed}
+  - {from: security_scan, to: publishing, event: no_critical_cve}
+  - {from: publishing, to: done, event: published}
+  - {from: done, to: rolled_back, event: post_release_issue}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [release-manager-expert, quality-gates-engineer]
+tools: [build, test, security_scan, publish]
+entrypoint: planned
+terminalStates: [done, failed, rolled_back]

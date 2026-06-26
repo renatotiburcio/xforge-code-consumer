@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rules - Catalogo Completo (41) - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.5.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html" class="active">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Rules</h3><ul><li><a href="cat-rules.html" class="active">Todas Rules</a></li></ul></aside>
+<main>
+<h1>Rules - Catalogo Completo (41)</h1>
+<h2>O que e</h2>
+<p>Catalogo completo de todas as 41 rules do XForge, organizadas em 5 niveis de precedencia: GCF > Golden > Governance > Quality > Documentation/Operational. Use para descobrir qual rule se aplica ao seu contexto.</p>
+<h2>Quando usar</h2>
+<ul>
+<li>Quando voce quer descobrir todos os itens desta categoria</li>
+<li>Quando voce precisa de referencia rapida com descricao</li>
+<li>Quando voce quer ver agrupamento por subcategoria</li>
+</ul>
+<h2>Como usar</h2>
+<p>Esta pagina cataloga todos os itens. Cada item tem:</p>
+<pre><code>[Nome do Item] - [Descricao curta]</code></pre>
+<p>Para detalhes, clique no item ou consulte o arquivo SKILL.md no repositorio.</p>
+<h2>Parametros</h2>
+<table>
+<tr><th>Campo</th><th>Tipo</th><th>Descricao</th></tr>
+<tr><td>Nome</td><td>string</td><td>Identificador kebab-case en</td></tr>
+<tr><td>Descricao</td><td>string</td><td>Resumo de 1 frase</td></tr>
+<tr><td>Categoria</td><td>string</td><td>Subcategoria dominante</td></tr>
+<tr><td>Skill.md</td><td>path</td><td><code>.kilo/skills/&lt;nome&gt;/SKILL.md</code></td></tr>
+</table>
+<h2>Exemplos praticos</h2>
+<h3>Cenario 1: Localizar um item especifico</h3>
+<p><strong>Contexto</strong>: voce quer descobrir todas as skills Backend disponiveis.</p>
+<pre><code># Use Ctrl+F no navegador para buscar por nome ou keyword
+# Ou role ate a secao Backend abaixo</code></pre>
+<p><strong>Output esperado</strong>: lista das skills Backend com descricoes e links.</p>
+<p><strong>Edge case</strong>: se a skill nao aparece, ela pode ter sido renomeada ou descontinuada - verifique o filesystem em <code>.kilo/skills/</code>.</p>
+<h3>Cenario 2: Navegar por categoria (42 itens no total)</h3>
+<p><strong>Contexto</strong>: voce quer ver agrupamento por subcategoria.</p>
+<pre><code># Role pelas secoes abaixo
+# Cada secao = 1 subcategoria
+# Cada item = 1 artefato</code></pre>
+<p><strong>Output esperado</strong>: visualizacao hierarquica por subcategoria.</p>
+<p><strong>Edge case</strong>: categorias podem ter 0-30+ itens.</p>
+<h3>Cenario 3: Encontrar categoria certa</h3>
+<p><strong>Contexto</strong>: voce sabe o que quer mas nao sabe o nome exato.</p>
+<pre><code># Use Ctrl+F e busque por keyword
+# Ex: "LGPD" encontra skills de LGPD/data-protection</code></pre>
+<p><strong>Output esperado</strong>: matches highlighted na pagina.</p>
+<p><strong>Edge case</strong>: alguns itens tem descricoes vagas. Use o ID do filesystem (<code>.kilo/skills/&lt;nome&gt;/SKILL.md</code>) como busca definitiva.</p>
+<h2>Troubleshooting</h2>
+<h3>Item nao aparece na lista</h3>
+<p><strong>Causa</strong>: pode estar em categoria diferente ou ainda nao catalogada.</p>
+<p><strong>Solucao</strong>: verifique <code>.kilo/skills/</code> diretamente.</p>
+<h3>Descricao vazia</h3>
+<p><strong>Causa</strong>: SKILL.md sem frontmatter <code>description:</code>.</p>
+<p><strong>Solucao</strong>: edite <code>.kilo/skills/&lt;nome&gt;/SKILL.md</code> e adicione frontmatter YAML.</p>
+<h3>Categoria muito grande</h3>
+<p><strong>Causa</strong>: subcategoria com 30+ itens.</p>
+<p><strong>Solucao</strong>: use Ctrl+F para buscar, ou subdivida em sub-subcategorias no futuro.</p>
+<h3>Item listado mas nao existe mais</h3>
+<p><strong>Causa</strong>: SKILL.md deletado mas listagem nao regenerada.</p>
+<p><strong>Solucao</strong>: rode <code>regenerate-registries.ps1</code> para sincronizar.</p>
+<h2>Lista Completa</h2>
+<p>Total: <strong>42</strong> itens em <strong>6</strong> subcategorias.</p>
+<h3>01. Core (3) (3 itens)</h3>
+<ul>
+<li><code>00-xforge-rule-index</code> - .kilo/rules/00-xforge-rule-index.md</li>
+<li><code>01-xforge-golden-rules</code> - .kilo/rules/01-xforge-golden-rules.md</li>
+<li><code>02-genius-council-framework</code> - .kilo/rules/02-genius-council-framework.md</li>
+</ul>
+<h3>02. Memory (3) (3 itens)</h3>
+<ul>
+<li><code>memory-namespace</code> - .kilo/rules/memory-namespace.md</li>
+<li><code>release-immutability</code> - .kilo/rules/release-immutability.md</li>
+<li><code>session-memory</code> - .kilo/rules/session-memory.md</li>
+</ul>
+<h3>03. Quality (6) (6 itens)</h3>
+<ul>
+<li><code>dependency-intelligence</code> - .kilo/rules/dependency-intelligence.md</li>
+<li><code>interaction-intelligence</code> - .kilo/rules/interaction-intelligence.md</li>
+<li><code>loop-discipline</code> - .kilo/rules/loop-discipline.md</li>
+<li><code>proactive-intelligence</code> - .kilo/rules/proactive-intelligence.md</li>
+<li><code>proactive-quality-gates</code> - .kilo/rules/proactive-quality-gates.md</li>
+<li><code>self-healing-rules</code> - .kilo/rules/self-healing-rules.md</li>
+</ul>
+<h3>04. Decision (10) (10 itens)</h3>
+<ul>
+<li><code>audit-trail-rules</code> - .kilo/rules/audit-trail-rules.md</li>
+<li><code>cost-rules</code> - .kilo/rules/cost-rules.md</li>
+<li><code>event-bus-rules</code> - .kilo/rules/event-bus-rules.md</li>
+<li><code>human-review-rules</code> - .kilo/rules/human-review-rules.md</li>
+<li><code>policy-rules</code> - .kilo/rules/policy-rules.md</li>
+<li><code>promotion-rules</code> - .kilo/rules/promotion-rules.md</li>
+<li><code>provider-routing-rules</code> - .kilo/rules/provider-routing-rules.md</li>
+<li><code>rbac-rules</code> - .kilo/rules/rbac-rules.md</li>
+<li><code>security-rules</code> - .kilo/rules/security-rules.md</li>
+<li><code>state-machine-rules</code> - .kilo/rules/state-machine-rules.md</li>
+</ul>
+<h3>05. Documentation (8) (9 itens)</h3>
+<ul>
+<li><code>curation-rules</code> - .kilo/rules/curation-rules.md</li>
+<li><code>documentation-clarity-rules</code> - .kilo/rules/documentation-clarity-rules.md</li>
+<li><code>knowledge-rules</code> - .kilo/rules/knowledge-rules.md</li>
+<li><code>legacy-import-rules</code> - .kilo/rules/legacy-import-rules.md</li>
+<li><code>manual-content-depth</code> - .kilo/rules/manual-content-depth.md</li>
+<li><code>manual-sync-rules</code> - .kilo/rules/manual-sync-rules.md</li>
+<li><code>sdd-authoring-rules</code> - .kilo/rules/sdd-authoring-rules.md</li>
+<li><code>trust-score-rules</code> - .kilo/rules/trust-score-rules.md</li>
+<li><code>ttl-rules</code> - .kilo/rules/ttl-rules.md</li>
+</ul>
+<h3>06. System (10) (11 itens)</h3>
+<ul>
+<li><code>active-project-root-rules</code> - .kilo/rules/active-project-root-rules.md</li>
+<li><code>auto-discover-macros</code> - .kilo/rules/auto-discover-macros.md</li>
+<li><code>auto-retry-recovery</code> - .kilo/rules/auto-retry-recovery.md</li>
+<li><code>autonomous-experiment-loop</code> - .kilo/rules/autonomous-experiment-loop.md</li>
+<li><code>checkpoint-resume</code> - .kilo/rules/checkpoint-resume.md</li>
+<li><code>diagram-quality-rules</code> - .kilo/rules/diagram-quality-rules.md</li>
+<li><code>enterprise-architecture-rules</code> - .kilo/rules/enterprise-architecture-rules.md</li>
+<li><code>immutable-scoring</code> - .kilo/rules/immutable-scoring.md</li>
+<li><code>multi-agent-orchestration</code> - .kilo/rules/multi-agent-orchestration.md</li>
+<li><code>self-learning-genius</code> - .kilo/rules/self-learning-genius.md</li>
+<li><code>simplicity-criterion</code> - .kilo/rules/simplicity-criterion.md</li>
+</ul>
+</main>
+<footer><div><strong>XForge Manual v50.3.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.5.0"></script>
+</body></html>

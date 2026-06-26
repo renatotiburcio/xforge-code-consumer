@@ -1,0 +1,184 @@
+{
+  "knowledgeAreas": [
+    {
+      "path": ".xforge\\knowledge\\arquitetura",
+      "files": [
+        ".xforge\\knowledge\\arquitetura\\clean-architecture.md",
+        ".xforge\\knowledge\\arquitetura\\deploy-net.md",
+        ".xforge\\knowledge\\arquitetura\\design-patterns-erp.md",
+        ".xforge\\knowledge\\arquitetura\\design-patterns-gof.md",
+        ".xforge\\knowledge\\arquitetura\\gaps-analysis-backlog-roadmap.md",
+        ".xforge\\knowledge\\arquitetura\\multi-tenancy.md",
+        ".xforge\\knowledge\\arquitetura\\observabilidade.md"
+      ],
+      "fileCount": 7
+    },
+    {
+      "path": ".xforge\\knowledge\\compliance",
+      "files": [
+        ".xforge\\knowledge\\compliance\\lgpd.md"
+      ],
+      "fileCount": 1
+    },
+    {
+      "path": ".xforge\\knowledge\\curated-operational",
+      "files": [
+        ".xforge\\knowledge\\curated-operational\\blazor-tailwind\\ux-patterns\\ENTERPRISE-FORM-PATTERN.md",
+        ".xforge\\knowledge\\curated-operational\\collectors\\collect-source.ps1",
+        ".xforge\\knowledge\\curated-operational\\collectors\\README.md",
+        ".xforge\\knowledge\\curated-operational\\dotnet\\anti-patterns\\MEDIATR-MAPSTER-PREVIEW-PACKAGES.md",
+        ".xforge\\knowledge\\curated-operational\\dotnet\\approved-patterns\\MINIMAL-API-CLEAN-ENDPOINT.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfe-nfce\\divergencias-uf\\UF-DIVERGENCE-MATRIX.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfe-nfce\\edge-cases\\NFE-NFCE-EDGE-CASES.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfe-nfce\\playbooks\\nfe-rejeicao-204-duplicidade.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfe-nfce\\playbooks\\nfe-rejeicao-539-duplicidade-chave-diferente.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfe-nfce\\playbooks\\nfe-rejeicao-972-responsavel-tecnico.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfe-nfce\\playbooks\\nfe-timeout-sefaz-reenvio.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfe-nfce\\rejeicoes\\nfe-nfce-operational-cases.json",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfse\\rejeicoes\\nfse-e0312-codigo-tributacao-nacional-nao-administrado.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfse\\rejeicoes\\nfse-e0314-codigo-tributacao-municipal-inexistente.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfse\\rejeicoes\\nfse-e351-nbs-nao-informado.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfse\\rejeicoes\\nfse-e400-januaria-mg-validacao-dados.md",
+        ".xforge\\knowledge\\curated-operational\\fiscal\\nfse\\rejeicoes\\nfse-operational-cases.json",
+        ".xforge\\knowledge\\curated-operational\\manifests\\curated-operational-cases.csv",
+        ".xforge\\knowledge\\curated-operational\\manifests\\curated-operational-cases.json",
+        ".xforge\\knowledge\\curated-operational\\manifests\\ingestion-jobs.json",
+        ".xforge\\knowledge\\curated-operational\\manifests\\public-operational-sources.json",
+        ".xforge\\knowledge\\curated-operational\\schemas\\operational-case.schema.json",
+        ".xforge\\knowledge\\curated-operational\\sped\\efd-icms-ipi\\sped-efd-icms-ipi-registro-d750-pva-603.md",
+        ".xforge\\knowledge\\curated-operational\\sped\\efd-icms-ipi\\sped-operational-cases.json",
+        ".xforge\\knowledge\\curated-operational\\trabalhista\\esocial\\validacoes\\esocial-afastamento-data-invalida.md",
+        ".xforge\\knowledge\\curated-operational\\trabalhista\\esocial\\validacoes\\esocial-codcateg-invalido-ret.md",
+        ".xforge\\knowledge\\curated-operational\\trabalhista\\esocial\\validacoes\\esocial-operational-cases.json"
+      ],
+      "fileCount": 27
+    },
+    {
+      "path": ".xforge\\knowledge\\decisoes",
+      "files": [
+        ".xforge\\knowledge\\decisoes\\adr-001-tech-stack.md",
+        ".xforge\\knowledge\\decisoes\\adr-002-architecture.md",
+        ".xforge\\knowledge\\decisoes\\adr-003-database.md",
+        ".xforge\\knowledge\\decisoes\\adr-004-auth.md",
+        ".xforge\\knowledge\\decisoes\\adr-005-frontend.md",
+        ".xforge\\knowledge\\decisoes\\adr-006-multi-tenancy.md"
+      ],
+      "fileCount": 6
+    },
+    {
+      "path": ".xforge\\knowledge\\dominios",
+      "files": [
+        ".xforge\\knowledge\\dominios\\_index.md",
+        ".xforge\\knowledge\\dominios\\contabil\\avaliacao-estoque.md",
+        ".xforge\\knowledge\\dominios\\contabil\\centro-de-custo.md",
+        ".xforge\\knowledge\\dominios\\contabil\\demonstracoes-contabeis.md",
+        ".xforge\\knowledge\\dominios\\contabil\\ecd.md",
+        ".xforge\\knowledge\\dominios\\contabil\\ecf.md",
+        ".xforge\\knowledge\\dominios\\contabil\\escrituracao-contabil.md",
+        ".xforge\\knowledge\\dominios\\contabil\\lancamentos-automatizados.md",
+        ".xforge\\knowledge\\dominios\\contabil\\normas-contabeis.md",
+        ".xforge\\knowledge\\dominios\\contabil\\plano-de-contas.md",
+        ".xforge\\knowledge\\dominios\\erp\\agronegocio.md",
+        ".xforge\\knowledge\\dominios\\erp\\crm.md",
+        ".xforge\\knowledge\\dominios\\erp\\estoque.md",
+        ".xforge\\knowledge\\dominios\\erp\\faturamento.md",
+        ".xforge\\knowledge\\dominios\\erp\\fluxo-compras.md",
+        ".xforge\\knowledge\\dominios\\erp\\fluxo-vendas.md",
+        ".xforge\\knowledge\\dominios\\erp\\ged.md",
+        ".xforge\\knowledge\\dominios\\erp\\orcamentos.md",
+        ".xforge\\knowledge\\dominios\\erp\\pdv-frente-caixa.md",
+        ".xforge\\knowledge\\dominios\\erp\\producao.md",
+        ".xforge\\knowledge\\dominios\\erp\\trocas-devolucoes.md",
+        ".xforge\\knowledge\\dominios\\financeiro\\conciliacao-bancaria.md",
+        ".xforge\\knowledge\\dominios\\financeiro\\contas-a-pagar.md",
+        ".xforge\\knowledge\\dominios\\financeiro\\contas-a-receber.md",
+        ".xforge\\knowledge\\dominios\\financeiro\\fluxo-de-caixa.md",
+        ".xforge\\knowledge\\dominios\\financeiro\\pagamentos-digitais.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\cte.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\danfe-dacte.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\efd-contribuicoes.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\efd-icms-ipi.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\mdfe.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\nfce.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\nfe.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\nfse.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\sat-cfe.md",
+        ".xforge\\knowledge\\dominios\\fiscal\\sped-overview.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\afastamentos.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\beneficios.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\clt.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\decimo-terceiro.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\departamento-pessoal.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\esocial-empregadores.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\esocial-folha.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\esocial-geral.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\esocial-layout.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\esocial-trabalhadores.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\ferias.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\fgts.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\folha-pagamento.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\holerite.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\inss-irrf.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\obrigacoes-acessorias.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\ponto-eletronico.md",
+        ".xforge\\knowledge\\dominios\\trabalhista\\saude-trabalho.md",
+        ".xforge\\knowledge\\dominios\\tributos\\cnpj-alfanumerico.md",
+        ".xforge\\knowledge\\dominios\\tributos\\icms.md",
+        ".xforge\\knowledge\\dominios\\tributos\\ipi-iss.md",
+        ".xforge\\knowledge\\dominios\\tributos\\irpj-csll.md",
+        ".xforge\\knowledge\\dominios\\tributos\\pis-cofins.md",
+        ".xforge\\knowledge\\dominios\\tributos\\reforma-tributaria.md",
+        ".xforge\\knowledge\\dominios\\tributos\\regimes-tributarios.md"
+      ],
+      "fileCount": 61
+    },
+    {
+      "path": ".xforge\\knowledge\\fluxos",
+      "files": [
+        ".xforge\\knowledge\\fluxos\\admissao-funcionario.md",
+        ".xforge\\knowledge\\fluxos\\compra-completa.md",
+        ".xforge\\knowledge\\fluxos\\folha-pagamento.md",
+        ".xforge\\knowledge\\fluxos\\pdv-venda.md",
+        ".xforge\\knowledge\\fluxos\\producao-ordem.md",
+        ".xforge\\knowledge\\fluxos\\rescisao-funcionario.md",
+        ".xforge\\knowledge\\fluxos\\venda-completa.md"
+      ],
+      "fileCount": 7
+    },
+    {
+      "path": ".xforge\\knowledge\\glossario",
+      "files": [
+        ".xforge\\knowledge\\glossario\\termos-arquitetura.md",
+        ".xforge\\knowledge\\glossario\\termos-contabeis.md",
+        ".xforge\\knowledge\\glossario\\termos-erp.md",
+        ".xforge\\knowledge\\glossario\\termos-fiscais.md",
+        ".xforge\\knowledge\\glossario\\termos-trabalhistas.md"
+      ],
+      "fileCount": 5
+    },
+    {
+      "path": ".xforge\\knowledge\\padroes",
+      "files": [
+        ".xforge\\knowledge\\padroes\\autenticacao-autorizacao.md",
+        ".xforge\\knowledge\\padroes\\componentes-blazor.md",
+        ".xforge\\knowledge\\padroes\\ef-core-patterns.md",
+        ".xforge\\knowledge\\padroes\\ia-erp.md",
+        ".xforge\\knowledge\\padroes\\logging.md",
+        ".xforge\\knowledge\\padroes\\seguranca-api.md",
+        ".xforge\\knowledge\\padroes\\seguranca-dados.md",
+        ".xforge\\knowledge\\padroes\\testes.md",
+        ".xforge\\knowledge\\padroes\\ui-ux.md",
+        ".xforge\\knowledge\\padroes\\validacao.md"
+      ],
+      "fileCount": 10
+    },
+    {
+      "path": ".xforge\\knowledge\\projeto",
+      "files": [
+        ".xforge\\knowledge\\projeto\\stack-tecnologico.md",
+        ".xforge\\knowledge\\projeto\\visao-geral.md"
+      ],
+      "fileCount": 2
+    }
+  ]
+}

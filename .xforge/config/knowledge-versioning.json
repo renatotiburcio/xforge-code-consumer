@@ -1,0 +1,144 @@
+{
+  "version": "1.0.0",
+  "description": "Controle de versão do conhecimento — rastreia mudanças em tabelas, regras e documentos do knowledge base",
+  "tracks": [
+    {
+      "id": "KV-001",
+      "category": "trabalhista",
+      "file": "dominios/trabalhista/tabela-inss-2025.md",
+      "field": "aliquotas",
+      "currentValue": "7.5%, 9%, 12%, 14%",
+      "source": "https://www.gov.br/inss/pt-br",
+      "validFrom": "2025-01-01",
+      "validUntil": "2025-12-31",
+      "lastChecked": "2026-06-11",
+      "status": "expired",
+      "nextReview": "2026-01-15",
+      "note": "Tabela 2025 expirou — verificar tabela 2026"
+    },
+    {
+      "id": "KV-002",
+      "category": "trabalhista",
+      "file": "dominios/trabalhista/tabela-irrf-2025.md",
+      "field": "faixas",
+      "currentValue": "Isento até R$2.259,20",
+      "source": "https://www.gov.br/receitafederal",
+      "validFrom": "2025-01-01",
+      "validUntil": "2025-12-31",
+      "lastChecked": "2026-06-11",
+      "status": "expired",
+      "nextReview": "2026-01-15",
+      "note": "Tabela 2025 expirou — verificar tabela 2026"
+    },
+    {
+      "id": "KV-003",
+      "category": "trabalhista",
+      "file": "dominios/trabalhista/tabela-inss-2025.md",
+      "field": "teto",
+      "currentValue": "R$951.639,14",
+      "source": "https://www.gov.br/inss/pt-br",
+      "validFrom": "2025-01-01",
+      "validUntil": "2025-12-31",
+      "lastChecked": "2026-06-11",
+      "status": "expired",
+      "nextReview": "2026-01-15"
+    },
+    {
+      "id": "KV-004",
+      "category": "fiscal",
+      "file": "dominios/fiscal/cnpj-alfanumerico.md",
+      "field": "deadline",
+      "currentValue": "Disponível 2026, obrigatório 2030",
+      "source": "https://www.gov.br/receitafederal",
+      "validFrom": "2026-01-01",
+      "validUntil": "2030-12-31",
+      "lastChecked": "2026-06-11",
+      "status": "active",
+      "nextReview": "2026-12-31"
+    },
+    {
+      "id": "KV-005",
+      "category": "fiscal",
+      "file": "dominios/fiscal/reforma-tributaria-completa.md",
+      "field": "implementation",
+      "currentValue": "IBS/CBS 2026-2033 transição",
+      "source": "https://www.gov.br/reformatributaria",
+      "validFrom": "2026-01-01",
+      "validUntil": "2033-12-31",
+      "lastChecked": "2026-06-11",
+      "status": "active",
+      "nextReview": "2026-12-31"
+    },
+    {
+      "id": "KV-006",
+      "category": "fiscal",
+      "file": "dominios/fiscal/nfe.md",
+      "field": "version",
+      "currentValue": "4.00",
+      "source": "https://www.nfe.fazenda.gov.br",
+      "validFrom": "2024-01-01",
+      "validUntil": null,
+      "lastChecked": "2026-06-11",
+      "status": "active",
+      "nextReview": "2026-12-31"
+    },
+    {
+      "id": "KV-007",
+      "category": "trabalhista",
+      "file": "dominios/trabalhista/esocial-geral.md",
+      "field": "layout",
+      "currentValue": "S-1.200, S-1.210, S-1.299",
+      "source": "https://www.esocial.gov.br",
+      "validFrom": "2025-01-01",
+      "validUntil": null,
+      "lastChecked": "2026-06-11",
+      "status": "active",
+      "nextReview": "2026-12-31"
+    },
+    {
+      "id": "KV-008",
+      "category": "contabil",
+      "file": "dominios/contabil/ecf.md",
+      "field": "layout",
+      "currentValue": "ECF 2025",
+      "source": "https://www.gov.br/receitafederal",
+      "validFrom": "2025-01-01",
+      "validUntil": "2025-12-31",
+      "lastChecked": "2026-06-11",
+      "status": "expired",
+      "nextReview": "2026-01-15",
+      "note": "Verificar layout ECF 2026"
+    }
+  ],
+  "sources": [
+    {
+      "name": "Receita Federal",
+      "url": "https://www.gov.br/receitafederal",
+      "checkFrequency": "monthly",
+      "categories": ["fiscal", "contabil", "trabalhista"]
+    },
+    {
+      "name": "eSocial",
+      "url": "https://www.esocial.gov.br",
+      "checkFrequency": "monthly",
+      "categories": ["trabalhista"]
+    },
+    {
+      "name": "INSS",
+      "url": "https://www.gov.br/inss",
+      "checkFrequency": "yearly",
+      "categories": ["trabalhista"]
+    },
+    {
+      "name": "SEFAZ",
+      "url": "https://www.nfe.fazenda.gov.br",
+      "checkFrequency": "quarterly",
+      "categories": ["fiscal"]
+    }
+  ],
+  "actions": {
+    "onExpired": "alert-user + suggest-update",
+    "onNewVersion": "compare-diff + suggest-migration",
+    "onInconsistency": "flag-error + block-fiscal-operations"
+  }
+}

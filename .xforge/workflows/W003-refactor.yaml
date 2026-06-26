@@ -1,0 +1,16 @@
+﻿id: W003
+version: 1.0.0
+name: refactor
+description: Refactor while maintaining coverage
+states: [analyzing, planned, refactoring, testing, validating, done, failed]
+transitions:
+  - {from: analyzing, to: planned, event: analysis_complete}
+  - {from: planned, to: refactoring, event: plan_approved}
+  - {from: refactoring, to: testing, event: refactor_applied, guard: coverage>=prev_coverage}
+  - {from: testing, to: validating, event: tests_passed}
+  - {from: validating, to: done, event: validation_passed, guard: xfs_quality>=0.85}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [architect, developer, tester]
+tools: [read_file, update_file, run_tests, coverage_report]
+entrypoint: analyzing
+terminalStates: [done, failed]

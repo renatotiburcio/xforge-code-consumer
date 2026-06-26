@@ -1,0 +1,45 @@
+{
+  "id": "xforge-pix",
+  "name": "xforge-pix",
+  "displayName": "PIX e Open Finance Brasil",
+  "version": "1.0.0",
+  "trustScore": 90,
+  "category": "pagamentos",
+  "description": "Integracao PIX (SPI Banco Central) e Open Finance Brasil (Fase 4). PIX Cobranca, PIX QR estatico/dinamico, PIX Automatico, webhooks, conciliacao automatica.",
+  "tags": [
+    "pix",
+    "open-finance",
+    "banco-central",
+    "pagamentos",
+    "qr-code",
+    "spi",
+    "fase4"
+  ],
+  "domain": "pagamentos-digitais",
+  "knowledgeEntries": [
+    {
+      "path": ".xforge/knowledge/pagamentos/pix-basics.md",
+      "summary": "PIX Cobranca, PIX QR Estatico, PIX QR Dinamico, devolucao, webhooks"
+    },
+    {
+      "path": ".xforge/knowledge/pagamentos/pix-automatico.md",
+      "summary": "PIX Automatico (recorrencia) - alvaras, limites, opt-in"
+    },
+    {
+      "path": ".xforge/knowledge/open-finance/pix-open-finance.md",
+      "summary": "Open Finance Brasil Fase 4 - consentimento, dados agregados, iniciacao pagamento"
+    },
+    {
+      "path": ".xforge/knowledge/pagamentos/conciliacao-pix.md",
+      "summary": "Conciliacao automatica PIX vs extrato bancario (matching por txid)"
+    }
+  ],
+  "source": "internal-engineering",
+  "author": "XForge Engineer",
+  "date": "2026-06-14",
+  "size": "4 knowledge files",
+  "languages": [
+    "pt-BR",
+    "en-US"
+  ]
+}

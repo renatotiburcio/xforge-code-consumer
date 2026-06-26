@@ -1,0 +1,431 @@
+[
+  {
+    "id": "nfe-rejeicao-204-duplicidade",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "204",
+    "title": "Duplicidade de NF-e",
+    "status": "community-hint",
+    "trustScore": 65,
+    "sources": [
+      "oobj-rejeicao-204",
+      "totalerp-rejeicao-204",
+      "bling-rejeicao-204",
+      "moc-nfe-anexo-i"
+    ],
+    "symptoms": [
+      "SEFAZ retorna rejeição 204 ao autorizar NF-e/NFC-e",
+      "Pode indicar chave/número já usado ou cenário de instabilidade conforme suporte de emissores"
+    ],
+    "diagnosis": [
+      "Verificar se já existe NF-e autorizada com mesma chave ou mesma sequência/série/modelo/CNPJ",
+      "Conferir emissões feitas por outro sistema ou portal da SEFAZ",
+      "Confirmar se não houve reenvio após timeout"
+    ],
+    "recommendedActions": [
+      "Consultar a chave/número na SEFAZ",
+      "Ajustar número sequencial e série se houver duplicidade real",
+      "Se houver instabilidade, consultar status SEFAZ antes de inutilizar ou alterar sequência",
+      "Registrar incidente e fonte da decisão"
+    ],
+    "prevention": [
+      "Controlar numeração por CNPJ, modelo, série e ambiente",
+      "Criar lock transacional para emissão",
+      "Persistir estado de envio/retorno",
+      "Tratar timeout com consulta antes de reemitir"
+    ],
+    "edgeCases": [
+      "Timeout no envio seguido de reenvio",
+      "Migração de emissor antigo para novo sistema",
+      "Notas emitidas no portal do governo fora do ERP",
+      "Ambiente homologação vs produção"
+    ],
+    "ufBehavior": [
+      "Há relatos comunitários de comportamento divergente em SC/MG; tratar como hipótese e validar contra documentação/SEFAZ"
+    ],
+    "related": [
+      "nfe-rejeicao-539-duplicidade-chave-diferente"
+    ],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfe-rejeicao-539-duplicidade-chave-diferente",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "539",
+    "title": "Duplicidade de NF-e com diferença na Chave de Acesso",
+    "status": "community-hint",
+    "trustScore": 65,
+    "sources": [
+      "webmania-rejeicao-539",
+      "totalerp-rejeicao-204",
+      "nfe-nt-2011-004",
+      "moc-nfe-anexo-i"
+    ],
+    "symptoms": [
+      "SEFAZ informa duplicidade com diferença na chave",
+      "Mesmo CNPJ emitente, modelo, série e número podem conflitar com nota anterior"
+    ],
+    "diagnosis": [
+      "Conferir se já existe documento autorizado/denegado com mesma numeração",
+      "Verificar diferenças em data de emissão, tipo de emissão, cNF ou posições da chave",
+      "Conferir migração entre sistemas emissores"
+    ],
+    "recommendedActions": [
+      "Consultar documentos existentes na SEFAZ",
+      "Gerar nova numeração quando aplicável",
+      "Não simplesmente reenviar sem consultar status",
+      "Registrar causa no playbook de suporte"
+    ],
+    "prevention": [
+      "Controle único de série/número",
+      "Rotina de importação de última numeração antes de iniciar novo emissor",
+      "Consulta antes de reemissão após falha"
+    ],
+    "edgeCases": [
+      "Primeira nota no ERP novo mas não primeira nota do CNPJ",
+      "Mudança de emissão normal para contingência",
+      "Retorno atrasado após timeout"
+    ],
+    "ufBehavior": [
+      "Relatos comunitários de comportamento diferente por UF devem ser tratados como baixo trust até validação"
+    ],
+    "related": [
+      "nfe-rejeicao-204-duplicidade"
+    ],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfe-rejeicao-972-responsavel-tecnico",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "972",
+    "title": "Obrigatória as informações do responsável técnico",
+    "status": "official-uf",
+    "trustScore": 80,
+    "sources": [
+      "sefaz-pe-rejeicoes-comuns"
+    ],
+    "symptoms": [
+      "SEFAZ rejeita pela ausência do grupo de responsável técnico"
+    ],
+    "diagnosis": [
+      "Verificar se o layout/regra da UF exige o grupo responsável técnico",
+      "Verificar se dados do software house/responsável técnico foram configurados"
+    ],
+    "recommendedActions": [
+      "Preencher grupo responsável técnico conforme leiaute aplicável",
+      "Revisar CNPJ/contato/email/telefone/idCSRT/hashCSRT quando exigidos",
+      "Validar por UF e ambiente"
+    ],
+    "prevention": [
+      "Configurar cadastro do responsável técnico por emitente/UF",
+      "Criar validação antes do envio"
+    ],
+    "edgeCases": [
+      "Regra opcional em algumas UFs e obrigatória em outras",
+      "Divergência entre homologação e produção"
+    ],
+    "ufBehavior": [
+      "Exemplo público citado pela SEFAZ PE; verificar demais UFs"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfe-timeout-sefaz-reenvio",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "TIMEOUT",
+    "title": "Timeout SEFAZ seguido de reenvio incorreto",
+    "status": "derived-operational",
+    "trustScore": 55,
+    "sources": [
+      "moc-nfe-7-visao-geral-confaz",
+      "bling-rejeicao-204"
+    ],
+    "symptoms": [
+      "ERP não recebe retorno do lote",
+      "Usuário tenta emitir novamente",
+      "Depois aparece duplicidade"
+    ],
+    "diagnosis": [
+      "Distinguir falha de comunicação de falha de autorização",
+      "Consultar recibo/chave antes de gerar novo número"
+    ],
+    "recommendedActions": [
+      "Implementar consulta de recibo/status",
+      "Persistir nRec",
+      "Bloquear reemissão cega",
+      "Exibir mensagem clara ao usuário"
+    ],
+    "prevention": [
+      "State machine de emissão",
+      "Retry idempotente",
+      "Consulta antes de nova emissão"
+    ],
+    "edgeCases": [
+      "Lote processado após timeout",
+      "Usuário fecha tela e tenta novamente",
+      "Fila duplicada"
+    ],
+    "ufBehavior": [
+      "Pode variar conforme disponibilidade dos autorizadores"
+    ],
+    "related": [
+      "nfe-rejeicao-204-duplicidade",
+      "nfe-rejeicao-539-duplicidade-chave-diferente"
+    ],
+    "humanReviewRequired": false
+  },
+  {
+    "id": "nfse-e0312-codigo-tributacao-nacional-nao-administrado",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e Nacional",
+    "code": "E0312",
+    "title": "Código de tributação nacional não administrado",
+    "status": "community-hint",
+    "trustScore": 60,
+    "sources": [
+      "tecnospeed-nfse-rejeicoes",
+      "nfse-documentacao-atual"
+    ],
+    "symptoms": [
+      "NFS-e rejeitada por código de tributação inválido/não vigente"
+    ],
+    "diagnosis": [
+      "Conferir código nacional de tributação e vigência",
+      "Verificar competência"
+    ],
+    "recommendedActions": [
+      "Validar código no portal/documentação vigente",
+      "Atualizar tabela local",
+      "Criar validação pré-envio"
+    ],
+    "prevention": [
+      "Sincronizar tabelas NFS-e",
+      "Versionar códigos por competência"
+    ],
+    "edgeCases": [
+      "Código válido em uma competência e inválido em outra"
+    ],
+    "ufBehavior": [
+      "NFS-e pode ter variação municipal quando fora do padrão nacional"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfse-e0314-codigo-tributacao-municipal-inexistente",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e",
+    "code": "E0314",
+    "title": "Código de tributação municipal inexistente",
+    "status": "community-hint",
+    "trustScore": 60,
+    "sources": [
+      "tecnospeed-nfse-rejeicoes",
+      "nfse-documentacao-atual"
+    ],
+    "symptoms": [
+      "Município rejeita código tributário municipal"
+    ],
+    "diagnosis": [
+      "Código pode não existir para o município/provedor",
+      "Tabela municipal pode estar desatualizada"
+    ],
+    "recommendedActions": [
+      "Atualizar tabela municipal",
+      "Conferir CNAE/serviço/código municipal",
+      "Validar mapeamento por município"
+    ],
+    "prevention": [
+      "Manter cadastro por município/provedor",
+      "Testes por cidade"
+    ],
+    "edgeCases": [
+      "Mesmo serviço com códigos diferentes por município"
+    ],
+    "ufBehavior": [
+      "Alta variação municipal"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfse-e351-nbs-nao-informado",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e Nacional",
+    "code": "E351",
+    "title": "Código NBS não informado",
+    "status": "community-hint",
+    "trustScore": 60,
+    "sources": [
+      "tecnospeed-nfse-rejeicoes",
+      "nfse-documentacao-atual"
+    ],
+    "symptoms": [
+      "Rejeição por ausência de NBS"
+    ],
+    "diagnosis": [
+      "Campo NBS obrigatório conforme regra aplicável",
+      "Cadastro de serviço incompleto"
+    ],
+    "recommendedActions": [
+      "Informar NBS correto no cadastro de serviço",
+      "Criar validação antes do envio"
+    ],
+    "prevention": [
+      "Obrigatoriedade cadastral de NBS quando aplicável"
+    ],
+    "edgeCases": [
+      "NBS pode depender do tipo de serviço e legislação vigente"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfse-e400-januaria-mg-validacao-dados",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e Municipal",
+    "code": "E400",
+    "title": "Erro de validação de dados em Januária/MG",
+    "status": "community-hint",
+    "trustScore": 55,
+    "sources": [
+      "enotas-nfse-e400"
+    ],
+    "symptoms": [
+      "Município Januária/MG retorna E400"
+    ],
+    "diagnosis": [
+      "Erro genérico de validação de dados",
+      "Necessário verificar campos enviados, valores calculados e regras municipais"
+    ],
+    "recommendedActions": [
+      "Validar XML/payload",
+      "Conferir valores, cadastro, código de serviço e tributação",
+      "Consultar provedor/município"
+    ],
+    "prevention": [
+      "Criar suíte de validação específica por município/provedor"
+    ],
+    "edgeCases": [
+      "Erro genérico pode esconder campo específico inválido"
+    ],
+    "ufBehavior": [
+      "Caso específico municipal"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "esocial-codcateg-invalido-ret",
+    "domain": "trabalhista.esocial",
+    "documentType": "eSocial S-1.3",
+    "code": "codCateg",
+    "title": "Código de categoria inválido/incompatível com RET",
+    "status": "official",
+    "trustScore": 100,
+    "sources": [
+      "esocial-layout-s13"
+    ],
+    "symptoms": [
+      "Evento rejeitado por categoria inválida ou incompatível"
+    ],
+    "diagnosis": [
+      "Código deve existir na Tabela 01 e obedecer validações do leiaute",
+      "Pode depender do RET e do tipo de evento"
+    ],
+    "recommendedActions": [
+      "Validar categoria conforme Tabela 01",
+      "Conferir situação do trabalhador no RET",
+      "Validar evento e sequência"
+    ],
+    "prevention": [
+      "Validação local de tabelas e evento",
+      "Testes por categoria"
+    ],
+    "edgeCases": [
+      "Mudança de categoria",
+      "Processo trabalhista",
+      "Trabalhador sem vínculo"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "esocial-afastamento-data-invalida",
+    "domain": "trabalhista.esocial",
+    "documentType": "eSocial S-1.3",
+    "code": "dtIniAfast",
+    "title": "Data de início de afastamento inválida",
+    "status": "official",
+    "trustScore": 100,
+    "sources": [
+      "esocial-layout-s13"
+    ],
+    "symptoms": [
+      "Evento de afastamento rejeitado por data"
+    ],
+    "diagnosis": [
+      "Data deve ser igual/posterior à admissão e não posterior à data atual conforme regra"
+    ],
+    "recommendedActions": [
+      "Conferir admissão",
+      "Conferir data do afastamento",
+      "Validar ordem de eventos"
+    ],
+    "prevention": [
+      "Validação local antes do envio",
+      "Controle de sequência e histórico do trabalhador"
+    ],
+    "edgeCases": [
+      "Admissão retroativa",
+      "Evento enviado fora de ordem",
+      "Retificação"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "sped-efd-icms-ipi-registro-d750-pva-603",
+    "domain": "sped.efd-icms-ipi",
+    "documentType": "EFD ICMS/IPI",
+    "code": "D750",
+    "title": "Correção PVA 6.0.3 relacionada ao registro D750",
+    "status": "needs-validation",
+    "trustScore": 55,
+    "sources": [
+      "fenacon-pva-603-d750",
+      "sped-efd-icms-ipi-guias",
+      "sped-efd-icms-ipi-projeto"
+    ],
+    "symptoms": [
+      "Validação PVA relacionada ao registro D750"
+    ],
+    "diagnosis": [
+      "Notícia profissional indica correção no processo de validação do registro D750 no PVA 6.0.3",
+      "Confirmar no portal SPED antes de tratar como regra"
+    ],
+    "recommendedActions": [
+      "Verificar versão atual do PVA no SPED",
+      "Reprocessar arquivo com versão atual",
+      "Consultar Guia Prático vigente"
+    ],
+    "prevention": [
+      "Versionar PVA e Guia Prático",
+      "Registrar versão usada em validações"
+    ],
+    "edgeCases": [
+      "Erro do PVA vs erro do arquivo",
+      "Alteração de guia prático"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  }
+]

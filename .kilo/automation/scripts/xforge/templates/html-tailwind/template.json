@@ -1,0 +1,18 @@
+{
+  "slug": "html-tailwind",
+  "description": "HTML standalone + Tailwind via CDN + vanilla JS (no build)",
+  "tags": [
+    "html",
+    "tailwind",
+    "static"
+  ],
+  "skills": [
+    "minimal-html-tailwind",
+    "frontend-ux-ui-expert",
+    "accessibility-a11y-expert"
+  ],
+  "files": [
+    "index.html",
+    "README.md"
+  ]
+}

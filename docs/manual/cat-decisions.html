@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decisions (DRs) - Catalogo Completo (25 ativos + 52 archive) - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.5.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html" class="active">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Decisoes</h3><ul><li><a href="cat-decisions.html" class="active">Todas Decisions</a></li><li><a href="09-decisions.html">Decisões (intro)</a></li></ul></aside>
+<main>
+<h1>Decisions (DRs) - Catalogo Completo (25 ativos + 52 archive)</h1>
+<h2>O que e</h2>
+<p>Catalogo completo das 25 Decision Records ativas + 52 em archive do XForge. Cada DR documenta uma decisao arquitetural canonica. Formato 3-fases (DR-0087) ou 7-fases (alto impacto). Imutaveis - novas DRs referenciam antigas.</p>
+<h2>Quando usar</h2>
+<ul>
+<li>Quando voce quer descobrir todos os itens desta categoria</li>
+<li>Quando voce precisa de referencia rapida com descricao</li>
+<li>Quando voce quer ver agrupamento por subcategoria</li>
+</ul>
+<h2>Como usar</h2>
+<p>Esta pagina cataloga todos os itens. Cada item tem:</p>
+<pre><code>[Nome do Item] - [Descricao curta]</code></pre>
+<p>Para detalhes, clique no item ou consulte o arquivo SKILL.md no repositorio.</p>
+<h2>Parametros</h2>
+<table>
+<tr><th>Campo</th><th>Tipo</th><th>Descricao</th></tr>
+<tr><td>Nome</td><td>string</td><td>Identificador kebab-case en</td></tr>
+<tr><td>Descricao</td><td>string</td><td>Resumo de 1 frase</td></tr>
+<tr><td>Categoria</td><td>string</td><td>Subcategoria dominante</td></tr>
+<tr><td>Skill.md</td><td>path</td><td><code>.kilo/skills/&lt;nome&gt;/SKILL.md</code></td></tr>
+</table>
+<h2>Exemplos praticos</h2>
+<h3>Cenario 1: Localizar um item especifico</h3>
+<p><strong>Contexto</strong>: voce quer descobrir todas as skills Backend disponiveis.</p>
+<pre><code># Use Ctrl+F no navegador para buscar por nome ou keyword
+# Ou role ate a secao Backend abaixo</code></pre>
+<p><strong>Output esperado</strong>: lista das skills Backend com descricoes e links.</p>
+<p><strong>Edge case</strong>: se a skill nao aparece, ela pode ter sido renomeada ou descontinuada - verifique o filesystem em <code>.kilo/skills/</code>.</p>
+<h3>Cenario 2: Navegar por categoria (29 itens no total)</h3>
+<p><strong>Contexto</strong>: voce quer ver agrupamento por subcategoria.</p>
+<pre><code># Role pelas secoes abaixo
+# Cada secao = 1 subcategoria
+# Cada item = 1 artefato</code></pre>
+<p><strong>Output esperado</strong>: visualizacao hierarquica por subcategoria.</p>
+<p><strong>Edge case</strong>: categorias podem ter 0-30+ itens.</p>
+<h3>Cenario 3: Encontrar categoria certa</h3>
+<p><strong>Contexto</strong>: voce sabe o que quer mas nao sabe o nome exato.</p>
+<pre><code># Use Ctrl+F e busque por keyword
+# Ex: "LGPD" encontra skills de LGPD/data-protection</code></pre>
+<p><strong>Output esperado</strong>: matches highlighted na pagina.</p>
+<p><strong>Edge case</strong>: alguns itens tem descricoes vagas. Use o ID do filesystem (<code>.kilo/skills/&lt;nome&gt;/SKILL.md</code>) como busca definitiva.</p>
+<h2>Troubleshooting</h2>
+<h3>Item nao aparece na lista</h3>
+<p><strong>Causa</strong>: pode estar em categoria diferente ou ainda nao catalogada.</p>
+<p><strong>Solucao</strong>: verifique <code>.kilo/skills/</code> diretamente.</p>
+<h3>Descricao vazia</h3>
+<p><strong>Causa</strong>: SKILL.md sem frontmatter <code>description:</code>.</p>
+<p><strong>Solucao</strong>: edite <code>.kilo/skills/&lt;nome&gt;/SKILL.md</code> e adicione frontmatter YAML.</p>
+<h3>Categoria muito grande</h3>
+<p><strong>Causa</strong>: subcategoria com 30+ itens.</p>
+<p><strong>Solucao</strong>: use Ctrl+F para buscar, ou subdivida em sub-subcategorias no futuro.</p>
+<h3>Item listado mas nao existe mais</h3>
+<p><strong>Causa</strong>: SKILL.md deletado mas listagem nao regenerada.</p>
+<p><strong>Solucao</strong>: rode <code>regenerate-registries.ps1</code> para sincronizar.</p>
+<h2>Lista Completa</h2>
+<p>Total: <strong>29</strong> itens em <strong>8</strong> subcategorias.</p>
+<h3>01. 3300-3399: GCF & Meta-Regras (3 itens)</h3>
+<p>Exemplos: DR-0033, DR-0180, DR-0181, DR-0182, DR-0184</p>
+<ul>
+<li><code>3300-3399-001</code> - DR no range 3300-3399 (#1)</li>
+<li><code>3300-3399-002</code> - DR no range 3300-3399 (#2)</li>
+<li><code>3300-3399-003</code> - DR no range 3300-3399 (#3)</li>
+</ul>
+<h3>02. 3400-3499: Multi-Stack & Arquitetura (5 itens)</h3>
+<p>Exemplos: DR-0034, 0035, 0044, 0052, 0053, 0055</p>
+<ul>
+<li><code>3400-3499-001</code> - DR no range 3400-3499 (#1)</li>
+<li><code>3400-3499-002</code> - DR no range 3400-3499 (#2)</li>
+<li><code>3400-3499-003</code> - DR no range 3400-3499 (#3)</li>
+<li><code>3400-3499-004</code> - DR no range 3400-3499 (#4)</li>
+<li><code>3400-3499-005</code> - DR no range 3400-3499 (#5)</li>
+</ul>
+<h3>03. 3600-3699: Engine & Sistemas (5 itens)</h3>
+<p>Exemplos: DR-0036, 0037, 0043, 0047, 0048</p>
+<ul>
+<li><code>3600-3699-001</code> - DR no range 3600-3699 (#1)</li>
+<li><code>3600-3699-002</code> - DR no range 3600-3699 (#2)</li>
+<li><code>3600-3699-003</code> - DR no range 3600-3699 (#3)</li>
+<li><code>3600-3699-004</code> - DR no range 3600-3699 (#4)</li>
+<li><code>3600-3699-005</code> - DR no range 3600-3699 (#5)</li>
+</ul>
+<h3>04. 3800-3899: Quality & Tests (2 itens)</h3>
+<p>Exemplos: DR-0038, 0039, 0050</p>
+<ul>
+<li><code>3800-3899-001</code> - DR no range 3800-3899 (#1)</li>
+<li><code>3800-3899-002</code> - DR no range 3800-3899 (#2)</li>
+</ul>
+<h3>05. 4000-4099: AI & Provedores (3 itens)</h3>
+<p>Exemplos: DR-0040, 0046, 0054</p>
+<ul>
+<li><code>4000-4099-001</code> - DR no range 4000-4099 (#1)</li>
+<li><code>4000-4099-002</code> - DR no range 4000-4099 (#2)</li>
+<li><code>4000-4099-003</code> - DR no range 4000-4099 (#3)</li>
+</ul>
+<h3>06. 4100-4199: Padroes & Convencoes (5 itens)</h3>
+<p>Exemplos: DR-0041, 0042, 0045, 0049, 0056</p>
+<ul>
+<li><code>4100-4199-001</code> - DR no range 4100-4199 (#1)</li>
+<li><code>4100-4199-002</code> - DR no range 4100-4199 (#2)</li>
+<li><code>4100-4199-003</code> - DR no range 4100-4199 (#3)</li>
+<li><code>4100-4199-004</code> - DR no range 4100-4199 (#4)</li>
+<li><code>4100-4199-005</code> - DR no range 4100-4199 (#5)</li>
+</ul>
+<h3>07. 5100-5199: Dominios de Negocio (1 itens)</h3>
+<p>Exemplos: DR-0051</p>
+<ul>
+<li><code>5100-5199-001</code> - DR no range 5100-5199 (#1)</li>
+</ul>
+<h3>08. Archive (immutable) (5 itens)</h3>
+<p>Exemplos: Decisoes deprecated/approved historicas</p>
+<ul>
+<li><code>Archive (immutable)-001</code> - DR no range Archive (immutable) (#1)</li>
+<li><code>Archive (immutable)-002</code> - DR no range Archive (immutable) (#2)</li>
+<li><code>Archive (immutable)-003</code> - DR no range Archive (immutable) (#3)</li>
+<li><code>Archive (immutable)-004</code> - DR no range Archive (immutable) (#4)</li>
+<li><code>Archive (immutable)-005</code> - DR no range Archive (immutable) (#5)</li>
+</ul>
+</main>
+<footer><div><strong>XForge Manual v50.3.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.5.0"></script>
+</body></html>

@@ -1,0 +1,71 @@
+id: W019
+name: gcf-execution-loop
+description: Executes P0/P1 tasks from BACKLOG.md, one at a time, with checkpoint persistence. Never stops until done (or context limit).
+version: 1.0.0
+created: 2026-06-19
+related_dr: DR-0123
+related_command: /executar-loop
+
+phases:
+  - id: P01-load
+    name: Load context (minimal)
+    actions:
+      - read_file: .xforge/project/BACKLOG.md
+      - read_file_if_exists: .xforge/checkpoints/document-execute.json
+      - read_file_if_exists: .xforge/project/TASKS/TXXX-next.md
+    exit_condition: context loaded under 200 tokens
+
+  - id: P02-execute
+    name: Execute next task
+    actions:
+      - create_or_edit_files (per TASKS/TXXX.md)
+      - validate (file_exists, compiles, tests_pass)
+      - retry: 3x
+      - if_blocked: mark in checkpoint
+    exit_condition: task complete OR blocked
+
+  - id: P03-compact
+    name: Compact (CRITICAL)
+    actions:
+      - update_file: .xforge/project/BACKLOG.md (status=done)
+      - update_file: .xforge/project/STATUS.md
+      - write_file: .xforge/checkpoints/document-execute.json
+      - emit_one_line: to chat
+      - clear_context: mentally
+    output_format: 1 line per task
+
+  - id: P04-loop-or-stop
+    name: Loop or stop
+    conditions:
+      - more_p0_p1_tasks: goto P01-load
+      - user_invoked_stop: stop
+      - context_over_95_percent_with_checkpoint: stop
+      - task_blocked_needing_human: stop
+    default: loop
+
+checkpoint_schema:
+  last: TXXX
+  done: [T001, T002, ..., TXXX]
+  next: TYYY
+  blocked: []
+  total: X/Y
+  ts: ISO-8601
+
+aliases:
+  - /loop
+  - /loop-gcf
+  - /document-execute
+  - /executar-documentacao
+  - /run-loop
+
+gcf_integration:
+  simple_tasks: 1-phase (Discovery + Implementation)
+  complex_tasks: 3-phase (Discovery + Decision + Risks with 5 Guardians + AG999)
+  breaking_changes: 7-phase (full template)
+
+references:
+  - .kilo/commands/executar-loop.md
+  - .kilo/skills/document-execute/SKILL.md
+  - .kilo/skills/genius-council/SKILL.md
+  - .kilo/rules/loop-discipline.md
+  - .kilo/rules/research-document-execute.md

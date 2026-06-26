@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /learn - Absorver Documentacao</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html" class="active">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html" class="active">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /learn - Absorver Documentacao Existente</h1>
+
+<h2>O que e</h2>
+<p><code>/learn</code> orquestra knowledge ingestion de 5 fontes: CODE (snippets), DOCUMENTS (arquivos), IDEAS (notas), ANNOTATIONS (comentarios), FEEDBACK (code review). Le, classifica, gera knowledge entries com trust score, e indexa no RAG. Suporta continuar projeto (absorve de pasta pre-existente) ou criar do zero (absorve specs/repos antes de gerar codigo).</p>
+<p>Sub-comandos: <code>/learn source &lt;path|url&gt;</code>, <code>/learn feedback &lt;pr-id&gt;</code>, <code>/learn resume</code>, <code>/learn list-sources</code>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Apos <code>/forge</code>, para absorver documentacao pre-existente do projeto (specs, RFCs, decisoes)</li>
+<li>Quando ha pasta <code>legado-docs/</code> com documentacao dispersa</li>
+<li>Quando precisa consolidar feedback de code reviews em knowledge</li>
+<li>Quando quer aprender um framework novo a partir de docs oficiais</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>/learn source &lt;path|url|texto&gt; [opcoes]
+
+# Exemplo com caminho
+/learn source ./legado-docs/ --domain app --format auto --trust-score 80
+
+# Exemplo com URL
+/learn source https://learn.microsoft.com/ef-core --stack dotnet</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th><th>Obrigatorio?</th></tr>
+<tr><td><code>source &lt;path&gt;</code></td><td>string</td><td>obrigatorio</td><td>Path de pasta, URL, ou texto inline (- para stdin)</td><td>Sim</td></tr>
+<tr><td><code>--domain</code></td><td>string</td><td>auto</td><td>fiscal | lgpd | erp | crm | app | backend | etc</td><td>Nao</td></tr>
+<tr><td><code>--format</code></td><td>string</td><td>auto</td><td>md | txt | pdf | html | json | auto</td><td>Nao</td></tr>
+<tr><td><code>--trust-score</code></td><td>int</td><td>auto</td><td>0-100 (override auto-detection)</td><td>Nao</td></tr>
+<tr><td><code>--output</code></td><td>string</td><td>.xforge/knowledge/&lt;domain&gt;/</td><td>Diretorio de saida</td><td>Nao</td></tr>
+<tr><td><code>--max-entries</code></td><td>int</td><td>50</td><td>Maximo de knowledge entries a gerar</td><td>Nao</td></tr>
+<tr><td><code>--dry-run</code></td><td>bool</td><td>false</td><td>Mostra plano sem criar arquivos</td><td>Nao</td></tr>
+<tr><td><code>--continue-after-forge</code></td><td>bool</td><td>true</td><td>Se chamado apos /forge, integra docs ao scaffold</td><td>Nao</td></tr>
+</table>
+
+<h2>Exemplos praticos (continuidade com /forge MeuProjeto)</h2>
+
+<h3>Cenario 1: Absorver docs de projeto legado (continuidade pos-/forge)</h3>
+<p><strong>Contexto</strong>: Voce acabou de rodar <code>/forge new MeuProjeto --stack dotnet --lgpd true</code> (Cenario 1 do /forge). Agora quer absorver documentacao pre-existente do projeto antigo.</p>
+<pre><code># Estrutura apos /forge:
+# MeuProjeto/
+#   src/  tests/  .kilo/  .xforge/  docs/  ...
+#   /tmp/legado-docs/   <- docs antigos (NÃƒO estao no projeto ainda)
+
+# Comando:
+/learn source /tmp/legado-docs/ --domain app --format auto</code></pre>
+<p><strong>Output esperado</strong> (passo a passo):</p>
+<pre><code>[learn] v50.6.0 - Knowledge Ingestion Wizard
+[1/5] Detectando formato dos arquivos...
+  - legado-docs/spec-v1.md (markdown, 2340 chars)
+  - legado-docs/rfc-arquitetura.md (markdown, 5420 chars)
+  - legado-docs/decisoes-2024.md (markdown, 3120 chars)
+  - legado-docs/reuniao-15-03.pdf (PDF binario)
+  - legado-docs/reuniao-15-03.txt (texto, 8900 chars)
+  - legado-docs/.DS_Store (ignorado)
+[2/5] Classificando dominio...
+  - spec-v1.md -> domain: app (confidence 92%)
+  - rfc-arquitetura.md -> domain: backend-architecture (confidence 87%)
+  - decisoes-2024.md -> domain: business-rules (confidence 78%)
+  - reuniao-15-03.txt -> domain: app (confidence 65%)
+[3/5] Calculando trust scores...
+  - spec-v1.md -> trustScore 75 (blog interno, sem autor)
+  - rfc-arquitetura.md -> trustScore 90 (documento tecnico formal)
+  - decisoes-2024.md -> trustScore 80 (decisoes internas datadas)
+  - reuniao-15-03.txt -> trustScore 60 (notas de reuniao, sem revisao)
+[4/5] Gerando knowledge entries (4) + DRs (2) + skills (1)...
+  [+] .xforge/knowledge/dominios/sac/spec-original-v1.md (trust: 75)
+  [+] .xforge/knowledge/padroes/backend-architecture/rfc-original.md (trust: 90)
+  [+] .xforge/knowledge/dominios/business-rules/decisoes-2024.md (trust: 80)
+  [+] .xforge/knowledge/dominios/sac/notas-reuniao.md (trust: 60)
+  [+] .xforge/decisions/DR-0196-spec-original-softata.md (status: draft, absorvido de spec-v1.md)
+  [+] .xforge/decisions/DR-0197-arquitetura-original.md (status: draft, absorvido de rfc-arquitetura.md)
+  [!] SKILL detectada: domain-event-pattern (extraida de reuniao-15-03.txt)
+  [+] .kilo/skills/domain-event-pattern/SKILL.md (auto-criada)
+[5/5] Indexando no RAG...
+  [reindex] 4 knowledge entries + 2 DRs + 1 skill adicionadas
+  [reindex] RAG manifest atualizado (752 docs total)
+
+[learn] DONE: 7 artefatos criados. Tempo: 8 segundos.
+
+[CONTINUIDADE] O que fazer depois:
+  1. Revisar DR-0196 e DR-0197 (status: draft, precisam ser approved)
+  2. Verificar skill domain-event-pattern auto-criada (conteudo da reuniao pode ter erros)
+  3. Se confiavel, rodar: /forge absorb-and-build --auto
+     -> Integra conhecimento absorvido ao scaffold do MeuProjeto
+     -> Cria entidades adicionais (Customer from spec-v1.md)
+     -> Adiciona handlers MediatR baseados nos DRs
+     -> Testa contra os exemplos em rfc-arquitetura.md</code></pre>
+<p><strong>Estrutura apos /learn</strong>:</p>
+<pre><code>MeuProjeto/
+  src/   tests/   .kilo/   .xforge/   docs/
+  .xforge/
+    knowledge/
+      dominios/sac/
+        spec-original-v1.md          # NOVO
+        notas-reuniao.md              # NOVO
+      padroes/backend-architecture/
+        rfc-original.md               # NOVO
+      dominios/business-rules/
+        decisoes-2024.md              # NOVO
+    decisions/
+      DR-0196-spec-original-softata.md  # NOVO (draft)
+      DR-0197-arquitetura-original.md   # NOVO (draft)
+  .kilo/skills/
+    domain-event-pattern/            # NOVO skill
+      SKILL.md
+  .xforge/rag/manifest.json          # atualizado</code></pre>
+<p><strong>Edge case</strong>: PDF binario (reuniao-15-03.pdf) nao foi parseado. Use <code>--format pdf</code> explicito OU <code>--extract-pdf</code> para OCR.</p>
+
+<h3>Cenario 2: Absorver de URL publica (documentacao Microsoft)</h3>
+<p><strong>Contexto</strong>: Quer adicionar skill canonica EF Core a partir de docs oficiais.</p>
+<pre><code>/learn source https://learn.microsoft.com/ef-core/dbcontext-configuration --stack dotnet --domain backend --trust-score 95</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[learn] URL: https://learn.microsoft.com/ef-core/dbcontext-configuration
+[learn] Fetching (47 requests, delay 1000ms)...
+[learn] Extraindo texto de 23 paginas...
+[learn] Detectando: dominio backend, trust 95 (Microsoft oficial)
+[learn] Gerando 5 knowledge entries:
+  [+] .xforge/knowledge/packs/ef-core/dbcontext-config.md
+  [+] .xforge/knowledge/padroes/data-access/ef-core-patterns.md
+  [+] .xforge/knowledge/glossario/ef-core-terms.md
+  [+] .xforge/knowledge/compliance/ef-core-migrations.md
+  [+] .xforge/knowledge/compliance/connection-strings.md
+[learn] Criando 1 skill canonica:
+  [+] .kilo/skills/ef-core-canon/SKILL.md (recomendada para todos os projetos .NET)
+
+[CONTINUIDADE]:
+  - Use a skill em MeuProjeto: /apply-skill ef-core-canon
+  - Gera DbContext + entidades + migrations automaticamente</code></pre>
+<p><strong>Edge case</strong>: rate-limit Microsoft (429). Use <code>--delay 3000</code> ou rode em horario de baixo tratico.</p>
+
+<h3>Cenario 3: Absorver feedback de PR (GitHub)</h3>
+<p><strong>Contexto</strong>: Code review de PR-1234 gerou 8 comentarios. Quer consolidar em knowledge.</p>
+<pre><code>/learn feedback 1234 --repo MeuProjeto</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[learn] GitHub PR #1234: feat/ticket-assignment
+[learn] Encontrados 8 comentarios de review
+[learn] Classificando feedback...
+  - 5 comentarios positivos (refactorings bons)
+  - 2 comentarios negativos (XUnit vs NUnit debate, falta de teste)
+  - 1 comentario questionamento (CQRS overhead justificado?)
+[learn] Gerando 3 knowledge entries:
+  [+] .xforge/knowledge/compliance/code-review/xunit-only.md (trust: 90)
+  [+] .xforge/knowledge/compliance/code-review/test-coverage.md (trust: 85)
+  [+] .xforge/knowledge/padroes/architecture/cqrs-tradeoffs.md (trust: 75)
+[learn] Criando 1 DR:
+  [+] DR-0198-xunit-only-decision (status: draft, basado em feedback)
+
+[CONTINUIDADE]:
+  - DR-0198 tem que ser aprovado pelo time antes de virar rule
+  - Se aprovado, vira: .kilo/rules/xunit-only.md (auto)</code></pre>
+<p><strong>Edge case</strong>: PR privado sem token - configure <code>GITHUB_TOKEN</code> antes.</p>
+
+<h3>Cenario 4: Absorver texto inline (cola de conversa)</h3>
+<p><strong>Contexto</strong>: Discussao no Slack gerou 500 chars de insight. Quer knowledge entry.</p>
+<pre><code>/learn source "No MeuProjeto, aprendi que customer.Priority deve ser um ValueObject
+nao um enum, porque permite regras de negocio mais flexiveis (ex: cliente VIP
+com prioridade calculada por tempo de relacionamento + volume de compras)"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[learn] Source: inline text (523 chars)
+[learn] Detectando dominio: sac, trust: 60 (conversa informal)
+[learn] Gerando 1 entry:
+  [+] .xforge/knowledge/dominios/sac/customer-priority-vo.md
+  - Key insight: Priority como VO (nao enum)
+  - Reason: flexibilidade de regras de negocio
+[learn] Sugestao: linked to skill value-object-pattern</code></pre>
+<p><strong>Edge case</strong>: texto muito curto (< 50 chars) pode nao gerar entry.</p>
+
+<h3>Cenario 5: Absorver codigo + comentarios (ANNOTATIONS)</h3>
+<p><strong>Contexto</strong>: Tem um projeto .NET legado com comentarios valiosos espalhados.</p>
+<pre><code>/learn source ./src/legacy/ --type ANNOTATIONS --domain backend --keywords "refactor,pattern,tradeoff"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[learn] Scanning 47 arquivos em src/legacy/
+[learn] Encontrados 23 comentarios com keywords relevantes
+[learn] Filtrando: 8 comentarios com profundidade (> 3 linhas, explicam tradeoffs)
+[learn] Gerando 3 knowledge entries:
+  [+] .xforge/knowledge/padroes/refactoring/legacy-service-extraction.md (com base em comentario sobre ServiceManager)
+  [+] .xforge/knowledge/padroes/architecture/anemic-domain.md (com base em comentario sobre CustomerService)
+  [+] .xforge/knowledge/padroes/data-access/repository-split.md (com base em comentario sobre Repository<T>)
+
+[CONTINUIDADE]:
+  - Use as entries para refatorar MeuProjeto
+  - Cada entry aponta para arquivo/comentario original</code></pre>
+<p><strong>Edge case</strong>: comentarios com TODO/FIXME sao ignorados (muito transient).</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Wizard nao detecta formato</h3>
+<p><strong>Causa</strong>: extensao nao suportada (.docx, .xlsx).</p>
+<p><strong>Solucao</strong>: converta para .md ou .pdf antes; <code>pandoc file.docx -o file.md</code>.</p>
+
+<h3>Trust score muito baixo (todos < 50)</h3>
+<p><strong>Causa</strong>: fontes nao confiaveis (sem autor, sem data).</p>
+<p><strong>Solucao</strong>: use <code>--trust-score 80</code> explicito (override) ou forneca docs oficiais.</p>
+
+<h3>Knowledge duplicada</h3>
+<p><strong>Causa</strong>: entry similar ja existe.</p>
+<p><strong>Solucao</strong>: wizard abre debate (AG999); aceite ou rejeite duplicatas.</p>
+
+<h3>RAG nao atualiza</h3>
+<p><strong>Causa</strong>: <code>rag_local.py reindex</code> nao foi chamado.</p>
+<p><strong>Solucao</strong>: wizard ja faz reindex automaticamente; verifique <code>.xforge/rag/manifest.json</code>.</p>
+
+<h3>PDF nao parseia</h3>
+<p><strong>Causa</strong>: PDF escaneado (sem texto).</p>
+<p><strong>Solucao</strong>: use <code>--extract-pdf</code> (requer tesseract OCR) ou converta antes.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

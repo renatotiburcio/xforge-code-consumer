@@ -1,0 +1,290 @@
+{
+  "name": "xforge",
+  "version": "1.4.0",
+  "description": "XForge Engineer MCP server: workflows, knowledge, doctor, policy, RBAC, tenants, packs, autoresearch + background daemon + 9 packs",
+  "tools": [
+    {
+      "name": "xforge_doctor",
+      "description": "Run XForge doctor. Returns exit code + last 4KB of stdout.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_knowledge_search",
+      "description": "Search knowledge base by keyword. Returns matching files with path, summary, keywords, lines.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search term (case-insensitive substring across path/summary/keywords)"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Max results (default 20)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_workflow_list",
+      "description": "List all W001-W015 workflows with id, name, version, description, state/transition counts.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_workflow_validate",
+      "description": "Validate a workflow YAML against workflow.schema.json + reachability + dead-end checks.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Workflow id (e.g. W001)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_workflow_run",
+      "description": "Execute a workflow FSM: load YAML, start at entrypoint, apply events, return history. Halts on terminal.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Workflow id (e.g. W001)"
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Ordered list of event names"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_rbac_check",
+      "description": "Check if a role can perform an action. Resolves role inheritance. Returns allowed/denied + level + reason.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "role",
+          "action"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "Role name (viewer/developer/reviewer/admin/owner)"
+          },
+          "action": {
+            "type": "string",
+            "description": "Action verb (read/write/publish/etc.)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_policy_check",
+      "description": "Evaluate a request against policy engine + RBAC. Returns allowed/denied/allowed_with_requirements.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "actor_role",
+          "action"
+        ],
+        "properties": {
+          "actor_role": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "resource": {
+            "type": "string",
+            "description": "Resource path or pattern"
+          },
+          "context": {
+            "type": "object",
+            "description": "Extra context (provider, environment, etc.)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_tenant_list",
+      "description": "List all tenants with id, name, knowledge path, file count, active state.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_tenant_create",
+      "description": "Create a new tenant with isolated knowledge/ and rag/ directories.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Tenant id (kebab-case)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable name"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_tenant_use",
+      "description": "Switch the active tenant. Marks others inactive.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Tenant id (with or without 'tenant-' prefix)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_pack_list",
+      "description": "List all marketplace packs with id, name, version, trust score, installed state.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_pack_install",
+      "description": "Install a pack: copy content from marketplace source to .xforge/knowledge/packs/ and update INDEX.json.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Pack id (e.g. xforge-fiscal)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_pack_uninstall",
+      "description": "Remove an installed pack: delete files, remove from installed.json, remove from INDEX.json.",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_autoresearch_run",
+      "description": "Run AutoResearch loop: measure xfs, run experiments (count, document-check, dedup, empty-dir), keep/discard, append to results.tsv.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "iterations": {
+            "type": "integer",
+            "description": "Number of iterations (capped by config maxIterations, default 20)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_validate_all",
+      "description": "Aggregate health check: doctor + knowledge + workflows + xfs + tools + pytest in 1 call. Returns per-check ok + summary.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_autoresearch_run_mutate",
+      "description": "Real AutoResearch loop: copy knowledge to sandbox, run E*.py experiments, measure heuristic xfs, keep/discard, append to results.tsv. Safe (no git mutation).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "iterations": {
+            "type": "integer",
+            "description": "Number of iterations (max 20)"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "xforge_autoresearch_daemon",
+      "description": "Manage the AutoResearch background daemon (start/stop/status). Spawns a detached process that runs the mutate loop every 30s, writes state to .xforge/autoresearch/daemon-state.json.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "start",
+              "stop",
+              "status"
+            ],
+            "description": "Daemon management action (default: status)"
+          },
+          "iterationsPerTick": {
+            "type": "integer",
+            "description": "Number of mutate iterations per loop tick (default 7)"
+          },
+          "detach": {
+            "type": "boolean",
+            "description": "Run as detached background process (default true)"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-hr",
+    "name":  "HR/DP",
+    "version":  "1.0.0",
+    "description":  "Folha, eSocial, FGTS, INSS, IRRF, rescisao",
+    "files":  3,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "hr"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/hr/"
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "next-app",
+  "description": "Next.js 15 App Router + TypeScript + Tailwind + Server Actions",
+  "tags": [
+    "nextjs",
+    "typescript",
+    "react"
+  ],
+  "skills": [
+    "next-modern",
+    "tailwind-design-system-expert",
+    "accessibility-a11y-expert",
+    "data-protection-lgpd-expert"
+  ],
+  "files": [
+    "package.json",
+    "app/layout.tsx",
+    "app/page.tsx",
+    "next.config.mjs",
+    "tsconfig.json",
+    ".gitignore",
+    "README.md",
+    "Dockerfile",
+    ".dockerignore",
+    ".github/workflows/ci.yml"
+  ],
+  "includes_docker": true,
+  "includes_ci": true
+}

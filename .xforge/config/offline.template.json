@@ -1,0 +1,18 @@
+{
+  "_comment": "Offline mode configuration - add to ~/.xforge/config.json",
+  "offline": {
+    "enabled": false,
+    "fallbackModel": "ollama/llama3",
+    "contextWindow": 128000,
+    "models": {
+      "default": "ollama/llama3",
+      "embedding": "ollama/nomic-embed-text",
+      "code": "ollama/deepseek-coder"
+    },
+    "cacheResponses": true,
+    "cacheDir": "~/.xforge/cache",
+    "maxCacheSize": "500MB",
+    "pendingQueueDir": "~/.xforge/pending",
+    "syncOnReconnect": true
+  }
+}

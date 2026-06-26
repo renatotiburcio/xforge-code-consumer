@@ -1,0 +1,16 @@
+{
+  "name": "xforge-fiscal-estados - icms por uf",
+  "version": "1.0.0",
+  "author": "Renato Tiburcio",
+  "trustScore": 80,
+  "tags": [],
+  "domain": "fiscal",
+  "description": "Regras estaduais de ICMS, IPI, ST, MVA por UF",
+  "files": [
+    "overview.md",
+    "details.md"
+  ],
+  "dependencies": [],
+  "kbVersion": "1.0",
+  "lastUpdated": "2026-06-13"
+}

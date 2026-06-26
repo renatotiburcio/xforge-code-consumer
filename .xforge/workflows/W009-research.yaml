@@ -1,0 +1,16 @@
+﻿id: W009
+version: 1.0.0
+name: research
+description: Research phase - analyze sources and generate documentation
+states: [requested, fetching, analyzing, drafting, validating, done, failed]
+transitions:
+  - {from: requested, to: fetching, event: sources_identified}
+  - {from: fetching, to: analyzing, event: sources_loaded}
+  - {from: analyzing, to: drafting, event: analysis_complete}
+  - {from: drafting, to: validating, event: drafts_created}
+  - {from: validating, to: done, event: validation_passed}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [docs-writer, project-recognition-engineer]
+tools: [webfetch, read_file, create_file]
+entrypoint: requested
+terminalStates: [done, failed]

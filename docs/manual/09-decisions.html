@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>09 Decisoes - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html" class="active">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Componentes</h3><ul><li><a href="04-skills.html">Skills</a></li><li><a href="05-agents.html">Agents</a></li><li><a href="06-commands.html">Commands</a></li><li><a href="07-rules.html">Rules</a></li><li><a href="08-knowledge.html">Knowledge</a></li><li><a href="09-decisions.html" class="active">Decisões</a></li><li><a href="10-extensions.html">Extensions</a></li><li><a href="cat-skills.html">Skills (catálogo)</a></li><li><a href="cat-agents.html">Agents (catálogo)</a></li><li><a href="cat-commands.html">Commands (catálogo)</a></li><li><a href="cat-rules.html">Rules (catálogo)</a></li><li><a href="cat-knowledge.html">Knowledge (catálogo)</a></li><li><a href="cat-decisions.html">Decisões (catálogo)</a></li><li><a href="cat-extensions.html">Extensions (catálogo)</a></li></ul></aside>
+<main>
+<h1>09 - Decisoes (DRs, 25 ativos)</h1>
+
+<h2>O que e</h2>
+<p><strong>Decision Records (DRs)</strong> sao a fonte canonica de decisoes arquiteturais em <code>.xforge/decisions/</code>. XForge tem 25 DRs ativos + 52 em archive. Cada DR segue template 3-fases (Problema, Decisao, Riscos) ou 7-fases (alto impacto) per DR-0087. DRs sao <strong>imutaveis</strong>: alteracoes exigem NOVA DR que referencia a anterior (release-immutability).</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce precisa tomar decisao arquitetural nao-trivial</li>
+  <li>Quando quer consultar decisao canonica (ex: "usamos X ou Y?")</li>
+  <li>Quando quer criar DR nova (apos GCF)</li>
+  <li>Quando quer auditar decisoes deprecated (archive)</li>
+  <li>NAO use para tarefas triviais (decisao cabe no commit message)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica (via GCF ou manual):</p>
+<pre><code># Criar DR via GCF (recomendado)
+/genius-council
+/topico: "..."
+# Resultado: DR-XXXX-titulo.md criado em .xforge/decisions/
+
+# Criar DR manual
+cat &gt; .xforge/decisions/DR-NNNN-titulo.md &lt;&lt;EOF
+# DR-NNNN - Titulo
+**Status**: draft
+**Date**: YYYY-MM-DD
+**Type**: architecture | process | pattern
+## Problema
+...
+## Contexto
+...
+## Decisao
+...
+## Riscos
+...
+EOF
+
+# Ver indice
+cat .xforge/decisions/ADR-INDEX.md</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>ID</code></td><td>string</td><td>DR-NNNN</td><td>Numero sequencial. NNNN segue ranges canonicos.</td></tr>
+<tr><td><code>Status</code></td><td>string</td><td>draft</td><td>draft, review, approved, deprecated.</td></tr>
+<tr><td><code>Type</code></td><td>string</td><td>architecture</td><td>architecture, process, pattern, security, domain.</td></tr>
+<tr><td><code>Date</code></td><td>string</td><td>YYYY-MM-DD</td><td>Data da criacao.</td></tr>
+<tr><td><code>Approval</code></td><td>string</td><td>vazio</td><td>Quem aprovou (humano + data).</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Ler DR canonica (DR-0033 GCF)</h3>
+<p><strong>Contexto</strong>: Voce quer entender o processo de decisao do XForge.</p>
+<pre><code>cat .xforge/decisions/DR-0033-genius-council-framework.md</code></pre>
+<p><strong>Output esperado</strong> (excerpt):</p>
+<pre><code># DR-0033 - Genius Council Framework (GCF)
+**Status**: approved
+**Date**: 2026-06-17
+## Problema
+Sistemas complexos falham por decisoes sem rastreabilidade.
+## Decisao
+Toda decisao nao-trivial passa pelo Conselho (7 fases).
+## Consequencias
+Positivas: rastreabilidade, qualidade, alinhamento.
+Negativas: ceremony, tempo.</code></pre>
+<p><strong>Edge case</strong>: DRs approved sao IMUTAVEIS (DR-0087). Mudancas =&gt; nova DR.</p>
+
+<h3>Cenario 2: Criar DR via GCF (recomendado)</h3>
+<p><strong>Contexto</strong>: Decidir monolito vs microsservicos. Aciona GCF.</p>
+<pre><code>/genius-council
+/topico: "Monolito modular ou microsservicos para ERP BR medio porte"
+/contexto: "Time 8 devs, 3 modulos, .NET 8, PostgreSQL"
+/restricao: "LGPD, time pequeno, infra simples"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[GCF] 5 genios acionados
+[AG002, AG045, AG012, AG017, AG999]
+[Consenso] Monolito modular com 3 bounded contexts
+[DR] Criando .xforge/decisions/DR-0194-monolith-vs-microservices.md
+[Status] draft (aguarda sua aprovacao)</code></pre>
+<p><strong>Edge case</strong>: GCF demora 2-5 min para decisoes L/XL. Para S/M, use decisao direta sem GCF.</p>
+
+<h3>Cenario 3: DR categories (ranges canonicos)</h3>
+<p><strong>Contexto</strong>: Voce quer saber qual numero usar para nova DR.</p>
+<pre><code>cat .xforge/decisions/ADR-INDEX.md | Select-String "Range" -SimpleMatch
+
+# Ranges canonicos
+3300-3399: GCF, meta-regras (DR-0033, DR-0180, DR-0181, DR-0182)
+3400-3499: Multi-stack, arquitetura (DR-0034, 0035, 0044, 0052, 0053, 0055)
+3600-3699: Engine, sistemas (DR-0036, 0037, 0043, 0047, 0048)
+3800-3899: Quality, testes (DR-0038, 0039, 0050)
+4000-4099: AI, provedores (DR-0040, 0046, 0054)
+4100-4199: Padroes, convencoes (DR-0041, 0042, 0045, 0049, 0056)
+5100-5199: Dominios de negocio (DR-0051)
+6700-6799: Releases v3.5-v3.7 (DR-0064 a 0074)
+7500-7599: v3.7.1 compat (DR-0075 a 0079)
+8000-8099: v3.7.2 cleanup (DR-0080)
+9000+: Reservado para futuro</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>Para DR nova em "qualidade de codigo" -&gt; use 38XX
+Para DR nova em "AI" -&gt; use 40XX
+Para DR nova em "release v50" -&gt; use 80XX+</code></pre>
+<p><strong>Edge case</strong>: Se usar numero fora do range canonico, ADR-INDEX fica fora de ordem. Mantenha ranges.</p>
+
+<h3>Cenario 4: DR template (3-fases vs 7-fases)</h3>
+<p><strong>Contexto</strong>: Voce quer criar DR mas nao sabe qual template usar.</p>
+<pre><code># 3-fases (default, 90% das decisoes) - DR-0087
+# Problema: 1 paragrafo
+# Contexto: 2-5 paragrafos
+# Decisao: opcao escolhida + justificativa
+# Riscos: tabela
+
+# 7-fases (alto impacto) - DR-0033
+# 1. Discovery
+# 2. Multi-perspectiva
+# 3. Debate (AG999)
+# 4. Validation (5 Guardians)
+# 5. Consensus
+# 6. Documentation
+# 7. Execution
+
+# Quando usar 7-fases:
+# - Decisoes arquiteturais multi-modulo
+# - Breaking changes
+# - Incident response
+# - Sprint planning
+# - Multi-team impact</code></pre>
+<p><strong>Output esperado</strong> (3-fases snippet):</p>
+<pre><code>## Problema
+[1 paragrafo descrevendo o que precisa ser decidido]
+
+## Contexto
+[2-5 paragrafos com situacao, restricoes, alternativas consideradas]
+
+## Decisao
+[opcao escolhida + 2-3 frases de justificativa]
+
+## Riscos
+| Risco | Probabilidade | Mitigacao |
+| ... | ... | ... |</code></pre>
+<p><strong>Edge case</strong>: 7-fases eh para GCF completo. 3-fases eh para decisao direta com Conselho minimo.</p>
+
+<h3>Cenario 5: DR deprecated (imutabilidade)</h3>
+<p><strong>Contexto</strong>: Voce quer consultar DR antiga que foi superada.</p>
+<pre><code>ls .xforge/decisions/archive/ | head -10
+# DR-0001-stack-original.md
+# DR-0002-monolith-first.md (deprecated por DR-0194)
+# ...
+
+# DR-0002 vs DR-0194
+# DR-0002 (v1, deprecated): "Use sempre monolito"
+# DR-0194 (v2, approved): "Modular monolith com bounded contexts"
+# DR-0194 substitui DR-0002 (referenciado em Related)</code></pre>
+<p><strong>Output esperado</strong> (relacionamento):</p>
+<pre><code>**Related**: DR-0002 (deprecated, now superseded)
+**Status**: approved
+**Date**: 2026-06-21
+**Supersedes**: DR-0002</code></pre>
+<p><strong>Edge case</strong>: DRs deprecated NAO sao apagadas. Archive preserva audit trail.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>DR nao encontrada</h3>
+<p><strong>Causa</strong>: ID errado ou caminho errado.</p>
+<p><strong>Solucao</strong>: <code>Get-ChildItem .xforge/decisions/DR-*.md</code> para listar. <code>cat .xforge/decisions/ADR-INDEX.md</code> para indice.</p>
+
+<h3>DR draft sumiu</h3>
+<p><strong>Causa</strong>: Numero duplicado ou em archive/.</p>
+<p><strong>Solucao</strong>: <code>Get-ChildItem .xforge/decisions/ -Recurse | Where Status -eq draft</code> para encontrar.</p>
+
+<h3>Quero editar DR approved</h3>
+<p><strong>Causa</strong>: Impossivel (release-immutability).</p>
+<p><strong>Solucao</strong>: Crie NOVA DR que referencia a anterior. Use <code>Supersedes: DR-XXXX</code> no frontmatter.</p>
+
+<h3>ADR-INDEX nao atualiza</h3>
+<p><strong>Causa</strong>: Voce criou DR mas esqueceu de adicionar ao indice.</p>
+<p><strong>Solucao</strong>: <code>Edit ADR-INDEX.md</code> e adicione a DR nova. Sem isso, nao aparece no catalogo.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

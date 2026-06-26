@@ -1,0 +1,83 @@
+{
+  "version": "45.0.0",
+  "name": "Enterprise Score Engine",
+  "scores": [
+    {
+      "id": "architecture",
+      "name": "Architecture Score",
+      "weight": 12
+    },
+    {
+      "id": "security",
+      "name": "Security Score",
+      "weight": 14
+    },
+    {
+      "id": "testing",
+      "name": "Testing Score",
+      "weight": 12
+    },
+    {
+      "id": "performance",
+      "name": "Performance Score",
+      "weight": 8
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility Score",
+      "weight": 8
+    },
+    {
+      "id": "ux",
+      "name": "UX Score",
+      "weight": 12
+    },
+    {
+      "id": "documentation",
+      "name": "Documentation Score",
+      "weight": 8
+    },
+    {
+      "id": "maintainability",
+      "name": "Maintainability Score",
+      "weight": 10
+    },
+    {
+      "id": "observability",
+      "name": "Observability Score",
+      "weight": 6
+    },
+    {
+      "id": "domain",
+      "name": "Domain/Business Score",
+      "weight": 10
+    }
+  ],
+  "maturityLevels": [
+    {
+      "level": 1,
+      "name": "MVP",
+      "range": "0-49"
+    },
+    {
+      "level": 2,
+      "name": "Professional",
+      "range": "50-69"
+    },
+    {
+      "level": 3,
+      "name": "Enterprise",
+      "range": "70-84"
+    },
+    {
+      "level": 4,
+      "name": "Premium Enterprise",
+      "range": "85-94"
+    },
+    {
+      "level": 5,
+      "name": "World Class",
+      "range": "95-100"
+    }
+  ]
+}

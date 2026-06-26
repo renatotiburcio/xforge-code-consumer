@@ -1,0 +1,16 @@
+﻿id: W006
+version: 1.0.0
+name: documentation
+description: Generate or update documentation
+states: [requested, gathering, drafting, reviewing, publishing, done, failed]
+transitions:
+  - {from: requested, to: gathering, event: started}
+  - {from: gathering, to: drafting, event: info_collected}
+  - {from: drafting, to: reviewing, event: draft_complete}
+  - {from: reviewing, to: publishing, event: review_approved}
+  - {from: publishing, to: done, event: published}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [documenter, reviewer]
+tools: [read_file, create_file, update_file]
+entrypoint: requested
+terminalStates: [done, failed]

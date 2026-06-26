@@ -1,0 +1,17 @@
+﻿id: W004
+version: 1.0.0
+name: code-review
+description: Formal code review with checklist
+states: [requested, analyzing, reviewing, commenting, approved, rejected, done]
+transitions:
+  - {from: requested, to: analyzing, event: review_started}
+  - {from: analyzing, to: reviewing, event: context_loaded}
+  - {from: reviewing, to: commenting, event: findings_recorded}
+  - {from: commenting, to: approved, event: no_critical_issues}
+  - {from: commenting, to: rejected, event: critical_issues_found}
+  - {from: approved, to: done, event: reviewer_signed}
+  - {from: rejected, to: done, event: feedback_sent}
+agents: [reviewer]
+tools: [read_file, find_symbol, dependency_analysis, code_review]
+entrypoint: requested
+terminalStates: [done]

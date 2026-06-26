@@ -1,0 +1,77 @@
+# .kilocodeignore - Kilo Code legacy file access control
+# Patterns use .gitignore syntax. IgnoreMigrator converts these to deny rules.
+# See https://kilo.ai/docs/customize/context/kilocodeignore
+
+# Secrets and credentials
+.env
+.env.*
+secrets/**
+**/*.key
+**/*.pem
+**/credentials.json
+
+# Build artifacts
+node_modules/**
+dist/**
+build/**
+.next/**
+__pycache__/**
+*.pyc
+*.dll
+*.exe
+*.pdb
+
+# Version control
+.git/**
+.svn/**
+.hg/**
+
+# Editor and OS
+.vscode/**
+.idea/**
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and temp
+*.log
+logs/**
+tmp/**
+temp/**
+.cache/**
+
+# Coverage and test artifacts
+coverage/**
+*.lcov
+.nyc_output/**
+
+# XForge internal (managed by xforge CLI)
+.xforge/memory/**
+.xforge-backups/**
+.xforge/rag/cache/**
+
+# Packs marketplace (large files)
+**/*.tar.gz
+**/*.zip
+**/*.tgz
+
+# Documentation build outputs
+docs/_build/**
+site/**
+
+# Dependency directories
+vendor/**
+target/**
+bin/**
+obj/**
+
+# Comments
+# Use !pattern to negate (allow specific files)
+# Example: !docs/index.html (allow root manual even if docs is ignored)
+
+# XForge runtime state (PID, uptime, crashes)
+.xforge/engine/daemon-state.json
+# Build artifacts of mini-manuals HTML (generated from .md)
+docs/mini-manuals/*.html

@@ -1,0 +1,21 @@
+{
+  "slug": "angular-app",
+  "description": "Angular 18 standalone + Signals + Tailwind + RxJS",
+  "tags": [
+    "angular",
+    "typescript",
+    "spa"
+  ],
+  "skills": [
+    "angular-modern",
+    "frontend-ux-ui-expert",
+    "accessibility-a11y-expert"
+  ],
+  "files": [
+    "package.json",
+    "src/main.ts",
+    "src/app/app.component.ts",
+    ".gitignore",
+    "README.md"
+  ]
+}

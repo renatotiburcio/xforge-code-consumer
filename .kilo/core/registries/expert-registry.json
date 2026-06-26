@@ -1,0 +1,733 @@
+{
+    "experts":  [
+                    {
+                        "id":  "AG039-marion",
+                        "name":  "AG039-marion",
+                        "title":  "AG039-marion",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG039-marion.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG040-ricardo-alexandre",
+                        "name":  "AG040-ricardo-alexandre",
+                        "title":  "AG040-ricardo-alexandre",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG040-ricardo-alexandre.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG041-zenaide-carvalho",
+                        "name":  "AG041-zenaide-carvalho",
+                        "title":  "AG041-zenaide-carvalho",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG041-zenaide-carvalho.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG042-volia-cassar",
+                        "name":  "AG042-volia-cassar",
+                        "title":  "AG042-volia-cassar",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG042-volia-cassar.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG043-aldaiza-sposati",
+                        "name":  "AG043-aldaiza-sposati",
+                        "title":  "AG043-aldaiza-sposati",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG043-aldaiza-sposati.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG044-damodaran",
+                        "name":  "AG044-damodaran",
+                        "title":  "AG044-damodaran",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG044-damodaran.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG045-martin-fowler",
+                        "name":  "AG045-martin-fowler",
+                        "title":  "AG045-martin-fowler",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG045-martin-fowler.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG046-eric-evans",
+                        "name":  "AG046-eric-evans",
+                        "title":  "AG046-eric-evans",
+                        "description":  "\u003e Genius vertical adicionado na expansÃ£o Tier 1 (DR-0128, v3.39.0).",
+                        "path":  ".kilo/agents/genius-council/AG046-eric-evans.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG047-iudiciubus",
+                        "name":  "AG047-iudiciubus",
+                        "title":  "AG047-iudiciubus",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG047-iudiciubus.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG048-carrion",
+                        "name":  "AG048-carrion",
+                        "title":  "AG048-carrion",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG048-carrion.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG049-vendrame",
+                        "name":  "AG049-vendrame",
+                        "title":  "AG049-vendrame",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG049-vendrame.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG050-goldratt",
+                        "name":  "AG050-goldratt",
+                        "title":  "AG050-goldratt",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG050-goldratt.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG051-porter",
+                        "name":  "AG051-porter",
+                        "title":  "AG051-porter",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG051-porter.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG052-buffett",
+                        "name":  "AG052-buffett",
+                        "title":  "AG052-buffett",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG052-buffett.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG053-vernon",
+                        "name":  "AG053-vernon",
+                        "title":  "AG053-vernon",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG053-vernon.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG054-robert-c-martin",
+                        "name":  "AG054-robert-c-martin",
+                        "title":  "AG054-robert-c-martin",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 2 (DR-0131, v3.42.0).",
+                        "path":  ".kilo/agents/genius-council/AG054-robert-c-martin.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG055-graham",
+                        "name":  "AG055-graham",
+                        "title":  "AG055-graham",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG055-graham.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG056-marks",
+                        "name":  "AG056-marks",
+                        "title":  "AG056-marks",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG056-marks.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG057-dalio",
+                        "name":  "AG057-dalio",
+                        "title":  "AG057-dalio",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG057-dalio.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG058-drucker",
+                        "name":  "AG058-drucker",
+                        "title":  "AG058-drucker",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG058-drucker.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG059-hohpe",
+                        "name":  "AG059-hohpe",
+                        "title":  "AG059-hohpe",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG059-hohpe.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG060-martha-gabriel",
+                        "name":  "AG060-martha-gabriel",
+                        "title":  "AG060-martha-gabriel",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG060-martha-gabriel.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG061-rojas-couto",
+                        "name":  "AG061-rojas-couto",
+                        "title":  "AG061-rojas-couto",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG061-rojas-couto.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG062-yazbek",
+                        "name":  "AG062-yazbek",
+                        "title":  "AG062-yazbek",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG062-yazbek.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG063-raichelis",
+                        "name":  "AG063-raichelis",
+                        "title":  "AG063-raichelis",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG063-raichelis.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG064-homero-batista",
+                        "name":  "AG064-homero-batista",
+                        "title":  "AG064-homero-batista",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG064-homero-batista.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG065-braga",
+                        "name":  "AG065-braga",
+                        "title":  "AG065-braga",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG065-braga.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "AG066-norman",
+                        "name":  "AG066-norman",
+                        "title":  "AG066-norman",
+                        "description":  "\u003e Genius vertical adicionado na expansao Tier 3 (DR-0134, v3.45.0).",
+                        "path":  ".kilo/agents/genius-council/AG066-norman.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "ai-provider-router",
+                        "name":  "ai-provider-router",
+                        "title":  "ai-provider-router",
+                        "description":  "Roteador de providers: local, server, OpenRouter e cloud.",
+                        "path":  ".kilo/agents/ai-provider-router.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "chief-architect-orchestrator",
+                        "name":  "chief-architect-orchestrator",
+                        "title":  "chief-architect-orchestrator",
+                        "description":  "Orquestrador maximo do Engineer. Decide estrategia, priorizacao, delegacao, governanca e qualidade final. Classifica solicitacoes, seleciona agentes canonicos, skills, workflows e gates de validacao.",
+                        "path":  ".kilo/agents/chief-architect-orchestrator.md",
+                        "type":  "agent",
+                        "category":  "OrquestraÃ§Ã£o"
+                    },
+                    {
+                        "id":  "complexity-classifier",
+                        "name":  "complexity-classifier",
+                        "title":  "complexity-classifier",
+                        "description":  "Classifica a complexidade de qualquer solicitacao em S/M/L/CRITICA baseado em fatores objetivos. Usado pelo deep-request-analyzer e pelo smart routing.",
+                        "path":  ".kilo/agents/complexity-classifier.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "consensus-engine",
+                        "name":  "consensus-engine",
+                        "title":  "consensus-engine",
+                        "description":  "AG100 Consensus Engine. Recebe pareceres de genios, Devil Advocate e guardioes; consolida em Decision Record canonico.",
+                        "path":  ".kilo/agents/consensus-engine.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "customer-success-director",
+                        "name":  "customer-success-director",
+                        "title":  "customer-success-director",
+                        "description":  "Diretor de sucesso do cliente, suporte, treinamento, adoÃ§Ã£o e usabilidade.",
+                        "path":  ".kilo/agents/customer-success-director.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "data-platform-director",
+                        "name":  "data-platform-director",
+                        "title":  "data-platform-director",
+                        "description":  "Diretor de banco, EF Core, MySQL/Pomelo, performance e integridade de dados.",
+                        "path":  ".kilo/agents/data-platform-director.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "deep-request-analyzer",
+                        "name":  "deep-request-analyzer",
+                        "title":  "deep-request-analyzer",
+                        "description":  "Analisa qualquer solicitacao do usuario e produz um resumo estruturado com intencao, complexidade, dependencias e criterios de aceite. Ponto de entrada do LDV.",
+                        "path":  ".kilo/agents/deep-request-analyzer.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "development-feature-engineer",
+                        "name":  "development-feature-engineer",
+                        "title":  "development-feature-engineer",
+                        "description":  "Implements features, APIs, CRUDs and components for ANY stack (.NET, Node, Python, Go, React, Angular, Next.js, Vue, Svelte, HTML+Tailwind). Detects stack from project signals before proposing patterns.",
+                        "path":  ".kilo/agents/development-feature-engineer.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "devils-advocate",
+                        "name":  "devils-advocate",
+                        "title":  "devils-advocate",
+                        "description":  "AG999 Devil\u0027s Advocate. Critico implacavel. Ataca toda decisao com 7 perguntas obrigatorias antes da aprovacao.",
+                        "path":  ".kilo/agents/devils-advocate.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "director-architecture",
+                        "name":  "director-architecture",
+                        "title":  "director-architecture",
+                        "description":  "Diretor de arquitetura. Garante coerÃªncia estrutural, desacoplamento, decisÃµes arquiteturais e evoluÃ§Ã£o tÃ©cnica.",
+                        "path":  ".kilo/agents/director-architecture.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "director-governance",
+                        "name":  "director-governance",
+                        "title":  "director-governance",
+                        "description":  "Diretor de governanÃ§a. Aplica polÃ­ticas, RBAC, auditoria, promoÃ§Ã£o de conhecimento e aprovaÃ§Ã£o humana.",
+                        "path":  ".kilo/agents/director-governance.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "director-quality",
+                        "name":  "director-quality",
+                        "title":  "director-quality",
+                        "description":  "Diretor de qualidade. Garante build limpo, testes, cobertura, documentaÃ§Ã£o e quality score.",
+                        "path":  ".kilo/agents/director-quality.md",
+                        "type":  "agent",
+                        "category":  "Qualidade"
+                    },
+                    {
+                        "id":  "director-runtime",
+                        "name":  "director-runtime",
+                        "title":  "director-runtime",
+                        "description":  "Diretor de runtime learning. Aprende com logs, incidentes, telemetria, exceptions e produÃ§Ã£o.",
+                        "path":  ".kilo/agents/director-runtime.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "documentation-director",
+                        "name":  "documentation-director",
+                        "title":  "documentation-director",
+                        "description":  "Diretor de documentaÃ§Ã£o enterprise PT-BR/EN-US, manuais, HTML docs e onboarding.",
+                        "path":  ".kilo/agents/documentation-director.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "documentation-governor",
+                        "name":  "documentation-governor",
+                        "title":  "documentation-governor",
+                        "description":  "AG101 Documentation Governor. Sincroniza docs com decisao aprovada (backlog, manual, RAG, ADRs).",
+                        "path":  ".kilo/agents/documentation-governor.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "domain-board-orchestrator",
+                        "name":  "domain-board-orchestrator",
+                        "title":  "domain-board-orchestrator",
+                        "description":  "Orquestrador dos experts de domÃ­nio ERP.",
+                        "path":  ".kilo/agents/domain-board-orchestrator.md",
+                        "type":  "agent",
+                        "category":  "OrquestraÃ§Ã£o"
+                    },
+                    {
+                        "id":  "dotnet-architecture-director",
+                        "name":  "dotnet-architecture-director",
+                        "title":  "dotnet-architecture-director",
+                        "description":  "Diretor tÃ©cnico de .NET enterprise, arquitetura, padrÃµes e pacotes.",
+                        "path":  ".kilo/agents/dotnet-architecture-director.md",
+                        "type":  "agent",
+                        "category":  "Backend"
+                    },
+                    {
+                        "id":  "enterprise-product-director",
+                        "name":  "enterprise-product-director",
+                        "title":  "enterprise-product-director",
+                        "description":  "Diretor de produto para apps pequenos, mÃ©dios e ERPs de grande porte.",
+                        "path":  ".kilo/agents/enterprise-product-director.md",
+                        "type":  "agent",
+                        "category":  "Produto"
+                    },
+                    {
+                        "id":  "executor-tarefas",
+                        "name":  "executor-tarefas",
+                        "title":  "executor-tarefas",
+                        "description":  "Subagent especializado em executar tarefas atomicas do DecompositionResult. Executa uma tarefa por vez, valida criterios de sucesso e reporta resultado.",
+                        "path":  ".kilo/agents/executor-tarefas.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "explore",
+                        "name":  "explore",
+                        "title":  "explore",
+                        "description":  "Fast, read-only agent for codebase exploration. Cannot modify files. Use for finding files by patterns, searching code, or answering questions about the codebase.",
+                        "path":  ".kilo/agents/explore.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "feedback-capture",
+                        "name":  "feedback-capture",
+                        "title":  "feedback-capture",
+                        "description":  "Captura automaticamente feedback de execucao de tarefas: erro, solucao, provider, complexidade. Registra em feedback-log.jsonl para aprendizado continuo.",
+                        "path":  ".kilo/agents/feedback-capture.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "frontend-designsystem-director",
+                        "name":  "frontend-designsystem-director",
+                        "title":  "frontend-designsystem-director",
+                        "description":  "Diretor de Blazor, Tailwind, UX/UI e Design System.",
+                        "path":  ".kilo/agents/frontend-designsystem-director.md",
+                        "type":  "agent",
+                        "category":  "Frontend"
+                    },
+                    {
+                        "id":  "general",
+                        "name":  "general",
+                        "title":  "general",
+                        "description":  "General-purpose agent for researching complex questions and executing multi-step tasks. Has full tool access (except todo).",
+                        "path":  ".kilo/agents/general.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "genius-council-orchestrator",
+                        "name":  "genius-council-orchestrator",
+                        "title":  "genius-council-orchestrator",
+                        "description":  "Auto-generated agent (v3.23.0 YAML fields added)",
+                        "path":  ".kilo/agents/genius-council-orchestrator.md",
+                        "type":  "agent",
+                        "category":  "Genius Council"
+                    },
+                    {
+                        "id":  "genius-orchestrator",
+                        "name":  "genius-orchestrator",
+                        "title":  "genius-orchestrator",
+                        "description":  "Orchestrates 66 XForge Geniuses (38 original + 28 vertical Brazilian) for wizard decision-making via GCF. Used by all wizards when non-trivial decisions arise.",
+                        "path":  ".kilo/agents/genius-orchestrator.md",
+                        "type":  "agent",
+                        "category":  "OrquestraÃ§Ã£o"
+                    },
+                    {
+                        "id":  "github-devops-director",
+                        "name":  "github-devops-director",
+                        "title":  "github-devops-director",
+                        "description":  "Diretor de GitHub, Actions, release, CI/CD, CODEOWNERS, packages e governanÃ§a.",
+                        "path":  ".kilo/agents/github-devops-director.md",
+                        "type":  "agent",
+                        "category":  "DevOps"
+                    },
+                    {
+                        "id":  "knowledge-ingestion-engineer",
+                        "name":  "knowledge-ingestion-engineer",
+                        "title":  "knowledge-ingestion-engineer",
+                        "description":  "IngerçŸ¥è¯† de fontes externas, web, documentos, cÃ³digo e conversas.",
+                        "path":  ".kilo/agents/knowledge-ingestion-engineer.md",
+                        "type":  "agent",
+                        "category":  "Conhecimento e MemÃ³ria"
+                    },
+                    {
+                        "id":  "legacy-knowledge-curator",
+                        "name":  "legacy-knowledge-curator",
+                        "title":  "legacy-knowledge-curator",
+                        "description":  "Curadoria de conhecimento legado: extraÃ§Ã£o, limpeza, migraÃ§Ã£o e consolidaÃ§Ã£o.",
+                        "path":  ".kilo/agents/legacy-knowledge-curator.md",
+                        "type":  "agent",
+                        "category":  "Conhecimento e MemÃ³ria"
+                    },
+                    {
+                        "id":  "legal-compliance-director",
+                        "name":  "legal-compliance-director",
+                        "title":  "legal-compliance-director",
+                        "description":  "Diretor de legal, fiscal, trabalhista, LGPD e compliance.",
+                        "path":  ".kilo/agents/legal-compliance-director.md",
+                        "type":  "agent",
+                        "category":  "SeguranÃ§a"
+                    },
+                    {
+                        "id":  "lesson-applier",
+                        "name":  "lesson-applier",
+                        "title":  "lesson-applier",
+                        "description":  "Antes de executar uma tarefa, busca licoes no knowledge graph e injeta no contexto do agente. Reduz erros recorrentes aplicando aprendizado passado.",
+                        "path":  ".kilo/agents/lesson-applier.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "lesson-extractor",
+                        "name":  "lesson-extractor",
+                        "title":  "lesson-extractor",
+                        "description":  "Extrai licoes de aprendizado do feedback-log.jsonl. Identifica padroes de erro recorrentes, solucoes validadas e anti-patterns. Alimenta o knowledge graph.",
+                        "path":  ".kilo/agents/lesson-extractor.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "llm-execution-specialist",
+                        "name":  "llm-execution-specialist",
+                        "title":  "llm-execution-specialist",
+                        "description":  "AG102 LLM Execution Specialist. Converte decisoes em specs executaveis por modelos menores (Qwen 7B, DeepSeek Lite, Gemma).",
+                        "path":  ".kilo/agents/llm-execution-specialist.md",
+                        "type":  "agent",
+                        "category":  "DevOps"
+                    },
+                    {
+                        "id":  "manager-event-bus",
+                        "name":  "manager-event-bus",
+                        "title":  "manager-event-bus",
+                        "description":  "Gerente do barramento de eventos interno.",
+                        "path":  ".kilo/agents/manager-event-bus.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "manager-memory",
+                        "name":  "manager-memory",
+                        "title":  "manager-memory",
+                        "description":  "Gerente de memÃ³ria viva. Coordena recuperaÃ§Ã£o, uso, atualizaÃ§Ã£o, conflito, TTL, compressÃ£o e promoÃ§Ã£o.",
+                        "path":  ".kilo/agents/manager-memory.md",
+                        "type":  "agent",
+                        "category":  "Conhecimento e MemÃ³ria"
+                    },
+                    {
+                        "id":  "manager-state-machine",
+                        "name":  "manager-state-machine",
+                        "title":  "manager-state-machine",
+                        "description":  "Gerente da mÃ¡quina de estados do Engineer.",
+                        "path":  ".kilo/agents/manager-state-machine.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "memory-curator-engineer",
+                        "name":  "memory-curator-engineer",
+                        "title":  "memory-curator-engineer",
+                        "description":  "Recupera, usa, atualiza, audita, salva e reindexa memÃ³ria viva.",
+                        "path":  ".kilo/agents/memory-curator-engineer.md",
+                        "type":  "agent",
+                        "category":  "Conhecimento e MemÃ³ria"
+                    },
+                    {
+                        "id":  "product-analyst",
+                        "name":  "product-analyst",
+                        "title":  "product-analyst",
+                        "description":  "Product Analyst - gathers competitor info, official sources, GitHub repos; generates granular AI-ready product documentation (8 canonical artifacts). Always consults Geniuses via GCF for quality.",
+                        "path":  ".kilo/agents/product-analyst.md",
+                        "type":  "agent",
+                        "category":  "Produto"
+                    },
+                    {
+                        "id":  "project-recognition-engineer",
+                        "name":  "project-recognition-engineer",
+                        "title":  "project-recognition-engineer",
+                        "description":  "Recognizes project structure, architecture, technology stack, risks, gaps and project DNA.",
+                        "path":  ".kilo/agents/project-recognition-engineer.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "quality-engineering-director",
+                        "name":  "quality-engineering-director",
+                        "title":  "quality-engineering-director",
+                        "description":  "Diretor de QA, testes, cobertura, quality gates e release readiness.",
+                        "path":  ".kilo/agents/quality-engineering-director.md",
+                        "type":  "agent",
+                        "category":  "Qualidade"
+                    },
+                    {
+                        "id":  "quality-gates-engineer",
+                        "name":  "quality-gates-engineer",
+                        "title":  "quality-gates-engineer",
+                        "description":  "Executa quality gates stack-aware: build, testes, coverage, lint, seguranca, docs. Detecta stack (.NET, Node, Python, Go, React, etc.) e roda os gates apropriados.",
+                        "path":  ".kilo/agents/quality-gates-engineer.md",
+                        "type":  "agent",
+                        "category":  "Qualidade"
+                    },
+                    {
+                        "id":  "review",
+                        "name":  "review",
+                        "title":  "review",
+                        "description":  "Reviews code for quality, security, performance, style, and test coverage. Surfaces issues and suggests improvements.",
+                        "path":  ".kilo/agents/review.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "sdd-generator",
+                        "name":  "sdd-generator",
+                        "title":  "sdd-generator",
+                        "description":  "Gera Software Design Document (SDD) leve para cada tarefa atomica do DecompositionResult. Documentacao enxuta focada em implementacao.",
+                        "path":  ".kilo/agents/sdd-generator.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "specialist-benchmark",
+                        "name":  "specialist-benchmark",
+                        "title":  "specialist-benchmark",
+                        "description":  "Especialista em benchmark de prompts, modelos, providers e workflows.",
+                        "path":  ".kilo/agents/specialist-benchmark.md",
+                        "type":  "agent",
+                        "category":  "DevOps"
+                    },
+                    {
+                        "id":  "specialist-erp-domain",
+                        "name":  "specialist-erp-domain",
+                        "title":  "specialist-erp-domain",
+                        "description":  "Especialista em domÃ­nio ERP brasileiro: financeiro, estoque, fiscal, contÃ¡bil, NFe, SPED e eSocial.",
+                        "path":  ".kilo/agents/specialist-erp-domain.md",
+                        "type":  "agent",
+                        "category":  "DevOps"
+                    },
+                    {
+                        "id":  "specialist-knowledge-curation",
+                        "name":  "specialist-knowledge-curation",
+                        "title":  "specialist-knowledge-curation",
+                        "description":  "Especialista em curadoria, compressÃ£o, promoÃ§Ã£o e descarte de conhecimento.",
+                        "path":  ".kilo/agents/specialist-knowledge-curation.md",
+                        "type":  "agent",
+                        "category":  "Conhecimento e MemÃ³ria"
+                    },
+                    {
+                        "id":  "specialist-policy-engine",
+                        "name":  "specialist-policy-engine",
+                        "title":  "specialist-policy-engine",
+                        "description":  "Especialista em polÃ­ticas executÃ¡veis do Engineer.",
+                        "path":  ".kilo/agents/specialist-policy-engine.md",
+                        "type":  "agent",
+                        "category":  "DevOps"
+                    },
+                    {
+                        "id":  "specialist-rbac",
+                        "name":  "specialist-rbac",
+                        "title":  "specialist-rbac",
+                        "description":  "Especialista em papÃ©is e permissÃµes.",
+                        "path":  ".kilo/agents/specialist-rbac.md",
+                        "type":  "agent",
+                        "category":  "SeguranÃ§a"
+                    },
+                    {
+                        "id":  "specialist-reverse-engineering",
+                        "name":  "specialist-reverse-engineering",
+                        "title":  "specialist-reverse-engineering",
+                        "description":  "Especialista em engenharia reversa de sistemas legados, cÃ³digo antigo e documentaÃ§Ã£o dispersa.",
+                        "path":  ".kilo/agents/specialist-reverse-engineering.md",
+                        "type":  "agent",
+                        "category":  "DevOps"
+                    },
+                    {
+                        "id":  "specialist-support",
+                        "name":  "specialist-support",
+                        "title":  "specialist-support",
+                        "description":  "Especialista em suporte tÃ©cnico, incidentes, erros conhecidos e playbooks.",
+                        "path":  ".kilo/agents/specialist-support.md",
+                        "type":  "agent",
+                        "category":  "DevOps"
+                    },
+                    {
+                        "id":  "support-intelligence-engineer",
+                        "name":  "support-intelligence-engineer",
+                        "title":  "support-intelligence-engineer",
+                        "description":  "Analisa tickets de suporte, identifica padrÃµes, gera playbooks e alimenta known errors.",
+                        "path":  ".kilo/agents/support-intelligence-engineer.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "task-decomposer",
+                        "name":  "task-decomposer",
+                        "title":  "task-decomposer",
+                        "description":  "recebe um AnalysisResult do deep-request-analyzer e decompoe em tarefas atomicas com DAG de dependencias. Segundo passo do LDV.",
+                        "path":  ".kilo/agents/task-decomposer.md",
+                        "type":  "agent",
+                        "category":  "Geral"
+                    },
+                    {
+                        "id":  "technical-board-orchestrator",
+                        "name":  "technical-board-orchestrator",
+                        "title":  "technical-board-orchestrator",
+                        "description":  "Orquestra experts tecnicos para QUALQUER stack (.NET, Node, Python, Go, React, Angular, Next.js, Vue, Svelte, HTML+Tailwind, etc.). Detecta stack do projeto e aciona o especialista correto.",
+                        "path":  ".kilo/agents/technical-board-orchestrator.md",
+                        "type":  "agent",
+                        "category":  "OrquestraÃ§Ã£o"
+                    },
+                    {
+                        "id":  "training-academy-director",
+                        "name":  "training-academy-director",
+                        "title":  "training-academy-director",
+                        "description":  "Diretor da academia de treinamento: do CEO ao ajudante.",
+                        "path":  ".kilo/agents/training-academy-director.md",
+                        "type":  "agent",
+                        "category":  "Produto"
+                    }
+                ]
+}

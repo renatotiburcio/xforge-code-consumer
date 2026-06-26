@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>21 FAQ Estendido - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html">Quickstart</a></li><li><a href="02-architecture.html">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html">xforge-init</a></li><li><a href="11-faq.html">FAQ</a></li><li><a href="18-glossary.html">Glossario</a></li><li><a href="19-changelog.html">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html">Troubleshooting</a></li><li><a href="21-faq-extended.html" class="active">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>21 - FAQ Estendido (perguntas avancadas)</h1><h2>O que e</h2><p>Este FAQ complementa o /11-faq.html (FAQ basico) com perguntas avancadas sobre: integracao com CI/CD, customizacao de regras, extensao de MCPs, automacao de release, performance em escala, e troubleshooting de problemas especificos. Para duvidas iniciais, comece pelo /11-faq.html.</p><h2>Quando usar</h2><ul><li>Quando ja leu o FAQ basico e precisa de mais profundidade</li><li>Quando quer implementar integracao customizada (CI/CD, IDEs, hooks)</li><li>Quando precisa extender XForge com regras/skills/MCPs proprios</li><li>Quando esta desenhando arquitetura multi-projeto ou multi-team</li></ul><h2>Como usar</h2><p>FAQ avancado organizado por topico. Cada pergunta tem: contexto (quando voce se depara com isso), resposta completa (1-3 paragrafos), e referencias (links para DRs/skills/regras relevantes).</p><pre><code># Para buscar:
+# 1. Ctrl+F por palavra-chave (ex: CI, hook, MCP custom)
+# 2. Ou pule para topico via aside
+# 3. Para duvidas basicas, va em /11-faq.html</code></pre><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--topico</code></td><td>string</td><td>todos</td><td>Filtra: ci-cd, customizacao, mcp-custom, performance, multi-projeto</td></tr><tr><td><code>--versao</code></td><td>string</td><td>v50.x</td><td>Filtrar respostas por versao especifica</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Integrar XForge com GitHub Actions</h3><p><strong>Contexto</strong>: Voce quer validar setup em CI a cada PR.</p><pre><code># .github/workflows/ci.yml (snippet)
+jobs:
+  xforge-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get install -y powershell
+      - run: pwsh ./.kilo/automation/scripts/doctor.ps1 --json > out.json
+      - uses: actions/upload-artifact@v4
+        with: { name: doctor, path: out.json }</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Job green se doctor exit 0. Se falha, baixa artifact para investigar.</code></pre><p><strong>Edge case</strong>: Para GH Actions em Windows runner, use runs-on: windows-latest e choco install powershell-core</p><h3>Cenario 2: Criar MCP custom para ferramenta interna</h3><p><strong>Contexto</strong>: Sua empresa tem API interna e quer expor ao agente.</p><pre><code># Crie .kilo/mcp/optional/<name>-mcp/install.sh
+mkdir -p .kilo/mcp/optional/<name>-mcp
+# Crie <name>-mcp/install.sh com npm install -g @yourco/mcp-server
+# Crie .kilo/mcp/optional/<name>.json.example
+# Crie .kilo/skills/<name>-mcp/SKILL.md (6 secoes B-090)
+# Crie .xforge/decisions/DR-XXXX-<name>-mcp.md</code></pre><p><strong>Output esperado</strong>:</p><pre><code>MCP custom aparece apos /mcp-lifecycle install <name>. Siga o padrao dos MCPs OPTIONAL existentes (memory, markitdown, linear, slack).</code></pre><p><strong>Edge case</strong>: NAO modifique MCPs NATIVE - use OPTIONAL pattern. Padrao: .kilo/mcp/optional/<name>/ + .kilo/mcp/optional/<name>.json.example.</p><h3>Cenario 3: Criar regra customizada</h3><p><strong>Contexto</strong>: Sua equipe tem convencao que nao existe nas 46 regras atuais.</p><pre><code># 1. Crie .kilo/rules/<my-rule>.md com frontmatter YAML:
+# ---
+# id: my-rule
+# priority: high
+# applicabilityScope: ["*"]
+# ---
+# 2. Adicione entrada em .kilo/rules/00-xforge-rule-index.md
+# 3. Crie DR em .xforge/decisions/DR-XXXX-my-rule.md
+# 4. Commit. Regra ativa imediatamente.</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Regra carregada por todos os skills/agents que importarem o rules index.</code></pre><p><strong>Edge case</strong>: Regra com applicabilityScope restrito so carrega em projetos relevantes (DR-0180).</p><h3>Cenario 4: Versionamento semantico de releases</h3><p><strong>Contexto</strong>: Voce quer implementar SemVer no projeto.</p><pre><code># 1. Use Conventional Commits: feat: ... / fix: ... / BREAKING CHANGE: ...
+# 2. Tag: git tag -a vX.Y.Z -m desc
+# 3. Push: git push origin --follow-tags
+# 4. Release notes automatico: GH Actions com releaser</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Tags com vX.Y.Z formam historico navegavel. GH Actions gera release notes do changelog.</code></pre><p><strong>Edge case</strong>: DR-0087: CHANGELOG e imutavel. Nunca edite versoes passadas - adicione entrada no topo (Unreleased).</p><h3>Cenario 5: Performance com RAG grande (10000+ docs)</h3><p><strong>Contexto</strong>: Seu RAG tem muitos docs e queries estao lentas.</p><pre><code># 1. Reindex incremental em vez de full:
+python .xforge/scripts/rag_local.py reindex --incremental
+# 2. Use chunks menores em INDEX.json (reduza chunkSize de 1024 para 512)
+# 3. Limite results por query (topK=10 em vez de 50)
+# 4. Use cache local (--cache flag)</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Queries 3-5x mais rapidas. Reindex incremental atualiza apenas docs modificados.</code></pre><p><strong>Edge case</strong>: Para 100k+ docs, considere migrar para vector DB (Qdrant, Weaviate). RAG local e bom ate ~10k docs.</p><h3>Cenario 6: Multi-projeto com mesmo template</h3><p><strong>Contexto</strong>: Voce tem 5 projetos que usam o mesmo template XForge.</p><pre><code># 1. Faca fork do template para seu org
+# 2. Em cada projeto: git remote add template <fork-url>
+# 3. Para pull updates: git fetch template && git merge template/main --allow-unrelated-histories
+# 4. Para customizar: use applicabilityScope nas suas rules/skills</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Cada projeto pode ter rules customizadas sem conflitar com o template base.</code></pre><p><strong>Edge case</strong>: DR-0180 (memory namespace) garante isolamento: knowledge cross-project so com DR + human approval.</p><h2>Troubleshooting</h2><h3>CI falha com cannot find .NET SDK</h3><p><strong>Causa</strong>: Runner nao tem .NET instalado</p><p><strong>Solucao</strong>: Adicione actions/setup-dotnet@v4 antes do build step. Para Ollama, use Ollama GitHub Action ou container pre-built.</p><h3>MCP custom funciona local mas nao em CI</h3><p><strong>Causa</strong>: Env vars ou paths diferentes</p><p><strong>Solucao</strong>: Use ${env:VAR_NAME} no JSON para resolucao dinamica. Em CI, defina vars em repo Settings > Secrets > Actions.</p><h3>Reindex incremental nao pega arquivos novos</h3><p><strong>Causa</strong>: Cache stale ou path mismatch</p><p><strong>Solucao</strong>: Delete .xforge/rag/.cache/ e rode reindex full. Verifique que arquivos estao em paths listados em INDEX.json.</p><h3>Regra custom nao carrega</h3><p><strong>Causa</strong>: Falta entrada no rules index</p><p><strong>Solucao</strong>: Verifique .kilo/rules/00-xforge-rule-index.md tem referencia a sua regra. Frontmatter YAML deve ter id, priority, applicabilityScope.</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

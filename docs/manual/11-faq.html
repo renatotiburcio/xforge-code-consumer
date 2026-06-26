@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11 FAQ - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html" class="active">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html">Quickstart</a></li><li><a href="02-architecture.html">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html">xforge-init</a></li><li><a href="11-faq.html" class="active">FAQ</a></li><li><a href="18-glossary.html">Glossario</a></li><li><a href="19-changelog.html">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html">Troubleshooting</a></li><li><a href="21-faq-extended.html">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>11 - FAQ (30 perguntas)</h1>
+
+<h2>O que e</h2>
+<p>Perguntas frequentes sobre XForge. Respostas curtas com link para pagina detalhada. Diferente de <a href="08-knowledge.html">08-knowledge</a> (conhecimento profundo), FAQ cobre duvidas operacionais do dia-a-dia.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce tem duvida rapida (1-2 min para resolver)</li>
+  <li>Antes de abrir issue no GitHub</li>
+  <li>Para onboardar novos usuarios</li>
+  <li>NAO use para decisoes arquiteturais (use <a href="03-gcf.html">03-gcf</a>)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica (consulta):</p>
+<pre><code># Buscar no FAQ
+# Use Ctrl+F no browser para "Cenario X" ou palavra-chave
+# Ou use o RAG:
+python .xforge/scripts/rag_local.py status
+# Em LLM: "Veja o FAQ para duvida sobre X"</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>Search</code></td><td>string</td><td>vazio</td><td>Termo para filtrar (Ctrl+F).</td></tr>
+<tr><td><code>Category</code></td><td>string</td><td>all</td><td>General, Stack, GCF, Documentation, Scripts, Performance, Troubleshooting.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Geral (5 perguntas)</h3>
+<p><strong>Contexto</strong>: Duvidas gerais sobre XForge.</p>
+<p><strong>Q1: O que e' XForge?</strong></p>
+<p>Enterprise Development OS: template + runtime + knowledge + manual. NAO e' produto, NAO e' sample. E' o esqueleto que outros projetos usam como ponto de partida.</p>
+<p><strong>Q2: Posso usar XForge sem IA?</strong></p>
+<p>Sim. Skills, commands e rules funcionam offline. AI e' opcional para GCF (Conselho dos Genios).</p>
+<p><strong>Q3: Qual a diferenca entre .kilo/ e .xforge/?</strong></p>
+<p><code>.kilo/</code> e' operacional (XForgeCode compat 100%, git preservado). <code>.xforge/</code> e' estado do projeto (decisions, knowledge, memory, scripts).</p>
+<p><strong>Q4: Posso deletar .xforge/ depois de clonar?</strong></p>
+<p>NUNCA. <code>.xforge/</code> contem decisoes, knowledge e memoria do projeto. Use <code>xforge reset memory</code> para limpar memoria especifica.</p>
+<p><strong>Q5: XForge assume stack?</strong></p>
+<p>NAO. Per DR-0180, stack-agnostic. Detecta via sinais. Knowledge entries tem <code>applicabilityScope</code>.</p>
+
+<h3>Cenario 2: Stack & Decisoes (5 perguntas)</h3>
+<p><strong>Contexto</strong>: Duvidas de stack e decisao tecnica.</p>
+<p><strong>Q6: Devo usar MediatR ou XForge.MediatR?</strong></p>
+<p>Sempre <strong>XForge.MediatR</strong> (<a href="https://github.com/renatotiburcio/XForge.MediatR">github.com/renatotiburcio/XForge.MediatR</a>). MediatR oficial proibido em projetos XForge.</p>
+<p><strong>Q7: AutoMapper ou Mapster?</strong></p>
+<p>Sempre <strong>AutoMapper</strong>. Mapster proibido. Validar ultima versao estavel antes de usar.</p>
+<p><strong>Q8: PostgreSQL, MySQL ou SQLite?</strong></p>
+<p>Producao: PostgreSQL (preferido) ou MySQL. Dev/teste: SQLite ou InMemory. Detalhes em <code>database-efcore-expert</code> skill.</p>
+<p><strong>Q9: Quantas skills/agents posso ter?</strong></p>
+<p>Skills: ~200 maximo (sem degradar context). Agents: ~100 canonicos. Commands: ~150. Alem disso, considerar sharding.</p>
+<p><strong>Q10: Posso rodar XForge em CI/CD?</strong></p>
+<p>Sim. Use <code>.\.kilo\automation\scripts\check_loop_discipline.py</code> no pipeline. Veja <code>.github/workflows/engineer-validate.yml</code>.</p>
+
+<h3>Cenario 3: GCF (Conselho dos Genios)</h3>
+<p><strong>Contexto</strong>: Duvidas sobre GCF.</p>
+<p><strong>Q11: Quando acionar o Conselho?</strong></p>
+<p>Decisao nao-trivial: arquitetural, seguranca, UX, produto, refactor, breaking change, bug recorrente, sprint planning. NAO acionar para tarefas triviais.</p>
+<p><strong>Q12: Quantos genios existem?</strong></p>
+<p>38 originais (AG001-AG038, conceituais) + 28 verticais (AG039-AG066, arquivos) = 66 total.</p>
+<p><strong>Q13: Posso adicionar genio novo?</strong></p>
+<p>Sim. Use comando <code>CREATE_GENIUS</code> em <code>.kilo/rules/02-genius-council-framework.md</code> secao 10. Resultado: arquivo + DR + update council-members.</p>
+<p><strong>Q14: Devil's Advocate (AG999) pode vetar?</strong></p>
+<p>Nao diretamente. AG999 levanta objecoes que DEVEM ser respondidas. Guardian Security VETA se FAIL.</p>
+<p><strong>Q15: Quanto tempo leva um Conselho completo?</strong></p>
+<p>2-5 min para decisao L/XL (7 fases). 30s-1min para M (3 fases + AG999).</p>
+
+<h3>Cenario 4: Documentation & DRs</h3>
+<p><strong>Contexto</strong>: Duvidas sobre docs e DRs.</p>
+<p><strong>Q16: Onde esta o indice oficial de DRs?</strong></p>
+<p><code>.xforge/decisions/ADR-INDEX.md</code>. 25 DRs ativos, 52 em archive.</p>
+<p><strong>Q17: Posso editar DR antiga?</strong></p>
+<p>NAO. Per DR-0087 (release-immutability). Crie NOVA DR que referencia a anterior.</p>
+<p><strong>Q18: Qual template de DR usar?</strong></p>
+<p>3-fases (DR-0087): Problema -&gt; Decisao -&gt; Riscos. Detalhes em <a href="09-decisions.html">09-decisions</a>.</p>
+<p><strong>Q19: Como atualizo o manual?</strong></p>
+<p>Edite o HTML canonico em <code>docs/manual/</code>. Mantenha 6 secoes, 1 hero, 1 footer. Use <code>check-manual.ps1</code> para validar.</p>
+<p><strong>Q20: O que e' B-090?</strong></p>
+<p>Manual Content Depth Standard (DR-0182): cada pagina deve ter 6 secoes canonicas com 3-7 exemplos, &lt; 15 KB, copy-pasteable. Validador: <code>check-manual-content.ps1</code>.</p>
+
+<h3>Cenario 5: Scripts & Performance</h3>
+<p><strong>Contexto</strong>: Duvidas sobre scripts e performance.</p>
+<p><strong>Q21: Como rodar doctor?</strong></p>
+<p><code>.\.kilo\automation\scripts\doctor.ps1</code>. Exit 0 = green, exit 1 = blocked.</p>
+<p><strong>Q22: O que e' check-manual.ps1?</strong></p>
+<p>Validator (DR-0181) que valida: 1 HTML por pagina, nav identica, 0 dead refs, &lt; 500 KB. Sai 0=ok, 1=dirty.</p>
+<p><strong>Q23: Como regenerar registries?</strong></p>
+<p><code>regenerate-registries.ps1</code>. Regenera skill/expert/rule/command-registry.json a partir do filesystem. Preserva publicCommands.</p>
+<p><strong>Q24: XForge funciona com 16GB RAM?</strong></p>
+<p>Sim, mas com Ollama local (LLM) o ideal e' 32 GB. Para XForgeCode cloud, 16 GB basta.</p>
+<p><strong>Q25: Como adicionar knowledge entry?</strong></p>
+<p>Crie arquivo em <code>.xforge/knowledge/&lt;dominio&gt;/&lt;topico&gt;.md</code>, adicione ao INDEX.json, rode <code>rag_local.py reindex</code>.</p>
+
+<h3>Cenario 6: Troubleshooting (5 top errors)</h3>
+<p><strong>Contexto</strong>: Erros comuns.</p>
+<p><strong>Q26: "PowerShell execution policy bloqueia script"</strong></p>
+<p>Solucao: <code>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned</code> (one-time).</p>
+<p><strong>Q27: Knowledge INDEX.json corrompido</strong></p>
+<p>Backup em <code>INDEX.json.bak-YYYYMMDD-HHMM</code>. Regenerar com <code>knowledge-validation.ps1</code>.</p>
+<p><strong>Q28: Skill nao carrega</strong></p>
+<p>Verifique <code>.kilo/core/registries/skill-registry.json</code>. Cada skill precisa de entry + frontmatter correto.</p>
+<p><strong>Q29: "xforge-init" falha em Windows</strong></p>
+<p>Verifique PowerShell 5.1+, ExecutionPolicy. Use <code>pwsh</code> (PowerShell Core) se disponivel.</p>
+<p><strong>Q30: Como reporto bug?</strong></p>
+<p><a href="https://github.com/renatotiburcio/xforge/issues">github.com/renatotiburcio/xforge/issues</a>. Use template de bug report com stack, doctor output, repro steps.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Pergunta nao respondida aqui</h3>
+<p><strong>Causa</strong>: FAQ cobre 30 mais comuns. Sua duvida pode ser especifica.</p>
+<p><strong>Solucao</strong>: <a href="08-knowledge.html">08-knowledge</a> tem 319 entries profundas. <a href="09-decisions.html">09-decisions</a> tem 25 DRs. <a href="14-rag-system.html">14-rag-system</a> tem busca por termo.</p>
+
+<h3>FAQ desatualizado</h3>
+<p><strong>Causa</strong>: Projeto evoluiu mas FAQ nao foi atualizado.</p>
+<p><strong>Solucao</strong>: Edite <code>docs/manual/11-faq.html</code>. Adicione nova pergunta + resposta. Mantenha 6 secoes canonicas.</p>
+
+<h3>Resposta do FAQ esta errada</h3>
+<p><strong>Causa</strong>: Mudou entre versoes.</p>
+<p><strong>Solucao</strong>: Verifique versao do XForge. <code>cat .xforge/version.json</code>. Se versao &gt; 50.1.0, FAQ pode ter mudado.</p>
+
+<h3>Quero adicionar mais perguntas</h3>
+<p><strong>Causa</strong>: FAQ deve crescer organicamente.</p>
+<p><strong>Solucao</strong>: Adicione &lt;h3&gt;Pergunta X: ...&lt;/h3&gt; + &lt;p&gt;resposta&lt;/p&gt;. Mantenha 6 secoes canonicas (Questoes Gerais, Stack, GCF, etc). Limite 30 para nao virar text-wall.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

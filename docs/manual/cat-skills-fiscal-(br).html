@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cat-skills-fiscal-(br) - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Skills (Categorias)</h3><ul><li><a href="cat-skills-backend.html">Backend (.NET/Go/Rust)</a></li><li><a href="cat-skills-frontend.html">Frontend (React/Vue/Angular)</a></li><li><a href="cat-skills-python.html">Python</a></li><li><a href="cat-skills-ai.html">AI/ML</a></li><li><a href="cat-skills-seguranca.html">Seguranca</a></li><li><a href="cat-skills-conhecimento.html">Conhecimento</a></li><li><a href="cat-skills-devops.html">DevOps</a></li><li><a href="cat-skills-gestao.html">Gestao</a></li><li><a href="cat-skills-produto.html">Produto</a></li><li><a href="cat-skills-qualidade.html">Qualidade</a></li><li><a href="cat-skills-outros.html">Outros</a></li><li><a href="cat-skills-lgpd.html">LGPD / Privacidade</a></li><li><a href="cat-skills-fiscal-(br).html" class="active">Fiscal (BR)</a></li><li><a href="cat-skills-contabil-(br).html">Contabil (BR)</a></li><li><a href="cat-skills-trabalhista-(br).html">Trabalhista (BR)</a></li><li><a href="cat-skills-arquitetura.html">Arquitetura</a></li></ul></aside>
+<main>
+<h1>Cat-skills Fiscal (BR) - Impostos, NF-e, SPED</h1><h2>O que e</h2><p>Catalogo de skills para area fiscal brasileira. Inclui: NF-e/NFC-e (emissao, recepcao, cancelamento, inutilizacao), SPED Fiscal (EFD ICMS/IPI), SPED Contribuicoes (EFD PIS/COFINS), impostos (ICMS, IPI, PIS, COFINS, ISS, IRPJ, CSLL), Reforma Tributaria (IBS, CBS), CFOP, NCM, CST, aliquotas por UF. Skills canonicas: fiscal-tax-expert, sped-fiscal-expert, nfe-expert.</p><h2>Quando usar</h2><ul><li>Quando precisa emitir NF-e/NFC-e</li><li>Quando precisa configurar aliquotas de ICMS por UF</li><li>Quando precisa gerar SPED Fiscal mensal</li><li>Quando precisa lidar com Reforma Tributaria (IBS/CBS)</li><li>Quando precisa calcular impostos em vendas/compras</li></ul><h2>Como usar</h2><p>Skills fiscais carregam tabelas oficiais atualizadas (CFOP, NCM, CST, aliquotas). Verifique TTL - legislacao muda frequentemente.</p><pre><code># Emitir NF-e
+/nfe-emitir --serie 1 --numero 12345 --valor 1500.00 --cliente <cnpj>
+# Gerar SPED Fiscal do mes
+/sped-fiscal --periodo 2025-06 --tipo EFD-ICMS-IPI
+# Consultar tabela CFOP
+/fiscal-cfop --natureza venda --estado SP</code></pre><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--estado</code></td><td>string</td><td>auto</td><td>UF para aliquotas (SP, RJ, MG, etc). auto = detecta do projeto</td></tr><tr><td><code>--regime</code></td><td>string</td><td>auto</td><td>Regime tributario: simples, presumido, real, auto</td></tr><tr><td><code>--periodo</code></td><td>YYYY-MM</td><td>atual</td><td>Periodo de apuracao</td></tr><tr><td><code>--tabela</code></td><td>string</td><td>atual</td><td>Tabela de referencia: CFOP, NCM, CST, aliquotas</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Emitir NF-e de venda</h3><p><strong>Contexto</strong>: Voce fez uma venda B2B e precisa emitir NF-e.</p><pre><code>/nfe-emitir --tipo venda-b2b --valor 1500.00 --cliente 12345678000190 --cfop 6101</code></pre><p><strong>Output esperado</strong>:</p><pre><code>NF-e gerada com protocolo SEFAZ. XML assinado. Status: autorizada em 2.5s.</code></pre><p><strong>Edge case</strong>: CFOP 6101 = venda de producao propria interestadual. Para dentro do estado use 5101.</p><h3>Cenario 2: Configurar ICMS por UF</h3><p><strong>Contexto</strong>: Sua empresa vende para todo Brasil. Precisa de tabela de ICMS.</p><pre><code>/fiscal-icms-tabela --gerar --base 2025-01</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Tabela CSV com aliquotas ICMS intra/inter por UF (27 UFs x 27 UFs). Para 2025: SP-RJ 12%, SP-MG 7%, etc.</code></pre><p><strong>Edge case</strong>: Aliquotas mudam 4x ao ano (geralmente). Use TTL 3 meses para tabela ICMS (DR-ttl-rules).</p><h3>Cenario 3: Gerar SPED Fiscal mensal</h3><p><strong>Contexto</strong>: Venceu o prazo. Precisa gerar EFD ICMS/IPI do mes.</p><pre><code>/sped-fiscal --periodo 2025-06 --validar pre-validar --gerar-bloco-0</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Arquivo TXT do SPED Fiscal gerado (Bloco 0: cadastro, depois Bloco C: notas, etc). Pre-validacao: 0 erros, 3 warnings (verificar).</code></pre><p><strong>Edge case</strong>: Bloco K (industria) deve ser gerado se empresa produz. Bloco H (inventario) e obrigatorio se houver estoque.</p><h3>Cenario 4: Calcular PIS/COFINS cumulativo</h3><p><strong>Contexto</strong>: Voce esta no regime cumulativo (simples ou presumido) e precisa calcular.</p><pre><code>/fiscal-pis-cofins --regime cumulativo --base 100000.00</code></pre><p><strong>Output esperado</strong>:</p><pre><code>PIS: 0.65% = R$ 650. COFINS: 3.00% = R$ 3.000. Total: R$ 3.650.</code></pre><p><strong>Edge case</strong>: No regime NAO-cumulativo, use aliquotas 1.65% PIS e 7.60% COFINS com creditos.</p><h3>Cenario 5: Reforma Tributaria (IBS/CBS)</h3><p><strong>Contexto</strong>: Voce precisa se preparar para Reforma Tributaria (2026+).</p><pre><code>/fiscal-reforma-tributaria --status 2025</code></pre><p><strong>Output esperado</strong>:</p><pre><code>IBS (estadual/municipal) e CBS (federal) substitui ICMS/ISS/PIS/COFINS gradualmente 2026-2032. Aliquota teste: 17.7%.</code></pre><p><strong>Edge case</strong>: Fique atento as DRs de reforma tributaria - regras transitorias estao em publicacao constante.</p><h2>Troubleshooting</h2><h3>NF-e rejeitada por motivo X</h3><p><strong>Causa</strong>: Rejeicoes tem motivos especificos (cStat). Verifique o codigo</p><p><strong>Solucao</strong>: Use /fiscal-rejeicoes --cstat <codigo> para ver causa e solucao. Codigos mais comuns: 102 (XML invalido), 539 (duplicado), 561 (CNPJ invalido)</p><h3>Aliquota ICMS errada para UF destino</h3><p><strong>Causa</strong>: Cada UF tem aliquotas diferentes para intra e interestadual</p><p><strong>Solucao</strong>: Use /fiscal-icms-tabela para gerar tabela atualizada. SP-RJ intra=18%, inter=12%. Norte/Nordeste/ES/MG: 7% para SP.</p><h3>SPED com erros de validacao</h3><p><strong>Causa</strong>: Campos obrigatorios faltando ou formatos invalidos</p><p><strong>Solucao</strong>: Use /sped-validar --arquivo <path> para ver erros detalhados. Cada erro tem codigo + linha + sugestao.</p><h3>NCM nao encontrado</h3><p><strong>Causa</strong>: NCM (codigo fiscal) tem 8 digitos e milhares de opcoes</p><p><strong>Solucao</strong>: Use /fiscal-ncm-buscar --descricao <palavra-chave>. Ou consulte Tabela NCM em .xforge/knowledge/dominios/fiscal/</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

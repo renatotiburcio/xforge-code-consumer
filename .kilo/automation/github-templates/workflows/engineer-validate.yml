@@ -1,0 +1,35 @@
+name: Engineer Validate
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate root
+        run: |
+          test -f AGENTS.md
+          test -f kilo.jsonc
+          test -f .kilocodeignore
+      - name: Validate Kilo official structures
+        run: |
+          test -d .kilo/agents
+          test -d .kilo/commands
+          test -d .kilo/rules
+          test -d .kilo/skills
+      - name: Validate skills
+        run: |
+          find .kilo/skills -mindepth 1 -maxdepth 1 -type d | while read d; do
+            test -f "$d/SKILL.md"
+            name=$(basename "$d")
+            grep -q "^name: $name$" "$d/SKILL.md"
+            grep -q "^description: " "$d/SKILL.md"
+          done
+      - name: Validate terminal mirror skills
+        run: |
+          test -d skills
+          find skills -mindepth 1 -maxdepth 1 -type d | while read d; do test -f "$d/SKILL.md"; done

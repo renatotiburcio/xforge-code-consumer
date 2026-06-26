@@ -1,0 +1,16 @@
+﻿id: W008
+version: 1.0.0
+name: memory-consolidation
+description: Deduplicate, compress, and archive memory
+states: [scheduled, scanning, deduplicating, compressing, archiving, done, failed]
+transitions:
+  - {from: scheduled, to: scanning, event: started}
+  - {from: scanning, to: deduplicating, event: scan_complete}
+  - {from: deduplicating, to: compressing, event: dedup_complete}
+  - {from: compressing, to: archiving, event: compress_complete}
+  - {from: archiving, to: done, event: archive_complete}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [memory-curator-engineer]
+tools: [consolidate, summarize, archive]
+entrypoint: scheduled
+terminalStates: [done, failed]

@@ -1,0 +1,30 @@
+{
+  "slug": "react-vite",
+  "description": "React 18 + Vite + TypeScript + Tailwind + TanStack Query",
+  "tags": [
+    "react",
+    "typescript",
+    "spa"
+  ],
+  "skills": [
+    "react-modern",
+    "tailwind-design-system-expert",
+    "frontend-ux-ui-expert",
+    "accessibility-a11y-expert"
+  ],
+  "files": [
+    "package.json",
+    "vite.config.ts",
+    "index.html",
+    "src/main.tsx",
+    "src/App.tsx",
+    "tsconfig.json",
+    ".gitignore",
+    "README.md",
+    "Dockerfile",
+    ".dockerignore",
+    ".github/workflows/ci.yml"
+  ],
+  "includes_docker": true,
+  "includes_ci": true
+}

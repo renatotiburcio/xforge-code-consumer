@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01 Quickstart - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html" class="active">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html" class="active">Quickstart</a></li><li><a href="02-architecture.html">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html">xforge-init</a></li><li><a href="11-faq.html">FAQ</a></li><li><a href="18-glossary.html">Glossario</a></li><li><a href="19-changelog.html">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html">Troubleshooting</a></li><li><a href="21-faq-extended.html">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>01 - Quickstart (5 min ate primeiro comando)</h1><h2>O que e</h2><p>O Quickstart e o caminho minimo de 5 minutos para sair de zero ate o primeiro comando executado com sucesso no XForge. Ele cobre quatro passos: (1) instalar o template via git clone, (2) rodar o bootstrap (xforge-init.ps1) que cria a estrutura local, (3) validar com doctor.ps1, e (4) abrir no editor com a extensao XForge Code CLI instalada. Diferente de um simples git clone (que baixa arquivos passivamente), o XForge executa deteccao de stack, gera project-DNA, prepara RAG local e ativa 14 MCP servers configuraveis.</p><h2>Quando usar</h2><ul><li>Quando voce esta conhecendo o XForge pela primeira vez</li><li>Quando precisa clonar projeto existente que ja usa XForge</li><li>Quando quer resetar .kilo/ + .xforge/ sem perder docs</li><li>NAO use para projetos legados grandes (> 500 arquivos)</li></ul><h2>Como usar</h2><p>O fluxo canonico segue quatro comandos sequenciais. Cada um tem saida verificavel:</p><pre><code># PASSO 1 - Clonar o template
+git clone https://github.com/renatotiburcio/xforge-enterprise-development-os.git meu-projeto
+cd meu-projeto
+
+# PASSO 2 - Bootstrap local
+pwsh ./.kilo/automation/scripts/xforge-init.ps1
+
+# PASSO 3 - Validar tudo
+pwsh ./.kilo/automation/scripts/doctor.ps1
+
+# PASSO 4 - Abrir no editor
+code .
+# No XForge Code CLI: /xforge-health-check</code></pre><p>Sucesso = exit code 0 + ultimo bloco com contadores (ex: 54 agents scanned, 187 skill directories scanned).</p><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--stack <sigla></code></td><td>string</td><td>auto</td><td>Forca deteccao de stack: dotnet, node, python, rust, go, java</td></tr><tr><td><code>--no-color</code></td><td>bool</td><td>false</td><td>Desativa ANSI colors no output (CI/CD)</td></tr><tr><td><code>--offline</code></td><td>bool</td><td>false</td><td>Skip remote fetches, usa apenas cache local</td></tr><tr><td><code>--minimal</code></td><td>bool</td><td>false</td><td>Setup minimo (so .kilo/)</td></tr><tr><td><code>--dry-run</code></td><td>bool</td><td>false</td><td>Mostra plano sem executar</td></tr><tr><td><code>--template <nome></code></td><td>string</td><td>default</td><td>Aplica template: fiscal-br, lgpd-strict, erp-base</td></tr><tr><td><code>--json</code></td><td>bool</td><td>false</td><td>Output em JSON estruturado</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: Aprendizado (5 min)</h3><p><strong>Contexto</strong>: Voce nunca usou XForge, quer ver rapido.</p><pre><code>mkdir /tmp/aprende-xforge && cd /tmp/aprende-xforge
+git clone --depth 1 https://github.com/renatotiburcio/xforge-enterprise-development-os.git .
+pwsh ./.kilo/automation/scripts/xforge-init.ps1 --minimal</code></pre><p><strong>Output esperado</strong>:</p><pre><code>[xforge-init] v50.25.0
+[init] Modo minimal (so .kilo/)
+[done] .kilo/agents/ (54), .kilo/skills/ (187)
+[doctor] 0 errors. Healthy.</code></pre><p><strong>Edge case</strong>: Se git falhar sem internet, init sugere --offline.</p><h3>Cenario 2: ERP BR (.NET + fiscal)</h3><p><strong>Contexto</strong>: Voce comeca ERP cliente brasileiro, quer LGPD+fiscal+contabil pre-config.</p><pre><code>git clone https://github.com/renatotiburcio/xforge-enterprise-development-os.git erp-x
+cd erp-x
+pwsh ./.kilo/automation/scripts/xforge-init.ps1 --template fiscal-br --stack dotnet</code></pre><p><strong>Output esperado</strong>:</p><pre><code>[template] fiscal-br (LGPD + fiscal + contabil)
+[stack] .NET detectado
+[init] skills: fiscal-tax-expert + lgpd-expert + sped-fiscal-expert
+[doctor] 0 errors, 1 warning</code></pre><p><strong>Edge case</strong>: Se --stack dotnet sem *.sln, doctor falha. Use --stack auto.</p><h3>Cenario 3: Air-gapped (sem internet)</h3><p><strong>Contexto</strong>: Servidor sem internet, instala via tarball pre-baixado.</p><pre><code># COM INTERNET:
+git clone --depth 1 https://github.com/renatotiburcio/xforge-enterprise-development-os.git
+tar -czf xforge-50.25.0.tar.gz xforge-enterprise-development-os/
+# AIR-GAPPED:
+tar -xzf xforge-50.25.0.tar.gz
+cd xforge-enterprise-development-os
+pwsh ./.kilo/automation/scripts/xforge-init.ps1 --offline</code></pre><p><strong>Output esperado</strong>:</p><pre><code>[offline] Modo offline (sem fetches)
+[init] .xforge/knowledge/ carregado de cache local
+[init] .xforge/rag/ indexado (780 docs)
+[doctor] 0 errors, 1 warning (TTL nao validado)</code></pre><p><strong>Edge case</strong>: Knowledge TTL expirado aparece como warning. Sincronize .xforge/knowledge/ manualmente.</p><h3>Cenario 4: CI/CD headless</h3><p><strong>Contexto</strong>: Pipeline CI valida setup a cada PR, sem interacao.</p><pre><code># .github/workflows/ci.yml
+jobs:
+  xforge-health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get install -y powershell
+      - run: pwsh ./.kilo/automation/scripts/xforge-init.ps1 --minimal --no-color
+      - run: pwsh ./.kilo/automation/scripts/doctor.ps1 --json</code></pre><p><strong>Output esperado</strong>:</p><pre><code>{"errors":0,"warnings":1,"oks":62}
+CI green</code></pre><p><strong>Edge case</strong>: Use --no-color para evitar ANSI no log, --json para parsing.</p><h2>Troubleshooting</h2><h3>PowerShell execution policy bloqueia</h3><p><strong>Causa</strong>: ExecutionPolicy default (Restricted) impede .ps1</p><p><strong>Solucao</strong>: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned (one-time). Em Linux/macOS use pwsh (ja tem permissao).</p><h3>git ou pwsh nao encontrado</h3><p><strong>Causa</strong>: Dependencias nao instaladas ou fora do PATH</p><p><strong>Solucao</strong>: Instale Git (git-scm.com, marque Add to PATH no installer). PowerShell 7+ (aka.ms/powershell).</p><h3>xforge-init.ps1 nao encontrado</h3><p><strong>Causa</strong>: Voce nao esta na raiz do projeto</p><p><strong>Solucao</strong>: cd ate pasta com .kilo/. Confirmar: Test-Path ./.kilo/automation/scripts/xforge-init.ps1</p><h3>XForge Code CLI nao reconhece o projeto</h3><p><strong>Causa</strong>: Extensao nao instalada, versao antiga, ou workspace nao confiavel</p><p><strong>Solucao</strong>: VS Code Extensions - XForge Code - Install (1.0+). Clique em Trust the authors. cat kilo.jsonc para verificar.</p><h3>Doctor warning: docs/ 576 KB > 500 KB</h3><p><strong>Causa</strong>: Manual canonico rico em exemplos didaticos</p><p><strong>Solucao</strong>: Warning informativo nao-bloqueante. Aceitar ate DR formal para atualizar limite.</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

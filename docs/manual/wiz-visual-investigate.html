@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /visual-investigate - Investigacao Visual</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html" class="active">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html" class="active">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /visual-investigate - Investigacao Visual Automatica</h1>
+
+<h2>O que e</h2>
+<p><code>/visual-investigate</code> e' o wizard de investigacao visual automatica. Usa <strong>Playwright</strong> para navegar paginas web, capturar screenshots, validar layouts, testar responsividade (multi-viewport), dark mode, dropdowns, fluxos de usuario, e acessibilidade (axe-core). Tudo automatico — sem intervencao humana.</p>
+<p>Sub-comandos: <code>/visual-investigate run</code>, <code>/visual-investigate compare</code>, <code>/visual-investigate a11y</code>, <code>/visual-investigate report</code>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando quer investigar todas as paginas de um app web automaticamente</li>
+<li>Quando precisa validar layout em multiplos viewports (mobile, tablet, desktop)</li>
+<li>Quando quer testar dark mode, dropdowns, navegacao</li>
+<li>Quando precisa de auditoria de acessibilidade (WCAG)</li>
+<li>Quando quer detectar regressao visual (comparar com baseline)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code># Investigacao completa (screenshots + responsividade + dark mode)
+/visual-investigate --url http://localhost:5001 --pages all --viewports desktop,mobile --dark-mode
+
+# Apenas acessibilidade (axe-core)
+/visual-investigate --url http://localhost:5001 --accessibility --wcag-level AA
+
+# Comparacao com baseline (regressao visual)
+/visual-investigate --url http://localhost:5001 --compare --baseline reports/baseline/
+
+# Multi-browser
+/visual-investigate --url http://localhost:5001 --browsers chromium,firefox,webkit</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>--url</code></td><td>string</td><td>http://localhost:5001</td><td>URL base do app</td></tr>
+<tr><td><code>--pages</code></td><td>string</td><td>all</td><td>Paginas: all, /path, ou lista separada por virgula</td></tr>
+<tr><td><code>--viewports</code></td><td>array</td><td>desktop</td><td>mobile (375x667), tablet (768x1024), desktop (1280x720), wide (1920x1080)</td></tr>
+<tr><td><code>--browsers</code></td><td>array</td><td>chromium</td><td>chromium, firefox, webkit</td></tr>
+<tr><td><code>--accessibility</code></td><td>bool</td><td>false</td><td>Rodar testes axe-core (WCAG)</td></tr>
+<tr><td><code>--wcag-level</code></td><td>string</td><td>AA</td><td>A, AA, AAA</td></tr>
+<tr><td><code>--compare</code></td><td>bool</td><td>false</td><td>Comparar com baseline (regressao visual)</td></tr>
+<tr><td><code>--baseline</code></td><td>string</td><td>reports/baseline/</td><td>Diretorio de screenshots baseline</td></tr>
+<tr><td><code>--output</code></td><td>string</td><td>reports/visual/</td><td>Diretorio de saida</td></tr>
+<tr><td><code>--dark-mode</code></td><td>bool</td><td>true</td><td>Testar toggle dark mode</td></tr>
+<tr><td><code>--flows</code></td><td>array</td><td>[]</td><td>Fluxos: login, navigate, search, form</td></tr>
+<tr><td><code>--timeout</code></td><td>int</td><td>60000</td><td>Timeout por teste (ms)</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Investigacao completa do manual XForge</h3>
+<p><strong>Contexto</strong>: Voce acabou de publicar o manual v50.7.1. Quer investigar todas as 47 paginas automaticamente — screenshots, responsividade, dark mode.</p>
+<pre><code>/visual-investigate --url http://localhost:8080 --pages all --viewports desktop,mobile,tablet --dark-mode --output reports/manual-audit/</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[visual-investigate] Starting investigation...
+[visual-investigate] Base URL: http://localhost:8080
+[visual-investigate] Pages: all (47 pages found)
+[visual-investigate] Viewports: desktop, mobile, tablet
+
+[visual-investigate] === Homepage ===
+  [OK] Screenshot: reports/manual-audit/homepage-full.png
+  [OK] Nav links: 20 links found
+  [OK] Sections: 6 detected
+  [OK] Viewport mobile: 375x667 OK
+  [OK] Viewport desktop: 1280x720 OK
+  [OK] Dark mode toggle: functional
+
+[visual-investigate] === /manual/01-quickstart.html ===
+  [OK] Screenshot: /manual/01-quickstart.html-full.png
+  [OK] Sections: 6 detected (canonical structure)
+  [OK] Examples: 5 found
+  [OK] Code blocks: 3 found
+  [OK] Tables: 1 found
+  [OK] Troubleshooting: 4 issues documented
+  [OK] Dark mode: functional
+  [OK] Dropdowns: 3 dropdowns tested, all OK
+
+... (47 pages tested)
+
+[visual-investigate] === SUMMARY ===
+  Pages tested: 47/47
+  Screenshots captured: 376 (47 pages x 4 viewports x 2 modes)
+  Issues found: 0 critical, 2 warnings
+  Total time: 45 seconds
+
+[visual-investigate] Report: reports/manual-audit/report.md</code></pre>
+<p><strong>Edge case</strong>: Se uma pagina retorna 404, wizard registra como warning mas continua.</p>
+
+<h3>Cenario 2: Auditoria de acessibilidade (WCAG AA)</h3>
+<p><strong>Contexto</strong>: LGPD exige acessibilidade. Quer validar todas as paginas contra WCAG 2.1 Level AA.</p>
+<pre><code>/visual-investigate --url http://localhost:5001 --accessibility --wcag-level AA --pages all</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[a11y] Running axe-core on http://localhost:5001...
+[a11y] Pages tested: 47
+[a11y] 0 critical violations
+[a11y] 2 serious violations:
+  - Color contrast ratio < 4.5:1 on .nav-link (foreground #0ea5e9 on #fff)
+  - Missing aria-label on #darkBtn
+[a11y] 4 minor violations:
+  - Missing lang attribute on 1 page
+  - 3 images without alt text
+[a11y] Report: reports/a11y/axe-report.json
+
+[CONTINUIDADE]:
+  1. Corrigir contraste: .nav-link { color: #0284c7; } (WCAG AA: 4.5:1)
+  2. Adicionar aria-label: &lt;button id="darkBtn" aria-label="Toggle dark mode"&gt;
+  3. Adicionar alt text em imagens
+  4. Rodar /visual-investigate --accessibility novamente para validar</code></pre>
+<p><strong>Edge case</strong>: WCAG AAA e' mais restritivo; use --wcag-level AAA para compliance total.</p>
+
+<h3>Cenario 3: Regressao visual (comparar com baseline)</h3>
+<p><strong>Contexto</strong>: Voce fez mudancas no CSS. Quer verificar se alguma pagina mudou visualmente.</p>
+<pre><code># 1. Gerar baseline (antes das mudancas)
+/visual-investigate --url http://localhost:5001 --pages all --output reports/baseline/
+
+# 2. Fazer mudancas no CSS...
+
+# 3. Comparar com baseline
+/visual-investigate --url http://localhost:5001 --pages all --compare --baseline reports/baseline/ --output reports/diff/</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[visual-investigate] Comparing with baseline...
+[visual-investigate] Pages compared: 47
+[visual-investigate] 45 pages: identical
+[visual-investigate] 2 pages: DIFF detected
+  - /manual/02-architecture.html: header nav shifted 2px right
+  - /manual/07-rules.html: table width changed (920px -> 940px)
+
+[visual-investigate] Diff images saved to reports/diff/
+  - /manual/02-architecture.html-diff.png (before | after | diff)
+  - /manual/07-rules.html-diff.png (before | after | diff)
+
+[visual-investigate] Report: reports/diff/regression-report.md</code></pre>
+<p><strong>Edge case</strong>: Se baseline nao existe, wizard gera automaticamente na primeira execucao.</p>
+
+<h3>Cenario 4: Teste de fluxo de usuario (login + navegacao)</h3>
+<p><strong>Contexto</strong>: Quer testar o fluxo completo: login -> navegar -> criar entidade -> logout.</p>
+<pre><code>/visual-investigate --url http://localhost:5001 --flows "login,navigate,create" --browsers chromium,firefox</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[visual-investigate] Testing flows: login, navigate, create
+[visual-investigate] Browsers: chromium, firefox
+
+[flow: login]
+  chromium: [OK] Login page loaded, form submitted, redirected to dashboard
+  firefox:  [OK] Login page loaded, form submitted, redirected to dashboard
+
+[flow: navigate]
+  chromium: [OK] Navigated to /manual/01-quickstart.html, all sections visible
+  firefox:  [OK] Navigated to /manual/01-quickstart.html, all sections visible
+
+[flow: create]
+  chromium: [OK] Form filled, submitted, success message visible
+  firefox:  [WARN] Form submitted but success message delayed (2s)
+
+[visual-investigate] Summary: 5 OK, 1 WARN
+[visual-investigate] Report: reports/flows/flow-report.md</code></pre>
+<p><strong>Edge case</strong>: Firefox pode ter timings diferentes; use --timeout 120000 para apps lentos.</p>
+
+<h3>Cenario 5: Investigacao de pagina especifica</h3>
+<p><strong>Contexto</strong>: Quer investigar apenas a pagina de login.</p>
+<pre><code>/visual-investigate --url http://localhost:5001 --pages "/Identity/Account/Login" --viewports mobile,desktop --dark-mode</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[visual-investigate] Pages: /Identity/Account/Login
+[visual-investigate] Viewports: mobile, desktop
+
+[visual-investigate] === /Identity/Account/Login ===
+  [OK] Screenshot desktop: reports/visual/Login-desktop.png
+  [OK] Screenshot mobile: reports/visual/Login-mobile.png
+  [OK] Dark mode desktop: reports/visual/Login-dark-desktop.png
+  [OK] Dark mode mobile: reports/visual/Login-dark-mobile.png
+  [OK] Form elements: 2 inputs (email, password), 1 button (login)
+  [OK] ARIA: form has label, inputs have placeholders
+  [WARN] Mobile: button text truncated ("Entrar..." -> "Entra")
+
+[visual-investigate] Report: reports/visual/login-report.md</code></pre>
+<p><strong>Edge case</strong>: Se pagina requer auth, use --login-user e --login-password.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>App nao encontrado (connection refused)</h3>
+<p><strong>Causa</strong>: App nao esta rodando na URL especificada.</p>
+<p><strong>Solucao</strong>: Inicie o app primeiro: <code>dotnet run</code> (ou <code>npm run dev</code>). Verifique com <code>curl http://localhost:5001</code>.</p>
+
+<h3>Playwright nao instalado</h3>
+<p><strong>Causa</strong>: <code>npx playwright</code> retorna erro.</p>
+<p><strong>Solucao</strong>: <code>.\.kilo\automation\scripts\e2e\install-playwright.ps1</code> ou <code>npm install -D @playwright/test && npx playwright install</code>.</p>
+
+<h3>Timeout em pagina lenta</h3>
+<p><strong>Causa</strong>: Pagina demora mais que 60s para carregar.</p>
+<p><strong>Solucao</strong>: Aumente timeout: <code>--timeout 120000</code>. Ou use <code>--wait-until domcontentloaded</code> (mais rapido que networkidle).</p>
+
+<h3>Elemento nao encontrado</h3>
+<p><strong>Causa</strong>: Seletor CSS nao corresponde ao DOM atual.</p>
+<p><strong>Solucao</strong>: Use <code>npx playwright codegen http://localhost:5001</code> para gerar seletores interativamente.</p>
+
+<h3>Baseline nao existe</h3>
+<p><strong>Causa</strong>: Primeira execucao com --compare sem baseline.</p>
+<p><strong>Solucao</strong>: Wizard gera baseline automaticamente na primeira execucao. Use <code>--output reports/baseline/</code> para salvar.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.7.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

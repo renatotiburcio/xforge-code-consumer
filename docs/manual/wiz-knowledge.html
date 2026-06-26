@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /knowledge - Ingerir Conhecimento - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html" class="active">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html" class="active">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /knowledge - Ingerir Conhecimento</h1>
+
+<h2>O que e</h2>
+<p><strong>/knowledge</strong> orquestra 5 tipos de ingestao: CODE (snippets), DOCUMENTS (arquivos), IDEAS (notas), ANNOTATIONS (comentarios), FEEDBACK (code review). Gera knowledge entries com trust score automatico. Indexa no RAG via <code>rag_local.py reindex</code>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando quer adicionar knowledge entry especifica</li><li>Quando tem feedback de code review para registrar</li><li>Quando quer consolidar anotacoes de codigo em knowledge</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>/knowledge --type FEEDBACK --source "PR-1234: usar XUnit nao NUnit" --domain backend</code></pre>
+<p>Para invocar: abra o XForge Code CLI e digite o comando. O wizard guia via Q&A interativo.</p>
+
+<h2>Parametros</h2>
+<table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th><th>Obrigatorio?</th></tr>
+<tr><td><code>--type</code></td><td>string</td><td>obrigatorio</td><td>CODE, DOCUMENTS, IDEAS, ANNOTATIONS, FEEDBACK</td><td>Sim</td></tr>
+<tr><td><code>--source</code></td><td>string</td><td>obrigatorio</td><td>Path, URL, ou texto inline (- para stdin)</td><td>Sim</td></tr>
+<tr><td><code>--domain</code></td><td>string</td><td>auto</td><td>fiscal, lgpd, erp, backend, etc</td><td>Nao</td></tr>
+<tr><td><code>--trust-score</code></td><td>int</td><td>auto</td><td>0-100 (override auto-detection)</td><td>Nao</td></tr>
+<tr><td><code>--output</code></td><td>string</td><td>.xforge/knowledge/&lt;domain&gt;/</td><td>Diretorio de saida</td><td>Nao</td></tr>
+<tr><td><code>--max-entries</code></td><td>int</td><td>50</td><td>Maximo de knowledge entries a gerar</td><td>Nao</td></tr>
+<tr><td><code>--dry-run</code></td><td>bool</td><td>false</td><td>Mostra plano sem criar arquivos</td><td>Nao</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Ingerir de code review (PR feedback)</h3>
+<p><strong>Contexto</strong>: Voce recebeu feedback sobre um PR. Quer consolidar em knowledge.</p>
+<pre><code>/knowledge --type FEEDBACK --source "PR-1234: usar XUnit nao NUnit" --domain backend</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[knowledge] Source: inline text (45 chars)
+[knowledge] Detectando: dominio backend, trust 85 (feedback de code review)
+[knowledge] Gerando 1 knowledge entry:
+  [+] .xforge/knowledge/compliance/code-review/xunit-only.md (trust: 85)
+[knowledge] Criando 1 DR:
+  [+] DR-0203-xunit-only-decision (status: draft, basado em feedback)
+[knowledge] RAG reindexed (749 docs)</code></pre>
+<p><strong>Edge case</strong>: FEEDBACK com trust >=80 entra automaticamente no rule registry.</p>
+
+<h3>Cenario 2: Ingerir de URL publica (docs Microsoft)</h3>
+<p><strong>Contexto</strong>: Quer aprender sobre EF Core a partir de docs oficiais.</p>
+<pre><code>/knowledge --source https://learn.microsoft.com/ef-core/dbcontext-configuration --stack dotnet --domain backend --trust-score 95</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[knowledge] URL: https://learn.microsoft.com/ef-core/dbcontext-configuration
+[knowledge] Fetching (47 requests, delay 1000ms)...
+[knowledge] Extraindo texto de 23 paginas...
+[knowledge] Detectando: dominio backend, trust 95 (Microsoft oficial)
+[knowledge] Gerando 5 knowledge entries:
+  [+] .xforge/knowledge/packs/ef-core/dbcontext-config.md
+  [+] .xforge/knowledge/padroes/data-access/ef-core-patterns.md
+  [+] .xforge/knowledge/glossario/ef-core-terms.md
+  [+] .xforge/knowledge/compliance/ef-core-migrations.md
+  [+] .xforge/knowledge/compliance/connection-strings.md
+[knowledge] Criando 1 skill canonica:
+  [+] .kilo/skills/ef-core-canon/SKILL.md
+[knowledge] RAG reindexed (754 docs)</code></pre>
+<p><strong>Edge case</strong>: Rate-limit Microsoft (429). Use --delay 3000 ou rode em horario de baixo trafico.</p>
+
+<h3>Cenario 3: Ingerir de codigo + comentarios (ANNOTATIONS)</h3>
+<p><strong>Contexto</strong>: Voce tem um projeto legado com comentarios valiosos espalhados.</p>
+<pre><code>/knowledge --type ANNOTATIONS --source ./src/legacy/ --domain backend --keywords "refactor,pattern,tradeoff"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[knowledge] Scanning 47 arquivos em src/legacy/
+[knowledge] Encontrados 23 comentarios com keywords relevantes
+[knowledge] Filtrando: 8 comentarios com profundidade (> 3 linhas)
+[knowledge] Gerando 3 knowledge entries:
+  [+] .xforge/knowledge/padroes/refactoring/legacy-service-extraction.md
+  [+] .xforge/knowledge/padroes/architecture/anemic-domain.md
+  [+] .xforge/knowledge/padroes/data-access/repository-split.md
+[knowledge] RAG reindexed (757 docs)</code></pre>
+<p><strong>Edge case</strong>: Anotacoes com TODO/FIXME sao ignorados (muito transient).</p>
+
+
+
+<h2>Troubleshooting</h2>
+
+
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

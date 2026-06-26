@@ -1,0 +1,18 @@
+﻿id: W005
+version: 1.0.0
+name: test-creation
+description: Create unit and integration tests
+states: [analyzing, planning, writing_unit_tests, writing_integration_tests, running, coverage_check, done, failed]
+transitions:
+  - {from: analyzing, to: planning, event: code_analyzed}
+  - {from: planning, to: writing_unit_tests, event: plan_complete}
+  - {from: writing_unit_tests, to: writing_integration_tests, event: unit_complete}
+  - {from: writing_integration_tests, to: running, event: tests_written}
+  - {from: running, to: coverage_check, event: all_passed}
+  - {from: coverage_check, to: done, event: coverage>=0.85}
+  - {from: coverage_check, to: writing_unit_tests, event: coverage<0.85}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [tester, developer]
+tools: [create_file, run_tests, coverage_report]
+entrypoint: analyzing
+terminalStates: [done, failed]

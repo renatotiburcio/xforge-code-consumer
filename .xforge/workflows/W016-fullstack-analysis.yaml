@@ -1,0 +1,63 @@
+id: W016
+name: fullstack-analysis
+version: 1.0.0
+description: Pipeline completo de analise e documentacao fullstack (11 estagios)
+type: orchestration
+agent: fullstack-analysis-architect
+estimatedDuration: 4h
+entrypoint: S0
+terminalStates: [DONE, BLOCKED, FAILED]
+states: [S0, S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, DONE, BLOCKED, FAILED]
+transitions:
+  - {from: S0, to: S1, event: onSuccess}
+  - {from: S0, to: FAILED, event: onFailure}
+  - {from: S1, to: S2, event: onSuccess}
+  - {from: S2, to: S3, event: onSuccess}
+  - {from: S3, to: S4, event: onSuccess}
+  - {from: S4, to: S5, event: onSuccess}
+  - {from: S5, to: S6, event: onSuccess}
+  - {from: S6, to: S7, event: onSuccess}
+  - {from: S7, to: S8, event: onSuccess}
+  - {from: S8, to: S9, event: onSuccess}
+  - {from: S8, to: BLOCKED, event: onFailure}
+  - {from: S9, to: S10, event: onSuccess}
+  - {from: S10, to: DONE, event: onSuccess}
+  - {from: S10, to: BLOCKED, event: onFailure}
+metadata:
+  states:
+    S0:
+      agent: business-analyst
+      output: 00-brief.md
+    S1:
+      agent: business-analyst
+      output: 01-requirements.md
+    S2:
+      agent: system-modeler
+      output: 02-architecture.md
+    S3:
+      agent: data-modeler
+      output: 03-data-model.md
+    S4:
+      agent: api-contract-designer
+      output: 04-api-contract.yaml
+    S5:
+      agent: ui-ux-flow-analyst
+      output: 05-ui-flows.md
+    S6:
+      agent: sdd-author
+      output: 06-sdd.md
+    S7:
+      agent: diagram-artisan
+      output: 07-diagrams/
+    S8:
+      agent: gap-detector
+      output: 08-gap-report.md
+      gate: clarityScore >= 80
+    S9:
+      agent: code-mapper
+      output: 09-code-map.md
+    S10:
+      agent: gap-detector
+      output: 10-handoff-checklist.md
+      gate: humanApproval == true
+metrics: [clarityScore, diagramCount, requirementsCount, examplesCount]

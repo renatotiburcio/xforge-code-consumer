@@ -1,0 +1,17 @@
+﻿id: W014
+version: 1.0.0
+name: performance-audit
+description: N+1, memory, async analysis
+states: [scheduled, profiling, analyzing, optimizing, benchmarking, done, failed]
+transitions:
+  - {from: scheduled, to: profiling, event: started}
+  - {from: profiling, to: analyzing, event: profile_complete}
+  - {from: analyzing, to: optimizing, event: bottlenecks_identified}
+  - {from: optimizing, to: benchmarking, event: optimizations_applied}
+  - {from: benchmarking, to: done, event: improvement>=20pct}
+  - {from: benchmarking, to: optimizing, event: improvement<20pct}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [performance-scalability-expert, runtime-learning-expert]
+tools: [profile, find_symbol, dependency_analysis, benchmark]
+entrypoint: scheduled
+terminalStates: [done, failed]

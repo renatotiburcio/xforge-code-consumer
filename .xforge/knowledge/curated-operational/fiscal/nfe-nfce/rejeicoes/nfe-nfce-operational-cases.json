@@ -1,0 +1,181 @@
+[
+  {
+    "id": "nfe-rejeicao-204-duplicidade",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "204",
+    "title": "Duplicidade de NF-e",
+    "status": "community-hint",
+    "trustScore": 65,
+    "sources": [
+      "oobj-rejeicao-204",
+      "totalerp-rejeicao-204",
+      "bling-rejeicao-204",
+      "moc-nfe-anexo-i"
+    ],
+    "symptoms": [
+      "SEFAZ retorna rejeição 204 ao autorizar NF-e/NFC-e",
+      "Pode indicar chave/número já usado ou cenário de instabilidade conforme suporte de emissores"
+    ],
+    "diagnosis": [
+      "Verificar se já existe NF-e autorizada com mesma chave ou mesma sequência/série/modelo/CNPJ",
+      "Conferir emissões feitas por outro sistema ou portal da SEFAZ",
+      "Confirmar se não houve reenvio após timeout"
+    ],
+    "recommendedActions": [
+      "Consultar a chave/número na SEFAZ",
+      "Ajustar número sequencial e série se houver duplicidade real",
+      "Se houver instabilidade, consultar status SEFAZ antes de inutilizar ou alterar sequência",
+      "Registrar incidente e fonte da decisão"
+    ],
+    "prevention": [
+      "Controlar numeração por CNPJ, modelo, série e ambiente",
+      "Criar lock transacional para emissão",
+      "Persistir estado de envio/retorno",
+      "Tratar timeout com consulta antes de reemitir"
+    ],
+    "edgeCases": [
+      "Timeout no envio seguido de reenvio",
+      "Migração de emissor antigo para novo sistema",
+      "Notas emitidas no portal do governo fora do ERP",
+      "Ambiente homologação vs produção"
+    ],
+    "ufBehavior": [
+      "Há relatos comunitários de comportamento divergente em SC/MG; tratar como hipótese e validar contra documentação/SEFAZ"
+    ],
+    "related": [
+      "nfe-rejeicao-539-duplicidade-chave-diferente"
+    ],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfe-rejeicao-539-duplicidade-chave-diferente",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "539",
+    "title": "Duplicidade de NF-e com diferença na Chave de Acesso",
+    "status": "community-hint",
+    "trustScore": 65,
+    "sources": [
+      "webmania-rejeicao-539",
+      "totalerp-rejeicao-204",
+      "nfe-nt-2011-004",
+      "moc-nfe-anexo-i"
+    ],
+    "symptoms": [
+      "SEFAZ informa duplicidade com diferença na chave",
+      "Mesmo CNPJ emitente, modelo, série e número podem conflitar com nota anterior"
+    ],
+    "diagnosis": [
+      "Conferir se já existe documento autorizado/denegado com mesma numeração",
+      "Verificar diferenças em data de emissão, tipo de emissão, cNF ou posições da chave",
+      "Conferir migração entre sistemas emissores"
+    ],
+    "recommendedActions": [
+      "Consultar documentos existentes na SEFAZ",
+      "Gerar nova numeração quando aplicável",
+      "Não simplesmente reenviar sem consultar status",
+      "Registrar causa no playbook de suporte"
+    ],
+    "prevention": [
+      "Controle único de série/número",
+      "Rotina de importação de última numeração antes de iniciar novo emissor",
+      "Consulta antes de reemissão após falha"
+    ],
+    "edgeCases": [
+      "Primeira nota no ERP novo mas não primeira nota do CNPJ",
+      "Mudança de emissão normal para contingência",
+      "Retorno atrasado após timeout"
+    ],
+    "ufBehavior": [
+      "Relatos comunitários de comportamento diferente por UF devem ser tratados como baixo trust até validação"
+    ],
+    "related": [
+      "nfe-rejeicao-204-duplicidade"
+    ],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfe-rejeicao-972-responsavel-tecnico",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "972",
+    "title": "Obrigatória as informações do responsável técnico",
+    "status": "official-uf",
+    "trustScore": 80,
+    "sources": [
+      "sefaz-pe-rejeicoes-comuns"
+    ],
+    "symptoms": [
+      "SEFAZ rejeita pela ausência do grupo de responsável técnico"
+    ],
+    "diagnosis": [
+      "Verificar se o layout/regra da UF exige o grupo responsável técnico",
+      "Verificar se dados do software house/responsável técnico foram configurados"
+    ],
+    "recommendedActions": [
+      "Preencher grupo responsável técnico conforme leiaute aplicável",
+      "Revisar CNPJ/contato/email/telefone/idCSRT/hashCSRT quando exigidos",
+      "Validar por UF e ambiente"
+    ],
+    "prevention": [
+      "Configurar cadastro do responsável técnico por emitente/UF",
+      "Criar validação antes do envio"
+    ],
+    "edgeCases": [
+      "Regra opcional em algumas UFs e obrigatória em outras",
+      "Divergência entre homologação e produção"
+    ],
+    "ufBehavior": [
+      "Exemplo público citado pela SEFAZ PE; verificar demais UFs"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfe-timeout-sefaz-reenvio",
+    "domain": "fiscal.nfe",
+    "documentType": "NF-e/NFC-e",
+    "code": "TIMEOUT",
+    "title": "Timeout SEFAZ seguido de reenvio incorreto",
+    "status": "derived-operational",
+    "trustScore": 55,
+    "sources": [
+      "moc-nfe-7-visao-geral-confaz",
+      "bling-rejeicao-204"
+    ],
+    "symptoms": [
+      "ERP não recebe retorno do lote",
+      "Usuário tenta emitir novamente",
+      "Depois aparece duplicidade"
+    ],
+    "diagnosis": [
+      "Distinguir falha de comunicação de falha de autorização",
+      "Consultar recibo/chave antes de gerar novo número"
+    ],
+    "recommendedActions": [
+      "Implementar consulta de recibo/status",
+      "Persistir nRec",
+      "Bloquear reemissão cega",
+      "Exibir mensagem clara ao usuário"
+    ],
+    "prevention": [
+      "State machine de emissão",
+      "Retry idempotente",
+      "Consulta antes de nova emissão"
+    ],
+    "edgeCases": [
+      "Lote processado após timeout",
+      "Usuário fecha tela e tenta novamente",
+      "Fila duplicada"
+    ],
+    "ufBehavior": [
+      "Pode variar conforme disponibilidade dos autorizadores"
+    ],
+    "related": [
+      "nfe-rejeicao-204-duplicidade",
+      "nfe-rejeicao-539-duplicidade-chave-diferente"
+    ],
+    "humanReviewRequired": false
+  }
+]

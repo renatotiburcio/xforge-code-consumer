@@ -1,0 +1,14 @@
+{
+  "workflows": [],
+  "categories": {
+    "DevOps": 17,
+    "Geral": 38,
+    "Conhecimento e Memória": 28,
+    "Operação e Migração": 6,
+    "Frontend e UX": 14,
+    "Segurança": 23,
+    "Qualidade e Testes": 18,
+    "Backend .NET": 3,
+    "Banco de Dados": 1
+  }
+}

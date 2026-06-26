@@ -1,0 +1,49 @@
+{
+  "id": "xforge-cnab",
+  "name": "xforge-cnab",
+  "displayName": "CNAB 240/400 - Integracao Bancaria",
+  "version": "1.0.0",
+  "trustScore": 91,
+  "category": "bancario",
+  "description": "CNAB 240 e CNAB 400 para boletos bancarios, pagamentos PIX via banco, cobranca registrada, retorno (confirmacao). Suporta BB, Itau, Bradesco, Santander, Caixa.",
+  "tags": [
+    "cnab",
+    "cnab-240",
+    "cnab-400",
+    "banco",
+    "boleto",
+    "cobranca",
+    "remessa",
+    "retorno"
+  ],
+  "domain": "bancario",
+  "knowledgeEntries": [
+    {
+      "path": ".xforge/knowledge/bancario/cnab-240-basics.md",
+      "summary": "CNAB 240 layout, segmentos, header, trailer, tipos de registro"
+    },
+    {
+      "path": ".xforge/knowledge/bancario/cnab-400-basics.md",
+      "summary": "CNAB 400 layout legado, registros, boleto"
+    },
+    {
+      "path": ".xforge/knowledge/bancario/remessa-boleto.md",
+      "summary": "Gerar arquivo remessa de boleto, calculo digito verificador, nosso numero"
+    },
+    {
+      "path": ".xforge/knowledge/bancario/retorno-boleto.md",
+      "summary": "Processar arquivo retorno, mapear ocorrencias (06=pago, 09=baixado, 02=confirmado)"
+    },
+    {
+      "path": ".xforge/knowledge/bancario/banco-especifico-bb.md",
+      "summary": "Banco do Brasil: particularidades, codigo convenio, carteira 17/18"
+    }
+  ],
+  "source": "internal-engineering",
+  "author": "XForge Engineer",
+  "date": "2026-06-14",
+  "size": "5 knowledge files",
+  "languages": [
+    "pt-BR"
+  ]
+}

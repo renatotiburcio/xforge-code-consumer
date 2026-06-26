@@ -1,0 +1,16 @@
+sequenceDiagram
+  autonumber
+  actor V as Visitante
+  participant S as Site (index.html)
+  participant F as Formspree API
+
+  V->>S: Preenche form (nome, email, mensagem)
+  V->>S: Click "Enviar"
+  S->>S: validate (client-side)
+  alt valid
+    S->>F: POST /form-id (JSON)
+    F-->>S: 200 OK
+    S->>V: "Mensagem enviada!"
+  else invalid
+    S->>V: "Preencha todos os campos"
+  end

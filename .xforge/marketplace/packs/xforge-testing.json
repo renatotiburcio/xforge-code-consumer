@@ -1,0 +1,53 @@
+{
+  "id": "xforge-testing",
+  "name": "xforge-testing",
+  "displayName": "Testing .NET (xUnit + FluentAssertions + Moq)",
+  "version": "1.0.0",
+  "trustScore": 93,
+  "category": "qualidade",
+  "description": "Padroes de testing .NET: xUnit, FluentAssertions, Moq, NSubstitute, Testcontainers, Bogus (auto-faker), arquitetura de testes, coverage, mutation testing.",
+  "tags": [
+    "testing",
+    "xunit",
+    "fluent-assertions",
+    "moq",
+    "testcontainers",
+    "bogus",
+    "coverage"
+  ],
+  "domain": "qualidade",
+  "knowledgeEntries": [
+    {
+      "path": ".xforge/knowledge/testing/xunit-patterns.md",
+      "summary": "Fact, Theory, InlineData, MemberData, ClassData, ICollectionFixture, IAsyncLifetime"
+    },
+    {
+      "path": ".xforge/knowledge/testing/fluent-assertions.md",
+      "summary": "Should().Be(), Should().BeEquivalentTo(), Should().Throw(), Should().Match(), assertions custom"
+    },
+    {
+      "path": ".xforge/knowledge/testing/mocking-strategies.md",
+      "summary": "Moq vs NSubstitute vs FakeItEasy, mocks vs stubs vs fakes, verify, callback"
+    },
+    {
+      "path": ".xforge/knowledge/testing/testcontainers.md",
+      "summary": "PostgreSQL, Redis, RabbitMQ, Kafka, Elasticsearch em Docker para tests de integracao"
+    },
+    {
+      "path": ".xforge/knowledge/testing/bogus-fakers.md",
+      "summary": "Faker<T>, RuleFor, locales (pt-BR), seed deterministic, custom fakers para entidades ERP"
+    },
+    {
+      "path": ".xforge/knowledge/testing/coverage-strategy.md",
+      "summary": "Coverlet, line vs branch vs mutation, what to cover, integration vs unit ratio"
+    }
+  ],
+  "source": "internal-engineering",
+  "author": "XForge Engineer",
+  "date": "2026-06-14",
+  "size": "6 knowledge files",
+  "languages": [
+    "pt-BR",
+    "en-US"
+  ]
+}

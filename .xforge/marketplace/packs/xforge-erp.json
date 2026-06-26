@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-erp",
+    "name":  "ERP Core",
+    "version":  "1.0.0",
+    "description":  "Cadastro, compras, vendas, estoque, producao",
+    "files":  3,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "erp"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/erp/"
+}

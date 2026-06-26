@@ -1,0 +1,19 @@
+id: W002
+version: 1.0.0
+name: bug-fix
+description: Fix bug with regression test
+states: [reported, triaged, reproducing, fixing, testing, regression_testing, reviewing, memorizing, done, failed]
+transitions:
+  - {from: reported, to: triaged, event: triage_complete}
+  - {from: triaged, to: reproducing, event: repro_started}
+  - {from: reproducing, to: fixing, event: repro_confirmed}
+  - {from: fixing, to: testing, event: fix_applied}
+  - {from: testing, to: regression_testing, event: unit_tests_passed}
+  - {from: regression_testing, to: reviewing, event: regression_test_passed}
+  - {from: reviewing, to: memorizing, event: review_approved}
+  - {from: memorizing, to: done, event: memory_saved}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [developer, tester, reviewer]
+tools: [create_file, update_file, run_tests, git_commit]
+entrypoint: reported
+terminalStates: [done, failed]

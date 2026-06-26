@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-fiscal",
+    "name":  "Fiscal BR",
+    "version":  "1.0.0",
+    "description":  "ICMS, IPI, PIS, COFINS, IBS, CBS, NF-e, SPED",
+    "files":  4,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "fiscal"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/fiscal/"
+}

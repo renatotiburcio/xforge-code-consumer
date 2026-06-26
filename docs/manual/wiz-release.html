@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /release - Preparar Release - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html" class="active">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html" class="active">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /release - Preparar Release</h1>
+
+<h2>O que e</h2>
+<p><strong>/release</strong> orquestra o processo de release: bump de versao (SemVer), geracao de changelog (commits desde ultima tag), validacao de tests, criacao de tag git, plano de rollback, e publicacao opcional. Integra com GitHub Releases.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando vai publicar versao nova em producao</li><li>Quando precisa gerar changelog automatico</li><li>Quando quer plano de rollback documentado antes do deploy</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>/release --bump patch</code></pre>
+<p>Para invocar: abra o XForge Code CLI e digite o comando. O wizard guia via Q&A interativo.</p>
+
+<h2>Parametros</h2>
+<table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th><th>Obrigatorio?</th></tr>
+<tr><td><code>--bump</code></td><td>string</td><td>obrigatorio</td><td>major, minor, patch</td><td>Sim</td></tr>
+<tr><td><code>--from</code></td><td>string</td><td>last-tag</td><td>Tag de origem</td><td>Nao</td></tr>
+<tr><td><code>--to</code></td><td>string</td><td>HEAD</td><td>Tag de destino</td><td>Nao</td></tr>
+<tr><td><code>--format</code></td><td>string</td><td>markdown</td><td>markdown, json, html</td><td>Nao</td></tr>
+<tr><td><code>--push</code></td><td>bool</td><td>false</td><td>Push automatico para remote</td><td>Nao</td></tr>
+<tr><td><code>--dry-run</code></td><td>bool</td><td>false</td><td>Mostra plano sem executar</td><td>Nao</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Patch release (bug fix)</h3>
+<p><strong>Contexto</strong>: Bug fix pequeno, vai publicar v50.0.3.</p>
+<pre><code>/release --bump patch</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[release] v50.0.1 -> v50.0.2
+[release] CHANGELOG.md atualizado (3 commits desde v50.0.1):
+  - fix: corrigir validacao de email em CreateCustomerCommand
+  - fix: ajustar timeout do Hangfire para 30s
+  - docs: atualizar README com setup do Postgres
+[release] Tag v50.0.2 criada
+[release] Push pendente (use --push para enviar)</code></pre>
+<p><strong>Edge case</strong>: Sem --push, tag fica local ate voce fazer push manual.</p>
+
+<h3>Cenario 2: Minor release com changelog HTML</h3>
+<p><strong>Contexto</strong>: Feature nova, vai publicar v51.0.0.</p>
+<pre><code>/release --bump minor --format html --output ./RELEASE-NOTES.html</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[release] v50.0.2 -> v51.0.0
+[release] 12 commits desde ultima tag:
+  Features (5):
+    - feat: adicionar modulo de pagamentos (Stripe)
+    - feat: adicionar notificacoes real-time (SignalR)
+    - feat: adicionar jobs background (Hangfire)
+    - feat: adicionar export de dados LGPD
+    - feat: adicionar 2FA TOTP
+  Fixes (4):
+    - fix: corrigir N+1 query em ListCustomers
+    - fix: ajustar CORS para producao
+    - fix: corrigir validacao de CPF
+    - fix: ajustar timeout de conexao
+  Docs (3):
+    - docs: atualizar arquitetura C4
+    - docs: adicionar guia de deploy
+    - docs: atualizar CHANGELOG
+
+[release] RELEASE-NOTES.html gerado
+[release] Tag v51.0.0 criada</code></pre>
+<p><strong>Edge case</strong>: Use --format html para publicacao em portal interno.</p>
+
+<h3>Cenario 3: Major release com plano de rollback</h3>
+<p><strong>Contexto</strong>: Breaking change (migracao de banco), precisa de rollback documentado.</p>
+<pre><code>/release --bump major --rollback-plan ./rollback.md</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[release] v51.0.0 -> v52.0.0
+[release] BREAKING CHANGES detectados:
+  - Migracao: Customer.Address de string para ValueObject
+  - API: /api/customers/{id} retorna DTO diferente
+  - Banco: nova tabela CustomerAddresses
+
+[release] Plano de rollback gerado: ./rollback.md
+  1. Reverter migracao: dotnet ef database update v51
+  2. Reverter tag: git checkout v51.0.0
+  3. Redeploy: docker-compose up
+
+[release] Tag v52.0.0 criada (com warning: BREAKING)</code></pre>
+<p><strong>Edge case</strong>: Major releases exigem --rollback-plan explicito.</p>
+
+
+
+<h2>Troubleshooting</h2>
+
+
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

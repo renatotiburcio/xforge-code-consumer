@@ -1,0 +1,143 @@
+{
+  "version": "1.0",
+  "registry": "https://raw.githubusercontent.com/renatotiburcio/xforge-packs/main/registry.json",
+  "lastUpdated": "2026-06-17",
+  "packs": [
+    {
+      "id": "xforge-fiscal",
+      "name": "Brazilian Fiscal Pack",
+      "version": "1.2.0",
+      "trustScore": 95,
+      "description": "NFe, NFCe, NFS-e, ICMS, PIS/COFINS, SPED Fiscal + Contribuicoes",
+      "tags": [
+        "fiscal",
+        "brazil",
+        "nfe",
+        "icms",
+        "sped"
+      ],
+      "size_kb": 1240,
+      "downloadUrl": "file://xforge/registry/packs/xforge-fiscal-1.2.0.tar.gz",
+      "sha256": "0539c30e26006c8681c315bb4df98d02d7a970e2cd4df2b37b5969cf76460d80",
+      "dependencies": [],
+      "official": true,
+      "sizeBytes": 618
+    },
+    {
+      "id": "xforge-hr",
+      "name": "Brazilian HR / Payroll Pack",
+      "version": "1.1.0",
+      "trustScore": 92,
+      "description": "CLT, FGTS, INSS, ferias, 13o, rescisao, eSocial",
+      "tags": [
+        "hr",
+        "payroll",
+        "brazil",
+        "esocial",
+        "clt"
+      ],
+      "size_kb": 980,
+      "downloadUrl": "file://xforge/registry/packs/xforge-hr-1.1.0.tar.gz",
+      "sha256": "4fde9deef1aaaf15d6f123a1ba2a1b1ce021fbf0fc9ad82a1857a2090e3fabbf",
+      "dependencies": [],
+      "official": true,
+      "sizeBytes": 321
+    },
+    {
+      "id": "xforge-accounting",
+      "name": "Brazilian Accounting Pack",
+      "version": "1.0.5",
+      "trustScore": 90,
+      "description": "Plano de contas, lancamentos, ECD, ECF, DRE, balanco",
+      "tags": [
+        "accounting",
+        "brazil",
+        "ecd",
+        "ecf"
+      ],
+      "size_kb": 720,
+      "downloadUrl": "file://xforge/registry/packs/xforge-accounting-1.0.5.tar.gz",
+      "sha256": "b330c21950d196cec2f1c63a9192038d0c87ae09b5c3d4eca15283dca314e235",
+      "dependencies": [],
+      "official": true,
+      "sizeBytes": 281
+    },
+    {
+      "id": "xforge-suas",
+      "name": "SUAS / Social Assistance Pack",
+      "version": "1.0.0",
+      "trustScore": 85,
+      "description": "SUAS, BPC, Bolsa Familia, CRAS, CREAS, CadUnico",
+      "tags": [
+        "suas",
+        "social",
+        "brazil",
+        "bpc",
+        "bolsa-familia"
+      ],
+      "size_kb": 560,
+      "downloadUrl": "file://xforge/registry/packs/xforge-suas-1.0.0.tar.gz",
+      "sha256": "0b226656c91b1f37d83d0438033b2f01ad4114e51c7bde1332631edbf80def2d",
+      "dependencies": [],
+      "official": true,
+      "sizeBytes": 265
+    },
+    {
+      "id": "xforge-pix",
+      "name": "PIX Payment Pack",
+      "version": "0.9.0",
+      "trustScore": 88,
+      "description": "PIX API integration (PSP-PIX), QR codes, reconciliation",
+      "tags": [
+        "payments",
+        "pix",
+        "brazil",
+        "open-finance"
+      ],
+      "size_kb": 320,
+      "downloadUrl": "file://xforge/registry/packs/xforge-pix-0.9.0.tar.gz",
+      "sha256": "81ae3ceaa36f8da2fd362fe021a880e1a5b2e74ccbb8ddbcb44f72aa88de1eec",
+      "dependencies": [],
+      "official": true,
+      "sizeBytes": 255
+    },
+    {
+      "id": "xforge-frontend-kit",
+      "name": "Frontend UI Kit Pack",
+      "version": "1.0.0",
+      "trustScore": 80,
+      "description": "Tailwind v4 components, design tokens, accessibility primitives",
+      "tags": [
+        "frontend",
+        "ui",
+        "tailwind",
+        "design-system"
+      ],
+      "size_kb": 410,
+      "downloadUrl": "file://xforge/registry/packs/xforge-frontend-kit-1.0.0.tar.gz",
+      "sha256": "03e7e0126f57aacf287f0a7becb94731ad3d5cc6f831a03685d57386e2f257ac",
+      "dependencies": [],
+      "official": true,
+      "sizeBytes": 359
+    },
+    {
+      "id": "xforge-testing-advanced",
+      "name": "Advanced Testing Pack",
+      "version": "1.0.0",
+      "trustScore": 87,
+      "description": "Testcontainers, Stryker mutation, NBomber, Pact contract testing",
+      "tags": [
+        "testing",
+        "qa",
+        "mutation",
+        "contract"
+      ],
+      "size_kb": 280,
+      "downloadUrl": "file://xforge/registry/packs/xforge-testing-advanced-1.0.0.tar.gz",
+      "sha256": "c8c5dd92f65d12d2f8bf6331a32988919b4da20a94d7e65f1933208e28d1a582",
+      "dependencies": [],
+      "official": true,
+      "sizeBytes": 303
+    }
+  ]
+}

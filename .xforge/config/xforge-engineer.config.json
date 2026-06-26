@@ -1,0 +1,223 @@
+{
+  "name": "xforge-enterprise-development-os",
+  "version": "11.0.0-split-arch",
+  "description": "XForge Enterprise Development OS — Split Architecture (Router+Worker), optimized for 16GB VRAM / 32GB RAM / Ryzen 7 5700G",
+  "kiloCompatibility": {
+    "kiloJsonc": "strict; only Kilo-recognized keys",
+    "rules": "loaded through kilo.jsonc instructions array",
+    "agentsMd": "AGENTS.md at project root",
+    "skills": ".kilo/skills/<skill>/SKILL.md",
+    "commands": ".kilo/commands/<command>.md",
+    "customMetadata": "stored outside kilo.jsonc"
+  },
+  "paths": {
+    "agents": ".kilo/agents",
+    "commands": ".kilo/commands",
+    "rules": ".kilo/rules",
+    "skills": ".kilo/skills",
+    "memory": ".xforge/memory",
+    "knowledge": ".xforge/knowledge",
+    "knowledgeIndex": ".xforge/knowledge/INDEX.json",
+    "routerPrompt": ".xforge/config/router-prompt.md",
+    "routerQuickRef": ".xforge/config/router-quick-reference.md",
+    "runtime": ".xforge/engineer/runtime",
+    "sdd": ".xforge/engineer/sdd",
+    "harness": ".xforge/engineer/harness",
+    "rag": ".xforge/rag",
+    "projectDna": ".xforge/project-dna",
+    "decisions": ".xforge/decisions"
+  },
+  "routing": {
+    "defaultProvider": "ollama",
+    "mode": "split",
+    "note": "Split architecture: Router (gemma4-26b) classifies, Worker (qwen3-coder-30b) executes",
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://localhost:11434/v1",
+        "apiKey": "dummy",
+        "splitArchitecture": {
+          "router": {
+            "model": "gemma4-26b-128k:latest",
+            "maxTokens": 4096,
+            "temperature": 0.1,
+            "role": "Intent classification + skill routing + knowledge selection"
+          },
+          "worker": {
+            "model": "qwen3-coder-30b-128k:latest",
+            "maxTokens": 8192,
+            "temperature": 0.3,
+            "role": "Code generation, reasoning, complex tasks"
+          },
+          "fallback": {
+            "model": "qwen3.6-27b-128k:latest",
+            "maxTokens": 4096,
+            "temperature": 0.3,
+            "role": "Medium-complexity tasks, worker fallback"
+          }
+        }
+      }
+    },
+    "complexityRouting": {
+      "enabled": true,
+      "defaultTier": "standard",
+      "note": "Default tier is 'standard' — for offline/local, use split architecture (router+worker)",
+      "tiers": {
+        "economy": {
+          "complexity": "S",
+          "scoreRange": "0-4",
+          "provider": "ollama",
+          "model": "qwen2.5:7b",
+          "temperature": 0.1,
+          "maxTokens": 4096,
+          "priority": "speed"
+        },
+        "standard": {
+          "complexity": "M",
+          "scoreRange": "5-9",
+          "provider": "ollama",
+          "model": "qwen2.5:14b",
+          "temperature": 0.2,
+          "maxTokens": 8192,
+          "priority": "balanced"
+        },
+        "premium": {
+          "complexity": "L",
+          "scoreRange": "10-15",
+          "provider": "ollama",
+          "model": "qwen2.5:72b",
+          "temperature": 0.1,
+          "maxTokens": 16384,
+          "priority": "quality"
+        },
+        "ultra": {
+          "complexity": "CRITICA",
+          "scoreRange": "16-19",
+          "provider": "ollama",
+          "model": "qwen2.5:72b",
+          "temperature": 0.05,
+          "maxTokens": 32768,
+          "priority": "max-quality"
+        }
+      },
+      "specialRules": {
+        "security": {
+          "minTier": "premium"
+        },
+        "lgpd": {
+          "minTier": "ultra"
+        },
+        "fiscal": {
+          "minTier": "ultra"
+        },
+        "multiAgent": {
+          "minTier": "premium"
+        },
+        "offline": {
+          "provider": "ollama",
+          "model": "qwen2.5:7b",
+          "maxTokens": 8192
+        }
+      }
+    }
+  },
+  "contextWindow": {
+    "maxTokens": "adaptive",
+    "defaultTokens": "adaptive",
+    "condenseAt": "80% of actual context window",
+    "condenseStrategy": "summarize",
+    "note": "Adapts to the context window selected by the user in KiloCode. Eviction triggers use percentages, not fixed values.",
+    "eviction": {
+      "enabled": true,
+      "version": "2.0.0",
+      "rules": [
+        {
+          "name": "summarize_old_history",
+          "trigger": "contextUsed > contextWindow * 0.80",
+          "action": "compress",
+          "target": "conversation_history",
+          "strategy": "summarize older than last 3 turns",
+          "maxSummaryTokens": 500,
+          "priority": 1
+        },
+        {
+          "name": "evict_knowledge_files",
+          "trigger": "contextUsed > contextWindow * 0.90",
+          "action": "evict",
+          "target": "knowledge_files",
+          "strategy": "keep only files referenced in last 2 turns, replace rest with resumo",
+          "keepResumo": true,
+          "priority": 2
+        },
+        {
+          "name": "truncate_tool_outputs",
+          "trigger": "contextUsed > contextWindow * 0.95",
+          "action": "truncate",
+          "target": "tool_outputs",
+          "strategy": "keep first 200 + last 100 lines, add truncation note",
+          "maxLines": 300,
+          "priority": 3
+        },
+        {
+          "name": "force_compact",
+          "trigger": "contextUsed > contextWindow * 0.98",
+          "action": "compact",
+          "target": "entire_context",
+          "strategy": "summarize everything into a compact state, keep current task context only",
+          "priority": 4
+        }
+      ]
+    },
+    "loadingStrategy": {
+      "mode": "lazy",
+      "description": "Load knowledge files on-demand, not upfront",
+      "steps": [
+        "1. Read INDEX.json to find relevant files by keywords",
+        "2. Load only resumo (first 5 lines) of matched files",
+        "3. If resumo is sufficient, skip full load",
+        "4. If full content needed, load with offset/limit",
+        "5. Track loaded files for eviction decisions"
+      ]
+    }
+  },
+  "tools": {
+    "write_file": {
+      "enabled": true
+    },
+    "edit_file": {
+      "enabled": true
+    },
+    "webfetch": {
+      "enabled": true
+    },
+    "bash": {
+      "enabled": true,
+      "timeout": 30
+    }
+  },
+  "engineer": {
+    "serverUrl": "http://localhost:8080",
+    "githubIsSourceOfTruth": true,
+    "serverIsIntelligenceLayer": true,
+    "offlineFirst": true,
+    "memoryAutoSave": true,
+    "minimumCoverage": 85,
+    "buildMustBeClean": true,
+    "warningsMustBeFixed": true,
+    "stateMachineEnabled": true,
+    "eventBusEnabled": true,
+    "policyEngineEnabled": true,
+    "auditTrailEnabled": true,
+    "knowledgeTrustEnabled": true,
+    "memoryShardingEnabled": true,
+    "searchEngineEnabled": true
+  },
+  "thinkingModes": [
+    "FAST",
+    "CHEAP",
+    "SAFE",
+    "DEEP",
+    "ENTERPRISE",
+    "OFFLINE",
+    "RESEARCH"
+  ]
+}

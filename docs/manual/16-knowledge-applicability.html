@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>16 Knowledge Applicability - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html" class="active">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Granular</h3><ul><li><a href="13-stack-detection.html">Stack Detection</a></li><li><a href="14-rag-system.html">RAG System</a></li><li><a href="15-quality-gates.html">Quality Gates</a></li><li><a href="16-knowledge-applicability.html" class="active">Knowledge Scope</a></li><li><a href="17-genius-council-members.html">Conselho 66</a></li></ul></aside>
+<main>
+<h1>16 - Knowledge applicabilityScope (DR-0180)</h1>
+
+<h2>O que e</h2>
+<p><strong>applicabilityScope</strong> e' o campo em cada knowledge entry que declara para quais stacks o conhecimento se aplica. Quando o projeto ativo e' .NET 8, knowledge entries com <code>applicabilityScope: ["python"]</code> sao filtradas. Diferente de busca por nome de arquivo, applicabilityScope e' uma <strong>tag semantica</strong> que o Knowledge Router usa para selecionar 187 de 319 entries (58.7%) em um projeto .NET medio.</p>
+<p>Localizacao: <code>.xforge/knowledge/INDEX.json</code> (campo <code>applicabilityScope</code> em cada entry). Skill canonica: <code>stack-aware-context</code>. Validador: <code>stack-detector.ps1 --check-scope</code>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce cria uma nova knowledge entry (declarar stack)</li>
+  <li>Quando uma knowledge entry aparece mesmo em projeto de stack diferente (scope mal declarado)</li>
+  <li>Quando voce quer auditar quais entries carregam em um projeto</li>
+  <li>Quando voce quer criar knowledge multi-stack (aplica em varios)</li>
+  <li>NAO use <code>["*"]</code> indiscriminadamente (defeats the purpose)</li>
+  <li>NAO use para versionamento (use TTL/validity field separado, se implementado)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica (em cada entry do INDEX.json):</p>
+<pre><code>{
+  "path": ".xforge/knowledge/dominios/fiscal/nfe.md",
+  "domain": "fiscal",
+  "applicabilityScope": ["dotnet", "python"],  // Universal: ["*"]
+  "trustScore": 90,
+  "keywords": ["nfe", "sefaz", "xml"]
+}</code></pre>
+<p>Validacao via skill canonica <code>stack-aware-context</code> ou comando:</p>
+<pre><code># Ver quantas entries carregam no projeto atual
+stack-detector.ps1 --check-scope .xforge/knowledge/INDEX.json
+
+# Forcar aplicabilidade universal (use com cuidado)
+# Editar .xforge/knowledge/INDEX.json manualmente</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>applicabilityScope</code></td><td>array&lt;string&gt;</td><td>obrigatorio</td><td>Lista de stacks compativeis. <code>["*"]</code> = universal (use com cuidado).</td></tr>
+<tr><td>Stacks validos</td><td>string</td><td>â€”</td><td><code>dotnet</code>, <code>python</code>, <code>node</code>, <code>react</code>, <code>angular</code>, <code>vue</code>, <code>rust</code>, <code>go</code>, <code>java</code>, <code>html-tailwind</code>, <code>fiscal</code>, <code>contabil</code>, <code>trabalhista</code>, <code>lgpd</code>, <code>*</code> (universal).</td></tr>
+<tr><td><code>domain</code></td><td>string</td><td>obrigatorio</td><td>Dominio de negocio (ex: <code>fiscal</code>, <code>erp</code>, <code>lgpd</code>).</td></tr>
+<tr><td><code>trustScore</code></td><td>int (0-100)</td><td>80</td><td>Confianca da fonte. 100=oficial, 90=codigo, 80=blog senior, 60=blog, 40=legado.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Knowledge universal (LGPD)</h3>
+<p><strong>Contexto</strong>: LGPD aplica a QUALQUER stack (BR tem a lei). Use <code>["*"]</code>.</p>
+<pre><code>{
+  "path": ".xforge/knowledge/compliance/lgpd-basics.md",
+  "domain": "lgpd",
+  "applicabilityScope": ["*"],
+  "trustScore": 95,
+  "source": "LGPL Lei 13.709/2018 + ANPD guidelines"
+}</code></pre>
+<p><strong>Output esperado</strong> (em qualquer projeto):</p>
+<pre><code>[scope-check] LGPD entry: aplica a TODOS os stacks
+[scope-check] Sera carregada em qualquer projeto</code></pre>
+<p><strong>Edge case</strong>: <code>["*"]</code> so para verdadeiramente universal. Duvida? Escolha 2-3 stacks especificos em vez de "*".</p>
+
+<h3>Cenario 2: Knowledge .NET only (AutoMapper)</h3>
+<p><strong>Contexto</strong>: AutoMapper e' so .NET. Skill canonica XForge exige AutoMapper sobre Mapster.</p>
+<pre><code>{
+  "path": ".xforge/knowledge/packs/xforge-automapper/profiles.md",
+  "domain": "pack",
+  "applicabilityScope": ["dotnet"],
+  "trustScore": 88,
+  "version": "&gt;= 12.0"
+}</code></pre>
+<p><strong>Output esperado</strong> (em projeto Python):</p>
+<pre><code>[scope-check] .NET entry: nao carrega em projeto Python
+[scope-check] Sera filtrada</code></pre>
+<p><strong>Edge case</strong>: Se voce tem AutoMapper em projeto Python (improvavel mas possivel via wrappers), escopo errado. Use <code>["dotnet", "python"]</code> ou crie entry especifica.</p>
+
+<h3>Cenario 3: Knowledge multi-stack (REST APIs)</h3>
+<p><strong>Contexto</strong>: Conceitos de REST API aplicam a .NET, Node, Python, Go. Multi-stack.</p>
+<pre><code>{
+  "path": ".xforge/knowledge/padroes/rest-apis.md",
+  "domain": "padroes",
+  "applicabilityScope": ["dotnet", "node", "python", "go"],
+  "trustScore": 90,
+  "keywords": ["rest", "http", "api"]
+}</code></pre>
+<p><strong>Output esperado</strong> (em projeto Java):</p>
+<pre><code>[scope-check] Java nao esta no scope (dotnet, node, python, go)
+[scope-check] Sera filtrada (mas a entry e' util para Java tambem!)</code></pre>
+<p><strong>Edge case</strong>: Se Java tambem usa REST, adicione "java" ao scope. Trade-off: scope mais restritivo = mais precisa, menos inclusivo.</p>
+
+<h3>Cenario 4: Knowledge dominio-especifico (NFe Brasil)</h3>
+<p><strong>Contexto</strong>: NFe e' exclusivamente BR. Aplica a qualquer stack usado em software BR, mas NAO a linguagens sem implementacao.</p>
+<pre><code>{
+  "path": ".xforge/knowledge/dominios/fiscal/nfe-basics.md",
+  "domain": "fiscal",
+  "applicabilityScope": ["fiscal"],  // NAO misturar com dotnet/python
+  "trustScore": 95,
+  "keywords": ["nfe", "sefaz", "xml", "brasil"]
+}</code></pre>
+<p><strong>Output esperado</strong> (em projeto qualquer):</p>
+<pre><code>[scope-check] Scope "fiscal" aplica quando projeto esta em dominio fiscal
+[scope-check] Em projeto ERP BR: carrega
+[scope-check] Em projeto blog pessoal: NAO carrega</code></pre>
+<p><strong>Edge case</strong>: Para que scope "fiscal" seja reconhecido, o projeto precisa de um sinal de dominio. Skill <code>stack-aware-context</code> detecta atraves de keywords em arquivos ou config customizada.</p>
+
+<h3>Cenario 5: Adicionar nova knowledge entry (com scope correto)</h3>
+<p><strong>Contexto</strong>: Voce escreveu <code>.xforge/knowledge/padroes/feature-flags.md</code>. Adiciona ao INDEX.json com scope apropriado.</p>
+<pre><code># 1. Criar arquivo
+mkdir -p .xforge/knowledge/padroes
+cat &gt; .xforge/knowledge/padroes/feature-flags.md &lt;&lt;EOF
+# Feature Flags
+Feature flags permitem toggling de funcionalidades sem deploy...
+EOF
+
+# 2. Adicionar ao INDEX.json
+{
+  "path": ".xforge/knowledge/padroes/feature-flags.md",
+  "domain": "padroes",
+  "applicabilityScope": ["dotnet", "node", "python", "rust", "go", "react"],
+  "trustScore": 85,
+  "keywords": ["feature-flags", "toggle", "deploy"]
+}
+
+# 3. Validar
+stack-detector.ps1 --check-scope .xforge/knowledge/INDEX.json</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[scope-check] 320 entries (era 319, +1)
+[scope-check] feature-flags.md: scope=6 stacks, trustScore=85
+[scope-check] Sera carregada em 6 tipos de stack</code></pre>
+<p><strong>Edge case</strong>: Se voce esquecer de adicionar ao INDEX.json, a entry existe no filesystem mas nao e indexada. RAG reindex adiciona ao chunks.jsonl mas nao ao knowledge router. Sempre atualize ambos.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Knowledge entry nao carrega mesmo com scope correto</h3>
+<p><strong>Causa</strong>: Stack detection retornou "unknown" (sem manifestos detectados). Router nao sabe qual scope aplicar.</p>
+<p><strong>Solucao</strong>: <code>stack-detector.ps1 --update-prompt</code> para forcar redeteccao. Crie manifesto (package.json, *.csproj) se pasta nao tem.</p>
+
+<h3>"applicabilityScope malformado"</h3>
+<p><strong>Causa</strong>: Entry com scope escrito errado (ex: <code>["DotNet"]</code> em vez de <code>["dotnet"]</code>). Router case-sensitive.</p>
+<p><strong>Solucao</strong>: Use sempre lowercase. Lista canonica: <code>dotnet, python, node, react, angular, vue, rust, go, java, html-tailwind, fiscal, contabil, trabalhista, lgpd, *</code>.</p>
+
+<h3>"Entry com scope vazio []"</h3>
+<p><strong>Causa</strong>: Entry criada sem scope declarado. Router assume "incompativel" e filtra.</p>
+<p><strong>Solucao</strong>: Adicione scope. Se realmente universal, use <code>["*"]</code>. Duvida? Comece com 1 stack especifico.</p>
+
+<h3>Knowledge INDEX.json nao parseia</h3>
+<p><strong>Causa</strong>: JSON corrompido (editor salvou mal, virgula faltando, etc).</p>
+<p><strong>Solucao</strong>: <code>python -c "import json; json.load(open('.xforge/knowledge/INDEX.json'))"</code> para localizar erro. Use editor com lint JSON (VS Code faz). Backup em <code>INDEX.json.bak-YYYYMMDD-HHMM</code>.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

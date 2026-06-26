@@ -1,0 +1,39 @@
+{
+  "gates": [
+    {
+      "id": "build-clean",
+      "name": "Build limpo",
+      "blocker": true
+    },
+    {
+      "id": "zero-warnings",
+      "name": "Sem warnings não corrigidos",
+      "blocker": true
+    },
+    {
+      "id": "tests-green",
+      "name": "Todos os testes verdes",
+      "blocker": true
+    },
+    {
+      "id": "coverage-85",
+      "name": "Cobertura mínima 85% quando aplicável",
+      "blocker": true
+    },
+    {
+      "id": "solid-srp",
+      "name": "SOLID/SRP",
+      "blocker": true
+    },
+    {
+      "id": "docs-updated",
+      "name": "Documentação atualizada",
+      "blocker": false
+    },
+    {
+      "id": "e2e-visual",
+      "name": "E2E visual quando houver UI",
+      "blocker": false
+    }
+  ]
+}

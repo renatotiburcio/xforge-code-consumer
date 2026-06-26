@@ -1,0 +1,21 @@
+{
+    "id":  "xforge-sped-fiscal",
+    "name":  "SPED Fiscal BR",
+    "version":  "1.0.0",
+    "description":  "SPED Fiscal: EFD ICMS IPI, EFD Contribuicoes, ECD, ECF - layouts e prazos",
+    "files":  3,
+    "trustScore":  83,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "sped",
+                 "efd",
+                 "fiscal",
+                 "ecd",
+                 "ecf"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/sped-fiscal/"
+}

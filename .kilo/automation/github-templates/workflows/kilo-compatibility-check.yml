@@ -1,0 +1,40 @@
+name: Kilo Compatibility Check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  kilo-compatibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate AGENTS.md
+        run: test -f AGENTS.md
+
+      - name: Validate official skill directory
+        run: test -d .kilo/skills
+
+      - name: Validate skill frontmatter
+        shell: bash
+        run: |
+          for d in .kilo/skills/*; do
+            [ -d "$d" ] || continue
+            test -f "$d/SKILL.md"
+            name=$(basename "$d")
+            grep -q "^name: $name$" "$d/SKILL.md"
+            grep -q "^description: " "$d/SKILL.md"
+          done
+
+      - name: Validate slash commands
+        run: |
+          test -d .kilo/commands
+          count=$(find .kilo/commands -name "*.md" | wc -l)
+          test "$count" -gt 0
+
+      - name: Validate rules referenced by kilo.jsonc
+        run: |
+          test -d .kilo/rules
+          test -f kilo.jsonc

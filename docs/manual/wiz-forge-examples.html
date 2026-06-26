@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /forge - Exemplos de Codigo Completo</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html" class="active">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html" class="active">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /forge - Exemplos de Codigo Completo</h1>
+
+<h2>O que e</h2>
+<p>Esta pagina complementa <a href="wiz-forge.html">/forge</a> com os exemplos de codigo gerados pelos <strong>--patterns</strong> e <strong>--integrations</strong>. Use como referencia ao revisar o scaffold criado. Cobre: Program.cs, entidades DDD, CQRS Commands/Queries/Handlers, Stripe, Hangfire, SignalR, Identity, Global Error Handling.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando voce quer entender o codigo gerado por cada flag <code>--patterns</code> / <code>--integrations</code></li>
+<li>Quando precisa revisar o scaffold antes de commitar</li>
+<li>Quando quer copiar trechos para integrar em projeto legado</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Cada cenario abaixo mostra o codigo gerado para uma flag especifica. Combine-os conforme seu wizard: <code>/forge new MeuProjeto --auth identity --patterns ddd cqrs mediator automapper fluentvalidation result-pattern --integrations stripe hangfire sendgrid signalr</code>.</p>
+
+<h2>Parametros (referencia)</h2>
+<table>
+<tr><th>Parametro</th><th>Descricao</th></tr>
+<tr><td><code>--auth identity</code></td><td>Auth padrao (ASP.NET Core Identity)</td></tr>
+<tr><td><code>--patterns</code></td><td>ddd cqrs mediator automapper fluentvalidation result-pattern ddd-aggregates</td></tr>
+<tr><td><code>--integrations</code></td><td>stripe hangfire sendgrid signalr redis rabbitmq aws-s3</td></tr>
+<tr><td><code>--error-handling global-middleware</code></td><td>ProblemDetails RFC 7807 + custom handler</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Program.cs completo (todos os patterns + integrations)</h3>
+<pre><code>using MeuProjeto.Application;
+using MeuProjeto.Infrastructure;
+using MeuProjeto.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Stripe;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// 1. DATABASE + IDENTITY (ASP.NET Core Identity - mais seguro)
+builder.Services.AddDbContext&lt;AppDbContext&gt;(o =&gt;
+    o.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddIdentity&lt;ApplicationUser, ApplicationRole&gt;(o =&gt;
+{
+    o.Password.RequireDigit = true;
+    o.Password.RequireLowercase = true;
+    o.Password.RequireUppercase = true;
+    o.Password.RequireNonAlphanumeric = true;
+    o.Password.RequiredLength = 12;
+    o.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(15);
+    o.Lockout.MaxFailedAccessAttempts = 5;
+    o.User.RequireUniqueEmail = true;
+    o.SignIn.RequireConfirmedEmail = true;
+}).AddEntityFrameworkStores&lt;AppDbContext&gt;().AddDefaultTokenProviders();
+
+// 2. AUTHENTICATION (JWT + Identity)
+builder.Services.AddAuthentication(o =&gt;
+{
+    o.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    o.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =&gt;
+{
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true, ValidateAudience = true, ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"])),
+        ClockSkew = TimeSpan.Zero
+    };
+});
+
+// 3. MEDIATR (CQRS)
+builder.Services.AddMediatR(c =&gt; c.RegisterServicesFromAssemblies(
+    typeof(ApplicationLayer).Assembly, typeof(InfrastructureLayer).Assembly));
+builder.Services.AddTransient(typeof(IPipelineBehavior&lt;,&gt;), typeof(ValidationBehavior&lt;,&gt;));
+
+// 4. AUTOMAPPER
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+
+// 5. FLUENTVALIDATION
+builder.Services.AddFluentValidation(o =&gt;
+    o.RegisterValidatorsFromAssemblyContaining&lt;MappingProfile&gt;());
+
+// 6. STRIPE
+builder.Services.AddSingleton(new StripeClient(builder.Configuration["Stripe:SecretKey"]));
+builder.Services.AddScoped&lt;IPaymentService, StripePaymentService&gt;();
+
+// 7. HANGFIRE
+builder.Services.AddHangfire(c =&gt; c.UsePostgreSqlStorage(
+    builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddHangfireServer();
+
+// 8. SIGNALR
+builder.Services.AddSignalR();
+
+// 9. GLOBAL ERROR HANDLING
+builder.Services.AddProblemDetails();
+builder.Services.AddExceptionHandler&lt;GlobalExceptionHandler&gt;();
+
+var app = builder.Build();
+
+// PIPELINE
+app.UseExceptionHandler(); // global-middleware
+app.UseStatusCodePages();
+if (app.Environment.IsDevelopment()) { app.UseDeveloperExceptionPage(); app.UseMigrationsEndPoint(); }
+else app.UseHsts();
+app.UseHttpsRedirection(); app.UseStaticFiles(); app.UseRouting();
+app.UseAuthentication(); app.UseAuthorization();
+
+// ENDPOINTS
+app.MapControllers();
+app.MapHub&lt;NotificationHub&gt;("/hubs/notifications");
+app.MapHangfireDashboard("/jobs");
+app.MapRazorPages(); // /Identity/Account/Login
+
+// MIGRATIONS + SEED
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService&lt;AppDbContext&gt;();
+    db.Database.Migrate();
+    await IdentitySeeder.SeedAsync(scope.ServiceProvider);
+}
+
+app.Run();</code></pre>
+
+<h3>Cenario 2: Entidades DDD com AggregateRoot (--patterns ddd-aggregates)</h3>
+<pre><code>// src/MeuProjeto.Domain/Common/AggregateRoot.cs
+public abstract class AggregateRoot&lt;TId&gt;
+{
+    public TId Id { get; protected set; }
+    private readonly List&lt;IDomainEvent&gt; _events = new();
+    public IReadOnlyList&lt;IDomainEvent&gt; Events =&gt; _events.AsReadOnly();
+    protected void RaiseDomainEvent(IDomainEvent e) =&gt; _events.Add(e);
+    public void ClearEvents() =&gt; _events.Clear();
+}
+
+// src/MeuProjeto.Domain/Common/ValueObject.cs
+public abstract class ValueObject
+{
+    protected abstract IEnumerable&lt;object&gt; GetEqualityComponents();
+    public override bool Equals(object obj) { /* structural eq */ }
+    public override int GetHashCode() { /* hash from components */ }
+}
+
+// src/MeuProjeto.Domain/ValueObjects/Email.cs
+public class Email : ValueObject
+{
+    public string Endereco { get; }
+    private Email(string e) =&gt; Endereco = e;
+    public static Email Create(string e)
+    {
+        if (string.IsNullOrWhiteSpace(e) || !e.Contains("@"))
+            throw new DomainException("Email invalido");
+        return new Email(e);
+    }
+    protected override IEnumerable&lt;object&gt; GetEqualityComponents() { yield return Endereco; }
+}
+
+// src/MeuProjeto.Domain/Aggregates/ProdutoAggregate.cs
+public class ProdutoAggregate : AggregateRoot&lt;Guid&gt;
+{
+    public string Nome { get; private set; }
+    public decimal Preco { get; private set; }
+    public int Estoque { get; private set; }
+    private ProdutoAggregate() { }
+    public static ProdutoAggregate Criar(string nome, decimal preco)
+    {
+        var p = new ProdutoAggregate();
+        p.Nome = nome; p.Preco = preco; p.Estoque = 0;
+        p.RaiseDomainEvent(new ProdutoCriado(p.Id, nome));
+        return p;
+    }
+    public void AtualizarPreco(decimal novo)
+    {
+        if (novo &lt;= 0) throw new DomainException("Preco invalido");
+        var old = Preco; Preco = novo;
+        RaiseDomainEvent(new PrecoAlterado(Id, old, novo));
+    }
+}
+
+// src/MeuProjeto.Application/Common/Result.cs (Result Pattern)
+public class Result
+{
+    public bool IsSuccess { get; }
+    public Error Error { get; }
+    protected Result(bool ok, Error e) { IsSuccess = ok; Error = e; }
+    public static Result Success() =&gt; new(true, Error.None);
+    public static Result Failure(Error e) =&gt; new(false, e);
+    public static Result&lt;T&gt; Success&lt;T&gt;(T v) =&gt; new(v, true, Error.None);
+    public static Result&lt;T&gt; Failure&lt;T&gt;(Error e) =&gt; new(default, false, e);
+}
+public class Result&lt;T&gt; : Result
+{
+    public T Value { get; }
+    protected internal Result(T? v, bool ok, Error e) : base(ok, e) { Value = v; }
+}
+
+// src/MeuProjeto.Application/Common/Error.cs
+public sealed record Error(string Code, string Description, ErrorType Type = ErrorType.Failure)
+{
+    public static readonly Error None = new("", "", ErrorType.None);
+    public static Error NotFound(string d) =&gt; new("NotFound", d, ErrorType.NotFound);
+    public static Error Validation(string d) =&gt; new("Validation", d, ErrorType.Validation);
+    public static Error Conflict(string d) =&gt; new("Conflict", d, ErrorType.Conflict);
+}
+public enum ErrorType { None, Failure, Validation, NotFound, Conflict }</code></pre>
+
+<h3>Cenario 3: CQRS com MediatR (Command + Handler + Validator + Controller)</h3>
+<pre><code>// src/MeuProjeto.Application/Commands/CreateProdutoCommand.cs
+public record CreateProdutoCommand(string Nome, decimal Preco) : IRequest&lt;Result&lt;Guid&gt;&gt;;
+
+// src/MeuProjeto.Application/Handlers/CreateProdutoHandler.cs
+public class CreateProdutoHandler : IRequestHandler&lt;CreateProdutoCommand, Result&lt;Guid&gt;&gt;
+{
+    private readonly IProdutoRepository _repo;
+    private readonly IUnitOfWork _uow;
+    public CreateProdutoHandler(IProdutoRepository r, IUnitOfWork u) { _repo = r; _uow = u; }
+    public async Task&lt;Result&lt;Guid&gt;&gt; Handle(CreateProdutoCommand cmd, CancellationToken ct)
+    {
+        var produto = ProdutoAggregate.Criar(cmd.Nome, cmd.Preco);
+        await _repo.AddAsync(produto, ct);
+        await _uow.SaveChangesAsync(ct);
+        return Result.Success(produto.Id);
+    }
+}
+
+// src/MeuProjeto.Application/Validators/CreateProdutoValidator.cs
+public class CreateProdutoValidator : AbstractValidator&lt;CreateProdutoCommand&gt;
+{
+    public CreateProdutoValidator()
+    {
+        RuleFor(x =&gt; x.Nome).NotEmpty().MaximumLength(200);
+        RuleFor(x =&gt; x.Preco).GreaterThan(0).LessThan(1_000_000);
+    }
+}
+
+// src/MeuProjeto.Api/Controllers/ProdutosController.cs
+[ApiController]
+[Route("api/produtos")]
+[Authorize]
+public class ProdutosController : ControllerBase
+{
+    private readonly IMediator _mediator;
+    public ProdutosController(IMediator m) =&gt; _mediator = m;
+
+    [HttpPost]
+    public async Task&lt;ActionResult&lt;Guid&gt;&gt; Create(CreateProdutoCommand cmd, CancellationToken ct)
+    {
+        var r = await _mediator.Send(cmd, ct);
+        if (r.IsSuccess) return CreatedAtAction(nameof(GetById), new { id = r.Value }, r.Value);
+        return r.Error.Type switch
+        {
+            ErrorType.Validation =&gt; ValidationProblem(...),
+            _ =&gt; Problem(r.Error.Description, statusCode: 400)
+        };
+    }
+
+    [HttpGet("{id}")]
+    public async Task&lt;ActionResult&lt;ProdutoDto&gt;&gt; GetById(Guid id, CancellationToken ct)
+    {
+        var r = await _mediator.Send(new GetProdutoByIdQuery(id), ct);
+        return r.IsSuccess ? Ok(r.Value) : NotFound(r.Error.Description);
+    }
+}</code></pre>
+
+<h3>Cenario 4: Stripe PaymentService + Webhook (--integrations stripe)</h3>
+<pre><code>// src/MeuProjeto.Application/Interfaces/IPaymentService.cs
+public interface IPaymentService
+{
+    Task&lt;Result&lt;PaymentIntent&gt;&gt; CreatePaymentIntentAsync(decimal amount, string currency, Guid customerId, CancellationToken ct);
+    Task&lt;Result&lt;PaymentResult&gt;&gt; ConfirmPaymentAsync(string paymentIntentId, CancellationToken ct);
+    Task&lt;Result&lt;RefundResult&gt;&gt; RefundAsync(string chargeId, decimal amount, CancellationToken ct);
+}
+
+// src/MeuProjeto.Infrastructure/Payments/StripePaymentService.cs
+public class StripePaymentService : IPaymentService
+{
+    private readonly StripeClient _stripe;
+    private readonly ILogger&lt;StripePaymentService&gt; _logger;
+    public StripePaymentService(StripeClient s, ILogger&lt;StripePaymentService&gt; l) { _stripe = s; _logger = l; }
+
+    public async Task&lt;Result&lt;PaymentIntent&gt;&gt; CreatePaymentIntentAsync(decimal amount, string currency, Guid customerId, CancellationToken ct)
+    {
+        try
+        {
+            var intent = await _stripe.V1.PaymentIntents.CreateAsync(new PaymentIntentCreateOptions
+            {
+                Amount = (long)(amount * 100),
+                Currency = currency,
+                Metadata = new() { ["customer_id"] = customerId.ToString() }
+            }, cancellationToken: ct);
+            return Result.Success(new PaymentIntent(intent.Id, intent.ClientSecret));
+        }
+        catch (StripeException ex)
+        {
+            _logger.LogError(ex, "Stripe error");
+            return Result.Failure(Error.Conflict($"Stripe error: {ex.StripeError?.Message}"));
+        }
+    }
+}
+
+// src/MeuProjeto.Api/Controllers/WebhookController.cs
+[ApiController]
+[Route("api/webhooks/stripe")]
+public class WebhookController : ControllerBase
+{
+    private readonly IPaymentService _payments;
+    private readonly string _webhookSecret;
+    public WebhookController(IPaymentService p, IConfiguration c) { _payments = p; _webhookSecret = c["Stripe:WebhookSecret"]; }
+
+    [HttpPost]
+    public async Task&lt;IActionResult&gt; Handle()
+    {
+        var json = await new StreamReader(HttpContext.Request.Body).ReadToEndAsync();
+        var stripeEvent = EventUtility.ConstructEvent(json, Request.Headers["Stripe-Signature"], _webhookSecret);
+        switch (stripeEvent.Type)
+        {
+            case Events.PaymentIntentSucceeded:
+                var intent = (PaymentIntent)stripeEvent.Data.Object;
+                await _payments.ConfirmPaymentAsync(intent.Id);
+                break;
+            case Events.PaymentIntentPaymentFailed: /* log + notify */ break;
+        }
+        return Ok();
+    }
+}</code></pre>
+
+<h3>Cenario 5: Hangfire Jobs (--integrations hangfire)</h3>
+<pre><code>// src/MeuProjeto.Infrastructure/Jobs/Recurring/ProcessPaymentsJob.cs
+public class ProcessPaymentsJob
+{
+    private readonly IPaymentService _payments;
+    private readonly ILogger&lt;ProcessPaymentsJob&gt; _logger;
+    public ProcessPaymentsJob(IPaymentService p, ILogger&lt;ProcessPaymentsJob&gt; l) { _payments = p; _logger = l; }
+
+    [AutomaticRetry(Attempts = 3, DelaysInSeconds = new[] { 60, 300, 900 })]
+    [DisableConcurrentExecution(timeoutInSeconds: 600)]
+    public async Task ProcessPendingAsync(PerformContext ctx, CancellationToken ct)
+    {
+        _logger.LogInformation("ProcessPaymentsJob started at {Time}", DateTime.UtcNow);
+        foreach (var p in await _payments.GetPendingPaymentsAsync(ct))
+            await _payments.ConfirmPaymentAsync(p.IntentId, ct);
+    }
+}
+
+// Program.cs: registrar jobs recorrentes
+using (var scope = app.Services.CreateScope())
+{
+    var recurring = scope.ServiceProvider.GetRequiredService&lt;IRecurringJobManager&gt;();
+    recurring.AddOrUpdate&lt;ProcessPaymentsJob&gt;("process-payments",
+        j =&gt; j.ProcessPendingAsync(default, CancellationToken.None), "0 2 * * *"); // 2 AM daily
+}</code></pre>
+
+<h3>Cenario 6: ApplicationUser + IdentitySeeder (--auth identity)</h3>
+<pre><code>// src/MeuProjeto.Infrastructure/Identity/ApplicationUser.cs
+public class ApplicationUser : IdentityUser&lt;Guid&gt;
+{
+    public string NomeCompleto { get; set; } = "";
+    public bool ConsentimentoLGPD { get; set; }
+    public DateTime? DataConsentimento { get; set; }
+    public string TenantId { get; set; } = ""; // multi-tenant
+}
+public class ApplicationRole : IdentityRole&lt;Guid&gt; { }
+
+// src/MeuProjeto.Infrastructure/Identity/IdentitySeeder.cs
+public static class IdentitySeeder
+{
+    public static async Task SeedAsync(IServiceProvider services)
+    {
+        using var scope = services.CreateScope();
+        var userManager = scope.ServiceProvider.GetRequiredService&lt;UserManager&lt;ApplicationUser&gt;&gt;();
+        var roleManager = scope.ServiceProvider.GetRequiredService&lt;RoleManager&lt;ApplicationRole&gt;&gt;();
+        var config = scope.ServiceProvider.GetRequiredService&lt;IConfiguration&gt;();
+        var adminEmail = config["Seed:AdminEmail"] ?? "admin@meuprojeto.com";
+        var adminPassword = config["Seed:AdminPassword"] ?? "ChangeMe!2026";
+
+        string[] roles = { "Admin", "Manager", "User" };
+        foreach (var r in roles) if (!await roleManager.RoleExistsAsync(r)) await roleManager.CreateAsync(new ApplicationRole { Name = r });
+
+        if (await userManager.FindByEmailAsync(adminEmail) == null)
+        {
+            var admin = new ApplicationUser { UserName = adminEmail, Email = adminEmail, NomeCompleto = "Admin", ConsentimentoLGPD = true, DataConsentimento = DateTime.UtcNow };
+            await userManager.CreateAsync(admin, adminPassword);
+            await userManager.AddToRoleAsync(admin, "Admin");
+        }
+    }
+}</code></pre>
+
+<h2>Troubleshooting</h2>
+
+<h3>Identity migration falha</h3>
+<p><strong>Causa</strong>: connection string invalida ou Postgres inacessivel.</p>
+<p><strong>Solucao</strong>: rode <code>dotnet ef database update</code> manual; verifique appsettings.json.</p>
+
+<h3>MediatR nao registra handlers</h3>
+<p><strong>Causa</strong>: assembly do handler nao em <code>RegisterServicesFromAssemblies</code>.</p>
+<p><strong>Solucao</strong>: adicione o assembly (Application ou Infrastructure) na chamada.</p>
+
+<h3>AutoMapper nao mapeia</h3>
+<p><strong>Causa</strong>: <code>MappingProfile</code> nao escaneado.</p>
+<p><strong>Solucao</strong>: confirme assembly correto em <code>AddAutoMapper(typeof(MappingProfile).Assembly)</code>.</p>
+
+<h3>FluentValidation nao dispara</h3>
+<p><strong>Causa</strong>: validators assembly nao registrada OU pipeline behavior ausente.</p>
+<p><strong>Solucao</strong>: confirme <code>RegisterValidatorsFromAssemblyContaining</code> E <code>AddTransient(typeof(IPipelineBehavior&lt;,&gt;), typeof(ValidationBehavior&lt;,&gt;))</code>.</p>
+
+<h3>Stripe webhook signature invalida</h3>
+<p><strong>Causa</strong>: webhook secret nao configurado.</p>
+<p><strong>Solucao</strong>: configure <code>STRIPE_WEBHOOK_SECRET</code> em appsettings.Production.json e Stripe Dashboard.</p>
+
+<h3>Hangfire jobs nao executam</h3>
+<p><strong>Causa</strong>: server nao iniciado OU cron invalida.</p>
+<p><strong>Solucao</strong>: confirme <code>app.UseHangfireServer()</code> e valide cron em https://crontab.guru.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

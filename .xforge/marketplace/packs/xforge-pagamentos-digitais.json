@@ -1,0 +1,24 @@
+{
+  "name": "xforge-pagamentos-digitais",
+  "version": "1.0.0",
+  "author": "XForge Engineer",
+  "trustScore": 80,
+  "tags": [
+    "pagamentos",
+    "pix",
+    "cartao",
+    "boleto",
+    "gateway"
+  ],
+  "domain": "financeiro",
+  "description": "Pagamentos digitais brasileiros: PIX, cartao de credito/debito, boleto bancario, gateways (Stripe, Pagar.me, Mercado Pago, Asaas, PagSeguro).",
+  "files": [
+    "pix.md",
+    "cartao.md",
+    "boleto.md",
+    "gateways-comparison.md"
+  ],
+  "dependencies": [],
+  "kbVersion": "1.0",
+  "lastUpdated": "2026-06-13"
+}

@@ -1,0 +1,39 @@
+name: Engineer Enterprise Check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  enterprise-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate terminal root
+        run: |
+          test -f AGENTS.md
+          test -f kilo.jsonc
+          test -f engineer.config.json
+          test -d .kilo/agents
+          test -d .kilo/workflows
+          test -d .kilo/rules
+          test -d skills
+          test -d engineer
+
+      - name: Validate required enterprise modules
+        run: |
+          test -d engineer/state-machine
+          test -d engineer/event-bus
+          test -d engineer/policies
+          test -d engineer/rbac
+          test -d engineer/audit-trail
+          test -d engineer/memory-sharding
+          test -d engineer/context-window-strategy
+          test -d engineer/search-engine
+          test -d engineer/change-impact-analysis
+          test -d engineer/human-review
+          test -d engineer/security-model
+          test -d engineer/ai-governance
+          test -d engineer/enterprise-architecture

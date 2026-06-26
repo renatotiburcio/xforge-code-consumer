@@ -1,0 +1,83 @@
+{
+  "id": "xforge-rh-folha",
+  "name": "xforge-rh-folha",
+  "title": "RH Folha de Pagamento - INSS, IRRF, FGTS, Ferias, 13o",
+  "version": "1.0.0",
+  "domain": "trabalhista",
+  "category": "folha-pagamento",
+  "description": "Calculo completo de folha de pagamento: INSS progressivo 2025, IRRF com deducao simplificada, FGTS 8% + 40% rescisorio, ferias integrais e proporcionais, 13o salario (1a e 2a parcela), rescisao (CLT), recibos,DIRF.",
+  "author": "XForge",
+  "license": "MIT",
+  "trustScore": 90,
+  "tags": [
+    "rh",
+    "folha",
+    "inss",
+    "irrf",
+    "fgts",
+    "ferias",
+    "13",
+    "rescisao",
+    "trabalhista",
+    "brasil",
+    "clt"
+  ],
+  "dependencies": [
+    "xforge-core",
+    "xforge-esocial-completo"
+  ],
+  "knowledgeEntries": [
+    {
+      "path": "knowledge/packs/xforge-rh-folha/inss-progressivo.md",
+      "trustScore": 92,
+      "title": "INSS Progressivo 2025"
+    },
+    {
+      "path": "knowledge/packs/xforge-rh-folha/irrf-calculo.md",
+      "trustScore": 91,
+      "title": "IRRF Mensal e Ferias"
+    },
+    {
+      "path": "knowledge/packs/xforge-rh-folha/fgts-deposito.md",
+      "trustScore": 90,
+      "title": "FGTS Mensal + 40% Rescisorio"
+    },
+    {
+      "path": "knowledge/packs/xforge-rh-folha/ferias-calculo.md",
+      "trustScore": 89,
+      "title": "Ferias Integrais e Proporcionais"
+    },
+    {
+      "path": "knowledge/packs/xforge-rh-folha/13o-calculo.md",
+      "trustScore": 88,
+      "title": "13o Salario 1a e 2a Parcela"
+    },
+    {
+      "path": "knowledge/packs/xforge-rh-folha/rescisao-clt.md",
+      "trustScore": 91,
+      "title": "Rescisao CLT (sem justa causa, acordo, pedido)"
+    }
+  ],
+  "tools": [
+    "calcular-inss",
+    "calcular-irrf",
+    "calcular-fgts",
+    "calcular-ferias",
+    "calcular-13",
+    "calcular-rescisao"
+  ],
+  "workflows": [
+    "folha-mensal",
+    "ferias-programadas",
+    "13-primeira-parcela",
+    "13-segunda-parcela",
+    "rescisao-completa"
+  ],
+  "schemas": [
+    "folha-v1",
+    "recibo-ferias-v1",
+    "trct-v1"
+  ],
+  "installable": true,
+  "size_kb": 1024
+}

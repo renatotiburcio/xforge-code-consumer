@@ -1,0 +1,17 @@
+{
+    "id":  "xforge-commercial",
+    "name":  "Commercial CRM",
+    "version":  "1.0.0",
+    "description":  "Leads, pipeline, propostas, comissoes",
+    "files":  3,
+    "trustScore":  80,
+    "tags":  [
+                 "erp",
+                 "brazil",
+                 "commercial"
+             ],
+    "dependencies":  [
+
+                     ],
+    "source":  ".xforge/business/commercial/"
+}

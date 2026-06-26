@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /forge - Criar Projeto Completo</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html" class="active">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html" class="active">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /forge - Criar Projeto Completo (v50.6.0)</h1>
+
+<h2>O que e</h2>
+<p><code>/forge new &lt;nome&gt;</code> e' o wizard de bootstrap completo. Cria um projeto XForge do zero com scaffold .kilo/ + .xforge/ + docs/, scaffold da aplicacao (backend + frontend), auth seguro, packages canonicos, padroes de arquitetura, integracoes externas, e CI/CD. Total: 7 passos interativos.</p>
+<p><strong>Auto-detection de patterns e integracoes</strong>: atraves das flags <code>--patterns</code> e <code>--integrations</code>, o wizard detecta quais packages NuGet/npm adicionar, quais classes/arquivos gerar, e quais configuracoes em <code>Program.cs</code>. Se voce nao especifica, o wizard usa defaults seguros baseados no stack.</p>
+<p><strong>Auth padrao: ASP.NET Core Identity</strong> (mais seguro): hash PBKDF2 com salt, lockout apos 5 tentativas, 2FA opcional, confirmacao de email, recuperacao de senha. Para APIs puras, usa JWT com Identity (HS256/RS256).</p>
+<p>Sub-comandos: <code>/forge new &lt;nome&gt;</code>, <code>/forge list-templates</code>, <code>/forge resume</code>, <code>/forge validate-config</code>, <code>/forge upgrade</code>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando vai criar projeto NOVO do zero (backend + opcionalmente frontend)</li>
+<li>Quando quer consistencia entre multiplos projetos do time</li>
+<li>Quando precisa de setup rapido com packages canonicos XForge (Identity, MediatR, AutoMapper, FluentValidation)</li>
+<li>Quando quer LGPD pre-configurado (Identity + consentimento + audit)</li>
+<li>Quando quer DDD + CQRS estruturado (Domain/Application/Infrastructure)</li>
+<li>Quando precisa integracoes externas (Stripe, Hangfire, SendGrid, etc)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>/forge new &lt;nome-projeto&gt; [opcoes]
+
+# Exemplo com todas as opcoes principais
+/forge new MeuProjeto --stack dotnet --template enterprise-v2 --auth identity --patterns ddd cqrs mediator automapper fluentvalidation --integrations stripe hangfire sendgrid --lgpd true --database postgresql --ci github</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th><th>Obrigatorio?</th></tr>
+<tr><td><code>new &lt;nome&gt;</code></td><td>string</td><td>â€”</td><td>Nome do projeto (PascalCase, ex: MeuProjeto)</td><td>Sim</td></tr>
+<tr><td><code>--stack</code></td><td>string</td><td>auto</td><td>dotnet | node | python | fullstack-dotnet-react | fullstack-dotnet-angular | fullstack-dotnet-vue | fullstack-python-react</td><td>Nao</td></tr>
+<tr><td><code>--template</code></td><td>string</td><td>enterprise-v2</td><td>default | enterprise-v2 | startup-minimal | fiscal-br | saas-multi-tenant</td><td>Nao</td></tr>
+<tr><td><code>--auth</code></td><td>string</td><td>identity</td><td><strong>identity</strong> (ASP.NET Core Identity, mais seguro) | jwt (apenas API) | oauth2 | session | none</td><td>Nao</td></tr>
+<tr><td><code>--patterns</code></td><td>array</td><td>[ddd, cqrs, mediator, automapper, fluentvalidation]</td><td>Padroes de arquitetura a incluir. Opcoes: <strong>ddd</strong> (Domain/Application/Infrastructure) | <strong>cqrs</strong> (Command/Query separation) | <strong>mediator</strong> (MediatR) | <strong>automapper</strong> | <strong>fluentvalidation</strong> | <strong>result-pattern</strong> (ErrorOr/Result) | <strong>ddd-aggregates</strong></td><td>Nao</td></tr>
+<tr><td><code>--integrations</code></td><td>array</td><td>[]</td><td>Integracoes externas. Opcoes: <strong>stripe</strong> (pagamentos) | <strong>hangfire</strong> (background jobs) | <strong>sendgrid</strong> (email) | <strong>signalr</strong> (real-time) | <strong>redis</strong> (cache) | <strong>rabbitmq</strong> (message broker) | <strong>aws-s3</strong> (storage)</td><td>Nao</td></tr>
+<tr><td><code>--error-handling</code></td><td>string</td><td>global-middleware</td><td><strong>global-middleware</strong> (ExceptionHandler + ProblemDetails) | custom (você implementa)</td><td>Nao</td></tr>
+<tr><td><code>--lgpd</code></td><td>bool</td><td>false</td><td>Habilita LGPD: Identity consent + retencao 5 anos + audit + DPO config</td><td>Nao</td></tr>
+<tr><td><code>--database</code></td><td>string</td><td>postgresql</td><td>postgresql | mysql | sqlserver | sqlite</td><td>Nao</td></tr>
+<tr><td><code>--ci</code></td><td>string</td><td>github</td><td>github | gitlab | azure | jenkins | none</td><td>Nao</td></tr>
+<tr><td><code>--dry-run</code></td><td>bool</td><td>false</td><td>Mostra plano sem criar arquivos</td><td>Nao</td></tr>
+<tr><td><code>--verbose</code></td><td>bool</td><td>false</td><td>Output detalhado de cada arquivo criado</td><td>Nao</td></tr>
+<tr><td><code>--config</code></td><td>string</td><td>xforge.yaml</td><td>Arquivo de config customizado</td><td>Nao</td></tr>
+</table>
+
+<h2>Auto-detection de patterns e integracoes</h2>
+<p>O wizard <strong>detecta automaticamente</strong> quais packages, classes e configuracoes gerar com base nas flags <code>--patterns</code> e <code>--integrations</code>:</p>
+
+<h3>Tabela de deteccao: --patterns</h3>
+<table>
+<tr><th>Flag</th><th>Pacotes NuGet adicionados</th><th>Arquivos gerados</th><th>Configuracao em Program.cs</th></tr>
+<tr><td><code>--patterns ddd</code></td><td>nenhum extra</td><td><code>src/Domain/</code> + <code>src/Application/</code> + <code>src/Infrastructure/</code></td><td>Sem config (camadas puras)</td></tr>
+<tr><td><code>--patterns cqrs</code></td><td>XForge.MediatR.Extensions</td><td><code>Commands/</code> + <code>Queries/</code> + <code>Handlers/</code></td><td><code>services.AddMediatR(...)</code></td></tr>
+<tr><td><code>--patterns mediator</code></td><td>XForge.MediatR</td><td><code>IRequest&lt;T&gt;</code> + <code>IRequestHandler&lt;T,R&gt;</code> base classes</td><td><code>services.AddMediatR(cfg =&gt; cfg.RegisterServicesFromAssemblies(...))</code></td></tr>
+<tr><td><code>--patterns automapper</code></td><td>AutoMapper, AutoMapper.Extensions.Microsoft.DependencyInjection</td><td><code>MappingProfiles/</code></td><td><code>services.AddAutoMapper(...)</code></td></tr>
+<tr><td><code>--patterns fluentvalidation</code></td><td>FluentValidation.AspNetCore</td><td><code>Validators/</code></td><td><code>services.AddFluentValidation(...)</code> + pipeline <code>.AddValidatorsFromAssembly(...)</code></td></tr>
+<tr><td><code>--patterns result-pattern</code></td><td>ErrorOr (CSharpFunctionalExtensions)</td><td><code>Results/</code> + <code>Errors/</code></td><td>Sem config (pattern idiomático)</td></tr>
+<tr><td><code>--patterns ddd-aggregates</code></td><td>nenhum extra</td><td><code>Aggregates/</code> + <code>ValueObjects/</code> + <code>DomainEvents/</code></td><td>Sem config</td></tr>
+</table>
+
+<h3>Tabela de deteccao: --integrations</h3>
+<table>
+<tr><th>Flag</th><th>Pacotes NuGet adicionados</th><th>Arquivos gerados</th><th>Configuracao em Program.cs</th></tr>
+<tr><td><code>--integrations stripe</code></td><td>Stripe.net</td><td><code>Services/PaymentService.cs</code> + <code>Controllers/WebhookController.cs</code></td><td><code>services.AddScoped&lt;IPaymentService, StripePaymentService&gt;()</code></td></tr>
+<tr><td><code>--integrations hangfire</code></td><td>Hangfire.Core + Hangfire.PostgreSql (ou SqlServer)</td><td><code>Jobs/</code> + <code>Recurring/</code></td><td><code>services.AddHangfire(cfg =&gt; cfg.UsePostgreSqlStorage(conn))</code> + <code>app.UseHangfireDashboard()</code></td></tr>
+<tr><td><code>--integrations sendgrid</code></td><td>SendGrid</td><td><code>Services/EmailService.cs</code></td><td><code>services.AddScoped&lt;IEmailService, SendGridEmailService&gt;()</code></td></tr>
+<tr><td><code>--integrations signalr</code></td><td>Microsoft.AspNetCore.SignalR</td><td><code>Hubs/NotificationHub.cs</code></td><td><code>services.AddSignalR()</code> + <code>app.MapHub&lt;NotificationHub&gt;("/hubs/notifications")</code></td></tr>
+<tr><td><code>--integrations redis</code></td><td>StackExchange.Redis, Microsoft.Extensions.Caching.StackExchangeRedis</td><td>nenhum (uso direto)</td><td><code>services.AddStackExchangeRedisCache(...)</code></td></tr>
+<tr><td><code>--integrations rabbitmq</code></td><td>MassTransit + MassTransit.RabbitMQ</td><td><code>Consumers/</code></td><td><code>services.AddMassTransit(x =&gt; x.UsingRabbitMq(...))</code></td></tr>
+<tr><td><code>--integrations aws-s3</code></td><td>AWSSDK.S3</td><td><code>Services/StorageService.cs</code></td><td><code>services.AddAWSService&lt;IAmazonS3&gt;()</code></td></tr>
+</table>
+
+<h3>Tabela de deteccao: --auth (default: identity)</h3>
+<table>
+<tr><th>Flag</th><th>Pacotes NuGet</th><th>Configuracao em Program.cs</th><th>UI de Login</th></tr>
+<tr><td><code>--auth identity</code> (default)</td><td>Microsoft.AspNetCore.Identity.EntityFrameworkCore</td><td><code>AddIdentity&lt;ApplicationUser, IdentityRole&gt;()</code> + <code>AddEntityFrameworkStores()</code></td><td>Auto-gerada (/Identity/Account/Login)</td></tr>
+<tr><td><code>--auth jwt</code></td><td>Microsoft.AspNetCore.Authentication.JwtBearer</td><td><code>AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(...)</code></td><td>Frontend separado</td></tr>
+<tr><td><code>--auth oauth2</code></td><td>Microsoft.AspNetCore.Authentication.OAuth (ou .Google/.MicrosoftAccount)</td><td>Provider-specific config</td><td>OAuth provider login</td></tr>
+<tr><td><code>--auth session</code></td><td>(built-in cookie auth)</td><td><code>AddSession()</code> + <code>AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)</code></td><td>Custom form login</td></tr>
+<tr><td><code>--auth none</code></td><td>nenhum</td><td>API publica (sem auth)</td><td>nenhum</td></tr>
+</table>
+
+<h2>Exemplos praticos (6 cenarios completos)</h2>
+
+<h3>Cenario 1: ERP enterprise completo (Identity + DDD + CQRS + Stripe + Hangfire)</h3>
+<p><strong>Contexto</strong>: Empresa brasileira precisa de sistema completo com pagamentos online, jobs em background, e arquitetura DDD. Time de 6 devs, LGPD obrigatorio.</p>
+<pre><code>/forge new MeuProjeto --stack dotnet --template enterprise-v2 \
+  --auth identity \
+  --patterns ddd cqrs mediator automapper fluentvalidation result-pattern ddd-aggregates \
+  --integrations stripe hangfire sendgrid signalr \
+  --error-handling global-middleware \
+  --lgpd true --database postgresql --ci github</code></pre>
+<p><strong>Output esperado</strong> (resumo - ver exemplo completo em <a href="wiz-forge-examples.html">wiz-forge-examples.html</a>):</p>
+<ul>
+<li><strong>184 arquivos</strong> criados em ~25 segundos</li>
+<li><strong>Identity</strong>: AddIdentity + AddEntityFrameworkStores + IdentitySeeder (admin inicial)</li>
+<li><strong>DDD</strong>: Domain/Application/Infrastructure com Aggregates + VOs + DomainEvents</li>
+<li><strong>CQRS</strong>: Commands + Queries + Handlers com MediatR + ValidationBehavior</li>
+<li><strong>Stripe</strong>: StripePaymentService + WebhookController</li>
+<li><strong>Hangfire</strong>: ProcessPaymentsJob (recurring daily) + SendWelcomeEmailJob</li>
+<li><strong>SignalR</strong>: NotificationHub com grupos (user-{id})</li>
+<li><strong>Global Error</strong>: ProblemDetails RFC 7807 + custom GlobalExceptionHandler</li>
+</ul>
+<p><strong>Exemplos de codigo completo (Program.cs + DDD + CQRS + Stripe + Hangfire + SignalR + Identity)</strong>: <a href="wiz-forge-examples.html">wiz-forge-examples.html</a> (Cenarios 1-7 com snippets copy-pasteable).</p>
+<h3>Cenario 2: API pura (sem UI) com JWT</h3>
+<p><strong>Contexto</strong>: Backend-only REST API consumido por frontend separado (React/Angular). Sem UI de login, usa JWT.</p>
+<pre><code>/forge new MeuProjeto.Api --stack dotnet --template enterprise-v2   --auth jwt   --patterns cqrs mediator automapper fluentvalidation result-pattern   --integrations stripe hangfire   --database postgresql</code></pre>
+<p><strong>Diferenca do Cenario 1</strong>:</p>
+<ul>
+<li>Identity removido, usa apenas JwtBearer</li>
+<li>Auth via <code>/auth/login</code> endpoint que retorna JWT token</li>
+<li>Refresh tokens em <code>/auth/refresh</code></li>
+<li>Frontends consomem JWT no header Authorization: Bearer</li>
+<li>Sem Razor Pages (Identity UI)</li>
+</ul>
+<p><strong>Edge case</strong>: JWT sem Identity significa gestao de usuarios manual. Use <code>--auth identity --no-ui</code> (identity backend + sem UI razor).</p>
+
+<h3>Cenario 3: Fullstack .NET + React com Identity JWT</h3>
+<p><strong>Contexto</strong>: Backend .NET com API + Identity (apenas backend), frontend React separado que consome JWT.</p>
+<pre><code>/forge new MeuProjeto.Web --stack fullstack-dotnet-react   --auth identity --no-ui   --patterns ddd cqrs mediator automapper fluentvalidation   --integrations stripe sendgrid   --database postgresql   --frontend react</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[forge] Backend (dotnet): mesmo do Cenario 1 (184 arquivos)
+[forge] Frontend (react):
+  [+] frontend/
+    [+] package.json (React 18, TS 5, Vite 5, TanStack Query 5, Zod, Tailwind 3, Axios)
+    [+] vite.config.ts (com proxy para /api -> localhost:5000)
+    [+] src/api/
+      [+] client.ts (axios + JWT interceptor + refresh token logic)
+      [+] auth.ts (login, logout, register, /me)
+      [+] products.ts
+      [+] payments.ts
+    [+] src/pages/
+      [+] Login.tsx (form com email/senha)
+      [+] Dashboard.tsx
+      [+] Products.tsx
+    [+] src/contexts/
+      [+] AuthContext.tsx (JWT storage, refresh logic)
+    [+] src/lib/
+      [+] auth-storage.ts (localStorage com refresh token rotation)
+    [+] tests/
+  [+] docker-compose.yml atualizado (api + frontend + postgres)
+
+Total: 247 arquivos.</code></pre>
+<p><strong>Edge case</strong>: CORS pre-configurado (frontend:5173 -&gt; backend:5000). Em prod, ajustar.</p>
+
+<h3>Cenario 4: Backend .NET + Frontend Angular (misto)</h3>
+<pre><code>/forge new MeuProjeto.Angular --stack fullstack-dotnet-angular   --auth identity --no-ui --patterns ddd cqrs mediator automapper fluentvalidation   --integrations stripe --frontend angular</code></pre>
+<p><strong>Frontend gerado</strong> (Angular 17, standalone components):</p>
+<pre><code>[+] frontend/
+  [+] package.json (Angular 17, RxJS, Angular Material, NgRx)
+  [+] angular.json
+  [+] src/app/
+    [+] core/
+      [+] auth/ (AuthService, AuthGuard, JWT interceptor, refresh token)
+      [+] http/ (HttpClient com base URL)
+    [+] features/
+      [+] auth/ (login, register components)
+      [+] products/ (list, detail components)
+      [+] payments/ (Stripe checkout component)
+    [+] shared/ (components, pipes)
+    [+] app.config.ts
+    [+] app.routes.ts (lazy loading)
+    [+] environments/
+
+Total: 256 arquivos.</code></pre>
+
+<h3>Cenario 5: MicroSaaS minimalista (startup)</h3>
+<pre><code>/forge new MvpMeuProjeto --stack dotnet --template startup-minimal   --auth identity --patterns cqrs mediator   --integrations stripe --database sqlite</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[forge] Template: startup-minimal (LGPD desabilitado por padrao)
+[forge] Database: SQLite (EF Core Sqlite)
+[forge] Apenas API + Application (Infrastructure vazia, App abstrai)
+[forge] Identity incluido (sempre - mesmo minimal precisa de auth)
+[forge] Total: 67 arquivos (vs 184 do enterprise).</code></pre>
+<p><strong>Edge case</strong>: upgrade para enterprise-v2 requer <code>/forge upgrade</code> separado (NAO incluso).</p>
+
+<h3>Cenario 6: Customizado com xforge.yaml (variaveis avancadas)</h3>
+<pre><code># xforge.yaml (pre-feito pela equipe)
+project: MeuProjeto
+stack: dotnet
+template: enterprise-v2
+auth:
+  method: identity
+  password_min_length: 14    # mais restritivo que default
+  require_2fa: true           # LGPD+
+  lockout_attempts: 3
+patterns:
+  - ddd
+  - cqrs
+  - mediator
+  - automapper
+  - fluentvalidation
+  - result-pattern
+integrations:
+  stripe:
+    enabled: true
+    webhook_secret: ${env:STRIPE_WEBHOOK_SECRET}
+  hangfire:
+    enabled: true
+    dashboard_auth: identity
+    recurring_jobs:
+      - ProcessPayments: "0 2 * * *"     # 2 AM daily
+      - SendWelcomeEmails: "*/5 * * * *"  # every 5 min
+error_handling: global-middleware
+lgpd:
+  enabled: true
+  dpo_email: dpo@meuprojeto.com
+  retention_years: 5
+  cookie_consent: true
+database: postgresql
+ci: github
+
+/forge new MeuProjeto --config ./xforge.yaml</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[forge] Carregando ./xforge.yaml
+[forge] Aplicando 18 configuracoes customizadas
+[forge] Sobrescrevendo defaults com valores do YAML
+[forge] Validando schema do YAML...
+  [+] auth.password_min_length: 14
+  [+] auth.require_2fa: true (Identity com 2FA TOTP)
+  [+] hangfire.dashboard_auth: identity (so admins)
+  [+] hangfire.recurring_jobs: 2 jobs automaticos
+  [+] lgpd.cookie_consent: true (Identity consent flow)
+[forge] Total: 184 arquivos + 6 custom configs.</code></pre>
+<p><strong>Edge case</strong>: schema invalido aborta. Use <code>/forge validate-config</code> antes.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Wizard trava em stack detection</h3>
+<p><strong>Causa</strong>: stack nao detectado, wizard espera input infinito.</p>
+<p><strong>Solucao</strong>: use <code>--stack dotnet</code> explicito ou verifique se tem <code>*.csproj</code>/<code>package.json</code>/<code>pyproject.toml</code>.</p>
+
+<h3>Package restore falha</h3>
+<p><strong>Causa</strong>: nuget offline, npm offline, ou package indisponivel.</p>
+<p><strong>Solucao</strong>: <code>dotnet restore</code> manual; verifique se internet esta OK.</p>
+
+<h3>Identity migration falha</h3>
+<p><strong>Causa</strong>: connection string invalida ou Postgres nao acessivel.</p>
+<p><strong>Solucao</strong>: verifique <code>appsettings.json</code> e rode <code>dotnet ef database update</code> manualmente.</p>
+
+<h3>Stripe webhook nao funciona</h3>
+<p><strong>Causa</strong>: webhook secret nao configurado.</p>
+<p><strong>Solucao</strong>: configure <code>STRIPE_WEBHOOK_SECRET</code> em appsettings.Production.json e Stripe Dashboard.</p>
+
+<h3>Hangfire jobs nao rodam</h3>
+<p><strong>Causa</strong>: server Hangfire nao foi iniciado ou DB nao tem schema Hangfire.</p>
+<p><strong>Solucao</strong>: verifique <code>app.UseHangfireServer()</code> em Program.cs. Primeira run cria schema automatico.</p>
+
+<h3>Template nao encontrado</h3>
+<p><strong>Causa</strong>: nome invalido.</p>
+<p><strong>Solucao</strong>: <code>/forge list-templates</code> para ver disponiveis (default, enterprise-v2, startup-minimal, fiscal-br, saas-multi-tenant).</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

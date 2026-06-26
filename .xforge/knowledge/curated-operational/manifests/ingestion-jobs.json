@@ -1,0 +1,100 @@
+{
+  "version": "29.0.0",
+  "jobs": [
+    {
+      "id": "job-nfe-moc-anexo-i",
+      "type": "official-pdf/html",
+      "priority": "critical",
+      "sourceId": "moc-nfe-anexo-i",
+      "targetPack": "fiscal/nfe-nfce",
+      "outputs": [
+        "rules",
+        "cstat",
+        "xml-layout",
+        "validation-groups"
+      ]
+    },
+    {
+      "id": "job-nfe-nt-2025-002",
+      "type": "official-html/pdf",
+      "priority": "critical",
+      "sourceId": "nfe-nt-2025-002-rtc",
+      "targetPack": "fiscal/nfe-nfce",
+      "outputs": [
+        "rtc-fields",
+        "validation-rules",
+        "migration-impact"
+      ]
+    },
+    {
+      "id": "job-nfse-national-docs",
+      "type": "official-web",
+      "priority": "high",
+      "sourceId": "nfse-documentacao-atual",
+      "targetPack": "fiscal/nfse",
+      "outputs": [
+        "apis",
+        "layouts",
+        "rejections",
+        "danfse-rules"
+      ]
+    },
+    {
+      "id": "job-esocial-s13",
+      "type": "official-web/pdf",
+      "priority": "critical",
+      "sourceId": "esocial-layout-s13",
+      "targetPack": "trabalhista/esocial",
+      "outputs": [
+        "events",
+        "tables",
+        "validation-rules",
+        "retrocompatibility"
+      ]
+    },
+    {
+      "id": "job-sped-efd-icms-ipi",
+      "type": "official-pdf/zip",
+      "priority": "critical",
+      "sourceId": "sped-efd-icms-ipi-guias",
+      "targetPack": "sped/efd-icms-ipi",
+      "outputs": [
+        "registers",
+        "validation-rules",
+        "pva-notes"
+      ]
+    },
+    {
+      "id": "job-public-nfe-rejections",
+      "type": "curated-public-web",
+      "priority": "medium",
+      "sourceIds": [
+        "oobj-rejeicao-204",
+        "webmania-rejeicao-539",
+        "bling-rejeicao-204",
+        "totalerp-rejeicao-204"
+      ],
+      "targetPack": "fiscal/nfe-nfce/rejeicoes",
+      "outputs": [
+        "playbooks",
+        "support-cases",
+        "prevention-rules"
+      ]
+    },
+    {
+      "id": "job-public-nfse-rejections",
+      "type": "curated-public-web",
+      "priority": "medium",
+      "sourceIds": [
+        "tecnospeed-nfse-rejeicoes",
+        "enotas-nfse-e400"
+      ],
+      "targetPack": "fiscal/nfse/rejeicoes",
+      "outputs": [
+        "playbooks",
+        "municipal-cases",
+        "validation-rules"
+      ]
+    }
+  ]
+}

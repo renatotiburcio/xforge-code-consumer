@@ -1,0 +1,31 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "XForge Workflow DSL",
+  "type": "object",
+  "required": ["id", "version", "name", "states", "transitions", "entrypoint", "terminalStates"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^W\\d{3}$" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "name": { "type": "string" },
+    "description": { "type": "string" },
+    "states": { "type": "array", "items": { "type": "string" }, "minItems": 2 },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to", "event"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "event": { "type": "string" },
+          "guard": { "type": "string", "description": "Boolean expression over context" }
+        }
+      }
+    },
+    "guards": { "type": "object", "additionalProperties": { "type": "string" } },
+    "agents": { "type": "array", "items": { "type": "string" } },
+    "tools": { "type": "array", "items": { "type": "string" } },
+    "entrypoint": { "type": "string" },
+    "terminalStates": { "type": "array", "items": { "type": "string" } }
+  }
+}

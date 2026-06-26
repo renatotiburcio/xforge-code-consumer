@@ -1,0 +1,117 @@
+{
+  "name": "xforge-code",
+  "displayName": "XForge Code",
+  "description": "XForge powered local AI coding agent",
+  "version": "1.3.0",
+  "publisher": "xforge",
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=18.0.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:.xforge"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "xforge.doctor",
+        "title": "XForge: Run Doctor"
+      },
+      {
+        "command": "xforge.status",
+        "title": "XForge: Show Status"
+      },
+      {
+        "command": "xforge.workflow.list",
+        "title": "XForge: List Workflows"
+      },
+      {
+        "command": "xforge.workflow.validate",
+        "title": "XForge: Validate Workflow"
+      },
+      {
+        "command": "xforge.workflow.run",
+        "title": "XForge: Run Workflow"
+      },
+      {
+        "command": "xforge.knowledge.search",
+        "title": "XForge: Search Knowledge"
+      },
+      {
+        "command": "xforge.daemon.start",
+        "title": "XForge: Start Engine Daemon"
+      },
+      {
+        "command": "xforge.daemon.stop",
+        "title": "XForge: Stop Engine Daemon"
+      },
+      {
+        "command": "xforge.daemon.status",
+        "title": "XForge: Daemon Status + Benchmark"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "xforge-sidebar",
+          "title": "XForge Code",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "xforge-sidebar": [
+        {
+          "id": "xforge-sidebar",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "XForge Code",
+      "properties": {
+        "xforge.daemon.autoStart": {
+          "type": "boolean",
+          "default": true,
+          "description": "Auto-start daemon on activation"
+        },
+        "xforge.daemon.port": {
+          "type": "number",
+          "default": 8765,
+          "description": "Daemon port"
+        },
+        "xforge.output.format": {
+          "type": "string",
+          "enum": ["text", "json", "markdown"],
+          "default": "text",
+          "description": "Output format for command results"
+        }
+      }
+    }
+  },
+  "extensionDependencies": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xforge/engineer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xforge/engineer/issues"
+  },
+  "homepage": "https://github.com/xforge/engineer#readme",
+  "license": "MIT",
+  "keywords": [
+    "xforge",
+    "ai",
+    "knowledge",
+    "autoresearch",
+    "daemon",
+    "mcp"
+  ],
+  "author": {
+    "name": "Renato Tiburcio"
+  }
+}

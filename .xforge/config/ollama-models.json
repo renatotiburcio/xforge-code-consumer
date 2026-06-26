@@ -1,0 +1,161 @@
+{
+  "version": "3.0.0",
+  "description": "Ollama local model inventory for XForge Engineer — Split Architecture optimized for 16GB VRAM / 32GB RAM / Ryzen 7 5700G",
+  "baseUrl": "http://localhost:11434",
+  "hardware": {
+    "gpu": "16GB VRAM",
+    "ram": "32GB DDR4",
+    "cpu": "AMD Ryzen 7 5700G (8C/16T, Zen 3, AVX2/FMA3)",
+    "optimizations": ["AVX2", "FMA3", "march=znver2", "mlock"]
+  },
+  "architecture": {
+    "mode": "split",
+    "description": "Router (small/fast) classifies intent and selects context. Worker (large/precise) executes the task.",
+    "router": {
+      "model": "gemma4-26b-128k:latest",
+      "contextWindow": 32768,
+      "vramRequired": "17GB",
+      "description": "Fast classifier — intent detection, skill routing, knowledge selection",
+      "latency": "5-15s on CPU",
+      "roles": [
+        "Intent classification",
+        "Skill selection",
+        "Knowledge file retrieval",
+        "Complexity scoring (S/M/L/XL)",
+        "Context window budgeting",
+        "Eviction decisions"
+      ],
+      "systemPrompt": "You are a fast intent classifier. Given a user message, output ONLY a JSON object with: intent (string), skill (string or null), knowledge_files (array of paths), complexity (S|M|L|XL), needs_worker (boolean). No explanation."
+    },
+    "worker": {
+      "model": "qwen3-coder-30b-128k:latest",
+      "contextWindow": 131072,
+      "vramRequired": "17GB",
+      "gpuOffloadPercentage": 35,
+      "description": "Full-capability model for code generation, reasoning, complex tasks",
+      "latency": "15-60s depending on complexity",
+      "roles": [
+        "Code generation and refactoring",
+        "Complex reasoning and architecture",
+        "Multi-file operations",
+        "Security analysis",
+        "Documentation generation"
+      ]
+    },
+    "fallback": {
+      "model": "qwen3.6-27b-128k:latest",
+      "contextWindow": 131072,
+      "vramRequired": "16GB",
+      "description": "Medium model when worker is overloaded or for medium-complexity tasks"
+    }
+  },
+  "models": {
+    "gemma4-26b-128k:latest": {
+      "contextWindow": 32768,
+      "description": "Fast classifier model",
+      "useCases": ["intent-classification", "routing", "quick-answers"],
+      "vramRequired": "17GB",
+      "speed": "fast",
+      "tier": "router"
+    },
+    "qwen3-coder-30b-128k:latest": {
+      "contextWindow": 131072,
+      "description": "Full-capability model for complex reasoning and code",
+      "useCases": ["code-generation", "architecture", "security-audit", "complex-refactoring", "multi-file"],
+      "vramRequired": "17GB",
+      "gpuOffloadPercentage": 35,
+      "speed": "medium",
+      "tier": "worker"
+    },
+    "qwen3.6-27b-128k:latest": {
+      "contextWindow": 131072,
+      "description": "Medium-capability model for balanced tasks",
+      "useCases": ["documentation", "analysis", "medium-refactoring"],
+      "vramRequired": "16GB",
+      "speed": "fast",
+      "tier": "fallback"
+    },
+    "nomic-embed-text": {
+      "contextWindow": 8192,
+      "description": "Embedding model for RAG and semantic search",
+      "useCases": ["rag-embeddings", "semantic-search", "memory-indexing"],
+      "vramRequired": "0.3GB",
+      "speed": "fast",
+      "tier": "embedding"
+    }
+  },
+  "routing": {
+    "default": "gemma4-26b-128k:latest",
+    "embedding": "nomic-embed-text:latest",
+    "worker": "qwen3-coder-30b-128k:latest",
+    "fallback": "qwen3.6-27b-128k:latest",
+    "offline": "gemma4-26b-128k:latest"
+  },
+  "contextBudget": {
+    "default": 32768,
+    "router": 8192,
+    "worker": 32768,
+    "max": 131072,
+    "condenseAt": 28000,
+    "eviction": {
+      "enabled": true,
+      "rules": [
+        {
+          "trigger": "context_used > 80%",
+          "action": "summarize_history",
+          "target": "messages older than 3 turns",
+          "keepLast": 3,
+          "maxSummaryTokens": 500
+        },
+        {
+          "trigger": "context_used > 90%",
+          "action": "evict_knowledge",
+          "target": "all loaded knowledge files except actively referenced",
+          "keepResumo": true
+        },
+        {
+          "trigger": "context_used > 95%",
+          "action": "truncate_tool_output",
+          "target": "tool outputs > 500 lines",
+          "maxLines": 500,
+          "addNote": "Output truncated. Use Read with offset for full content."
+        }
+      ]
+    }
+  },
+  "ollamaConfig": {
+    "numCtx": 32768,
+    "numBatch": 2048,
+    "numThread": 8,
+    "numGPU": 99,
+    "mlock": true,
+    "repeatPenalty": 1.1,
+    "temperature": 0.7,
+    "topP": 0.9,
+    "topK": 40,
+    "notes": [
+      "Models installed: gemma4-26b (16.8GB), qwen3-coder-30b (17.3GB), qwen3.6-27b (16.2GB), nomic-embed-text (0.3GB)",
+      "Only 1 model can fit fully in GPU at a time — CPU offload for others",
+      "numThread=8 matches Ryzen 7 5700G cores (use physical, not logical)",
+      "numGPU=99 offloads maximum layers to 16GB VRAM",
+      "mlock prevents swapping — critical with 32GB RAM"
+    ]
+  },
+  "setup": {
+    "installOllama": "winget install Ollama.Ollama",
+    "pullModels": [
+      "ollama pull gemma4:26b",
+      "ollama pull qwen3-coder:30b",
+      "ollama pull qwen3.6:27b",
+      "ollama pull nomic-embed-text"
+    ],
+    "verify": "ollama list",
+    "systemd": {
+      "OLLAMA_NUM_PARALLEL": "2",
+      "OLLAMA_MAX_LOADED_MODELS": "2",
+      "OLLAMA_KEEP_ALIVE": "24h",
+      "OLLAMA_FLASH_ATTENTION": "1",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0"
+    }
+  }
+}

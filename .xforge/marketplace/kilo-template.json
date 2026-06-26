@@ -1,0 +1,54 @@
+{
+  "name": "xforge-enterprise",
+  "displayName": "XForge Enterprise Development OS",
+  "version": "3.5.0",
+  "description": "Enterprise-grade development operating system with 36 agents, 132 skills, RAG knowledge base, CI/CD, and multi-provider AI routing.",
+  "author": "XForge Team",
+  "license": "MIT",
+  "repository": "https://github.com/xforge-development/xforge-template",
+  "keywords": [
+    "enterprise",
+    "development",
+    "agents",
+    "skills",
+    "rag",
+    "ci-cd",
+    "multi-provider",
+    "portugues"
+  ],
+  "category": "development",
+  "tags": {
+    "agents": 36,
+    "skills": 132,
+    "commands": 194,
+    "workflows": 163
+  },
+  "features": [
+    "36 agents with YAML frontmatter (primary + subagent)",
+    "132 skills in Agent Skills format (SKILL.md)",
+    "194 commands with Portuguese interface",
+    "RAG knowledge base (786 docs, 1859 chunks)",
+    "Multi-provider AI routing (OpenRouter, OpenAI, Anthropic, Google, xAI)",
+    "Doctor validation script (0 errors, 0 warnings)",
+    "CI/CD GitHub workflow",
+    "Git hooks (pre-commit, pre-push)",
+    "Privacy verification scanner",
+    "MCP server configs (PostgreSQL, Redis, RabbitMQ)",
+    "Web search command (/buscar)",
+    "Template documentation (como usar, como extender, arquitetura)"
+  ],
+  "requirements": {
+    "kilo": ">=1.0.0",
+    "python": ">=3.10",
+    "powershell": ">=5.1"
+  },
+  "screenshots": [],
+  "installation": {
+    "command": "powershell -File .xforge/scripts/init-template.ps1",
+    "docs": ".xforge/docs/COMO-USAR.md"
+  },
+  "validation": {
+    "command": "powershell -File .kilo/automation/scripts/doctor.ps1",
+    "expectedOutput": "Errors  : 0\nWarnings: 0"
+  }
+}

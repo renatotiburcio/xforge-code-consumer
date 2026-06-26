@@ -1,0 +1,106 @@
+{
+  "version": "45.0.0",
+  "domains": {
+    "erp": [
+      "Compras",
+      "Vendas",
+      "Estoque",
+      "Produção",
+      "Serviços",
+      "CRM",
+      "Financeiro",
+      "Faturamento",
+      "Contratos",
+      "Patrimônio",
+      "Projetos",
+      "Workflow",
+      "Atendimento"
+    ],
+    "commercial": [
+      "CRM",
+      "Leads",
+      "Pipeline",
+      "Funil",
+      "Oportunidades",
+      "Propostas",
+      "Orçamentos",
+      "Pedidos",
+      "Comissões",
+      "Metas",
+      "Indicadores",
+      "Pós-venda",
+      "Sucesso do cliente"
+    ],
+    "finance": [
+      "Contas a pagar",
+      "Contas a receber",
+      "Fluxo de caixa",
+      "Conciliação",
+      "PIX",
+      "Boletos",
+      "Cartão",
+      "Open Finance",
+      "Tesouraria",
+      "Orçamento",
+      "Indicadores"
+    ],
+    "accounting": [
+      "Plano de contas",
+      "Lançamentos",
+      "ECD",
+      "ECF",
+      "Balanço",
+      "DRE",
+      "DLPA",
+      "DMPL",
+      "Notas explicativas",
+      "Conciliação",
+      "Auditoria"
+    ],
+    "fiscal": [
+      "NF-e",
+      "NFC-e",
+      "NFS-e",
+      "CT-e",
+      "MDF-e",
+      "SPED Fiscal",
+      "SPED Contribuições",
+      "EFD-Reinf",
+      "eSocial",
+      "DCTFWeb",
+      "IBS",
+      "CBS",
+      "Reforma Tributária"
+    ],
+    "hr": [
+      "Folha",
+      "Ponto",
+      "Férias",
+      "Rescisão",
+      "Benefícios",
+      "Treinamentos",
+      "Avaliações",
+      "Cargos",
+      "Salários"
+    ],
+    "agro": [
+      "LCDPR",
+      "Custos",
+      "Safras",
+      "Talhões",
+      "Insumos",
+      "Máquinas",
+      "Animais"
+    ],
+    "investments": [
+      "FIIs",
+      "Ações",
+      "Fundos",
+      "Renda Fixa",
+      "Carteiras",
+      "Dividendos",
+      "Valuation",
+      "Open Finance"
+    ]
+  }
+}

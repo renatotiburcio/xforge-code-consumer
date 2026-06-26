@@ -1,0 +1,70 @@
+{
+  "id": "xforge-seguranca",
+  "name": "xforge-seguranca",
+  "title": "Seguranca - LGPD, OWASP, LGPD, Crypto, Audit Trail",
+  "version": "1.0.0",
+  "domain": "seguranca",
+  "category": "compliance-security",
+  "description": "Suite completa de seguranca: implementacao LGPD (DPIA, direitos titular, consentimento, breach notification), OWASP Top 10 mitigations, criptografia AES-256/TLS 1.3, audit trail append-only, MFA, RBAC+ABAC, secret management com vault.",
+  "author": "XForge",
+  "license": "MIT",
+  "trustScore": 92,
+  "tags": [
+    "seguranca",
+    "lgpd",
+    "owasp",
+    "criptografia",
+    "audit-trail",
+    "mfa",
+    "rbac",
+    "vault",
+    "compliance"
+  ],
+  "dependencies": [
+    "xforge-core"
+  ],
+  "knowledgeEntries": [
+    {
+      "path": "knowledge/packs/xforge-seguranca/lgpd-implementacao.md",
+      "trustScore": 92,
+      "title": "LGPD Implementacao Completa"
+    },
+    {
+      "path": "knowledge/packs/xforge-seguranca/owasp-top-10-mitigacoes.md",
+      "trustScore": 90,
+      "title": "OWASP Top 10 Mitigacoes"
+    },
+    {
+      "path": "knowledge/packs/xforge-seguranca/criptografia-padroes.md",
+      "trustScore": 89,
+      "title": "Criptografia AES-256 + TLS 1.3"
+    },
+    {
+      "path": "knowledge/packs/xforge-seguranca/audit-trail-append-only.md",
+      "trustScore": 91,
+      "title": "Audit Trail Append-Only"
+    },
+    {
+      "path": "knowledge/packs/xforge-seguranca/mfa-implementacao.md",
+      "trustScore": 88,
+      "title": "MFA (TOTP, FIDO2, SMS)"
+    }
+  ],
+  "tools": [
+    "audit-log",
+    "secret-rotate",
+    "consent-manage",
+    "data-export"
+  ],
+  "workflows": [
+    "data-breach-response",
+    "lgpd-dpia-review",
+    "secret-rotation-quarterly"
+  ],
+  "schemas": [
+    "audit-event-v1",
+    "consent-record-v1"
+  ],
+  "installable": true,
+  "size_kb": 678
+}

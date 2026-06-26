@@ -1,0 +1,48 @@
+{
+  "id": "xforge-blazor",
+  "name": "xforge-blazor",
+  "displayName": "Blazor Enterprise (Server, WASM, Hybrid)",
+  "version": "1.0.0",
+  "trustScore": 92,
+  "category": "frontend",
+  "description": "Padroes Blazor para ERP enterprise: Server vs WASM vs Hybrid, component architecture, state management, lifecycle, rendering, performance, Blazor .NET 10.",
+  "tags": [
+    "blazor",
+    "blazor-server",
+    "blazor-wasm",
+    "blazor-hybrid",
+    "component",
+    "state-management"
+  ],
+  "domain": "frontend",
+  "knowledgeEntries": [
+    {
+      "path": ".xforge/knowledge/blazor/hosting-models.md",
+      "summary": "Server (SignalR), WASM (browser), Hybrid (.NET MAUI), MAUI Blazor Hybrid - quando usar cada"
+    },
+    {
+      "path": ".xforge/knowledge/blazor/component-architecture.md",
+      "summary": "Component lifecycle (OnInitialized, OnParametersSet, OnAfterRender), razor syntax, code-behind"
+    },
+    {
+      "path": ".xforge/knowledge/blazor/state-management.md",
+      "summary": "Cascading parameters, CascadingValue, Fluxor, MudBlazor state, scoped services, browser storage"
+    },
+    {
+      "path": ".xforge/knowledge/blazor/forms-validation.md",
+      "summary": "EditForm, DataAnnotationsValidator, custom validator, EditContext, ValidationMessageStore"
+    },
+    {
+      "path": ".xforge/knowledge/blazor/performance.md",
+      "summary": "Virtualizacao, lazy load, prerender, JS interop, AOT, render mode, shouldRender"
+    }
+  ],
+  "source": "internal-engineering",
+  "author": "XForge Engineer",
+  "date": "2026-06-14",
+  "size": "5 knowledge files",
+  "languages": [
+    "pt-BR",
+    "en-US"
+  ]
+}

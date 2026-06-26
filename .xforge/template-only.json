@@ -1,0 +1,223 @@
+﻿{
+    "$schema":  "https://app.kilo.ai/config.json#/template-only",
+    "version":  "1.0.0",
+    "generatedAt":  "2026-06-21",
+    "purpose":  "Manifesto declarativo separando paths template-only (usados APENAS no desenvolvimento do template XForge) de paths user-facing (parte do esqueleto operacional que o usuario final precisa).",
+    "specification":  "DR-0180 Fase 0",
+    "templateOnly":  {
+                         "description":  "Paths que existem SOMENTE para o time que desenvolve o template XForge. Devem ser EXCLUIDOS quando o usuario clonar o repo para usar como ponto de partida no projeto dele.",
+                         "paths":  [
+                                       ".git",
+                                       ".xforge/decisions/",
+                                       ".xforge/audit/",
+                                       ".xforge/sessions/",
+                                       ".xforge/feedback/",
+                                       ".xforge/learning/",
+                                       ".xforge/backlog/",
+                                       ".xforge/roadmap/",
+                                       ".xforge/sprints/",
+                                       ".xforge/quality-gates/",
+                                       ".xforge/memory/learning.jsonl",
+                                       ".xforge/memory/sessions/",
+                                       ".xforge/memory/known-errors.md",
+                                       ".xforge/memory/known-decisions.md",
+                                       ".xforge/memory/known-issues.md",
+                                       "docs/decisions/",
+                                       "docs/manual/",
+                                       "CHANGELOG.md",
+                                       "CLAUDE.md",
+                                       "STATUS.md",
+                                       "ARCHITECTURE.md"
+                                   ],
+                         "patterns":  [
+                                          "*.audit.log",
+                                          "*.dev-session.*",
+                                          "*.internal.*"
+                                      ],
+                         "rationale":  "Esses paths contem decisoes internas (DRs), audit trails, sessoes de desenvolvimento, backlog/roadmap/sprints do time, e documentacao que descreve o desenvolvimento do template - nao o uso dele. Vazaria ruido desnecessario para o usuario final."
+                     },
+    "userFacing":  {
+                       "description":  "Paths que fazem parte do esqueleto operacional. O usuario que clonar o template PRECISA desses paths (e apenas desses) para comeÃ§ar a trabalhar.",
+                       "paths":  [
+                                     ".kilo/",
+                                     ".xforge/scripts/purify.ps1",
+                                     ".xforge/scripts/init-consumer.ps1",
+                                     ".xforge/scripts/reset-memory.ps1",
+                                     ".xforge/scripts/diff-consumer.ps1",
+                                     ".xforge/scripts/lib/",
+                                     ".xforge/scripts/tests/",
+                                     ".xforge/memory/index.json",
+                                     ".xforge/memory/project-preferences.md",
+                                     ".xforge/memory/current-context.md",
+                                     ".xforge/project-dna/PROJECT-DNA.md",
+                                     ".xforge/knowledge/INDEX.json",
+                                     ".xforge/decisions/DR-0180-*.md",
+                                     ".xforge/decisions/DR-0001-*.md",
+                                     ".xforge/decisions/DR-0002-*.md",
+                                     ".xforge/decisions/DR-0003-*.md",
+                                     ".xforge/decisions/DR-0004-*.md",
+                                     ".xforge/decisions/DR-0005-*.md",
+                                     ".xforge/decisions/DR-0006-*.md",
+                                     "kilo.jsonc",
+                                     "AGENTS.md",
+                                     "README.md"
+                                 ],
+                       "rationale":  "Esses paths dao ao usuario o minimo necessario: skills/agents/commands operacionais, scripts de manutencao (purify/init/reset/diff), manifesto template-only, knowledge INDEX com applicabilityScope, decisoes canonicas que regem o template, e o esqueleto de configuracao (.kilo + kilo.jsonc + AGENTS.md + README).",
+                       "note":  "O .kilo/ inteiro e user-facing (operacional, substitui vel). Apenas as DRs canonicas (0001-0006 + 0180) vao junto, o resto das DRs internas e template-only."
+                   },
+    "scripts":  {
+                    "purify":  {
+                                   "path":  ".xforge/scripts/purify.ps1",
+                                   "purpose":  "Detecta stack do projeto ativo, reescreve project-preferences.md e PROJECT-DNA.md, dedupa learning.jsonl. Cria backup. Suporta -WhatIf e -ProjectRoot.",
+                                   "phase":  "1"
+                               },
+                    "init-consumer":  {
+                                          "path":  ".xforge/scripts/init-consumer.ps1",
+                                          "purpose":  "xforge init --consumer. Copia apenas paths userFacing para target dir. Reescreve contexto com stack detectado do target. Cria .xforge/template-only.json no destino.",
+                                          "phase":  "0"
+                                      },
+                    "reset-memory":  {
+                                         "path":  ".xforge/scripts/reset-memory.ps1",
+                                         "purpose":  "xforge reset memory. Aplica manifest em projeto ja clonado: remove template-only paths, purifica memory, cria backup. Suporta -WhatIf.",
+                                         "phase":  "0"
+                                     },
+                    "diff-consumer":  {
+                                          "path":  ".xforge/scripts/diff-consumer.ps1",
+                                          "purpose":  "xforge diff consumer. Compara projeto atual com manifest, mostra o que deveria ter sido removido mas nao foi. Exit code 0 = clean, 1 = dirty.",
+                                          "phase":  "0"
+                                      }
+                },
+    "stacks":  {
+                   "detectionOrder":  [
+                                          {
+                                              "signal":  "*.csproj",
+                                              "stack":  "dotnet"
+                                          },
+                                          {
+                                              "signal":  "package.json",
+                                              "stack":  "node"
+                                          },
+                                          {
+                                              "signal":  "requirements.txt",
+                                              "stack":  "python"
+                                          },
+                                          {
+                                              "signal":  "pyproject.toml",
+                                              "stack":  "python"
+                                          },
+                                          {
+                                              "signal":  "go.mod",
+                                              "stack":  "go"
+                                          },
+                                          {
+                                              "signal":  "Cargo.toml",
+                                              "stack":  "rust"
+                                          },
+                                          {
+                                              "signal":  "angular.json",
+                                              "stack":  "angular"
+                                          },
+                                          {
+                                              "signal":  "next.config.js",
+                                              "stack":  "next"
+                                          },
+                                          {
+                                              "signal":  "next.config.ts",
+                                              "stack":  "next"
+                                          },
+                                          {
+                                              "signal":  "pom.xml",
+                                              "stack":  "java"
+                                          },
+                                          {
+                                              "signal":  "build.gradle",
+                                              "stack":  "java"
+                                          },
+                                          {
+                                              "signal":  "Gemfile",
+                                              "stack":  "ruby"
+                                          },
+                                          {
+                                              "signal":  "composer.json",
+                                              "stack":  "php"
+                                          },
+                                          {
+                                              "signal":  "mix.exs",
+                                              "stack":  "elixir"
+                                          },
+                                          {
+                                              "signal":  "*.html",
+                                              "stack":  "html"
+                                          }
+                                      ],
+                   "skipDirectories":  [
+                                           "node_modules",
+                                           "bin",
+                                           "obj",
+                                           "dist",
+                                           "build",
+                                           ".next",
+                                           ".venv",
+                                           "venv",
+                                           "__pycache__",
+                                           ".git"
+                                       ]
+               },
+    "applicabilityScope":  {
+                               "description":  "Cada knowledge entry em .xforge/knowledge/INDEX.json tem um campo applicabilityScope que define para quais stacks ela se aplica. Router filtra entries incompativeis com o projeto ativo.",
+                               "default":  [
+                                               "*"
+                                           ],
+                               "values":  {
+                                              "*":  "Aplica a qualquer stack",
+                                              "dotnet":  ".NET (C#, F#, VB, Blazor, EF Core, XForge.MediatR, AutoMapper)",
+                                              "python":  "Python (FastAPI, Django, Flask, Pydantic, pytest, ruff)",
+                                              "node":  "Node.js (Express, Fastify, NestJS, Hono, Koa, Prisma, Drizzle)",
+                                              "react":  "React (Vite, CRA, Next, Remix, TanStack Query)",
+                                              "angular":  "Angular (CLI, standalone, signals)",
+                                              "vue":  "Vue 3 (Vite, Nuxt, Pinia, Vue Router)",
+                                              "svelte":  "Svelte/SvelteKit",
+                                              "go":  "Go (Gin, Echo, Fiber, chi, sqlc)",
+                                              "rust":  "Rust (Actix, Axum, Rocket, sqlx)",
+                                              "java":  "Java/Kotlin (Spring Boot, Quarkus, Micronaut)",
+                                              "fiscal":  "Dominio fiscal brasileiro (NFe, NFC-e, NFS-e, SPED, ICMS, PIS/COFINS)",
+                                              "contabil":  "Dominio contabil (plano de contas, ECD, ECF, DRE)",
+                                              "trabalhista":  "Dominio trabalhista (CLT, eSocial, folha, FGTS, INSS)",
+                                              "rh":  "Dominio RH (beneficios, afastamentos, rescisao)",
+                                              "lgpd":  "LGPD, GDPR, privacy, data protection"
+                                          }
+                           },
+    "modes":  {
+                  "template":  {
+                                   "git":  "Mantem remote origin para push",
+                                   "description":  "Template Maintenance Mode — para evoluir o template XForge",
+                                   "usage":  "cd XForge-Development-New \u0026\u0026 git pull \u0026\u0026 git push"
+                               },
+                  "consumer":  {
+                                   "git":  "init-project.ps1 remove .git e cria novo repo",
+                                   "description":  "Consumer Mode — para criar projetos baseados no template",
+                                   "usage":  ".xforge/scripts/init-project.ps1 -TargetDir ../meu-projeto -Stack dotnet"
+                               }
+              },
+    "initProject":  {
+                        "script":  ".xforge/scripts/init-project.ps1",
+                        "description":  "Cria projeto consumidor completo, separando do template (DR-0211)",
+                        "flags":  {
+                                      "WhatIf":  "Mostra o que seria feito sem alterar nada",
+                                      "SkipPurify":  "Nao roda purify.ps1",
+                                      "Force":  "Sobrescreve target dir se existir",
+                                      "Remote":  "URL do remote do projeto (opcional)",
+                                      "SkipGit":  "Nao faz operacoes git"
+                                  },
+                        "steps":  [
+                                      "Validar",
+                                      "Backup",
+                                      "Copiar user-facing",
+                                      "Copiar manifesto",
+                                      "Remover template-only",
+                                      "Detectar stack",
+                                      "Git init + commit",
+                                      "Atualizar .gitignore"
+                                  ]
+                    }
+}

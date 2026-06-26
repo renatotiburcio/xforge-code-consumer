@@ -1,0 +1,18 @@
+﻿id: W013
+version: 1.0.0
+name: security-audit
+description: OWASP and LGPD audit
+states: [scheduled, scanning, analyzing, reporting, remediating, verifying, done, failed]
+transitions:
+  - {from: scheduled, to: scanning, event: started}
+  - {from: scanning, to: analyzing, event: scan_complete}
+  - {from: analyzing, to: reporting, event: findings_sorted}
+  - {from: reporting, to: remediating, event: report_published}
+  - {from: remediating, to: verifying, event: fixes_applied}
+  - {from: verifying, to: done, event: no_critical_findings}
+  - {from: verifying, to: remediating, event: critical_remaining}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [incident-response-security-expert, continuous-security-architect]
+tools: [security_scan, dependency_check, secret_scan]
+entrypoint: scheduled
+terminalStates: [done, failed]

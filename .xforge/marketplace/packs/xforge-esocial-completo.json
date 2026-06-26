@@ -1,0 +1,62 @@
+{
+  "id": "xforge-esocial-completo",
+  "name": "xforge-esocial-completo",
+  "title": "eSocial Completo - Eventos S-1000 a S-3000",
+  "version": "1.0.0",
+  "domain": "trabalhista",
+  "category": "obrigacao-acessoria",
+  "description": "Cobertura completa do eSocial: eventos iniciais (S-1000),Tabelas (S-1005, S-1010, S-1020), Trabalhadores (S-2190 a S-3000), Folha (S-1200 a S-1210), SST (S-2210 a S-2230), fechamentos e retificacoes.",
+  "author": "XForge",
+  "license": "MIT",
+  "trustScore": 89,
+  "tags": [
+    "esocial",
+    "trabalhista",
+    "sped",
+    "folha",
+    "sst",
+    "brasil",
+    "gov"
+  ],
+  "dependencies": [
+    "xforge-core",
+    "xforge-rh"
+  ],
+  "knowledgeEntries": [
+    {
+      "path": "knowledge/packs/xforge-esocial-completo/eventos-iniciais.md",
+      "trustScore": 90,
+      "title": "Eventos Iniciais S-1000"
+    },
+    {
+      "path": "knowledge/packs/xforge-esocial-completo/eventos-folha.md",
+      "trustScore": 92,
+      "title": "Eventos de Folha S-1200/1202/1210"
+    },
+    {
+      "path": "knowledge/packs/xforge-esocial-completo/eventos-sst.md",
+      "trustScore": 88,
+      "title": "Eventos SST S-2210/2220/2230"
+    },
+    {
+      "path": "knowledge/packs/xforge-esocial-completo/retificacao.md",
+      "trustScore": 87,
+      "title": "Retificacao de Eventos"
+    }
+  ],
+  "tools": [
+    "esocial-assinar",
+    "esocial-enviar",
+    "esocial-consultar"
+  ],
+  "workflows": [
+    "esocial-fechamento-mensal",
+    "esocial-retificar",
+    "esocial-consulta-recibo"
+  ],
+  "schemas": [
+    "esocial-leiaute-2.5"
+  ],
+  "installable": true,
+  "size_kb": 412
+}

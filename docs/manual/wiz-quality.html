@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /quality - Auditar Qualidade - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html" class="active">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html">/incident</a></li><li><a href="wiz-quality.html" class="active">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /quality - Auditar Qualidade</h1>
+
+<h2>O que e</h2>
+<p><strong>/quality</strong> roda quality gates automaticamente: build verde, test coverage, SOLID violations, code smells, tech debt score. Sugere refactorings priorizados. Gera relatorio em human-readable, JSON, ou JUnit para CI.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando quer auditar qualidade do codigo antes de merge</li><li>Quando precisa de relatorio para stakeholders</li><li>Quando quer priorizar refactorings</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>/quality --scope tests --severity low --format human</code></pre>
+<p>Para invocar: abra o XForge Code CLI e digite o comando. O wizard guia via Q&A interativo.</p>
+
+<h2>Parametros</h2>
+<table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th><th>Obrigatorio?</th></tr>
+<tr><td><code>--scope</code></td><td>string</td><td>all</td><td>tests, coverage, solid, debt, all</td><td>Nao</td></tr>
+<tr><td><code>--severity</code></td><td>string</td><td>medium</td><td>low, medium, high, critical</td><td>Nao</td></tr>
+<tr><td><code>--format</code></td><td>string</td><td>human</td><td>human, json, junit, html</td><td>Nao</td></tr>
+<tr><td><code>--output</code></td><td>string</td><td>.xforge/reports/</td><td>Diretorio de saida</td><td>Nao</td></tr>
+<tr><td><code>--fix</code></td><td>bool</td><td>false</td><td>Aplicar auto-fix quando possivel</td><td>Nao</td></tr>
+<tr><td><code>--baseline</code></td><td>string</td><td>last-run</td><td>Comparar com execucao anterior</td><td>Nao</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Auditoria pre-merge (basica)</h3>
+<p><strong>Contexto</strong>: Vai fazer PR e quer checar qualidade.</p>
+<pre><code>/quality --scope tests --severity low --format human</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[quality] 142 tests. 138 OK. 4 skipped. Coverage 87% (target 85%).
+[quality] Build: 0 errors, 2 warnings.
+[quality] Resultado: OK to merge.</code></pre>
+<p><strong>Edge case</strong>: Coverage < 85% bloqueia merge automatico.</p>
+
+<h3>Cenario 2: Auditoria SOLID completa</h3>
+<p><strong>Contexto</strong>: Codigo com suspects de violacao SOLID. Quer relatorio detalhado.</p>
+<pre><code>/quality --scope solid --format json --output ./solid-report.json</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[quality] 23 SOLID violations detectadas:
+  SRP (8): OrderService (4 responsabilidades), CustomerService (3), ...
+  OCP (7): Precisa de interface para extensao em 7 classes
+  LSP (4): Subclasses quebram contrato em 4 hierarquias
+  ISP (3): Interfaces muito grandes em 3 arquivos
+  DIP (1): Dependencia direta de implementacao em 1 classe
+
+[quality] Top priority: OrderService.cs (4 violations, 230 linhas)
+[quality] Relatorio: ./solid-report.json</code></pre>
+<p><strong>Edge case</strong>: Violacoes DIP sao as mais problematicas (acoplamento).</p>
+
+<h3>Cenario 3: Auditoria completa com baseline</h3>
+<p><strong>Contexto</strong>: Quer comparar com ultima execucao (melhorou ou piorou?).</p>
+<pre><code>/quality --scope all --baseline last-run --format html</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[quality] 47 checks. Comparando com baseline (2026-06-20):
+  -2 SOLID violations (melhorou!)
+  +5% coverage (melhorou!)
+  +3 tests (melhorou!)
+  -1 warning (melhorou!)
+  +0 critical (mesmo)
+
+[quality] Score: 87/100 (vs 79/100 baseline). +8 pontos.
+[quality] Relatorio: ./quality-report.html</code></pre>
+<p><strong>Edge case</strong>: Baseline fica em .xforge/reports/quality-baseline.json.</p>
+
+
+
+<h2>Troubleshooting</h2>
+
+
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

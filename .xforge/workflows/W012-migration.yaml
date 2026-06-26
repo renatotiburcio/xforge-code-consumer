@@ -1,0 +1,18 @@
+﻿id: W012
+version: 1.0.0
+name: migration
+description: Migrate legacy system
+states: [assessed, planned, dual_running, switching, cutover, validated, done, failed, rolled_back]
+transitions:
+  - {from: assessed, to: planned, event: inventory_complete}
+  - {from: planned, to: dual_running, event: plan_approved}
+  - {from: dual_running, to: switching, event: parity_verified}
+  - {from: switching, to: cutover, event: switch_started}
+  - {from: cutover, to: validated, event: cutover_complete}
+  - {from: validated, to: done, event: validation_passed, guard: zero_data_loss}
+  - {from: done, to: rolled_back, event: post_migration_issue}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [migration-engine-expert, specialist-reverse-engineering]
+tools: [read_file, find_symbol, dependency_analysis, validate, backup]
+entrypoint: assessed
+terminalStates: [done, failed, rolled_back]

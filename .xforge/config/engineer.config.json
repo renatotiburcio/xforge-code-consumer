@@ -1,0 +1,53 @@
+{
+  "name": "xforge-enterprise-development-os",
+  "version": "11.0.0-split-arch",
+  "description": "XForge Enterprise Development OS — Split Architecture (Router+Worker), optimized for 16GB VRAM / 32GB RAM / Ryzen 7 5700G",
+  "kiloCompatibility": {
+    "kiloJsonc": "strict; only Kilo-recognized keys",
+    "rules": "loaded through kilo.jsonc instructions array",
+    "agentsMd": "AGENTS.md at project root",
+    "skills": ".kilo/skills/<skill>/SKILL.md",
+    "commands": ".kilo/commands/<command>.md",
+    "customMetadata": "stored outside kilo.jsonc"
+  },
+  "paths": {
+    "agents": ".kilo/agents",
+    "commands": ".kilo/commands",
+    "rules": ".kilo/rules",
+    "skills": ".kilo/skills",
+    "memory": ".xforge/memory",
+    "knowledge": ".xforge/knowledge",
+    "runtime": ".xforge/engineer/runtime",
+    "sdd": ".xforge/engineer/sdd",
+    "harness": ".xforge/engineer/harness",
+    "rag": ".xforge/rag",
+    "projectDna": ".xforge/project-dna",
+    "decisions": ".xforge/decisions"
+  },
+  "engineer": {
+    "serverUrl": "http://localhost:8080",
+    "githubIsSourceOfTruth": true,
+    "serverIsIntelligenceLayer": true,
+    "offlineFirst": true,
+    "memoryAutoSave": true,
+    "minimumCoverage": 85,
+    "buildMustBeClean": true,
+    "warningsMustBeFixed": true,
+    "stateMachineEnabled": true,
+    "eventBusEnabled": true,
+    "policyEngineEnabled": true,
+    "auditTrailEnabled": true,
+    "knowledgeTrustEnabled": true,
+    "memoryShardingEnabled": true,
+    "searchEngineEnabled": true
+  },
+  "thinkingModes": [
+    "FAST",
+    "CHEAP",
+    "SAFE",
+    "DEEP",
+    "ENTERPRISE",
+    "OFFLINE",
+    "RESEARCH"
+  ]
+}

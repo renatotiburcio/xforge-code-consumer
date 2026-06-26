@@ -1,0 +1,73 @@
+[
+  {
+    "id": "esocial-codcateg-invalido-ret",
+    "domain": "trabalhista.esocial",
+    "documentType": "eSocial S-1.3",
+    "code": "codCateg",
+    "title": "Código de categoria inválido/incompatível com RET",
+    "status": "official",
+    "trustScore": 100,
+    "sources": [
+      "esocial-layout-s13"
+    ],
+    "symptoms": [
+      "Evento rejeitado por categoria inválida ou incompatível"
+    ],
+    "diagnosis": [
+      "Código deve existir na Tabela 01 e obedecer validações do leiaute",
+      "Pode depender do RET e do tipo de evento"
+    ],
+    "recommendedActions": [
+      "Validar categoria conforme Tabela 01",
+      "Conferir situação do trabalhador no RET",
+      "Validar evento e sequência"
+    ],
+    "prevention": [
+      "Validação local de tabelas e evento",
+      "Testes por categoria"
+    ],
+    "edgeCases": [
+      "Mudança de categoria",
+      "Processo trabalhista",
+      "Trabalhador sem vínculo"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "esocial-afastamento-data-invalida",
+    "domain": "trabalhista.esocial",
+    "documentType": "eSocial S-1.3",
+    "code": "dtIniAfast",
+    "title": "Data de início de afastamento inválida",
+    "status": "official",
+    "trustScore": 100,
+    "sources": [
+      "esocial-layout-s13"
+    ],
+    "symptoms": [
+      "Evento de afastamento rejeitado por data"
+    ],
+    "diagnosis": [
+      "Data deve ser igual/posterior à admissão e não posterior à data atual conforme regra"
+    ],
+    "recommendedActions": [
+      "Conferir admissão",
+      "Conferir data do afastamento",
+      "Validar ordem de eventos"
+    ],
+    "prevention": [
+      "Validação local antes do envio",
+      "Controle de sequência e histórico do trabalhador"
+    ],
+    "edgeCases": [
+      "Admissão retroativa",
+      "Evento enviado fora de ordem",
+      "Retificação"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  }
+]

@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+package xforge;
+
+service XForgeService {
+  rpc QueryRag(RagQueryRequest) returns (RagQueryResponse);
+  rpc IndexRag(IndexRequest) returns (IndexResponse);
+  rpc GetStatus(StatusRequest) returns (StatusResponse);
+  rpc RunDoctor(DoctorRequest) returns (DoctorResponse);
+  rpc ListAgents(AgentListRequest) returns (AgentListResponse);
+  rpc AnalyzeRequest(AnalyzeRequest) returns (AnalyzeResponse);
+}
+
+message RagQueryRequest {
+  string query = 1;
+  int32 top = 2;
+  string source_type = 3;
+  bool semantic = 4;
+}
+
+message RagChunk {
+  string chunk_id = 1;
+  double score = 2;
+  double lexical_score = 3;
+  double semantic_score = 4;
+  string trust = 5;
+  string source_type = 6;
+  string path = 7;
+  int32 start_line = 8;
+  int32 end_line = 9;
+  string excerpt = 10;
+}
+
+message RagQueryResponse {
+  string query = 1;
+  string mode = 2;
+  repeated RagChunk results = 3;
+}
+
+message IndexRequest {}
+
+message IndexResponse {
+  string version = 1;
+  string last_indexed_at = 2;
+  int32 document_count = 3;
+  int32 chunk_count = 4;
+}
+
+message StatusRequest {}
+
+message StatusResponse {
+  bool stale = 1;
+  string last_indexed_at = 2;
+  int32 current_document_count = 3;
+  int32 indexed_document_count = 4;
+  int32 added_count = 5;
+  int32 changed_count = 6;
+  int32 removed_count = 7;
+}
+
+message DoctorRequest {}
+
+message DoctorResponse {
+  bool healthy = 1;
+  string output = 2;
+  string errors = 3;
+}
+
+message AgentListRequest {}
+
+message AgentInfo {
+  string name = 1;
+  string description = 2;
+  string mode = 3;
+  string color = 4;
+}
+
+message AgentListResponse {
+  repeated AgentInfo agents = 1;
+}
+
+message AnalyzeRequest {
+  string request = 1;
+}
+
+message AnalyzeResponse {
+  string request_id = 1;
+  string json_payload = 2;
+}

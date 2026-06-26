@@ -1,0 +1,52 @@
+{
+  "id": "xforge-architecture",
+  "name": "xforge-architecture",
+  "displayName": "Clean Architecture, DDD, Bounded Contexts",
+  "version": "1.0.0",
+  "trustScore": 95,
+  "category": "arquitetura",
+  "description": "Padroes de arquitetura enterprise: Clean Architecture (Uncle Bob), Domain-Driven Design (Eric Evans), Bounded Contexts, Context Mapping, Aggregates, Value Objects, Domain Events, anti-corruption layer.",
+  "tags": [
+    "clean-architecture",
+    "ddd",
+    "bounded-contexts",
+    "aggregates",
+    "value-objects",
+    "domain-events"
+  ],
+  "domain": "arquitetura",
+  "knowledgeEntries": [
+    {
+      "path": ".xforge/knowledge/arquitetura/clean-architecture.md",
+      "summary": "Entities, Use Cases, Interface Adapters, Frameworks. Dependency Rule. Uncle Bob."
+    },
+    {
+      "path": ".xforge/knowledge/arquitetura/ddd-strategic.md",
+      "summary": "Bounded Contexts, Context Mapping (Shared Kernel, Customer-Supplier, Anti-Corruption Layer)"
+    },
+    {
+      "path": ".xforge/knowledge/arquitetura/ddd-tactical.md",
+      "summary": "Aggregates, Entities, Value Objects, Domain Services, Domain Events, Repositories"
+    },
+    {
+      "path": ".xforge/knowledge/arquitetura/cqrs-event-sourcing.md",
+      "summary": "CQRS (Command Query Responsibility Segregation), Event Sourcing, projections, eventual consistency"
+    },
+    {
+      "path": ".xforge/knowledge/arquitetura/ports-adapters.md",
+      "summary": "Hexagonal Architecture, Ports (interfaces), Adapters (implementations), testabilidade"
+    },
+    {
+      "path": ".xforge/knowledge/arquitetura/bounded-context-mapping.md",
+      "summary": "Strategic patterns, como identificar contextos, sub-domains (core/supporting/generic)"
+    }
+  ],
+  "source": "internal-engineering",
+  "author": "XForge Engineer",
+  "date": "2026-06-14",
+  "size": "6 knowledge files",
+  "languages": [
+    "pt-BR",
+    "en-US"
+  ]
+}

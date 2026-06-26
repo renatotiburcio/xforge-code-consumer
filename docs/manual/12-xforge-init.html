@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>12 xforge-init 5 Cenarios - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html" class="active">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html">Quickstart</a></li><li><a href="02-architecture.html">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html" class="active">xforge-init</a></li><li><a href="11-faq.html">FAQ</a></li><li><a href="18-glossary.html">Glossario</a></li><li><a href="19-changelog.html">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html">Troubleshooting</a></li><li><a href="21-faq-extended.html">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>12 - xforge-init: 5 Cenarios de Uso</h1>
+
+<h2>O que e</h2>
+<p><code>xforge-init</code> e' o <strong>comando de inicializacao</strong> que adapta o template XForge a um projeto novo ou existente. Diferente de <code>git init</code> (que apenas versiona) ou <code>npm init</code> (que cria <code>package.json</code>), o xforge-init instala 275 arquivos operacionais (skills, agents, commands, rules) + estrutura de governanca (.xforge/) + detecta stack + absorve documentacao pre-existente + gera DNA do projeto.</p>
+<p>Localizacao: <code>.kilo/automation/scripts/xforge-init.ps1</code> (Windows) e <code>.kilo/automation/scripts/xforge-init.sh</code> (Linux/Mac via PowerShell Core). Invocado como slash command <code>/xforge-init</code> no XForgeCode.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce tem um <strong>projeto novo</strong> (pasta vazia ou com pouco conteudo) e quer comecar com template</li>
+  <li>Quando voce tem um <strong>projeto existente</strong> e quer ganhar governanca XForge sem perder o que ja existe</li>
+  <li>Quando voce tem <strong>documentacao dispersa</strong> (pasta com specs, RFCs, decisoes) e quer absorver tudo no template</li>
+  <li>Quando voce quer <strong>duplicar</strong> o template em outro local sem perder o original</li>
+  <li>NAO use para <strong>atualizar</strong> o template em projeto ja inicializado (use <code>/xforge-upgrade</code>)</li>
+  <li>NAO use para <strong>remover</strong> template (nao ha comando uninit; apague <code>.kilo/</code> e <code>.xforge/</code> manualmente)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>xforge-init [opcoes]</code></pre>
+<p>Comando interativo, mas flags abaixo cobrem cenarios comuns. Sem flags = cenario 1 (projeto limpo). Para abrir interface grafica, use <code>/xforge-init</code> dentro do XForgeCode.</p>
+<pre><code># Windows PowerShell
+.\.kilo\automation\scripts\xforge-init.ps1
+
+# Linux/Mac (PowerShell Core)
+pwsh ./.kilo/automation/scripts/xforge-init.ps1
+
+# Com flags
+xforge-init --absorb-docs ./legado/ --analyze-existing --template enterprise-v2</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>--absorb-docs &lt;path&gt;</code></td><td>string</td><td>vazio</td><td>Caminho para pasta com documentacao pre-existente. Init le, analisa, memoriza, gera docs canonicas. Pasta pode ser deletada depois.</td></tr>
+<tr><td><code>--analyze-existing</code></td><td>bool</td><td>false</td><td>Detecta stack, convencoes, design do projeto existente. Init aprende em vez de sobrescrever.</td></tr>
+<tr><td><code>--template &lt;name&gt;</code></td><td>string</td><td>default</td><td>Template variante: <code>default</code>, <code>enterprise-v2</code>, <code>startup-minimal</code>, <code>fiscal-br</code>.</td></tr>
+<tr><td><code>--config &lt;file&gt;</code></td><td>string</td><td>xforge.yaml</td><td>Arquivo de configuracao customizado com variaveis de ambiente e stack.</td></tr>
+<tr><td><code>--consumer</code></td><td>bool</td><td>false</td><td>Modo consumer: aplica reset de memoria/decisoes/audit (DR-0180 Fase 0). Para clonar template em projeto novo sem herdar historico.</td></tr>
+<tr><td><code>--dry-run</code></td><td>bool</td><td>false</td><td>Mostra o que faria sem executar. Use para preview antes de commit.</td></tr>
+<tr><td><code>--force</code></td><td>bool</td><td>false</td><td>Sobrescreve arquivos existentes sem perguntar. Perigoso: use so se voce tem backup.</td></tr>
+<tr><td><code>--quiet</code></td><td>bool</td><td>false</td><td>Suprime output. Retorna exit code apenas (0=ok, 1=erro). Para CI/CD.</td></tr>
+<tr><td><code>--verbose</code></td><td>bool</td><td>false</td><td>Output detalhado de cada arquivo criado. Para debug.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Projeto Limpo (pasta vazia)</h3>
+<p><strong>Contexto</strong>: Voce acabou de criar uma pasta para um projeto novo. Quer comecar do zero com template XForge.</p>
+<pre><code>mkdir meu-novo-projeto
+cd meu-novo-projeto
+xforge-init
+# ou: pwsh ./.kilo/automation/scripts/xforge-init.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[xforge-init] v50.1.0 detectado
+[detect-stack] Sem stack detectado (pasta vazia)
+[init] Criando .kilo/ (skills, agents, commands, rules, automation)
+[init] Criando .xforge/ (decisions, knowledge, memory, scripts)
+[init] Criando docs/ (manual canonico)
+[init] Criando .xforgecodeignore, AGENTS.md, README.md, kilo.jsonc
+[init] Criando .gitignore + hooks pre-commit/pre-push
+[init] Atualizando INDEX.json, RAG manifest
+[done] Projeto inicializado. Proximo: git add . && git commit -m "feat: bootstrap xforge v50.1.0"</code></pre>
+<p><strong>Edge case</strong>: Se voce esquecer de <code>cd</code> na pasta certa, init detecta diretorio pai e pergunta. Se voce ja tem arquivos na pasta, init pula (sem <code>--force</code>).</p>
+
+<h3>Cenario 2: Projeto com Pasta de Documentos (absorver)</h3>
+<p><strong>Contexto</strong>: Voce tem uma pasta <code>./legado-docs/</code> cheia de specs, RFCs, decisoes previas. Quer absorver tudo no template, gerar docs canonicas no padrao XForge, e poder deletar <code>./legado-docs/</code> depois.</p>
+<pre><code># Estrutura inicial
+meu-projeto/
+  src/
+  legado-docs/
+    spec-v1.md
+    rfc-001-arquitetura.md
+    decisoes-2025.md
+    notas-reuniao.md
+# Comando
+xforge-init --absorb-docs ./legado-docs/</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[xforge-init] v50.1.0
+[absorb-docs] 47 arquivos encontrados em ./legado-docs/
+[analyze] Stack detectado: .NET 8 (de spec-v1.md)
+[analyze] Decisoes extraidas: 12 (rfc-001, decisoes-2025, etc)
+[generate] Criando .xforge/decisions/DR-0190-spec-original.md (absorvido de spec-v1.md)
+[generate] Criando .xforge/decisions/DR-0191-rfc-arquitetura.md
+[generate] Criando 18 knowledge entries em .xforge/knowledge/from-legado/
+[generate] Atualizando .xforge/project-dna/PROJECT-DNA.md com DNA do legado
+[done] 47 docs absorvidas, 12 DRs geradas, 18 knowledge entries
+       Voce pode deletar ./legado-docs/ agora: rm -rf ./legado-docs/</code></pre>
+<p><strong>Edge case</strong>: Se <code>legado-docs/</code> tem 100+ arquivos, init pode demorar 2-5 minutos. Use <code>--quiet</code> em CI. Se algum doc nao parseavel (PDF binario, imagem), init pula com warning.</p>
+
+<h3>Cenario 3: Projeto Existente (sem pasta de docs)</h3>
+<p><strong>Contexto</strong>: Voce tem um projeto ja em andamento com codigo, git, config, identidade visual. Quer ganhar governanca XForge sem perder nada. <code>--analyze-existing</code> faz init aprender em vez de sobrescrever.</p>
+<pre><code>cd projeto-legado  # ja tem package.json, src/, README.md
+xforge-init --analyze-existing</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[xforge-init] v50.1.0
+[analyze-existing] Detectando stack: Node.js 20 + TypeScript
+[analyze-existing] Encontrados 53 arquivos em src/
+[analyze-existing] Convencoes detectadas: ESLint standard, Prettier, Jest
+[analyze-existing] Identidade visual: tailwind.config.js, cores #3B82F6
+[init] Criando .kilo/ (275 files, NAO sobrescreve src/)
+[init] Criando .xforge/ (NAO toca arquivos existentes)
+[init] Criando .xforgecodeignore (exclui node_modules, dist, .env)
+[init] Criando AGENTS.md customizado para o stack detectado
+[init] Criando docs/manual/ (12 paginas canonicas)
+[init] Atualizando .xforge/project-dna/PROJECT-DNA.md
+[done] Stack: Node 20 + TypeScript. 53 src/ files preservados.
+       Proximo: revisar AGENTS.md gerado e ajustar.</code></pre>
+<p><strong>Edge case</strong>: Se o projeto tem <code>.kilo/</code> ja existente (foi reinicializado?), init aborta com erro. Use <code>--force</code> se tiver certeza. Se src/ tem 1000+ arquivos, init demora. Use <code>--verbose</code> para acompanhar.</p>
+
+<h3>Cenario 4: Projeto Existente + Documentos (combinacao 2+3)</h3>
+<p><strong>Contexto</strong>: Pior cenario - projeto legado grande com codigo E documentacao dispersa. Init faz deteccao, absorcao, e geracao em sequencia.</p>
+<pre><code>cd projeto-grande
+xforge-init --analyze-existing --absorb-docs ./docs-antigos/ --verbose</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[xforge-init] v50.1.0
+[analyze-existing] Stack: .NET 8 (ASP.NET Core + Blazor Server)
+[analyze-existing] 312 arquivos em src/, 89 em tests/
+[absorb-docs] 156 arquivos em ./docs-antigos/
+[analyze] Padroes identificados: CQRS + MediatR + EF Core
+[analyze] Decisoes: 23 extraidas de docs-antigos/decisoes-2024.md
+[generate] 23 DRs geradas em .xforge/decisions/
+[generate] 45 knowledge entries em .xforge/knowledge/from-antigos/
+[generate] 1 DR-0192-cqrs-original.md (do legado)
+[generate] 1 DR-0193-ef-core-decisoes.md
+[init] .kilo/ criado sem sobrescrever
+[init] AGENTS.md customizado para .NET 8
+[done] Total: 312 src + 89 tests preservados, 156 docs absorvidas,
+       23 DRs + 45 knowledge entries geradas.
+       Recomendado: rm -rf ./docs-antigos/ (apos revisar DRs).</code></pre>
+<p><strong>Edge case</strong>: Pode gerar 30+ DRs em projeto com muito legado. Cada DR fica em <code>.xforge/decisions/</code>. Revise antes de mergear. Se algum doc tiver conflito com decisao canonica XForge, init registra como DR-0194-conflito-pendente.</p>
+
+<h3>Cenario 5: Customizacao Avancada (template + config)</h3>
+<p><strong>Contexto</strong>: Voce quer usar um template variante (ex: fiscal-br com regras LGPD pre-configuradas) e configurar com variaveis customizadas.</p>
+<pre><code># xforge.yaml (pre-criado)
+stack: dotnet
+version: 8.0
+lgpd:
+  enabled: true
+  dpo: renato@empresa.com.br
+fiscal:
+  uf: SP
+  regime: real
+  certificado: a1-path
+
+# Comando
+xforge-init --template fiscal-br --config ./xforge.yaml</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[xforge-init] v50.1.0
+[template] Carregando fiscal-br (regime real + LGPD)
+[config] Lendo xforge.yaml
+[init] Stack: .NET 8.0
+[init] LGPD habilitado, DPO renato@empresa.com.br
+[init] Fiscal: SP, regime real, certificado A1
+[init] Criando .kilo/skills/fiscal-tax-expert/ (com UF=SP pre-config)
+[init] Criando .kilo/skills/lgpd-expert/
+[init] Criando .xforge/knowledge/dominios/fiscal/sp/ (regras locais)
+[init] Criando .kilo/rules/active-project-root-rules.md customizado
+[done] Template fiscal-br aplicado. 3 skills adicionais instaladas.
+       Proximo: revisar .kilo/rules/active-project-root-rules.md</code></pre>
+<p><strong>Edge case</strong>: Se <code>--template</code> nao existe, init lista templates disponiveis. Se <code>xforge.yaml</code> tem schema invalido, init aborta com mensagem clara. Variaveis desconhecidas sao ignoradas com warning.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>"xforge-init.ps1 nao encontrado"</h3>
+<p><strong>Causa</strong>: Voce esta em uma pasta sem template XForge. Init nao roda sem template.</p>
+<p><strong>Solucao</strong>: <code>cd</code> para a pasta que contem <code>.kilo/</code>. Se voce quer criar um projeto novo do zero, faca <code>git clone https://github.com/renatotiburcio/xforge</code> primeiro, depois <code>cp -r</code> para pasta desejada, e so entao rode init.</p>
+
+<h3>"Permission denied" no Windows</h3>
+<p><strong>Causa</strong>: ExecutionPolicy do PowerShell bloqueia scripts.</p>
+<p><strong>Solucao</strong>: <code>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned</code> (one-time). Depois rode init normalmente.</p>
+
+<h3>"Stack detection returned null"</h3>
+<p><strong>Causa</strong>: Nenhum sinal de stack encontrado (<code>*.csproj</code>, <code>package.json</code>, <code>pyproject.toml</code>, etc). Provavelmente pasta vazia ou projeto hibrido sem manifesto.</p>
+<p><strong>Solucao</strong>: Se for cenario 1 (limpo), e' normal - init usa defaults. Se for cenario 3 (existente) e voce tem codigo mas sem manifesto, crie um manifesto (mesmo <code>package.json</code> minimo) e rode init novamente.</p>
+
+<h3>"Init abortou mid-way, projeto quebrado"</h3>
+<p><strong>Causa</strong>: Erro durante absorcao de docs ou deteccao de stack. Init nao tem rollback automatico.</p>
+<p><strong>Solucao</strong>: <code>git status</code> para ver o que foi commitado (nada deve estar). Se voce tinha backup de pre-init, restaure. Senao: delete <code>.kilo/</code> e <code>.xforge/</code> e rode init novamente. Use <code>--dry-run</code> antes em proxima vez para validar.</p>
+
+<h3>"DRs geradas estao erradas / incompletas"</h3>
+<p><strong>Causa</strong>: Documentos absorvidos tinham formato nao-padrao (markdown mal-formado, plain text sem estrutura).</p>
+<p><strong>Solucao</strong>: DRs geradas tem <code>source: "absorbed from &lt;path&gt;"</code> no frontmatter. Edite manualmente cada DR-019X, corrija o problema, e mova para <code>approved</code>. Use a skill <code>documentation-governor</code> para ajuda na reescrita.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

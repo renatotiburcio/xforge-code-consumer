@@ -1,0 +1,21 @@
+{
+  "standards": [
+    {
+      "id": "endpoints",
+      "path": ".xforge/knowledge/arquitetura/clean-architecture.md"
+    },
+    {
+      "id": "cqrs",
+      "path": ".xforge/knowledge/padroes/ef-core-patterns.md"
+    },
+    {
+      "id": "dtos",
+      "path": ".xforge/knowledge/arquitetura/design-patterns-gof.md"
+    },
+    {
+      "id": "producer-specs",
+      "path": ".xforge/knowledge/padroes/logging.md"
+    }
+  ],
+  "rules": []
+}

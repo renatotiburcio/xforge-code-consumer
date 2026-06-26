@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "templates": [
+    "dotnet-webapi",
+    "python-fastapi",
+    "node-nestjs",
+    "react-vite",
+    "next-app",
+    "go-gin",
+    "rust-actix",
+    "java-spring",
+    "angular-app",
+    "html-tailwind",
+    "generic"
+  ]
+}

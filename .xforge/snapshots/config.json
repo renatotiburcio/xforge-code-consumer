@@ -1,0 +1,31 @@
+﻿{
+  "name": "xforge-snapshot-system",
+  "version": "2.0.0",
+  "scopes": ["memory", "knowledge", "workflow", "state", "project", "all"],
+  "tools": {
+    "create": {
+      "name": "create_snapshot",
+      "input": { "scope": "string", "label": "string?", "compress": "boolean?" },
+      "output": { "id": "string", "createdAt": "iso8601", "size": "number" },
+      "retentionDays": 90,
+      "compression": "gzip"
+    },
+    "restore": {
+      "name": "restore_snapshot",
+      "input": { "id": "string", "dryRun": "boolean?" },
+      "output": { "restored": "number", "skipped": "number" },
+      "safety": "auto-backup-before-restore"
+    },
+    "diff": {
+      "name": "diff_snapshot",
+      "input": { "a": "string", "b": "string" },
+      "output": { "added": "number", "modified": "number", "removed": "number" }
+    }
+  },
+  "policy": {
+    "autoSnapshot": ["pre-release", "post-merge", "pre-migration", "post-incident"],
+    "retentionDays": 90,
+    "maxSnapshots": 100,
+    "compression": "gzip"
+  }
+}

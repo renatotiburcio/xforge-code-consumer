@@ -1,0 +1,23 @@
+{
+  "slug": "node-nestjs",
+  "description": "NestJS 10 + TypeScript + Prisma + Jest",
+  "tags": [
+    "node",
+    "typescript",
+    "api"
+  ],
+  "skills": [
+    "node-modern",
+    "testing-qa-expert",
+    "data-protection-lgpd-expert"
+  ],
+  "files": [
+    "package.json",
+    "tsconfig.json",
+    "src/main.ts",
+    "src/app.module.ts",
+    "test/app.e2e-spec.ts",
+    ".gitignore",
+    "README.md"
+  ]
+}

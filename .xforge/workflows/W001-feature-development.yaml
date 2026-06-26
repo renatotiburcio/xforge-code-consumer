@@ -1,0 +1,22 @@
+﻿id: W001
+version: 1.0.0
+name: feature-development
+description: Create complete feature with tests and docs
+states: [recognized, planned, designing, implementing, testing, reviewing, documenting, memorizing, indexing, done, failed]
+transitions:
+  - {from: recognized, to: planned, event: plan_created}
+  - {from: planned, to: designing, event: design_approved}
+  - {from: designing, to: implementing, event: code_started}
+  - {from: implementing, to: testing, event: build_passed, guard: xfs_correctness>=0.8}
+  - {from: testing, to: reviewing, event: tests_passed, guard: tests_total==tests_passed}
+  - {from: testing, to: implementing, event: tests_failed}
+  - {from: reviewing, to: documenting, event: review_approved}
+  - {from: reviewing, to: implementing, event: review_rejected}
+  - {from: documenting, to: memorizing, event: docs_complete}
+  - {from: memorizing, to: indexing, event: memory_saved}
+  - {from: indexing, to: done, event: index_updated}
+  - {from: "*", to: failed, event: error_occurred}
+agents: [architect, developer, tester, reviewer, documenter]
+tools: [create_file, update_file, read_file, run_tests, validate, memorize]
+entrypoint: recognized
+terminalStates: [done, failed]

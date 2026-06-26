@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>20 Troubleshooting - XForge Manual v50.25.0</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html">Quickstart</a></li><li><a href="02-architecture.html">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html">xforge-init</a></li><li><a href="11-faq.html">FAQ</a></li><li><a href="18-glossary.html">Glossario</a></li><li><a href="19-changelog.html">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html" class="active">Troubleshooting</a></li><li><a href="21-faq-extended.html">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>20 - Troubleshooting (problemas comuns e solucoes)</h1><h2>O que e</h2><p>Esta pagina consolida os problemas mais frequentes ao usar o XForge, organizados por categoria (Setup, Execucao, MCP, RAG, Quality Gates, etc). Cada problema tem: sintoma literal (mensagem de erro), causa raiz, e solucao passo-a-passo. Para problemas especificos de dominio, consulte /support ou abra uma issue.</p><h2>Quando usar</h2><ul><li>Quando voce recebe um erro e quer resolver rapidamente</li><li>Antes de abrir uma issue no GitHub (talvez a solucao ja esteja documentada aqui)</li><li>Quando um Quality Gate falha e voce nao sabe por que</li><li>Quando um MCP nao carrega ou retorna erro</li><li>NAO use para duvidas de uso de features - va em /commands ou /skills</li></ul><h2>Como usar</h2><p>Problemas estao agrupados por categoria. Use Ctrl+F para buscar a mensagem de erro exata. Cada problema tem 3 secoes: Sintoma (o que voce ve), Causa (por que acontece), Solucao (como resolver).</p><pre><code># Workflow recomendado:
+# 1. Copie a mensagem de erro
+# 2. Ctrl+F aqui e cole
+# 3. Ache o problema correspondente
+# 4. Siga a solucao passo-a-passo</code></pre><p>Se nenhum problema corresponder, rode doctor.ps1 e compartilhe o output ao abrir issue.</p><h2>Parametros</h2><table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr><tr><td><code>--erro</code></td><td>string</td><td>nenhum</td><td>Mensagem de erro ou codigo a buscar</td></tr><tr><td><code>--categoria</code></td><td>string</td><td>todas</td><td>Filtra: setup, execucao, mcp, rag, quality, deployment</td></tr><tr><td><code>--severidade</code></td><td>string</td><td>todas</td><td>Filtra: baixa, media, alta, bloqueante</td></tr><tr><td><code>--auto-fix</code></td><td>bool</td><td>false</td><td>Mostra apenas problemas com auto-fix disponivel</td></tr></table><h2>Exemplos praticos</h2><h3>Cenario 1: PowerShell execution policy bloqueia .ps1</h3><p><strong>Contexto</strong>: Voce roda xforge-init.ps1 e recebe erro cannot be loaded because running scripts is disabled.</p><pre><code>Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+# Re-abra terminal e rode novamente</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Politica RemoteSigned aplicada. Scripts locais rodam normalmente. Scripts de internet precisam ser assinados.</code></pre><p><strong>Edge case</strong>: NAO use Unrestricted (inseguro). Para CI/CD, use bypass policy por job.</p><h3>Cenario 2: Doctor reporta mojibake</h3><p><strong>Contexto</strong>: Voce ve warning de mojibake em algum arquivo do .kilo/agents/.</p><pre><code>python -c "content = open('.kilo/agents/<file>.md', 'rb').read(); print('mojibake:', b'\xc3\x83' in content)"</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Se mojibake: rode temp/fix_mojibake_v2.py (cobre double e triple encoding).</code></pre><p><strong>Edge case</strong>: Bug comum em bulk replace - PowerShell -replace em modo Latin-1 + UTF-8 reencode = double/triple encoding.</p><h3>Cenario 3: MCP nao aparece no XForge Code</h3><p><strong>Contexto</strong>: Voce configurou MCP no kilo.jsonc mas nao aparece nas tools.</p><pre><code># Verifique 3 coisas:
+# 1. enabled: true (ou false para desabilitado)
+# 2. command + args corretos
+# 3. env vars definidas ou via env: prefixo
+cat kilo.jsonc | grep -A 5 mcp</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Configuracao valida. Se ainda nao aparece, reinicie XForge Code CLI.</code></pre><p><strong>Edge case</strong>: MCPs NATIVE so precisam de enabled: false. MCPs OPTIONAL precisam de /mcp-lifecycle install.</p><h3>Cenario 4: RAG nao retorna resultados</h3><p><strong>Contexto</strong>: Voce pesquisa por termo no RAG mas nao acha nada.</p><pre><code>python .xforge/scripts/rag_local.py status</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Se stale=true: rode python .xforge/scripts/rag_local.py reindex. Se count=0: verifique .xforge/knowledge/INDEX.json.</code></pre><p><strong>Edge case</strong>: RAG busca por tokens (palavras), nao por semantica. Use termos exatos.</p><h3>Cenario 5: Quality Gate pre-push falha</h3><p><strong>Contexto</strong>: Voce faz git push e recebe pre-push check failed.</p><pre><code># Rode localmente para ver detalhes
+pwsh ./.kilo/automation/scripts/pre-push.ps1</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Mostra qual gate falhou (tests, coverage, lint, security). Resolva o erro especifico antes de tentar push.</code></pre><p><strong>Edge case</strong>: Para pular pre-push (NAO recomendado): git push --no-verify</p><h3>Cenario 6: Size da pasta docs/ excede 500KB</h3><p><strong>Contexto</strong>: Doctor avisa docs/ tem 602 KB (limite 500 KB).</p><pre><code>Get-ChildItem docs/manual/*.html | Sort-Object Length -Descending | Select-Object -First 5</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Top 5 paginas mais pesadas. Geralmente sao wizards (wiz-forge ~20KB) ou pages com muitos exemplos.</code></pre><p><strong>Edge case</strong>: Warning NAO-bloqueante. Para reduzir: comprimir exemplos ou aumentar limite em check-manual.ps1.</p><h3>Cenario 7: Build error CS0246 tipo nao encontrado</h3><p><strong>Contexto</strong>: Voce esta em projeto .NET e recebe erro de tipo nao encontrado.</p><pre><code># Auto-fix SH-001: detectar e adicionar import
+pwsh ./.kilo/automation/scripts/self-heal.ps1</code></pre><p><strong>Output esperado</strong>:</p><pre><code>Auto-healing corrige 12 erros comuns (SH-001 a SH-012). Para erros nao listados, abra issue.</code></pre><p><strong>Edge case</strong>: Self-healing roda em pre-commit. Se erro aparece em build, talvez nao foi auto-fixado.</p><h2>Troubleshooting</h2><h3>Nenhum dos problemas corresponde ao meu erro</h3><p><strong>Causa</strong>: Erro especifico do seu ambiente ou projeto</p><p><strong>Solucao</strong>: 1. Rode doctor.ps1 2. Copie output completo 3. Abra issue no GitHub com: erro + doctor output + passos para reproduzir</p><h3>Problema resolvido mas nao consigo atualizar a pagina</h3><p><strong>Causa</strong>: Cache do navegador servindo versao antiga</p><p><strong>Solucao</strong>: Ctrl+Shift+R (hard reload) ou DevTools > Network > Disable cache. Para forcar refresh global, mude ?v=50.2.5 para ?v=50.2.6 em style.css/script.js</p><h3>Script funciona em minha maquina mas nao em CI</h3><p><strong>Causa</strong>: Diferenca de OS, versao PowerShell, ou paths relativos</p><p><strong>Solucao</strong>: Use paths absolutos, normalize line endings (CRLF no Windows, LF no Linux). Para PowerShell, use 7+ com PowerShell Core (pwsh)</p><h3>Erro intermitente (as vezes funciona, as vezes nao)</h3><p><strong>Causa</strong>: Race condition, cache stale, ou rate limiting de API externa</p><p><strong>Solucao</strong>: Adicione retry logic com backoff exponencial. Para RAG, use .xforge/scripts/rag_local.py (local, sem rate limit).</p>
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

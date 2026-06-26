@@ -1,0 +1,16 @@
+﻿id: W015
+version: 1.0.0
+name: incident-response
+description: Production incident response
+states: [detected, triaged, mitigating, resolving, post_mortem, communicating, done]
+transitions:
+  - {from: detected, to: triaged, event: severity_assessed}
+  - {from: triaged, to: mitigating, event: mitigation_planned, guard: severity<=2}
+  - {from: mitigating, to: resolving, event: mitigation_applied}
+  - {from: resolving, to: post_mortem, event: root_cause_identified}
+  - {from: post_mortem, to: communicating, event: pmr_written}
+  - {from: communicating, to: done, event: stakeholders_notified}
+agents: [incident-analysis, specialist-support]
+tools: [read_file, find_symbol, create_file, memorize]
+entrypoint: detected
+terminalStates: [done]

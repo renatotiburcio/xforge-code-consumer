@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>15 Quality Gates - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html" class="active">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Granular</h3><ul><li><a href="13-stack-detection.html">Stack Detection</a></li><li><a href="14-rag-system.html">RAG System</a></li><li><a href="15-quality-gates.html" class="active">Quality Gates</a></li><li><a href="16-knowledge-applicability.html">Knowledge Scope</a></li><li><a href="17-genius-council-members.html">Conselho 66</a></li></ul></aside>
+<main>
+<h1>15 - Quality Gates (Stack-Aware)</h1>
+
+<h2>O que e</h2>
+<p><strong>Quality Gates</strong> sao scripts automaticos stack-aware que validam build, testes, cobertura, encoding, seguranca, e canonical structures antes/depois de commits e pushes. Detectam o stack do projeto (.NET, Node, Python, etc) e rodam os gates apropriados. Diferente de CI tradicional (que so roda em push), XForge valida <strong>localmente</strong> em cada commit.</p>
+<p>Localizacao: <code>.kilo/automation/scripts/</code> (90+ scripts PS1/Python). Orquestrador: <code>.kilo/automation/scripts/doctor.ps1</code> (executa todos os gates em sequencia).</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Antes de <code>git commit</code> (gate pre-commit, automatico via hook)</li>
+  <li>Antes de <code>git push</code> (gate pre-push, automatico via hook)</li>
+  <li>Em CI/CD (rode doctor.ps1 no pipeline)</li>
+  <li>Para auditar estado atual sem commit (rode <code>doctor.ps1</code> direto)</li>
+  <li>Quando quer validar um gate especifico (ex: so encoding, so RAG)</li>
+  <li>NAO use para rodar testes unitarios de codigo de producao (gate do template nao roda testes do projeto, so do proprio template)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>.\.kilo\automation\scripts\doctor.ps1                    # Roda todos os gates
+.\.kilo\automation\scripts\check-manual.ps1              # Gate 4: manual canonico DR-0181
+.\.kilo\automation\scripts\check-manual-content.ps1      # Gate 5: conteudo DR-0182 (B-090)
+.\.kilo\automation\scripts\check_loop_discipline.py      # Valida 6/6 PASS do loop
+.\.kilo\automation\scripts\knowledge-validation.ps1       # Valida INDEX.json
+.\.kilo\automation\scripts\regenerate-registries.ps1     # Regenera registries do filesystem</code></pre>
+<p>Para gates pre-commit/push, eles rodam via git hooks (<code>.git/hooks/pre-commit</code>, <code>pre-push</code>).</p>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>--verbose</code></td><td>bool</td><td>false</td><td>Output detalhado, cada check individual.</td></tr>
+<tr><td><code>--quiet</code></td><td>bool</td><td>false</td><td>Suprime output, retorna exit code (0/1).</td></tr>
+<tr><td><code>--gate &lt;N&gt;</code></td><td>int</td><td>all</td><td>Roda so o gate N (1 a 5).</td></tr>
+<tr><td><code>--no-color</code></td><td>bool</td><td>false</td><td>Desativa cores (para log em CI).</td></tr>
+<tr><td><code>--json</code></td><td>bool</td><td>false</td><td>Output em JSON para parsing em pipelines.</td></tr>
+<tr><td><code>--fix</code></td><td>bool</td><td>false</td><td>Aplica auto-fix quando possivel (ex: regenerate-registries).</td></tr>
+<tr><td><code>--dry-run</code></td><td>bool</td><td>false</td><td>Mostra o que faria sem executar.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Validar estado local (pre-commit manual)</h3>
+<p><strong>Contexto</strong>: Voce modificou varios arquivos e quer ver se passam todos os gates antes de commitar.</p>
+<pre><code>doctor.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>XForge Engineer Doctor
+======================
+[1/8] Required structure
+[OK]    AGENTS.md
+[OK]    kilo.jsonc
+[OK]    .kilo/commands
+[OK]    .kilo/agents
+[OK]    .kilo/skills
+[OK]    .kilo/rules
+[OK]    .xforge
+...
+Gate 4: Manual canonico DR-0181 (check-manual.ps1)...
+  0 errors, 0 warnings, 24 OKs
+Gate 5: Manual content (DR-0182)...
+  0 errors, 0 warnings
+Summary: 0 errors, 1 warning</code></pre>
+<p><strong>Edge case</strong>: Se Gate 4 ou 5 falhar, commit sera bloqueado. Resolva antes de tentar commit.</p>
+
+<h3>Cenario 2: Auto-fix registries stale (B-089)</h3>
+<p><strong>Contexto</strong>: Voce adicionou 5 skills novas. O registry ainda mostra o numero antigo. Re-gera do filesystem.</p>
+<pre><code>regenerate-registries.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>Regenerating .kilo/core/registries/skill-registry.json from .kilo/skills...
+  Found 176 skill entries  (era 171)
+  Written (UTF-8 NoBOM)
+...
+Summary: skills 176, agents 81, rules 44, commands 144 (with publicCommands preserved)</code></pre>
+<p><strong>Edge case</strong>: command-registry preserva publicCommands automaticamente. knowledge INDEX.json NAO e regenerado (schema complexo - manual regen via skills/knowledge-team).</p>
+
+<h3>Cenario 3: CI/CD pipeline (GitHub Actions)</h3>
+<p><strong>Contexto</strong>: Voce quer rodar quality gates no GitHub Actions antes de merge.</p>
+<pre><code># .github/workflows/quality.yml
+name: XForge Quality Gates
+on: [push, pull_request]
+jobs:
+  doctor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: '8.0.x' }
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Run doctor
+        run: pwsh ./.kilo/automation/scripts/doctor.ps1 --json &gt; doctor.json
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with: { name: doctor, path: doctor.json }</code></pre>
+<p><strong>Output esperado</strong> (CI):</p>
+<pre><code>Run pwsh ./.kilo/automation/scripts/doctor.ps1 --json &gt; doctor.json
+{"summary":{"errors":0,"warnings":1,"oks":156},"gates":[...]}</code></pre>
+<p><strong>Edge case</strong>: Em Linux/Mac, use <code>pwsh</code> (PowerShell Core). Se a plataforma nao suportar PS Core, instale via <code>brew install --cask powershell</code> ou <code>apt install powershell</code>.</p>
+
+<h3>Cenario 4: Gate 5 (B-090 content depth) com 1 pagina faltando secao</h3>
+<p><strong>Contexto</strong>: Voce adicionou pagina nova mas esqueceu a secao Troubleshooting. Validator pega.</p>
+<pre><code>check-manual-content.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[2/3] Validating each page...
+  [ERROR] docs/manual/12-xforge-init.html (12.3 KB) - troubleshooting too short (h3 count: 1)
+  [ERROR] docs/manual/14-rag-system.html (15.8 KB) - size=15.8 KB (max 15)
+
+[3/3] Summary
+  Errors  : 2
+  Warnings: 0
+  OKs    : 10
+
+FAIL - manual content nao atende B-090 (DR-0182)</code></pre>
+<p><strong>Edge case</strong>: Validator nao bloqueia commit (Gate 5 so roda no doctor). Pre-commit so roda Gate 4. Use <code>doctor.ps1</code> explicitamente antes de commit para validar Gate 5 tambem.</p>
+
+<h3>Cenario 5: Bypass pre-commit hook (emergencias)</h3>
+<p><strong>Causa</strong>: Voce PRECISA commitar agora (hotfix de producao) mas algum gate falhou. Use bypass conscientemente.</p>
+<pre><code>git commit --no-verify -m "hotfix: critical security patch"
+# Pre-commit hook NAO roda.
+# Bypass fica no git log (auditable).</code></pre>
+<p><strong>Output esperado</strong> (apos bypass):</p>
+<pre><code>[master abc1234] hotfix: critical security patch
+# Commit feito, mas doctor.ps1 DEVE ser rodado separadamente
+# para validar manualmente que esta tudo OK</code></pre>
+<p><strong>Edge case</strong>: Bypass e' um anti-pattern. Use so em emergencias reais. Documente o motivo em CHANGELOG. Nunca use <code>--no-verify</code> para commits de feature normais.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>"Encoding signals: Potential mojibake found"</h3>
+<p><strong>Causa</strong>: 1 arquivo tem UTF-8 malformado (em-dash, smart quotes, etc).</p>
+<p><strong>Solucao</strong>: <code>git diff</code> para encontrar o arquivo. Substituir caracteres Unicode problematicos por ASCII (em-dash -> <code> - </code>, smart quotes -> <code>"</code>). Salvar como UTF-8 NoBOM.</p>
+
+<h3>"UTF-8 BOM found in registry"</h3>
+<p><strong>Causa</strong>: Algum registry foi salvo com BOM (PowerShell <code>Set-Content -Encoding UTF8</code>).</p>
+<p><strong>Solucao</strong>: Re-salvar sem BOM. Use <code>regenerate-registries.ps1</code> (ja escreve sem BOM via <code>[System.IO.File]::WriteAllText</code> com <code>UTF8Encoding $false</code>).</p>
+
+<h3>"RAG stale &gt; 100 documents"</h3>
+<p><strong>Causa</strong>: 100+ docs modificados entre reindex e pre-push.</p>
+<p><strong>Solucao</strong>: <code>python .xforge/scripts/rag_local.py reindex</code> antes do push. Para CI, adicione step de reindex antes do pre-push check.</p>
+
+<h3>"Loop discipline not 6/6 PASS"</h3>
+<p><strong>Causa</strong>: Algum dos 6 criterios do <code>loop-discipline.md</code> falhou: build verde, test count, HTTP roundtrip, DB path, migrations, ou DR documenta coverage.</p>
+<p><strong>Solucao</strong>: Veja <code>.kilo/rules/loop-discipline.md</code> secao 4 (self-check). Resolva cada item antes de commitar.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

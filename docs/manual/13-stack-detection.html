@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13 Stack Detection - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html" class="active">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Granular</h3><ul><li><a href="13-stack-detection.html" class="active">Stack Detection</a></li><li><a href="14-rag-system.html">RAG System</a></li><li><a href="15-quality-gates.html">Quality Gates</a></li><li><a href="16-knowledge-applicability.html">Knowledge Scope</a></li><li><a href="17-genius-council-members.html">Conselho 66</a></li></ul></aside>
+<main>
+<h1>13 - Stack Detection (DR-0180)</h1>
+
+<h2>O que e</h2>
+<p><strong>Stack Detection</strong> e' o mecanismo pelo qual XForge identifica o stack de um projeto (.NET, Node, Python, Rust, Go, Angular, etc) atraves de sinais no filesystem. Uma vez detectado, knowledge entries com <code>applicabilityScope</code> incompativeis sao filtrados, e skills/agents/commands ajustam suas recomendacoes.</p>
+<p>Implementado em <code>.kilo/automation/scripts/stack-detector.ps1</code> (PowerShell) + <code>.kilo/skills/stack-aware-context/SKILL.md</code> (skill canonica). Ativado em: xforge-init, knowledge router, doctor.ps1, e no inicio de cada sessao XForgeCode.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce precisa saber o stack do projeto atual (<code>stack-detector.ps1 --report</code>)</li>
+  <li>Quando adiciona novo stack e quer ensinar o detector (DR-0180 extension)</li>
+  <li>Quando knowledge entries nao carregam corretamente (provavelmente applicabilityScope filtro)</li>
+  <li>Quando o projeto e' hibrido (multi-stack) e precisa de deteccao por arquivo</li>
+  <li>NAO use para detectar framework dentro de um stack (use signal especifico, ex: <code>Blazor WebApp</code> vs <code>Blazor Server</code>)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>.\.kilo\automation\scripts\stack-detector.ps1 [opcoes]</code></pre>
+<p>Para uso interativo via XForgeCode, basta abrir o projeto â€” a skill <code>stack-aware-context</code> carrega automaticamente.</p>
+<pre><code># Detectar stack do projeto atual
+stack-detector.ps1
+
+# Gerar relatorio detalhado
+stack-detector.ps1 --report
+
+# Forcar deteccao em path especifico
+stack-detector.ps1 --path C:/outro/projeto
+
+# Modo JSON para pipelines CI
+stack-detector.ps1 --json
+
+# Validar entry de knowledge contra stack ativo
+stack-detector.ps1 --check-scope .xforge/knowledge/INDEX.json</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>--path &lt;dir&gt;</code></td><td>string</td><td>PWD</td><td>Caminho do projeto a analisar. Default = diretorio atual.</td></tr>
+<tr><td><code>--report</code></td><td>bool</td><td>false</td><td>Gera relatorio markdown com todos os sinais detectados, nao so o stack vencedor.</td></tr>
+<tr><td><code>--json</code></td><td>bool</td><td>false</td><td>Output em JSON para pipelines CI/CD.</td></tr>
+<tr><td><code>--check-scope &lt;file&gt;</code></td><td>string</td><td>vazio</td><td>Valida todas entries de um INDEX.json contra stack ativo. Reporta incompativeis.</td></tr>
+<tr><td><code>--min-confidence &lt;0-100&gt;</code></td><td>int</td><td>60</td><td>Confianca minima para considerar stack detectado (0=sempre, 100=perfeito).</td></tr>
+<tr><td><code>--multi</code></td><td>bool</td><td>false</td><td>Detecta TODOS os stacks presentes (ex: <code>.NET 8</code> + <code>Node 20</code> em monorepo).</td></tr>
+<tr><td><code>--update-prompt</code></td><td>bool</td><td>false</td><td>Atualiza <code>.kilo/.stack-context.json</code> com o stack detectado (cacheia para proxima sessao).</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Detectar stack simples (.NET)</h3>
+<p><strong>Contexto</strong>: Pasta com <code>*.csproj</code> e estrutura ASP.NET. Quer confirmar stack antes de comecar.</p>
+<pre><code>cd meu-projeto-dotnet
+stack-detector.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[stack-detector] v1.0.0
+[scan] 17 arquivos analisados em 234ms
+[signals] csproj=3, sln=1, Program.cs=2, appsettings.json=2
+[detect] Stack: dotnet (confidence=92%)
+[detect] Sub-stack: ASP.NET Core 8.0 (LTS)
+[detect] ORM provavel: Entity Framework Core 8
+[done] .kilo/.stack-context.json atualizado</code></pre>
+<p><strong>Edge case</strong>: Se confidence < 60%, detector pergunta "multi-stack?" e lista todos os candidatos. Se voce tem <code>global.json</code> com <code>version</code>, usa isso para confirmar versao exata.</p>
+
+<h3>Cenario 2: Multi-stack (monorepo)</h3>
+<p><strong>Contexto</strong>: Repo tem frontend React + backend Node + shared types TypeScript. Stack detection multi-stack.</p>
+<pre><code>cd monorepo
+stack-detector.ps1 --multi</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[stack-detector] v1.0.0
+[scan] 487 arquivos analisados
+[signals] package.json=8, tsconfig.json=12, Cargo.toml=1, go.mod=2
+[detect] Stack primario: node (confidence=78%)
+[detect] Sub-stacks: react (frontend), typescript (universal), rust (tooling)
+[detect] Nao detectado: go (signal isolado em /tools)
+[done] Monorepo detectado. Knowledge routing ajustara por diretorio.</code></pre>
+<p><strong>Edge case</strong>: Se voce tem <code>package.json</code> + <code>Cargo.toml</code> na raiz mas <code>src/</code> so tem Rust, detector usa densidade de arquivos por stack. Use <code>--path src/</code> para override.</p>
+
+<h3>Cenario 3: Projeto sem stack obvio</h3>
+<p><strong>Contexto</strong>: Pasta com docs e configs mas sem codigo (ex: monorepo em fase de planejamento).</p>
+<pre><code>cd docs-project
+stack-detector.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[stack-detector] v1.0.0
+[scan] 89 arquivos analisados
+[signals] Nenhum manifesto de stack detectado
+[detect] Stack: unknown (confidence=0)
+[warning] Recomendacao: especifique stack com 'xforge init --template &lt;name&gt;'
+[warning] Ou crie manifesto (package.json, *.csproj) para deteccao automatica
+[done] Stack context nao salvo (insuficiente confidence)</code></pre>
+<p><strong>Edge case</strong>: Se voce tem <code>README.md</code> com mencoes a stack (ex: "Node.js + PostgreSQL"), detector nao parseia texto livre. Workaround: criar <code>.stack-overrides.json</code> na raiz com stack explicito.</p>
+
+<h3>Cenario 4: Validar knowledge entries contra stack</h3>
+<p><strong>Contexto</strong>: voce tem 319 knowledge entries. Quer saber quantas serao carregadas em um projeto .NET 8.</p>
+<pre><code>stack-detector.ps1 --check-scope .xforge/knowledge/INDEX.json</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[stack-detector] v1.0.0
+[detect] Stack ativo: dotnet
+[scope-check] Varrendo 319 entries em .xforge/knowledge/INDEX.json
+[scope-check] Compativeis: 187 (58.7%)
+[scope-check] Incompativeis: 132 (41.3%)  -- serao filtradas
+[scope-check] Breakdown incompativeis:
+  - python: 67
+  - node: 41
+  - react: 18
+  - rust: 4
+  - go: 2
+[done] Use --filter para ver quais entries incompativeis serao excluidas</code></pre>
+<p><strong>Edge case</strong>: Entries com <code>applicabilityScope: ["*"]</code> sao sempre compativeis (universais). Para adicionar uma entry sua, edite o INDEX.json e adicione <code>applicabilityScope</code> no formato <code>["dotnet", "python", "*"]</code> para multi-stack.</p>
+
+<h3>Cenario 5: Adicionar novo stack (DR-0180 extension)</h3>
+<p><strong>Contexto</strong>: Voce quer que XForge reconheca Elixir (nao vem por default). Adiciona sinal customizado.</p>
+<pre><code># Editar .kilo/automation/scripts/stack-detector.ps1
+$stackSignals = @{
+  "elixir" = @("mix.exs", "mix.lock", "lib/**/*.ex", "lib/**/*.exs")
+  # outros...
+}
+
+# Adicionar entry em .xforge/core/registries/stack-registry.json (criar se nao existir)
+{
+  "id": "elixir",
+  "name": "Elixir",
+  "signals": ["mix.exs", "mix.lock"],
+  "applicabilityScope": ["elixir"],
+  "version": "&gt;= 1.14"
+}</code></pre>
+<p><strong>Output esperado</strong> (apos re-executar detector):</p>
+<pre><code>[stack-detector] Stack customizado carregado: elixir
+[detect] Stack: elixir (confidence=85%)
+[done] .kilo/.stack-context.json atualizado com elixir</code></pre>
+<p><strong>Edge case</strong>: Stack customizado nao aparece no help do detector ate ser registrado formalmente. Crie <code>.kilo/core/registries/stack-registry.json</code> para autodiscovery. Adicionar em <code>applicabilityScope</code> das knowledge entries que devem carregar.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Detector retorna "unknown" mas sei meu stack</h3>
+<p><strong>Causa</strong>: Manifesto na raiz, mas codigo em subpasta. Detector so olha raiz por default.</p>
+<p><strong>Solucao</strong>: <code>stack-detector.ps1 --path ./backend/</code> para escanear subpasta. Ou criar symlink/copy do manifesto na raiz.</p>
+
+<h3>Knowledge entry nao carrega mesmo com applicabilityScope correto</h3>
+<p><strong>Causa</strong>: Cache de <code>.kilo/.stack-context.json</code> esta stale.</p>
+<p><strong>Solucao</strong>: <code>stack-detector.ps1 --update-prompt</code> ou delete <code>.kilo/.stack-context.json</code> e re-abra o projeto. Cache expira em 24h por default.</p>
+
+<h3>"Multi-stack detected: not supported"</h3>
+<p><strong>Causa</strong>: Voce passou <code>--multi</code> mas detector achou 1 stack so.</p>
+<p><strong>Solucao</strong>: Sem <code>--multi</code> o detector retorna o stack primario. Use <code>--multi</code> explicitamente para forcar analise multi-stack. Se o stack primario estiver errado, forneca <code>--path</code> para o sub-diretorio relevante.</p>
+
+<h3>"Stack registry not found"</h3>
+<p><strong>Causa</strong>: <code>.kilo/core/registries/stack-registry.json</code> nao existe (template-only ou deletado).</p>
+<p><strong>Solucao</strong>: <code>git checkout main -- .kilo/core/registries/stack-registry.json</code> ou rode <code>regenerate-registries.ps1</code> que cria o arquivo base. Para customizar, edite apos regenerar.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

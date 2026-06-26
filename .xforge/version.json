@@ -1,0 +1,15 @@
+{
+  "name": "XForge Enterprise Intelligence Platform",
+  "version": "50.0.0",
+  "codename": "docs-fresh-start-manual-v2",
+  "status": "stable-final-governed",
+  "released_at": "2026-06-21",
+  "dr": "DR-0181",
+  "compatibility": {
+    "vscode": true,
+    "kilo": "strict",
+    "docsHtmlOperational": true,
+    "manualV2": true,
+    "stackAware": true
+  }
+}

@@ -1,0 +1,73 @@
+---
+description: Gerencia provedores e modelos de IA. Lista, troca, e mostra o modelo ativo.
+agent: code
+---
+
+# /provider
+
+## Objetivo
+
+Gerenciar provedores e modelos de IA on-the-fly. Permite trocar o modelo ativo sem reiniciar o Kilo.
+
+## Subcomandos
+
+### /provider status
+Mostra o modelo ativo, provedor, e configuracao atual.
+
+**Output esperado:**
+`
+Provedor ativo : openrouter
+Modelo ativo   : anthropic/claude-sonnet-4-20250514
+Fallbacks      : openai, anthropic
+`
+
+### /provider list
+Lista todos os provedores e modelos disponiveis no ~/.xforge/config.json.
+
+**Output esperado:**
+`
+Provedores configurados:
+  openrouter   -> https://openrouter.ai/api/v1
+  openai       -> https://api.openai.com/v1
+  anthropic    -> https://api.anthropic.com
+  google       -> https://generativelanguage.googleapis.com/v1beta
+
+Modelos por provedor:
+  anthropic    -> claude-sonnet-4-20250514, claude-opus-4-20250514
+  openai       -> gpt-4o, gpt-4o-mini, o1-preview
+  google       -> gemini-2.5-pro, gemini-2.5-flash
+`
+
+### /provider set <provider/model>
+Troca o modelo ativo. Persiste em ~/.xforge/config.json.
+
+**Exemplos:**
+`
+/provider set anthropic/claude-sonnet-4-20250514
+/provider set openai/gpt-4o
+/provider set google/gemini-2.5-pro
+`
+
+**Regras:**
+- Validar que o provedor existe na secao routing.providers
+- Validar que o modelo existe na secao routing.models do provedor
+- Atualizar provider.active e provider.model no config
+- Confirmar troca com mensagem de sucesso
+
+### /provider reset
+Volta ao modelo padrao definido no kilo.jsonc do projeto.
+
+**Output esperado:**
+`
+Modelo resetado para: anthropic/claude-sonnet-4-20250514 (padrao do kilo.jsonc)
+`
+
+## Arquivo de Config
+
+O comando le e escreve em ~/.xforge/config.json.
+
+## Validacoes
+
+- Se o provedor nao existe -> erro com lista de provedores disponiveis
+- Se o modelo nao existe no provedor -> erro com lista de modelos do provedor
+- Se o config nao existe -> criar a partir do template .xforge/config/config.template.json

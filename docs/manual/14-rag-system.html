@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14 RAG System - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html" class="active">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Granular</h3><ul><li><a href="13-stack-detection.html">Stack Detection</a></li><li><a href="14-rag-system.html" class="active">RAG System</a></li><li><a href="15-quality-gates.html">Quality Gates</a></li><li><a href="16-knowledge-applicability.html">Knowledge Scope</a></li><li><a href="17-genius-council-members.html">Conselho 66</a></li></ul></aside>
+<main>
+<h1>14 - RAG System (Retrieval-Augmented Generation)</h1>
+
+<h2>O que e</h2>
+<p><strong>RAG</strong> e' o sistema de <strong>Retrieval-Augmented Generation</strong> do XForge: indexa 747 documentos locais (knowledge, skills, agents, commands, rules) em indice lexical inverted + chunks jsonl, e permite busca por termos com snippets relevantes. Diferente de RAG vector (que precisa de embeddings e GPU), este e' <strong>100% local, sem GPU, sem cloud</strong>.</p>
+<p>Localizacao: <code>.xforge/rag/</code> (manifest.json + indexes/lexical.json + chunks/chunks.jsonl + reports/) + <code>.xforge/scripts/rag_local.py</code> (indexer). Config em <code>.xforge/rag/config.json</code>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce precisa <strong>encontrar</strong> uma regra, skill, knowledge ou DR sem saber o nome exato</li>
+  <li>Quando voce quer ver <strong>contexto</strong> ao redor de um termo (10-15 termos vizinhos)</li>
+  <li>Quando voce precisa auditar o que esta no indice (status, cobertura, drift)</li>
+  <li>Quando o pre-push hook avisa RAG stale (148 docs modificados)</li>
+  <li>NAO use para busca semantica (use RAG vector, nao implementado por padrao)</li>
+  <li>NAO use para busca em arquivos fora de <code>config.sources</code> (apenas 9 paths indexados)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>python .xforge/scripts/rag_local.py {reindex|status}</code></pre>
+<p>Para uso direto em queries (read-only):</p>
+<pre><code># Status atual do indice
+python .xforge/scripts/rag_local.py status
+
+# Reindex completo (atualiza manifest + chunks + lexical)
+python .xforge/scripts/rag_local.py reindex
+
+# Query em Python (via shell)
+python -c "import json; d=json.load(open('.xforge/rag/indexes/lexical.json')); print([c for c in d['terms'].get('dotnet', [])][:5])"</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>command</code></td><td>string</td><td>obrigatorio</td><td><code>reindex</code> ou <code>status</code>.</td></tr>
+<tr><td><code>--path &lt;file&gt;</code></td><td>string</td><td>config.sources</td><td>Override: escanear path especifico (em breve).</td></tr>
+<tr><td><code>--max-lines &lt;N&gt;</code></td><td>int</td><td>40</td><td>Tamanho maximo do chunk em linhas. Maior = mais contexto, menos granular.</td></tr>
+<tr><td><code>--overlap &lt;N&gt;</code></td><td>int</td><td>5</td><td>Linhas de overlap entre chunks. Maior = melhor recall, mais espaco.</td></tr>
+<tr><td><code>--quiet</code></td><td>bool</td><td>false</td><td>Suprime output, retorna exit code apenas.</td></tr>
+<tr><td><code>--json</code></td><td>bool</td><td>false</td><td>Output em JSON em vez de human-readable.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Status diario do RAG</h3>
+<p><strong>Contexto</strong>: Voce comeca o dia, quer saber se o RAG esta atualizado. Comando rapido.</p>
+<pre><code>cd meu-projeto
+python .xforge/scripts/rag_local.py status</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>{
+  "lastIndexedAt": "2026-06-21T19:00:22.255841+00:00",
+  "documentCount": 747,
+  "chunkCount": 2529,
+  "stale": false,
+  "staleCount": 0
+}</code></pre>
+<p><strong>Edge case</strong>: Se <code>stale: true</code>, rode reindex. Se <code>lastIndexedAt</code> e' null, manifest nao existe - rode reindex.</p>
+
+<h3>Cenario 2: Reindex completo apos muitas mudancas</h3>
+<p><strong>Contexto</strong>: Voce modificou 148 arquivos (skills novas, knowledge entries, etc). Pre-push hook avisou stale. Reindex agora.</p>
+<pre><code>python .xforge/scripts/rag_local.py reindex</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[reindex] Sources: 9
+[reindex] Excludes: 17 patterns
+[reindex] Chunk config: 40 lines, overlap 5
+[reindex]   .xforge/knowledge: 295 files
+[reindex]   .kilo/commands: 155 files
+[reindex]   .kilo/skills: 172 files
+[reindex]   .kilo/agents: 80 files
+[reindex]   .kilo/rules: 44 files
+[reindex]   AGENTS.md: 1 files
+[reindex]   README.md: 1 files
+[reindex] DONE: 747 docs, 2529 chunks, 17042 terms</code></pre>
+<p><strong>Edge case</strong>: Reindex demora 5-15 segundos para 747 docs. Para projetos com 10k+ docs, use <code>--max-lines 60 --overlap 10</code> para reduzir chunks.</p>
+
+<h3>Cenario 3: Reindex com chunk customizado (docs grandes)</h3>
+<p><strong>Contexto</strong>: Voce tem knowledge entries grandes (200+ linhas). Chunk padrao de 40 linhas gera muito overlap. Ajuste.</p>
+<pre><code>python .xforge/scripts/rag_local.py reindex --max-lines 80 --overlap 10</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[reindex] Chunk config: 80 lines, overlap 10
+[reindex] DONE: 747 docs, 1502 chunks, 16900 terms
+# Chunks reduziram de 2529 -> 1502 (menor granularidade, mais espaco por chunk)</code></pre>
+<p><strong>Edge case</strong>: Chunks muito grandes (>200 linhas) perdem granularidade. Para docs enormes (>500 linhas), divida em arquivos menores antes de reindexar.</p>
+
+<h3>Cenario 4: Configurar sources customizados</h3>
+<p><strong>Contexto</strong>: Voce tem documentacao em <code>./docs-empresa/</code> que quer indexar junto. Adiciona source no config.</p>
+<pre><code># Editar .xforge/rag/config.json
+{
+  "sources": [
+    ".xforge/knowledge",
+    ".xforge/engineer",
+    ".kilo/commands",
+    ".kilo/skills",
+    ".kilo/agents",
+    ".kilo/rules",
+    "AGENTS.md",
+    "README.md",
+    "./docs-empresa"  # NOVO
+  ]
+}
+# Rodar reindex
+python .xforge/scripts/rag_local.py reindex</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[reindex]   ./docs-empresa: 23 files
+[reindex] DONE: 770 docs, 2605 chunks, 17421 terms</code></pre>
+<p><strong>Edge case</strong>: Paths com espacos precisam de aspas. Paths absolutos funcionam mas perdem portabilidade (use relativo). Adicionar fonte nao-indexada dispara warning mas nao aborta.</p>
+
+<h3>Cenario 5: Pre-push hook automatico (ja integrado)</h3>
+<p><strong>Contexto</strong>: Voce quer que o RAG reindex rode automaticamente antes de cada push. O template ja tem isso em <code>.git/hooks/pre-push</code> (verifique se ativo).</p>
+<pre><code>git push origin master
+# Pre-push hook:
+#   [RAG health] stale check
+#   if stale &gt; 0:
+#     warn: "Reindex recommended"
+#     # NAO bloqueia push (apenas avisa)
+#   else:
+#     ok</code></pre>
+<p><strong>Output esperado</strong> (se stale):</p>
+<pre><code>[RAG health] stale=3, added=[...], changed=[...]
+WARN: RAG health check failed. Reindex recommended.
+Pre-push checks complete.
+git push ... (passa com warning)</code></pre>
+<p><strong>Edge case</strong>: O hook nao bloqueia push. Se voce quer forcar reindex automatico, edite o hook para chamar <code>python .xforge/scripts/rag_local.py reindex</code> antes do stale check.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>"RAG stale" aparece sempre, mesmo apos reindex</h3>
+<p><strong>Causa</strong>: Algum arquivo foi modificado entre o reindex e o pre-push (race condition).</p>
+<p><strong>Solucao</strong>: Rode reindex novamente imediatamente antes do push. Ou use <code>--quiet</code> em CI para que o hook apenas reporte.</p>
+
+<h3>Query retorna 0 resultados para termo que existe</h3>
+<p><strong>Causa</strong>: Termo nao foi tokenizado. Stopword, ou menos de 3 chars, ou pontuacao.</p>
+<p><strong>Solucao</strong>: RAG tokeniza apenas tokens com 3+ chars alfanumericos. "API" funciona. "AI" nao (2 chars). "node.js" vira "node" e "js" separados.</p>
+
+<h3>Reindex demora muito (>5 min)</h3>
+<p><strong>Causa</strong>: Muitos arquivos (>5k) ou chunks muito pequenos (overhead de I/O).</p>
+<p><strong>Solucao</strong>: <code>--max-lines 80 --overlap 10</code> para reduzir chunks. Adicione excludes em <code>config.excludePatterns</code> para pastas irrelevantes (ex: <code>"node_modules"</code>, <code>"dist"</code>, <code>"coverage"</code>).</p>
+
+<h3>"chunks.jsonl corrompido" / JSON parse error</h3>
+<p><strong>Causa</strong>: Reindex foi interrompido (Ctrl+C, OOM, disk full).</p>
+<p><strong>Solucao</strong>: Delete <code>.xforge/rag/chunks/chunks.jsonl</code> e rode reindex novamente. Reindex e' idempotente: rebuilda tudo a partir dos sources.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

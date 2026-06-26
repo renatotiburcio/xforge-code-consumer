@@ -1,0 +1,26 @@
+name: Kilo Strict Config Check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  strict-kilo-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate kilo.jsonc allowed keys
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+          p = Path("kilo.jsonc")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          allowed = {"instructions"}
+          extra = set(data) - allowed
+          if extra:
+              raise SystemExit(f"Unsupported keys in kilo.jsonc: {sorted(extra)}")
+          if "instructions" not in data:
+              raise SystemExit("Missing instructions in kilo.jsonc")

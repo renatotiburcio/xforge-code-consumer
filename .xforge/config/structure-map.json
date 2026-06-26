@@ -1,0 +1,48 @@
+{
+  "version": "terminal-product-1.0.0",
+  "rootPolicy": "Root limpo: .kilo, .xforge, AGENTS.md, kilo.jsonc, README.md, .xforge/docs/INSTALL.md.",
+  "kilo": {
+    "purpose": "Camada operacional substituivel e atualizavel do template.",
+    "contains": [
+      "commands",
+      "skills",
+      "agents",
+      "rules",
+      "workflows",
+      "docs-html",
+      "automation"
+    ]
+  },
+  "xforge": {
+    "purpose": "Dados persistentes, conhecimento local e configuracao do projeto.",
+    "contains": [
+      "config",
+      "decisions",
+      "docs",
+      "engineer",
+      "knowledge",
+      "memory",
+      "project-dna",
+      "rag"
+    ]
+  },
+  "generatedOrDiscardable": [
+    ".xforge/rag/chunks",
+    ".xforge/rag/indexes",
+    ".xforge/rag/reports",
+    "dist"
+  ],
+  "removedFromTemplate": [
+    ".xforge/audits",
+    ".xforge/backlog",
+    ".xforge/changelog",
+    ".xforge/docs-html-audits",
+    ".xforge/incidents",
+    ".xforge/legacy",
+    ".xforge/legacy-skills",
+    ".xforge/reports",
+    ".xforge/roadmap",
+    ".xforge/sprints",
+    ".xforge/testing"
+  ]
+}

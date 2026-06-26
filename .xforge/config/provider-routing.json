@@ -1,0 +1,39 @@
+﻿{
+  "name": "xforge-provider-routing",
+  "version": "2.0.0",
+  "providers": {
+    "local": {
+      "type": "local",
+      "endpoint": "http://localhost:11434",
+      "models": ["qwen3-coder:30b", "gemma4-26b-128k", "nomic-embed-text"],
+      "costPer1kTokens": 0,
+      "maxContextTokens": 128000
+    },
+    "cloud-standard": {
+      "type": "cloud",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "models": ["anthropic/claude-sonnet-4-20250514", "openai/gpt-4o"],
+      "costPer1kTokens": 0.003,
+      "maxContextTokens": 200000
+    },
+    "premium": {
+      "type": "cloud",
+      "endpoint": "https://openrouter.ai/api/v1",
+      "models": ["anthropic/claude-opus-4", "openai/o1"],
+      "costPer1kTokens": 0.015,
+      "maxContextTokens": 500000
+    }
+  },
+  "rules": [
+    {"when": {"complexity": "S", "sensitive": true}, "route": "local", "fallback": null},
+    {"when": {"complexity": "S", "sensitive": false}, "route": "local", "fallback": "cloud-standard"},
+    {"when": {"complexity": "M"}, "route": "local", "fallback": "cloud-standard"},
+    {"when": {"complexity": "L"}, "route": "cloud-standard", "fallback": "premium"},
+    {"when": {"complexity": "XL"}, "route": "premium", "fallback": null},
+    {"when": {"domain": "fiscal"}, "route": "premium", "reason": "zero-tolerance"},
+    {"when": {"domain": "legal"}, "route": "premium", "reason": "zero-tolerance"},
+    {"when": {"domain": "lgpd"}, "route": "premium", "reason": "compliance"},
+    {"when": {"offline": true}, "route": "local", "fallback": null}
+  ],
+  "costOptimization": {"preferLocal": true, "targetLocalRate": 0.70}
+}

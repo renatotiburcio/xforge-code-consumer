@@ -1,0 +1,668 @@
+{
+  "version": "1.0",
+  "createdAt": "2026-06-18T21:48:00Z",
+  "description": "XForge knowledge graph",
+  "nodeTypes": [
+    "skill",
+    "agent",
+    "command",
+    "pack",
+    "workflow",
+    "domain",
+    "concept"
+  ],
+  "edgeTypes": [
+    "requires",
+    "produces",
+    "extends",
+    "conflicts",
+    "composes",
+    "belongsTo",
+    "relatedTo"
+  ],
+  "nodes": [
+    {
+      "id": "skill:genius-council",
+      "type": "skill",
+      "label": "Genius Council Framework (GCF)",
+      "domain": "process",
+      "trustScore": 95
+    },
+    {
+      "id": "skill:dotnet-standards",
+      "type": "skill",
+      "label": ".NET Standards (Clean Architecture, CQRS, Result Pattern)",
+      "domain": "dotnet",
+      "trustScore": 95
+    },
+    {
+      "id": "skill:blazor-tailwind",
+      "type": "skill",
+      "label": "Blazor + Tailwind CSS v4",
+      "domain": "frontend",
+      "trustScore": 90
+    },
+    {
+      "id": "skill:dotnet-enterprise",
+      "type": "skill",
+      "label": ".NET Enterprise Expert (ASP.NET, Minimal APIs, DI)",
+      "domain": "dotnet",
+      "trustScore": 95
+    },
+    {
+      "id": "skill:fiscal-tax",
+      "type": "skill",
+      "label": "Brazilian Fiscal Expert (NFe, ICMS, PIS, COFINS)",
+      "domain": "fiscal",
+      "trustScore": 95
+    },
+    {
+      "id": "skill:esocial",
+      "type": "skill",
+      "label": "eSocial Compliance",
+      "domain": "fiscal",
+      "trustScore": 90
+    },
+    {
+      "id": "skill:sped-fiscal",
+      "type": "skill",
+      "label": "SPED Fiscal (EFD ICMS/IPI, EFD Contribuicoes)",
+      "domain": "fiscal",
+      "trustScore": 95
+    },
+    {
+      "id": "skill:rbac",
+      "type": "skill",
+      "label": "RBAC Expert",
+      "domain": "security",
+      "trustScore": 90
+    },
+    {
+      "id": "skill:lgpd",
+      "type": "skill",
+      "label": "LGPD / GDPR Privacy by Design",
+      "domain": "security",
+      "trustScore": 95
+    },
+    {
+      "id": "skill:packaging",
+      "type": "skill",
+      "label": "NuGet / npm / PyPI Packaging",
+      "domain": "devops",
+      "trustScore": 90
+    },
+    {
+      "id": "skill:ci-cd",
+      "type": "skill",
+      "label": "CI/CD (GitHub Actions, Docker, releases)",
+      "domain": "devops",
+      "trustScore": 95
+    },
+    {
+      "id": "agent:genius-council-orchestrator",
+      "type": "agent",
+      "label": "Genius Council Orchestrator (38 geniuses)",
+      "domain": "process",
+      "trustScore": 95
+    },
+    {
+      "id": "agent:devils-advocate",
+      "type": "agent",
+      "label": "Devil Advocate (AG999)",
+      "domain": "process",
+      "trustScore": 90
+    },
+    {
+      "id": "agent:consensus-engine",
+      "type": "agent",
+      "label": "Consensus Engine (AG100)",
+      "domain": "process",
+      "trustScore": 90
+    },
+    {
+      "id": "agent:documentation-governor",
+      "type": "agent",
+      "label": "Documentation Governor (AG101)",
+      "domain": "process",
+      "trustScore": 90
+    },
+    {
+      "id": "agent:llm-execution-specialist",
+      "type": "agent",
+      "label": "LLM Execution Specialist (AG102)",
+      "domain": "process",
+      "trustScore": 90
+    },
+    {
+      "id": "agent:review",
+      "type": "agent",
+      "label": "Code Review Agent",
+      "domain": "process",
+      "trustScore": 85
+    },
+    {
+      "id": "agent:general",
+      "type": "agent",
+      "label": "General Purpose Agent",
+      "domain": "process",
+      "trustScore": 80
+    },
+    {
+      "id": "agent:explore",
+      "type": "agent",
+      "label": "Explore Subagent",
+      "domain": "process",
+      "trustScore": 80
+    },
+    {
+      "id": "cmd:xforge-init",
+      "type": "command",
+      "label": "xforge init (bootstrap project)",
+      "domain": "cli",
+      "trustScore": 95
+    },
+    {
+      "id": "cmd:xforge-doctor",
+      "type": "command",
+      "label": "xforge doctor (health check)",
+      "domain": "cli",
+      "trustScore": 95
+    },
+    {
+      "id": "cmd:xforge-pack-list",
+      "type": "command",
+      "label": "xforge pack list (marketplace)",
+      "domain": "cli",
+      "trustScore": 90
+    },
+    {
+      "id": "cmd:xforge-pack-install",
+      "type": "command",
+      "label": "xforge pack install (download + apply)",
+      "domain": "cli",
+      "trustScore": 90
+    },
+    {
+      "id": "cmd:xforge-council",
+      "type": "command",
+      "label": "xforge council (genius analysis)",
+      "domain": "cli",
+      "trustScore": 85
+    },
+    {
+      "id": "pack:xforge-blazor",
+      "type": "pack",
+      "label": "xforge-blazor (Blazor + Tailwind stack)",
+      "domain": "frontend",
+      "trustScore": 90
+    },
+    {
+      "id": "pack:xforge-fiscal",
+      "type": "pack",
+      "label": "xforge-fiscal (NFe + SPED templates)",
+      "domain": "fiscal",
+      "trustScore": 90
+    },
+    {
+      "id": "pack:xforge-hr",
+      "type": "pack",
+      "label": "xforge-hr (folha pagamento + eSocial)",
+      "domain": "fiscal",
+      "trustScore": 85
+    },
+    {
+      "id": "pack:xforge-erp",
+      "type": "pack",
+      "label": "xforge-erp (multi-module business)",
+      "domain": "business",
+      "trustScore": 90
+    },
+    {
+      "id": "pack:xforge-mediatr",
+      "type": "pack",
+      "label": "xforge-mediatr (CQRS standards)",
+      "domain": "dotnet",
+      "trustScore": 90
+    },
+    {
+      "id": "wf:W001-doctor",
+      "type": "workflow",
+      "label": "W001 - Run Doctor and Report",
+      "domain": "process",
+      "trustScore": 95
+    },
+    {
+      "id": "wf:W002-pack-install",
+      "type": "workflow",
+      "label": "W002 - Install + Configure Pack",
+      "domain": "process",
+      "trustScore": 90
+    },
+    {
+      "id": "wf:W003-knowledge-search",
+      "type": "workflow",
+      "label": "W003 - Knowledge Search + Retrieve",
+      "domain": "process",
+      "trustScore": 85
+    },
+    {
+      "id": "concept:GCF",
+      "type": "concept",
+      "label": "Genius Council Framework",
+      "domain": "process",
+      "trustScore": 100
+    },
+    {
+      "id": "concept:DR",
+      "type": "concept",
+      "label": "Decision Record (formal)",
+      "domain": "process",
+      "trustScore": 100
+    },
+    {
+      "id": "concept:SOLID",
+      "type": "concept",
+      "label": "SOLID Principles",
+      "domain": "engineering",
+      "trustScore": 100
+    },
+    {
+      "id": "concept:CQRS",
+      "type": "concept",
+      "label": "CQRS Pattern",
+      "domain": "engineering",
+      "trustScore": 95
+    },
+    {
+      "id": "concept:DRY",
+      "type": "concept",
+      "label": "DRY (Do not Repeat Yourself)",
+      "domain": "engineering",
+      "trustScore": 100
+    },
+    {
+      "id": "concept:KISS",
+      "type": "concept",
+      "label": "KISS (Keep It Simple)",
+      "domain": "engineering",
+      "trustScore": 100
+    },
+    {
+      "id": "concept:LGPD",
+      "type": "concept",
+      "label": "LGPD (Brazilian privacy law)",
+      "domain": "security",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:dotnet",
+      "type": "domain",
+      "label": ".NET / C# / Blazor",
+      "domain": "engineering",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:fiscal",
+      "type": "domain",
+      "label": "Brazilian Fiscal (NFe, SPED, eSocial)",
+      "domain": "fiscal",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:process",
+      "type": "domain",
+      "label": "Process (GCF, GDD, DR)",
+      "domain": "process",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:security",
+      "type": "domain",
+      "label": "Security (RBAC, LGPD, OWASP)",
+      "domain": "security",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:devops",
+      "type": "domain",
+      "label": "DevOps (CI/CD, containers, releases)",
+      "domain": "devops",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:cli",
+      "type": "domain",
+      "label": "CLI (commands, marketplace)",
+      "domain": "cli",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:frontend",
+      "type": "domain",
+      "label": "Frontend (Blazor, Tailwind, RAG)",
+      "domain": "frontend",
+      "trustScore": 100
+    },
+    {
+      "id": "domain:business",
+      "type": "domain",
+      "label": "Business (multi-tenant, ERP)",
+      "domain": "business",
+      "trustScore": 100
+    }
+  ],
+  "edges": [
+    {
+      "source": "skill:genius-council",
+      "target": "concept:GCF",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "agent:genius-council-orchestrator",
+      "target": "skill:genius-council",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "agent:genius-council-orchestrator",
+      "target": "agent:devils-advocate",
+      "type": "composes",
+      "weight": 1.0
+    },
+    {
+      "source": "agent:genius-council-orchestrator",
+      "target": "agent:consensus-engine",
+      "type": "composes",
+      "weight": 1.0
+    },
+    {
+      "source": "agent:genius-council-orchestrator",
+      "target": "agent:documentation-governor",
+      "type": "composes",
+      "weight": 1.0
+    },
+    {
+      "source": "agent:genius-council-orchestrator",
+      "target": "agent:llm-execution-specialist",
+      "type": "composes",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:dotnet-standards",
+      "target": "domain:dotnet",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:dotnet-standards",
+      "target": "concept:SOLID",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:dotnet-standards",
+      "target": "concept:CQRS",
+      "type": "requires",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:dotnet-standards",
+      "target": "concept:DRY",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:dotnet-standards",
+      "target": "concept:KISS",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:dotnet-enterprise",
+      "target": "skill:dotnet-standards",
+      "type": "extends",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:blazor-tailwind",
+      "target": "skill:dotnet-enterprise",
+      "type": "extends",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:blazor-tailwind",
+      "target": "domain:frontend",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:fiscal-tax",
+      "target": "domain:fiscal",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:esocial",
+      "target": "skill:fiscal-tax",
+      "type": "extends",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:esocial",
+      "target": "domain:fiscal",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:sped-fiscal",
+      "target": "skill:fiscal-tax",
+      "type": "extends",
+      "weight": 0.8
+    },
+    {
+      "source": "skill:sped-fiscal",
+      "target": "domain:fiscal",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "pack:xforge-fiscal",
+      "target": "skill:fiscal-tax",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "pack:xforge-fiscal",
+      "target": "skill:esocial",
+      "type": "requires",
+      "weight": 0.8
+    },
+    {
+      "source": "pack:xforge-fiscal",
+      "target": "skill:sped-fiscal",
+      "type": "requires",
+      "weight": 0.8
+    },
+    {
+      "source": "pack:xforge-hr",
+      "target": "skill:esocial",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "pack:xforge-hr",
+      "target": "pack:xforge-fiscal",
+      "type": "extends",
+      "weight": 0.6
+    },
+    {
+      "source": "skill:rbac",
+      "target": "domain:security",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:lgpd",
+      "target": "domain:security",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:lgpd",
+      "target": "concept:LGPD",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:packaging",
+      "target": "domain:devops",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:ci-cd",
+      "target": "domain:devops",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "skill:ci-cd",
+      "target": "skill:packaging",
+      "type": "requires",
+      "weight": 0.8
+    },
+    {
+      "source": "pack:xforge-blazor",
+      "target": "skill:blazor-tailwind",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "pack:xforge-mediatr",
+      "target": "skill:dotnet-standards",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "pack:xforge-erp",
+      "target": "pack:xforge-mediatr",
+      "type": "requires",
+      "weight": 0.6
+    },
+    {
+      "source": "pack:xforge-erp",
+      "target": "pack:xforge-blazor",
+      "type": "requires",
+      "weight": 0.5
+    },
+    {
+      "source": "cmd:xforge-init",
+      "target": "concept:DR",
+      "type": "produces",
+      "weight": 0.8
+    },
+    {
+      "source": "cmd:xforge-doctor",
+      "target": "concept:DR",
+      "type": "produces",
+      "weight": 0.5
+    },
+    {
+      "source": "cmd:xforge-pack-list",
+      "target": "concept:DR",
+      "type": "produces",
+      "weight": 0.5
+    },
+    {
+      "source": "cmd:xforge-council",
+      "target": "agent:genius-council-orchestrator",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "cmd:xforge-council",
+      "target": "skill:genius-council",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "wf:W001-doctor",
+      "target": "cmd:xforge-doctor",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "wf:W002-pack-install",
+      "target": "cmd:xforge-pack-install",
+      "type": "requires",
+      "weight": 1.0
+    },
+    {
+      "source": "wf:W002-pack-install",
+      "target": "pack:xforge-blazor",
+      "type": "produces",
+      "weight": 0.5
+    },
+    {
+      "source": "wf:W003-knowledge-search",
+      "target": "skill:genius-council",
+      "type": "requires",
+      "weight": 0.5
+    },
+    {
+      "source": "wf:W003-knowledge-search",
+      "target": "concept:DR",
+      "type": "produces",
+      "weight": 0.5
+    },
+    {
+      "source": "agent:genius-council-orchestrator",
+      "target": "domain:process",
+      "type": "belongsTo",
+      "weight": 1.0
+    },
+    {
+      "source": "agent:review",
+      "target": "skill:dotnet-standards",
+      "type": "requires",
+      "weight": 0.8
+    },
+    {
+      "source": "agent:review",
+      "target": "concept:SOLID",
+      "type": "requires",
+      "weight": 0.8
+    },
+    {
+      "source": "agent:general",
+      "target": "agent:genius-council-orchestrator",
+      "type": "requires",
+      "weight": 0.5
+    },
+    {
+      "source": "agent:explore",
+      "target": "agent:general",
+      "type": "requires",
+      "weight": 0.5
+    },
+    {
+      "source": "concept:GCF",
+      "target": "concept:DR",
+      "type": "produces",
+      "weight": 1.0
+    },
+    {
+      "source": "concept:DR",
+      "target": "concept:DRY",
+      "type": "requires",
+      "weight": 0.5
+    },
+    {
+      "source": "concept:LGPD",
+      "target": "skill:lgpd",
+      "type": "requires",
+      "weight": 1.0
+    }
+  ]
+}

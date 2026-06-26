@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>05 Agents - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html" class="active">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Componentes</h3><ul><li><a href="04-skills.html">Skills</a></li><li><a href="05-agents.html" class="active">Agents</a></li><li><a href="06-commands.html">Commands</a></li><li><a href="07-rules.html">Rules</a></li><li><a href="08-knowledge.html">Knowledge</a></li><li><a href="09-decisions.html">Decisões</a></li><li><a href="10-extensions.html">Extensions</a></li><li><a href="cat-skills.html">Skills (catálogo)</a></li><li><a href="cat-agents.html">Agents (catálogo)</a></li><li><a href="cat-commands.html">Commands (catálogo)</a></li><li><a href="cat-rules.html">Rules (catálogo)</a></li><li><a href="cat-knowledge.html">Knowledge (catálogo)</a></li><li><a href="cat-decisions.html">Decisões (catálogo)</a></li><li><a href="cat-extensions.html">Extensions (catálogo)</a></li></ul></aside>
+<main>
+<h1>05 - Agents (81 entidades AI)</h1>
+
+<h2>O que e</h2>
+<p><strong>Agents</strong> sao entidades AI especializadas com missao, tools, e routing. XForge tem 81 agents: 53 root + 28 genius-council (AG039-AG066). Diferente de skills (que sao referencia), agents sao <strong>executaveis</strong>: invocaveis via slash command ou routing automatico (canonical agents).</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce quer acionar uma AI especializada (ex: chief-architect)</li>
+  <li>Quando quer criar diretor novo (template <code>.kilo/agents/director-*.md</code>)</li>
+  <li>Quando quer entender o canonical routing (12 agents que roteiam)</li>
+  <li>Quando quer invocar genius especifico (28 verticais)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code># Invocar agent direto
+/agent chief-architect
+/topico: "decisao sobre..."
+
+# Routing canonico (12 agentes)
+/feature-engineer
+/criar-api /criar-blazor /reconhecer-projeto
+
+# Genius especifico
+/genius AG040
+/topico: "ICMS-ST MVA ajustada SP"</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>name</code></td><td>string</td><td>obrigatorio</td><td>Identificador unico. kebab-case en.</td></tr>
+<tr><td><code>description</code></td><td>string</td><td>obrigatorio</td><td>Missao do agent em 1-2 frases.</td></tr>
+<tr><td><code>tools</code></td><td>array</td><td>[]</td><td>Tools que o agent pode usar (read, write, exec, etc).</td></tr>
+<tr><td><code>model</code></td><td>string</td><td>inherit</td><td>Override modelo: <code>router</code>, <code>worker</code>, <code>opus-4</code>.</td></tr>
+<tr><td><code>memory</code></td><td>string</td><td>none</td><td>Memoria dedicada: <code>.xforge/memory/agents/&lt;name&gt;/</code>.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: 12 Canonical Agents (routing)</h3>
+<p><strong>Contexto</strong>: Voce quer criar uma feature. Qual canonical usar?</p>
+<pre><code># Mapeamento canonical
+chief-architect -&gt; chief-architect-orchestrator (decisao final)
+project-recognition -&gt; project-recognition-engineer (reconhecer)
+feature-engineer -&gt; development-feature-engineer (criar CRUD)
+dotnet-architect -&gt; dotnet-architecture-director (.NET specialist)
+frontend-ux -&gt; frontend-designsystem-director (UI/UX)
+data-engineer -&gt; data-platform-director (EF Core, PostgreSQL)
+quality-engineer -&gt; quality-engineering-director (tests)
+security-governance -&gt; director-governance (LGPD, RBAC)
+memory-curator -&gt; manager-memory (memory)
+documentation-engineer -&gt; documentation-director
+legacy-modernizer -&gt; legacy-knowledge-curator
+release-manager -&gt; github-devops-director
+
+# Invocar
+/feature-engineer
+/contexto: "criar API de clientes com CRUD + paginacao"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[feature-engineer] Routing to development-feature-engineer
+[agent] Criando API de clientes...
+[done] 8 arquivos criados em src/Api/Clientes/</code></pre>
+<p><strong>Edge case</strong>: 12 canonical cobrem 90% dos casos. Para especializados, use 28 genius ou 7 directors.</p>
+
+<h3>Cenario 2: 28 Genius Council (verticais BR + complementares)</h3>
+<p><strong>Contexto</strong>: Voce precisa de especialista em ICMS ou em DDD pratico.</p>
+<pre><code>ls .kilo/agents/genius-council/ | head -28
+# AG039-marion.md (Contabilidade)
+# AG040-ricardo-alexandre.md (Tributario/ICMS)
+# AG041-zenaide-carvalho.md (DP/eSocial/Folha)
+# AG042-volia-cassar.md (Trabalhista/CLT)
+# AG043-aldaiza-sposati.md (SUAS)
+# AG044-damodaran.md (Investimentos)
+# AG045-martin-fowler.md (Patterns of Enterprise)
+# AG046-eric-evans.md (DDD)
+# ... ate AG066
+
+# Invocar
+/genius AG040
+/topico: "ICMS-ST 2026, Reforma Tributaria"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[AG040 Ricardo Alexandre] (Tributario):
+  "Reforma 2026: IBS + CBS substitui ICMS + PIS/COFINS.
+   Para 2026: ja aplicar MVA ajustada SP.
+   Para 2027+: acompanhar legislacao transitoria (PL 368/2024)."</code></pre>
+<p><strong>Edge case</strong>: 28 genius = Tier 1 (8) + Tier 2 (8) + Tier 3 (12). Total 66 com 38 originais (conceituais).</p>
+
+<h3>Cenario 3: 7 Directors (senior specialists)</h3>
+<p><strong>Contexto</strong>: Voce precisa de decisao arquitetural senior.</p>
+<pre><code>ls .kilo/agents/ | grep director
+# director-architecture
+# director-governance
+# director-quality
+# director-runtime
+# documentation-director
+# dotnet-architecture-director
+# frontend-designsystem-director
+
+# Invocar
+/director-architecture
+/topico: "estrutura de modulos para ERP fiscal BR"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[director-architecture] Decisao senior acionada
+[plan] Bounded contexts: Fiscal, Contabil, Comercial, Estoque
+[plan] Integracao: eventos (event-bus) entre contexts
+[plan] DB por context (PostgreSQL schemas separados)
+[done] Arquitetura recomendada + DR-XXXX para registro</code></pre>
+<p><strong>Edge case</strong>: Directors sao AI com autoridade. Suas decisoes geram DRs (workflow automatico).</p>
+
+<h3>Cenario 4: Criar agent custom (com memory)</h3>
+<p><strong>Contexto</strong>: Voce quer um agent especialista em seu dominio de negocio (ex: conciliacao bancaria).</p>
+<pre><code># Criar agent
+cat &gt; .kilo/agents/conciliacao-bancaria-expert.md &lt;&lt;EOF
+---
+name: conciliacao-bancaria-expert
+description: Expert em conciliacao bancaria automatica, OFX, CNAB retorno, matching fuzzy.
+type: agent
+category: Banking
+applicabilityScope: ["dotnet"]
+memory: .xforge/memory/agents/conciliacao-bancaria/
+tools: [read, write, exec, search]
+model: worker
+---
+# Conciliacao Bancaria Expert
+## Missao
+Implementar conciliacao automatica em sistemas ERP.
+## Quando usar
+- Quando tem importacao OFX ou CNAB retorno
+- Quando matching exato falha e precisa fuzzy
+- Quando precisa de auditoria de transacoes
+EOF
+
+# Criar memoria
+mkdir -p .xforge/memory/agents/conciliacao-bancaria/
+echo '{"learning": [], "cases": []}' &gt; .xforge/memory/agents/conciliacao-bancaria/knowledge.jsonl
+
+# Regenerar registry
+regenerate-registries.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[regenerate] 82 agents (era 81)
+[doctor] 0 errors
+[done] Agent custom registrado</code></pre>
+<p><strong>Edge case</strong>: Memory dedicada e importante. Sem ela, agent nao aprende entre sessoes.</p>
+
+<h3>Cenario 5: Invocar genius com memoria vertical</h3>
+<p><strong>Contexto</strong>: Voce ja alimentou AG040 com legislacao. Quer consulta especifica.</p>
+<pre><code># 1. Alimentar memoria
+python .xforge/scripts/genius-learn.py AG040
+/learning: "Conciliacao OFX: tags &lt;STMTTRN&gt;&lt;TRNTYPE&gt;DEBIT/CREDIT"
+/source: "OFX 2.1.1 spec"
+/trustScore: 95
+
+# 2. Invocar com contexto
+/genius AG040
+/topico: "Como parsear OFX para conciliacao?"
+/contexto: ".NET 8, ja alimentamos memoria com spec OFX 2.1.1"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[AG040] (com memoria): "OFX 2.1.1: usa XML. Tags principais:
+  &lt;STMTTRN&gt; (transacao), &lt;TRNTYPE&gt; (DEBIT/CREDIT/DEP/XFER),
+  &lt;DTPOSTED&gt; (data), &lt;TRNAMT&gt; (valor), &lt;FITID&gt; (id unico).
+  Para conciliacao: matching por FITID + valor + data.
+  Gotcha: bancos brasileiros usam FITID proprio (nao padrao OFX)."</code></pre>
+<p><strong>Edge case</strong>: Memoria vertical e cumulativa. Cada learning adiciona contexto.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Agent nao responde / responde generico</h3>
+<p><strong>Causa</strong>: Memoria vazia ou contexto insuficiente.</p>
+<p><strong>Solucao</strong>: Use <code>genius-learn.py</code> para popular memoria. Forneca contexto rico (stack, arquivos, deadline).</p>
+
+<h3>"Agent nao existe"</h3>
+<p><strong>Causa</strong>: Nome invalido ou agent nao foi criado.</p>
+<p><strong>Solucao</strong>: <code>ls .kilo/agents/</code> para listar 53 root + 28 genius = 81.</p>
+
+<h3>Routing canonical nao funciona</h3>
+<p><strong>Causa</strong>: Agent target nao foi criado ou ha typo no canonical.</p>
+<p><strong>Solucao</strong>: Veja <code>.kilo/core/agent-router/CANONICAL-AGENTS.md</code> para mapeamento oficial.</p>
+
+<h3>Memory do agent crescendo demais</h3>
+<p><strong>Causa</strong>: Sem TTL ou compressao.</p>
+<p><strong>Solucao</strong>: <code>memory-ttl-validation</code> para limpar entries &gt; 1 ano. Use <code>memory-curator</code> skill para compressao.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

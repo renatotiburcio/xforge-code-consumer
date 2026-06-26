@@ -1,0 +1,18 @@
+{
+  "gates": [
+    {
+      "id": "security-golden-rule",
+      "name": "Regra de ouro de segurança",
+      "source": ".xforge/security/golden-rules/CONTINUOUS-SECURITY-GOLDEN-RULE.md",
+      "checklist": ".xforge/security/golden-rules/continuous-security-checklist.json",
+      "blocker": true
+    },
+    {
+      "id": "security-release-gate",
+      "name": "Security Release Gate",
+      "source": ".xforge/security/release-gates/SECURITY-RELEASE-GATE.md",
+      "checklist": ".xforge/security/release-gates/security-release-checklist.json",
+      "blocker": true
+    }
+  ]
+}

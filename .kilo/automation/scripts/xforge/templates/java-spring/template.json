@@ -1,0 +1,20 @@
+{
+  "slug": "java-spring",
+  "description": "Java 21 + Spring Boot 3 + JPA/Hibernate + JUnit 5",
+  "tags": [
+    "java",
+    "api"
+  ],
+  "skills": [
+    "jvm-modern",
+    "testing-qa-expert",
+    "data-protection-lgpd-expert"
+  ],
+  "files": [
+    "pom.xml",
+    "src/main/java/com/myorg/myapp/MyAppApplication.java",
+    "src/test/java/com/myorg/myapp/MyAppApplicationTests.java",
+    ".gitignore",
+    "README.md"
+  ]
+}

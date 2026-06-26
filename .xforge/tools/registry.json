@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "description": "XForge MCP tools. Real implementations live in .xforge/engine/xforge_engine.py. The MCP server (.xforge/mcp/server.js) is a thin JSON-RPC dispatcher that shells out to the engine. The tool list below mirrors manifest.json.",
+  "implementation": ".xforge/engine/xforge_engine.py",
+  "dispatcher": ".xforge/mcp/server.js",
+  "manifest": ".xforge/mcp/manifest.json",
+  "tools": [
+    {
+      "name": "xforge_doctor",
+      "description": "Run XForge doctor (validates JSON, YAML, scripts, rules, knowledge, manual).",
+      "implemented": true,
+      "engineFunction": "tool_doctor_run"
+    },
+    {
+      "name": "xforge_knowledge_search",
+      "description": "Search knowledge base by keyword against INDEX.json.",
+      "implemented": true,
+      "engineFunction": "tool_knowledge_search"
+    },
+    {
+      "name": "xforge_workflow_list",
+      "description": "List all W001-W015 workflows with state/transition counts.",
+      "implemented": true,
+      "engineFunction": "tool_workflow_list"
+    },
+    {
+      "name": "xforge_workflow_validate",
+      "description": "Validate a workflow YAML against workflow.schema.json + reachability checks.",
+      "implemented": true,
+      "engineFunction": "tool_workflow_validate"
+    },
+    {
+      "name": "xforge_workflow_run",
+      "description": "Execute a workflow FSM: load YAML, start at entrypoint, apply events, return history.",
+      "implemented": true,
+      "engineFunction": "tool_workflow_run"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+name: Engineer Health Check
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Health check
+        run: |
+          echo "Validate Engineer integrity"

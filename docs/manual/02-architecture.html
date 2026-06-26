@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>02 Arquitetura - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html" class="active">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Essenciais</h3><ul><li><a href="01-quickstart.html">Quickstart</a></li><li><a href="02-architecture.html" class="active">Arquitetura</a></li><li><a href="03-gcf.html">Conselho (GCF)</a></li><li><a href="12-xforge-init.html">xforge-init</a></li><li><a href="11-faq.html">FAQ</a></li><li><a href="18-glossary.html">Glossario</a></li><li><a href="19-changelog.html">Changelog Detalhado</a></li><li><a href="20-troubleshooting.html">Troubleshooting</a></li><li><a href="21-faq-extended.html">FAQ Estendido</a></li></ul></aside>
+<main>
+<h1>02 - Arquitetura (C4 L1/L2/L3)</h1>
+
+<h2>O que e</h2>
+<p>XForge tem <strong>2 diretorios canonicos</strong>: <code>.kilo/</code> (operacional, versionado, 275+ arquivos) e <code>.xforge/</code> (estado do projeto, decisoes + knowledge + memory). Diferente de monorepo, aqui e' <strong>template + runtime</strong>: <code>.kilo/</code> nao muda por projeto (e' o template), <code>.xforge/</code> evolui com cada clone.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce quer entender ONDE colocar novos arquivos (skills, agents, DRs, knowledge)</li>
+  <li>Quando voce precisa diferenciar <strong>template-only</strong> de <strong>project-state</strong> (DR-0180)</li>
+  <li>Quando vai customizar e quer saber o que customizar (resposta: <code>.xforge/</code>, NAO <code>.kilo/</code>)</li>
+  <li>Quando vai clonar o template (use <code>--consumer</code> para resetar <code>.xforge/</code>)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica (C4):</p>
+<pre><code># C4 L1: Containers
+[VS Code + XForgeCode] -&gt; [.kilo/ + .xforge/ + docs/]
+
+# C4 L2: .kilo/ components
+.kilo/
+  skills/         (172 modulos)
+  agents/         (53 root + 28 genius)
+  commands/       (144 slash)
+  rules/          (41 behavioral)
+  core/registries/ (17 JSONs)
+  automation/     (90+ scripts)
+
+# C4 L3: .xforge/ components
+.xforge/
+  decisions/      (95 ativos + 52 archive)
+  knowledge/      (319 entries)
+  memory/         (16 files)
+  scripts/        (15 PowerShell)
+  templates/      (6 templates)
+  rag/            (config + indexes + chunks)
+  reports/        (audits + quality)
+  version.json    (50.1.0, codename)</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>--kilo-path</code></td><td>string</td><td>./.kilo</td><td>Override: .kilo/ em outro local (multi-root workspaces).</td></tr>
+<tr><td><code>--xforge-path</code></td><td>string</td><td>./.xforge</td><td>Override: .xforge/ em outro local.</td></tr>
+<tr><td><code>--template-only</code></td><td>flag</td><td>false</td><td>Lista so arquivos template-only (excluidos em clone consumer).</td></tr>
+<tr><td><code>--project-state</code></td><td>flag</td><td>false</td><td>Lista so arquivos de estado do projeto.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Mapear diretorios (primeira inspecao)</h3>
+<p><strong>Contexto</strong>: Voce acabou de clonar o template. Quer ver o que tem.</p>
+<pre><code>cd xforge
+tree -L 2 -I 'node_modules|.git'
+# Ou no Windows:
+Get-ChildItem -Recurse -Depth 2 | Where-Object { -not $_.PSIsContainer } | Group-Object PSParentPath</code></pre>
+<p><strong>Output esperado</strong> (resumido):</p>
+<pre><code>.
+|-- .kilo/
+|   |-- skills/      (172 arquivos)
+|   |-- agents/      (53 + 28 arquivos)
+|   |-- commands/    (144 arquivos)
+|   |-- rules/       (41 arquivos)
+|   |-- core/        (17 JSONs)
+|   `-- automation/  (90+ scripts)
+|-- .xforge/
+|   |-- decisions/   (95 DRs ativos + 52 archive)
+|   |-- knowledge/   (210 files / 319 entries)
+|   |-- memory/      (16 files)
+|   `-- scripts/     (15 scripts)
+|-- docs/             (12 paginas canonicas)
+|-- AGENTS.md         (entry point)
+|-- ARCHITECTURE.md   (este arquivo espelho)
+|-- CLAUDE.md         (Claude Code alias)
+|-- README.md         (landing GitHub)
+|-- CHANGELOG.md      (release history)
+`-- STATUS.md         (status master)</code></pre>
+<p><strong>Edge case</strong>: <code>tree</code> nao vem no Windows por default. Use <code>Get-ChildItem -Recurse</code> ou instale <code>tree</code> via Chocolatey.</p>
+
+<h3>Cenario 2: Listar template-only files (DR-0180)</h3>
+<p><strong>Contexto</strong>: Voce quer saber o que sera EXCLUIDO quando voce clonar como consumer.</p>
+<pre><code>Get-Content .xforge/template-only.json | ConvertFrom-Json | Format-List</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>templateOnlyPaths:
+  - .xforge/decisions/archive/
+  - .xforge/decisions/DR-NNNN-*.md
+  - .xforge/sessions/
+  - .xforge/audit/
+  - .xforge/memory/sessions/
+  - .xforge/learning/
+  - .xforge/feedback/
+  - .xforge/rag/indexes/
+  - .xforge/rag/chunks/
+
+# Quando voce roda: xforge-init --consumer
+# Esses paths sao resetados/limpos
+# O resto (decisions/ ativo, knowledge/, scripts/) e preservado</code></pre>
+<p><strong>Edge case</strong>: <code>template-only.json</code> e o manifesto canonico. Edita-lo afeta clones futuros. Para excluir paths customizados, adicione ao array.</p>
+
+<h3>Cenario 3: Adicionar nova skill (template-side)</h3>
+<p><strong>Contexto</strong>: Voce criou uma skill nova e quer adiciona-la ao template.</p>
+<pre><code># Criar skill
+mkdir -p .kilo/skills/minha-skill
+cat &gt; .kilo/skills/minha-skill/SKILL.md &lt;&lt;EOF
+---
+name: minha-skill
+description: O que minha skill faz
+type: skill
+category: Minha Categoria
+applicabilityScope: ["dotnet"]
+---
+# Conteudo...
+EOF
+
+# Regenerar registry
+regenerate-registries.ps1
+
+# Validar
+doctor.ps1
+git add .kilo/skills/minha-skill/
+git commit -m "feat: add minha-skill"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[regenerate] 173 skills (era 172)
+[doctor] 0 errors
+[git] feat: add minha-skill</code></pre>
+<p><strong>Edge case</strong>: Se o registry nao for regenerado, a skill existe mas nao e indexada. Sempre rode regenerate-registries.ps1 apos criar/modificar componentes.</p>
+
+<h3>Cenario 4: Adicionar nova knowledge entry (project-side)</h3>
+<p><strong>Contexto</strong>: Voce aprendeu algo novo do projeto e quer memorizar no project state.</p>
+<pre><code># Criar arquivo
+cat &gt; .xforge/knowledge/projeto/especifico-projeto.md &lt;&lt;EOF
+# Especifico deste projeto
+Insight: ...
+Decisao: ...
+Refs: DR-XXXX
+EOF
+
+# Adicionar ao INDEX.json
+{
+  "path": ".xforge/knowledge/projeto/especifico-projeto.md",
+  "domain": "projeto",
+  "applicabilityScope": ["*"],
+  "trustScore": 90,
+  "keywords": ["projeto", "especifico"]
+}
+
+# Reindexar RAG
+python .xforge/scripts/rag_local.py reindex</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[INDEX] 320 entries (era 319, +1)
+[reindex] 748 docs (era 747, +1)
+[done] Knowledge router recarregado</code></pre>
+<p><strong>Edge case</strong>: Edicao do INDEX.json e manual. Para automatizar, use a skill <code>knowledge-ingestion</code>.</p>
+
+<h3>Cenario 5: Diferenciar template-only vs project-state (clone consumer)</h3>
+<p><strong>Contexto</strong>: Voce quer usar o template em um novo projeto mas SEM herdar o historico (decisoes passadas, audit logs, learning).</p>
+<pre><code># Clone normal (herda tudo)
+git clone https://github.com/renatotiburcio/xforge.git meu-novo-projeto
+cd meu-novo-projeto
+# Tem .xforge/decisions/ com 95 DRs que NAO sao do seu projeto
+# Tem .xforge/memory/sessions/ com sessoes de quem desenvolveu o template
+
+# Reset para uso consumer (DR-0180 Fase 0)
+xforge-init --consumer
+# Remove: archive/, sessions/, audit/, learning/, feedback/, rag/indexes/
+# Preserva: decisions/ ativo (mas zera), knowledge/, scripts/, memory/genius/</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[consumer-reset] Limpando template-only paths:
+  - .xforge/decisions/archive/ (52 files deleted)
+  - .xforge/sessions/ (3 files deleted)
+  - .xforge/audit/ (15 files deleted)
+  - .xforge/learning/ (8 files deleted)
+  - .xforge/feedback/ (2 files deleted)
+  - .xforge/rag/indexes/ (1 file deleted)
+  - .xforge/rag/chunks/ (1 file deleted)
+[done] Consumer reset completo. 82 files removed.</code></pre>
+<p><strong>Edge case</strong>: <code>--consumer</code> apaga arquivos. Garanta que voce ja commitou o que importa. Para preservar decisoes, exporte antes.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>"Conflito entre .kilo/ e customizacao do projeto"</h3>
+<p><strong>Causa</strong>: Voce editou .kilo/ ao inves de .xforge/. Template-side e imutavel por projeto (so muda em commits do repo do template).</p>
+<p><strong>Solucao</strong>: Reverta edicao em .kilo/. Customizacoes vao em <code>.xforge/</code> (decisions/, knowledge/, memory/, scripts/) ou em <code>.kilo/.stack-context.json</code> (per-projeto cache).</p>
+
+<h3>"RAG nao encontra knowledge nova"</h3>
+<p><strong>Causa</strong>: RAG reindex nao foi rodado. Chunks.jsonl nao tem a nova entry.</p>
+<p><strong>Solucao</strong>: <code>python .xforge/scripts/rag_local.py reindex</code>. Verifique <code>lastIndexedAt</code> em <code>.xforge/rag/manifest.json</code>.</p>
+
+<h3>"Doctor reclama de registries stale"</h3>
+<p><strong>Causa</strong>: Voce criou/modificou skills, agents, rules, commands, mas registries nao foram regenerados.</p>
+<p><strong>Solucao</strong>: <code>regenerate-registries.ps1</code> (escreve 4 registries atomicamente).</p>
+
+<h3>"Onde fica X?" (regra geral)</h3>
+<p><strong>Causa</strong>: Duvida canonica. Use a matrix:</p>
+<p><strong>Solucao</strong>:
+<ul>
+<li>SKILL nova (reutilizavel) -> <code>.kilo/skills/nome/SKILL.md</code> (template)</li>
+<li>AGENT novo (AI entity) -> <code>.kilo/agents/nome.md</code> (template)</li>
+<li>COMMAND novo (slash) -> <code>.kilo/commands/nome.md</code> (template)</li>
+<li>RULE nova (behavioral) -> <code>.kilo/rules/nome.md</code> (template)</li>
+<li>KNOWLEDGE entry nova -> <code>.xforge/knowledge/&lt;dominio&gt;/nome.md</code> + INDEX.json (project)</li>
+<li>DR nova -> <code>.xforge/decisions/DR-NNNN-titulo.md</code> (project)</li>
+<li>Script custom -> <code>.xforge/scripts/nome.ps1</code> (project)</li>
+</ul>
+</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

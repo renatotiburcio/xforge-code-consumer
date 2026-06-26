@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wizard /incident - Responder Incidente - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.6.0">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div>
+<nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html" class="active">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Wizards</h3><ul><li><a href="wiz-index.html">/index (índice)</a></li><li><a href="wiz-forge.html">/forge</a></li><li><a href="wiz-forge-examples.html">/forge (exemplos)</a></li><li><a href="wiz-domain.html">/domain</a></li><li><a href="wiz-genius.html">/genius</a></li><li><a href="wiz-knowledge.html">/knowledge</a></li><li><a href="wiz-governance.html">/governance</a></li><li><a href="wiz-release.html">/release</a></li><li><a href="wiz-incident.html" class="active">/incident</a></li><li><a href="wiz-quality.html">/quality</a></li><li><a href="wiz-onboard.html">/onboard</a></li><li><a href="wiz-learn.html">/learn</a></li><li><a href="wiz-visual-investigate.html">/visual-investigate</a></li></ul></aside>
+<main>
+<h1>Wizard /incident - Responder Incidente</h1>
+
+<h2>O que e</h2>
+<p><strong>/incident</strong> guia resposta a incidente: identifica tipo (seguranca, performance, dados), escala severidade, captura timeline, sugere mitigacao, gera postmortem template, e armazena em .xforge/incidents/. Integra com Slack/email para notificacoes.</p>
+
+<h2>Quando usar</h2>
+<ul>
+<li>Quando acontece incidente em producao</li><li>Quando precisa de postmortem estruturado</li><li>Quando quer lessons learned catalogadas</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code>/incident --severity critical --type security --summary "XSS em /search exposto dados pessoais" --notify slack+email+anpd --timeline ./logs/xss-exploit.json</code></pre>
+<p>Para invocar: abra o XForge Code CLI e digite o comando. O wizard guia via Q&A interativo.</p>
+
+<h2>Parametros</h2>
+<table><tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th><th>Obrigatorio?</th></tr>
+<tr><td><code>--severity</code></td><td>string</td><td>obrigatorio</td><td>critical, high, medium, low</td><td>Sim</td></tr>
+<tr><td><code>--type</code></td><td>string</td><td>obrigatorio</td><td>security, performance, data, availability, business</td><td>Sim</td></tr>
+<tr><td><code>--summary</code></td><td>string</td><td>obrigatorio</td><td>Descricao curta do incidente</td><td>Sim</td></tr>
+<tr><td><code>--timeline</code></td><td>string</td><td>""</td><td>Path para timeline events</td><td>Nao</td></tr>
+<tr><td><code>--postmortem</code></td><td>string</td><td>auto</td><td>Path para salvar postmortem</td><td>Nao</td></tr>
+<tr><td><code>--notify</code></td><td>array</td><td>[]</td><td>Canais: slack, email, sms, pagerduty</td><td>Nao</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Incidente de seguranca critico (data breach)</h3>
+<p><strong>Contexto</strong>: Hacker explorou XSS em /search e acessou dados pessoais. Incidente LGPD com obrigacao de notificacao ANPD em 72h.</p>
+<pre><code>/incident --severity critical --type security --summary "XSS em /search exposto dados pessoais" --notify slack+email+anpd --timeline ./logs/xss-exploit.json</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[incident] INC-2026-001 criado. CRITICAL.
+[incident] Postmortem template gerado (LGPD-compliant).
+[incident] Slack #security notificado.
+[incident] Email dpo@meuprojeto.com enviado.
+[incident] ANPD notification template preparado (prazo 72h).
+
+[CONTINUIDADE - acoes obrigatorias]:
+  1. Revisar postmortem gerado
+  2. Confirmar impacto (quantos registros afetados)
+  3. Preparar notificacao ANPD (template em .xforge/incidents/)
+  4. Bloquear exploit (patch XSS)
+  5. Documentar lessons learned -> DR-0202
+  6. Se aplicavel: rodar /forge upgrade --security</code></pre>
+<p><strong>Edge case</strong>: Critical incidents LGPD tem SLA rigido (notificacao ANPD em ate 72h).</p>
+
+<h3>Cenario 2: Performance degradada (API lenta)</h3>
+<p><strong>Contexto</strong>: API latencia subiu 5x nas ultimas horas. p95 de 200ms para 1000ms.</p>
+<pre><code>/incident --severity high --type performance --summary "API /orders p95 1000ms (normal: 200ms)" --timeline ./grafana-snapshot.json</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[incident] INC-2026-002 criado. HIGH.
+[incident] Timeline importada (47 eventos).
+[incident] Sugestoes de mitigacao:
+  - Verificar N+1 queries (EF Core)
+  - Verificar conexoes de banco (connection pool)
+  - Verificar cache (Redis se --integrations redis)
+  - Verificar jobs Hangfire (fila longa?)
+[incident] Postmortem template gerado.</code></pre>
+<p><strong>Edge case</strong>: Use --timeline ./grafana-snapshot.json para correlacionar com metricas.</p>
+
+<h3>Cenario 3: Disponibilidade (API fora do ar)</h3>
+<p><strong>Contexto</strong>: API retornando 503 ha 15 minutos. Health check falhando.</p>
+<pre><code>/incident --severity critical --type availability --summary "API retornando 503 ha 15min" --notify slack+email+pagerduty</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[incident] INC-2026-003 criado. CRITICAL.
+[incident] Slack #ops-critical notificado.
+[incident] PagerDuty incident criado.
+[incident] Sugestoes de mitigacao:
+  - Verificar health check endpoint (/health)
+  - Verificar logs de erro (Serilog -> Seq/Elastic)
+  - Verificar conexao com banco (PostgreSQL)
+  - Verificar memoria/CPU do container (Docker stats)
+  - Rollback: docker-compose down && docker-compose up -d --force-recreate</code></pre>
+<p><strong>Edge case</strong>: Use --notify pagerduty para escalar automaticamente.</p>
+
+
+
+<h2>Troubleshooting</h2>
+
+
+
+</main>
+<footer><div><strong>XForge Manual v50.6.0</strong> &middot; DR-0181 + DR-0182 (B-090) + DR-0184 (B-092)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.6.0"></script>
+</body></html>

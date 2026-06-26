@@ -1,0 +1,144 @@
+[
+  {
+    "id": "nfse-e0312-codigo-tributacao-nacional-nao-administrado",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e Nacional",
+    "code": "E0312",
+    "title": "Código de tributação nacional não administrado",
+    "status": "community-hint",
+    "trustScore": 60,
+    "sources": [
+      "tecnospeed-nfse-rejeicoes",
+      "nfse-documentacao-atual"
+    ],
+    "symptoms": [
+      "NFS-e rejeitada por código de tributação inválido/não vigente"
+    ],
+    "diagnosis": [
+      "Conferir código nacional de tributação e vigência",
+      "Verificar competência"
+    ],
+    "recommendedActions": [
+      "Validar código no portal/documentação vigente",
+      "Atualizar tabela local",
+      "Criar validação pré-envio"
+    ],
+    "prevention": [
+      "Sincronizar tabelas NFS-e",
+      "Versionar códigos por competência"
+    ],
+    "edgeCases": [
+      "Código válido em uma competência e inválido em outra"
+    ],
+    "ufBehavior": [
+      "NFS-e pode ter variação municipal quando fora do padrão nacional"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfse-e0314-codigo-tributacao-municipal-inexistente",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e",
+    "code": "E0314",
+    "title": "Código de tributação municipal inexistente",
+    "status": "community-hint",
+    "trustScore": 60,
+    "sources": [
+      "tecnospeed-nfse-rejeicoes",
+      "nfse-documentacao-atual"
+    ],
+    "symptoms": [
+      "Município rejeita código tributário municipal"
+    ],
+    "diagnosis": [
+      "Código pode não existir para o município/provedor",
+      "Tabela municipal pode estar desatualizada"
+    ],
+    "recommendedActions": [
+      "Atualizar tabela municipal",
+      "Conferir CNAE/serviço/código municipal",
+      "Validar mapeamento por município"
+    ],
+    "prevention": [
+      "Manter cadastro por município/provedor",
+      "Testes por cidade"
+    ],
+    "edgeCases": [
+      "Mesmo serviço com códigos diferentes por município"
+    ],
+    "ufBehavior": [
+      "Alta variação municipal"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfse-e351-nbs-nao-informado",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e Nacional",
+    "code": "E351",
+    "title": "Código NBS não informado",
+    "status": "community-hint",
+    "trustScore": 60,
+    "sources": [
+      "tecnospeed-nfse-rejeicoes",
+      "nfse-documentacao-atual"
+    ],
+    "symptoms": [
+      "Rejeição por ausência de NBS"
+    ],
+    "diagnosis": [
+      "Campo NBS obrigatório conforme regra aplicável",
+      "Cadastro de serviço incompleto"
+    ],
+    "recommendedActions": [
+      "Informar NBS correto no cadastro de serviço",
+      "Criar validação antes do envio"
+    ],
+    "prevention": [
+      "Obrigatoriedade cadastral de NBS quando aplicável"
+    ],
+    "edgeCases": [
+      "NBS pode depender do tipo de serviço e legislação vigente"
+    ],
+    "ufBehavior": [],
+    "related": [],
+    "humanReviewRequired": true
+  },
+  {
+    "id": "nfse-e400-januaria-mg-validacao-dados",
+    "domain": "fiscal.nfse",
+    "documentType": "NFS-e Municipal",
+    "code": "E400",
+    "title": "Erro de validação de dados em Januária/MG",
+    "status": "community-hint",
+    "trustScore": 55,
+    "sources": [
+      "enotas-nfse-e400"
+    ],
+    "symptoms": [
+      "Município Januária/MG retorna E400"
+    ],
+    "diagnosis": [
+      "Erro genérico de validação de dados",
+      "Necessário verificar campos enviados, valores calculados e regras municipais"
+    ],
+    "recommendedActions": [
+      "Validar XML/payload",
+      "Conferir valores, cadastro, código de serviço e tributação",
+      "Consultar provedor/município"
+    ],
+    "prevention": [
+      "Criar suíte de validação específica por município/provedor"
+    ],
+    "edgeCases": [
+      "Erro genérico pode esconder campo específico inválido"
+    ],
+    "ufBehavior": [
+      "Caso específico municipal"
+    ],
+    "related": [],
+    "humanReviewRequired": true
+  }
+]

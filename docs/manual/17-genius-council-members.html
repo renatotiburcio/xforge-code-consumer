@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>17 Genius Council Members - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html" class="active">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav>
+</header><aside><h3>Granular</h3><ul><li><a href="13-stack-detection.html">Stack Detection</a></li><li><a href="14-rag-system.html">RAG System</a></li><li><a href="15-quality-gates.html">Quality Gates</a></li><li><a href="16-knowledge-applicability.html">Knowledge Scope</a></li><li><a href="17-genius-council-members.html" class="active">Conselho 66</a></li></ul></aside>
+<main>
+<h1>17 - Genius Council: 66 Membros</h1>
+
+<h2>O que e</h2>
+<p>O <strong>Conselho dos Genios</strong> do XForge agrega <strong>66 especialistas virtuais</strong> em 8 dominios (Fundamentos Computacao, Engenharia Software, Linguagens, Web/Infra, IA, Produto, UX/UI, Seguranca/Cripto) + 3 tiers verticais brasileiros (Tributario, Contabil, Trabalhista, SUAS, Investimentos, DDD). Diferente de LLMs genericos, cada genio tem <strong>persona historica</strong>, <strong>dominio de expertise</strong>, e <strong>memoria dedicada</strong> em <code>.xforge/memory/genius/AGXXX/knowledge.jsonl</code>.</p>
+<p>Localizacao: definicoes em <code>.kilo/rules/02-genius-council-framework.md</code> (38 originais). Verticais em <code>.kilo/agents/genius-council/AGXXX-*.md</code> (28 brasileiros). Memoria por genio em <code>.xforge/memory/genius/</code>.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando precisa de <strong>perspectiva especializada</strong> em decisao nao-trivial (DR-0033)</li>
+  <li>Quando quer acionar <strong>multiplas visoes</strong> (ex: Norman + Nielsen para UX)</li>
+  <li>Quando precisa de <strong>memoria vertical</strong> especifica (ex: AG040 Ricardo Alexandre para ICMS)</li>
+  <li>Quando quer evitar <strong>conflito de especialistas</strong> via Devil's Advocate (AG999)</li>
+  <li>NAO use para tarefas triviais (Loop sozinho e mais rapido)</li>
+  <li>NAO use para gerar codigo generico (LLM worker faz melhor)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica via slash command <code>/genius-council</code>:</p>
+<pre><code>/genius-council
+
+# Com topico explicito
+/genius-council
+/topico: "escolha entre AutoMapper e Mapster"
+/contexto: ".NET 10, projeto enterprise, time de 50 devs"
+/restricao: "open-source, brasileiro, ZERO custo de licenca"
+
+# Acionar genio especifico (sem Conselho completo)
+/genius AG032
+/topico: "threat model para API REST que lida com dados pessoais"
+
+# Adicionar novo genio (CREATE_GENIUS)
+/genius-create-genius
+/nome: "Grace Hopper"
+/inspiracao: "Grace Hopper, pioneira COBOL"
+/dominio: "Linguagens / Compiladores"</code></pre>
+<p>Para uso programatico em DR:</p>
+<pre><code># Documentar no DR quais genios foram acionados
+**Genios consultados** (3):
+- AG010 Anders Hejlsberg (TypeScript evolution)
+- AG007 Robert C. Martin (Clean Code)
+- AG012 Linus Torvalds (realidade operacional)
+
+# Atualizar memoria do genio
+python .xforge/scripts/genius-learn.py AG010
+/learning: "TypeScript 5.5 adicionou TypePredicate generics em 2025"</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>/genius &lt;AGXXX&gt;</code></td><td>string</td><td>vazio</td><td>ID do genio especifico (ex: AG001, AG040). Se vazio, Conselho completo.</td></tr>
+<tr><td><code>/topico &lt;text&gt;</code></td><td>string</td><td>obrigatorio</td><td>Topico da decisao. Concreto, nao abstrato.</td></tr>
+<tr><td><code>/contexto &lt;text&gt;</code></td><td>string</td><td>vazio</td><td>Stack, time, restricao, deadline, etc.</td></tr>
+<tr><td><code>/restricao &lt;text&gt;</code></td><td>string</td><td>vazio</td><td>O que NAO pode ser violado (LGPD, custo, stack).</td></tr>
+<tr><td><code>/genius-create-genius</code></td><td>flag</td><td>false</td><td>Adiciona novo genio (CREATE_GENIUS template).</td></tr>
+<tr><td><code>/learning &lt;text&gt;</code></td><td>string</td><td>vazio</td><td>Atualiza memoria do genio com novo conhecimento.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: Conselho completo para decisao arquitetural</h3>
+<p><strong>Contexto</strong>: Voce precisa decidir entre microsservicos e monolito modular para um ERP BR. Aciona Conselho.</p>
+<pre><code>/genius-council
+/topico: "Monolito modular ou microsservicos para ERP BR de medio porte?"
+/contexto: "Time de 8 devs, 3 modulos (fiscal, contabil, vendas), C#/.NET 8, PostgreSQL, 500 clientes ativos"
+/restricao: "LGPD compliance, time pequeno nao aguenta 8 deploys/dia, infra simples (1 servidor + replicas)"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[GCF] Conselho acionado: 5 genios relevantes
+[AG002 von Neumann] (arquitetura): "Modular monolith escala ate 100 devs, microsservicos adiciona complexidade distribuida sem ganho."
+[AG045 Martin Fowler] (Patterns of Enterprise): "MonolithFirst. Comece monolito, extraia microsservicos quando dor justificar."
+[AG012 Linus Torvalds] (realidade): "Equipe de 8 nao tem bandwidth para microservices. Foque em fazer o monolito BEM."
+[AG017 Bill Gates] (escala): "Microsoft Windows monolito escalou para 1B usuarios. Bom design interno > distribuicao prematura."
+[AG999 Devil's Advocate] (7 perguntas):
+  1. Por que? Time novo, escopo definido. Premature optimization.
+  2. Alternativa melhor? Modular monolith. 4 deploys/dia, 1 banco, ACID preservado.
+  3. Mais simples? Sim, monolito.
+  4. Mais barato? 1 cluster vs N clusters.
+  5. Necessidade ou moda? Moda. "Microsservicos" vendeu curso de 5k USD.
+  6. 5 anos? Monolito modular pode virar microsservicos depois (Strangler Fig).
+  7. Maior critica? "Voces vao criar distributed monolith pior que o monolito simples."
+[5 Guardians] (architecture, simplicity, security, quality, documentation):
+  - OK: Modular monolith
+[Consenso] Decisao: Monolito modular com 3 modulos internos (Fiscal, Contabil, Vendas).
+            Justificativa: Time pequeno, escopo definido, LGPD exige ACID forte, distribuicao prematura adiciona risco.
+            Risco: 3 anos depois, monolito pode virar bola de neve. Mitigacao: Bounded contexts internos, pronto para Strangler Fig.
+
+[DR] Criando .xforge/decisions/DR-0194-monolith-vs-microservices.md
+[Status] draft (aguarda sua aprovacao)</code></pre>
+<p><strong>Edge case</strong>: Se topico e' muito vago ("como melhorar codigo?"), Conselho retorna "especifique mais". Seja concreto.</p>
+
+<h3>Cenario 2: Acionar genio vertical (AG040 - Tributario)</h3>
+<p><strong>Contexto</strong>: Implementando calculo de ICMS-ST para SP. Quer consulta especializada.</p>
+<pre><code>/genius AG040
+/topico: "Calculo de ICMS-ST para produtos de revenda em SP (MVA ajustada)"
+/contexto: ".NET 8, C#, ja temos a tabela MVA, mas precisamos da MVA ajustada para importacao"
+/restricao: "Convênio 52/2017 (substituicao tributaria), decreto SP 61.779/2016"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[AG040 Ricardo Alexandre] (Tributario/ICMS):
+  "ICMS-ST em SP segue MVA (Margem Valor Agregado) original OU MVA ajustada.
+   MVA ajustada: MVA_original * (1 - ALQ_ICMS_INTERNO / (1 - ALQ_ICMS_INTERESTADUAL))
+   Exemplo: MVA 50%, ALQ_SP 18%, ALQ_origem 12%:
+   MVA_ajustada = 50% * (1 - 0.18 / (1 - 0.12)) = 50% * (1 - 0.18/0.88) = 50% * 0.7955 = 39.77%
+   Verificar: 1. Decreto SP 61.779/2016 art. 26-A, 2. Se produto tem beneficio fiscal, ajustar MVA.
+   Gotcha: SP publica MVA ajustada anualmente. Use a do ano corrente (jan/2025)."
+
+[Memoria] Atualizado em .xforge/memory/genius/AG040/knowledge.jsonl:
+  - ID: K-AG040-2025-001
+  - Statement: MVA ajustada SP 2025: formula MVA_orig * (1 - 0.18/(1-0.12))
+  - Source: Convenio 52/2017 + Decreto SP 61.779/2016
+  - TrustScore: 100</code></pre>
+<p><strong>Edge case</strong>: AG040 consulta legislacao vigente. Se a legislacao mudou (ex: Reforma Tributaria IBS/CBS), ele sinaliza "verificar com AG040 novamente em 2026".</p>
+
+<h3>Cenario 3: Devil's Advocate (AG999) em decisao ja tomada</h3>
+<p><strong>Contexto</strong>: Voce ja decidiu usar Mapster. Quer validar se a decisao ainda se sustenta.</p>
+<pre><code>/genius AG999
+/topico: "Mapster vs AutoMapper em projeto novo .NET 8"
+/contexto: "DR-0073 ja decidiu AutoMapper, mas Mapster tem performance melhor (3-5x em benchmark recente)"
+/decisao: "Manter AutoMapper por consistencia com XForge golden rules"</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[AG999 Devil's Advocate]:
+  1. Por que manter AutoMapper? Golden rule XForge (PREF-001).
+  2. Alternativa melhor? Mapster 3-5x mais rapido. Mas para 99% dos casos, irrelevante.
+  3. Mais simples? AutoMapper tem mais docs, mais exemplos, mais integracao com .NET DI.
+  4. Mais barato? Ambos open-source. Custo zero.
+  5. Necessidade ou moda? "Performance" como argumento pode ser FOMO.
+  6. 5 anos? AutoMapper tem manutencao ativa. Mapster idem. Ambos duraveis.
+  7. Maior critica? "Voce priorizou consistencia sobre performance. Em hot path (10k req/s), 3x de slowdown importa."
+
+[Veredito]: Decisao defensavel. Custo de troca > ganho de performance. Manter AutoMapper.
+            Se performance virar gargalo (medir!), reconsiderar Mapster.
+[Recomendacao]: Documentar benchmark na DR-0073 (anexo).</code></pre>
+<p><strong>Edge case</strong>: AG999 pode vetar decisao via Guardian Security, mas nao via Devil's Advocate. AG999 levanta objecoes, voce decide.</p>
+
+<h3>Cenario 4: Adicionar novo genio (Grace Hopper)</h3>
+<p><strong>Contexto</strong>: Quer adicionar um genio de compiladores/linguagens historicas. Grace Hopper.</p>
+<pre><code>/genius-create-genius
+/nome: "Grace Hopper"
+/inspiracao: "Grace Hopper, pioneira COBOL, primeiro compilador (A-0), conceito de maquina independente"
+/dominio: "Linguagens / Compiladores / Historia da computacao"
+/missao: "Lembrar que COBOL foi a primeira linguagem de alto nivel usada em producao (1959) e que compiladores existem ha 70+ anos"
+/especialidades: 5
+/perguntas: 5
+/responsaveis: 5</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[CREATE_GENIUS] Processando...
+  [OK] Nome: Grace Hopper
+  [OK] Inspiracao historica validada
+  [OK] Dominio: Linguagens / Compiladores / Historia
+  [OK] Missao: 1 frase
+  [OK] 5 especialidades
+  [OK] 5 perguntas caracteristicas
+  [OK] 5 responsabilidades
+  [Criar] .kilo/agents/genius-council/AG067-grace-hopper.md
+  [Criar] .xforge/memory/genius/AG067/knowledge.jsonl (vazio)
+  [Atualizar] .kilo/rules/02-genius-council-framework.md (count: 38+28+1=67)
+  [Atualizar] .kilo/skills/genius-council/SKILL.md (council-members)
+
+  [DR-0195] Criado para documentar a adicao
+  [Status] draft (aguarda sua aprovacao)
+
+  [MEMORY] Auto-update via self-learning-genius rule (DR-0130) sera ativado</code></pre>
+<p><strong>Edge case</strong>: Cada genio novo DEVE ter DR formal (RBC). Self-learning memory e obrigatorio (DR-0130). Se nao criar DR, genio nao persiste.</p>
+
+<h3>Cenario 5: Self-Learning Memory (atualizar conhecimento)</h3>
+<p><strong>Contexto</strong>: Nova legislacao fiscal 2025. Atualizar memoria do AG040 com IBC/CBS.</p>
+<pre><code>python .xforge/scripts/genius-learn.py AG040
+/learning: "Reforma Tributaria 2025: IBS (estadual) + CBS (federal) substitui ICMS + PIS/COFINS. Inicio 2026, transicao 2026-2033. Aliquota media estimada 20-27%."
+/source: "EC 132/2023 + PL 368/2024 + CNI/Sebrae"
+/trustScore: 90</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[genius-learn] AG040 atualizado
+[knowledge.jsonl] Append:
+  {
+    "id": "K-AG040-2025-002",
+    "statement": "Reforma Tributaria 2025: IBS+CBS substitui ICMS+PIS+COFINS a partir 2026",
+    "source": "EC 132/2023 + PL 368/2024",
+    "trustScore": 90,
+    "createdAt": "2026-06-21T16:30:00Z",
+    "expiresAt": "2027-06-21T16:30:00Z"  # TTL 1 ano
+  }
+[contradiction-check] AG040 memoria nao contradiz
+[reindex] Knowledge router recarregado
+
+Proxima consulta AG040 sobre Reforma Tributaria retornara:
+"Reforma Tributaria 2025: IBS+CBS substitui ICMS+PIS/COFINS. Inicio 2026.
+ Aliquotas: IBS varia por UF, CBS federal. Transicao 2026-2033 (faseamento).
+ Exemplo: 2026 - 10% do ICMS vira IBS. 2033 - 100% ICMS substituido."</code></pre>
+<p><strong>Edge case</strong>: Se o learning contradiz memoria existente, abre debate (AG999 Devil Advocate). Append so apos resolucao.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Genio nao responde / resposta generica</h3>
+<p><strong>Causa</strong>: Memoria do genio esta vazia ou sem contexto especifico.</p>
+<p><strong>Solucao</strong>: <code>python .xforge/scripts/genius-learn.py AG040</code> para popular memoria com casos brasileiros. Sem memoria, genio responde generico.</p>
+
+<h3>"Genio AG0XX nao existe"</h3>
+<p><strong>Causa</strong>: ID invalido. Os 66 vao ate AG066 (Tier 3). AG067+ nao existe ate ser criado.</p>
+<p><strong>Solucao</strong>: Use ID valido. Veja lista em <code>.kilo/rules/02-genius-council-framework.md</code> secao 2.</p>
+
+<h3>"Conselho demora &gt; 30s"</h3>
+<p><strong>Causa</strong>: Topico muito amplo, acionou 10+ genios.</p>
+<p><strong>Solucao</strong>: Limite a 3-5 genios explicitos: <code>/genius-council AG007 AG012 AG999 /topico: ...</code>. Para GCF completo, use 7 fases (reserva 2-5 min).</p>
+
+<h3>DR-XXXX nao atualiza memoria do genio</h3>
+<p><strong>Causa</strong>: Self-learning loop nao rodou. DR tem <code>memoriaImpact: true</code>?</p>
+<p><strong>Solucao</strong>: Edite DR adicionando no frontmatter: <code>memoriaImpact: true</code>. Rode <code>genius-learn.py</code> explicitamente. Ou commit o DR - hook pos-commit chama genius-learn.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

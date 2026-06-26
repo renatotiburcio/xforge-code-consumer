@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 Commands - XForge Manual</title>
+<link rel="stylesheet" href="../style.css?v=50.2.5">
+</head>
+<body>
+<header><div class="brand">XForge Manual</div><nav>  <a href="../index.html">Inicio</a>
+<details class="nav-dropdown">
+  <summary>Essenciais</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/01-quickstart.html">Quickstart</a>
+  <a href="../manual/02-architecture.html">Arquitetura</a>
+  <a href="../manual/03-gcf.html">Conselho (GCF)</a>
+  <a href="../manual/12-xforge-init.html">xforge-init</a>
+  <a href="../manual/11-faq.html">FAQ</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Componentes</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/04-skills.html">Skills</a>
+  <a href="../manual/05-agents.html">Agents</a>
+  <a href="../manual/06-commands.html" class="active">Commands</a>
+  <a href="../manual/07-rules.html">Rules</a>
+  <a href="../manual/08-knowledge.html">Knowledge</a>
+  <a href="../manual/09-decisions.html">Decisoes</a>
+  <a href="../manual/10-extensions.html">Extensions</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Catalogs</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/cat-skills.html">Skills (catalogo)</a>
+  <a href="../manual/cat-agents.html">Agents (catalogo)</a>
+  <a href="../manual/cat-commands.html">Commands (catalogo)</a>
+  <a href="../manual/cat-rules.html">Rules (catalogo)</a>
+  <a href="../manual/cat-knowledge.html">Knowledge (catalogo)</a>
+  <a href="../manual/cat-decisions.html">Decisoes (catalogo)</a>
+  <a href="../manual/cat-extensions.html">Extensions (catalogo)</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Granular</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/13-stack-detection.html">Stack Detection</a>
+  <a href="../manual/14-rag-system.html">RAG System</a>
+  <a href="../manual/15-quality-gates.html">Quality Gates</a>
+  <a href="../manual/16-knowledge-applicability.html">Knowledge Scope</a>
+  <a href="../manual/17-genius-council-members.html">Conselho 66</a>
+  </div>
+</details>
+<details class="nav-dropdown">
+  <summary>Wizards</summary>
+  <div class="dropdown-menu">
+  <a href="../manual/wiz-forge.html">/forge</a>
+  <a href="../manual/wiz-forge-examples.html">/forge (exemplos)</a>
+  <a href="../manual/wiz-domain.html">/domain</a>
+  <a href="../manual/wiz-genius.html">/genius</a>
+  <a href="../manual/wiz-knowledge.html">/knowledge</a>
+  <a href="../manual/wiz-governance.html">/governance</a>
+  <a href="../manual/wiz-release.html">/release</a>
+  <a href="../manual/wiz-incident.html">/incident</a>
+  <a href="../manual/wiz-quality.html">/quality</a>
+  <a href="../manual/wiz-onboard.html">/onboard</a>
+  <a href="../manual/wiz-learn.html">/learn</a>
+  <a href="../manual/wiz-visual-investigate.html">/visual-investigate</a>
+  </div>
+</details>
+  <a href="../manual/11-faq.html">FAQ</a>
+  <button id="darkBtn" class="dark-btn">Dark</button></nav></header><aside><h3>Componentes</h3><ul><li><a href="04-skills.html">Skills</a></li><li><a href="05-agents.html">Agents</a></li><li><a href="06-commands.html" class="active">Commands</a></li><li><a href="07-rules.html">Rules</a></li><li><a href="08-knowledge.html">Knowledge</a></li><li><a href="09-decisions.html">Decisões</a></li><li><a href="10-extensions.html">Extensions</a></li><li><a href="cat-skills.html">Skills (catálogo)</a></li><li><a href="cat-agents.html">Agents (catálogo)</a></li><li><a href="cat-commands.html">Commands (catálogo)</a></li><li><a href="cat-rules.html">Rules (catálogo)</a></li><li><a href="cat-knowledge.html">Knowledge (catálogo)</a></li><li><a href="cat-decisions.html">Decisões (catálogo)</a></li><li><a href="cat-extensions.html">Extensions (catálogo)</a></li></ul></aside>
+<main>
+<h1>06 - Commands (144 slash commands)</h1>
+
+<h2>O que e</h2>
+<p><strong>Commands</strong> sao slash commands invocados pelo usuario no XForge Code CLI. XForge tem 144 commands em 14 categorias. Diferente de skills (referencia) e agents (executaveis AI), commands sao <strong>workflows</strong>: combinam 1+ skills/agents/scripts em uma acao coesa.</p>
+
+<h2>Quando usar</h2>
+<ul>
+  <li>Quando voce quer executar um workflow complexo (criar projeto, gerar knowledge, etc)</li>
+  <li>Quando voce quer descobrir comandos por categoria (registry.json)</li>
+  <li>Quando voce quer criar command custom (reutilizavel)</li>
+  <li>Quando voce quer encadear commands (composability)</li>
+</ul>
+
+<h2>Como usar</h2>
+<p>Sintaxe canonica:</p>
+<pre><code># Slash command no XForge Code CLI
+/xforge-init
+/quickstart
+/genius-council
+/create-api
+/memory-recover-context
+
+# Com args
+/quickstart --stack dotnet
+/genius-council /topico: "..." /contexto: "..."
+
+# Listar commands disponiveis
+/xforge-help</code></pre>
+
+<h2>Parametros</h2>
+<table>
+<tr><th>Parametro</th><th>Tipo</th><th>Default</th><th>Descricao</th></tr>
+<tr><td><code>name</code></td><td>string</td><td>obrigatorio</td><td>Identificador do command. kebab-case en, prefixo <code>/</code>.</td></tr>
+<tr><td><code>description</code></td><td>string</td><td>obrigatorio</td><td>1-2 frases. Aparece em /help.</td></tr>
+<tr><td><code>agent</code></td><td>string</td><td>router</td><td>Qual agent executa: <code>router</code> (rapido), <code>worker</code> (inteligente), ou nome especifico.</td></tr>
+<tr><td><code>category</code></td><td>string</td><td>core</td><td>Development, Governance, Knowledge, Quality, etc.</td></tr>
+<tr><td><code>args</code></td><td>object</td><td>{}</td><td>Argumentos nomeados que o command aceita.</td></tr>
+</table>
+
+<h2>Exemplos praticos</h2>
+
+<h3>Cenario 1: 15 commands de Development</h3>
+<p><strong>Contexto</strong>: Voce quer criar feature, API, ou projeto.</p>
+<pre><code># Principais commands de dev
+/create
+/create-api
+/create-blazor
+/create-blazor-component
+/create-dotnet-project
+/create-erp
+/create-feature
+/create-project
+/develop
+/engineer-initial-bootstrap
+/feature-engineer
+/forge
+/improve
+/prototype
+/ship</code></pre>
+<p><strong>Output esperado</strong> (exemplo /create-api):</p>
+<pre><code>/create-api
+/recurso: "clientes"
+/verbos: "GET POST PUT DELETE"
+/autenticacao: "JWT"
+# [router] Roteando para feature-engineer
+# [agent] Criando API REST de clientes...
+# [done] 8 arquivos em src/Api/Clientes/</code></pre>
+<p><strong>Edge case</strong>: Commands de dev exigem contexto de stack. Stack auto-detected ou passado via --stack.</p>
+
+<h3>Cenario 2: 10 commands de Recognition</h3>
+<p><strong>Contexto</strong>: Voce quer analisar projeto existente.</p>
+<pre><code># Recognition
+/analyze
+/analyze-project
+/analyze-product
+/analyze-impact
+/analyze-legacy-apps
+/analyze-competitor-hybrid
+/analyze-competitor-local
+/analyze-competitor-web
+/discover
+/domain
+/reconhecer-projeto</code></pre>
+<p><strong>Output esperado</strong> (exemplo /analyze-project):</p>
+<pre><code>/analyze-project
+# [analyze] Stack: .NET 8, Blazor Server, EF Core
+# [analyze] Convencoes: CQRS, MediatR, AutoMapper
+# [analyze] Decisoes: 3 DRs detectadas
+# [analyze] Saida: .xforge/project-dna/PROJECT-DNA.md atualizado</code></pre>
+<p><strong>Edge case</strong>: <code>/analyze-competitor-*</code> precisa URL ou path local do competidor.</p>
+
+<h3>Cenario 3: 10 commands de Quality</h3>
+<p><strong>Contexto</strong>: Voce quer validar build, testes, seguranca.</p>
+<pre><code># Quality
+/quality
+/quality-gates
+/validate-solid-srp
+/validate-stable-packages
+/validate-automapper
+/validate-xforge-mediatr
+/validate-ai-providers
+/loop-discipline-check
+/release-readiness-analysis
+/engineer-health-check</code></pre>
+<p><strong>Output esperado</strong> (exemplo /validate-automapper):</p>
+<pre><code>/validate-automapper
+# [scan] src/ em busca de injecoes
+# [scan] Mapster usage: 0 (ok)
+# [scan] AutoMapper usage: 47 (ok)
+# [scan] Missing profile: 2 (warning)
+# [done] 0 errors, 2 warnings, 5 OKs</code></pre>
+<p><strong>Edge case</strong>: Commands de quality rodam em pipelines CI. Exit 0 = green, exit 1 = bloqueia merge.</p>
+
+<h3>Cenario 4: 8 commands de Wizard</h3>
+<p><strong>Contexto</strong>: Voce quer seguir um wizard (fluxo guiado) para tarefa complexa.</p>
+<pre><code># Wizards
+/forge       # criar projeto do zero
+/learn       # aprender dominio novo
+/domain      # modelar dominio de negocio
+/genius      # adicionar genio ao conselho
+/knowledge   # ingerir conhecimento novo
+/governance  # revisar governanca
+/release     # preparar release
+/incident    # responder incidente
+/quality     # auditar qualidade
+/onboard     # onboard novo dev</code></pre>
+<p><strong>Output esperado</strong> (exemplo /forge):</p>
+<pre><code>/forge
+# [wizard] Bem-vindo. Vamos criar um projeto novo.
+# [step 1/7] Qual stack? [dotnet, node, python, ...] (default: auto)
+# [step 2/7] Qual dominio? [erp, blog, api, ...]
+# [step 3/7] LGPD? (y/n)
+# [step 4/7] ... continua ate 7 passos
+# [done] Projeto bootstrapado</code></pre>
+<p><strong>Edge case</strong>: Wizards sao interativos. Para automacao, use commands individuais (criar-api, etc).</p>
+
+<h3>Cenario 5: Criar command custom</h3>
+<p><strong>Contexto</strong>: Voce quer command que automatiza uma tarefa recorrente.</p>
+<pre><code>cat &gt; .kilo/commands/meu-deploy.md &lt;&lt;EOF
+---
+name: meu-deploy
+description: Deploy do meu projeto para staging com smoke tests
+type: command
+agent: worker
+category: Custom
+args:
+  - name: ambiente
+    type: string
+    required: true
+  - name: skip-tests
+    type: bool
+    default: false
+---
+# Meu Deploy
+1. Build .NET
+2. Run tests (unless --skip-tests)
+3. Deploy to {{ ambiente }}
+4. Smoke test endpoint /health
+5. Notify Slack
+EOF
+
+regenerate-registries.ps1</code></pre>
+<p><strong>Output esperado</strong>:</p>
+<pre><code>[regenerate] 145 commands (era 144)
+[doctor] 0 errors
+[done] Command custom registrado, invocavel como /meu-deploy</code></pre>
+<p><strong>Edge case</strong>: Commands podem encadear outros. Use composability: <code>/meu-deploy &amp;&amp; /xforge-health-check</code>.</p>
+
+<h2>Troubleshooting</h2>
+
+<h3>Command nao encontrado</h3>
+<p><strong>Causa</strong>: Nome errado ou command nao foi criado.</p>
+<p><strong>Solucao</strong>: <code>ls .kilo/commands/ | head -30</code> para ver 144 disponiveis. <code>/xforge-help</code> lista os mais usados.</p>
+
+<h3>Command executa mas da erro</h3>
+<p><strong>Causa</strong>: Args invalidos ou contexto insuficiente.</p>
+<p><strong>Solucao</strong>: Use <code>/&lt;command&gt; --help</code> (se implementado) ou veja o markdown do command em <code>.kilo/commands/&lt;name&gt;.md</code>.</p>
+
+<h3>Command nao registrado</h3>
+<p><strong>Causa</strong>: Esqueca de rodar regenerate-registries apos criar.</p>
+<p><strong>Solucao</strong>: <code>regenerate-registries.ps1</code> apos criar/modificar command.</p>
+
+<h3>Command muito lento</h3>
+<p><strong>Causa</strong>: Agent pesado (worker) ou workflows em loop.</p>
+<p><strong>Solucao</strong>: Use agent=router para tarefas simples. Para workflows complexos, worker e necessario.</p>
+
+</main>
+<footer><div><strong>XForge Manual v50.25.0</strong> &middot; DR-0181 + DR-0182 (B-090)</div><div>Loop discipline 6/6 PASS &middot; <a href="../index.html">Voltar ao inicio</a></div></footer>
+<script src="../script.js?v=50.2.5"></script>
+</body></html>

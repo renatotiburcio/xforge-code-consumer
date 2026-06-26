@@ -1,0 +1,41 @@
+{
+  "name": "xforge-rbac",
+  "version": "1.0.0",
+  "roles": {
+    "viewer": {
+      "level": 1,
+      "permissions": ["read", "search_knowledge", "recall", "list"],
+      "denied": ["write", "delete", "execute", "publish"]
+    },
+    "developer": {
+      "level": 2,
+      "inherits": ["viewer"],
+      "permissions": ["write", "update_file", "create_file", "run_tests", "git_commit"],
+      "denied": ["publish", "alter_policy", "promote_knowledge"]
+    },
+    "reviewer": {
+      "level": 3,
+      "inherits": ["developer"],
+      "permissions": ["approve", "comment", "code_review", "validate"],
+      "denied": ["publish_skill", "alter_policy"]
+    },
+    "admin": {
+      "level": 4,
+      "inherits": ["reviewer"],
+      "permissions": ["publish", "manage_tenants", "promote_knowledge", "edit_rules"],
+      "denied": ["alter_immutable_scoring"]
+    },
+    "owner": {
+      "level": 5,
+      "inherits": ["admin"],
+      "permissions": ["*", "lgpd_request", "ai_route"],
+      "denied": [],
+      "auditRequired": true
+    }
+  },
+  "assignments": {
+    "default": "viewer",
+    "elevation": "requires approval + audit",
+    "revocation": "automatic on inactivity 90d"
+  }
+}
