@@ -96,14 +96,15 @@ class ChatViewProvider {
     _getSharedStyles() {
         return [
             '* { margin:0; padding:0; box-sizing:border-box; }',
-            'html, body { height:100%; width:100%; }',
+            'html, body { margin:0; padding:0; height:100%; }',
             'body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; font-size:13px; background:var(--vscode-sideBar-background,#1e1e1e); color:var(--vscode-foreground,#ccc); }',
             '.chat-grid { display:grid; grid-template-rows:auto 1fr auto; height:100%; width:100%; }',
             '.chat-header { display:flex; align-items:center; gap:6px; padding:8px 12px; background:var(--vscode-list-hoverBackgroundd2e); border-bottom:1px solid var(--vscode-widget-border,#3c3c3c); cursor:pointer; user-select:none; }',
             '.chat-header:hover { background:var(--vscode-list-activeSelectionBackground,#094771); }',
             '.chat-header .pname { font-weight:600; font-size:0.85rem; color:#fff; }',
             '.chat-header .mname { font-size:0.75rem; color:#888; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }',
-            '.chat-header .chev { font-size:0.7rem; color:#888; }',
+            '.chat-header .chev { font-size:0.7rem; color:#888; display:flex; align-items:center; }',
+            '.chat-header .chev svg { width:12px; height:12px; }',
             '.chat-container { overflow-y:auto; padding:12px; min-height:0; }',
             '.welcome { text-align:center; padding:2rem 1rem; }',
             '.welcome-icon { font-size:2.5rem; margin-bottom:0.5rem; }',
@@ -121,6 +122,7 @@ class ChatViewProvider {
             '.input-wrapper { display:flex; align-items:center; gap:6px; background:var(--vscode-input-background,#3c3c3c); border:1px solid var(--vscode-widget-border,#3c3c3c); border-radius:6px; padding:6px 8px; }',
             'textarea { flex:1; background:transparent; border:none; color:var(--vscode-input-foreground,#ccc); font-size:0.8rem; resize:none; outline:none; min-height:20px; max-height:100px; }',
             '.send-btn { width:28px; height:28px; border-radius:4px; border:none; background:var(--vscode-button-background,#0e639c); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }',
+            '.send-btn svg { width:16px; height:16px; }',
             '.send-btn:hover { background:var(--vscode-button-hoverBackground,#1177bb); }',
             '.btn-primary { padding:10px 16px; border:none; border-radius:4px; background:var(--vscode-button-background,#0e639c); color:#fff; cursor:pointer; font-size:0.8rem; }',
             '.btn-primary:hover { background:var(--vscode-button-hoverBackground,#1177bb); }',
@@ -139,12 +141,40 @@ class ChatViewProvider {
         }
         const nonce = this._getNonce();
         const body = this._getBodyForContext();
-        return '<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><style>' + this._getSharedStyles() + '</style></head><body data-context="' + this._viewContext + '"><div id="app">' + body + '</div><script nonce="' + nonce + '">' + js + '</script></body></html>';
+        return '<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><style>' + this._getSharedStyles() + '</style></head><body data-context="' + this._viewContext + '">' + body + '<script nonce="' + nonce + '">' + js + '</script></body></html>';
     }
     _getBodyForContext() {
         switch (this._viewContext) {
-            case 'chat':
-                return '<div class="chat-grid"><div class="chat-header" id="headerBtn" title="Trocar provider (Ctrl+Shift+P → XForge: Trocar Provider)"><span class="pname" id="headerProvider">OpenRouter</span><span class="mname" id="headerModel">auto</span><span class="chev">v</span></div><div class="chat-container" id="chatContainer"><div class="welcome" id="welcome"><div class="welcome-icon">></div><h2>Bem-vindo ao XForge Code AI</h2><p>Seu assistente</p><div class="quick-actions"><div class="quick-action" onclick="sendQuick("Crie uma API")">Nova API</div><div class="quick-action" onclick="sendQuick("Analise o projeto")">Analisar</div><div class="quick-action" onclick="sendQuick("Me ajude com testes")">Testes</div><div class="quick-action" onclick="sendQuick("/help")">Comandos</div></div></div></div><div class="input-area"><div class="input-wrapper"><textarea id="messageInput" placeholder="Mensagem... (@ contexto, / comandos)" rows="1"></textarea><button class="send-btn" id="sendBtn">></button></div></div></div>';
+            case 'chat': {
+                const chevron = this._icon('chevron');
+                const send = this._icon('send');
+                return '<div class="chat-grid">' +
+                    '<div class="chat-header" id="headerBtn" title="Trocar provider (Ctrl+Shift+P → XForge: Trocar Provider)">' +
+                    '<span class="pname" id="headerProvider">OpenRouter</span>' +
+                    '<span class="mname" id="headerModel">auto</span>' +
+                    '<span class="chev">' + chevron + '</span>' +
+                    '</div>' +
+                    '<div class="chat-container" id="chatContainer">' +
+                    '<div class="welcome" id="welcome">' +
+                    '<div class="welcome-icon">�</div>' +
+                    '<h2>Bem-vindo ao XForge Code AI</h2>' +
+                    '<p>Seu assistente</p>' +
+                    '<div class="quick-actions">' +
+                    '<div class="quick-action" onclick="sendQuick(\'Crie uma API\')">Nova API</div>' +
+                    '<div class="quick-action" onclick="sendQuick(\'Analise o projeto\')">Analisar</div>' +
+                    '<div class="quick-action" onclick="sendQuick(\'Me ajude com testes\')">Testes</div>' +
+                    '<div class="quick-action" onclick="sendQuick(\'/help\')">Comandos</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="input-area">' +
+                    '<div class="input-wrapper">' +
+                    '<textarea id="messageInput" placeholder="Mensagem... (@ contexto, / comandos)" rows="1"></textarea>' +
+                    '<button class="send-btn" id="sendBtn">' + send + '</button>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+            }
             case 'welcome':
                 return '<div style="padding:2rem 1rem; text-align:center;"><div style="font-size:2.5rem; margin-bottom:1rem;">]</div><h2>Bem-vindo ao XForge</h2><p>Configure para comecar</p><button class="btn-primary" style="width:100%;" onclick="requestNewProvider()">Configurar</button></div>';
             case 'agent-manager':
@@ -230,6 +260,16 @@ class ChatViewProvider {
         for (let i = 0; i < 32; i++)
             result += chars.charAt(Math.floor(Math.random() * chars.length));
         return result;
+    }
+    _icon(name) {
+        const icons = {
+            chevron: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>',
+            send: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l5-5 5 5M12 6v12"/></svg>',
+            plus: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>',
+            history: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>',
+            trash: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>',
+        };
+        return icons[name] || '';
     }
     _persistSession(userMessage) {
         if (!this._globalState)
