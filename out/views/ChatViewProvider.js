@@ -38,6 +38,17 @@ const vscode = __importStar(require("vscode"));
 const path = __importStar(require("path"));
 const fs = __importStar(require("fs"));
 const apiProvider_1 = require("../services/apiProvider");
+function loadSvg(file, size = 14) {
+    try {
+        const svgPath = path.resolve(__dirname, '..', 'icons', file);
+        let content = fs.readFileSync(svgPath, 'utf-8').trim();
+        content = content.replace(/^<svg /, '<svg width="' + size + '" height="' + size + '" ');
+        return content;
+    }
+    catch {
+        return '';
+    }
+}
 class ChatViewProvider {
     constructor(_extensionUri, viewContext = 'chat', _globalState) {
         this._extensionUri = _extensionUri;
@@ -321,19 +332,15 @@ class ChatViewProvider {
         return result;
     }
     _icon(name, size = 14) {
-        const s = 'width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
+        const refIcon = loadSvg(name + '.svg', size);
+        if (refIcon)
+            return refIcon;
+        const s = 'xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
         const icons = {
             chevron: '<polyline points="6 9 12 15 18 9"></polyline>',
             send: '<polyline points="7 11 12 6 17 11"></polyline><line x1="12" y1="6" x2="12" y2="18"></line>',
-            plus: '<line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>',
-            history: '<polyline points="1 4 1 10 7 10"></polyline><path d="M3.5 15a9 9 1 1 0 5.6-3.4L1 10"></path>',
-            trash: '<polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>',
-            code: '<polyline points="16 18 22 12 16 6"></polyline><poly 6 2 12 8 18"></polyline>',
-            arrowright: '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>',
-            x: '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>',
         };
-        const inner = icons[name] || '';
-        return '<svg xmlns="http://www.w3.org/2000/svg" ' + s + '>' + inner + '</svg>';
+        return '<svg ' + s + '>' + (icons[name] || '') + '</svg>';
     }
     _startNewSession() {
         this._activeSessionId = null;
