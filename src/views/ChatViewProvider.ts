@@ -109,8 +109,11 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
             '.session-meta { font-size:.65rem; color:#888; }',
             '.session-del { opacity:0; background:none; border:none; color:#888; cursor:pointer; padding:2px; border-radius:3px; }',
             '.session-item:hover .session-del { opacity:1; }',
-            '.session-del:hover { color:#ff6b6b; }',
-            '.session-del svg { width:12px; height:12px; }',
+            '.session-del:hover { color:#ff6b6b; background:rgba(255,107,107,.1); }',
+            '.session-del svg { width:12px; height: display:block; }',
+            '.session-new { display:flex; align-items:center; gap:6px; padding:8px 10px; cursor:pointer; font-size:.75rem; color:var(--vscode-foreground); font-weight:500; border-bottom:1px solid var(--vscode-widget-border,#3c3c3c); }',
+            '.session-new:hover { background:var(--vscode-list-hoverBackgroundd2e); }',
+            '.session-new svg { width:14px; height:14px; display:block; }',
             '.chat-main { display:grid; grid-template-rows:auto 1fr auto; height:100%; flex:1; min-width:0; }',
             '.chat-header { display:flex; align-items:center; gap:6px; padding:6px 10px; background:var(--vscode-list-hoverBackground,#2a2d2e); border-bottom:1px solid var(--vscode-widget-border,#3c3c3c); cursor:pointer; user-select:none; }',
             '.chat-header:hover { background:var(--vscode-list-activeSelectionBackground,#094771); }',
@@ -184,9 +187,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                             '<button class="sidebar-btn" onclick="window._toggleSidebar()">' + history + '</button>' +
                         '</div>' +
                         '<div class="sidebar-list">' +
-                            '<div class="session-item active" style="background:var(--vscode-list-hoverBackground,#2a2d2e);margin-bottom:4px;cursor:pointer" onclick="window._newSession()">' +
-                                '<div class="session-info"><div class="session-name">+ Nova conversa</div></div>' +
-                            '</div>' +
+                            '<div class="session-new" onclick="window._newSession()">' + plus + 'Nova conversa</div>' +
                             sessionsHtml +
                         '</div>' +
                     '</div>' +
@@ -315,7 +316,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
             chevron: '<polyline points="6 9 12 15 18 9"></polyline>',
             send: '<polyline points="7 11 12 6 17 11"></polyline><line x1="12" y1="6" x2="12" y2="18"></line>',
             plus: '<line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>',
-            history: '<polyline points="1 4 1 10 7 10"></polyline><polyline points="3.51 15.39 4.93 16.81 6.35 15.39"></polyline>',
+            history: '<polyline points="1 4 1 10 7 10"></polyline><path d="M3.5 15a9 9 1 1 0 5.6-3.4L1 10"></path>',
             trash: '<polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>',
             code: '<polyline points="16 18 22 12 16 6"></polyline><poly 6 2 12 8 18"></polyline>',
             arrowright: '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>',
