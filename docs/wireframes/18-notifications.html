@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<title>XForge - 18 - Notifications</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>18 - Notificacoes</h1>
+<p class='subtitle'>Toasts e notificacoes de status do sistema.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html' class='active'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Notifications - Toasts e status</span><span class='badge p1'>P1</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div><div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div><div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div><div class='activity-icon active'>&#128172;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div></div>
+<div class='sidebar'>
+<div class='sidebar-header'>
+<span>&#128276; Notifications</span>
+<div class='actions'>
+<div class='icon-btn' title='Mark all read'>&#10004;</div>
+<div class='icon-btn' title='Clear all'>&#128465;</div>
+</div>
+</div>
+<div class='notif-filters'>
+<div class='notif-filter active'>Todos (4)</div>
+<div class='notif-filter'>Errors (1)</div>
+<div class='notif-filter'>Warnings (1)</div>
+<div class='notif-filter'>Success (1)</div>
+</div>
+<div class='notif-list'>
+<div class='notif-item success'>
+<div class='notif-icon success'>&#10004;</div>
+<div class='notif-content'>
+<div class='notif-title'>Build completed</div>
+<div class='notif-time'>2 seconds ago</div>
+</div>
+</div>
+<div class='notif-item error'>
+<div class='notif-icon error'>&#10060;</div>
+<div class='notif-content'>
+<div class='notif-title'>Tests failed</div>
+<div class='notif-time'>5 minutes ago</div>
+</div>
+</div>
+<div class='notif-item warning'>
+<div class='notif-icon warning'>&#9888;</div>
+<div class='notif-content'>
+<div class='notif-title'>Rate limit approaching</div>
+<div class='notif-time'>15 minutes ago</div>
+</div>
+</div>
+<div class='notif-item info'>
+<div class='notif-icon info'>&#128276;</div>
+<div class='notif-content'>
+<div class='notif-title'>Provider updated</div>
+<div class='notif-time'>1 hour ago</div>
+</div>
+</div>
+</div>
+</div>
+<div class='editor-area'>
+<div class='notif-empty'>
+<div class='notif-empty-icon'>&#128276;</div>
+<h2>Notificacoes</h2>
+<p>Selecione uma notificacao na barra lateral para ver detalhes</p>
+</div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#128276; 3 notifications</span></div>
+<div class='right'><span>&#9889; XForge</span></div>
+</div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Success</td><td>Verde, checkmark</td><td>Feedback positivo</td></tr>
+<tr><td>Error</td><td>Vermelho, X</td><td>Atencao imediata</td></tr>
+<tr><td>Warning</td><td>Amarelo, !</td><td>Cuidado</td></tr>
+<tr><td>Info</td><td>Azul, i</td><td>Informacao</td></tr>
+</table>
+<h2>Notas</h2>
+<div class='notes'><ul>
+<li>Toasts aparecem no canto inferior direito</li>
+<li>Auto-dismiss apos 5s (success/info)</li>
+<li>Error persistem ate click</li>
+<li>Lista de notificacoes na sidebar</li>
+</ul></div>
+</body></html>

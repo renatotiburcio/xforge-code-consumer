@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XForge Code AI - Wireframes</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin:2rem 0}
+.page-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;transition:all .15s;text-decoration:none;color:inherit;display:block}
+.page-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.page-num{font-size:.68rem;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.page-title{font-size:.95rem;font-weight:600;color:#fff;margin:.25rem 0}
+.page-desc{font-size:.78rem;color:var(--text2);line-height:1.5}
+.page-badge{display:inline-block;margin-top:.5rem}
+.stats{display:flex;gap:1rem;margin:1.5rem 0;flex-wrap:wrap}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.75rem 1.25rem;text-align:center}
+.stat-value{font-size:1.5rem;font-weight:700;color:var(--primary)}
+.stat-label{font-size:.68rem;color:var(--text3);text-transform:uppercase}
+</style>
+</head>
+<body>
+<h1>&#9889; XForge Code AI - Wireframes</h1>
+<p class='subtitle'>Extensao VS Code de chat AI - identidade visual 100% VS Code. Todas as telas e estados possiveis para implementacao.</p>
+<div class='stats'>
+<div class='stat'><div class='stat-value'>18</div><div class='stat-label'>Paginas</div></div>
+<div class='stat'><div class='stat-value'>103KB</div><div class='stat-label'>Total</div></div>
+<div class='stat'><div class='stat-value'>P0</div><div class='stat-label'>10 paginas</div></div>
+<div class='stat'><div class='stat-value'>P1</div><div class='stat-label'>5 paginas</div></div>
+<div class='stat'><div class='stat-value'>P2</div><div class='stat-label'>2 paginas</div></div>
+<div class='stat'><div class='stat-value'>P3</div><div class='stat-label'>1 pagina</div></div>
+</div>
+<h2>Indice de Paginas</h2>
+<div class='page-grid'>
+<a href='01-chat-principal.html' class='page-card'>
+<div class='page-num'>01</div>
+<div class='page-title'>Chat Principal</div>
+<div class='page-desc'>Tela base de chat - sidebar, mensagens, tool calls, input</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='02-chat-streaming.html' class='page-card'>
+<div class='page-num'>02</div>
+<div class='page-title'>Streaming</div>
+<div class='page-desc'>Resposta em tempo real com cursor animado e botao cancelar</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='03-chat-diff.html' class='page-card'>
+<div class='page-num'>03</div>
+<div class='page-title'>Diff Review</div>
+<div class='page-desc'>Diff inline com Accept/Reject/Modify/View File</div>
+<span class='badge p1 page-badge'>P1</span>
+</a>
+<a href='04-chat-tool-calls.html' class='page-card'>
+<div class='page-num'>04</div>
+<div class='page-title'>Tool Calls</div>
+<div class='page-desc'>Tool calls colapsaveis com args, resultado e duracao</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='05-chat-error.html' class='page-card'>
+<div class='page-num'>05</div>
+<div class='page-title'>Error Recovery</div>
+<div class='page-desc'>Mensagem de erro com Retry/Edit/Skip/Debug</div>
+<span class='badge p1 page-badge'>P1</span>
+</a>
+<a href='06-slash-commands.html' class='page-card'>
+<div class='page-num'>06</div>
+<div class='page-title'>Slash Commands</div>
+<div class='page-desc'>Menu flutuante ao digitar / com fuzzy search</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='07-context-system.html' class='page-card'>
+<div class='page-num'>07</div>
+<div class='page-title'>@Context System</div>
+<div class='page-desc'>@file, @folder, @codebase, @git, @docs com chips</div>
+<span class='badge p1 page-badge'>P1</span>
+</a>
+<a href='08-agent-manager.html' class='page-card'>
+<div class='page-num'>08</div>
+<div class='page-title'>Agent Manager</div>
+<div class='page-desc'>Multi-sessao com worktree isolation</div>
+<span class='badge p2 page-badge'>P2</span>
+</a>
+<a href='09-settings.html' class='page-card'>
+<div class='page-num'>09</div>
+<div class='page-title'>Settings</div>
+<div class='page-desc'>Painel de configuracao com busca e secoes</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='10-welcome.html' class='page-card'>
+<div class='page-num'>10</div>
+<div class='page-title'>Welcome</div>
+<div class='page-desc'>Tela de boas-vindas com quick actions</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='11-setup-wizard.html' class='page-card'>
+<div class='page-num'>11</div>
+<div class='page-title'>Setup Wizard</div>
+<div class='page-desc'>Wizard de configuracao inicial em 5 passos</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='12-inline-editing.html' class='page-card'>
+<div class='page-num'>12</div>
+<div class='page-title'>Inline Editing</div>
+<div class='page-desc'>Sugestao inline no editor com Tab aceita</div>
+<span class='badge p2 page-badge'>P2</span>
+</a>
+<a href='13-history.html' class='page-card'>
+<div class='page-num'>13</div>
+<div class='page-title'>Historico</div>
+<div class='page-desc'>Busca e navegacao no historico de sessoes</div>
+<span class='badge p1 page-badge'>P1</span>
+</a>
+<a href='14-mcp-servers.html' class='page-card'>
+<div class='page-num'>14</div>
+<div class='page-title'>MCP Servers</div>
+<div class='page-desc'>Gerenciamento de servidores MCP conectados</div>
+<span class='badge p3 page-badge'>P3</span>
+</a>
+<a href='15-shortcuts.html' class='page-card'>
+<div class='page-num'>15</div>
+<div class='page-title'>Atalhos</div>
+<div class='page-desc'>Referencia visual de atalhos de teclado</div>
+<span class='badge p1 page-badge'>P1</span>
+</a>
+<a href='16-modes.html' class='page-card'>
+<div class='page-num'>16</div>
+<div class='page-title'>Mode Selector</div>
+<div class='page-desc'>Seletor de modo: Code, Plan, Ask, Debug, Review</div>
+<span class='badge p0 page-badge'>P0</span>
+</a>
+<a href='17-checkpoint.html' class='page-card'>
+<div class='page-num'>17</div>
+<div class='page-title'>Checkpoint</div>
+<div class='page-desc'>Salvar e retomar checkpoints de sessao</div>
+<span class='badge p1 page-badge'>P1</span>
+</a>
+<a href='18-notifications.html' class='page-card'>
+<div class='page-num'>18</div>
+<div class='page-title'>Notificacoes</div>
+<div class='page-desc'>Toasts e notificacoes de status do sistema</div>
+<span class='badge p1 page-badge'>P1</span>
+</a>
+</div>
+<div style='margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.72rem;color:var(--text3);'>
+XForge Code AI v1.0.0 - Wireframes gerados em 2026-06-28<br>
+Design: VS Code Dark Theme | Total: 18 paginas + 1 CSS compartilhado
+</div>
+</body></html>

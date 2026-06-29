@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<title>XForge - 06 - Slash Commands</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>06 - Slash Commands</h1>
+<p class='subtitle'>Menu flutuante ao digitar / com fuzzy search.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html' class='active'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Slash Commands - Menu flutuante</span><span class='badge p0'>P0</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div><div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div><div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div><div class='activity-icon active'>&#128172;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div></div>
+<div class='sidebar'>
+<div class='sidebar-header'><span>&#9889; XForge Code AI</span>
+<div class='actions'><div class='icon-btn'>&#43;</div></div></div>
+<div class='chat-panel'><div class='chat-messages'>
+<div class='message'><div class='avatar assistant'>X</div>
+<div class='message-body'><div class='message-content'><p>Ola! Como posso ajudar?</p></div></div></div>
+</div>
+<div class='chat-input-area' style='position:relative;'>
+<div class='slash-menu'>
+<div class='slash-item active has-flags'>
+<span class='cmd-icon'>&#9889;</span>
+<span class='cmd-name'>/xforge</span>
+<span class='cmd-desc'>Menu principal</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#128269;</span>
+<span class='cmd-name'>/analisar-projeto</span>
+<span class='cmd-desc'>Analisa projeto atual</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#43;</span>
+<span class='cmd-name'>/criar-projeto</span>
+<span class='cmd-desc'>Cria novo projeto</span>
+<span class='cmd-badge'>3 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#128187;</span>
+<span class='cmd-name'>/desenvolver</span>
+<span class='cmd-desc'>Inicia desenvolvimento</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#9989;</span>
+<span class='cmd-name'>/qualidade</span>
+<span class='cmd-desc'>Quality gates</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#128274;</span>
+<span class='cmd-name'>/seguranca</span>
+<span class='cmd-desc'>Auditoria de seguranca</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item'>
+<span class='cmd-icon'>&#129504;</span>
+<span class='cmd-name'>/conhecimento</span>
+<span class='cmd-desc'>Gerencia conhecimento</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#128190;</span>
+<span class='cmd-name'>/memoria</span>
+<span class='cmd-desc'>Gerencia memoria</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#128196;</span>
+<span class='cmd-name'>/documentacao</span>
+<span class='cmd-desc'>Gera documentacao</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#128640;</span>
+<span class='cmd-name'>/release</span>
+<span class='cmd-desc'>Gerencia releases</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#129302;</span>
+<span class='cmd-name'>/genius-council</span>
+<span class='cmd-desc'>Inicia debate</span>
+<span class='cmd-badge'>2 flags</span>
+</div>
+<div class='slash-item'>
+<span class='cmd-icon'>&#128203;</span>
+<span class='cmd-name'>/checkpoint</span>
+<span class='cmd-desc'>Salva checkpoint</span>
+</div>
+<div class='slash-item'>
+<span class='cmd-icon'>&#9198;</span>
+<span class='cmd-name'>/retomar</span>
+<span class='cmd-desc'>Retoma checkpoint</span>
+</div>
+<div class='slash-item'>
+<span class='cmd-icon'>&#9881;&#65039;</span>
+<span class='cmd-name'>/config</span>
+<span class='cmd-desc'>Abre configuracoes</span>
+</div>
+<div class='slash-item has-flags'>
+<span class='cmd-icon'>&#10067;</span>
+<span class='cmd-name'>/help</span>
+<span class='cmd-desc'>Ajuda</span>
+<span class='cmd-badge'>1 flag</span>
+</div>
+</div>
+<div class='slash-flags-menu'>
+<div class='flags-menu-header'>
+<code>/xforge</code> <span class='flags-hint'>-- digite uma flag</span>
+</div>
+<div class='flags-menu-body'>
+<div class='flag-row active'>
+<div class='flag-row-main'>
+<span class='flag-req' title='Obrigatório'>*</span>
+<code class='flag-name'>--modo</code>
+<span class='flag-type'>enum</span>
+</div>
+<div class='flag-opts'>code | plan | ask</div>
+</div>
+<div class='flag-row'>
+<div class='flag-row-main'>
+<span class='flag-optional' title='Opcional'>?</span>
+<code class='flag-name'>--provider</code>
+<span class='flag-type'>enum</span>
+</div>
+<div class='flag-opts'>OpenRouter | OpenAI | Anthropic</div>
+</div>
+</div>
+</div>
+<div class='input-wrapper'>
+<textarea>/xforge --</textarea>
+<button class='send-btn'>&#10145;</button>
+</div></div>
+</div></div>
+<div class='editor-area'>
+<div class='editor-content' style='display:flex;align-items:center;justify-content:center;color:var(--text2);'>
+<span>Editor vazio</span></div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#9889; main</span></div>
+<div class='right'><span>&#9889; XForge: Code</span></div>
+</div>
+</div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Trigger</td><td>Digitar / no input</td><td>Descoberta</td></tr>
+<tr><td>Menu</td><td>Flutuante acima do input</td><td>Contexto visual</td></tr>
+<tr><td>Item ativo</td><td>Fundo destacado</td><td>Feedback navegacao</td></tr>
+<tr><td>Fuzzy search</td><td>Filtrar por nome</td><td>Rapidez</td></tr>
+<tr><td>Navegacao</td><td>Setas + Enter</td><td>Acessibilidade</td></tr>
+<tr><td>Esc</td><td>Fecha menu</td><td>Saida rapida</td></tr>
+</table>
+<h2>Notas</h2>
+<div class='notes'><ul>
+<li>Menu aparece ao digitar /</li>
+<li>Fuzzy search nos nomes dos comandos</li>
+<li>Enter seleciona, Esc fecha</li>
+<li>Comandos podem ter sub-comandos</li>
+<li>Historico de comandos recentes</li>
+</ul></div>
+</body></html>

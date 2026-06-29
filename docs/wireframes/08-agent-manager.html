@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XForge Code AI - 08 - Agent Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>08 - Agent Manager</h1>
+<p class='subtitle'>Painel de controle para orquestrar multiplas sessoes com git worktree isolation.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html' class='active'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Agent Manager - Painel de Sessoes</span><span class='badge p2'>P2</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div>
+<div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div>
+<div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div>
+<div class='activity-icon'>&#128172;</div>
+<div class='activity-icon active'>&#128101;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div>
+</div>
+<div class='sidebar'>
+<div class='sidebar-header'>
+<span>&#128101; Agent Manager</span>
+<div class='actions'>
+<div class='icon-btn'>&#43;</div>
+<div class='icon-btn'>&#128269;</div>
+</div>
+</div>
+<div class='search-box'>
+<input type='text' placeholder='Buscar sessoes...'>
+</div>
+<div class='session-groups'>
+<div class='session-group'>
+<div class='group-header'><span class='group-dot running'></span> Em Progresso (3)</div>
+<div class='session-item active'>
+<div class='session-status running'></div>
+<div class='session-info'>
+<div class='session-name'>API Pagamentos</div>
+<div class='session-meta'>code feature/payment-api 2.4k tokens</div>
+</div>
+</div>
+<div class='session-item'>
+<div class='session-status running'></div>
+<div class='session-info'>
+<div class='session-name'>Refactor Auth</div>
+<div class='session-meta'>plan feature/auth-jwt 800 tokens</div>
+</div>
+</div>
+<div class='session-item'>
+<div class='session-status running'></div>
+<div class='session-info'>
+<div class='session-name'>Docs Update</div>
+<div class='session-meta'>plan feature/docs 900 tokens</div>
+</div>
+</div>
+</div>
+<div class='session-group'>
+<div class='group-header'><span class='group-dot idle'></span> Aguardando (2)</div>
+<div class='session-item'>
+<div class='session-status idle'></div>
+<div class='session-info'>
+<div class='session-name'>Fix Tests</div>
+<div class='session-meta'>debug feature/fix-tests 1.2k tokens</div>
+</div>
+</div>
+<div class='session-item'>
+<div class='session-status idle'></div>
+<div class='session-info'>
+<div class='session-name'>Review PR #42</div>
+<div class='session-meta'>review feature/review 600 tokens</div>
+</div>
+</div>
+</div>
+<div class='session-group'>
+<div class='group-header'><span class='group-dot error'></span> Com Erro (1)</div>
+<div class='session-item'>
+<div class='session-status error'></div>
+<div class='session-info'>
+<div class='session-name'>Deploy Script</div>
+<div class='session-meta'>code feature/deploy 3.1k tokens</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='editor-area'>
+<div class='editor-tabs'>
+<div class='editor-tab active'>Chat</div>
+<div class='editor-tab'>Diff</div>
+<div class='editor-tab'>Terminal</div>
+</div>
+<div class='editor-content' style='padding:0;display:flex;flex-direction:column;'>
+<div class='chat-panel' style='background:var(--bg);'>
+<div class='chat-messages'>
+<div class='message'><div class='avatar user'>R</div>
+<div class='message-body'><div class='message-content'><p>Crie uma API de pagamentos com .NET 8 usando Clean Architecture</p></div></div></div>
+<div class='message'><div class='avatar assistant'>X</div>
+<div class='message-body'><div class='message-content'><p>Vou criar a API com XForge.MediatR, PostgreSQL e testes unitarios.</p></div></div></div>
+<div class='message'><div class='avatar user'>R</div>
+<div class='message-body'><div class='message-content'><p>Use XForge.MediatR e FluentValidation</p></div></div></div>
+<div class='message'><div class='avatar assistant'>X</div><div class='message-body'>
+<div class='message-content'><p>Criando handlers, validators e controllers...</p></div>
+</div></div>
+</div>
+<div class='chat-input-area'><div class='input-wrapper'>
+<textarea placeholder='Enviar mensagem... (@ para adicionar contexto)'></textarea>
+<button class='send-btn'>&#10145;</button>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#128101; 6 worktrees</span><span>3 running</span><span>2 idle</span><span>1 error</span></div>
+<div class='right'><span>&#9889; Agent Manager</span><span>feature/payment-api</span></div>
+</div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Toolbar</td><td>Botoes Novo/Importar + busca</td><td>Acao principal visivel</td></tr>
+<tr><td>Worktree List</td><td>Agrupada por status (Progresso/Erro/Aguardando)</td><td>Organizacao visual</td></tr>
+<tr><td>Status Dot</td><td>Verde=running, cinza=idle, vermelho=error</td><td>Feedback imediato</td></tr>
+<tr><td>Worktree Card</td><td>Nome, modo, branch, tokens</td><td>Info essencial</td></tr>
+<tr><td>Actions</td><td>Diff/Stop/Resume/Retry por card</td><td>Controle rapido</td></tr>
+<tr><td>Main Panel</td><td>Chat + Diff + Terminal tabs</td><td>Contexto completo</td></tr>
+<tr><td>Chat Input</td><td>Envio de mensagens direto no painel</td><td>Interacao fluida</td></tr>
+</table>
+<h2>Notas de Implementacao</h2>
+<div class='notes'><ul>
+<li>Cada worktree roda em .xforge/worktrees/&lt;name&gt;</li>
+<li>Max 4 sessoes simultaneas (configuravel)</li>
+<li>Isolation via git worktree evita conflitos</li>
+<li>Diff panel mostra mudancas vs branch pai</li>
+<li>Terminal integrado por sessao</li>
+<li>Ctrl+Shift+M abre o Agent Manager</li>
+</ul></div>
+</body></html>

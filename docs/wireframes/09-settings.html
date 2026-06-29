@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XForge Code AI - 09 - Settings</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>09 - Settings</h1>
+<p class='subtitle'>Painel de configuracao organizado em secoes com busca, toggles e preview JSON.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html' class='active'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Settings - Painel de Configuracao</span><span class='badge p0'>P0</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div>
+<div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div>
+<div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div>
+<div class='activity-icon'>&#128172;</div>
+<div class='activity-icon'>&#128101;</div>
+<div class='activity-icon active'>&#9881;&#65039;</div>
+</div>
+<div class='sidebar'>
+<div class='sidebar-header'>
+<span>&#9881;&#65039; Settings</span>
+</div>
+<div class='search-box'>
+<input type='text' placeholder='Buscar configuracoes...'>
+</div>
+<div class='settings-nav'>
+<div class='settings-nav-item active'>&#128269; Providers</div>
+<div class='settings-nav-item'>&#128274; Auto-Approve</div>
+<div class='settings-nav-item'>&#128101; Agents</div>
+<div class='settings-nav-item'>&#128230; MCP Servers</div>
+<div class='settings-nav-item'>&#127912; Display</div>
+<div class='settings-nav-item'>&#128274; Permissions</div>
+<div class='settings-nav-item'>&#9881;&#65039; General</div>
+<div class='settings-nav-item'>&#128640; Experimental</div>
+</div>
+</div>
+<div class='editor-area'>
+<div class='editor-tabs'>
+<div class='editor-tab active'>Providers</div>
+<div class='editor-tab'>xforge.json</div>
+</div>
+<div class='editor-content' style='padding:0;'>
+<div class='settings-content'>
+<div class='settings-section'>
+<div class='settings-section-header'>
+<span>Configured Providers</span>
+<button class='btn sm primary' style='margin-left:auto;'>+ Add Provider</button>
+</div>
+<div class='settings-section-body' style='padding:0;'>
+<div class='provider-list'>
+<div class='provider-card active'>
+<div class='provider-main'>
+<div class='provider-status active'></div>
+<div class='provider-info'>
+<div class='provider-name'>OpenRouter <span class='provider-badge'>Default</span></div>
+<div class='provider-meta'>claude-sonnet-4 ~ sk-or-v1-...</div>
+</div>
+</div>
+<div class='provider-actions'>
+<button class='provider-btn' title='Edit provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'/><path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'/></svg>
+</button>
+<button class='provider-btn danger' title='Remove provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polyline points='3 6 5 6 21 6'/><path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/></svg>
+</button>
+</div>
+</div>
+<div class='provider-card'>
+<div class='provider-main'>
+<div class='provider-status active'></div>
+<div class='provider-info'>
+<div class='provider-name'>OpenAI</div>
+<div class='provider-meta'>gpt-4o ~ sk-...</div>
+</div>
+</div>
+<div class='provider-actions'>
+<button class='provider-btn' title='Set as default'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>
+</button>
+<button class='provider-btn' title='Edit provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'/><path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'/></svg>
+</button>
+<button class='provider-btn danger' title='Remove provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polyline points='3 6 5 6 21 6'/><path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/></svg>
+</button>
+</div>
+</div>
+<div class='provider-card'>
+<div class='provider-main'>
+<div class='provider-status active'></div>
+<div class='provider-info'>
+<div class='provider-name'>Anthropic</div>
+<div class='provider-meta'>claude-opus-4 ~ sk-ant-...</div>
+</div>
+</div>
+<div class='provider-actions'>
+<button class='provider-btn' title='Set as default'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/></svg>
+</button>
+<button class='provider-btn' title='Edit provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'/><path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'/></svg>
+</button>
+<button class='provider-btn danger' title='Remove provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polyline points='3 6 5 6 21 6'/><path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/></svg>
+</button>
+</div>
+</div>
+<div class='provider-card disabled'>
+<div class='provider-main'>
+<div class='provider-status disabled'></div>
+<div class='provider-info'>
+<div class='provider-name'>Ollama (Local)</div>
+<div class='provider-meta'>llama-3.1-70b ~ http://localhost:11434</div>
+</div>
+</div>
+<div class='provider-actions'>
+<button class='provider-btn success' title='Enable provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/><polyline points='22 4 12 14.01 9 11.01'/></svg>
+</button>
+<button class='provider-btn' title='Edit provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><path d='M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7'/><path d='M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z'/></svg>
+</button>
+<button class='provider-btn danger' title='Remove provider'>
+<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polyline points='3 6 5 6 21 6'/><path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2'/></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='settings-section'>
+<div class='settings-section-header'>Add New Provider</div>
+<div class='settings-section-body'>
+<div class='settings-row'>
+<div class='settings-label'>Provider Type</div>
+<div class='settings-control'>
+<select class='settings-select'>
+<option>Select provider...</option>
+<option>OpenRouter</option>
+<option>OpenAI</option>
+<option>Anthropic</option>
+<option>Google Gemini</option>
+<option>Azure OpenAI</option>
+<option>Ollama (Local)</option>
+<option>Custom</option>
+</select>
+</div>
+</div>
+<div class='settings-row'>
+<div class='settings-label'>API Key</div>
+<div class='settings-control'>
+<input type='password' class='settings-input' placeholder='Enter API key...'>
+</div>
+</div>
+<div class='settings-row'>
+<div class='settings-label'>Base URL</div>
+<div class='settings-control'>
+<input type='text' class='settings-input' placeholder='https://api.openrouter.ai/v1'>
+</div>
+</div>
+<div class='settings-row'>
+<div class='settings-label'></div>
+<div class='settings-control'>
+<button class='btn primary sm'>Verify & Add</button>
+</div>
+</div>
+</div>
+</div>
+<div class='settings-section'>
+<div class='settings-section-header'>Provider Selection in Chat</div>
+<div class='settings-section-body'>
+<div class='settings-row'>
+<div class='settings-label'>Switch provider mid-chat</div>
+<div class='settings-control'>
+<div class='toggle on'></div>
+<span style='font-size:.7rem;color:var(--text3); margin-left:6px;'>Allow switching provider during conversation</span>
+</div>
+</div>
+<div class='settings-row'>
+<div class='settings-label'>Show provider picker</div>
+<div class='settings-control'>
+<div class='toggle on'></div>
+<span style='font-size:.7rem;color:var(--text3); margin-left:6px;'>Show provider selector in chat input</span>
+</div>
+</div>
+<div class='settings-row'>
+<div class='settings-label'>Remember per session</div>
+<div class='settings-control'>
+<div class='toggle on'></div>
+<span style='font-size:.7rem;color:var(--text3); margin-left:6px;'>Remember provider choice for each session</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#9889; Settings</span><span>Providers</span></div>
+<div class='right'><span>kilo.jsonc</span><span>JSON</span></div>
+</div>
+</div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Sidebar</td><td>Navegacao entre secoes</td><td>Organizacao clara</td></tr>
+<tr><td>Search</td><td>Filtra configuracoes</td><td>Busca rapida</td></tr>
+<tr><td>Settings Nav</td><td>8 secoes principais</td><td>Acesso direto</td></tr>
+<tr><td>Sections</td><td>Agrupadas por topico</td><td>Legibilidade</td></tr>
+<tr><td>Toggle</td><td>Switch on/off</td><td>Booleanos</td></tr>
+<tr><td>Select</td><td>Dropdown</td><td>Multiplas opcoes</td></tr>
+<tr><td>Input</td><td>Text/number/password</td><td>Valores livres</td></tr>
+<tr><td>Tabs</td><td>Secao + JSON</td><td>Vista tecnica</td></tr>
+</table>
+<h2>Notas de Implementacao</h2>
+<div class='notes'><ul>
+<li>Config salva em .xforge/kilo.jsonc (projeto) ou ~/.config/kilo/kilo.jsonc (global)</li>
+<li>Busca filtra em tempo real nas secoes e campos</li>
+<li>Tab JSON mostra/edita o arquivo diretamente</li>
+<li>Alteracoes aplicadas em tempo real</li>
+<li>Secoes: Providers, Auto-Approve, Agents, MCP, Display, Permissions, General, Experimental</li>
+</ul></div>
+</body></html>

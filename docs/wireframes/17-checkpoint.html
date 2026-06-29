@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<title>XForge - 17 - Checkpoint</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>17 - Checkpoint</h1>
+<p class='subtitle'>Salvar e retomar checkpoints de sessao.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html' class='active'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Checkpoint - Salvar e retomar</span><span class='badge p1'>P1</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div><div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div><div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div><div class='activity-icon active'>&#128172;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div></div>
+<div class='sidebar'>
+<div class='sidebar-header'><span>&#128203; Checkpoints</span>
+<div class='actions'><div class='icon-btn'>&#128203;</div></div></div>
+<div class='session-list'>
+<div class='session-item active'>
+<div class='session-dot active'></div>
+<div class='session-info'>
+<div class='session-name'>API Setup Complete</div>
+<div class='session-meta'>14:32 - 60% done</div>
+<div style='width:100%;height:3px;background:var(--border);border-radius:2px;margin-top:4px;'>
+<div style='width:60%;height:100%;background:var(--success);border-radius:2px;'></div></div>
+</div>
+<div style='display:flex;gap:4px;'>
+<button class='btn sm'>&#9198;</button>
+<button class='btn sm'>&#128465;</button>
+</div></div>
+<div class='session-item'>
+<div class='session-dot idle'></div>
+<div class='session-info'>
+<div class='session-name'>Handler Created</div>
+<div class='session-meta'>13:15 - 30% done</div>
+<div style='width:100%;height:3px;background:var(--border);border-radius:2px;margin-top:4px;'>
+<div style='width:30%;height:100%;background:var(--warning);border-radius:2px;'></div></div>
+</div>
+<div style='display:flex;gap:4px;'>
+<button class='btn sm'>&#9198;</button>
+<button class='btn sm'>&#128465;</button>
+</div></div>
+</div></div>
+<div class='editor-area'>
+<div class='editor-tabs'><div class='editor-tab active'>Checkpoint Detail <span class='close'>&#215;</span></div></div>
+<div class='editor-content' style='padding:2rem;'>
+<h3 style='margin-bottom:1rem;'>API Setup Complete</h3>
+<p style='color:var(--text2);margin-bottom:1rem;'>Created at 14:32 | Progress: 60%</p>
+<div style='width:100%;height:6px;background:var(--border);border-radius:3px;margin-bottom:1rem;'>
+<div style='width:60%;height:100%;background:var(--success);border-radius:3px;'></div></div>
+<div style='margin-bottom:1rem;'>
+<div style='font-size:.72rem;color:var(--text2);margin-bottom:4px;'>Completed steps:</div>
+<ul style='font-size:.75rem;color:var(--text2);padding-left:1.25rem;'>
+<li>Project structure created</li>
+<li>Domain entities defined</li>
+<li>Basic handlers implemented</li>
+</ul>
+</div>
+<div style='display:flex;gap:8px;'>
+<button class='btn primary sm'>&#9198; Resume</button>
+<button class='btn sm'>&#128465; Delete</button>
+<button class='btn sm'>&#128229; Export</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#128203; Checkpoints</span><span>2 saved</span></div>
+<div class='right'><span>&#9889; XForge</span></div>
+</div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Save</td><td>Salva estado atual</td><td>Persistencia</td></tr>
+<tr><td>Resume</td><td>Retoma de onde parou</td><td>Continuidade</td></tr>
+<tr><td>Progress</td><td>Barra de progresso</td><td>Visual</td></tr>
+<tr><td>Delete</td><td>Remove checkpoint</td><td>Limpeza</td></tr>
+</table>
+<h2>Notas</h2>
+<div class='notes'><ul>
+<li>Checkpoints salvam contexto completo</li>
+<li>Resume retoma conversa</li>
+<li>Max 10 checkpoints por projeto</li>
+<li>Comando /checkpoint salva</li>
+</ul></div>
+</body></html>

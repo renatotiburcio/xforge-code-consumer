@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<title>XForge - 11 - Setup Wizard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>11 - Setup Wizard</h1>
+<p class='subtitle'>Wizard de configuracao inicial em 5 passos.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html' class='active'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Setup Wizard - Configuracao inicial</span><span class='badge p0'>P0</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div><div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div><div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div><div class='activity-icon active'>&#128172;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div></div>
+<div class='sidebar' style='width:340px;'>
+<div class='sidebar-header'>
+<span>&#9889; Setup Wizard</span>
+</div>
+<div class='wizard-container'>
+<div class='wizard-steps'>
+<div class='wizard-step active'>
+<div class='step-num'>1</div>
+<span>Provider</span>
+</div>
+<div class='wizard-step-line'></div>
+<div class='wizard-step'>
+<div class='step-num'>2</div>
+<span>Model</span>
+</div>
+<div class='wizard-step-line'></div>
+<div class='wizard-step'>
+<div class='step-num'>3</div>
+<span>Behavior</span>
+</div>
+<div class='wizard-step-line'></div>
+<div class='wizard-step'>
+<div class='step-num'>4</div>
+<span>Security</span>
+</div>
+<div class='wizard-step-line'></div>
+<div class='wizard-step'>
+<div class='step-num'>5</div>
+<span>Skills</span>
+</div>
+</div>
+<div class='wizard-content'>
+<h4>Escolha seu provider de IA</h4>
+<p class='wizard-subtitle'>Selecione o provider que deseja usar</p>
+<div class='wizard-options'>
+<div class='wizard-option selected'>
+<input type='radio' checked name='provider'>
+<span class='wo-icon'>&#128640;</span>
+<div class='wo-content'>
+<strong>OpenRouter</strong>
+<span>200+ modelos, pay-per-use</span>
+</div>
+</div>
+<div class='wizard-option'>
+<input type='radio' name='provider'>
+<span class='wo-icon'>&#129302;</span>
+<div class='wo-content'>
+<strong>OpenAI</strong>
+<span>GPT-4o, GPT-4o-mini</span>
+</div>
+</div>
+<div class='wizard-option'>
+<input type='radio' name='provider'>
+<span class='wo-icon'>&#129504;</span>
+<div class='wo-content'>
+<strong>Anthropic</strong>
+<span>Claude Sonnet, Opus</span>
+</div>
+</div>
+</div>
+</div>
+<div class='wizard-actions'>
+<button class='btn' disabled>Voltar</button>
+<div style='display:flex;gap:8px;'>
+<button class='btn'>Pular</button>
+<button class='btn primary'>Proximo</button>
+</div>
+</div>
+</div>
+</div>
+<div class='editor-area'>
+<div class='wizard-empty'>
+<div class='wizard-empty-icon'>&#9881;&#65039;</div>
+<h2>Configuracao Inicial</h2>
+<p>Siga os passos na barra lateral para configurar o XForge Code AI</p>
+</div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#9889; Setup Wizard</span><span>Step 1 of 5</span></div>
+<div class='right'><span>Provider Selection</span></div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Steps</td><td>5 passos com indicadores</td><td>Progresso visual</td></tr>
+<tr><td>Options</td><td>Cards com radio buttons</td><td>Selecao clara</td></tr>
+<tr><td>Navigation</td><td>Back/Next/Skip</td><td>Controle</td></tr>
+<tr><td>Skip</td><td>Permite pular configuracao</td><td>Flexibilidade</td></tr>
+</table>
+<h2>Notas</h2>
+<div class='notes'><ul>
+<li>Wizard exibido no primeiro uso</li>
+<li>5 passos: Provider, Model, Behavior, Security, Skills</li>
+<li>Skip permite usar defaults</li>
+<li>Configuracao pode ser alterada depois</li>
+</ul></div>
+</body></html>

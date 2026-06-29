@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<title>XForge - 03 - Diff Review</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>03 - Diff Review</h1>
+<p class='subtitle'>Diff inline com Accept/Reject/Modify/View File.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html' class='active'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Diff Review - Inline com acoes</span><span class='badge p1'>P1</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div>
+<div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div>
+<div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div>
+<div class='activity-icon active'>&#128172;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div>
+</div>
+<div class='sidebar'>
+<div class='sidebar-header'><span>&#9889; XForge Code AI</span>
+<div class='actions'><div class='icon-btn'>&#43;</div><div class='icon-btn'>&#128101;</div></div></div>
+<div class='chat-panel'><div class='chat-messages'>
+<div class='message'><div class='avatar user'>R</div>
+<div class='message-body'><div class='message-content'><p>Adicione validacao de Amount &gt; 0 no handler</p></div></div></div>
+<div class='message'><div class='avatar assistant'>X</div><div class='message-body'>
+<div class='message-content'><p>Vou adicionar a validacao de Amount no handler.</p></div>
+<div class='diff-block'>
+<div class='diff-header'><span class='diff-file'>&#128196; CreatePaymentHandler.cs</span>
+<div class='diff-stats'><span class='diff-add'>+5</span><span class='diff-del'>-2</span></div></div>
+<div class='diff-content'>
+<div class='diff-line'><span class='line-num'>12</span><span class='line-prefix'> </span><span class='line-content'><span class='code-keyword'>public async</span> <span class='code-type'>Task</span>&lt;<span class='code-type'>Guid</span>&gt; <span class='code-function'>Handle</span>(...)</span></div>
+<div class='diff-line'><span class='line-num'>13</span><span class='line-prefix'> </span><span class='line-content'>{</span></div>
+<div class='diff-line del'><span class='line-num'>14</span><span class='line-prefix'>-</span><span class='line-content'>    <span class='code-keyword'>var</span> p = <span class='code-keyword'>new</span> <span class='code-type'>Payment</span> { ... };</span></div>
+<div class='diff-line add'><span class='line-num'>14</span><span class='line-prefix'>+</span><span class='line-content'>    <span class='code-keyword'>if</span> (r.<span class='code-variable'>Amount</span> &lt;= 0)</span></div>
+<div class='diff-line add'><span class='line-num'>15</span><span class='line-prefix'>+</span><span class='line-content'>        <span class='code-keyword'>throw new</span> <span class='code-type'>ArgumentException</span>(<span class='code-string'>"Amount &gt; 0"</span>);</span></div>
+<div class='diff-line add'><span class='line-num'>17</span><span class='line-prefix'>+</span><span class='line-content'>    <span class='code-keyword'>var</span> p = <span class='code-keyword'>new</span> <span class='code-type'>Payment</span> { ... };</span></div>
+</div>
+<div class='diff-actions'>
+<button class='btn success sm'>&#10004; Accept</button>
+<button class='btn danger sm'>&#10008; Reject</button>
+<button class='btn sm'>&#9998; Modify</button>
+<button class='btn sm'>&#128065; View</button>
+</div></div>
+<div class='message-content'><p style='font-size:.75rem;color:var(--text2)'>Aplicar?</p></div>
+</div></div>
+</div>
+<div class='chat-input-area'><div class='input-wrapper'>
+<textarea placeholder='Aceite, rejeite...'></textarea>
+<button class='send-btn'>&#10145;</button>
+</div></div>
+</div></div>
+<div class='editor-area'>
+<div class='editor-tabs'><div class='editor-tab active'>CreatePaymentHandler.cs <span class='close'>&#215;</span></div></div>
+<div class='editor-content'>
+<div class='line-numbers'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15</div>
+<div class='code'>
+<span class='code-keyword'>using</span> <span class='code-type'>XForge.MediatR</span>;<br>
+<br>
+<span class='code-keyword'>namespace</span> <span class='code-type'>PaymentApi.Application</span><br>
+{<br>
+&nbsp;&nbsp;<span class='code-keyword'>public class</span> <span class='code-type'>CreatePaymentHandler</span><br>
+&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-keyword'>public async</span> <span class='code-type'>Task</span>&lt;<span class='code-type'>Guid</span>&gt; <span class='code-function'>Handle</span>(...)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-keyword'>var</span> p = <span class='code-keyword'>new</span> <span class='code-type'>Payment</span> { ... };<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;}<br>
+}</div></div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#128220; Diff pendente</span></div>
+<div class='right'><span>&#9889; XForge: Code</span></div>
+</div>
+</div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Diff block</td><td>Header + content + actions</td><td>Clareza</td></tr>
+<tr><td>Adicoes</td><td>Fundo verde, prefixo +</td><td>Visual</td></tr>
+<tr><td>Delecoes</td><td>Fundo vermelho, prefixo -</td><td>Visual</td></tr>
+<tr><td>Accept</td><td>Btn verde</td><td>Aplicar</td></tr>
+<tr><td>Reject</td><td>Btn vermelho</td><td>Descartar</td></tr>
+</table>
+<h2>Notas</h2>
+<div class='notes'><ul>
+<li>Diff via vscode.workspace.diff</li>
+<li>Accept aplica mudanca</li>
+<li>Reject restaura original</li>
+<li>Modify envia prompt ajuste</li>
+</ul></div>
+</body></html>

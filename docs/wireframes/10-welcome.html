@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<title>XForge - 10 - Welcome</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>10 - Welcome</h1>
+<p class='subtitle'>Tela de boas-vindas com quick actions.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html' class='active'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Welcome - Tela Inicial</span><span class='badge p0'>P0</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div><div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div><div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div><div class='activity-icon active'>&#128172;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div></div>
+<div class='sidebar' style='width:340px;'>
+<div class='sidebar-header'>
+<span>&#9889; XForge Code AI</span>
+<div class='actions'><div class='icon-btn'>&#43;</div><div class='icon-btn'>&#9881;&#65039;</div></div>
+</div>
+<div class='welcome-sidebar'>
+<div class='welcome-hero-small'>
+<div class='welcome-logo-small'>&#9889;</div>
+<h3>Bem-vindo!</h3>
+<p>Como posso ajudar?</p>
+</div>
+<div class='welcome-actions-vertical'>
+<button class='welcome-action-v active'>
+<span class='wa-icon-v'>&#43;</span>
+<span class='wa-content-v'>
+<strong>Nova Sessao</strong>
+<span>Iniciar nova conversa</span>
+</span>
+</button>
+<button class='welcome-action-v'>
+<span class='wa-icon-v'>&#128269;</span>
+<span class='wa-content-v'>
+<strong>Analisar Projeto</strong>
+<span>Analisar projeto atual</span>
+</span>
+</button>
+<button class='welcome-action-v'>
+<span class='wa-icon-v'>&#128101;</span>
+<span class='wa-content-v'>
+<strong>Agent Manager</strong>
+<span>Multi-sessao</span>
+</span>
+</button>
+<button class='welcome-action-v'>
+<span class='wa-icon-v'>&#9881;&#65039;</span>
+<span class='wa-content-v'>
+<strong>Configuracoes</strong>
+<span>Providers e mais</span>
+</span>
+</button>
+</div>
+<div style='border-top:1px solid var(--border);margin-top:8px;padding-top:8px;'>
+<div style='font-size:.65rem;font-weight:600;color:var(--text3);text-transform:uppercase;margin-bottom:6px;padding:0 8px;'>Recentes</div>
+<div class='session-list'>
+<div class='session-item'>
+<div class='session-dot running'></div>
+<div class='session-info'><div class='session-name'>API Pagamentos</div><div class='session-meta'>2 min - 12 msgs</div></div>
+</div>
+<div class='session-item'>
+<div class='session-dot idle'></div>
+<div class='session-info'><div class='session-name'>Refactor Auth</div><div class='session-meta'>15 min - 8 msgs</div></div>
+</div>
+<div class='session-item'>
+<div class='session-dot idle'></div>
+<div class='session-info'><div class='session-name'>Fix Tests</div><div class='session-meta'>1 hr - 24 msgs</div></div>
+</div>
+<div class='session-item'>
+<div class='session-dot idle'></div>
+<div class='session-info'><div class='session-name'>Docs Update</div><div class='session-meta'>2 hrs - 5 msgs</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='editor-area'>
+<div class='welcome-empty'>
+<div class='welcome-empty-icon'>&#9889;</div>
+<h2>Bem-vindo ao XForge Code AI</h2>
+<p>Selecione uma opcao na barra lateral ou inicie uma nova sessao</p>
+</div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#9889; XForge Code AI</span><span>Pronto</span></div>
+<div class='right'><span>Ctrl+N: Nova sessao</span><span>Welcome</span></div>
+</div>
+</div></div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Logo</td><td>Icone XForge centralizado</td><td>Identidade</td></tr>
+<tr><td>Quick actions</td><td>Grid 2x2 com acoes</td><td>Produtividade</td></tr>
+<tr><td>Descricao</td><td>Texto curto de intro</td><td>Contexto</td></tr>
+<tr><td>Footer</td><td>Dica de comandos</td><td>Descoberta</td></tr>
+</table>
+<h2>Notas</h2>
+<div class='notes'><ul>
+<li>Tela exibida no primeiro uso</li>
+<li>Quick actions sao os comandos mais usados</li>
+<li>Pode ser reaberta com /welcome</li>
+<li>Detecta se provider esta configurado</li>
+</ul></div>
+</body></html>

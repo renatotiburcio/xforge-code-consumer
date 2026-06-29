@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XForge Code AI - 01 - Chat Principal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>01 - Chat Principal</h1>
+<p class='subtitle'>Tela base de chat - sidebar 340px com header, mensagens, tool calls colapsaveis e input.</p>
+<nav class='nav'>
+<a href='00-home.html'>Home</a>
+<a href='01-chat-principal.html' class='active'>Chat Principal</a>
+<a href='02-chat-streaming.html'>Streaming</a>
+<a href='03-chat-diff.html'>Diff Review</a>
+<a href='04-chat-tool-calls.html'>Tool Calls</a>
+<a href='05-chat-error.html'>Error Recovery</a>
+<a href='06-slash-commands.html'>Slash Commands</a>
+<a href='07-context-system.html'>@Context</a>
+<a href='08-agent-manager.html'>Agent Manager</a>
+<a href='09-settings.html'>Settings</a>
+<a href='10-welcome.html'>Welcome</a>
+<a href='11-setup-wizard.html'>Setup Wizard</a>
+<a href='12-inline-editing.html'>Inline Editing</a>
+<a href='13-history.html'>Historico</a>
+<a href='14-mcp-servers.html'>MCP Servers</a>
+<a href='15-shortcuts.html'>Atalhos</a>
+<a href='16-modes.html'>Mode Selector</a>
+<a href='17-checkpoint.html'>Checkpoint</a>
+<a href='18-notifications.html'>Notificacoes</a>
+</nav>
+<div class='frame'>
+<div class='frame-label'><span class='title'>Chat Principal - Sidebar 340px + Editor</span><span class='badge p0'>P0</span></div>
+<div class='vscode-window'>
+<div class='vscode-body'>
+<div class='activity-bar'>
+<div class='activity-icon'>&#128193;</div>
+<div class='activity-icon'>&#128269;</div>
+<div class='activity-icon'>&#128256;</div>
+<div class='activity-icon'>&#128027;</div>
+<div class='activity-icon'>&#128230;</div>
+<div class='activity-icon active'>&#128172;</div>
+<div class='activity-icon' style='margin:auto 0 8px;'>&#9881;&#65039;</div>
+</div>
+<div class='sidebar'>
+<div class='sidebar-header'>
+<span>&#9889; XForge Code AI</span>
+<div class='actions'><div class='icon-btn'>&#43;</div><div class='icon-btn'>&#128101;</div><div class='icon-btn'>&#9881;&#65039;</div></div>
+</div>
+<div class='chat-panel'>
+<div class='chat-messages'>
+<div class='message'><div class='avatar user'>R</div>
+<div class='message-body'><div class='message-content'><p>Crie uma API de pagamentos com .NET 8 usando Clean Architecture</p></div></div></div>
+<div class='message'><div class='avatar assistant'>X</div>
+<div class='message-body'><div class='message-content'><p>Vou criar a API de pagamentos com Clean Architecture. Primeiro, vou analisar o projeto existente...</p></div></div></div>
+<div class='message'><div class='avatar user'>R</div>
+<div class='message-body'><div class='message-content'><p>Use PostgreSQL e XForge.MediatR</p></div></div></div>
+<div class='message'><div class='avatar assistant'>X</div><div class='message-body'>
+<div class='message-content'><p>Perfeito! Vou estruturar o projeto com PostgreSQL e XForge.MediatR.</p></div>
+<div class='tool-call'><div class='tool-call-header'><span>&#128193;</span><span class='tool-name'>read_file</span><span class='tool-status success'>&#10004; Completo</span></div></div>
+<div class='tool-call'><div class='tool-call-header'><span>&#128193;</span><span class='tool-name'>list_files</span><span class='tool-status success'>&#10004; Completo</span></div></div>
+<div class='tool-call expanded'><div class='tool-call-header'><span>&#9881;&#65039;</span><span class='tool-name'>bash</span><span class='tool-status success'>&#10004; Completo (2.3s)</span></div>
+<div class='tool-call-body'>dotnet new sln -n PaymentApi<br>dotnet new classlib -n PaymentApi.Domain<br>dotnet sln add PaymentApi.Domain</div></div>
+</div></div>
+</div>
+<div class='chat-input-area'><div class='input-wrapper'>
+<textarea placeholder='Como posso ajudar? (@ para adicionar contexto)'></textarea>
+<button class='send-btn'>&#10145;</button>
+</div></div>
+</div>
+</div>
+<div class='editor-area'>
+<div class='editor-tabs'>
+<div class='editor-tab'>Program.cs</div>
+<div class='editor-tab active'>Payment.cs <span class='close'>&#215;</span></div>
+<div class='editor-tab'>appsettings.json</div>
+</div>
+<div class='editor-content'>
+<div class='line-numbers'>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15</div>
+<div class='code'>
+<span class='code-keyword'>namespace</span> <span class='code-type'>PaymentApi.Domain.Entities</span><br>
+{<br>
+&nbsp;&nbsp;<span class='code-keyword'>public class</span> <span class='code-type'>Payment</span><br>
+&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-keyword'>public int</span> <span class='code-variable'>Id</span> { <span class='code-keyword'>get</span>; <span class='code-keyword'>set</span>; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-keyword'>public string</span> <span class='code-variable'>Description</span> { <span class='code-keyword'>get</span>; <span class='code-keyword'>set</span>; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-keyword'>public decimal</span> <span class='code-variable'>Amount</span> { <span class='code-keyword'>get</span>; <span class='code-keyword'>set</span>; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-keyword'>public</span> <span class='code-type'>DateTime</span> <span class='code-variable'>CreatedAt</span> { <span class='code-keyword'>get</span>; <span class='code-keyword'>set</span>; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class='code-keyword'>public</span> <span class='code-type'>PaymentStatus</span> <span class='code-variable'>Status</span> { <span class='code-keyword'>get</span>; <span class='code-keyword'>set</span>; }<br>
+&nbsp;&nbsp;}<br>
+}<br>&nbsp;<br>
+<span class='code-keyword'>public enum</span> <span class='code-type'>PaymentStatus</span><br>
+{<br>&nbsp;&nbsp;Pending, Completed, Failed, Cancelled<br>}
+</div></div>
+</div>
+</div>
+<div class='status-bar'>
+<div class='left'><span>&#9889; main</span><span>&#10004; 0 errors</span><span>&#9675; 0 warnings</span></div>
+<div class='right'><span>Ln 15, Col 1</span><span>UTF-8</span><span>C#</span><span>&#9889; XForge: Code</span></div>
+</div>
+</div>
+</div>
+</div>
+<h2>Especificacoes</h2>
+<table class='spec-table'>
+<tr><th>Elemento</th><th>Especificacao</th><th>Razao</th></tr>
+<tr><td>Sidebar</td><td>340px fixo</td><td>Legivel sem distrair</td></tr>
+<tr><td>Fonte chat</td><td>14px, 1.6</td><td>Legibilidade</td></tr>
+<tr><td>Fonte codigo</td><td>13px monospace</td><td>Diferenciacao</td></tr>
+<tr><td>Avatar user</td><td>Inicial R, azul</td><td>Identificacao</td></tr>
+<tr><td>Avatar asst</td><td>Inicial X, borda</td><td>XForge identity</td></tr>
+<tr><td>Tool calls</td><td>Colapsavel</td><td>Nao polui</td></tr>
+<tr><td>Input</td><td>Auto-resize 100px</td><td>Conforto</td></tr>
+</table>
+<h2>Notas</h2>
+<div class='notes'><ul>
+<li>Sidebar usa vscode.window.createWebviewView</li>
+<li>Header: Nova sessao, Agent Manager, Settings</li>
+<li>Tool calls colapsaveis</li>
+<li>Ctrl+Enter envia, / slash commands, @ context</li>
+<li>Status bar mostra modo XForge</li>
+</ul></div>
+</body></html>
