@@ -144,11 +144,32 @@ interface VsCodeMessageEvent {
         vscode.postMessage({ type: 'requestNew' });
     }
 
+    function toggleSidebar(): void {
+        const panel = document.getElementById('historyPanel');
+        if (panel) panel.classList.toggle('open');
+    }
+
+    function selectSession(id: string): void {
+        vscode.postMessage({ type: 'selectSession', sessionId: id });
+    }
+
+    function deleteSession(id: string): void {
+        vscode.postMessage({ type: 'deleteSession', sessionId: id });
+    }
+
+    function newSession(): void {
+        vscode.postMessage({ type: 'newSession' });
+    }
+
     // Expose to global scope for onclick handlers
     (window as any).sendMessage = sendMessage;
     (window as any).sendQuick = sendQuick;
     (window as any).requestProviderSwitch = requestProviderSwitch;
     (window as any).requestNewProvider = requestNewProvider;
+    (window as any)._toggleSidebar = toggleSidebar;
+    (window as any)._selectSession = selectSession;
+    (window as any)._deleteSession = deleteSession;
+    (window as any)._newSession = newSession;
 
     sendBtn.addEventListener('click', sendMessage);
     if (headerBtn) headerBtn.addEventListener('click', requestProviderSwitch);

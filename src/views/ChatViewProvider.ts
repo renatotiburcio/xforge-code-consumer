@@ -97,7 +97,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
             '.sidebar-title { font-size:.75rem; font-weight:600; color:#fff; }',
             '.sidebar-btn { background:none; border:none; color:#888; cursor:pointer; padding:2px 4px; border-radius:3px; display:flex; align-items:center; }',
             '.sidebar-btn:hover { background:var(--vscode-list-hoverBackground); color:#fff; }',
-            '.sidebar-btn svg { width:14px; height:14px; }',
+            '.sidebar-btn svg { width:14px; height:14px; display:block; }',
             '.sidebar-list { overflow-y:auto; height:calc(100% - 41px); }',
             '.session-item { display:flex; align-items:center; justify-content:space-between; padding:8px 10px; cursor:pointer; border-bottom:1px solid rgba(60,60,60,.3); }',
             '.session-item:hover { background:var(--vscode-list-hoverBackground,#2a2d2e); }',
@@ -307,15 +307,20 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         return result;
     }
 
-    private _icon(name: string): string {
+    private _icon(name: string, size = 14): string {
+        const s = 'width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
         const icons: Record<string, string> = {
-            chevron: '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>',
-            send: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l5-5 5 5M12 6v12"/></svg>',
-            plus: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>',
-            history: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>',
-            trash: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>',
+            chevron: '<polyline points="6 9 12 15 18 9"></polyline>',
+            send: '<polyline points="7 11 12 6 17 11"></polyline><line x1="12" y1="6" x2="12" y2="18"></line>',
+            plus: '<line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>',
+            history: '<polyline points="1 4 1 10 7 10"></polyline><polyline points="3.51 15.39 4.93 16.81 6.35 15.39"></polyline>',
+            trash: '<polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path>',
+            code: '<polyline points="16 18 22 12 16 6"></polyline><poly 6 2 12 8 18"></polyline>',
+            arrowright: '<line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>',
+            x: '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>',
         };
-        return icons[name] || '';
+        const inner = icons[name] || '';
+        return '<svg xmlns="http://www.w3.org/2000/svg" ' + s + '>' + inner + '</svg>';
     }
 
     private _persistSession(userMessage: string): void {
