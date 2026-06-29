@@ -1,0 +1,105 @@
+- generic [active] [ref=e1]:
+  - button "Chat" [ref=e3] [cursor=pointer]:
+    - img [ref=e4]
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - img "XF" [ref=e9]
+        - generic [ref=e10]: XForge Code AI - NOME
+      - button "Historico" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+    - generic [ref=e16]:
+      - combobox [ref=e17] [cursor=pointer]:
+        - option "Code" [selected]
+      - combobox [ref=e18] [cursor=pointer]:
+        - option "OpenRouter / claude-sonnet-4" [selected]
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Contexto
+        - generic [ref=e24]:
+          - text: 45%
+          - text: 57k/128k
+      - generic [ref=e26]:
+        - strong [ref=e28]: 12:34
+        - generic [ref=e29]:
+          - strong [ref=e30]: "859"
+          - text: tok
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: U
+          - generic [ref=e35]: Voce
+          - generic [ref=e36]:
+            - text: 28/06/2026
+            - text: 09:15
+            - text: 12 tokens
+        - generic [ref=e39]: Criar endpoint de produtos
+        - generic [ref=e40]: Cria um endpoint GET /api/produtos com paginacao e filtro por categoria
+        - generic [ref=e41]:
+          - button "Copiar" [ref=e42] [cursor=pointer]:
+            - img [ref=e43]
+          - button "Redefinir" [ref=e46] [cursor=pointer]:
+            - img [ref=e47]
+          - button "Bifurcar" [ref=e52] [cursor=pointer]:
+            - img [ref=e53]
+          - button "Excluir" [ref=e57] [cursor=pointer]:
+            - img [ref=e58]
+          - button "Recolher" [ref=e60] [cursor=pointer]:
+            - img [ref=e61]
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - img "XF" [ref=e66]
+          - generic [ref=e67]: XForge
+          - generic [ref=e68]:
+            - text: 28/06/2026
+            - text: 09:16
+            - text: 4.2s
+            - text: 847 tokens
+        - generic [ref=e72]: Criando endpoint
+        - generic [ref=e73]: Vou criar o endpoint GET com paginacao e filtro. Primeiro, vou analisar a estrutura do projeto e criar o controller com as validacoes necessarias.
+        - generic [ref=e74]:
+          - button "Copiar" [ref=e75] [cursor=pointer]:
+            - img [ref=e76]
+          - button "Util" [ref=e79] [cursor=pointer]:
+            - img [ref=e80]
+          - button "Nao util" [ref=e82] [cursor=pointer]:
+            - img [ref=e83]
+          - button "Reanalizar" [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+          - button "Recolher" [ref=e90] [cursor=pointer]:
+            - img [ref=e91]
+    - generic [ref=e93]:
+      - textbox "Digite..." [ref=e95]
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - button "Audio" [ref=e99] [cursor=pointer]:
+            - img [ref=e100]
+          - button "Imagem" [ref=e103] [cursor=pointer]:
+            - img [ref=e104]
+          - button "Melhorar" [ref=e107] [cursor=pointer]:
+            - img [ref=e108]
+          - button "Compactar" [ref=e110] [cursor=pointer]:
+            - img [ref=e111]
+        - generic [ref=e116]:
+          - button "Dicas" [ref=e117] [cursor=pointer]:
+            - img [ref=e118]
+          - button "Auto" [ref=e121] [cursor=pointer]:
+            - img [ref=e122]
+          - button "Enviar" [ref=e125] [cursor=pointer]:
+            - img [ref=e126]
+  - generic [ref=e129]:
+    - heading "NOME" [level=1] [ref=e131]
+    - paragraph [ref=e133]: Conteudo
+  - generic [ref=e135]:
+    - heading "Excluir mensagem" [level=3] [ref=e136]
+    - paragraph [ref=e137]: O que deseja excluir?
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - radio "So esta mensagem" [checked] [ref=e140]
+        - text: So esta mensagem
+      - generic [ref=e141]:
+        - radio "Esta e todas abaixo" [ref=e142]
+        - text: Esta e todas abaixo
+    - generic [ref=e143]:
+      - button "Cancelar" [ref=e144]
+      - button "Excluir" [ref=e145]

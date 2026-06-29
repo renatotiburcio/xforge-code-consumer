@@ -1,0 +1,93 @@
+- generic [active] [ref=e1]:
+  - button "Chat" [ref=e3] [cursor=pointer]:
+    - img [ref=e4]
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - img "XF" [ref=e9]
+        - generic [ref=e10]: XForge Code AI - NOME
+      - button "Historico" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+    - generic [ref=e16]:
+      - combobox [ref=e17] [cursor=pointer]:
+        - option "Code" [selected]
+      - combobox [ref=e18] [cursor=pointer]:
+        - option "OpenRouter / claude-sonnet-4" [selected]
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - generic [ref=e21]: Contexto
+        - generic [ref=e24]:
+          - text: 45%
+          - text: 57k/128k
+      - generic [ref=e26]:
+        - strong [ref=e28]: 12:34
+        - generic [ref=e29]:
+          - strong [ref=e30]: "859"
+          - text: tok
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]:
+          - generic [ref=e34]: U
+          - generic [ref=e35]:
+            - generic [ref=e37]: Voce
+            - generic [ref=e38]:
+              - generic [ref=e39]: 12 tokens
+              - generic [ref=e40]: 0:45
+              - generic [ref=e42]: 28/06/2026
+        - generic [ref=e44]: Criar endpoint de produtos
+        - generic [ref=e45]: Cria um endpoint GET /api/produtos com paginacao e filtro por categoria
+        - generic [ref=e46]:
+          - button "Copiar" [ref=e47] [cursor=pointer]:
+            - img [ref=e48]
+          - button "Redefinir" [ref=e51] [cursor=pointer]:
+            - img [ref=e52]
+          - button "Bifurcar" [ref=e55] [cursor=pointer]:
+            - img [ref=e56]
+          - button "Excluir" [ref=e59] [cursor=pointer]:
+            - img [ref=e60]
+          - button "Recolher" [ref=e62] [cursor=pointer]:
+            - img [ref=e63]
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - img [ref=e68]
+          - generic [ref=e70]:
+            - generic [ref=e72]: XForge
+            - generic [ref=e73]:
+              - generic [ref=e74]: 847 tokens
+              - generic [ref=e75]: 4.2s
+              - generic [ref=e77]: 28/06/2026
+        - generic [ref=e79]: Criando endpoint
+        - generic [ref=e80]: Vou criar o endpoint GET com paginacao e filtro.
+        - generic [ref=e81]:
+          - button "Copiar" [ref=e82] [cursor=pointer]:
+            - img [ref=e83]
+          - button "Util" [ref=e86] [cursor=pointer]:
+            - img [ref=e87]
+          - button "Nao util" [ref=e89] [cursor=pointer]:
+            - img [ref=e90]
+          - button "Reanalizar" [ref=e92] [cursor=pointer]:
+            - img [ref=e93]
+          - button "Recolher" [ref=e97] [cursor=pointer]:
+            - img [ref=e98]
+    - generic [ref=e100]:
+      - textbox "Digite..." [ref=e102]
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - button "Audio" [ref=e106] [cursor=pointer]:
+            - img [ref=e107]
+          - button "Imagem" [ref=e110] [cursor=pointer]:
+            - img [ref=e111]
+          - button "Melhorar" [ref=e114] [cursor=pointer]:
+            - img [ref=e115]
+          - button "Compactar" [ref=e117] [cursor=pointer]:
+            - img [ref=e118]
+        - generic [ref=e121]:
+          - button "Dicas" [ref=e122] [cursor=pointer]:
+            - img [ref=e123]
+          - button "Auto" [ref=e126] [cursor=pointer]:
+            - img [ref=e127]
+          - button "Enviar" [ref=e130] [cursor=pointer]:
+            - img [ref=e131]
+  - generic [ref=e134]:
+    - heading "NOME" [level=1] [ref=e136]
+    - paragraph [ref=e138]: Conteudo

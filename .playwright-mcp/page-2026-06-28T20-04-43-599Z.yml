@@ -1,0 +1,411 @@
+- generic [active]:
+  - generic:
+    - banner [ref=e1]:
+      - generic [ref=e2]:
+        - link "Kilo Code Logo Kilo CodeDOCS" [ref=e3] [cursor=pointer]:
+          - /url: /docs/
+          - img "Kilo Code Logo" [ref=e4]
+          - generic [ref=e6]: Kilo CodeDOCS
+        - button "Search (Meta+k)" [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]:
+            - img [ref=e11]
+            - generic [ref=e14]: Search
+        - generic [ref=e15]:
+          - button "Using system theme" [ref=e16] [cursor=pointer]:
+            - img [ref=e17]
+          - link "GitHub" [ref=e19] [cursor=pointer]:
+            - /url: https://kilo.ai/github
+          - link "Sign in" [ref=e20] [cursor=pointer]:
+            - /url: https://app.kilo.ai
+      - generic [ref=e21]:
+        - navigation [ref=e22]:
+          - link "Get Started" [ref=e23] [cursor=pointer]:
+            - /url: /docs/getting-started
+            - text: Get Started
+          - link "Code with AI" [ref=e25] [cursor=pointer]:
+            - /url: /docs/code-with-ai
+          - link "Customize" [ref=e26] [cursor=pointer]:
+            - /url: /docs/customize
+          - link "Collaborate" [ref=e27] [cursor=pointer]:
+            - /url: /docs/collaborate
+          - link "Automate" [ref=e28] [cursor=pointer]:
+            - /url: /docs/automate
+          - link "Deploy & Secure" [ref=e29] [cursor=pointer]:
+            - /url: /docs/deploy-secure
+          - link "Kilo Gateway" [ref=e30] [cursor=pointer]:
+            - /url: /docs/gateway
+          - link "KiloClaw" [ref=e31] [cursor=pointer]:
+            - /url: /docs/kiloclaw
+          - link "Contributing" [ref=e32] [cursor=pointer]:
+            - /url: /docs/contributing
+        - generic [ref=e33]:
+          - button "Contributing" [ref=e35]:
+            - text: Contributing
+            - img [ref=e36]
+          - button "Help" [ref=e39]:
+            - text: Help
+            - img [ref=e40]
+      - paragraph [ref=e43]:
+        - text: The all-new Kilo Code extension is here, rebuilt on the
+        - link "Kilo CLI" [ref=e44] [cursor=pointer]:
+          - /url: /docs/code-with-ai/platforms/vscode/whats-new
+        - text: for speed, flexibility, and continued access to 500+ models via the Kilo Gateway →
+    - generic [ref=e45]:
+      - navigation [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - link "Home" [ref=e49] [cursor=pointer]:
+              - /url: /docs/
+              - generic [ref=e50]: Home
+            - button "Get Started" [ref=e51] [cursor=pointer]:
+              - generic [ref=e52]: Get Started
+              - img [ref=e54]
+            - button "Code with AI" [ref=e56] [cursor=pointer]:
+              - generic [ref=e57]: Code with AI
+              - img [ref=e59]
+            - button "Customize" [ref=e61] [cursor=pointer]:
+              - generic [ref=e62]: Customize
+              - img [ref=e64]
+            - button "Collaborate" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]: Collaborate
+              - img [ref=e69]
+            - button "Automate" [ref=e71] [cursor=pointer]:
+              - generic [ref=e72]: Automate
+              - img [ref=e74]
+            - button "Deploy & Secure" [ref=e76] [cursor=pointer]:
+              - generic [ref=e77]: Deploy & Secure
+              - img [ref=e79]
+            - button "AI Gateway" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]: AI Gateway
+              - img [ref=e84]
+            - button "KiloClaw" [ref=e86] [cursor=pointer]:
+              - generic [ref=e87]: KiloClaw
+              - img [ref=e89]
+            - button "Contributing" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]: Contributing
+              - img [ref=e94]
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - generic [ref=e99]: Introduction
+              - list [ref=e100]:
+                - listitem [ref=e101]:
+                  - link "Overview" [ref=e102] [cursor=pointer]:
+                    - /url: /docs/getting-started
+                - listitem [ref=e103]:
+                  - link "Installation" [ref=e104] [cursor=pointer]:
+                    - /url: /docs/getting-started/installing
+                - listitem [ref=e105]:
+                  - link "Quickstart" [ref=e106] [cursor=pointer]:
+                    - /url: /docs/getting-started/quickstart
+            - generic [ref=e107]:
+              - generic [ref=e108]: Configuration
+              - list [ref=e109]:
+                - listitem [ref=e110]:
+                  - link "Setup & Authentication" [ref=e111] [cursor=pointer]:
+                    - /url: /docs/getting-started/setup-authentication
+                - listitem [ref=e112]:
+                  - link "Using Kilo for Free" [ref=e113] [cursor=pointer]:
+                    - /url: /docs/getting-started/using-kilo-for-free
+                - listitem [ref=e114]:
+                  - link "Bring Your Own Key (BYOK)" [ref=e115] [cursor=pointer]:
+                    - /url: /docs/getting-started/byok
+                - listitem [ref=e116]:
+                  - link "AI Providers" [ref=e117] [cursor=pointer]:
+                    - /url: /docs/ai-providers
+                - listitem [ref=e118]:
+                  - generic [ref=e119]:
+                    - link "Settings" [ref=e120] [cursor=pointer]:
+                      - /url: /docs/getting-started/settings
+                    - button "Collapse" [ref=e121] [cursor=pointer]:
+                      - img [ref=e122]
+                  - list [ref=e124]:
+                    - listitem [ref=e125]:
+                      - link "Auto-Approving Actions" [ref=e126] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/auto-approving-actions
+                    - listitem [ref=e127]:
+                      - link "Auto Cleanup Legacy" [ref=e128] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/auto-cleanup
+                        - text: Auto Cleanup
+                        - generic [ref=e129]: Legacy
+                    - listitem [ref=e130]:
+                      - link "System Notifications Legacy" [ref=e131] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/system-notifications
+                        - text: System Notifications
+                        - generic [ref=e132]: Legacy
+                    - listitem [ref=e133]:
+                      - link "Sandboxing" [ref=e134] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/sandboxing
+                - listitem [ref=e135]:
+                  - link "Adding Credits" [ref=e136] [cursor=pointer]:
+                    - /url: /docs/getting-started/adding-credits
+                - listitem [ref=e137]:
+                  - link "Cost Efficiency & Model Selection" [ref=e138] [cursor=pointer]:
+                    - /url: /docs/getting-started/rate-limits-and-costs
+                - listitem [ref=e139]:
+                  - link "Cost Controls and Usage Safeguards" [ref=e140] [cursor=pointer]:
+                    - /url: /docs/getting-started/cost-controls-and-usage-safeguards
+            - generic [ref=e141]:
+              - generic [ref=e142]: Help
+              - list [ref=e143]:
+                - listitem [ref=e144]:
+                  - generic [ref=e145]:
+                    - link "FAQ" [ref=e146] [cursor=pointer]:
+                      - /url: /docs/getting-started/faq
+                    - button "Expand" [ref=e147] [cursor=pointer]:
+                      - img [ref=e148]
+                - listitem [ref=e150]:
+                  - link "Migrating from Cursor" [ref=e151] [cursor=pointer]:
+                    - /url: /docs/getting-started/migrating
+                - listitem [ref=e152]:
+                  - generic [ref=e153]:
+                    - link "Troubleshooting" [ref=e154] [cursor=pointer]:
+                      - /url: /docs/getting-started/troubleshooting
+                    - button "Expand" [ref=e155] [cursor=pointer]:
+                      - img [ref=e156]
+                - listitem [ref=e158]:
+                  - link "Using Docs with Agents" [ref=e159] [cursor=pointer]:
+                    - /url: /docs/getting-started/using-docs-with-agents
+      - main [ref=e160]:
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - article [ref=e163]:
+              - heading "Settings" [level=1] [ref=e164]
+              - paragraph [ref=e165]: The VS Code extension can be configured through the Settings window, opened by pressing the gear icon in Kilo Code. Changes apply across extension surfaces, including the sidebar and Agent Manager. The CLI can also use the same JSONC config files when you use it directly.
+              - heading "Configuring with the Agent" [level=2] [ref=e166]
+              - paragraph [ref=e167]:
+                - text: The fastest way to change your Kilo configuration is to ask the agent to do it for you. The agent has a built-in skill that understands the full
+                - code [ref=e168]: kilo.jsonc
+                - text: schema and can read, create, and update your config files directly.
+              - paragraph [ref=e169]:
+                - strong [ref=e170]: "Examples of things you can ask:"
+              - list [ref=e171]:
+                - listitem [ref=e172]: "\"Switch my default model to Claude Sonnet\""
+                - listitem [ref=e173]: "\"Disable the OpenAI and Groq providers\""
+                - listitem [ref=e174]: "\"Set up an MCP server for Figma\""
+                - listitem [ref=e175]: "\"Auto-approve all read and glob operations\""
+                - listitem [ref=e176]: "\"Create a custom agent for code review\""
+              - paragraph [ref=e177]: The agent will edit the appropriate config file (global or project-level) and explain what it changed. This works in both the CLI and VS Code extension.
+              - generic [ref=e178]:
+                - generic [ref=e179]:
+                  - generic [ref=e180]: 💡
+                  - generic [ref=e181]: Tip
+                - paragraph [ref=e183]: This is especially useful for complex configuration like custom model definitions, MCP server setup, or permission patterns — the agent knows the correct syntax and will validate the config for you.
+              - heading "Managing Settings" [level=2] [ref=e184]
+              - generic [ref=e185]:
+                - generic [ref=e186]:
+                  - button "VSCode" [ref=e187]
+                  - button "CLI" [ref=e188]
+                  - button "VSCode (Legacy)" [ref=e189]
+                - generic [ref=e190]:
+                  - paragraph [ref=e191]:
+                    - text: The VS Code extension provides a
+                    - strong [ref=e192]: Settings webview UI
+                    - text: accessible from Kilo Code by clicking the gear icon (
+                    - generic [ref=e193]: 
+                    - text: ). The UI is organized into tabs including Providers, Auto-Approve, Models, and more.
+                  - paragraph [ref=e194]: This UI reads and writes to the same underlying JSONC config files used across extension surfaces. Changes apply to the sidebar, Agent Manager, and the CLI when used directly.
+                  - heading "Config File Locations" [level=3] [ref=e195]
+                  - paragraph [ref=e196]: "There are two primary config files:"
+                  - list [ref=e197]:
+                    - listitem [ref=e198]:
+                      - strong [ref=e199]: "Global config:"
+                      - code [ref=e200]: ~/.config/kilo/kilo.jsonc
+                      - text: — applies to all projects. On Windows, this is
+                      - code [ref=e201]: C:\Users\<username>\.config\kilo\kilo.jsonc
+                      - text: .
+                    - listitem [ref=e202]:
+                      - strong [ref=e203]: "Project config:"
+                      - code [ref=e204]: kilo.jsonc
+                      - text: in your project root, or
+                      - code [ref=e205]: .kilo/kilo.jsonc
+                      - text: for a cleaner setup. The
+                      - code [ref=e206]: .kilo/
+                      - text: version takes priority if both exist.
+                  - paragraph [ref=e207]:
+                    - text: Use
+                    - strong [ref=e208]: Local Config
+                    - text: or
+                    - strong [ref=e209]: Global Config
+                    - text: in the Settings header to open the matching config file from VS Code. If multiple config files are available, choose the exact file from the picker. If the recommended file does not exist yet, Kilo creates it before opening it.
+                  - generic [ref=e210]:
+                    - generic [ref=e211]:
+                      - generic [ref=e212]: ⚠️
+                      - generic [ref=e213]: Warning
+                    - paragraph [ref=e215]:
+                      - text: If you check config files into version control, make sure they do not contain API keys or other secrets (e.g.,
+                      - code [ref=e216]: provider.*.options.apiKey
+                      - text: ). Use environment variables for credentials instead.
+                  - heading "Voice Transcription Model" [level=3] [ref=e217]
+                  - paragraph [ref=e218]:
+                    - text: When the Kilo provider is enabled and you are signed in, choose the transcription model under
+                    - strong [ref=e219]: Models
+                    - text: ">"
+                    - strong [ref=e220]: Speech to Text Model
+                    - text: . This stores
+                    - code [ref=e221]: experimental.speech_to_text_model
+                    - text: "in your global Kilo CLI config:"
+                  - generic [ref=e222]:
+                    - button "Copy code to clipboard" [ref=e223] [cursor=pointer]:
+                      - generic [ref=e224]: 
+                    - generic [ref=e225]: "{ \"experimental\": { \"speech_to_text_model\": \"openai/whisper-large-v3-turbo\" } }"
+                  - heading "Prompt-Training Model Visibility" [level=3] [ref=e226]
+                  - paragraph [ref=e227]:
+                    - text: Enable
+                    - strong [ref=e228]: Hide Prompt-Training Models
+                    - text: under
+                    - strong [ref=e229]: Models
+                    - text: to remove Kilo Gateway models whose providers may use your prompts for training from model lists. Models from other providers and models without explicit prompt-training metadata remain visible. The setting is disabled by default.
+                  - paragraph [ref=e230]:
+                    - text: You can also enable it in
+                    - code [ref=e231]: kilo.jsonc
+                    - text: ":"
+                  - generic [ref=e232]:
+                    - button "Copy code to clipboard" [ref=e233] [cursor=pointer]:
+                      - generic [ref=e234]: 
+                    - generic [ref=e235]: "{ \"hide_prompt_training_models\": true }"
+                  - heading "Reasoning Blocks" [level=3] [ref=e236]
+                  - paragraph [ref=e237]:
+                    - text: Reasoning blocks stay expanded by default in the VS Code chat UI. Enable
+                    - strong [ref=e238]: Auto-Collapse Reasoning
+                    - text: in the Display tab, or set
+                    - code [ref=e239]: auto_collapse_reasoning
+                    - text: in
+                    - code [ref=e240]: kilo.jsonc
+                    - text: ", to collapse them after the agent finishes writing them:"
+                  - generic [ref=e241]:
+                    - button "Copy code to clipboard" [ref=e242] [cursor=pointer]:
+                      - generic [ref=e243]: 
+                    - generic [ref=e244]: "{ \"auto_collapse_reasoning\": true }"
+                  - heading "Terminal Command Blocks" [level=3] [ref=e245]
+                  - paragraph [ref=e246]:
+                    - text: Terminal command blocks stay expanded by default in the VS Code chat UI. Choose
+                    - strong [ref=e247]: Collapsed
+                    - text: for
+                    - strong [ref=e248]: Terminal Command Blocks
+                    - text: in the Display tab, or set
+                    - code [ref=e249]: terminal_command_display
+                    - text: in
+                    - code [ref=e250]: kilo.jsonc
+                    - text: ", to start them collapsed:"
+                  - generic [ref=e251]:
+                    - button "Copy code to clipboard" [ref=e252] [cursor=pointer]:
+                      - generic [ref=e253]: 
+                    - generic [ref=e254]: "{ \"terminal_command_display\": \"collapsed\" }"
+                  - paragraph [ref=e255]:
+                    - text: Valid values are
+                    - code [ref=e256]: expanded
+                    - text: and
+                    - code [ref=e257]: collapsed
+                    - text: .
+                  - heading "Markdown Diff Rendering" [level=3] [ref=e258]
+                  - paragraph [ref=e259]:
+                    - text: Markdown files in Kilo diff viewers can be shown as rendered Markdown instead of a raw text diff. Use the eye/code toggle in a Markdown file header, or set
+                    - code [ref=e260]: kilo-code.new.diff.renderMarkdown
+                    - text: to
+                    - code [ref=e261]: "true"
+                    - text: to render Markdown files by default.
+                  - heading "Export and Import" [level=3] [ref=e262]
+                  - paragraph [ref=e263]:
+                    - text: You can export and import settings from the
+                    - strong [ref=e264]: About Kilo Code
+                    - text: "tab in the Settings UI:"
+                  - list [ref=e265]:
+                    - listitem [ref=e266]:
+                      - strong [ref=e267]: Export
+                      - text: ": Saves your global config as a"
+                      - code [ref=e268]: kilo-settings.json
+                      - text: file. Review it before sharing, because config values are exported as-is.
+                    - listitem [ref=e269]:
+                      - strong [ref=e270]: Import
+                      - text: ": Loads a previously exported JSON file into the settings draft. Changes are not applied immediately — you can review them and click Save or Discard, just like any manual edit."
+                  - paragraph [ref=e271]:
+                    - text: Config files are also plain-text and portable — you can copy
+                    - code [ref=e272]: ~/.config/kilo/kilo.jsonc
+                    - text: between machines directly.
+              - heading "Experimental Features" [level=2] [ref=e273]
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - button "VSCode" [ref=e276]
+                  - button "CLI" [ref=e277]
+                  - button "VSCode (Legacy)" [ref=e278]
+                - generic [ref=e279]:
+                  - paragraph [ref=e280]:
+                    - text: The new extension exposes experimental features via the
+                    - strong [ref=e281]: Experimental
+                    - text: tab in Settings (click the gear icon
+                    - generic [ref=e282]: 
+                    - text: → Experimental).
+                  - paragraph [ref=e283]: "Available experimental settings include:"
+                  - list [ref=e284]:
+                    - listitem [ref=e285]:
+                      - strong [ref=e286]: Share mode
+                      - text: "-"
+                      - code [ref=e287]: manual
+                      - text: ","
+                      - code [ref=e288]: auto
+                      - text: ", or"
+                      - code [ref=e289]: disabled
+                      - text: session sharing
+                    - listitem [ref=e290]:
+                      - strong [ref=e291]: LSP integration
+                      - text: "- expose language server diagnostics to the agent"
+                    - listitem [ref=e292]:
+                      - strong [ref=e293]: Paste summary
+                      - text: "- summarize large clipboard pastes before including them"
+                    - listitem [ref=e294]:
+                      - strong [ref=e295]: Batch tool
+                      - text: "- allow the agent to batch multiple tool calls in one step"
+                    - listitem [ref=e296]:
+                      - strong [ref=e297]: OpenTelemetry
+                      - text: "- enable Kilo telemetry and optional OTLP export when configured"
+                    - listitem [ref=e298]:
+                      - strong [ref=e299]: Sandbox
+                      - text: "- confine agent shell commands and file writes to the project and Kilo state directories, with optional outbound network blocking. See"
+                      - link "Sandboxing" [ref=e300] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/sandboxing
+                      - text: .
+                  - paragraph [ref=e301]:
+                    - text: Advanced options not exposed in the UI can be configured via the
+                    - code [ref=e302]: experimental
+                    - text: key in
+                    - code [ref=e303]: kilo.jsonc
+                    - text: ":"
+                  - generic [ref=e304]:
+                    - button "Copy code to clipboard" [ref=e305] [cursor=pointer]:
+                      - generic [ref=e306]: 
+                    - generic [ref=e307]: "{ \"experimental\": { \"codebase_search\": true, \"batch_tool\": false, \"openTelemetry\": true, \"disable_paste_summary\": false, \"mcp_timeout\": 30000 } }"
+                  - paragraph [ref=e308]:
+                    - text: Refer to the auto-generated
+                    - code [ref=e309]: $schema
+                    - text: in your
+                    - code [ref=e310]: kilo.jsonc
+                    - text: for the full list of available options.
+            - generic [ref=e313]:
+              - button "Copy page" [ref=e314] [cursor=pointer]:
+                - img [ref=e315]
+                - generic [ref=e318]: Copy page
+              - button "Open markdown" [ref=e319] [cursor=pointer]:
+                - img [ref=e320]
+                - generic [ref=e323]: Open markdown
+              - button "Edit page" [ref=e324] [cursor=pointer]:
+                - img [ref=e325]
+                - generic [ref=e327]: Edit page
+          - generic [ref=e328]:
+            - generic [ref=e329]:
+              - button "Copy page" [ref=e330] [cursor=pointer]:
+                - img [ref=e331]
+                - generic [ref=e334]: Copy page
+              - button "More actions" [ref=e335] [cursor=pointer]:
+                - img [ref=e336]
+            - navigation [ref=e338]:
+              - list [ref=e339]:
+                - listitem [ref=e340]:
+                  - link "Configuring with the Agent" [ref=e341] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings#configuring-with-the-agent
+                - listitem [ref=e342]:
+                  - link "Managing Settings" [ref=e343] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings#managing-settings
+                - listitem [ref=e344]:
+                  - link "Experimental Features" [ref=e345] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings#experimental-features
+  - alert [ref=e346]

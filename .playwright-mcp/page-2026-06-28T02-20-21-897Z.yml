@@ -1,0 +1,136 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - heading "XF XForge Code AI - Wireframes" [level=1] [ref=e21]:
+      - img "XF" [ref=e22]
+      - text: XForge Code AI - Wireframes
+    - paragraph [ref=e23]: Prototipos visuais das interfaces do XForge Code AI - VS Code Extension, CLI e TUI
+    - generic [ref=e24]:
+      - link "[Home] 00 - Home / Welcome Tela inicial com boas-vindas, nova sessao, sessoes recentes e atalhos de teclado VS Code home welcome" [ref=e25] [cursor=pointer]:
+        - /url: 00-home.html
+        - generic [ref=e27]: "[Home]"
+        - generic [ref=e28]:
+          - generic [ref=e29]: 00 - Home / Welcome
+          - generic [ref=e30]: Tela inicial com boas-vindas, nova sessao, sessoes recentes e atalhos de teclado
+          - generic [ref=e31]:
+            - generic [ref=e32]: VS Code
+            - generic [ref=e33]: home
+            - generic [ref=e34]: welcome
+      - link "[Chat] 01 - Chat Sidebar Interface principal de chat com sidebar, tool calls, diff inline e streaming VS Code chat core" [ref=e35] [cursor=pointer]:
+        - /url: 01-chat-sidebar.html
+        - generic [ref=e37]: "[Chat]"
+        - generic [ref=e38]:
+          - generic [ref=e39]: 01 - Chat Sidebar
+          - generic [ref=e40]: Interface principal de chat com sidebar, tool calls, diff inline e streaming
+          - generic [ref=e41]:
+            - generic [ref=e42]: VS Code
+            - generic [ref=e43]: chat
+            - generic [ref=e44]: core
+      - link "[Agents] 02 - Agent Manager Gerenciamento de sessoes de agentes com status, custo e detalhes de execucao VS Code agents management" [ref=e45] [cursor=pointer]:
+        - /url: 02-agent-manager.html
+        - generic [ref=e47]: "[Agents]"
+        - generic [ref=e48]:
+          - generic [ref=e49]: 02 - Agent Manager
+          - generic [ref=e50]: Gerenciamento de sessoes de agentes com status, custo e detalhes de execucao
+          - generic [ref=e51]:
+            - generic [ref=e52]: VS Code
+            - generic [ref=e53]: agents
+            - generic [ref=e54]: management
+      - 'link "[Settings] 03 - Settings Hub Dashboard de configuracoes: providers, knowledge, genius council, quality gates VS Code settings dashboard" [ref=e55] [cursor=pointer]':
+        - /url: 03-settings.html
+        - generic [ref=e57]: "[Settings]"
+        - generic [ref=e58]:
+          - generic [ref=e59]: 03 - Settings Hub
+          - generic [ref=e60]: "Dashboard de configuracoes: providers, knowledge, genius council, quality gates"
+          - generic [ref=e61]:
+            - generic [ref=e62]: VS Code
+            - generic [ref=e63]: settings
+            - generic [ref=e64]: dashboard
+      - link "[/] 04 - Slash Commands Paleta de comandos com autocomplete, flags e categorias VS Code commands autocomplete" [ref=e65] [cursor=pointer]:
+        - /url: 04-slash-commands.html
+        - generic [ref=e67]: "[/]"
+        - generic [ref=e68]:
+          - generic [ref=e69]: 04 - Slash Commands
+          - generic [ref=e70]: Paleta de comandos com autocomplete, flags e categorias
+          - generic [ref=e71]:
+            - generic [ref=e72]: VS Code
+            - generic [ref=e73]: commands
+            - generic [ref=e74]: autocomplete
+      - link "[Diff] 05 - Inline Editing Edicao inline com gutter icons, accept/reject por hunk e progresso VS Code editing diff" [ref=e75] [cursor=pointer]:
+        - /url: 05-inline-editing.html
+        - generic [ref=e77]: "[Diff]"
+        - generic [ref=e78]:
+          - generic [ref=e79]: 05 - Inline Editing
+          - generic [ref=e80]: Edicao inline com gutter icons, accept/reject por hunk e progresso
+          - generic [ref=e81]:
+            - generic [ref=e82]: VS Code
+            - generic [ref=e83]: editing
+            - generic [ref=e84]: diff
+      - link "[TUI] 06 - TUI (Terminal) Interface terminal com toolbar, statusbar, modelo selector e output formatado TUI CLI terminal" [ref=e85] [cursor=pointer]:
+        - /url: 06-tui.html
+        - generic [ref=e87]: "[TUI]"
+        - generic [ref=e88]:
+          - generic [ref=e89]: 06 - TUI (Terminal)
+          - generic [ref=e90]: Interface terminal com toolbar, statusbar, modelo selector e output formatado
+          - generic [ref=e91]:
+            - generic [ref=e92]: TUI
+            - generic [ref=e93]: CLI
+            - generic [ref=e94]: terminal
+      - 'link "[Wizard] 07 - Setup Wizard Assistente de configuracao inicial: provider, API key, modelo VS Code onboarding wizard" [ref=e95] [cursor=pointer]':
+        - /url: 07-setup-wizard.html
+        - generic [ref=e97]: "[Wizard]"
+        - generic [ref=e98]:
+          - generic [ref=e99]: 07 - Setup Wizard
+          - generic [ref=e100]: "Assistente de configuracao inicial: provider, API key, modelo"
+          - generic [ref=e101]:
+            - generic [ref=e102]: VS Code
+            - generic [ref=e103]: onboarding
+            - generic [ref=e104]: wizard
+      - link "[Error] 08 - Error Recovery Recuperacao de erros com self-healing, retry automatico e editor com highlight VS Code error self-healing" [ref=e105] [cursor=pointer]:
+        - /url: 08-error-recovery.html
+        - generic [ref=e107]: "[Error]"
+        - generic [ref=e108]:
+          - generic [ref=e109]: 08 - Error Recovery
+          - generic [ref=e110]: Recuperacao de erros com self-healing, retry automatico e editor com highlight
+          - generic [ref=e111]:
+            - generic [ref=e112]: VS Code
+            - generic [ref=e113]: error
+            - generic [ref=e114]: self-healing
+      - 'link "[Stats] 09 - Statistics Dashboard de estatisticas: tokens, custo, qualidade, timeline de atividade Dashboard metrics analytics" [ref=e115] [cursor=pointer]':
+        - /url: 09-statistics.html
+        - generic [ref=e117]: "[Stats]"
+        - generic [ref=e118]:
+          - generic [ref=e119]: 09 - Statistics
+          - generic [ref=e120]: "Dashboard de estatisticas: tokens, custo, qualidade, timeline de atividade"
+          - generic [ref=e121]:
+            - generic [ref=e122]: Dashboard
+            - generic [ref=e123]: metrics
+            - generic [ref=e124]: analytics
+      - link "[Wizard] 11 - Command Wizard Wizard passo-a-passo para comandos com multiplas flags. Cards visuais, toggles e preview do comando. VS Code wizard commands" [ref=e125] [cursor=pointer]:
+        - /url: 11-command-wizard.html
+        - generic [ref=e127]: "[Wizard]"
+        - generic [ref=e128]:
+          - generic [ref=e129]: 11 - Command Wizard
+          - generic [ref=e130]: Wizard passo-a-passo para comandos com multiplas flags. Cards visuais, toggles e preview do comando.
+          - generic [ref=e131]:
+            - generic [ref=e132]: VS Code
+            - generic [ref=e133]: wizard
+            - generic [ref=e134]: commands
+      - 'link "[Genius] 12 - Genius Council Workflow Fluxo completo: coleta de contexto (loop com docs/URLs), analise, discussao, consenso e decisao formal. VS Code genius workflow" [ref=e135] [cursor=pointer]':
+        - /url: 12-genius-workflow.html
+        - generic [ref=e137]: "[Genius]"
+        - generic [ref=e138]:
+          - generic [ref=e139]: 12 - Genius Council Workflow
+          - generic [ref=e140]: "Fluxo completo: coleta de contexto (loop com docs/URLs), analise, discussao, consenso e decisao formal."
+          - generic [ref=e141]:
+            - generic [ref=e142]: VS Code
+            - generic [ref=e143]: genius
+            - generic [ref=e144]: workflow

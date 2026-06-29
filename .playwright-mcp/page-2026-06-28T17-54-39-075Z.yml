@@ -1,0 +1,253 @@
+- generic [active] [ref=e1]:
+  - heading "08 - Agent Manager" [level=1] [ref=e2]
+  - paragraph [ref=e3]: Painel de gerenciamento de multiplos agentes com sessoes isoladas, worktrees e monitoramento em tempo real.
+  - navigation [ref=e4]:
+    - link "Home" [ref=e5] [cursor=pointer]:
+      - /url: 00-home.html
+    - link "Chat Principal" [ref=e6] [cursor=pointer]:
+      - /url: 01-chat-principal.html
+    - link "Streaming" [ref=e7] [cursor=pointer]:
+      - /url: 02-chat-streaming.html
+    - link "Diff Review" [ref=e8] [cursor=pointer]:
+      - /url: 03-chat-diff.html
+    - link "Tool Calls" [ref=e9] [cursor=pointer]:
+      - /url: 04-chat-tool-calls.html
+    - link "Error Recovery" [ref=e10] [cursor=pointer]:
+      - /url: 05-chat-error.html
+    - link "Slash Commands" [ref=e11] [cursor=pointer]:
+      - /url: 06-slash-commands.html
+    - link "@Context" [ref=e12] [cursor=pointer]:
+      - /url: 07-context-system.html
+    - link "Agent Manager" [ref=e13] [cursor=pointer]:
+      - /url: 08-agent-manager.html
+    - link "Settings" [ref=e14] [cursor=pointer]:
+      - /url: 09-settings.html
+    - link "Welcome" [ref=e15] [cursor=pointer]:
+      - /url: 10-welcome.html
+    - link "Setup Wizard" [ref=e16] [cursor=pointer]:
+      - /url: 11-setup-wizard.html
+    - link "Inline Editing" [ref=e17] [cursor=pointer]:
+      - /url: 12-inline-editing.html
+    - link "Historico" [ref=e18] [cursor=pointer]:
+      - /url: 13-history.html
+    - link "MCP Servers" [ref=e19] [cursor=pointer]:
+      - /url: 14-mcp-servers.html
+    - link "Atalhos" [ref=e20] [cursor=pointer]:
+      - /url: 15-shortcuts.html
+    - link "Mode Selector" [ref=e21] [cursor=pointer]:
+      - /url: 16-modes.html
+    - link "Checkpoint" [ref=e22] [cursor=pointer]:
+      - /url: 17-checkpoint.html
+    - link "Notificacoes" [ref=e23] [cursor=pointer]:
+      - /url: 18-notifications.html
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Agent Manager - Painel de Sessoes
+      - generic [ref=e27]: P2
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30] [cursor=pointer]: 📁
+        - generic [ref=e31] [cursor=pointer]: 🔍
+        - generic [ref=e32] [cursor=pointer]: 🔀
+        - generic [ref=e33] [cursor=pointer]: 🐛
+        - generic [ref=e34] [cursor=pointer]: 📦
+        - generic [ref=e35] [cursor=pointer]: 💬
+        - generic [ref=e36] [cursor=pointer]: 👥
+        - generic [ref=e37] [cursor=pointer]: ⚙️
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: 👥 Agent Manager
+          - generic [ref=e41]:
+            - generic [ref=e42] [cursor=pointer]: +
+            - generic [ref=e43] [cursor=pointer]: 🔍
+        - textbox "Buscar sessoes..." [ref=e45]
+        - generic [ref=e46]:
+          - generic [ref=e47] [cursor=pointer]: Todas (6)
+          - generic [ref=e48] [cursor=pointer]: Running (3)
+          - generic [ref=e49] [cursor=pointer]: Idle (2)
+          - generic [ref=e50] [cursor=pointer]: Error (1)
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]:
+              - generic [ref=e54]: API Pagamentos
+              - generic [ref=e55]: code
+            - generic [ref=e56]: Criar endpoint de pagamento com...
+            - generic [ref=e57]:
+              - generic [ref=e58]: 2.4k tokens
+              - generic [ref=e59]: 3 files
+              - generic [ref=e60]: 12 msgs
+          - generic [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]: Refactor Auth
+              - generic [ref=e66]: code
+            - generic [ref=e67]: Migrar autenticacao para JWT...
+            - generic [ref=e68]:
+              - generic [ref=e69]: 1.8k tokens
+              - generic [ref=e70]: 5 files
+              - generic [ref=e71]: 8 msgs
+          - generic [ref=e74]:
+            - generic [ref=e75]:
+              - generic [ref=e76]: Docs Update
+              - generic [ref=e77]: plan
+            - generic [ref=e78]: Atualizar documentacao da API...
+            - generic [ref=e79]:
+              - generic [ref=e80]: 900 tokens
+              - generic [ref=e81]: 2 files
+              - generic [ref=e82]: 5 msgs
+          - generic [ref=e85]:
+            - generic [ref=e86]:
+              - generic [ref=e87]: Fix Tests
+              - generic [ref=e88]: debug
+            - generic [ref=e89]: Corrigir testes do modulo fiscal...
+            - generic [ref=e90]:
+              - generic [ref=e91]: 1.2k tokens
+              - generic [ref=e92]: 2 files
+              - generic [ref=e93]: 6 msgs
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - generic [ref=e98]: "Review PR #42"
+              - generic [ref=e99]: review
+            - generic [ref=e100]: Revisar pull request do modulo...
+            - generic [ref=e101]:
+              - generic [ref=e102]: 600 tokens
+              - generic [ref=e103]: 4 files
+              - generic [ref=e104]: 3 msgs
+          - generic [ref=e107]:
+            - generic [ref=e108]:
+              - generic [ref=e109]: Deploy Script
+              - generic [ref=e110]: code
+            - generic [ref=e111]: Criar script de deploy automat...
+            - generic [ref=e112]:
+              - generic [ref=e113]: 3.1k tokens
+              - generic [ref=e114]: 1 file
+              - generic [ref=e115]: 15 msgs
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e120] [cursor=pointer]:
+            - text: API Pagamentos
+            - generic [ref=e121]: ×
+          - generic [ref=e122] [cursor=pointer]:
+            - text: Refactor Auth
+            - generic [ref=e123]: ×
+        - generic [ref=e125]:
+          - generic [ref=e126]:
+            - generic [ref=e127]:
+              - heading "API Pagamentos" [level=3] [ref=e128]
+              - generic [ref=e129]:
+                - generic [ref=e130]: code
+                - generic [ref=e131]: Running
+                - generic [ref=e132]:
+                  - text: "Worktree:"
+                  - code [ref=e133]: .xforge/sessions/api-pagamentos
+            - generic [ref=e134]:
+              - button "⏮ Resume" [ref=e135] [cursor=pointer]
+              - button "📰 Pause" [ref=e136] [cursor=pointer]
+              - button "🗑 Stop" [ref=e137] [cursor=pointer]
+          - generic [ref=e138]:
+            - generic [ref=e139]:
+              - generic [ref=e140]: 2.4k
+              - generic [ref=e141]: Tokens
+            - generic [ref=e142]:
+              - generic [ref=e143]: "3"
+              - generic [ref=e144]: Files
+            - generic [ref=e145]:
+              - generic [ref=e146]: "12"
+              - generic [ref=e147]: Messages
+            - generic [ref=e148]:
+              - generic [ref=e149]: 65%
+              - generic [ref=e150]: Progress
+          - generic [ref=e151]:
+            - generic [ref=e152] [cursor=pointer]: Chat
+            - generic [ref=e153] [cursor=pointer]: Files Changed
+            - generic [ref=e154] [cursor=pointer]: Worktree
+          - generic [ref=e155]:
+            - generic [ref=e156]:
+              - generic [ref=e157]: R
+              - paragraph [ref=e159]: Crie uma API de pagamentos com .NET 8 usando Clean Architecture
+            - generic [ref=e160]:
+              - generic [ref=e161]: X
+              - paragraph [ref=e163]: Vou criar a API com XForge.MediatR, PostgreSQL e testes...
+            - generic [ref=e164]:
+              - generic [ref=e165]: R
+              - paragraph [ref=e167]: Use XForge.MediatR e FluentValidation
+            - generic [ref=e168]:
+              - generic [ref=e169]: X
+              - paragraph [ref=e171]: Criando handlers, validators e controllers...
+      - generic [ref=e173]:
+        - generic [ref=e174]:
+          - generic [ref=e175]: 👥 6 sessions
+          - generic [ref=e176]: "|"
+          - generic [ref=e177]: ● 3 running
+          - generic [ref=e178]: ● 2 idle
+          - generic [ref=e179]: ● 1 error
+        - generic [ref=e180]:
+          - generic [ref=e181]: ⚡ Agent Manager
+          - generic [ref=e182]: "|"
+          - generic [ref=e183]: "Worktree: api-pagamentos"
+  - heading "Especificacoes" [level=2] [ref=e184]
+  - table [ref=e185]:
+    - rowgroup [ref=e186]:
+      - row "Elemento Especificacao Razao" [ref=e187]:
+        - columnheader "Elemento" [ref=e188]
+        - columnheader "Especificacao" [ref=e189]
+        - columnheader "Razao" [ref=e190]
+      - row "Session List Sidebar com cards de sessoes Visao geral rapida" [ref=e191]:
+        - cell "Session List" [ref=e192]
+        - cell "Sidebar com cards de sessoes" [ref=e193]
+        - cell "Visao geral rapida" [ref=e194]
+      - row "Status Dot Verde=running, cinza=idle, vermelho=error Feedback visual imediato" [ref=e195]:
+        - cell "Status Dot" [ref=e196]
+        - cell "Verde=running, cinza=idle, vermelho=error" [ref=e197]
+        - cell "Feedback visual imediato" [ref=e198]
+      - row "Progress Bar Barra de progresso por sessao Acompanhamento visual" [ref=e199]:
+        - cell "Progress Bar" [ref=e200]
+        - cell "Barra de progresso por sessao" [ref=e201]
+        - cell "Acompanhamento visual" [ref=e202]
+      - row "Agent Badge Label do agente (code/plan/debug/review) Identificacao rapida" [ref=e203]:
+        - cell "Agent Badge" [ref=e204]
+        - cell "Label do agente (code/plan/debug/review)" [ref=e205]
+        - cell "Identificacao rapida" [ref=e206]
+      - row "Filter Chips Filtros por status Navegacao eficiente" [ref=e207]:
+        - cell "Filter Chips" [ref=e208]
+        - cell "Filtros por status" [ref=e209]
+        - cell "Navegacao eficiente" [ref=e210]
+      - row "Search Input de busca Localizar sessoes" [ref=e211]:
+        - cell "Search" [ref=e212]
+        - cell "Input de busca" [ref=e213]
+        - cell "Localizar sessoes" [ref=e214]
+      - row "Session Detail Painel principal com detalhes Contexto completo" [ref=e215]:
+        - cell "Session Detail" [ref=e216]
+        - cell "Painel principal com detalhes" [ref=e217]
+        - cell "Contexto completo" [ref=e218]
+      - row "Metrics Tokens, files, messages, progress Quantificacao" [ref=e219]:
+        - cell "Metrics" [ref=e220]
+        - cell "Tokens, files, messages, progress" [ref=e221]
+        - cell "Quantificacao" [ref=e222]
+      - row "Chat Preview Ultimas mensagens da sessao Contexto da conversa" [ref=e223]:
+        - cell "Chat Preview" [ref=e224]
+        - cell "Ultimas mensagens da sessao" [ref=e225]
+        - cell "Contexto da conversa" [ref=e226]
+      - row "Worktree Info Path do worktree isolado Rastreabilidade" [ref=e227]:
+        - cell "Worktree Info" [ref=e228]
+        - cell "Path do worktree isolado" [ref=e229]
+        - cell "Rastreabilidade" [ref=e230]
+      - row "Actions Resume/Pause/Stop Controle da sessao" [ref=e231]:
+        - cell "Actions" [ref=e232]
+        - cell "Resume/Pause/Stop" [ref=e233]
+        - cell "Controle da sessao" [ref=e234]
+      - row "Tabs Chat / Files Changed / Worktree Navegacao contextual" [ref=e235]:
+        - cell "Tabs" [ref=e236]
+        - cell "Chat / Files Changed / Worktree" [ref=e237]
+        - cell "Navegacao contextual" [ref=e238]
+  - heading "Notas de Implementacao" [level=2] [ref=e239]
+  - list [ref=e241]:
+    - listitem [ref=e242]: Cada sessao roda em worktree isolado em .xforge/sessions/<name>
+    - listitem [ref=e243]: Max 5 sessoes simultaneas (configuravel)
+    - listitem [ref=e244]: Status atualizado em tempo real via websocket
+    - listitem [ref=e245]: Progress estimado baseado em tokens vs contexto
+    - listitem [ref=e246]: "Agent badge indica tipo: code, plan, debug, review, ask"
+    - listitem [ref=e247]: Filter chips permitem filtrar por status
+    - listitem [ref=e248]: Session detail mostra preview da chat e arquivos alterados
+    - listitem [ref=e249]: Worktree info permite navegar para o branch
+    - listitem [ref=e250]: "Actions: Resume (retoma), Pause (pausa execucao), Stop (encerra)"
+    - listitem [ref=e251]: "Tabs: Chat (conversa), Files Changed (diff), Worktree (info do git)"

@@ -1,0 +1,98 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge Code AI - NOME_DA_PAGINA
+      - generic [ref=e25]:
+        - button "Historico de sessoes" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Nova sessao" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e35]: U
+        - generic [ref=e36]:
+          - generic [ref=e37]:
+            - generic [ref=e38]: Voce
+            - generic [ref=e39]: 12 tokens
+          - generic [ref=e40]: Mensagem do usuario
+      - generic [ref=e41]:
+        - generic [ref=e42]: X
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - generic [ref=e45]: XForge
+            - generic [ref=e46]: 847 tokens
+          - generic [ref=e47]: Resposta do assistente
+    - generic [ref=e48]:
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha) / comandos @ contexto" [ref=e50]
+      - generic [ref=e51]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - button "Entrada de audio" [ref=e54] [cursor=pointer]:
+              - img [ref=e55]
+            - button "Anexar imagem" [ref=e58] [cursor=pointer]:
+              - img [ref=e59]
+            - button "Melhorar prompt" [ref=e63] [cursor=pointer]:
+              - img [ref=e64]
+            - button "Compactar contexto" [ref=e68] [cursor=pointer]:
+              - img [ref=e69]
+          - generic [ref=e74]:
+            - button "Dicas (atalhos)" [active] [ref=e75] [cursor=pointer]:
+              - img [ref=e76]
+            - button "Aprovacao automatica" [ref=e79] [cursor=pointer]:
+              - img [ref=e80]
+            - button "Enviar (Enter)" [ref=e83] [cursor=pointer]:
+              - img [ref=e84]
+            - generic [ref=e99]:
+              - heading "Atalhos e Comandos ×" [level=4] [ref=e100]:
+                - text: Atalhos e Comandos
+                - button "×" [ref=e101] [cursor=pointer]
+              - generic [ref=e102]:
+                - generic [ref=e103]: Enviar mensagem
+                - generic [ref=e104]: Enter
+              - generic [ref=e105]:
+                - generic [ref=e106]: Nova linha
+                - generic [ref=e107]: Shift+Enter
+              - generic [ref=e108]:
+                - generic [ref=e109]: Comandos
+                - generic [ref=e110]: /
+              - generic [ref=e111]:
+                - generic [ref=e112]: Adicionar contexto
+                - generic [ref=e113]: "@"
+              - generic [ref=e114]:
+                - generic [ref=e115]: Historico prompts
+                - generic [ref=e116]: ↑ ↓
+              - generic [ref=e117]:
+                - generic [ref=e118]: Parar execucao
+                - generic [ref=e119]: Esc
+        - generic [ref=e87]:
+          - combobox "Modo" [ref=e88] [cursor=pointer]:
+            - option "Code" [selected]
+            - option "Architect"
+            - option "Ask"
+            - option "Debug"
+          - combobox "Provider/Modelo" [ref=e89] [cursor=pointer]:
+            - option "OpenRouter / claude-sonnet-4" [selected]
+            - option "OpenRouter / gpt-4o"
+            - option "OpenRouter / deepseek-r1"
+            - option "Ollama / qwen2.5:72b"
+            - option "Ollama / llama3.1"
+            - option "Anthropic / claude-opus-4"
+            - option "OpenAI / gpt-4o-mini"
+            - option "OpenAI / o1-preview"
+    - generic [ref=e90]:
+      - generic [ref=e91]: Sessao 1 · 5 ferramentas · 859 tokens
+      - generic [ref=e92]: OK
+  - generic [ref=e93]:
+    - heading "NOME_DA_PAGINA" [level=1] [ref=e96]
+    - paragraph [ref=e98]: Conteudo da pagina aqui

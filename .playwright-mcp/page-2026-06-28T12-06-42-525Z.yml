@@ -1,0 +1,5 @@
+- generic [active] [ref=e1]:
+  - button "Chat" [ref=e3] [cursor=pointer]:
+    - img [ref=e4]
+  - heading "NOME" [level=1] [ref=e7]
+  - paragraph [ref=e9]: Conteudo

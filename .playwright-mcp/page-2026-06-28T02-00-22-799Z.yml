@@ -1,0 +1,43 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - img "XF" [ref=e5]
+      - generic [ref=e6]: XForge Code AI
+    - button "Fechar" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - generic [ref=e12]: "1"
+      - text: Provider
+    - generic [ref=e14]:
+      - generic [ref=e15]: "2"
+      - text: API Key
+    - generic [ref=e17]:
+      - generic [ref=e18]: "3"
+      - text: Modelo
+  - generic [ref=e19]:
+    - heading "Selecione o modelo" [level=3] [ref=e20]
+    - paragraph [ref=e21]: Escolha o modelo de IA para esta sessao. Pode ser alterado depois.
+    - generic [ref=e22]:
+      - generic [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: claude-sonnet-4
+          - generic [ref=e26]: 200k ctx · $3/1M tokens
+        - img [ref=e27]
+      - generic [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: gpt-4o
+        - generic [ref=e32]: 128k ctx · $2.5/1M tokens
+      - generic [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: qwen2.5:72b
+        - generic [ref=e36]: 32k ctx · open source
+      - generic [ref=e38] [cursor=pointer]:
+        - generic [ref=e39]: deepseek-r1
+        - generic [ref=e40]: 64k ctx · reasoning
+      - generic [ref=e42] [cursor=pointer]:
+        - generic [ref=e43]: llama3.2:3b
+        - generic [ref=e44]: 128k ctx · local (Ollama)
+  - generic [ref=e45]:
+    - generic [ref=e46] [cursor=pointer]: Voltar
+    - generic [ref=e47]:
+      - button "Anterior" [ref=e48] [cursor=pointer]
+      - button "Concluir Setup" [ref=e49] [cursor=pointer]

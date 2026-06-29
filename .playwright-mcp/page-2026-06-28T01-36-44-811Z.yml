@@ -1,0 +1,61 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - button "Inicio" [ref=e4] [cursor=pointer]:
+      - img [ref=e5]
+    - button "Chat" [ref=e8] [cursor=pointer]:
+      - img [ref=e9]
+    - button "Agentes" [ref=e11] [cursor=pointer]:
+      - img [ref=e12]
+    - button "Config" [ref=e17] [cursor=pointer]:
+      - img [ref=e18]
+  - generic [ref=e22]:
+    - generic [ref=e23]:
+      - img "XF" [ref=e24]
+      - generic [ref=e25]: XForge Code AI
+    - paragraph [ref=e26]: Bem-vindo. Seu assistente de desenvolvimento com Conselho dos Genios, agentes multi-modelo e analise profunda de codigo.
+    - generic [ref=e27]:
+      - button "Nova sessao" [ref=e28] [cursor=pointer]:
+        - img [ref=e29]
+        - text: Nova sessao
+      - button "Abrir projeto" [ref=e30] [cursor=pointer]:
+        - img [ref=e31]
+        - text: Abrir projeto
+      - button "Configurar" [ref=e34] [cursor=pointer]:
+        - img [ref=e35]
+        - text: Configurar
+    - generic [ref=e38]:
+      - generic [ref=e39]: Sessoes recentes
+      - generic [ref=e40] [cursor=pointer]:
+        - img [ref=e42]
+        - generic [ref=e44]:
+          - generic [ref=e45]: Implementar modulo de pagamentos
+          - generic [ref=e46]:
+            - generic [ref=e47]: 27/06 14:30
+            - generic [ref=e48]: claude-sonnet-4
+      - generic [ref=e50] [cursor=pointer]:
+        - img [ref=e52]
+        - generic [ref=e54]:
+          - generic [ref=e55]: Refatorar modulo fiscal - SPED
+          - generic [ref=e56]:
+            - generic [ref=e57]: 26/06 09:15
+            - generic [ref=e58]: gpt-4o
+      - generic [ref=e60] [cursor=pointer]:
+        - img [ref=e62]
+        - generic [ref=e64]:
+          - generic [ref=e65]: Analise de seguranca - LGPD
+          - generic [ref=e66]:
+            - generic [ref=e67]: 25/06 16:45
+            - generic [ref=e68]: claude-opus-4
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]: Ctrl+P
+        - text: Nova sessao
+      - generic [ref=e73]:
+        - generic [ref=e74]: Ctrl+Shift+P
+        - text: Comandos
+      - generic [ref=e75]:
+        - generic [ref=e76]: Ctrl+;
+        - text: Genius Council
+  - generic [ref=e77]:
+    - generic [ref=e78]: XForge Code AI v1.5.0
+    - generic [ref=e79]: Renato Tiburcio

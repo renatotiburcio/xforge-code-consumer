@@ -1,0 +1,12 @@
+{
+    "dimensions":  768,
+    "reindexOnCommit":  true,
+    "version":  "1.0.0",
+    "chunkSize":  1000,
+    "baseURL":  "http://localhost:11434/v1",
+    "indexPath":  ".xforge/rag/index",
+    "autoIndex":  true,
+    "model":  "nomic-embed-text",
+    "provider":  "ollama",
+    "chunkOverlap":  200
+}

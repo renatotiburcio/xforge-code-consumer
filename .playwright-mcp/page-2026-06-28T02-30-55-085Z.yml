@@ -1,0 +1,103 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge
+      - generic [ref=e25]:
+        - button "Historico" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Config" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e34]:
+      - combobox [ref=e35] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+      - combobox [ref=e37] [cursor=pointer]:
+        - option "OpenRouter" [selected]
+      - combobox [ref=e38] [cursor=pointer]:
+        - option "claude-sonnet-4" [selected]
+    - generic [ref=e40]:
+      - img [ref=e42]
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - generic [ref=e46]: XForge
+          - generic [ref=e47]: Code
+          - generic [ref=e48]: 1247 tokens · 8.3s
+        - generic [ref=e49]: "Fiz as alteracoes. Revise cada trecho:"
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: ProdutoService.cs
+            - generic [ref=e53]: +18 -5
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - generic [ref=e56]: "@@ -42,7 +42,12 @@"
+              - button "Accepted" [ref=e58] [cursor=pointer]
+            - generic [ref=e59]:
+              - generic [ref=e60]: public async Task<Produto> CreateAsync(
+              - generic [ref=e61]: "- CreateProdutoRequest request)"
+              - generic [ref=e62]: + CreateProdutoRequest request,
+              - generic [ref=e63]: + CancellationToken cancellationToken = default)
+              - generic [ref=e64]: + var validation = await _validator.ValidateAsync(produto, cancellationToken);
+              - generic [ref=e65]: + if (!validation.IsValid)
+              - generic [ref=e66]: + throw new ValidationException(validation.Errors);
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - generic [ref=e69]: "@@ -78,3 +83,5 @@"
+              - generic [ref=e70]:
+                - button "Accept" [ref=e71] [cursor=pointer]
+                - button "Reject" [ref=e72] [cursor=pointer]
+                - button "Modify" [ref=e73] [cursor=pointer]
+            - generic [ref=e74]:
+              - generic [ref=e75]: .Where(p => p.Ativo)
+              - generic [ref=e76]: "- .ToListAsync();"
+              - generic [ref=e77]: + .ToListAsync(cancellationToken);
+    - generic [ref=e78]:
+      - button "Reject All" [ref=e79] [cursor=pointer]
+      - button "Accept All" [ref=e80] [cursor=pointer]
+    - generic [ref=e81]:
+      - button "Parar execucao" [ref=e82] [cursor=pointer]:
+        - img [ref=e83]
+      - generic [ref=e85]: 2 hunks · 1 aceito · 1 pendente
+      - generic [ref=e86]: 1/2 reviewed
+  - generic [ref=e87]:
+    - generic [ref=e88]:
+      - text: 42public async
+      - generic [ref=e89]: Task
+      - text: <
+      - generic [ref=e90]: Produto
+      - text: "> CreateAsync("
+    - generic [ref=e91]:
+      - text: "43"
+      - generic [ref=e92]: CreateProdutoRequest
+      - text: request,
+    - generic [ref=e93]:
+      - text: "44"
+      - generic [ref=e94]: CancellationToken
+      - text: cancellationToken = default)
+    - generic [ref=e95]: "45{"
+    - generic [ref=e96]:
+      - text: 46 var produto = _mapper.Map<
+      - generic [ref=e97]: Produto
+      - text: ">(request);"
+    - generic [ref=e98]: 47 var validation = await _validator.ValidateAsync(produto, cancellationToken);
+    - generic [ref=e99]: 48 if (!validation.IsValid)
+    - generic [ref=e100]:
+      - text: 49 throw new
+      - generic [ref=e101]: ValidationException
+      - text: (validation.Errors);
+    - generic [ref=e102]: "50"
+    - generic [ref=e103]: 51 // existing code...
+    - generic [ref=e104]: 78 return await _context.Produtos
+    - generic [ref=e105]: 79 .Where(p => p.Ativo)
+    - generic [ref=e106]: 80 .ToListAsync(cancellationToken); PENDENTE

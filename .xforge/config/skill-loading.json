@@ -1,0 +1,30 @@
+{
+    "skillDiscovery":  {
+                           "rescanOnChange":  true,
+                           "compatibilityDirs":  [
+                                                     ".agents/skills/",
+                                                     ".claude/skills/"
+                                                 ],
+                           "scanOnSessionStart":  true
+                       },
+    "skillLoading":  {
+                         "thresholdChars":  2000,
+                         "description":  "Only skill name and description loaded at session start. Full SKILL.md body loaded on-demand when skill tool is invoked.",
+                         "skillsExceedingThreshold":  [
+                                                          "fullstack-analysis",
+                                                          "sdd-authoring",
+                                                          "product-analysis",
+                                                          "research",
+                                                          "business-platform-architect",
+                                                          "competitive-intelligence-expert"
+                                                      ],
+                         "mode":  "lazy-metadata"
+                     },
+    "version":  "1.0.0",
+    "perDirectoryInstructions":  {
+                                     "discoveryMethod":  "findUp",
+                                     "description":  "AGENTS.md files in subdirectories loaded dynamically when Read tool accesses files in that directory",
+                                     "maxDepth":  3,
+                                     "enabled":  true
+                                 }
+}

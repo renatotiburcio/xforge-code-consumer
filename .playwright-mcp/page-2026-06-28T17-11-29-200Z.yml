@@ -1,0 +1,99 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e9]:
+        - button "Toggle navigation" [ref=e11] [cursor=pointer]
+        - link "Homepage" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e18]
+        - generic [ref=e20]:
+          - link "Sign in" [ref=e21] [cursor=pointer]:
+            - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FKilo-Org%2Fkilocode%2Fblob%2Fmain%2Fdocs%2Fagent-manager.md
+          - button "Appearance settings" [ref=e24] [cursor=pointer]:
+            - img
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - img [ref=e33]
+          - link "Kilo-Org" [ref=e36] [cursor=pointer]:
+            - /url: /Kilo-Org
+          - generic [ref=e37]: /
+          - strong [ref=e38]:
+            - link "kilocode" [ref=e39] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode
+          - generic [ref=e40]: Public
+        - generic [ref=e41]:
+          - list:
+            - listitem [ref=e42]:
+              - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                - /url: /login?return_to=%2FKilo-Org%2Fkilocode
+                - img [ref=e44]
+                - text: Notifications
+            - listitem [ref=e46]:
+              - link "Fork 2.8k" [ref=e47] [cursor=pointer]:
+                - /url: /login?return_to=%2FKilo-Org%2Fkilocode
+                - img [ref=e48]
+                - text: Fork
+                - generic "2,817" [ref=e50]: 2.8k
+            - listitem [ref=e51]:
+              - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                - /url: /login?return_to=%2FKilo-Org%2Fkilocode
+                - img [ref=e54]
+                - text: Star
+                - generic "24982 users starred this repository" [ref=e56]: 25k
+      - navigation "Repository" [ref=e57]:
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - link "Code" [ref=e60] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode
+              - img [ref=e61]
+              - generic [ref=e63]: Code
+          - listitem [ref=e64]:
+            - link "Issues 645" [ref=e65] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/issues
+              - img [ref=e66]
+              - generic [ref=e69]: Issues
+              - generic "645" [ref=e70]
+          - listitem [ref=e71]:
+            - link "Pull requests 179" [ref=e72] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/pulls
+              - img [ref=e73]
+              - generic [ref=e75]: Pull requests
+              - generic "179" [ref=e76]
+          - listitem [ref=e77]:
+            - link "Discussions" [ref=e78] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/discussions
+              - img [ref=e79]
+              - generic [ref=e81]: Discussions
+          - listitem [ref=e82]:
+            - link "Actions" [ref=e83] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/actions
+              - img [ref=e84]
+              - generic [ref=e86]: Actions
+          - listitem [ref=e87]:
+            - link "Projects" [ref=e88] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/projects
+              - img [ref=e89]
+              - generic [ref=e91]: Projects
+          - listitem [ref=e92]
+          - listitem [ref=e93]
+        - button "Additional navigation options" [ref=e97] [cursor=pointer]:
+          - img
+    - generic [ref=e110]:
+      - img [ref=e111]
+      - generic [ref=e113]:
+        - generic [ref=e114]: 404 - page not found
+        - generic [ref=e115]:
+          - text: The
+          - generic [ref=e116]: main
+          - text: branch of
+          - paragraph [ref=e117]: kilocode
+          - text: does not contain the path
+          - paragraph [ref=e118]: docs/agent-manager.md.
+      - link "go to Overview" [ref=e119] [cursor=pointer]:
+        - /url: /Kilo-Org/kilocode
+        - generic [ref=e121]: Return to the repository overview

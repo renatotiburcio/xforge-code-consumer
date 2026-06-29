@@ -1,0 +1,89 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge
+      - generic [ref=e25]:
+        - button "Historico" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Config" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e35]:
+      - img "XF" [ref=e36]
+      - generic [ref=e37]: XForge
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - img [ref=e41]
+        - generic [ref=e44]:
+          - generic [ref=e46]: Voce
+          - generic [ref=e47]: /init
+      - generic [ref=e48]:
+        - img [ref=e50]
+        - generic [ref=e52]:
+          - generic [ref=e54]: XForge
+          - generic [ref=e55]: Detectei que e sua primeira vez. Abrindo wizard de configuracao...
+    - generic [ref=e56]:
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha)" [ref=e57]
+      - generic [ref=e58]:
+        - generic [ref=e59]: Wizard aberto ao lado
+        - generic [ref=e60]: claude-sonnet-4
+  - generic [ref=e61]:
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]: "1"
+          - text: Stack
+        - generic [ref=e67]:
+          - generic [ref=e68]: "2"
+          - text: Provider
+        - generic [ref=e70]:
+          - generic [ref=e71]: "3"
+          - text: Template
+      - generic [ref=e72]:
+        - heading "Escolha o template" [level=3] [ref=e73]
+        - paragraph [ref=e74]: O template define a estrutura de pastas, configs e padroes do projeto.
+        - generic [ref=e75]:
+          - generic [ref=e76] [cursor=pointer]:
+            - generic [ref=e77]: "[E]"
+            - generic [ref=e78]: Enterprise v2
+            - generic [ref=e79]: Clean Architecture, CQRS, testes, docs, quality gates
+            - generic [ref=e80]: recomendado
+          - generic [ref=e81] [cursor=pointer]:
+            - generic [ref=e82]: "[M]"
+            - generic [ref=e83]: Minimal
+            - generic [ref=e84]: Estrutura minima, sem padroes forcos. Ideal para MVPs
+          - generic [ref=e85] [cursor=pointer]:
+            - generic [ref=e86]: "[A]"
+            - generic [ref=e87]: API Only
+            - generic [ref=e88]: Sem UI, foco em REST API + documentacao OpenAPI
+          - generic [ref=e89] [cursor=pointer]:
+            - generic [ref=e90]: "[C]"
+            - generic [ref=e91]: Custom
+            - generic [ref=e92]: Configurar manualmente cada aspecto do projeto
+            - generic [ref=e93]: avancado
+        - generic [ref=e94]:
+          - generic [ref=e96]:
+            - generic [ref=e97]: Absorver documentos
+            - generic [ref=e98]: Importar specs, RFCs e docs existentes do projeto
+          - generic [ref=e101]:
+            - generic [ref=e102]: Analise de stack existente
+            - generic [ref=e103]: Detectar padroes do codigo ja existente
+      - generic [ref=e105]:
+        - button "Voltar" [ref=e106] [cursor=pointer]
+        - generic [ref=e107]:
+          - generic [ref=e108]: 3/5 passos
+          - button "Pular wizard" [ref=e109] [cursor=pointer]
+          - button "Proximo" [ref=e110] [cursor=pointer]
+    - generic [ref=e111]:
+      - generic [ref=e112]: "Comando que sera executado:"
+      - generic [ref=e113]: /init --stack dotnet --provider openrouter --template enterprise-v2 --absorb-docs ./docs/

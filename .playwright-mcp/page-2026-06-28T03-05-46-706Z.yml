@@ -1,0 +1,156 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge
+      - generic [ref=e25]:
+        - button "Historico" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Config" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e34]:
+      - combobox "Agente" [ref=e35] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+        - option "── Outros ──" [disabled]
+        - option "+ Novo agente..."
+      - combobox "Provider" [ref=e37] [cursor=pointer]:
+        - option "OpenRouter" [selected]
+        - option "Ollama"
+        - option "Anthropic"
+        - option "OpenAI"
+      - combobox "Modelo" [ref=e38] [cursor=pointer]:
+        - option "claude-sonnet-4" [selected]
+        - option "gpt-4o"
+        - option "qwen2.5:72b"
+        - option "deepseek-r1"
+      - button "Aprovacao automatica ON" [ref=e40] [cursor=pointer]:
+        - img [ref=e41]
+      - button "Compactar contexto" [ref=e45] [cursor=pointer]:
+        - img [ref=e46]
+    - generic [ref=e51]:
+      - generic [ref=e52]:
+        - img [ref=e54]
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]: Voce
+            - generic [ref=e60]: 12 tokens
+          - generic [ref=e61]: Cria um endpoint GET /api/produtos com paginacao e filtro por categoria
+      - generic [ref=e62]:
+        - img [ref=e64]
+        - generic [ref=e66]:
+          - generic [ref=e67]:
+            - generic [ref=e68]: XForge
+            - generic [ref=e69]: Code
+            - generic [ref=e70]: 847 tokens · 4.2s
+          - generic [ref=e71]: Vou criar o endpoint GET com paginacao e filtro. Primeiro, vou analisar a estrutura do projeto...
+          - generic [ref=e72]:
+            - generic [ref=e73] [cursor=pointer]:
+              - img [ref=e74]
+              - generic [ref=e76]: Lendo diretorio
+              - generic [ref=e77]: src/Controllers/
+              - generic [ref=e78]: ok 0.3s
+            - generic [ref=e79]: // BaseController.cs found\n// 3 controllers existentes
+          - generic [ref=e81] [cursor=pointer]:
+            - img [ref=e82]
+            - generic [ref=e84]: Lendo arquivo
+            - generic [ref=e85]: src/Models/Produto.cs
+            - generic [ref=e86]: ok 0.2s
+          - generic [ref=e88] [cursor=pointer]:
+            - img [ref=e89]
+            - generic [ref=e91]: Executando comando
+            - generic [ref=e92]: dotnet build --no-restore
+            - generic [ref=e93]: ok 4.1s
+          - generic [ref=e95] [cursor=pointer]:
+            - img [ref=e96]
+            - generic [ref=e98]: Escrevendo arquivo
+            - generic [ref=e99]: src/Controllers/ProdutosController.cs
+            - generic [ref=e100]: ok 0.5s
+          - generic [ref=e101]: "Criei o endpoint. Aqui esta o diff:"
+          - generic [ref=e102]:
+            - generic [ref=e103]:
+              - generic [ref=e104]: ProdutosController.cs
+              - generic [ref=e105]:
+                - button "Accept" [ref=e106] [cursor=pointer]
+                - button "Reject" [ref=e107] [cursor=pointer]
+            - generic [ref=e108]:
+              - generic [ref=e109]: + [HttpGet]
+              - generic [ref=e110]: + public async Task<PagedResult<ProdutoDto>> GetProdutos(
+              - generic [ref=e111]: + [FromQuery] int page = 1,
+              - generic [ref=e112]: + [FromQuery] int pageSize = 20,
+              - generic [ref=e113]: + [FromQuery] int? categoriaId = null)
+          - generic [ref=e114]: Gerando resposta...
+    - generic [ref=e116]:
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - img [ref=e119]
+          - text: Produto.cs
+        - generic [ref=e122]:
+          - img [ref=e123]
+          - text: Controllers/
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha) / comandos @ contexto" [ref=e126]
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - button "Entrada de audio" [ref=e129] [cursor=pointer]:
+            - img [ref=e130]
+          - button "Melhorar prompt" [ref=e133] [cursor=pointer]:
+            - img [ref=e134]
+          - button "Anexar arquivo" [ref=e137] [cursor=pointer]:
+            - img [ref=e138]
+          - button "Compactar contexto" [ref=e140] [cursor=pointer]:
+            - img [ref=e141]
+        - button "Parar execucao" [ref=e146] [cursor=pointer]:
+          - img [ref=e147]
+        - generic [ref=e149]: claude-sonnet-4 · $0.02
+    - generic [ref=e150]:
+      - generic [ref=e151]: Sessao 1 · 5 ferramentas · 859 tokens · .02
+      - generic [ref=e152]: 380px
+  - generic [ref=e153]:
+    - generic [ref=e154]: 1using Microsoft.AspNetCore.Mvc;
+    - generic [ref=e155]: 2using XForge.MediatR;
+    - generic [ref=e156]: "3"
+    - generic [ref=e157]:
+      - text: 4namespace
+      - generic [ref=e158]: App.Controllers
+      - text: ;
+    - generic [ref=e159]: "5"
+    - generic [ref=e160]:
+      - text: 6public class
+      - generic [ref=e161]: ProdutosController
+      - text: ":"
+      - generic [ref=e162]: ApiControllerBase
+    - generic [ref=e163]: "7{"
+    - generic [ref=e164]: 8 // GET /api/produtos
+    - generic [ref=e165]: 9 [HttpGet]
+    - generic [ref=e166]:
+      - text: 10 public async
+      - generic [ref=e167]: Task
+      - text: <
+      - generic [ref=e168]: PagedResult
+      - text: <
+      - generic [ref=e169]: ProdutoDto
+      - text: ">> GetProdutos("
+    - generic [ref=e170]:
+      - text: 11 [
+      - generic [ref=e171]: FromQuery
+      - text: "] int page = 1,"
+    - generic [ref=e172]:
+      - text: 12 [
+      - generic [ref=e173]: FromQuery
+      - text: "] int pageSize = 20,"
+    - generic [ref=e174]:
+      - text: 13 [
+      - generic [ref=e175]: FromQuery
+      - text: "] int? categoriaId = null)"
+    - generic [ref=e176]: "14}"

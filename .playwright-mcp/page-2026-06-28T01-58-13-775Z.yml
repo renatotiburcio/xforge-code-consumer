@@ -1,0 +1,117 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - button "Inicio" [ref=e4] [cursor=pointer]:
+      - img [ref=e5]
+    - button "Chat" [ref=e8] [cursor=pointer]:
+      - img [ref=e9]
+    - button "Agentes" [ref=e11] [cursor=pointer]:
+      - img [ref=e12]
+    - button "Config" [ref=e17] [cursor=pointer]:
+      - img [ref=e18]
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - img "XF" [ref=e23]
+      - generic [ref=e24]: XForge Manager
+      - generic [ref=e25] [cursor=pointer]: ESC
+    - generic [ref=e26]:
+      - img [ref=e27]
+      - textbox "Configurar..." [ref=e30]
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: Provedor
+        - generic [ref=e34] [cursor=pointer]:
+          - img [ref=e35]
+          - text: Provedores
+        - generic [ref=e38] [cursor=pointer]:
+          - img [ref=e39]
+          - text: Modelos
+      - generic [ref=e43]:
+        - generic [ref=e44]: Monitor
+        - generic [ref=e45] [cursor=pointer]:
+          - img [ref=e46]
+          - text: Quality Gates
+          - generic [ref=e49]: "12"
+        - generic [ref=e50] [cursor=pointer]:
+          - img [ref=e51]
+          - text: Self-Healing
+        - generic [ref=e54] [cursor=pointer]:
+          - img [ref=e55]
+          - text: Seguranca
+      - generic [ref=e57]:
+        - generic [ref=e58]: Desenvolvimento
+        - generic [ref=e59] [cursor=pointer]:
+          - img [ref=e60]
+          - text: Knowledge
+        - generic [ref=e63] [cursor=pointer]:
+          - img [ref=e64]
+          - text: Error Graph
+      - generic [ref=e67]:
+        - generic [ref=e68]: Sistema
+        - generic [ref=e69] [cursor=pointer]:
+          - img [ref=e70]
+          - text: Geral
+        - generic [ref=e73] [cursor=pointer]:
+          - img [ref=e74]
+          - text: Sobre
+  - generic [ref=e77]:
+    - generic [ref=e78]:
+      - generic [ref=e79]:
+        - generic [ref=e80]: "4"
+        - generic [ref=e81]: Provedores
+      - generic [ref=e82]:
+        - generic [ref=e83]: "12"
+        - generic [ref=e84]: Gates Ativos
+      - generic [ref=e85]:
+        - generic [ref=e86]: 98%
+        - generic [ref=e87]: Uptime
+      - generic [ref=e88]:
+        - generic [ref=e89]: $42
+        - generic [ref=e90]: Custo / mes
+    - generic [ref=e91]:
+      - generic [ref=e92] [cursor=pointer]:
+        - generic [ref=e93]: ⚙
+        - generic [ref=e94]: Dashboard
+        - generic [ref=e95]: Visao geral do sistema
+      - generic [ref=e96] [cursor=pointer]:
+        - generic [ref=e97]: ⚙
+        - generic [ref=e98]: Modelos
+        - generic [ref=e99]: Gerenciar modelos LLM
+      - generic [ref=e100] [cursor=pointer]:
+        - generic [ref=e101]: ⚙
+        - generic [ref=e102]: Documentos
+        - generic [ref=e103]: Knowledge e documentacao
+      - generic [ref=e104] [cursor=pointer]:
+        - generic [ref=e105]: ⚙
+        - generic [ref=e106]: Regras
+        - generic [ref=e107]: Regras e workflows
+      - generic [ref=e108] [cursor=pointer]:
+        - generic [ref=e109]: ⚙
+        - generic [ref=e110]: Genius Council
+        - generic [ref=e111]: Configurar conselho
+      - generic [ref=e112] [cursor=pointer]:
+        - generic [ref=e113]: ⚙
+        - generic [ref=e114]: Metricas
+        - generic [ref=e115]: Estatisticas e uso
+    - generic [ref=e116]:
+      - generic [ref=e117]: Provedores Configurados
+      - generic [ref=e118]:
+        - generic [ref=e119]:
+          - generic [ref=e121]: OpenRouter
+          - generic [ref=e122]: Conectado � claude-sonnet-4
+        - generic [ref=e123]:
+          - generic [ref=e125]: Ollama
+          - generic [ref=e126]: Local � qwen2.5:7b / qwen2.5:72b
+        - generic [ref=e127]:
+          - generic [ref=e129]: OpenAI
+          - generic [ref=e130]: Conectado � gpt-4o
+    - generic [ref=e131]:
+      - generic [ref=e132]: Quota de Uso
+      - generic [ref=e133]:
+        - generic [ref=e134]: OpenRouter
+        - generic [ref=e137]: 65%
+      - generic [ref=e138]:
+        - generic [ref=e139]: Ollama
+        - generic [ref=e142]: 30%
+      - generic [ref=e143]:
+        - generic [ref=e144]: OpenAI
+        - generic [ref=e147]: 15%

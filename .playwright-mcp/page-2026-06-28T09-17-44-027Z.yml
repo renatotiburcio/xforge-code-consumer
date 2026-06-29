@@ -1,0 +1,82 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge Code AI - NOME_DA_PAGINA
+      - generic [ref=e25]:
+        - button "Historico de sessoes" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Nova sessao" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e33]:
+      - combobox "Modo" [ref=e34] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+        - option "Debug"
+      - combobox "Provider/Modelo" [ref=e35] [cursor=pointer]:
+        - option "OpenRouter / claude-sonnet-4" [selected]
+        - option "OpenRouter / gpt-4o"
+        - option "Ollama / qwen2.5:72b"
+        - option "Anthropic / claude-opus-4"
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: Contexto
+        - generic [ref=e41]: 45% • 57k / 128k
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - strong [ref=e44]: 12:34
+          - text: tempo
+        - generic [ref=e45]:
+          - strong [ref=e46]: "859"
+          - text: tokens
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]: U
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: Voce
+            - generic [ref=e53]: 12 tokens
+          - generic [ref=e54]: Mensagem do usuario
+      - generic [ref=e55]:
+        - generic [ref=e56]: X
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - generic [ref=e59]: XForge
+            - generic [ref=e60]: 847 tokens
+          - generic [ref=e61]: Resposta do assistente
+    - generic [ref=e62]:
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha) / comandos @ contexto" [ref=e64]
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - button "Entrada de audio" [ref=e68] [cursor=pointer]:
+            - img [ref=e69]
+          - button "Anexar imagem" [ref=e72] [cursor=pointer]:
+            - img [ref=e73]
+          - button "Melhorar prompt" [ref=e77] [cursor=pointer]:
+            - img [ref=e78]
+          - button "Compactar contexto" [ref=e81] [cursor=pointer]:
+            - img [ref=e82]
+        - generic [ref=e87]:
+          - button "Dicas (atalhos)" [ref=e88] [cursor=pointer]:
+            - img [ref=e89]
+          - button "Aprovacao automatica" [ref=e92] [cursor=pointer]:
+            - img [ref=e93]
+          - button "Enviar (Enter)" [ref=e96] [cursor=pointer]:
+            - img [ref=e97]
+    - generic [ref=e100]:
+      - generic [ref=e101]: Sessao 1 · 5 ferramentas · 859 tokens
+      - generic [ref=e102]: OK
+  - generic [ref=e103]:
+    - heading "NOME_DA_PAGINA" [level=1] [ref=e106]
+    - paragraph [ref=e108]: Conteudo da pagina aqui

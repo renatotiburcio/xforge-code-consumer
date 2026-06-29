@@ -1,0 +1,281 @@
+- generic [active]:
+  - generic:
+    - banner [ref=e1]:
+      - generic [ref=e2]:
+        - link "Kilo Code Logo Kilo CodeDOCS" [ref=e3] [cursor=pointer]:
+          - /url: /docs/
+          - img "Kilo Code Logo" [ref=e4]
+          - generic [ref=e6]: Kilo CodeDOCS
+        - button "Search (Control+k)" [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]:
+            - img [ref=e11]
+            - generic [ref=e14]: Search
+          - generic [ref=e15]:
+            - generic [ref=e16]: Ctrl
+            - generic [ref=e17]: K
+        - generic [ref=e18]:
+          - button "Using system theme" [ref=e19] [cursor=pointer]:
+            - img [ref=e20]
+          - link "GitHub" [ref=e22] [cursor=pointer]:
+            - /url: https://kilo.ai/github
+          - link "Sign in" [ref=e23] [cursor=pointer]:
+            - /url: https://app.kilo.ai
+      - generic [ref=e24]:
+        - navigation [ref=e25]:
+          - link "Get Started" [ref=e26] [cursor=pointer]:
+            - /url: /docs/getting-started
+          - link "Code with AI" [ref=e27] [cursor=pointer]:
+            - /url: /docs/code-with-ai
+          - link "Customize" [ref=e28] [cursor=pointer]:
+            - /url: /docs/customize
+          - link "Collaborate" [ref=e29] [cursor=pointer]:
+            - /url: /docs/collaborate
+            - text: Collaborate
+          - link "Automate" [ref=e31] [cursor=pointer]:
+            - /url: /docs/automate
+          - link "Deploy & Secure" [ref=e32] [cursor=pointer]:
+            - /url: /docs/deploy-secure
+          - link "Kilo Gateway" [ref=e33] [cursor=pointer]:
+            - /url: /docs/gateway
+          - link "KiloClaw" [ref=e34] [cursor=pointer]:
+            - /url: /docs/kiloclaw
+          - link "Contributing" [ref=e35] [cursor=pointer]:
+            - /url: /docs/contributing
+        - generic [ref=e36]:
+          - button "Contributing" [ref=e38]:
+            - text: Contributing
+            - img [ref=e39]
+          - button "Help" [ref=e42]:
+            - text: Help
+            - img [ref=e43]
+      - paragraph [ref=e46]:
+        - text: The all-new Kilo Code extension is here, rebuilt on the
+        - link "Kilo CLI" [ref=e47] [cursor=pointer]:
+          - /url: /docs/code-with-ai/platforms/vscode/whats-new
+        - text: for speed, flexibility, and continued access to 500+ models via the Kilo Gateway →
+    - generic [ref=e48]:
+      - navigation [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - link "Home" [ref=e52] [cursor=pointer]:
+              - /url: /docs/
+              - generic [ref=e53]: Home
+            - button "Get Started" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]: Get Started
+              - img [ref=e57]
+            - button "Code with AI" [ref=e59] [cursor=pointer]:
+              - generic [ref=e60]: Code with AI
+              - img [ref=e62]
+            - button "Customize" [ref=e64] [cursor=pointer]:
+              - generic [ref=e65]: Customize
+              - img [ref=e67]
+            - button "Collaborate" [ref=e69] [cursor=pointer]:
+              - generic [ref=e70]: Collaborate
+              - img [ref=e72]
+            - button "Automate" [ref=e74] [cursor=pointer]:
+              - generic [ref=e75]: Automate
+              - img [ref=e77]
+            - button "Deploy & Secure" [ref=e79] [cursor=pointer]:
+              - generic [ref=e80]: Deploy & Secure
+              - img [ref=e82]
+            - button "AI Gateway" [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]: AI Gateway
+              - img [ref=e87]
+            - button "KiloClaw" [ref=e89] [cursor=pointer]:
+              - generic [ref=e90]: KiloClaw
+              - img [ref=e92]
+            - button "Contributing" [ref=e94] [cursor=pointer]:
+              - generic [ref=e95]: Contributing
+              - img [ref=e97]
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e102]: Sharing
+              - list [ref=e103]:
+                - listitem [ref=e104]:
+                  - link "Overview" [ref=e105] [cursor=pointer]:
+                    - /url: /docs/collaborate
+                - listitem [ref=e106]:
+                  - link "Sessions & Sharing" [ref=e107] [cursor=pointer]:
+                    - /url: /docs/collaborate/sessions-sharing
+            - generic [ref=e108]:
+              - generic [ref=e109]: Kilo for Teams
+              - list [ref=e110]:
+                - listitem [ref=e111]:
+                  - link "About Plans" [ref=e112] [cursor=pointer]:
+                    - /url: /docs/collaborate/teams/about-plans
+                - listitem [ref=e113]:
+                  - link "Getting Started with Teams" [ref=e114] [cursor=pointer]:
+                    - /url: /docs/collaborate/teams/getting-started
+                - listitem [ref=e115]:
+                  - link "Dashboard" [ref=e116] [cursor=pointer]:
+                    - /url: /docs/collaborate/teams/dashboard
+                - listitem [ref=e117]:
+                  - link "Team Management" [ref=e118] [cursor=pointer]:
+                    - /url: /docs/collaborate/teams/team-management
+                - listitem [ref=e119]:
+                  - link "Custom Modes (Org)" [ref=e120] [cursor=pointer]:
+                    - /url: /docs/collaborate/teams/custom-modes-org
+                - listitem [ref=e121]:
+                  - link "Billing" [ref=e122] [cursor=pointer]:
+                    - /url: /docs/collaborate/teams/billing
+                - listitem [ref=e123]:
+                  - link "Analytics" [ref=e124] [cursor=pointer]:
+                    - /url: /docs/collaborate/teams/analytics
+                - listitem [ref=e125]:
+                  - generic [ref=e126]:
+                    - link "AI Adoption Dashboard" [ref=e127] [cursor=pointer]:
+                      - /url: /docs/collaborate/adoption-dashboard/overview
+                    - button "Expand" [ref=e128] [cursor=pointer]:
+                      - img [ref=e129]
+            - generic [ref=e131]:
+              - generic [ref=e132]: Enterprise
+              - list [ref=e133]:
+                - listitem [ref=e134]:
+                  - link "SSO" [ref=e135] [cursor=pointer]:
+                    - /url: /docs/collaborate/enterprise/sso
+                - listitem [ref=e136]:
+                  - link "Model Access Controls" [ref=e137] [cursor=pointer]:
+                    - /url: /docs/collaborate/enterprise/model-access-controls
+                - listitem [ref=e138]:
+                  - link "Audit Logs" [ref=e139] [cursor=pointer]:
+                    - /url: /docs/collaborate/enterprise/audit-logs
+                - listitem [ref=e140]:
+                  - link "Migration" [ref=e141] [cursor=pointer]:
+                    - /url: /docs/collaborate/enterprise/migration
+      - main [ref=e142]:
+        - generic [ref=e144]:
+          - article [ref=e145]:
+            - heading "Collaborate" [level=1] [ref=e146]
+            - paragraph [ref=e149]: Kilo Code makes it easy to work together with your team. Share sessions, manage team settings, and track AI adoption across your organization.
+            - heading "Sessions & Sharing" [level=2] [ref=e150]
+            - paragraph [ref=e151]: Sessions are your platform-agnostic interaction with Kilo. They remember your repository, task, and conversation so you can pause and resume work without losing context.
+            - list [ref=e152]:
+              - listitem [ref=e153]:
+                - link "Sessions & Sharing" [ref=e154] [cursor=pointer]:
+                  - /url: /docs/collaborate/sessions-sharing
+                  - strong [ref=e155]: Sessions & Sharing
+                - text: — Share and collaborate on Kilo Code sessions
+              - listitem [ref=e156]: Create sessions from the CLI, Cloud Agent, or IDE extensions
+              - listitem [ref=e157]: Share read-only links with teammates
+              - listitem [ref=e158]: Fork shared sessions to create your own copy
+            - heading "Teams" [level=2] [ref=e159]
+            - paragraph [ref=e160]: "Kilo Code's paid plans provide powerful team management features:"
+            - list [ref=e161]:
+              - listitem [ref=e162]:
+                - link "About Plans" [ref=e163] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/about-plans
+                  - strong [ref=e164]: About Plans
+                - text: — Compare Teams and Enterprise plans
+              - listitem [ref=e165]:
+                - strong [ref=e166]: Teams ($15/user/month)
+                - text: — Zero markup on AI costs, centralized billing, team analytics
+              - listitem [ref=e167]:
+                - strong [ref=e168]:
+                  - text: Enterprise (
+                  - link "Contact Sales" [ref=e169] [cursor=pointer]:
+                    - /url: https://kilo.ai/contact-sales
+                  - text: )
+                - text: — Model controls, audit logs, SSO, dedicated support
+            - heading "Team Management" [level=3] [ref=e170]
+            - list [ref=e171]:
+              - listitem [ref=e172]:
+                - link "Getting Started" [ref=e173] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/getting-started
+                  - strong [ref=e174]: Getting Started
+                - text: — Set up your team
+              - listitem [ref=e175]:
+                - link "Team Management" [ref=e176] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/team-management
+                  - strong [ref=e177]: Team Management
+                - text: — Manage members and roles
+              - listitem [ref=e178]:
+                - link "Dashboard" [ref=e179] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/dashboard
+                  - strong [ref=e180]: Dashboard
+                - text: — Team overview and activity
+              - listitem [ref=e181]:
+                - link "Analytics" [ref=e182] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/analytics
+                  - strong [ref=e183]: Analytics
+                - text: — Usage insights and trends
+              - listitem [ref=e184]:
+                - link "Billing" [ref=e185] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/billing
+                  - strong [ref=e186]: Billing
+                - text: — Manage payments and invoices
+              - listitem [ref=e187]:
+                - link "Custom Modes for Organizations" [ref=e188] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/custom-modes-org
+                  - strong [ref=e189]: Custom Modes for Organizations
+                - text: — Share custom modes across your team
+            - heading "Enterprise" [level=2] [ref=e190]
+            - paragraph [ref=e191]: "Enterprise features for large organizations:"
+            - list [ref=e192]:
+              - listitem [ref=e193]:
+                - link "Audit Logs" [ref=e194] [cursor=pointer]:
+                  - /url: /docs/collaborate/enterprise/audit-logs
+                  - strong [ref=e195]: Audit Logs
+                - text: — Track and audit team activity
+              - listitem [ref=e196]:
+                - link "SSO" [ref=e197] [cursor=pointer]:
+                  - /url: /docs/collaborate/enterprise/sso
+                  - strong [ref=e198]: SSO
+                - text: — Single sign-on with OIDC and SCIM
+              - listitem [ref=e199]:
+                - link "Model Access Controls" [ref=e200] [cursor=pointer]:
+                  - /url: /docs/collaborate/enterprise/model-access-controls
+                  - strong [ref=e201]: Model Access Controls
+                - text: — Limit models and providers
+              - listitem [ref=e202]:
+                - link "Migration" [ref=e203] [cursor=pointer]:
+                  - /url: /docs/collaborate/enterprise/migration
+                  - strong [ref=e204]: Migration
+                - text: — Migrate from other AI coding tools
+            - heading "Adoption Dashboard" [level=2] [ref=e205]
+            - paragraph [ref=e206]: "Understand how your team is using AI:"
+            - list [ref=e207]:
+              - listitem [ref=e208]:
+                - link "Overview" [ref=e209] [cursor=pointer]:
+                  - /url: /docs/collaborate/adoption-dashboard/overview
+                  - strong [ref=e210]: Overview
+                - text: — AI Adoption Score introduction
+              - listitem [ref=e211]:
+                - link "For Team Leads" [ref=e212] [cursor=pointer]:
+                  - /url: /docs/collaborate/adoption-dashboard/for-team-leads
+                  - strong [ref=e213]: For Team Leads
+                - text: — Using adoption metrics
+              - listitem [ref=e214]:
+                - link "Improving Your Score" [ref=e215] [cursor=pointer]:
+                  - /url: /docs/collaborate/adoption-dashboard/improving-your-score
+                  - strong [ref=e216]: Improving Your Score
+                - text: — Tips to boost adoption
+              - listitem [ref=e217]:
+                - link "Understanding Your Score" [ref=e218] [cursor=pointer]:
+                  - /url: /docs/collaborate/adoption-dashboard/understanding-your-score
+                  - strong [ref=e219]: Understanding Your Score
+                - text: — How the score is calculated
+            - heading "Get Started with Teams" [level=2] [ref=e220]
+            - list [ref=e221]:
+              - listitem [ref=e222]:
+                - link "Install Kilo Code" [ref=e223] [cursor=pointer]:
+                  - /url: /docs/getting-started/installing
+                - text: in your preferred environment
+              - listitem [ref=e224]:
+                - link "Connect an AI provider" [ref=e225] [cursor=pointer]:
+                  - /url: /docs/ai-providers
+              - listitem [ref=e226]:
+                - link "Choose a plan" [ref=e227] [cursor=pointer]:
+                  - /url: /docs/collaborate/teams/about-plans
+                - text: that fits your needs
+              - listitem [ref=e228]: Invite your team members and start collaborating
+          - generic [ref=e231]:
+            - button "Copy page" [ref=e232] [cursor=pointer]:
+              - img [ref=e233]
+              - generic [ref=e236]: Copy page
+            - button "Open markdown" [ref=e237] [cursor=pointer]:
+              - img [ref=e238]
+              - generic [ref=e241]: Open markdown
+            - button "Edit page" [ref=e242] [cursor=pointer]:
+              - img [ref=e243]
+              - generic [ref=e245]: Edit page
+  - alert [ref=e246]

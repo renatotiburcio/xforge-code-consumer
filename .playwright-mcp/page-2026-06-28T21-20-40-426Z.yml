@@ -1,0 +1,159 @@
+- generic [active] [ref=e1]:
+  - heading "07 - @Context System" [level=1] [ref=e2]
+  - paragraph [ref=e3]: "@file, @folder, @codebase, @git, @docs com chips visuais."
+  - navigation [ref=e4]:
+    - link "Home" [ref=e5] [cursor=pointer]:
+      - /url: 00-home.html
+    - link "Chat Principal" [ref=e6] [cursor=pointer]:
+      - /url: 01-chat-principal.html
+    - link "Streaming" [ref=e7] [cursor=pointer]:
+      - /url: 02-chat-streaming.html
+    - link "Diff Review" [ref=e8] [cursor=pointer]:
+      - /url: 03-chat-diff.html
+    - link "Tool Calls" [ref=e9] [cursor=pointer]:
+      - /url: 04-chat-tool-calls.html
+    - link "Error Recovery" [ref=e10] [cursor=pointer]:
+      - /url: 05-chat-error.html
+    - link "Slash Commands" [ref=e11] [cursor=pointer]:
+      - /url: 06-slash-commands.html
+    - link "@Context" [ref=e12] [cursor=pointer]:
+      - /url: 07-context-system.html
+    - link "Agent Manager" [ref=e13] [cursor=pointer]:
+      - /url: 08-agent-manager.html
+    - link "Settings" [ref=e14] [cursor=pointer]:
+      - /url: 09-settings.html
+    - link "Welcome" [ref=e15] [cursor=pointer]:
+      - /url: 10-welcome.html
+    - link "Setup Wizard" [ref=e16] [cursor=pointer]:
+      - /url: 11-setup-wizard.html
+    - link "Inline Editing" [ref=e17] [cursor=pointer]:
+      - /url: 12-inline-editing.html
+    - link "Historico" [ref=e18] [cursor=pointer]:
+      - /url: 13-history.html
+    - link "MCP Servers" [ref=e19] [cursor=pointer]:
+      - /url: 14-mcp-servers.html
+    - link "Atalhos" [ref=e20] [cursor=pointer]:
+      - /url: 15-shortcuts.html
+    - link "Mode Selector" [ref=e21] [cursor=pointer]:
+      - /url: 16-modes.html
+    - link "Checkpoint" [ref=e22] [cursor=pointer]:
+      - /url: 17-checkpoint.html
+    - link "Notificacoes" [ref=e23] [cursor=pointer]:
+      - /url: 18-notifications.html
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: "@Context - Sistema de contexto"
+      - generic [ref=e27]: P1
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31] [cursor=pointer]: 📁
+        - generic [ref=e32] [cursor=pointer]: 🔍
+        - generic [ref=e33] [cursor=pointer]: 🔀
+        - generic [ref=e34] [cursor=pointer]: 🐛
+        - generic [ref=e35] [cursor=pointer]: 📦
+        - generic [ref=e36] [cursor=pointer]: 💬
+        - generic [ref=e37] [cursor=pointer]: ⚙️
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: ⚡ XForge Code AI
+          - generic [ref=e42] [cursor=pointer]: +
+        - generic [ref=e43]:
+          - generic [ref=e45]:
+            - generic [ref=e46]: R
+            - generic [ref=e48]:
+              - paragraph [ref=e49]: Refatore o handler considerando as regras do projeto
+              - generic [ref=e50]:
+                - generic [ref=e51]:
+                  - text: 📄 CreatePaymentHandler.cs
+                  - generic [ref=e52] [cursor=pointer]: ×
+                - generic [ref=e53]:
+                  - text: 📁 src/Domain/
+                  - generic [ref=e54] [cursor=pointer]: ×
+                - generic [ref=e55]:
+                  - text: 🌐 @codebase
+                  - generic [ref=e56] [cursor=pointer]: ×
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59] [cursor=pointer]:
+                - generic [ref=e60]: 📄
+                - generic [ref=e61]: "@file"
+                - generic [ref=e62]: Inclui arquivo
+              - generic [ref=e63] [cursor=pointer]:
+                - generic [ref=e64]: 📁
+                - generic [ref=e65]: "@folder"
+                - generic [ref=e66]: Inclui pasta
+              - generic [ref=e67] [cursor=pointer]:
+                - generic [ref=e68]: 🌐
+                - generic [ref=e69]: "@codebase"
+                - generic [ref=e70]: Indexa projeto
+              - generic [ref=e71] [cursor=pointer]:
+                - generic [ref=e72]: 🔗
+                - generic [ref=e73]: "@url"
+                - generic [ref=e74]: Fetch URL
+              - generic [ref=e75] [cursor=pointer]:
+                - generic [ref=e76]: 📚
+                - generic [ref=e77]: "@docs"
+                - generic [ref=e78]: Documentacao
+              - generic [ref=e79] [cursor=pointer]:
+                - generic [ref=e80]: 🔀
+                - generic [ref=e81]: "@git"
+                - generic [ref=e82]: Git diff/log
+              - generic [ref=e83] [cursor=pointer]:
+                - generic [ref=e84]: 🔍
+                - generic [ref=e85]: "@search"
+                - generic [ref=e86]: Busca semantica
+              - generic [ref=e87] [cursor=pointer]:
+                - generic [ref=e88]: 🧠
+                - generic [ref=e89]: "@knowledge"
+                - generic [ref=e90]: Knowledge graph
+            - generic [ref=e91]:
+              - textbox [ref=e92]: "@"
+              - button "➡" [ref=e93] [cursor=pointer]
+      - generic [ref=e94]:
+        - generic [ref=e96] [cursor=pointer]:
+          - text: CreatePaymentHandler.cs
+          - generic [ref=e97]: ×
+        - generic [ref=e99]: "Referencia: arquivo atual"
+      - generic [ref=e100]:
+        - generic [ref=e101]:
+          - generic [ref=e102]: ⚡ main
+          - generic [ref=e103]: "Context: 3 refs"
+        - generic [ref=e105]: "⚡ XForge: Code"
+  - heading "Especificacoes" [level=2] [ref=e106]
+  - table [ref=e107]:
+    - rowgroup [ref=e108]:
+      - row "Elemento Especificacao Razao" [ref=e109]:
+        - columnheader "Elemento" [ref=e110]
+        - columnheader "Especificacao" [ref=e111]
+        - columnheader "Razao" [ref=e112]
+      - row "Trigger Digitar @ no input Descoberta" [ref=e113]:
+        - cell "Trigger" [ref=e114]
+        - cell "Digitar @ no input" [ref=e115]
+        - cell "Descoberta" [ref=e116]
+      - row "Chips Coloridos por tipo Identificacao" [ref=e117]:
+        - cell "Chips" [ref=e118]
+        - cell "Coloridos por tipo" [ref=e119]
+        - cell "Identificacao" [ref=e120]
+      - row "@file Borda azul, icone arquivo Arquivo especifico" [ref=e121]:
+        - cell "@file" [ref=e122]
+        - cell "Borda azul, icone arquivo" [ref=e123]
+        - cell "Arquivo especifico" [ref=e124]
+      - row "@folder Borda amarela, icone pasta Pasta inteira" [ref=e125]:
+        - cell "@folder" [ref=e126]
+        - cell "Borda amarela, icone pasta" [ref=e127]
+        - cell "Pasta inteira" [ref=e128]
+      - row "@codebase Borda verde, icone globo Projeto completo" [ref=e129]:
+        - cell "@codebase" [ref=e130]
+        - cell "Borda verde, icone globo" [ref=e131]
+        - cell "Projeto completo" [ref=e132]
+      - row "Remove X no chip Remover contexto" [ref=e133]:
+        - cell "Remove" [ref=e134]
+        - cell "X no chip" [ref=e135]
+        - cell "Remover contexto" [ref=e136]
+  - heading "Notas" [level=2] [ref=e137]
+  - list [ref=e139]:
+    - listitem [ref=e140]: Menu @ aparece ao digitar @
+    - listitem [ref=e141]: Chips coloridos por tipo (file/folder/codebase)
+    - listitem [ref=e142]: Remover chip com X
+    - listitem [ref=e143]: Contexto eh enviado no prompt
+    - listitem [ref=e144]: "Limite de contexto: 128k tokens"

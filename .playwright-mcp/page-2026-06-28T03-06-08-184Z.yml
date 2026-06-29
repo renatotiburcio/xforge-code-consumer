@@ -1,0 +1,118 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge
+      - generic [ref=e25]:
+        - button "Historico" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Config" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - img "XF" [ref=e36]
+        - generic [ref=e37]: Agent Manager
+      - generic [ref=e38]:
+        - button "Nova sessao" [ref=e39] [cursor=pointer]:
+          - img [ref=e40]
+        - button "Filtrar" [ref=e41] [cursor=pointer]:
+          - img [ref=e42]
+    - generic [ref=e44]:
+      - heading "Overview" [level=3] [ref=e45]
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: "3"
+          - generic [ref=e49]: Ativas
+        - generic [ref=e50]:
+          - generic [ref=e51]: "7"
+          - generic [ref=e52]: Total
+        - generic [ref=e53]:
+          - generic [ref=e54]: $0.12
+          - generic [ref=e55]: Custo
+    - generic [ref=e56]:
+      - heading "Sessoes" [level=3] [ref=e57]
+      - generic [ref=e58] [cursor=pointer]:
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - text: Endpoint Produtos
+            - generic [ref=e61]: Code
+          - generic [ref=e62]:
+            - generic [ref=e63]: Executando
+            - button "Parar sessao" [ref=e65]:
+              - img [ref=e66]
+        - generic [ref=e68]:
+          - generic [ref=e69]: 5 tools
+          - generic [ref=e70]: 2 min
+          - generic [ref=e71]: $0.04
+        - generic [ref=e72]:
+          - img [ref=e73]
+          - text: feat/endpoint-produtos
+      - generic [ref=e77] [cursor=pointer]:
+        - generic [ref=e78]:
+          - generic [ref=e79]:
+            - text: Refatorar Service
+            - generic [ref=e80]: Architect
+          - generic [ref=e81]:
+            - generic [ref=e82]: Idle
+            - button "Parar sessao" [ref=e84]:
+              - img [ref=e85]
+            - text: style="opacity:0.4">
+        - generic [ref=e87]:
+          - generic [ref=e88]: 3 tools
+          - generic [ref=e89]: 5 min
+          - generic [ref=e90]: $0.03
+      - generic [ref=e91] [cursor=pointer]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - text: Fix N+1 Queries
+            - generic [ref=e94]: Code
+          - generic [ref=e96]: Concluido
+        - generic [ref=e98]:
+          - generic [ref=e99]: 8 tools
+          - generic [ref=e100]: 12 min
+          - generic [ref=e101]: $0.05
+    - generic [ref=e102]:
+      - generic [ref=e103]: 3 sessoes ativas
+      - generic [ref=e104]: "Total: $0.12"
+  - generic [ref=e105]:
+    - heading "Endpoint Produtos" [level=2] [ref=e107]: Endpoint Produtos
+    - generic [ref=e109]:
+      - generic [ref=e110] [cursor=pointer]: Tool Log
+      - generic [ref=e111] [cursor=pointer]: Diff
+      - generic [ref=e112] [cursor=pointer]: Context
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - generic [ref=e116]: R
+        - generic [ref=e117]: Lendo arquivo
+        - generic [ref=e118]: src/Controllers/BaseController.cs
+        - generic [ref=e119]: 0.3s
+      - generic [ref=e120]:
+        - generic [ref=e121]: R
+        - generic [ref=e122]: Lendo arquivo
+        - generic [ref=e123]: src/Models/Produto.cs
+        - generic [ref=e124]: 0.2s
+      - generic [ref=e125]:
+        - generic [ref=e126]: W
+        - generic [ref=e127]: Escrevendo arquivo
+        - generic [ref=e128]: src/Controllers/ProdutosController.cs
+        - generic [ref=e129]: 0.5s
+      - generic [ref=e130]:
+        - generic [ref=e131]: $
+        - generic [ref=e132]: Executando comando
+        - generic [ref=e133]: dotnet build --no-restore
+        - generic [ref=e134]: 4.2s
+      - generic [ref=e135]:
+        - generic [ref=e136]: $
+        - generic [ref=e137]: Executando comando
+        - generic [ref=e138]: dotnet test --filter Produtos
+        - generic [ref=e139]: running...

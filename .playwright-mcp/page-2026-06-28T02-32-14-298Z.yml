@@ -1,0 +1,91 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e7]: xforge — code session
+    - generic [ref=e8]: 80x24
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11] [cursor=pointer]: Code
+      - generic [ref=e12] [cursor=pointer]: Architect
+      - generic [ref=e13] [cursor=pointer]: Ask
+      - generic [ref=e14] [cursor=pointer]: 3 sessions
+    - generic [ref=e15]: claude-sonnet-4 qwen2.5:72b ollama:local
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e19]: you
+          - generic [ref=e20]: 14:23
+          - generic [ref=e21]: adiciona validacao no endpoint de produtos
+        - generic [ref=e22]:
+          - generic [ref=e23]: xforge
+          - generic [ref=e24]: 14:23
+          - generic [ref=e25]: Code
+          - generic [ref=e26]: 847tk 4.2s
+          - generic [ref=e27]: Vou criar a validacao. Primeiro, analiso o projeto...
+        - generic [ref=e28]:
+          - generic [ref=e29] [cursor=pointer]:
+            - generic [ref=e30]: ">"
+            - generic [ref=e31]: Lendo diretorio
+            - generic [ref=e32]: src/Controllers/
+            - generic [ref=e33]: ok 0.3s
+          - generic [ref=e34]:
+            - text: // BaseController.cs encontrado
+            - text: // 3 controllers existentes
+        - generic [ref=e36] [cursor=pointer]:
+          - generic [ref=e37]: ">"
+          - generic [ref=e38]: Lendo arquivo
+          - generic [ref=e39]: src/Models/Produto.cs
+          - generic [ref=e40]: ok 0.2s
+        - generic [ref=e42] [cursor=pointer]:
+          - generic [ref=e43]: ">"
+          - generic [ref=e44]: Executando comando
+          - generic [ref=e45]: dotnet build
+          - generic [ref=e46]: ok 4.1s
+        - generic [ref=e48] [cursor=pointer]:
+          - generic [ref=e49]: ">"
+          - generic [ref=e50]: Escrevendo arquivo
+          - generic [ref=e51]: ProdutoService.cs
+          - generic [ref=e52]: ...
+        - generic [ref=e53]:
+          - generic [ref=e54]: xforge
+          - generic [ref=e55]: 14:24
+          - generic [ref=e56]: "Criei a validacao. Revise o diff:"
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - text: ProdutoService.cs
+            - generic [ref=e59]:
+              - button "y" [ref=e60]
+              - button "n" [ref=e61]
+          - generic [ref=e62]: + var validation = await _validator.ValidateAsync(produto);
+          - generic [ref=e63]: + if (!validation.IsValid)
+          - generic [ref=e64]: + throw new ValidationException(validation.Errors);
+          - generic [ref=e65]: "- .ToListAsync();"
+          - generic [ref=e66]: + .ToListAsync(cancellationToken);
+        - generic [ref=e67]: Produto.csControllers/
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - heading "Sessao" [level=4] [ref=e70]
+          - generic [ref=e71]: Tokens1,247
+          - generic [ref=e72]: Tempo32s
+          - generic [ref=e73]: Custo$0.04
+          - generic [ref=e74]: Ferramentas4
+        - generic [ref=e75]:
+          - heading "Modelo" [level=4] [ref=e76]
+          - generic [ref=e77]: ProviderOpenRouter
+          - generic [ref=e78]: Modeloclaude-sonnet-4
+          - generic [ref=e79]: Contexto12.4k/200k
+        - generic [ref=e80]:
+          - heading "Atalhos" [level=4] [ref=e81]
+          - generic [ref=e82]: Enterenviar
+          - generic [ref=e83]: /cmdcomandos
+          - generic [ref=e84]: "@ctxcontexto"
+          - generic [ref=e85]: Ctrl+Cparar
+          - generic [ref=e86]: Ctrl+Llimpar
+        - generic [ref=e87]:
+          - heading "Projeto" [level=4] [ref=e88]
+          - generic [ref=e89]: Stack.NET 10
+          - generic [ref=e90]: Sessoes3 ativas
+          - generic [ref=e91]: Auto-approveON
+    - generic [ref=e92]:
+      - text: ">"
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha) / @ contexto" [active] [ref=e93]
+  - generic [ref=e94]: "[ Parar ]Sessao 1 · 4 ferramentas · 1,247 tokensOpenRouter · claude-sonnet-4 · 80x24"

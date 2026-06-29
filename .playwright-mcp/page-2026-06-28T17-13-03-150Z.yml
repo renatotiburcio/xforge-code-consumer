@@ -1,0 +1,501 @@
+- generic [ref=e2]:
+  - iframe
+  - generic [ref=e3]:
+    - generic [ref=e7]:
+      - link "Kilo Blog" [ref=e9] [cursor=pointer]:
+        - /url: /
+        - img "Kilo Blog" [ref=e13]
+      - heading "Kilo Blog" [level=1] [ref=e15]:
+        - link "Kilo Blog" [ref=e16] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - button "Search" [ref=e22] [cursor=pointer]:
+            - img [ref=e23]
+          - button "Share Publication" [ref=e26] [cursor=pointer]:
+            - img [ref=e27]
+        - button "Subscribe" [ref=e30] [cursor=pointer]
+        - button "Sign in" [ref=e31] [cursor=pointer]
+    - main "Post" [ref=e34]:
+      - article [ref=e38]:
+        - region "Post header" [ref=e39]:
+          - heading "The New Kilo Code for VS Code Is Now Generally Available" [level=1] [ref=e40]
+          - heading "Faster execution, better orchestration, and one shared core across every surface you work on." [level=3] [ref=e41]
+          - region "Post UFI" [ref=e42]:
+            - generic [ref=e44]:
+              - link "View Job Rietbergen's profile" [ref=e49] [cursor=pointer]:
+                - /url: https://substack.com/@jobkilo
+                - generic "Job Rietbergen" [ref=e51]:
+                  - img "Job Rietbergen's avatar" [ref=e53]
+              - generic [ref=e54]:
+                - link "Job Rietbergen" [ref=e57] [cursor=pointer]:
+                  - /url: https://substack.com/@jobkilo
+                - generic [ref=e59]: Apr 02, 2026
+            - generic [ref=e60]:
+              - generic [ref=e61]:
+                - button "Like (16)" [ref=e63] [cursor=pointer]:
+                  - img [ref=e64]:
+                    - img [ref=e66]
+                  - generic [ref=e68]: "16"
+                - button "View comments (20)" [ref=e69] [cursor=pointer]:
+                  - img [ref=e70]:
+                    - img [ref=e72]
+                  - generic [ref=e74]: "20"
+                - button "5" [ref=e75] [cursor=pointer]:
+                  - img [ref=e76]
+                  - generic [ref=e79]: "5"
+              - button "Share" [ref=e81] [cursor=pointer]:
+                - generic [ref=e82]: Share
+        - generic [ref=e83]:
+          - button "Table of Contents" [ref=e84] [cursor=pointer]
+          - generic [ref=e98]:
+            - paragraph [ref=e99]:
+              - text: A few weeks ago,
+              - link "we shipped a pre-release version" [ref=e100] [cursor=pointer]:
+                - /url: https://blog.kilo.ai/p/we-completely-rebuilt-the-kilo-vs-code-extension
+              - text: of the completely rebuilt Kilo Code extension for VS Code, built on OpenCode server — a portable, open-source core that isn’t tied to any single editor. Today, that rebuilt extension is leaving pre-release and becoming the
+              - strong [ref=e101]: new default Kilo Code experience in VS Code
+              - text: for all users.
+            - paragraph [ref=e102]: This is the biggest change to the VS Code extension since launch. With OpenCode server at its core, Kilo now shares the same engine across VS Code, the CLI, and Cloud Agents, so improvements to the core benefit every surface at once.
+            - paragraph [ref=e103]: If you already have Kilo Code installed, this update will roll out through the normal extension update path. If auto-update is enabled, nothing else is required.
+            - figure [ref=e105]:
+              - link [ref=e106]:
+                - /url: https://substackcdn.com/image/fetch/$s_!8-F3!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0c6759cb-66c8-46d3-b5f4-8bdfaa4192fb_2400x1260.png
+                - generic [ref=e110]:
+                  - button [ref=e111] [cursor=pointer]:
+                    - img [ref=e112]
+                  - button [ref=e114] [cursor=pointer]:
+                    - img [ref=e115]
+            - heading "Why We Rebuilt It Link" [level=2] [ref=e116]:
+              - text: Why We Rebuilt It
+              - button "Link" [ref=e119] [cursor=pointer]:
+                - img [ref=e120]
+            - paragraph [ref=e123]: The previous extension served over 2.2 million developers and worked well. But under the hood, every Kilo surface — CLI, JetBrains, and Cloud Agents — was still running VS Code internals, whether it needed them or not. That created a ceiling on what we could build.
+            - paragraph [ref=e124]:
+              - text: When we rebuilt the CLI on
+              - link "OpenCode" [ref=e125] [cursor=pointer]:
+                - /url: https://github.com/anomalyco/opencode
+              - text: server — an MIT-licensed, open-source foundation for agentic coding — we saw the opportunity to fix this at the root. Instead of patching around VS Code dependencies, we built a portable core that runs natively on every surface. The new VS Code extension shares the same engine as Kilo CLI. One experience that follows you from terminal to editor and back.
+            - paragraph [ref=e126]: "For users, that translates into something simple: Kilo feels faster, more consistent, and more predictable wherever you use it."
+            - heading "What’s New Link" [level=2] [ref=e127]:
+              - text: What’s New
+              - button "Link" [ref=e130] [cursor=pointer]:
+                - img [ref=e131]
+            - iframe [ref=e136]:
+              - generic [active] [ref=f4e1]:
+                - generic "Player de vídeo do YouTube" [ref=f4e3]
+                - generic [ref=f4e5]:
+                  - generic:
+                    - generic:
+                      - button "Assistir vídeo" [ref=f4e10] [cursor=pointer]
+                      - button "Ocultar controles do player" [ref=f4e12] [cursor=pointer]
+                      - generic [ref=f4e14]:
+                        - generic [ref=f4e19]:
+                          - generic [ref=f4e20]:
+                            - link "Kilo's New VS Code Extension is Live!" [ref=f4e21] [cursor=pointer]:
+                              - /url: https://www.youtube.com/watch?v=lzrTHDAe4WQ
+                            - link "Kilo" [ref=f4e22] [cursor=pointer]:
+                              - /url: /channel/UCoynHO1wWaoVkTMUZ-WNO4g
+                              - generic [ref=f4e23]: Kilo
+                          - generic [ref=f4e24]:
+                            - button [ref=f4e25] [cursor=pointer]
+                            - generic [ref=f4e27]:
+                              - generic: Kilo
+                              - generic: 51,6 mil inscritos
+                        - generic [ref=f4e28]:
+                          - button "Copiar link" [ref=f4e31] [cursor=pointer]:
+                            - generic [ref=f4e35]:
+                              - img
+                          - link "Assistir no YouTube" [ref=f4e42] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=lzrTHDAe4WQ
+                            - generic [ref=f4e45]:
+                              - text: Assista no
+                              - img [ref=f4e47]:
+                                - generic [ref=f4e49]:
+                                  - img
+            - heading "Parallel Execution and Subagent Delegation Link" [level=3] [ref=e137]:
+              - text: Parallel Execution and Subagent Delegation
+              - button "Link" [ref=e140] [cursor=pointer]:
+                - img [ref=e141]
+            - paragraph [ref=e144]: The most immediately noticeable change is speed — and the reason is parallelism at every level.
+            - figure [ref=e146]:
+              - link [ref=e147]:
+                - /url: https://substackcdn.com/image/fetch/$s_!Kiv4!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F739de7a5-7137-4cce-9c2d-b3254f9830f2_972x855.png
+                - generic [ref=e151]:
+                  - button [ref=e152] [cursor=pointer]:
+                    - img [ref=e153]
+                  - button [ref=e155] [cursor=pointer]:
+                    - img [ref=e156]
+            - paragraph [ref=e157]: "Previously, many tasks were bottlenecked by sequential execution: read a file, wait; search the codebase, wait."
+            - paragraph [ref=e158]:
+              - text: Kilo
+              - strong [ref=e159]: now supports parallel tool calls
+              - text: ", meaning the agent can execute multiple actions simultaneously. Files are read, terminal commands run, and searches execute concurrently — you feel the difference right away."
+            - paragraph [ref=e160]:
+              - text: Beyond that, Kilo supports
+              - strong [ref=e161]: parallel subagents
+              - text: . When a task is too complex for a single prompt, Kilo can spin up multiple subagents that work simultaneously — an implementation agent, a test-writing agent, and a documentation agent — each handling its piece of the work in parallel, then merging results back to the parent agent. You can also define your own custom subagents to match how your team actually works.
+            - paragraph [ref=e162]: The result is an agent that doesn’t just think faster — it works faster, doing more in the same amount of time.
+            - heading "The Agent Manager Link" [level=3] [ref=e163]:
+              - text: The Agent Manager
+              - button "Link" [ref=e166] [cursor=pointer]:
+                - img [ref=e167]
+            - paragraph [ref=e170]:
+              - text: The
+              - strong [ref=e171]: Agent Manager is your control panel for parallel work
+              - text: . Open multiple Kilo tabs and give each one a role. Monitor what each agent is doing, switch context instantly, and step in when you need to — whether you’re running two agents or eight.
+            - figure [ref=e173]:
+              - link [ref=e174]:
+                - /url: https://substackcdn.com/image/fetch/$s_!D2EQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc2b35077-0e8f-4fca-bdfb-9884a495efd6_1600x1002.png
+                - generic [ref=e178]:
+                  - button [ref=e179] [cursor=pointer]:
+                    - img [ref=e180]
+                  - button [ref=e182] [cursor=pointer]:
+                    - img [ref=e183]
+            - paragraph [ref=e184]:
+              - text: Each tab is a fully independent agent. For workflows where tasks need isolation, the Agent Manager lets you
+              - strong [ref=e185]: create git worktrees
+              - text: ": separate copies of your repository where each agent operates independently. One agent adds a new API endpoint, another refactors the auth module, a third writes tests — all simultaneously, without stepping on each other’s code. When they’re done, you merge the results, apply changes directly, commit them, or open a PR."
+            - figure [ref=e187]:
+              - link [ref=e188]:
+                - /url: https://substackcdn.com/image/fetch/$s_!WaIK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F4dd9ed5c-4ff9-44e4-8282-f7a19c4006bb_1036x816.png
+                - generic [ref=e192]:
+                  - button [ref=e193] [cursor=pointer]:
+                    - img [ref=e194]
+                  - button [ref=e196] [cursor=pointer]:
+                    - img [ref=e197]
+            - paragraph [ref=e198]: "For read-heavy workflows, running parallel agents on the same worktree is also supported. A common pattern: one agent makes changes while a second reviews the current diff or investigates how a feature is implemented elsewhere in the codebase. A much faster feedback loop."
+            - heading "Inline Code Review Link" [level=3] [ref=e199]:
+              - text: Inline Code Review
+              - button "Link" [ref=e202] [cursor=pointer]:
+                - img [ref=e203]
+            - paragraph [ref=e206]: When agents make changes across your codebase, you need a precise way to review the work and push back when something isn't right. The Agent Manager includes a built-in diff reviewer that shows every change an agent has made, file by file, in either unified or split view.
+            - figure [ref=e208]:
+              - link [ref=e209]:
+                - /url: https://substackcdn.com/image/fetch/$s_!2cfK!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F70ac3ab6-5db0-49ff-b692-2c8634a7c6ac_1600x470.png
+                - generic [ref=e213]:
+                  - button [ref=e214] [cursor=pointer]:
+                    - img [ref=e215]
+                  - button [ref=e217] [cursor=pointer]:
+                    - img [ref=e218]
+            - paragraph [ref=e219]:
+              - text: More importantly,
+              - strong [ref=e220]: you can leave line-level review comments directly on the diff
+              - text: "— the same way you would on a pull request. Click a line, type your feedback, and hit “Send all to chat.” Every comment, with its file path, line number, and the relevant code, is sent to Kilo as structured context. This turns agent-assisted development into something closer to a real code review workflow: targeted conversation about specific lines of code, not approval or rejection of an entire changeset."
+            - heading "Multi-Model Comparisons Link" [level=3] [ref=e221]:
+              - text: Multi-Model Comparisons
+              - button "Link" [ref=e224] [cursor=pointer]:
+                - img [ref=e225]
+            - paragraph [ref=e228]:
+              - text: The Agent Manager lets you
+              - strong [ref=e229]: start multiple agents on the same prompt
+              - text: "using different models — Claude Opus 4.6 and GPT-5.4, for example — and compare results side by side. It's useful any time you're working on something complex or open-ended: a tricky refactor, a page layout, an architecture decision. Run two or three models on the same problem and go with the one that got closest."
+            - figure [ref=e231]:
+              - link [ref=e232]:
+                - /url: https://substackcdn.com/image/fetch/$s_!PTk1!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb94c9194-1f9c-4306-9a0b-e0ffca1917ab_1266x986.png
+                - generic [ref=e236]:
+                  - button [ref=e237] [cursor=pointer]:
+                    - img [ref=e238]
+                  - button [ref=e240] [cursor=pointer]:
+                    - img [ref=e241]
+            - heading "Cross-Platform Sessions Link" [level=3] [ref=e242]:
+              - text: Cross-Platform Sessions
+              - button "Link" [ref=e245] [cursor=pointer]:
+                - img [ref=e246]
+            - paragraph [ref=e249]:
+              - text: Start a coding session in the CLI while SSHed into a production server. Pick it up in VS Code when you’re back at your desk. Share context with a teammate via Slack. Because the extension and CLI share the same portable core,
+              - strong [ref=e250]: session continuity is built into
+              - text: how the system works — not a bolt-on feature.
+            - figure [ref=e252]:
+              - link [ref=e253]:
+                - /url: https://substackcdn.com/image/fetch/$s_!42Gn!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd804bd06-0b03-47c4-9acc-e6251706af06_745x757.png
+                - generic [ref=e257]:
+                  - button [ref=e258] [cursor=pointer]:
+                    - img [ref=e259]
+                  - button [ref=e261] [cursor=pointer]:
+                    - img [ref=e262]
+            - heading "Built With Early Adopter Feedback Link" [level=2] [ref=e263]:
+              - text: Built With Early Adopter Feedback
+              - button "Link" [ref=e266] [cursor=pointer]:
+                - img [ref=e267]
+            - paragraph [ref=e270]:
+              - text: Before shipping this as the default experience,
+              - link "we released an early pre-release version" [ref=e271] [cursor=pointer]:
+                - /url: https://blog.kilo.ai/p/we-completely-rebuilt-the-kilo-vs-code-extension
+              - text: to developers willing to test the new architecture in real workflows. The response was substantial — we collected bug reports, friction points, and feature requests, and used that feedback to harden the extension into a production-ready release. If you were one of those early testers, thank you. This GA release is better because of you.
+            - heading "Also in This Release Link" [level=2] [ref=e272]:
+              - text: Also in This Release
+              - button "Link" [ref=e275] [cursor=pointer]:
+                - img [ref=e276]
+            - paragraph [ref=e279]: "On top of the rebuilt architecture and the features above, this GA release includes several additions that came directly out of the pre-release feedback:"
+            - list [ref=e280]:
+              - listitem [ref=e281]:
+                - paragraph [ref=e282]: Provider settings are now configurable directly inside the extension — no CLI setup required
+              - listitem [ref=e283]:
+                - paragraph [ref=e284]: The MCP marketplace is available natively in the extension
+              - listitem [ref=e285]:
+                - paragraph [ref=e286]: Modes have been unified into the new Agents experience for a more consistent workflow
+            - separator [ref=e288]
+            - heading "Get Started Link" [level=2] [ref=e289]:
+              - text: Get Started
+              - button "Link" [ref=e292] [cursor=pointer]:
+                - img [ref=e293]
+            - paragraph [ref=e296]:
+              - text: Search for Kilo Code in the VS Code Extensions panel, or
+              - link "install directly from the Visual Studio Marketplace" [ref=e297] [cursor=pointer]:
+                - /url: https://kilo.ai/landing/vs-code
+              - text: .
+            - paragraph [ref=e298]: If you already have Kilo Code installed, the update will arrive through the normal extension update path. Auto-update handles everything — there’s no separate extension to install.
+            - paragraph [ref=e299]:
+              - text: We’d love to hear what you think. Drop feedback in
+              - link "Discord" [ref=e300] [cursor=pointer]:
+                - /url: https://discord.gg/kilocode
+              - text: "in the #vscode channel or message us anytime at"
+              - link "hi@kilocode.ai" [ref=e301] [cursor=pointer]:
+                - /url: mailto:hi@kilocode.ai
+              - text: .
+            - paragraph [ref=e302] [cursor=pointer]:
+              - link "Learn more about Kilo for VS Code" [ref=e303]:
+                - /url: https://kilo.ai/landing/vs-code
+            - paragraph [ref=e304] [cursor=pointer]:
+              - link "Read the docs" [ref=e305]:
+                - /url: https://kilo.ai/docs/code-with-ai/platforms/vscode/whats-new
+            - paragraph
+            - paragraph
+          - generic [ref=e307]:
+            - generic [ref=e309]:
+              - link "View Ray's profile" [ref=e311] [cursor=pointer]:
+                - /url: https://substack.com/profile/490051956-ray
+                - generic "Ray" [ref=e313]:
+                  - img "Ray's avatar" [ref=e315]
+              - link "View Grigory's profile" [ref=e317] [cursor=pointer]:
+                - /url: https://substack.com/profile/388161434-grigory
+                - generic "Grigory" [ref=e319]:
+                  - img "Grigory's avatar" [ref=e321]
+              - link "View José Miguel's profile" [ref=e323] [cursor=pointer]:
+                - /url: https://substack.com/profile/237197452-jose-miguel
+                - generic "José Miguel" [ref=e325]:
+                  - img "José Miguel's avatar" [ref=e327]
+              - link "View SelfDriven Careers's profile" [ref=e329] [cursor=pointer]:
+                - /url: https://substack.com/profile/281456621-selfdriven-careers
+                - generic "SelfDriven Careers" [ref=e331]:
+                  - img "SelfDriven Careers's avatar" [ref=e333]
+              - link "View Job Rietbergen's profile" [ref=e335] [cursor=pointer]:
+                - /url: https://substack.com/profile/369124793-job-rietbergen
+                - generic "Job Rietbergen" [ref=e337]:
+                  - img "Job Rietbergen's avatar" [ref=e339]
+            - generic [ref=e341]:
+              - generic [ref=e342] [cursor=pointer]: 16 Likes
+              - text: ∙
+              - link "5 Restacks" [ref=e344] [cursor=pointer]:
+                - /url: https://substack.com/note/p-192608130/restacks?utm_source=substack&utm_content=facepile-restacks
+          - generic [ref=e346]:
+            - generic [ref=e347]:
+              - button "Like (16)" [ref=e349] [cursor=pointer]:
+                - img [ref=e350]:
+                  - img [ref=e352]
+                - generic [ref=e354]: "16"
+              - button "View comments (20)" [ref=e355] [cursor=pointer]:
+                - img [ref=e356]:
+                  - img [ref=e358]
+                - generic [ref=e360]: "20"
+              - button "5" [ref=e361] [cursor=pointer]:
+                - img [ref=e362]
+                - generic [ref=e365]: "5"
+            - button "Share" [ref=e367] [cursor=pointer]:
+              - generic [ref=e368]: Share
+      - generic [ref=e369]:
+        - generic [ref=e370]:
+          - generic [ref=e371]:
+            - heading "Discussion about this post" [level=4] [ref=e372]
+            - tablist "Select discussion type" [ref=e376]:
+              - tab "Comments" [selected] [ref=e377] [cursor=pointer]
+              - tab "Restacks" [ref=e378] [cursor=pointer]
+          - generic [ref=e381]:
+            - generic [ref=e383]:
+              - generic "User" [ref=e385]:
+                - img "User's avatar" [ref=e387]
+              - textbox "Write a comment..." [ref=e390]
+            - generic [ref=e392]:
+              - article "Comment by Dani" [ref=e396]:
+                - link "View Dani's profile" [ref=e399] [cursor=pointer]:
+                  - /url: https://substack.com/profile/333627973-dani?utm_source=comment
+                  - generic "Dani" [ref=e401]:
+                    - img "Dani's avatar" [ref=e403]
+                - generic [ref=e404]:
+                  - generic [ref=e405]:
+                    - generic [ref=e408]:
+                      - link "Dani" [ref=e413] [cursor=pointer]:
+                        - /url: https://substack.com/profile/333627973-dani?utm_source=substack-feed-item
+                      - link "2 de abr." [ref=e414] [cursor=pointer]:
+                        - /url: https://blog.kilo.ai/p/new-kilo-for-vs-code-is-live/comment/237311927
+                    - button "Ellipsis" [ref=e417] [cursor=pointer]:
+                      - img [ref=e418]
+                  - paragraph [ref=e423]: Kilocode version 7 is not what I wanted. I've rolled back to version 5, and I hope you will fix v7 and bring back all the features we loved. Make v7 better than v5, not worse!
+                  - generic [ref=e424]:
+                    - link "Like (6)" [ref=e426] [cursor=pointer]:
+                      - /url: javascript:void(0)
+                      - generic [ref=e427]:
+                        - img [ref=e429]:
+                          - img [ref=e431]
+                        - generic [ref=e433]: Like (6)
+                    - generic [ref=e436] [cursor=pointer]:
+                      - img [ref=e437]
+                      - generic [ref=e439]: Reply
+                    - generic [ref=e442] [cursor=pointer]:
+                      - img [ref=e443]
+                      - generic [ref=e446]: Share
+              - generic [ref=e447]:
+                - article "Comment by Evolved" [ref=e450]:
+                  - link "View Evolved's profile" [ref=e453] [cursor=pointer]:
+                    - /url: https://substack.com/profile/490782080-evolved?utm_source=comment
+                    - generic "Evolved" [ref=e455]:
+                      - img "Evolved's avatar" [ref=e457]
+                  - generic [ref=e458]:
+                    - generic [ref=e459]:
+                      - generic [ref=e462]:
+                        - link "Evolved" [ref=e467] [cursor=pointer]:
+                          - /url: https://substack.com/profile/490782080-evolved?utm_source=substack-feed-item
+                        - link "3 de abr." [ref=e468] [cursor=pointer]:
+                          - /url: https://blog.kilo.ai/p/new-kilo-for-vs-code-is-live/comment/237774322
+                      - button "Ellipsis" [ref=e471] [cursor=pointer]:
+                        - img [ref=e472]
+                    - generic [ref=e476]:
+                      - paragraph [ref=e477]: Why does version 7 perform really bad compared to version 5? It's faster sure, but prompts are misunderstand so much now, also when I tell the AI to do something, it sometimes does the complete opposite, and it just doesn't seem to read my instructions properly, I haven't had any issues with version 5 other then it being slow at time, version 7 is considerably quicker at doing things, but it seems like the AI became dumber or something.
+                      - paragraph [ref=e478]: It feels very off. Is there a way to revert to version 5 instead?
+                    - generic [ref=e479]:
+                      - link "Like (4)" [ref=e481] [cursor=pointer]:
+                        - /url: javascript:void(0)
+                        - generic [ref=e482]:
+                          - img [ref=e484]:
+                            - img [ref=e486]
+                          - generic [ref=e488]: Like (4)
+                      - generic [ref=e491] [cursor=pointer]:
+                        - img [ref=e492]
+                        - generic [ref=e494]: Reply
+                      - generic [ref=e497] [cursor=pointer]:
+                        - img [ref=e498]
+                        - generic [ref=e501]: Share
+                - link "1 reply" [ref=e503] [cursor=pointer]:
+                  - /url: https://blog.kilo.ai/p/new-kilo-for-vs-code-is-live/comment/237774322
+            - link "18 more comments..." [ref=e504] [cursor=pointer]:
+              - /url: https://blog.kilo.ai/p/new-kilo-for-vs-code-is-live/comments
+        - region "Top Posts Footer" [ref=e507]:
+          - generic [ref=e508]:
+            - navigation "Archive sort tabs" [ref=e509]:
+              - tablist "Tabs" [ref=e512]:
+                - tab "Top" [selected] [ref=e513] [cursor=pointer]
+                - tab "Latest" [ref=e514] [cursor=pointer]
+                - tab "Discussions" [ref=e515] [cursor=pointer]
+              - button "Search" [ref=e517] [cursor=pointer]:
+                - img [ref=e518]
+            - generic [ref=e521]:
+              - generic [ref=e523]:
+                - article "Post preview for We Tested MiniMax M2.7 Against Claude Opus 4.6" [ref=e524] [cursor=pointer]:
+                  - generic [ref=e526]:
+                    - link "We Tested MiniMax M2.7 Against Claude Opus 4.6" [ref=e528]:
+                      - /url: https://blog.kilo.ai/p/we-tested-minimax-m27-against-claude
+                    - link "MiniMax M2.7 launched on March 18 scoring 56.22% on SWE-Pro, close to Claude Opus 4.6." [ref=e530]:
+                      - /url: https://blog.kilo.ai/p/we-tested-minimax-m27-against-claude
+                    - generic [ref=e531]:
+                      - time [ref=e532]: Mar 22
+                      - text: •
+                      - link "Darko Gjorgjievski" [ref=e535]:
+                        - /url: https://substack.com/@darkokilocode
+                    - generic [ref=e537]:
+                      - button "Like (35)" [ref=e539]:
+                        - img [ref=e540]:
+                          - img [ref=e542]
+                        - generic [ref=e544]: "35"
+                      - button "View comments (3)" [ref=e545]:
+                        - img [ref=e546]:
+                          - img [ref=e548]
+                        - generic [ref=e550]: "3"
+                      - button "6" [ref=e551]:
+                        - img [ref=e552]
+                        - generic [ref=e555]: "6"
+                      - button [ref=e556]:
+                        - img [ref=e557]
+                - article "Post preview for Future AI bills of $100k/yr per dev" [ref=e563] [cursor=pointer]:
+                  - generic [ref=e565]:
+                    - link "Future AI bills of $100k/yr per dev" [ref=e567]:
+                      - /url: https://blog.kilo.ai/p/future-ai-spend-100k-per-dev
+                    - link "Token growth indicates future AI spend per dev" [ref=e569]:
+                      - /url: https://blog.kilo.ai/p/future-ai-spend-100k-per-dev
+                    - generic [ref=e570]:
+                      - time [ref=e571]: Aug 8, 2025
+                      - text: •
+                      - link "Ewa Szyszka" [ref=e574]:
+                        - /url: https://substack.com/@kilocodeewa
+                    - generic [ref=e576]:
+                      - button "Like (29)" [ref=e578]:
+                        - img [ref=e579]:
+                          - img [ref=e581]
+                        - generic [ref=e583]: "29"
+                      - button "View comments (4)" [ref=e584]:
+                        - img [ref=e585]:
+                          - img [ref=e587]
+                        - generic [ref=e589]: "4"
+                      - button "3" [ref=e590]:
+                        - img [ref=e591]
+                        - generic [ref=e594]: "3"
+                      - button [ref=e595]:
+                        - img [ref=e596]
+                - article "Post preview for \"Sonic\" = Grok Code Fast. Get this frontier AI model 100% free in Kilo Code" [ref=e602] [cursor=pointer]:
+                  - generic [ref=e604]:
+                    - link "\"Sonic\" = Grok Code Fast. Get this frontier AI model 100% free in Kilo Code" [ref=e606]:
+                      - /url: https://blog.kilo.ai/p/grok-code-fast-get-this-frontier-ai-model-free
+                    - link "The rumours are true. The stealth model \"Sonic\" which we gave you exclusive access to last week is from xAI." [ref=e608]:
+                      - /url: https://blog.kilo.ai/p/grok-code-fast-get-this-frontier-ai-model-free
+                    - generic [ref=e609]:
+                      - time [ref=e610]: Aug 26, 2025
+                      - text: •
+                      - link "Job Rietbergen" [ref=e613]:
+                        - /url: https://substack.com/@jobkilo
+                    - generic [ref=e615]:
+                      - button "Like (20)" [ref=e617]:
+                        - img [ref=e618]:
+                          - img [ref=e620]
+                        - generic [ref=e622]: "20"
+                      - button "View comments (15)" [ref=e623]:
+                        - img [ref=e624]:
+                          - img [ref=e626]
+                        - generic [ref=e628]: "15"
+                      - button "3" [ref=e629]:
+                        - img [ref=e630]
+                        - generic [ref=e633]: "3"
+                      - button [ref=e634]:
+                        - img [ref=e635]
+              - button "See all" [ref=e641] [cursor=pointer]:
+                - text: See all
+                - img [ref=e642]
+        - generic [ref=e646]:
+          - heading "Ready for more?" [level=3] [ref=e647]
+          - generic [ref=e650]:
+            - textbox "Type your email..." [ref=e653]
+            - button "Subscribe" [disabled] [ref=e654]
+    - generic [ref=e657]:
+      - generic [ref=e658]:
+        - generic [ref=e659]: © 2026 Kilo Code Inc.
+        - text: ·
+        - link "Privacy" [ref=e660] [cursor=pointer]:
+          - /url: https://substack.com/privacy
+        - text: ∙
+        - link "Terms" [ref=e661] [cursor=pointer]:
+          - /url: https://substack.com/tos
+        - text: ∙
+        - link "Collection notice" [ref=e662] [cursor=pointer]:
+          - /url: https://substack.com/ccpa#personal-data-collected
+      - generic [ref=e663]:
+        - link "Start your Substack" [ref=e664] [cursor=pointer]:
+          - /url: https://substack.com/signup?utm_source=substack&utm_medium=web&utm_content=footer
+          - img [ref=e665]
+          - text: Start your Substack
+        - link "Get the app" [ref=e670] [cursor=pointer]:
+          - /url: https://substack.com/app/app-store-redirect?utm_campaign=app-marketing&utm_content=web-footer-button
+      - generic [ref=e671]:
+        - link "Substack" [ref=e672] [cursor=pointer]:
+          - /url: https://substack.com
+        - text: is the home for great culture
+  - region "Notifications (F8)":
+    - list

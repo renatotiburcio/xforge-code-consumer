@@ -1,0 +1,164 @@
+- generic [active] [ref=e1]:
+  - heading "12 - Inline Editing" [level=1] [ref=e2]
+  - paragraph [ref=e3]: Sugestao inline com ghost text. Tab aceita, Esc rejeita.
+  - navigation [ref=e4]:
+    - link "Home" [ref=e5] [cursor=pointer]:
+      - /url: 00-home.html
+    - link "Chat Principal" [ref=e6] [cursor=pointer]:
+      - /url: 01-chat-principal.html
+    - link "Streaming" [ref=e7] [cursor=pointer]:
+      - /url: 02-chat-streaming.html
+    - link "Diff Review" [ref=e8] [cursor=pointer]:
+      - /url: 03-chat-diff.html
+    - link "Tool Calls" [ref=e9] [cursor=pointer]:
+      - /url: 04-chat-tool-calls.html
+    - link "Error Recovery" [ref=e10] [cursor=pointer]:
+      - /url: 05-chat-error.html
+    - link "Slash Commands" [ref=e11] [cursor=pointer]:
+      - /url: 06-slash-commands.html
+    - link "@Context" [ref=e12] [cursor=pointer]:
+      - /url: 07-context-system.html
+    - link "Agent Manager" [ref=e13] [cursor=pointer]:
+      - /url: 08-agent-manager.html
+    - link "Settings" [ref=e14] [cursor=pointer]:
+      - /url: 09-settings.html
+    - link "Welcome" [ref=e15] [cursor=pointer]:
+      - /url: 10-welcome.html
+    - link "Setup Wizard" [ref=e16] [cursor=pointer]:
+      - /url: 11-setup-wizard.html
+    - link "Inline Editing" [ref=e17] [cursor=pointer]:
+      - /url: 12-inline-editing.html
+    - link "Historico" [ref=e18] [cursor=pointer]:
+      - /url: 13-history.html
+    - link "MCP Servers" [ref=e19] [cursor=pointer]:
+      - /url: 14-mcp-servers.html
+    - link "Atalhos" [ref=e20] [cursor=pointer]:
+      - /url: 15-shortcuts.html
+    - link "Mode Selector" [ref=e21] [cursor=pointer]:
+      - /url: 16-modes.html
+    - link "Checkpoint" [ref=e22] [cursor=pointer]:
+      - /url: 17-checkpoint.html
+    - link "Notificacoes" [ref=e23] [cursor=pointer]:
+      - /url: 18-notifications.html
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Inline Editing - Ghost text
+      - generic [ref=e27]: P2
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31] [cursor=pointer]: 📁
+          - generic [ref=e32] [cursor=pointer]: 🔍
+          - generic [ref=e33] [cursor=pointer]: 🔀
+          - generic [ref=e34] [cursor=pointer]: 🐛
+          - generic [ref=e35] [cursor=pointer]: 📦
+          - generic [ref=e36] [cursor=pointer]: 💬
+          - generic [ref=e37] [cursor=pointer]: ⚙️
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: ⚡ XForge Code AI
+            - generic [ref=e42] [cursor=pointer]: +
+          - generic [ref=e43]:
+            - generic [ref=e44]:
+              - generic [ref=e45]:
+                - generic [ref=e46]: R
+                - paragraph [ref=e49]: Adicione validacao de Amount > 0
+              - generic [ref=e50]:
+                - generic [ref=e51]: X
+                - paragraph [ref=e54]: Verifique a sugestao inline no editor. Tab para aceitar.
+            - generic [ref=e56]:
+              - textbox "Como posso ajudar?" [ref=e57]
+              - button "➡" [ref=e58] [cursor=pointer]
+        - generic [ref=e59]:
+          - generic [ref=e60]:
+            - generic [ref=e61] [cursor=pointer]: Payment.cs
+            - generic [ref=e62] [cursor=pointer]:
+              - text: CreatePaymentHandler.cs
+              - generic [ref=e63]: ×
+          - generic [ref=e64]:
+            - generic [ref=e65]:
+              - text: "1"
+              - text: "2"
+              - text: "3"
+              - text: "4"
+              - text: "5"
+              - text: "6"
+              - text: "7"
+              - text: "8"
+              - text: "9"
+              - text: "10"
+              - text: "11"
+              - text: "12"
+              - text: "13"
+              - text: "14"
+              - text: "15"
+              - text: "16"
+              - text: "17"
+              - text: "18"
+              - text: "19"
+              - text: "20"
+              - text: "21"
+              - text: "22"
+              - text: "23"
+              - text: "24"
+              - text: "25"
+            - generic [ref=e66]:
+              - text: using XForge.MediatR;
+              - text: using PaymentApi.Domain;
+              - text: namespace PaymentApi.Application
+              - text: "{"
+              - text: public class CreatePaymentHandler
+              - text: "{"
+              - text: public async Task<Guid> Handle(CreatePaymentCommand req, CancellationToken ct)
+              - text: "{"
+              - text: var payment = new Payment
+              - text: "{"
+              - text: Id = Guid.NewGuid(),
+              - text: Amount = req.Amount
+              - text: "};"
+              - text: "<!-- AI Suggestion: Tab to accept -->"
+              - generic [ref=e67]: if (req.Amount <= 0)
+              - generic [ref=e68]: throw new ArgumentException("Amount must be positive");
+              - text: await _context.Payments.AddAsync(payment, ct);
+              - text: return payment.Id;
+              - text: "}"
+              - text: "}"
+              - text: "}"
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: ⚡ main
+          - generic [ref=e72]: 💡 Inline suggestion
+        - generic [ref=e73]:
+          - generic [ref=e74]: Ln 19, Col 1
+          - generic [ref=e75]: UTF-8
+          - generic [ref=e76]: C#
+          - generic [ref=e77]: "⚡ XForge: Code"
+  - heading "Especificacoes" [level=2] [ref=e78]
+  - table [ref=e79]:
+    - rowgroup [ref=e80]:
+      - row "Elemento Especificacao Razao" [ref=e81]:
+        - columnheader "Elemento" [ref=e82]
+        - columnheader "Especificacao" [ref=e83]
+        - columnheader "Razao" [ref=e84]
+      - row "Ghost text Cinza italico no editor Nao intrusivo" [ref=e85]:
+        - cell "Ghost text" [ref=e86]
+        - cell "Cinza italico no editor" [ref=e87]
+        - cell "Nao intrusivo" [ref=e88]
+      - row "Accept Tab key Rapido" [ref=e89]:
+        - cell "Accept" [ref=e90]
+        - cell "Tab key" [ref=e91]
+        - cell "Rapido" [ref=e92]
+      - row "Reject Esc key Rapido" [ref=e93]:
+        - cell "Reject" [ref=e94]
+        - cell "Esc key" [ref=e95]
+        - cell "Rapido" [ref=e96]
+      - row "Status Warning icon na status bar Visibilidade" [ref=e97]:
+        - cell "Status" [ref=e98]
+        - cell "Warning icon na status bar" [ref=e99]
+        - cell "Visibilidade" [ref=e100]
+  - heading "Notas" [level=2] [ref=e101]
+  - list [ref=e103]:
+    - listitem [ref=e104]: Ghost text aparece em cinza italico
+    - listitem [ref=e105]: Tab aceita, Esc rejeita
+    - listitem [ref=e106]: Status bar indica sugestao disponivel
+    - listitem [ref=e107]: "Environment details: working directory, workspace, time"

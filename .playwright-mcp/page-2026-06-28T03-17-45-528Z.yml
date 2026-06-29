@@ -1,0 +1,71 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge Code AI - NOME_DA_PAGINA
+      - button "Ferramentas" [ref=e26] [cursor=pointer]:
+        - img [ref=e27]
+    - generic [ref=e29]:
+      - combobox "Agente" [ref=e30] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+      - combobox "Provider" [ref=e32] [cursor=pointer]:
+        - option "OpenRouter" [selected]
+        - option "Ollama"
+        - option "Anthropic"
+        - option "OpenAI"
+      - combobox "Modelo" [ref=e33] [cursor=pointer]:
+        - option "claude-sonnet-4" [selected]
+        - option "gpt-4o"
+        - option "qwen2.5:72b"
+        - option "deepseek-r1"
+      - button "Aprovacao automatica ON" [ref=e35]:
+        - img [ref=e36]
+      - button "Compactar contexto" [ref=e40]:
+        - img
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e47]: U
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e50]: Voce
+            - generic [ref=e51]: 12 tokens
+          - generic [ref=e52]: Mensagem do usuario aqui
+      - generic [ref=e53]:
+        - generic [ref=e54]: X
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: XForge
+            - generic [ref=e58]: Code
+            - generic [ref=e59]: 847 tokens
+          - generic [ref=e60]: Resposta do assistente aqui
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]: Produto.cs
+        - generic [ref=e64]: Controllers/
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha) / comandos @ contexto" [ref=e65]
+      - generic [ref=e66]:
+        - button "Parar execucao" [ref=e68]:
+          - img
+        - generic [ref=e70]: claude-sonnet-4 · $0.02
+    - generic [ref=e71]:
+      - generic [ref=e72]: Sessao 1 · 5 ferramentas · 859 tokens · $0.02
+      - generic [ref=e73]: OK
+  - generic [ref=e74]:
+    - generic [ref=e76]:
+      - img "XF" [ref=e77]
+      - heading "NOME_DA_PAGINA" [level=1] [ref=e78]
+    - generic [ref=e79]:
+      - paragraph [ref=e80]: Conteudo da pagina
+      - paragraph [ref=e81]: Substitua este bloco pelo conteudo real

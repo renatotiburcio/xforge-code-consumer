@@ -1,0 +1,139 @@
+- generic [active] [ref=e1]:
+  - heading "02 - Streaming" [level=1] [ref=e2]
+  - paragraph [ref=e3]: Resposta em tempo real com cursor animado, tool call em execucao e botao cancelar.
+  - navigation [ref=e4]:
+    - link "Home" [ref=e5] [cursor=pointer]:
+      - /url: 00-home.html
+    - link "Chat Principal" [ref=e6] [cursor=pointer]:
+      - /url: 01-chat-principal.html
+    - link "Streaming" [ref=e7] [cursor=pointer]:
+      - /url: 02-chat-streaming.html
+    - link "Diff Review" [ref=e8] [cursor=pointer]:
+      - /url: 03-chat-diff.html
+    - link "Tool Calls" [ref=e9] [cursor=pointer]:
+      - /url: 04-chat-tool-calls.html
+    - link "Error Recovery" [ref=e10] [cursor=pointer]:
+      - /url: 05-chat-error.html
+    - link "Slash Commands" [ref=e11] [cursor=pointer]:
+      - /url: 06-slash-commands.html
+    - link "@Context" [ref=e12] [cursor=pointer]:
+      - /url: 07-context-system.html
+    - link "Agent Manager" [ref=e13] [cursor=pointer]:
+      - /url: 08-agent-manager.html
+    - link "Settings" [ref=e14] [cursor=pointer]:
+      - /url: 09-settings.html
+    - link "Welcome" [ref=e15] [cursor=pointer]:
+      - /url: 10-welcome.html
+    - link "Setup Wizard" [ref=e16] [cursor=pointer]:
+      - /url: 11-setup-wizard.html
+    - link "Inline Editing" [ref=e17] [cursor=pointer]:
+      - /url: 12-inline-editing.html
+    - link "Historico" [ref=e18] [cursor=pointer]:
+      - /url: 13-history.html
+    - link "MCP Servers" [ref=e19] [cursor=pointer]:
+      - /url: 14-mcp-servers.html
+    - link "Atalhos" [ref=e20] [cursor=pointer]:
+      - /url: 15-shortcuts.html
+    - link "Mode Selector" [ref=e21] [cursor=pointer]:
+      - /url: 16-modes.html
+    - link "Checkpoint" [ref=e22] [cursor=pointer]:
+      - /url: 17-checkpoint.html
+    - link "Notificacoes" [ref=e23] [cursor=pointer]:
+      - /url: 18-notifications.html
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Streaming - Resposta em tempo real
+      - generic [ref=e27]: P0
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31] [cursor=pointer]: 📁
+        - generic [ref=e32] [cursor=pointer]: 🔍
+        - generic [ref=e33] [cursor=pointer]: 🔀
+        - generic [ref=e34] [cursor=pointer]: 🐛
+        - generic [ref=e35] [cursor=pointer]: 📦
+        - generic [ref=e36] [cursor=pointer]: 💬
+        - generic [ref=e37] [cursor=pointer]: ⚙️
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]: ⚡ XForge Code AI
+          - generic [ref=e41]:
+            - generic [ref=e42] [cursor=pointer]: +
+            - generic [ref=e43] [cursor=pointer]: 👥
+            - generic [ref=e44] [cursor=pointer]: ⚙️
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - generic [ref=e47]:
+              - generic [ref=e48]: R
+              - paragraph [ref=e51]: Crie um handler CreatePaymentHandler com validacao de Amount > 0
+            - generic [ref=e52]:
+              - generic [ref=e53]: X
+              - generic [ref=e54]:
+                - paragraph [ref=e56]: Vou criar o handler com a validacao solicitada. Primeiro, vou ler o arquivo existente.
+                - generic [ref=e58] [cursor=pointer]:
+                  - generic [ref=e59]: 📁
+                  - generic [ref=e60]: read_file
+                  - generic [ref=e61]: ✔ Completo (12ms)
+            - generic [ref=e62]:
+              - generic [ref=e63]: X
+              - generic [ref=e65]:
+                - paragraph [ref=e66]: "Entendi a estrutura. O handler vai:"
+                - paragraph [ref=e67]:
+                  - text: 1. Validar se Amount > 0
+                  - text: 2. Criar a entidade Payment
+                  - text: 3. Persistir no banco
+                  - text: 4. Retornar o ID
+                - paragraph [ref=e68]: Aqui esta a implementacao
+            - generic [ref=e70]:
+              - generic [ref=e71]: X
+              - generic [ref=e74] [cursor=pointer]:
+                - generic [ref=e75]: ✏️
+                - generic [ref=e76]: write_file
+                - generic [ref=e77]: ⏳ Executando...
+          - generic [ref=e79]:
+            - textbox "Aguarde..." [disabled] [ref=e80]
+            - button "■" [ref=e81] [cursor=pointer]
+      - generic [ref=e82]:
+        - generic [ref=e84] [cursor=pointer]:
+          - text: CreatePaymentHandler.cs *
+          - generic [ref=e85]: ×
+        - generic [ref=e87]: Aguardando geracao...
+      - generic [ref=e88]:
+        - generic [ref=e89]:
+          - generic [ref=e90]: ⏳ Streaming...
+          - generic [ref=e91]: "Tokens: 847"
+          - generic [ref=e92]: "Provider: Claude Sonnet"
+        - generic [ref=e94]: "⚡ XForge: Code"
+  - heading "Especificacoes" [level=2] [ref=e95]
+  - table [ref=e96]:
+    - rowgroup [ref=e97]:
+      - row "Elemento Especificacao Razao" [ref=e98]:
+        - columnheader "Elemento" [ref=e99]
+        - columnheader "Especificacao" [ref=e100]
+        - columnheader "Razao" [ref=e101]
+      - row "Cursor animado Blink 1s, 2px width, primary Feedback visual" [ref=e102]:
+        - cell "Cursor animado" [ref=e103]
+        - cell "Blink 1s, 2px width, primary" [ref=e104]
+        - cell "Feedback visual" [ref=e105]
+      - row "Input disabled opacity:.4, disabled Impede envio" [ref=e106]:
+        - cell "Input disabled" [ref=e107]
+        - cell "opacity:.4, disabled" [ref=e108]
+        - cell "Impede envio" [ref=e109]
+      - row "Botao cancelar ■ vermelho Interromper" [ref=e110]:
+        - cell "Botao cancelar" [ref=e111]
+        - cell "■ vermelho" [ref=e112]
+        - cell "Interromper" [ref=e113]
+      - row "Tool running Texto amarelo Progresso" [ref=e114]:
+        - cell "Tool running" [ref=e115]
+        - cell "Texto amarelo" [ref=e116]
+        - cell "Progresso" [ref=e117]
+      - row "Status bar Streaming + tokens Transparencia" [ref=e118]:
+        - cell "Status bar" [ref=e119]
+        - cell "Streaming + tokens" [ref=e120]
+        - cell "Transparencia" [ref=e121]
+  - heading "Notas" [level=2] [ref=e122]
+  - list [ref=e124]:
+    - listitem [ref=e125]: Streaming via SSE ou WebSocket
+    - listitem [ref=e126]: Crop renderizado imediatamente
+    - listitem [ref=e127]: Botao cancelar envia AbortSignal
+    - listitem [ref=e128]: Tool calls aparecem em streaming
+    - listitem [ref=e129]: Esc ou ■ cancela

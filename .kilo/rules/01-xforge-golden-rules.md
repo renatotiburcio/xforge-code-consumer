@@ -153,3 +153,100 @@ Mesmo pacotes que parecam ja definidos devem ser verificados:
 - Docstrings/XML comments/JSDoc/docstrings Python em APIs publicas.
 - OpenAPI/Swagger para APIs REST.
 - Diagramas C4 (L1, L2, L3) para sistemas com mais de 3 modulos.
+
+---
+
+## Regra de ouro 5 - Lazy-Loading de Skills (Adicionado 2026-06-27)
+
+Skills com corpo > 2000 chars devem carregar apenas metadata no system prompt.
+Conteudo completo carregado sob demanda via tool skill.
+
+**Obrigatorio**:
+- System prompt inclui: name + description + metadata (sempre < 500 chars por skill)
+- Body completo carregado APENAS quando skill tool e invocado
+- Configuracao em .xforge/config/skill-loading.json
+
+**Proibido**:
+- Carregar body completo de todas as skills no system prompt
+- Skills com > 5000 chars sem lazy-loading
+
+---
+
+## Regra de ouro 6 - Instrucoes por Diretorio (Adicionado 2026-06-27)
+
+AGENTS.md em subdirectorios sao carregados dinamicamente quando o agente acessa arquivos naquele diretorio.
+
+**Obrigatorio**:
+- AGENTS.md por diretorio para monorepos
+- Carregamento via indUp (sobe na arvore ate encontrar)
+- Max depth: 3 niveis
+- Instrucoes do diretorio tem precedencia sobre as do root
+
+**Proibido**:
+- Duplicar instrucoes de root em subdirectorios
+- Instrucoes genericas que nao se aplicam ao dominio do diretorio
+
+---
+
+## Regra de ouro 7 - Protecao de Arquivos Sensiveis (Adicionado 2026-06-27)
+
+Arquivos .env, .env.*, .key, .pem, .p12 SEMPRE requerem aprovacao explicita.
+
+**Obrigatorio**:
+- *.env, *.env.* -> ask (nunca allow broad)
+- *.key, *.pem, *.p12 -> ask
+- .env.example -> allow (documentacao)
+- Protecao built-in, nao configuravel
+
+**Proibido**:
+- ead: allow broad que bypass .env
+- Agente ler .env sem confirmacao humana
+
+---
+
+## Regra de ouro 8 - Permissoes com Glob Patterns (Adicionado 2026-06-27)
+
+Comandos bash e operacoes de arquivo usam glob patterns para permissoes.
+Ultima regra matching vence.
+
+**Obrigatorio**:
+- Broad fallbacks primeiro, excecoes depois
+- Padroes: *, git *, src/*, *.env
+- Windows: case-insensitive; Unix: case-sensitive
+- Usar forward slashes em padroes (cross-platform)
+
+**Proibido**:
+- Catch-all apos regras especificas (inverte precedencia)
+- Padroes sem ordem logica
+
+---
+
+## Regra de ouro 9 - Think-Then-Do (Adicionado 2026-06-27)
+
+Tarefas complexas devem seguir o ciclo: Analisar -> Planejar -> Executar -> Revisar.
+
+**Obrigatorio**:
+1. **Analisar**: Identificar o problema, entender contexto
+2. **Planejar**: Listar passos antes de executar
+3. **Executar**: Implementar um passo por vez
+4. **Revisar**: Validar resultado antes de prosseguir
+
+**Proibido**:
+- Implementar sem planejar (tarefas > 3 passos)
+- Pular revisao pos-implementacao
+- Token desperdio em abordagens erradas
+
+---
+
+## Regra de ouro 10 - Nomenclatura Simples (Adicionado 2026-06-27)
+
+Variaveis, funcoes e parametros devem usar nomes de palavra unica quando possivel.
+
+**Obrigatorio**:
+- Nomes padrao: pid, cfg, err, opts, dir, oot, child, state, 	imeout
+- Multi-word apenas quando ambiguo
+- Evitar: inputPID, existingClient, connectTimeout, workerPath
+
+**Proibido**:
+- camelCase compounds desnecessarios
+- Nomes > 2 palavras quando 1 e' suficiente

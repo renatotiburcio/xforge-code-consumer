@@ -1,0 +1,363 @@
+- generic [active]:
+  - generic:
+    - banner [ref=e1]:
+      - generic [ref=e2]:
+        - link "Kilo Code Logo Kilo CodeDOCS" [ref=e3] [cursor=pointer]:
+          - /url: /docs/
+          - img "Kilo Code Logo" [ref=e4]
+          - generic [ref=e6]: Kilo CodeDOCS
+        - button "Search (Meta+k)" [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]:
+            - img [ref=e11]
+            - generic [ref=e14]: Search
+        - generic [ref=e15]:
+          - button "Using system theme" [ref=e16] [cursor=pointer]:
+            - img [ref=e17]
+          - link "GitHub" [ref=e19] [cursor=pointer]:
+            - /url: https://kilo.ai/github
+          - link "Sign in" [ref=e20] [cursor=pointer]:
+            - /url: https://app.kilo.ai
+      - generic [ref=e21]:
+        - navigation [ref=e22]:
+          - link "Get Started" [ref=e23] [cursor=pointer]:
+            - /url: /docs/getting-started
+            - text: Get Started
+          - link "Code with AI" [ref=e25] [cursor=pointer]:
+            - /url: /docs/code-with-ai
+          - link "Customize" [ref=e26] [cursor=pointer]:
+            - /url: /docs/customize
+          - link "Collaborate" [ref=e27] [cursor=pointer]:
+            - /url: /docs/collaborate
+          - link "Automate" [ref=e28] [cursor=pointer]:
+            - /url: /docs/automate
+          - link "Deploy & Secure" [ref=e29] [cursor=pointer]:
+            - /url: /docs/deploy-secure
+          - link "Kilo Gateway" [ref=e30] [cursor=pointer]:
+            - /url: /docs/gateway
+          - link "KiloClaw" [ref=e31] [cursor=pointer]:
+            - /url: /docs/kiloclaw
+          - link "Contributing" [ref=e32] [cursor=pointer]:
+            - /url: /docs/contributing
+        - generic [ref=e33]:
+          - button "Contributing" [ref=e35]:
+            - text: Contributing
+            - img [ref=e36]
+          - button "Help" [ref=e39]:
+            - text: Help
+            - img [ref=e40]
+      - paragraph [ref=e43]:
+        - text: The all-new Kilo Code extension is here, rebuilt on the
+        - link "Kilo CLI" [ref=e44] [cursor=pointer]:
+          - /url: /docs/code-with-ai/platforms/vscode/whats-new
+        - text: for speed, flexibility, and continued access to 500+ models via the Kilo Gateway →
+    - generic [ref=e45]:
+      - navigation [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - link "Home" [ref=e49] [cursor=pointer]:
+              - /url: /docs/
+              - generic [ref=e50]: Home
+            - button "Get Started" [ref=e51] [cursor=pointer]:
+              - generic [ref=e52]: Get Started
+              - img [ref=e54]
+            - button "Code with AI" [ref=e56] [cursor=pointer]:
+              - generic [ref=e57]: Code with AI
+              - img [ref=e59]
+            - button "Customize" [ref=e61] [cursor=pointer]:
+              - generic [ref=e62]: Customize
+              - img [ref=e64]
+            - button "Collaborate" [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]: Collaborate
+              - img [ref=e69]
+            - button "Automate" [ref=e71] [cursor=pointer]:
+              - generic [ref=e72]: Automate
+              - img [ref=e74]
+            - button "Deploy & Secure" [ref=e76] [cursor=pointer]:
+              - generic [ref=e77]: Deploy & Secure
+              - img [ref=e79]
+            - button "AI Gateway" [ref=e81] [cursor=pointer]:
+              - generic [ref=e82]: AI Gateway
+              - img [ref=e84]
+            - button "KiloClaw" [ref=e86] [cursor=pointer]:
+              - generic [ref=e87]: KiloClaw
+              - img [ref=e89]
+            - button "Contributing" [ref=e91] [cursor=pointer]:
+              - generic [ref=e92]: Contributing
+              - img [ref=e94]
+          - generic [ref=e97]:
+            - generic [ref=e98]:
+              - generic [ref=e99]: Introduction
+              - list [ref=e100]:
+                - listitem [ref=e101]:
+                  - link "Overview" [ref=e102] [cursor=pointer]:
+                    - /url: /docs/getting-started
+                - listitem [ref=e103]:
+                  - link "Installation" [ref=e104] [cursor=pointer]:
+                    - /url: /docs/getting-started/installing
+                - listitem [ref=e105]:
+                  - link "Quickstart" [ref=e106] [cursor=pointer]:
+                    - /url: /docs/getting-started/quickstart
+            - generic [ref=e107]:
+              - generic [ref=e108]: Configuration
+              - list [ref=e109]:
+                - listitem [ref=e110]:
+                  - link "Setup & Authentication" [ref=e111] [cursor=pointer]:
+                    - /url: /docs/getting-started/setup-authentication
+                - listitem [ref=e112]:
+                  - link "Using Kilo for Free" [ref=e113] [cursor=pointer]:
+                    - /url: /docs/getting-started/using-kilo-for-free
+                - listitem [ref=e114]:
+                  - link "Bring Your Own Key (BYOK)" [ref=e115] [cursor=pointer]:
+                    - /url: /docs/getting-started/byok
+                - listitem [ref=e116]:
+                  - link "AI Providers" [ref=e117] [cursor=pointer]:
+                    - /url: /docs/ai-providers
+                - listitem [ref=e118]:
+                  - generic [ref=e119]:
+                    - link "Settings" [ref=e120] [cursor=pointer]:
+                      - /url: /docs/getting-started/settings
+                    - button "Collapse" [ref=e121] [cursor=pointer]:
+                      - img [ref=e122]
+                  - list [ref=e124]:
+                    - listitem [ref=e125]:
+                      - link "Auto-Approving Actions" [ref=e126] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/auto-approving-actions
+                    - listitem [ref=e127]:
+                      - link "Auto Cleanup Legacy" [ref=e128] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/auto-cleanup
+                        - text: Auto Cleanup
+                        - generic [ref=e129]: Legacy
+                    - listitem [ref=e130]:
+                      - link "System Notifications Legacy" [ref=e131] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/system-notifications
+                        - text: System Notifications
+                        - generic [ref=e132]: Legacy
+                    - listitem [ref=e133]:
+                      - link "Sandboxing" [ref=e134] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/sandboxing
+                - listitem [ref=e135]:
+                  - link "Adding Credits" [ref=e136] [cursor=pointer]:
+                    - /url: /docs/getting-started/adding-credits
+                - listitem [ref=e137]:
+                  - link "Cost Efficiency & Model Selection" [ref=e138] [cursor=pointer]:
+                    - /url: /docs/getting-started/rate-limits-and-costs
+                - listitem [ref=e139]:
+                  - link "Cost Controls and Usage Safeguards" [ref=e140] [cursor=pointer]:
+                    - /url: /docs/getting-started/cost-controls-and-usage-safeguards
+            - generic [ref=e141]:
+              - generic [ref=e142]: Help
+              - list [ref=e143]:
+                - listitem [ref=e144]:
+                  - generic [ref=e145]:
+                    - link "FAQ" [ref=e146] [cursor=pointer]:
+                      - /url: /docs/getting-started/faq
+                    - button "Expand" [ref=e147] [cursor=pointer]:
+                      - img [ref=e148]
+                - listitem [ref=e150]:
+                  - link "Migrating from Cursor" [ref=e151] [cursor=pointer]:
+                    - /url: /docs/getting-started/migrating
+                - listitem [ref=e152]:
+                  - generic [ref=e153]:
+                    - link "Troubleshooting" [ref=e154] [cursor=pointer]:
+                      - /url: /docs/getting-started/troubleshooting
+                    - button "Expand" [ref=e155] [cursor=pointer]:
+                      - img [ref=e156]
+                - listitem [ref=e158]:
+                  - link "Using Docs with Agents" [ref=e159] [cursor=pointer]:
+                    - /url: /docs/getting-started/using-docs-with-agents
+      - main [ref=e160]:
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - article [ref=e163]:
+              - heading "Sandboxing" [level=1] [ref=e164]
+              - paragraph [ref=e165]: "The experimental sandbox runs agent shell commands and file-tool writes inside an OS-level sandbox that restricts filesystem writes to your project and Kilo state directories, and can block outbound network access from model-originated commands. It is an extra guardrail on top of the permission system: even if the agent is allowed to run a command, the operating system will deny writes outside the allowed roots."
+              - generic [ref=e166]:
+                - generic [ref=e167]:
+                  - generic [ref=e168]: ⚠️
+                  - generic [ref=e169]: Warning
+                - paragraph [ref=e171]: Sandboxing is experimental. Behavior may change between releases, and it is not available on Windows.
+              - heading "How it works" [level=2] [ref=e172]
+              - paragraph [ref=e173]: "When enabled, the agent's shell commands and file-write tools run confined to a small set of writable directories:"
+              - list [ref=e174]:
+                - listitem [ref=e175]:
+                  - text: Your
+                  - strong [ref=e176]: project directory
+                  - text: (and its worktree, when running in a linked git worktree)
+                - listitem [ref=e177]:
+                  - text: Kilo
+                  - strong [ref=e178]: state directories
+                  - text: ": data, cache, config, state, tmp, bin, log, and repos"
+              - paragraph [ref=e179]:
+                - text: Everything else is denied at the OS level. File
+                - strong [ref=e180]: reads are not confined
+                - text: — the agent can still read anywhere it has permission to. The
+                - code [ref=e181]: .git
+                - text: directory is always denied for writes, regardless of location.
+              - paragraph [ref=e182]: "When network restriction is on (the default), outbound network access is blocked for:"
+              - list [ref=e183]:
+                - listitem [ref=e184]: Shell commands originated by the model
+                - listitem [ref=e185]: First-party HTTP tools (for example web fetch and browser tools)
+              - paragraph [ref=e186]:
+                - text: The following are
+                - strong [ref=e187]: not
+                - text: "affected by the network restriction:"
+              - list [ref=e188]:
+                - listitem [ref=e189]:
+                  - strong [ref=e190]: Provider and model inference traffic
+                  - text: — your LLM API calls keep working
+                - listitem [ref=e191]:
+                  - strong [ref=e192]: Local MCP servers and plugin hooks
+                  - text: — these run outside the restriction
+              - heading "Enable the sandbox" [level=2] [ref=e193]
+              - paragraph [ref=e194]:
+                - text: The sandbox is off by default. Enable it under the
+                - code [ref=e195]: experimental
+                - text: key in
+                - code [ref=e196]: kilo.jsonc
+                - text: ":"
+              - generic [ref=e197]:
+                - button "Copy code to clipboard" [ref=e198] [cursor=pointer]:
+                  - generic [ref=e199]: 
+                - generic [ref=e200]: "{ \"experimental\": { \"sandbox\": true, \"sandbox_restrict_network\": true } }"
+              - table [ref=e202]:
+                - rowgroup [ref=e203]:
+                  - row "Key Default Effect" [ref=e204]:
+                    - columnheader "Key" [ref=e205]
+                    - columnheader "Default" [ref=e206]
+                    - columnheader "Effect" [ref=e207]
+                - rowgroup [ref=e208]:
+                  - row "experimental.sandbox false Turn the sandbox on. When false, no confinement applies." [ref=e209]:
+                    - cell "experimental.sandbox" [ref=e210]:
+                      - code [ref=e211]: experimental.sandbox
+                    - cell "false" [ref=e212]:
+                      - code [ref=e213]: "false"
+                    - cell "Turn the sandbox on. When false, no confinement applies." [ref=e214]:
+                      - text: Turn the sandbox on. When
+                      - code [ref=e215]: "false"
+                      - text: ", no confinement applies."
+                  - row "experimental.sandbox_restrict_network true Block outbound network from model-originated commands and HTTP tools. Set to false to allow network (filesystem confinement still applies)." [ref=e216]:
+                    - cell "experimental.sandbox_restrict_network" [ref=e217]:
+                      - code [ref=e218]: experimental.sandbox_restrict_network
+                    - cell "true" [ref=e219]:
+                      - code [ref=e220]: "true"
+                    - cell "Block outbound network from model-originated commands and HTTP tools. Set to false to allow network (filesystem confinement still applies)." [ref=e221]:
+                      - text: Block outbound network from model-originated commands and HTTP tools. Set to
+                      - code [ref=e222]: "false"
+                      - text: to allow network (filesystem confinement still applies).
+              - paragraph [ref=e223]:
+                - text: "You can also enable it from the VS Code Settings webview: gear icon ("
+                - generic [ref=e224]: 
+                - text: ) →
+                - strong [ref=e225]: Experimental
+                - text: →
+                - strong [ref=e226]: Sandbox
+                - text: . Once the sandbox is on, a dedicated
+                - strong [ref=e227]: Sandboxing
+                - text: tab appears with the
+                - strong [ref=e228]: Restrict Network Access
+                - text: switch for
+                - code [ref=e229]: sandbox_restrict_network
+                - text: .
+              - heading "Toggle per session" [level=2] [ref=e230]
+              - paragraph [ref=e231]:
+                - text: Enabling
+                - code [ref=e232]: experimental.sandbox
+                - text: "sets the default for new sessions, but the setting is ephemeral per session and can be flipped without editing config:"
+              - list [ref=e233]:
+                - listitem [ref=e234]:
+                  - strong [ref=e235]: VS Code
+                  - text: ": a sandbox toggle appears in the prompt input when"
+                  - code [ref=e236]: experimental.sandbox
+                  - text: is on (not available for cloud sessions). The tooltip shows whether filesystem writes and network are restricted.
+                - listitem [ref=e237]:
+                  - strong [ref=e238]: CLI / TUI
+                  - text: ": run the"
+                  - code [ref=e239]: /sandbox
+                  - text: slash command or the
+                  - strong [ref=e240]: Toggle sandbox
+                  - text: palette command. A
+                  - code [ref=e241]: ◆ Sandbox on
+                  - text: indicator appears next to the prompt when active.
+              - paragraph [ref=e242]: Toggling is in-memory and scoped to the current session, so it does not persist across restarts. If the OS sandbox backend is unavailable on your platform, the toggle reports the reason and confinement stays off.
+              - heading "Platform support" [level=2] [ref=e243]
+              - table [ref=e245]:
+                - rowgroup [ref=e246]:
+                  - row "Platform Backend Notes" [ref=e247]:
+                    - columnheader "Platform" [ref=e248]
+                    - columnheader "Backend" [ref=e249]
+                    - columnheader "Notes" [ref=e250]
+                - rowgroup [ref=e251]:
+                  - row "macOS sandbox-exec (seatbelt) Uses the system /usr/bin/sandbox-exec." [ref=e252]:
+                    - cell "macOS" [ref=e253]
+                    - cell "sandbox-exec (seatbelt)" [ref=e254]:
+                      - code [ref=e255]: sandbox-exec
+                      - text: (seatbelt)
+                    - cell "Uses the system /usr/bin/sandbox-exec." [ref=e256]:
+                      - text: Uses the system
+                      - code [ref=e257]: /usr/bin/sandbox-exec
+                      - text: .
+                  - row "Linux Bubblewrap (bwrap) Uses system /usr/bin/bwrap, or a bundled, SHA-256-verified binary. Override the path with the KILO_BWRAP_PATH environment variable. The executable is probed at startup to confirm it can create the sandbox." [ref=e258]:
+                    - cell "Linux" [ref=e259]
+                    - cell "Bubblewrap (bwrap)" [ref=e260]:
+                      - text: Bubblewrap (
+                      - code [ref=e261]: bwrap
+                      - text: )
+                    - cell "Uses system /usr/bin/bwrap, or a bundled, SHA-256-verified binary. Override the path with the KILO_BWRAP_PATH environment variable. The executable is probed at startup to confirm it can create the sandbox." [ref=e262]:
+                      - text: Uses system
+                      - code [ref=e263]: /usr/bin/bwrap
+                      - text: ", or a bundled, SHA-256-verified binary. Override the path with the"
+                      - code [ref=e264]: KILO_BWRAP_PATH
+                      - text: environment variable. The executable is probed at startup to confirm it can create the sandbox.
+                  - row "Windows none The sandbox backend is unavailable on Windows. Enabling the config has no effect." [ref=e265]:
+                    - cell "Windows" [ref=e266]
+                    - cell "none" [ref=e267]
+                    - cell "The sandbox backend is unavailable on Windows. Enabling the config has no effect." [ref=e268]
+              - heading "Limitations" [level=2] [ref=e269]
+              - list [ref=e270]:
+                - listitem [ref=e271]:
+                  - strong [ref=e272]: Windows is not supported.
+                - listitem [ref=e273]:
+                  - text: Local MCP servers and plugin hooks are
+                  - strong [ref=e274]: not
+                  - text: covered by the network restriction.
+                - listitem [ref=e275]:
+                  - text: File
+                  - strong [ref=e276]: reads
+                  - text: are not confined — only writes and shell command effects are.
+                - listitem [ref=e277]: Writable file handles are unavailable while the sandbox is active; writes are performed through a sandboxed worker, so some tools that open files for writing may behave differently.
+                - listitem [ref=e278]: The sandbox is additive to the permission system, not a replacement. Permission rules still apply first.
+            - generic [ref=e281]:
+              - button "Copy page" [ref=e282] [cursor=pointer]:
+                - img [ref=e283]
+                - generic [ref=e286]: Copy page
+              - button "Open markdown" [ref=e287] [cursor=pointer]:
+                - img [ref=e288]
+                - generic [ref=e291]: Open markdown
+              - button "Edit page" [ref=e292] [cursor=pointer]:
+                - img [ref=e293]
+                - generic [ref=e295]: Edit page
+          - generic [ref=e296]:
+            - generic [ref=e297]:
+              - button "Copy page" [ref=e298] [cursor=pointer]:
+                - img [ref=e299]
+                - generic [ref=e302]: Copy page
+              - button "More actions" [ref=e303] [cursor=pointer]:
+                - img [ref=e304]
+            - navigation [ref=e306]:
+              - list [ref=e307]:
+                - listitem [ref=e308]:
+                  - link "How it works" [ref=e309] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings/sandboxing#how-it-works
+                - listitem [ref=e310]:
+                  - link "Enable the sandbox" [ref=e311] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings/sandboxing#enable-the-sandbox
+                - listitem [ref=e312]:
+                  - link "Toggle per session" [ref=e313] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings/sandboxing#toggle-per-session
+                - listitem [ref=e314]:
+                  - link "Platform support" [ref=e315] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings/sandboxing#platform-support
+                - listitem [ref=e316]:
+                  - link "Limitations" [ref=e317] [cursor=pointer]:
+                    - /url: /docs/getting-started/settings/sandboxing#limitations
+  - alert [ref=e318]

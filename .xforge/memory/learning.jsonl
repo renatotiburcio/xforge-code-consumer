@@ -1,0 +1,73 @@
+{
+    "source":  "kilo-code-official-docs",
+    "summary":  "Deep analysis of Kilo Code documentation revealed 7 key pattern categories: agent configuration, skills system, permissions, workflows, custom instructions, custom rules, and prompt engineering. Key lessons: lazy-loading skills, description-based matching, per-directory instructions, URL-based config, think-then-do prompting, sensitive file protection, and composable workflows.",
+    "id":  "LEARN-KILO-CODE-001",
+    "type":  "external-research",
+    "applicabilityScope":  [
+                               "*"
+                           ],
+    "relatedKnowledge":  [
+                             "kilo-agent-patterns-001",
+                             "kilo-skills-patterns-001",
+                             "kilo-permissions-patterns-001",
+                             "kilo-workflows-patterns-001",
+                             "kilo-custom-instructions-001",
+                             "kilo-custom-rules-001",
+                             "kilo-prompt-engineering-001",
+                             "kilo-lessons-001"
+                         ],
+    "tags":  [
+                 "kilo",
+                 "architecture",
+                 "patterns",
+                 "skills",
+                 "permissions",
+                 "prompt-engineering"
+             ],
+    "actionItems":  [
+                        "Implement lazy-loading for skills with large instruction bodies",
+                        "Review skill descriptions for alignment with user request patterns",
+                        "Add per-directory AGENTS.md support for monorepo contexts",
+                        "Implement glob-pattern-based command permissions",
+                        "Add built-in sensitive file protection (.env, .key, .pem)",
+                        "Formalize think-then-do as standard operating procedure"
+                    ],
+    "timestamp":  "2026-06-27T02:54:40.1570820-03:00",
+    "title":  "Kilo Code Architecture and Patterns",
+    "trustScore":  95
+}{
+    "id":  "LEARN-20260627030720",
+    "trustScore":  90,
+    "tags":  [
+                 "kilo-code",
+                 "skills",
+                 "architecture",
+                 "error-patterns",
+                 "golden-rules"
+             ],
+    "type":  "knowledge_ingestion",
+    "source":  "kilo-code-docs-analysis",
+    "description":  "Ingested 7 knowledge entries from Kilo Code docs. Added 5 error patterns (P021-P025). Implemented lazy-loading config, per-directory instructions, sensitive file protection, glob permissions, think-then-do, simple naming.",
+    "applicabilityScope":  [
+                               "*"
+                           ],
+    "metadata":  {
+                     "filesCreated":  [
+                                          ".xforge/config/skill-loading.json"
+                                      ],
+                     "rulesAdded":  [
+                                        "golden-rule-5-lazy-loading",
+                                        "goldon-rule-6-per-directory",
+                                        "golden-rule-7-sensitive-files",
+                                        "golden-rule-8-glob-permissions",
+                                        "golden-rule-9-think-then-do",
+                                        "golden-rule-10-simple-naming"
+                                    ],
+                     "knowledgeEntries":  7,
+                     "errorPatternsAdded":  5,
+                     "filesModified":  [
+                                           ".kilo/rules/01-xforge-golden-rules.md",
+                                           ".kilo/rules/00-xforge-rule-index.md"
+                                       ]
+                 }
+}

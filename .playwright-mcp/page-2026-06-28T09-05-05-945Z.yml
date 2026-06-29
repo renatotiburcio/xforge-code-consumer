@@ -1,0 +1,93 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge Code AI - NOME_DA_PAGINA
+      - generic [ref=e25]:
+        - button "Historico de sessoes" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Nova sessao" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e33]:
+      - combobox "Modo" [ref=e34] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+        - option "Debug"
+      - combobox "Provider/Modelo" [ref=e35] [cursor=pointer]:
+        - option "OpenRouter / claude-sonnet-4" [selected]
+        - option "OpenRouter / gpt-4o"
+        - option "Ollama / qwen2.5:72b"
+        - option "Anthropic / claude-opus-4"
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]: Contexto
+          - generic [ref=e42]: 45%
+        - generic [ref=e43]:
+          - generic [ref=e44]: Sessao
+          - generic [ref=e45]: 12:34
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: Tokens
+          - generic [ref=e49]: 859 / 128k
+        - generic [ref=e50]:
+          - generic [ref=e51]: Custo
+          - generic [ref=e52]: $0.02
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - generic [ref=e55]: Ferramentas
+          - generic [ref=e56]: "5"
+        - generic [ref=e57]:
+          - generic [ref=e58]: Mensagens
+          - generic [ref=e59]: "8"
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]: U
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - generic [ref=e65]: Voce
+            - generic [ref=e66]: 12 tokens
+          - generic [ref=e67]: Mensagem do usuario
+      - generic [ref=e68]:
+        - generic [ref=e69]: X
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]: XForge
+            - generic [ref=e73]: 847 tokens
+          - generic [ref=e74]: Resposta do assistente
+    - generic [ref=e75]:
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha) / comandos @ contexto" [ref=e77]
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - button "Entrada de audio" [ref=e81] [cursor=pointer]:
+            - img [ref=e82]
+          - button "Anexar imagem" [ref=e85] [cursor=pointer]:
+            - img [ref=e86]
+          - button "Melhorar prompt" [ref=e90] [cursor=pointer]:
+            - img [ref=e91]
+          - button "Compactar contexto" [ref=e94] [cursor=pointer]:
+            - img [ref=e95]
+        - generic [ref=e100]:
+          - button "Dicas (atalhos)" [ref=e101] [cursor=pointer]:
+            - img [ref=e102]
+          - button "Aprovacao automatica" [ref=e105] [cursor=pointer]:
+            - img [ref=e106]
+          - button "Enviar (Enter)" [ref=e109] [cursor=pointer]:
+            - img [ref=e110]
+    - generic [ref=e113]:
+      - generic [ref=e114]: Sessao 1 · 5 ferramentas · 859 tokens
+      - generic [ref=e115]: OK
+  - generic [ref=e116]:
+    - heading "NOME_DA_PAGINA" [level=1] [ref=e119]
+    - paragraph [ref=e121]: Conteudo da pagina aqui

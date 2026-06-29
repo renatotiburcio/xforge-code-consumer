@@ -1,0 +1,357 @@
+- generic [active]:
+  - generic:
+    - banner [ref=e1]:
+      - generic [ref=e2]:
+        - link "Kilo Code Logo Kilo CodeDOCS" [ref=e3] [cursor=pointer]:
+          - /url: /docs/
+          - img "Kilo Code Logo" [ref=e4]
+          - generic [ref=e6]: Kilo CodeDOCS
+        - button "Search (Control+k)" [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]:
+            - img [ref=e11]
+            - generic [ref=e14]: Search
+          - generic [ref=e15]:
+            - generic [ref=e16]: Ctrl
+            - generic [ref=e17]: K
+        - generic [ref=e18]:
+          - button "Using system theme" [ref=e19] [cursor=pointer]:
+            - img [ref=e20]
+          - link "GitHub" [ref=e22] [cursor=pointer]:
+            - /url: https://kilo.ai/github
+          - link "Sign in" [ref=e23] [cursor=pointer]:
+            - /url: https://app.kilo.ai
+      - generic [ref=e24]:
+        - navigation [ref=e25]:
+          - link "Get Started" [ref=e26] [cursor=pointer]:
+            - /url: /docs/getting-started
+          - link "Code with AI" [ref=e27] [cursor=pointer]:
+            - /url: /docs/code-with-ai
+            - text: Code with AI
+          - link "Customize" [ref=e29] [cursor=pointer]:
+            - /url: /docs/customize
+          - link "Collaborate" [ref=e30] [cursor=pointer]:
+            - /url: /docs/collaborate
+          - link "Automate" [ref=e31] [cursor=pointer]:
+            - /url: /docs/automate
+          - link "Deploy & Secure" [ref=e32] [cursor=pointer]:
+            - /url: /docs/deploy-secure
+          - link "Kilo Gateway" [ref=e33] [cursor=pointer]:
+            - /url: /docs/gateway
+          - link "KiloClaw" [ref=e34] [cursor=pointer]:
+            - /url: /docs/kiloclaw
+          - link "Contributing" [ref=e35] [cursor=pointer]:
+            - /url: /docs/contributing
+        - generic [ref=e36]:
+          - button "Contributing" [ref=e38]:
+            - text: Contributing
+            - img [ref=e39]
+          - button "Help" [ref=e42]:
+            - text: Help
+            - img [ref=e43]
+      - paragraph [ref=e46]:
+        - text: The all-new Kilo Code extension is here, rebuilt on the
+        - link "Kilo CLI" [ref=e47] [cursor=pointer]:
+          - /url: /docs/code-with-ai/platforms/vscode/whats-new
+        - text: for speed, flexibility, and continued access to 500+ models via the Kilo Gateway →
+    - generic [ref=e48]:
+      - navigation [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - link "Home" [ref=e52] [cursor=pointer]:
+              - /url: /docs/
+              - generic [ref=e53]: Home
+            - button "Get Started" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]: Get Started
+              - img [ref=e57]
+            - button "Code with AI" [ref=e59] [cursor=pointer]:
+              - generic [ref=e60]: Code with AI
+              - img [ref=e62]
+            - button "Customize" [ref=e64] [cursor=pointer]:
+              - generic [ref=e65]: Customize
+              - img [ref=e67]
+            - button "Collaborate" [ref=e69] [cursor=pointer]:
+              - generic [ref=e70]: Collaborate
+              - img [ref=e72]
+            - button "Automate" [ref=e74] [cursor=pointer]:
+              - generic [ref=e75]: Automate
+              - img [ref=e77]
+            - button "Deploy & Secure" [ref=e79] [cursor=pointer]:
+              - generic [ref=e80]: Deploy & Secure
+              - img [ref=e82]
+            - button "AI Gateway" [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]: AI Gateway
+              - img [ref=e87]
+            - button "KiloClaw" [ref=e89] [cursor=pointer]:
+              - generic [ref=e90]: KiloClaw
+              - img [ref=e92]
+            - button "Contributing" [ref=e94] [cursor=pointer]:
+              - generic [ref=e95]: Contributing
+              - img [ref=e97]
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e102]: Platforms
+              - list [ref=e103]:
+                - listitem [ref=e104]:
+                  - link "Overview" [ref=e105] [cursor=pointer]:
+                    - /url: /docs/code-with-ai
+                - listitem [ref=e106]:
+                  - generic [ref=e107]:
+                    - link "VS Code Extension" [ref=e108] [cursor=pointer]:
+                      - /url: /docs/code-with-ai/platforms/vscode
+                    - button "Expand" [ref=e109] [cursor=pointer]:
+                      - img [ref=e110]
+                - listitem [ref=e112]:
+                  - link "JetBrains Extension" [ref=e113] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/platforms/jetbrains
+                - listitem [ref=e114]:
+                  - generic [ref=e115]:
+                    - link "CLI" [ref=e116] [cursor=pointer]:
+                      - /url: /docs/code-with-ai/platforms/cli
+                    - button "Expand" [ref=e117] [cursor=pointer]:
+                      - img [ref=e118]
+                - listitem [ref=e120]:
+                  - generic [ref=e121]:
+                    - link "Kilo Connect" [ref=e122] [cursor=pointer]:
+                      - /url: /docs/code-with-ai/platforms/kilo-connect
+                    - button "Expand" [ref=e123] [cursor=pointer]:
+                      - img [ref=e124]
+                - listitem [ref=e126]:
+                  - link "Cloud Agent" [ref=e127] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/platforms/cloud-agent
+                - listitem [ref=e128]:
+                  - link "Mobile Apps" [ref=e129] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/platforms/mobile
+                - listitem [ref=e130]:
+                  - link "App Builder" [ref=e131] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/app-builder
+                - listitem [ref=e132]:
+                  - generic [ref=e133]:
+                    - link "Gas Town by Kilo" [ref=e134] [cursor=pointer]:
+                      - /url: /docs/code-with-ai/gastown
+                    - button "Expand" [ref=e135] [cursor=pointer]:
+                      - img [ref=e136]
+            - generic [ref=e138]:
+              - generic [ref=e139]: Chat & Context
+              - list [ref=e140]:
+                - listitem [ref=e141]:
+                  - link "Chat Interface" [ref=e142] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/agents/chat-interface
+                - listitem [ref=e143]:
+                  - link "Context & Mentions" [ref=e144] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/agents/context-mentions
+                - listitem [ref=e145]:
+                  - link "Model Selection" [ref=e146] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/agents/model-selection
+                - listitem [ref=e147]:
+                  - link "Auto Model" [ref=e148] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/agents/auto-model
+                - listitem [ref=e149]:
+                  - link "Custom Models New" [ref=e150] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/agents/custom-models
+                    - text: Custom Models
+                    - generic [ref=e151]: New
+                - listitem [ref=e152]:
+                  - generic [ref=e153]:
+                    - link "Agents" [ref=e154] [cursor=pointer]:
+                      - /url: /docs/code-with-ai/agents/using-agents
+                    - button "Expand" [ref=e155] [cursor=pointer]:
+                      - img [ref=e156]
+            - generic [ref=e158]:
+              - generic [ref=e159]: Productivity Tools
+              - list [ref=e160]:
+                - listitem [ref=e161]:
+                  - generic [ref=e162]:
+                    - link "Autocomplete" [ref=e163] [cursor=pointer]:
+                      - /url: /docs/code-with-ai/features/autocomplete
+                    - button "Expand" [ref=e164] [cursor=pointer]:
+                      - img [ref=e165]
+                - listitem [ref=e167]:
+                  - link "Code Actions" [ref=e168] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/features/code-actions
+                - listitem [ref=e169]:
+                  - link "Enhance Prompt" [ref=e170] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/features/enhance-prompt
+                - listitem [ref=e171]:
+                  - link "Git Commit Generation" [ref=e172] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/features/git-commit-generation
+                - listitem [ref=e173]:
+                  - link "Voice Transcription" [ref=e174] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/features/speech-to-text
+                - listitem [ref=e175]:
+                  - link "Message Feedback" [ref=e176] [cursor=pointer]:
+                    - /url: /docs/code-with-ai/features/message-feedback
+                - listitem [ref=e177]:
+                  - generic [ref=e178]:
+                    - link "Agent Behavior" [ref=e179] [cursor=pointer]:
+                      - /url: /docs/code-with-ai/features/browser-use
+                    - button "Expand" [ref=e180] [cursor=pointer]:
+                      - img [ref=e181]
+      - main [ref=e183]:
+        - generic [ref=e185]:
+          - article [ref=e186]:
+            - heading "Code with AI" [level=1] [ref=e187]
+            - paragraph [ref=e190]: Kilo Code is your AI pair programmer that works in your IDE, terminal, or browser. Generate code, refactor, debug, and ship faster with AI that understands your codebase and context.
+            - heading "Getting Started" [level=2] [ref=e191]
+            - paragraph [ref=e192]: "New to Kilo Code? Start here to understand the core concepts:"
+            - list [ref=e193]:
+              - listitem [ref=e194]:
+                - link "Install Kilo Code" [ref=e195] [cursor=pointer]:
+                  - /url: /docs/getting-started/installing
+                  - strong [ref=e196]: Install Kilo Code
+                - text: — Get started in VS Code, JetBrains, CLI, or mobile
+              - listitem [ref=e197]:
+                - link "Connect an AI Provider" [ref=e198] [cursor=pointer]:
+                  - /url: /docs/ai-providers
+                  - strong [ref=e199]: Connect an AI Provider
+                - text: — Set up your preferred model
+              - listitem [ref=e200]:
+                - link "Quick Start Guide" [ref=e201] [cursor=pointer]:
+                  - /url: /docs/getting-started/quickstart
+                  - strong [ref=e202]: Quick Start Guide
+                - text: — Run your first task in minutes
+            - heading "Platforms" [level=2] [ref=e203]
+            - paragraph [ref=e204]: "Use Kilo Code wherever you work:"
+            - list [ref=e205]:
+              - listitem [ref=e206]:
+                - link "VS Code" [ref=e207] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/platforms/vscode
+                  - strong [ref=e208]: VS Code
+                - text: — The most popular IDE integration
+              - listitem [ref=e209]:
+                - link "JetBrains" [ref=e210] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/platforms/jetbrains
+                  - strong [ref=e211]: JetBrains
+                - text: — IntelliJ, PyCharm, WebStorm, and more
+              - listitem [ref=e212]:
+                - link "CLI" [ref=e213] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/platforms/cli
+                  - strong [ref=e214]: CLI
+                - text: — Terminal-based AI coding for scripts and automation
+              - listitem [ref=e215]:
+                - link "Cloud Agent" [ref=e216] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/platforms/cloud-agent
+                  - strong [ref=e217]: Cloud Agent
+                - text: — Run Kilo in the cloud
+              - listitem [ref=e218]:
+                - link "Mobile Apps" [ref=e219] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/platforms/mobile
+                  - strong [ref=e220]: Mobile Apps
+                - text: — iOS and Android support
+              - listitem [ref=e221]:
+                - link "Slack" [ref=e222] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/platforms/slack
+                  - strong [ref=e223]: Slack
+                - text: — Chat with Kilo in your workspace
+              - listitem [ref=e224]:
+                - link "App Builder" [ref=e225] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/app-builder
+                  - strong [ref=e226]: App Builder
+                - text: — Create full-stack applications with AI
+            - heading "Working with Agents" [level=2] [ref=e227]
+            - paragraph [ref=e228]: "Kilo uses specialized agents to help with different tasks:"
+            - list [ref=e229]:
+              - listitem [ref=e230]:
+                - link "Chat Interface" [ref=e231] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/agents/chat-interface
+                  - strong [ref=e232]: Chat Interface
+                - text: — Conversation-based coding
+              - listitem [ref=e233]:
+                - link "Using Agents" [ref=e234] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/agents/using-agents
+                  - strong [ref=e235]: Using Agents
+                - text: — Switch between Code, Ask, Plan, Debug, and other agents
+              - listitem [ref=e236]:
+                - link "Model Selection" [ref=e237] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/agents/model-selection
+                  - strong [ref=e238]: Model Selection
+                - text: — Choose the right AI model for each task
+              - listitem [ref=e239]:
+                - link "Context Mentions" [ref=e240] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/agents/context-mentions
+                  - strong [ref=e241]: Context Mentions
+                - text: — Reference files, functions, and symbols
+              - listitem [ref=e242]:
+                - link "Orchestrator Mode" [ref=e243] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/agents/orchestrator-mode
+                  - strong [ref=e244]: Orchestrator Mode
+                - text: — Legacy orchestration (now built into all agents)
+            - heading "Features" [level=2] [ref=e245]
+            - paragraph [ref=e246]: "Core capabilities to boost your productivity:"
+            - list [ref=e247]:
+              - listitem [ref=e248]:
+                - link "Autocomplete" [ref=e249] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/autocomplete
+                  - strong [ref=e250]: Autocomplete
+                - text: — Inline code suggestions as you type
+              - listitem [ref=e251]:
+                - link "Fast Edits" [ref=e252] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/fast-edits
+                  - strong [ref=e253]: Fast Edits
+                - text: — Quick file modifications
+              - listitem [ref=e254]:
+                - link "Code Actions" [ref=e255] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/code-actions
+                  - strong [ref=e256]: Code Actions
+                - text: — AI-powered refactoring and fixes
+              - listitem [ref=e257]:
+                - link "Task & Todo Lists" [ref=e258] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/task-todo-list
+                  - strong [ref=e259]: Task & Todo Lists
+                - text: — Break down complex tasks
+              - listitem [ref=e260]:
+                - link "Checkpoints" [ref=e261] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/checkpoints
+                  - strong [ref=e262]: Checkpoints
+                - text: — Save and restore working states
+              - listitem [ref=e263]:
+                - link "Browser Use" [ref=e264] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/browser-use
+                  - strong [ref=e265]: Browser Use
+                - text: — Automate web interactions
+              - listitem [ref=e266]:
+                - link "Enhance Prompt" [ref=e267] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/enhance-prompt
+                  - strong [ref=e268]: Enhance Prompt
+                - text: — Improve your prompts automatically
+              - listitem [ref=e269]:
+                - link "Git Commit Generation" [ref=e270] [cursor=pointer]:
+                  - /url: /docs/code-with-ai/features/git-commit-generation
+                  - strong [ref=e271]: Git Commit Generation
+                - text: — AI-powered commit messages
+            - heading "Next Steps" [level=2] [ref=e272]
+            - list [ref=e273]:
+              - listitem [ref=e274]:
+                - text: Explore
+                - link "Customize" [ref=e275] [cursor=pointer]:
+                  - /url: /docs/customize
+                  - strong [ref=e276]: Customize
+                - text: to tailor Kilo to your workflow
+              - listitem [ref=e277]:
+                - text: Learn about
+                - link "Collaborating" [ref=e278] [cursor=pointer]:
+                  - /url: /docs/collaborate
+                  - strong [ref=e279]: Collaborating
+                - text: with your team
+              - listitem [ref=e280]:
+                - text: Set up
+                - link "Automate" [ref=e281] [cursor=pointer]:
+                  - /url: /docs/automate
+                  - strong [ref=e282]: Automate
+                - text: for CI/CD integration
+              - listitem [ref=e283]:
+                - text: Configure
+                - link "Deploy & Secure" [ref=e284] [cursor=pointer]:
+                  - /url: /docs/deploy-secure
+                  - strong [ref=e285]: Deploy & Secure
+                - text: deployments
+          - generic [ref=e288]:
+            - button "Copy page" [ref=e289] [cursor=pointer]:
+              - img [ref=e290]
+              - generic [ref=e293]: Copy page
+            - button "Open markdown" [ref=e294] [cursor=pointer]:
+              - img [ref=e295]
+              - generic [ref=e298]: Open markdown
+            - button "Edit page" [ref=e299] [cursor=pointer]:
+              - img [ref=e300]
+              - generic [ref=e302]: Edit page
+  - alert [ref=e303]

@@ -1,0 +1,67 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge Code AI - NOME_DA_PAGINA
+      - button "Ferramentas" [ref=e26] [cursor=pointer]:
+        - img [ref=e27]
+    - generic [ref=e29]:
+      - combobox "Agente" [ref=e30] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+      - combobox "Provider" [ref=e32] [cursor=pointer]:
+        - option "OpenRouter" [selected]
+        - option "Ollama"
+        - option "Anthropic"
+        - option "OpenAI"
+      - combobox "Modelo" [ref=e33] [cursor=pointer]:
+        - option "claude-sonnet-4" [selected]
+        - option "gpt-4o"
+        - option "qwen2.5:72b"
+        - option "deepseek-r1"
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: U
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: Voce
+            - generic [ref=e40]: 12 tokens
+          - generic [ref=e41]: Mensagem do usuario aqui
+      - generic [ref=e42]:
+        - generic [ref=e43]: X
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - generic [ref=e46]: XForge
+            - generic [ref=e47]: Code
+            - generic [ref=e48]: 847 tokens
+          - generic [ref=e49]: Resposta do assistente aqui
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - generic [ref=e52]: Produto.cs
+        - generic [ref=e53]: Controllers/
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha) / comandos @ contexto" [ref=e54]
+      - generic [ref=e55]:
+        - button "Parar execucao" [ref=e57]:
+          - img
+        - generic [ref=e59]: claude-sonnet-4 · $0.02
+    - generic [ref=e60]:
+      - generic [ref=e61]: Sessao 1 · 5 ferramentas · 859 tokens · $0.02
+      - generic [ref=e62]: OK
+  - generic [ref=e63]:
+    - generic [ref=e65]:
+      - img "XF" [ref=e66]
+      - heading "NOME_DA_PAGINA" [level=1] [ref=e67]
+    - generic [ref=e68]:
+      - paragraph [ref=e69]: Conteudo da pagina
+      - paragraph [ref=e70]: Substitua este bloco pelo conteudo real

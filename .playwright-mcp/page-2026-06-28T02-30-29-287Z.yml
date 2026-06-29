@@ -1,0 +1,185 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge
+      - generic [ref=e25]:
+        - button "Historico" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Config" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - img "XF" [ref=e36]
+        - generic [ref=e37]: XForge
+      - button "Config" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+    - generic [ref=e42]:
+      - combobox [ref=e43] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+      - combobox [ref=e45] [cursor=pointer]:
+        - option "OpenRouter" [selected]
+        - option "Ollama"
+    - generic [ref=e47]:
+      - generic [ref=e48]: U
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]: Voce
+          - generic [ref=e52]: 5 tokens
+        - generic [ref=e53]: Quero inicializar o projeto com stack .NET e provider local
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: Comandos
+          - generic [ref=e58] [cursor=pointer]:
+            - img [ref=e60]
+            - generic [ref=e62]:
+              - generic [ref=e63]: /init
+              - generic [ref=e64]: Inicializar projeto XForge com deteccao de stack
+            - generic [ref=e65]:
+              - img [ref=e66]
+              - text: 5 flags
+          - generic [ref=e68] [cursor=pointer]:
+            - img [ref=e70]
+            - generic [ref=e72]:
+              - generic [ref=e73]: /doctor
+              - generic [ref=e74]: "Diagnostico: build, testes, seguranca, docs"
+            - generic [ref=e75]:
+              - img [ref=e76]
+              - text: 3 flags
+          - generic [ref=e78] [cursor=pointer]:
+            - img [ref=e80]
+            - generic [ref=e83]:
+              - generic [ref=e84]: /compact
+              - generic [ref=e85]: Compactar contexto da sessao
+          - generic [ref=e86] [cursor=pointer]:
+            - img [ref=e88]
+            - generic [ref=e91]:
+              - generic [ref=e92]: /context
+              - generic [ref=e93]: Gerenciar arquivos e diretorios de contexto
+            - generic [ref=e94]:
+              - img [ref=e95]
+              - text: 2 flags
+          - generic [ref=e97] [cursor=pointer]:
+            - img [ref=e99]
+            - generic [ref=e102]:
+              - generic [ref=e103]: /help
+              - generic [ref=e104]: Ajuda, atalhos e documentacao
+            - generic [ref=e105]: F1
+        - generic [ref=e106]:
+          - generic [ref=e107]: Conselho dos Genios
+          - generic [ref=e108] [cursor=pointer]:
+            - img [ref=e110]
+            - generic [ref=e113]:
+              - generic [ref=e114]: /genius
+              - generic [ref=e115]: Consultar Conselho dos Genios
+            - generic [ref=e116]:
+              - img [ref=e117]
+              - text: 4 flags
+          - generic [ref=e119] [cursor=pointer]:
+            - img [ref=e121]
+            - generic [ref=e124]:
+              - generic [ref=e125]: /review
+              - generic [ref=e126]: Code review com 5 Guardioes
+            - generic [ref=e127]:
+              - img [ref=e128]
+              - text: 2 flags
+        - generic [ref=e130]:
+          - generic [ref=e131]: Qualidade
+          - generic [ref=e132] [cursor=pointer]:
+            - img [ref=e134]
+            - generic [ref=e136]:
+              - generic [ref=e137]: /quality
+              - generic [ref=e138]: Rodar quality gates
+            - generic [ref=e139]:
+              - img [ref=e140]
+              - text: 4 flags
+      - textbox "Digite / para comandos, @ contexto (Enter envia)" [ref=e142]: /init
+    - generic [ref=e143]:
+      - button "Parar execucao" [ref=e144] [cursor=pointer]:
+        - img [ref=e145]
+      - generic [ref=e147]: 12 comandos · 6 com flags
+      - generic [ref=e148]: Tab para autocomplete
+  - generic [ref=e149]:
+    - generic [ref=e150]:
+      - generic [ref=e151]: "Estado 2: Intellisense de flags aberto (hover ou clique no badge \"5 flags\")"
+      - generic [ref=e152]: PREVIEW
+    - generic [ref=e153]:
+      - generic [ref=e155]:
+        - img "XF" [ref=e156]
+        - generic [ref=e157]: XForge
+      - generic [ref=e158]: 模拟
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - generic [ref=e161]: /init
+        - generic [ref=e162]: "--stack"
+        - generic [ref=e163]: dotnet
+        - generic [ref=e164]: "--provider"
+        - generic [ref=e165]: ollama
+        - generic [ref=e166]: "|"
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - generic [ref=e169]: /init
+          - generic [ref=e170]: Inicializar projeto XForge
+          - generic [ref=e171] [cursor=pointer]: ESC
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - generic [ref=e174]: "--stack"
+            - generic [ref=e175]: requerido
+            - generic [ref=e176]:
+              - generic [ref=e177]: Stack do projeto. Define padroes, skills e templates
+              - generic [ref=e178]:
+                - generic [ref=e179] [cursor=pointer]: dotnet
+                - generic [ref=e180] [cursor=pointer]: node
+                - generic [ref=e181] [cursor=pointer]: python
+                - generic [ref=e182] [cursor=pointer]: go
+                - generic [ref=e183] [cursor=pointer]: rust
+          - generic [ref=e184]:
+            - generic [ref=e185]: "--provider"
+            - generic [ref=e186]: opcional
+            - generic [ref=e187]:
+              - generic [ref=e188]: "Provider de IA padrao. Default: openrouter"
+              - generic [ref=e189]:
+                - generic [ref=e190] [cursor=pointer]: openrouter
+                - generic [ref=e191] [cursor=pointer]: ollama
+                - generic [ref=e192] [cursor=pointer]: anthropic
+                - generic [ref=e193] [cursor=pointer]: openai
+                - generic [ref=e194] [cursor=pointer]: azure
+              - generic [ref=e195]: "default: openrouter"
+          - generic [ref=e196]:
+            - generic [ref=e197]: "--template"
+            - generic [ref=e198]: opcional
+            - generic [ref=e199]:
+              - generic [ref=e200]: Template de inicializacao. Define estrutura de pastas e configs
+              - generic [ref=e201]:
+                - generic [ref=e202] [cursor=pointer]: enterprise-v2
+                - generic [ref=e203] [cursor=pointer]: minimal
+                - generic [ref=e204] [cursor=pointer]: api-only
+              - generic [ref=e205]: "default: enterprise-v2"
+          - generic [ref=e206]:
+            - generic [ref=e207]: "--absorb-docs"
+            - generic [ref=e208]: opcional
+            - generic [ref=e209]:
+              - generic [ref=e210]: Caminho para pasta com documentos legados a absorver
+              - generic [ref=e211]: "tipo: caminho de pasta"
+          - generic [ref=e212]:
+            - generic [ref=e213]: "--analyze-existing"
+            - generic [ref=e214]: flag
+            - generic [ref=e215]:
+              - generic [ref=e216]: Analisa codigo existente e aprende padroes (sem sobrescrever)
+              - generic [ref=e217]: "default: false"
+    - generic [ref=e219]:
+      - generic [ref=e220]: "Tab: preencher · Ctrl+Space: flags · Esc: fechar"
+      - generic [ref=e221]: 5 flags (1 requerida)

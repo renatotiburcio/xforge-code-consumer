@@ -1,106 +1,242 @@
 {
-  "version": "1.0.0",
-  "lastUpdated": "2026-06-25T20:38:03.295Z",
-  "nodes": {
-    "errors": [
-      {
-        "id": "n1",
-        "type": "error",
-        "label": "Build Error CS0246",
-        "category": "build"
-      },
-      {
-        "id": "n3",
-        "type": "error",
-        "label": "NullReferenceException",
-        "category": "runtime"
-      }
-    ],
-    "solutions": [
-      {
-        "lessonId": "LESSON-TEST-001",
-        "type": "solucao-validada",
-        "taskType": "testar",
-        "title": "Test lesson",
-        "trustScore": 50,
-        "tags": [
-          "test"
-        ]
-      },
-      {
-        "lessonId": "LESSON-TEST-001",
-        "type": "solucao-validada",
-        "taskType": "testar",
-        "title": "Test lesson",
-        "trustScore": 50,
-        "tags": [
-          "test"
-        ]
-      },
-      {
-        "lessonId": "LESSON-TEST-001",
-        "type": "solucao-validada",
-        "taskType": "testar",
-        "title": "Test lesson",
-        "trustScore": 50,
-        "tags": [
-          "test"
-        ]
-      },
-      {
-        "lessonId": "LESSON-TEST-001",
-        "type": "solucao-validada",
-        "taskType": "testar",
-        "title": "Test lesson",
-        "trustScore": 50,
-        "tags": [
-          "test"
-        ]
-      },
-      {
-        "lessonId": "LESSON-TEST-001",
-        "type": "solucao-validada",
-        "taskType": "testar",
-        "title": "Test lesson",
-        "trustScore": 50,
-        "tags": [
-          "test"
-        ]
-      },
-      {
-        "lessonId": "LESSON-TEST-001",
-        "type": "solucao-validada",
-        "taskType": "testar",
-        "title": "Test lesson",
-        "trustScore": 50,
-        "tags": [
-          "test"
-        ]
-      }
-    ],
-    "antiPatterns": [],
-    "goldenRules": []
-  },
-  "edges": [
-    {
-      "source": "n1",
-      "target": "n2",
-      "type": "resolves"
-    },
-    {
-      "source": "n3",
-      "target": "n4",
-      "type": "resolves"
-    }
-  ],
-  "stats": {
-    "totalErrors": 2,
-    "resolvedErrors": 2,
-    "topCategories": []
-  },
-  "indexes": {
-    "byTaskType": {},
-    "byErrorType": {},
-    "byTag": {}
-  }
+    "patterns":  [
+                     {
+                         "id":  "P001",
+                         "description":  "Type or namespace not found",
+                         "errorType":  "CS0246",
+                         "lastSeen":  "2026-06-25",
+                         "frequency":  5,
+                         "solution":  "Add missing using directive or NuGet package reference",
+                         "category":  "build"
+                     },
+                     {
+                         "id":  "P002",
+                         "description":  "Object reference is null",
+                         "errorType":  "NullReferenceException",
+                         "lastSeen":  "2026-06-26",
+                         "frequency":  8,
+                         "solution":  "Add null check before accessing members",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P003",
+                         "description":  "Definition not found for method/property",
+                         "errorType":  "CS1061",
+                         "lastSeen":  "2026-06-24",
+                         "frequency":  3,
+                         "solution":  "Check method name spelling or add using for extension method namespace",
+                         "category":  "build"
+                     },
+                     {
+                         "id":  "P004",
+                         "description":  "Operation is not valid due to current state",
+                         "errorType":  "InvalidOperationException",
+                         "lastSeen":  "2026-06-25",
+                         "frequency":  4,
+                         "solution":  "Check object state before operation, use guard clauses",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P005",
+                         "description":  "Database query failed",
+                         "errorType":  "SqlException",
+                         "lastSeen":  "2026-06-23",
+                         "frequency":  3,
+                         "solution":  "Check connection string, verify table/column names exist",
+                         "category":  "data"
+                     },
+                     {
+                         "id":  "P006",
+                         "description":  "HTTP request failed",
+                         "errorType":  "HttpRequestException",
+                         "lastSeen":  "2026-06-22",
+                         "frequency":  2,
+                         "solution":  "Check URL, network connectivity, and authentication",
+                         "category":  "network"
+                     },
+                     {
+                         "id":  "P007",
+                         "description":  "Access to resource denied",
+                         "errorType":  "UnauthorizedAccessException",
+                         "lastSeen":  "2026-06-21",
+                         "frequency":  2,
+                         "solution":  "Check file/folder permissions, run with appropriate privileges",
+                         "category":  "security"
+                     },
+                     {
+                         "id":  "P008",
+                         "description":  "Input string was not in correct format",
+                         "errorType":  "FormatException",
+                         "lastSeen":  "2026-06-20",
+                         "frequency":  3,
+                         "solution":  "Validate input format before parsing, use TryParse",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P009",
+                         "description":  "Operation timed out",
+                         "errorType":  "TimeoutException",
+                         "lastSeen":  "2026-06-24",
+                         "frequency":  4,
+                         "solution":  "Increase timeout or optimize operation, add retry policy",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P010",
+                         "description":  "File not found",
+                         "errorType":  "FileNotFoundException",
+                         "lastSeen":  "2026-06-22",
+                         "frequency":  2,
+                         "solution":  "Verify file path exists, check CopyToOutputDirectory setting",
+                         "category":  "build"
+                     },
+                     {
+                         "id":  "P011",
+                         "description":  "Variable not in current scope",
+                         "errorType":  "CS0103",
+                         "lastSeen":  "2026-06-20",
+                         "frequency":  1,
+                         "solution":  "Check variable declaration scope, verify method signature",
+                         "category":  "build"
+                     },
+                     {
+                         "id":  "P012",
+                         "description":  "Async operation was cancelled",
+                         "errorType":  "TaskCanceledException",
+                         "lastSeen":  "2026-06-25",
+                         "frequency":  3,
+                         "solution":  "Check CancellationToken propagation, handle cancellation gracefully",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P013",
+                         "description":  "JSON deserialization failed",
+                         "errorType":  "JsonException",
+                         "lastSeen":  "2026-06-23",
+                         "frequency":  2,
+                         "solution":  "Validate JSON structure matches model, check property names",
+                         "category":  "data"
+                     },
+                     {
+                         "id":  "P014",
+                         "description":  "I/O error occurred",
+                         "errorType":  "IOException",
+                         "lastSeen":  "2026-06-21",
+                         "frequency":  2,
+                         "solution":  "Check file is not locked by another process, retry",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P015",
+                         "description":  "Type in namespace not found",
+                         "errorType":  "CS0234",
+                         "lastSeen":  "2026-06-26",
+                         "frequency":  4,
+                         "solution":  "Add NuGet package reference for the missing namespace",
+                         "category":  "build"
+                     },
+                     {
+                         "id":  "P016",
+                         "description":  "PostgreSQL query failed",
+                         "errorType":  "NpgsqlException",
+                         "lastSeen":  "2026-06-24",
+                         "frequency":  2,
+                         "solution":  "Check SQL syntax, verify table exists, check connection",
+                         "category":  "data"
+                     },
+                     {
+                         "id":  "P017",
+                         "description":  "Argument type mismatch",
+                         "errorType":  "CS1503",
+                         "lastSeen":  "2026-06-22",
+                         "frequency":  3,
+                         "solution":  "Check method parameter types, add explicit cast if needed",
+                         "category":  "build"
+                     },
+                     {
+                         "id":  "P018",
+                         "description":  "Array index out of bounds",
+                         "errorType":  "IndexOutOfRangeException",
+                         "lastSeen":  "2026-06-19",
+                         "frequency":  1,
+                         "solution":  "Check array length before access, validate index calculation",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P019",
+                         "description":  "Division by zero",
+                         "errorType":  "DivideByZeroException",
+                         "lastSeen":  "2026-06-18",
+                         "frequency":  1,
+                         "solution":  "Add zero-check before division",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P020",
+                         "description":  "Infinite recursion detected",
+                         "errorType":  "StackOverflowException",
+                         "lastSeen":  "2026-06-17",
+                         "frequency":  1,
+                         "solution":  "Check recursive method has proper base case",
+                         "category":  "runtime"
+                     },
+                     {
+                         "id":  "P021",
+                         "description":  "Skill not loading into context",
+                         "errorType":  "SkillNotLoading",
+                         "lastSeen":  "2026-06-27",
+                         "frequency":  3,
+                         "solution":  "Verify SKILL.md frontmatter has name and description. Start new session. Check file location.",
+                         "category":  "configuration"
+                     },
+                     {
+                         "id":  "P022",
+                         "description":  "Agent permission denied for tool call",
+                         "errorType":  "PermissionDenied",
+                         "lastSeen":  "2026-06-27",
+                         "frequency":  4,
+                         "solution":  "Check permission rules in kilo.jsonc. Last matching rule wins. Verify glob patterns.",
+                         "category":  "security"
+                     },
+                     {
+                         "id":  "P023",
+                         "description":  "Subagent not being invoked automatically",
+                         "errorType":  "SubagentNotInvoking",
+                         "lastSeen":  "2026-06-27",
+                         "frequency":  2,
+                         "solution":  "Verify description field matches task. Check mode is subagent or all. Ensure Task tool is available.",
+                         "category":  "agent"
+                     },
+                     {
+                         "id":  "P024",
+                         "description":  "Custom instructions not being followed",
+                         "errorType":  "InstructionNotApplied",
+                         "lastSeen":  "2026-06-27",
+                         "frequency":  3,
+                         "solution":  "Check instructions array in kilo.jsonc. Verify file path. Restart session after changes.",
+                         "category":  "configuration"
+                     },
+                     {
+                         "id":  "P025",
+                         "description":  "Nav items not matching due to encoding",
+                         "errorType":  "NavEncodingIssue",
+                         "lastSeen":  "2026-06-27",
+                         "frequency":  5,
+                         "solution":  "Use UTF-8 encoding for special characters. Check regex patterns match actual bytes.",
+                         "category":  "encoding"
+                     }
+                 ],
+    "lastUpdated":  "2026-06-27T02:37:53.1156531-03:00",
+    "version":  "1.0.0",
+    "stats":  {
+                  "byCategory":  {
+                                     "data":  3,
+                                     "build":  6,
+                                     "security":  1,
+                                     "other":  1,
+                                     "network":  1,
+                                     "runtime":  8
+                                 },
+                  "totalPatterns":  25
+              }
 }

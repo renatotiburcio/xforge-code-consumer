@@ -1,0 +1,131 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - img "XF" [ref=e22]
+      - generic [ref=e23]: XForge Code AI
+      - generic [ref=e24]: Estatisticas
+    - generic [ref=e25]:
+      - button "24h" [ref=e26] [cursor=pointer]
+      - button "7d" [ref=e27] [cursor=pointer]
+      - button "30d" [ref=e28] [cursor=pointer]
+      - button "All" [ref=e29] [cursor=pointer]
+  - generic [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]: Tokens usados
+      - generic [ref=e33]: 1.2M
+      - generic [ref=e34]: +18% vs semana anterior
+    - generic [ref=e35]:
+      - generic [ref=e36]: Custo total
+      - generic [ref=e37]: $4.82
+      - generic [ref=e38]: "-5% vs semana anterior"
+    - generic [ref=e39]:
+      - generic [ref=e40]: Sessoes
+      - generic [ref=e41]: "47"
+      - generic [ref=e42]: +12% vs semana anterior
+    - generic [ref=e43]:
+      - generic [ref=e44]: XForge Score
+      - generic [ref=e45]: "87.3"
+      - generic [ref=e46]: +2.1 pontos
+  - generic [ref=e47]:
+    - generic [ref=e48]:
+      - heading "Custo por Provider 7 dias" [level=3] [ref=e49]:
+        - text: Custo por Provider
+        - generic [ref=e50]: 7 dias
+      - table [ref=e52]:
+        - rowgroup [ref=e53]:
+          - row "Provider Tokens Custo Sessoes" [ref=e54]:
+            - columnheader "Provider" [ref=e55]
+            - columnheader "Tokens" [ref=e56]
+            - columnheader "Custo" [ref=e57]
+            - columnheader "Sessoes" [ref=e58]
+          - row "OpenRouter 890K $3.42 32" [ref=e59]:
+            - cell "OpenRouter" [ref=e60]
+            - cell "890K" [ref=e61]
+            - cell "$3.42" [ref=e62]
+            - cell "32" [ref=e63]
+          - row "Ollama (local) 310K $0.00 15" [ref=e64]:
+            - cell "Ollama (local)" [ref=e65]
+            - cell "310K" [ref=e66]
+            - cell "$0.00" [ref=e67]
+            - cell "15" [ref=e68]
+          - row "Total 1.2M $3.42 47" [ref=e69]:
+            - cell "Total" [ref=e70]
+            - cell "1.2M" [ref=e71]
+            - cell "$3.42" [ref=e72]
+            - cell "47" [ref=e73]
+    - generic [ref=e74]:
+      - heading "Modelos mais usados 7 dias" [level=3] [ref=e75]:
+        - text: Modelos mais usados
+        - generic [ref=e76]: 7 dias
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - generic [ref=e79]: claude-sonnet-4
+          - generic [ref=e81]: 65%
+          - generic [ref=e82]: 31 sess
+        - generic [ref=e83]:
+          - generic [ref=e84]: qwen2.5:72b
+          - generic [ref=e86]: 22%
+          - generic [ref=e87]: 10 sess
+        - generic [ref=e88]:
+          - generic [ref=e89]: gpt-4o
+          - generic [ref=e91]: 9%
+          - generic [ref=e92]: 4 sess
+        - generic [ref=e93]:
+          - generic [ref=e94]: deepseek-r1
+          - generic [ref=e96]: 4%
+          - generic [ref=e97]: 2 sess
+  - generic [ref=e98]:
+    - generic [ref=e99]:
+      - heading "Qualidade (xfs) tendencia 7d" [level=3] [ref=e100]:
+        - text: Qualidade (xfs)
+        - generic [ref=e101]: tendencia 7d
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e104]: Correctness
+          - generic [ref=e107]: 92%
+        - generic [ref=e108]:
+          - generic [ref=e109]: Performance
+          - generic [ref=e112]: 85%
+        - generic [ref=e113]:
+          - generic [ref=e114]: Quality
+          - generic [ref=e117]: 88%
+        - generic [ref=e118]:
+          - generic [ref=e119]: Simplicity
+          - generic [ref=e122]: 82%
+        - generic [ref=e123]:
+          - generic [ref=e124]: Prevention
+          - generic [ref=e127]: 79%
+    - generic [ref=e128]:
+      - heading "Atividade recente hoje" [level=3] [ref=e129]:
+        - text: Atividade recente
+        - generic [ref=e130]: hoje
+      - generic [ref=e131]:
+        - generic [ref=e132]:
+          - generic [ref=e133]: 14:32
+          - generic [ref=e134]: Endpoint Produtos - build + testes OK
+          - generic [ref=e135]: $0.04
+        - generic [ref=e136]:
+          - generic [ref=e137]: 14:18
+          - generic [ref=e138]: Refatorar Service - self-healing CS0246
+          - generic [ref=e139]: $0.03
+        - generic [ref=e140]:
+          - generic [ref=e141]: 13:55
+          - generic [ref=e142]: Fix N+1 Queries - 3 queries otimizadas
+          - generic [ref=e143]: $0.05
+        - generic [ref=e144]:
+          - generic [ref=e145]: 13:40
+          - generic [ref=e146]: Setup Wizard - configuracao inicial
+          - generic [ref=e147]: $0.01
+        - generic [ref=e148]:
+          - generic [ref=e149]: 13:22
+          - generic [ref=e150]: Middleware de Log - criado + testado
+          - generic [ref=e151]: $0.06

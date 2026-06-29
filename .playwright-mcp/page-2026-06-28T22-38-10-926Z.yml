@@ -1,0 +1,140 @@
+- generic [active] [ref=e1]:
+  - heading "11 - Setup Wizard" [level=1] [ref=e2]
+  - paragraph [ref=e3]: Wizard de configuracao inicial em 5 passos.
+  - navigation [ref=e4]:
+    - link "Home" [ref=e5] [cursor=pointer]:
+      - /url: 00-home.html
+    - link "Chat Principal" [ref=e6] [cursor=pointer]:
+      - /url: 01-chat-principal.html
+    - link "Streaming" [ref=e7] [cursor=pointer]:
+      - /url: 02-chat-streaming.html
+    - link "Diff Review" [ref=e8] [cursor=pointer]:
+      - /url: 03-chat-diff.html
+    - link "Tool Calls" [ref=e9] [cursor=pointer]:
+      - /url: 04-chat-tool-calls.html
+    - link "Error Recovery" [ref=e10] [cursor=pointer]:
+      - /url: 05-chat-error.html
+    - link "Slash Commands" [ref=e11] [cursor=pointer]:
+      - /url: 06-slash-commands.html
+    - link "@Context" [ref=e12] [cursor=pointer]:
+      - /url: 07-context-system.html
+    - link "Agent Manager" [ref=e13] [cursor=pointer]:
+      - /url: 08-agent-manager.html
+    - link "Settings" [ref=e14] [cursor=pointer]:
+      - /url: 09-settings.html
+    - link "Welcome" [ref=e15] [cursor=pointer]:
+      - /url: 10-welcome.html
+    - link "Setup Wizard" [ref=e16] [cursor=pointer]:
+      - /url: 11-setup-wizard.html
+    - link "Inline Editing" [ref=e17] [cursor=pointer]:
+      - /url: 12-inline-editing.html
+    - link "Historico" [ref=e18] [cursor=pointer]:
+      - /url: 13-history.html
+    - link "MCP Servers" [ref=e19] [cursor=pointer]:
+      - /url: 14-mcp-servers.html
+    - link "Atalhos" [ref=e20] [cursor=pointer]:
+      - /url: 15-shortcuts.html
+    - link "Mode Selector" [ref=e21] [cursor=pointer]:
+      - /url: 16-modes.html
+    - link "Checkpoint" [ref=e22] [cursor=pointer]:
+      - /url: 17-checkpoint.html
+    - link "Notificacoes" [ref=e23] [cursor=pointer]:
+      - /url: 18-notifications.html
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Setup Wizard - Configuracao inicial
+      - generic [ref=e27]: P0
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31] [cursor=pointer]: 📁
+          - generic [ref=e32] [cursor=pointer]: 🔍
+          - generic [ref=e33] [cursor=pointer]: 🔀
+          - generic [ref=e34] [cursor=pointer]: 🐛
+          - generic [ref=e35] [cursor=pointer]: 📦
+          - generic [ref=e36] [cursor=pointer]: 💬
+          - generic [ref=e37] [cursor=pointer]: ⚙️
+        - generic [ref=e38]:
+          - generic [ref=e40]: ⚡ Setup Wizard
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - generic [ref=e43]:
+                - generic [ref=e44]: "1"
+                - generic [ref=e45]: Provider
+              - generic [ref=e47]:
+                - generic [ref=e48]: "2"
+                - generic [ref=e49]: Model
+              - generic [ref=e51]:
+                - generic [ref=e52]: "3"
+                - generic [ref=e53]: Behavior
+              - generic [ref=e55]:
+                - generic [ref=e56]: "4"
+                - generic [ref=e57]: Security
+              - generic [ref=e59]:
+                - generic [ref=e60]: "5"
+                - generic [ref=e61]: Skills
+            - generic [ref=e62]:
+              - heading "Escolha seu provider de IA" [level=4] [ref=e63]
+              - paragraph [ref=e64]: Selecione o provider que deseja usar
+              - generic [ref=e65]:
+                - generic [ref=e66] [cursor=pointer]:
+                  - radio [checked] [ref=e67]
+                  - generic [ref=e68]: 🚀
+                  - generic [ref=e69]:
+                    - strong [ref=e70]: OpenRouter
+                    - generic [ref=e71]: 200+ modelos, pay-per-use
+                - generic [ref=e72] [cursor=pointer]:
+                  - radio [ref=e73]
+                  - generic [ref=e74]: 🤖
+                  - generic [ref=e75]:
+                    - strong [ref=e76]: OpenAI
+                    - generic [ref=e77]: GPT-4o, GPT-4o-mini
+                - generic [ref=e78] [cursor=pointer]:
+                  - radio [ref=e79]
+                  - generic [ref=e80]: 🧠
+                  - generic [ref=e81]:
+                    - strong [ref=e82]: Anthropic
+                    - generic [ref=e83]: Claude Sonnet, Opus
+            - generic [ref=e84]:
+              - button "Voltar" [disabled] [ref=e85] [cursor=pointer]
+              - generic [ref=e86]:
+                - button "Pular" [ref=e87] [cursor=pointer]
+                - button "Proximo" [ref=e88] [cursor=pointer]
+        - generic [ref=e90]:
+          - generic [ref=e91]: ⚙️
+          - heading "Configuracao Inicial" [level=2] [ref=e92]
+          - paragraph [ref=e93]: Siga os passos na barra lateral para configurar o XForge Code AI
+      - generic [ref=e94]:
+        - generic [ref=e95]:
+          - generic [ref=e96]: ⚡ Setup Wizard
+          - generic [ref=e97]: Step 1 of 5
+        - generic [ref=e99]: Provider Selection
+    - heading "Especificacoes" [level=2] [ref=e100]
+    - table [ref=e101]:
+      - rowgroup [ref=e102]:
+        - row "Elemento Especificacao Razao" [ref=e103]:
+          - columnheader "Elemento" [ref=e104]
+          - columnheader "Especificacao" [ref=e105]
+          - columnheader "Razao" [ref=e106]
+        - row "Steps 5 passos com indicadores Progresso visual" [ref=e107]:
+          - cell "Steps" [ref=e108]
+          - cell "5 passos com indicadores" [ref=e109]
+          - cell "Progresso visual" [ref=e110]
+        - row "Options Cards com radio buttons Selecao clara" [ref=e111]:
+          - cell "Options" [ref=e112]
+          - cell "Cards com radio buttons" [ref=e113]
+          - cell "Selecao clara" [ref=e114]
+        - row "Navigation Back/Next/Skip Controle" [ref=e115]:
+          - cell "Navigation" [ref=e116]
+          - cell "Back/Next/Skip" [ref=e117]
+          - cell "Controle" [ref=e118]
+        - row "Skip Permite pular configuracao Flexibilidade" [ref=e119]:
+          - cell "Skip" [ref=e120]
+          - cell "Permite pular configuracao" [ref=e121]
+          - cell "Flexibilidade" [ref=e122]
+    - heading "Notas" [level=2] [ref=e123]
+    - list [ref=e125]:
+      - listitem [ref=e126]: Wizard exibido no primeiro uso
+      - listitem [ref=e127]: "5 passos: Provider, Model, Behavior, Security, Skills"
+      - listitem [ref=e128]: Skip permite usar defaults
+      - listitem [ref=e129]: Configuracao pode ser alterada depois

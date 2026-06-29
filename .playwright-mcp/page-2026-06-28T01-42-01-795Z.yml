@@ -1,0 +1,283 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - button "Inicio" [ref=e4] [cursor=pointer]:
+        - img [ref=e5]
+      - button "Chat" [ref=e8] [cursor=pointer]:
+        - img [ref=e9]
+      - button "Agentes" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+      - button "Config" [ref=e17] [cursor=pointer]:
+        - img [ref=e18]
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - img "XF" [ref=e24]
+          - generic [ref=e25]: XForge
+        - generic [ref=e26]: Conselho dos Genios
+        - generic [ref=e27]:
+          - button "Nova sessao" [ref=e28] [cursor=pointer]:
+            - img [ref=e29]
+          - button "Config" [ref=e30] [cursor=pointer]:
+            - img [ref=e31]
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - img [ref=e37]
+          - text: Coleta
+        - generic [ref=e39]: ">"
+        - generic [ref=e40]:
+          - img [ref=e42]
+          - text: Analise
+        - generic [ref=e44]: ">"
+        - generic [ref=e45]:
+          - img [ref=e47]
+          - text: Debate
+        - generic [ref=e49]: ">"
+        - generic [ref=e50]:
+          - img [ref=e52]
+          - text: Consenso
+        - generic [ref=e54]: ">"
+        - generic [ref=e55]:
+          - img [ref=e57]
+          - text: Decisao
+        - generic [ref=e59]: ">"
+        - generic [ref=e60]:
+          - img [ref=e62]
+          - text: Docs
+        - generic [ref=e64]: ">"
+        - generic [ref=e65]:
+          - img [ref=e67]
+          - text: Revisao
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: U
+          - generic [ref=e72]:
+            - generic [ref=e73]:
+              - generic [ref=e74]: Voce
+              - generic [ref=e75]: contexto
+            - generic [ref=e76]: Quero criar um modulo de pagamentos. Pix, cartao e boleto.
+        - generic [ref=e77]:
+          - generic [ref=e78]: T
+          - generic [ref=e79]:
+            - generic [ref=e80]:
+              - generic [ref=e81]: Turing
+              - generic [ref=e82]: contexto
+              - generic [ref=e83]: 3 fontes, 3 perguntas feitas
+            - generic [ref=e84]: "Contexto coletado: Pagar.me (Pix+cartao), Asaas (boleto), multi-tenant."
+            - generic [ref=e85]:
+              - generic [ref=e87]: Fontes analisadas
+              - generic [ref=e88]:
+                - generic [ref=e89]: src/Modules/Financeiro/
+                - generic [ref=e90]: docs/specs/pagamentos.md
+                - generic [ref=e91]: docs.pagar.me/api
+            - generic [ref=e92]:
+              - generic [ref=e94]: Ultima pergunta respondida
+              - generic [ref=e95]: "Prioridade: implementacao robusta (4 semanas)"
+              - generic [ref=e96]:
+                - generic [ref=e97] [cursor=pointer]: MVP rapido
+                - generic [ref=e98] [cursor=pointer]: Robusto
+            - generic [ref=e99]:
+              - generic [ref=e100]: Loop encerrado
+              - generic [ref=e101]: 3 rodadas � 3/3 perguntas � 4 fontes
+        - generic [ref=e102]:
+          - generic [ref=e103]: M
+          - generic [ref=e104]:
+            - generic [ref=e105]:
+              - generic [ref=e106]: Martin Fowler
+              - generic [ref=e107]: analise
+            - generic [ref=e108]:
+              - generic [ref=e109]:
+                - generic [ref=e110]: M
+                - generic [ref=e111]:
+                  - generic [ref=e112]: Martin Fowler
+                  - generic [ref=e113]: Arquitetura
+              - generic [ref=e114]: Strategy Pattern para gateways. IPaymentGateway como interface.
+        - generic [ref=e115]:
+          - generic [ref=e116]: S
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]: Sistema
+              - generic [ref=e120]: debate
+            - generic [ref=e121]: "Discussao: Vernon (DDD) vs Schneier (Seguranca). Consenso: Bounded Context + Vault."
+        - generic [ref=e122]:
+          - generic [ref=e123]: S
+          - generic [ref=e124]:
+            - generic [ref=e125]:
+              - generic [ref=e126]: Sistema
+              - generic [ref=e127]: consenso
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - img [ref=e130]
+                - generic [ref=e132]: Consenso (6/6 genios)
+              - generic [ref=e133]: Strategy Pattern + Bounded Context Security + Vault
+            - generic [ref=e134]:
+              - generic [ref=e135]: DR-0XXX - Modulo Pagamentos
+              - generic [ref=e136]:
+                - generic [ref=e137]: Decisao
+                - generic [ref=e138]: IPaymentGateway interface, PagarMeGateway, AsaasGateway. ICredentialProvider isolado. .NET 10, EF Core, PostgreSQL.
+              - generic [ref=e139]:
+                - button "Aceitar" [ref=e140] [cursor=pointer]
+                - button "Ajustar" [ref=e141] [cursor=pointer]
+                - button "Rejeitar" [ref=e142] [cursor=pointer]
+        - generic [ref=e143]:
+          - generic [ref=e144]: S
+          - generic [ref=e145]:
+            - generic [ref=e146]:
+              - generic [ref=e147]: Sistema
+              - generic [ref=e148]: docs
+            - generic [ref=e149]:
+              - generic [ref=e151]: Documentos gerados (5)
+              - generic [ref=e152]:
+                - generic [ref=e153]:
+                  - generic [ref=e154]: DR
+                  - generic [ref=e155]: DR-0XXX-modulo-pagamentos.md
+                  - generic [ref=e156]: gerado
+                  - generic [ref=e157] [cursor=pointer]: abrir
+                - generic [ref=e158]:
+                  - generic [ref=e159]: BL
+                  - generic [ref=e160]: BACKLOG.md + SPRINTS.md
+                  - generic [ref=e161]: gerado
+                  - generic [ref=e162] [cursor=pointer]: abrir
+                - generic [ref=e163]:
+                  - generic [ref=e164]: SD
+                  - generic [ref=e165]: TASKS/ (6 tarefas)
+                  - generic [ref=e166]: gerado
+                  - generic [ref=e167] [cursor=pointer]: abrir
+        - generic [ref=e168]:
+          - generic [ref=e169]: S
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - generic [ref=e172]: Sistema
+              - generic [ref=e173]: revisao
+            - generic [ref=e174]:
+              - generic [ref=e175]: Resumo Executivo
+              - generic [ref=e176]:
+                - generic [ref=e177]: Objetivo
+                - generic [ref=e178]: Pix (Pagar.me), Cartao (Pagar.me), Boleto (Asaas). Multi-tenant.
+              - generic [ref=e179]:
+                - generic [ref=e180]: Arquitetura
+                - generic [ref=e181]: Strategy Pattern. Bounded Context Security. Vault.
+              - generic [ref=e182]:
+                - generic [ref=e183]: Estimativa
+                - generic [ref=e184]: 6 tarefas, 2 sprints (4 semanas)
+              - generic [ref=e185]:
+                - button "Aprovar e iniciar" [ref=e186] [cursor=pointer]
+                - button "Questionar" [ref=e187] [cursor=pointer]
+        - generic [ref=e188]:
+          - generic [ref=e189]: U
+          - generic [ref=e190]:
+            - generic [ref=e192]: Voce
+            - generic [ref=e193]: E o reembolso? Preciso de reembolso parcial e total com prazo de 30 dias.
+        - generic [ref=e194]:
+          - generic [ref=e195]: T
+          - generic [ref=e196]:
+            - generic [ref=e197]:
+              - generic [ref=e198]: Turing
+              - generic [ref=e199]: contexto
+              - generic [ref=e200]: reaberto
+            - generic [ref=e201]: Reabrindo analise para reembolso... Reembolso adicionado ao backlog.
+            - generic [ref=e202]:
+              - generic [ref=e203]: Reabertura encerrada
+              - generic [ref=e204]: 1 rodada adicional
+    - generic [ref=e205]:
+      - generic [ref=e206]:
+        - generic [ref=e207]:
+          - img [ref=e208]
+          - text: Pagamentos
+        - generic [ref=e211]:
+          - img [ref=e212]
+          - text: docs.pagar.me
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha)" [ref=e214]
+      - generic [ref=e215]:
+        - button [ref=e217]:
+          - img [ref=e218]
+        - generic [ref=e220]:
+          - button "Parar" [ref=e221]:
+            - img [ref=e222]
+          - generic [ref=e224]: claude-sonnet-4
+    - generic [ref=e225]:
+      - generic [ref=e226]: Fase 7/7 � 6 genios � Conselho ativo
+      - generic [ref=e227]: 2,847 tokens
+  - generic [ref=e228]:
+    - generic [ref=e229]:
+      - heading "Timeline do Conselho" [level=2] [ref=e230]
+      - paragraph [ref=e231]: Progresso da analise em tempo real
+    - generic [ref=e232]:
+      - generic [ref=e233]:
+        - generic [ref=e234]:
+          - text: "Fase 1: Coleta"
+          - generic [ref=e236]: 3 rodadas
+        - generic [ref=e237]:
+          - generic [ref=e238]: "Gateway: Pagar.me + Asaas"
+          - generic [ref=e239]: Multi-tenant definido
+          - generic [ref=e240]: "Prioridade: Robusto"
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - text: "Fase 2: Analise"
+          - generic [ref=e244]: 6 genios
+        - generic [ref=e245]:
+          - generic [ref=e246]: "Fowler: Strategy Pattern"
+          - generic [ref=e247]: "Schneier: Vault obrigatorio"
+          - generic [ref=e248]: "Vernon: Bounded Context"
+      - generic [ref=e249]:
+        - generic [ref=e250]:
+          - text: "Fase 3: Discussao"
+          - generic [ref=e252]: convergencia
+        - generic [ref=e253]:
+          - generic [ref=e254]: Vernon + Hejlsberg convergem
+          - generic [ref=e255]: Schneier aceita com ressalvas
+      - generic [ref=e256]:
+        - generic [ref=e257]:
+          - text: "Fase 4: Consenso"
+          - generic [ref=e259]: 6/6
+        - generic [ref=e261]: Strategy + Security + Vault
+      - generic [ref=e262]:
+        - generic [ref=e263]:
+          - text: "Fase 5: Decisao"
+          - generic [ref=e265]: DR-0XXX
+        - generic [ref=e267]: DR e SDD gerados
+      - generic [ref=e268]:
+        - generic [ref=e269]:
+          - text: "Fase 6: Docs"
+          - generic [ref=e271]: 5 arquivos
+        - generic [ref=e273]: BACKLOG, SPRINTS, TASKS/
+      - generic [ref=e274]:
+        - generic [ref=e275]:
+          - text: "Fase 7: Revisao"
+          - generic [ref=e277]: ativa
+        - generic [ref=e278]:
+          - generic [ref=e279]: Resumo aprovado
+          - generic [ref=e280]: Reembolso adicionado
+      - generic [ref=e282]: Fontes consultadas
+      - generic [ref=e283]:
+        - generic [ref=e284]: src/Modules/Financeiro/
+        - generic [ref=e285]: docs/specs/pagamentos.md
+        - generic [ref=e286]: docs/specs/gateways.md
+        - generic [ref=e287]: docs.pagar.me/api
+        - generic [ref=e288]: api-reference.asaas.com
+      - generic [ref=e290]: Genios participantes
+      - generic [ref=e291]:
+        - generic [ref=e292] [cursor=pointer]:
+          - generic [ref=e293]: T
+          - generic [ref=e294]: Turing
+          - generic [ref=e295]: coleta
+        - generic [ref=e296] [cursor=pointer]:
+          - generic [ref=e297]: M
+          - generic [ref=e298]: Fowler
+          - generic [ref=e299]: analise
+        - generic [ref=e300] [cursor=pointer]:
+          - generic [ref=e301]: S
+          - generic [ref=e302]: Schneier
+          - generic [ref=e303]: consenso
+        - generic [ref=e304] [cursor=pointer]:
+          - generic [ref=e305]: V
+          - generic [ref=e306]: Vernon
+          - generic [ref=e307]: consenso
+        - generic [ref=e308] [cursor=pointer]:
+          - generic [ref=e309]: H
+          - generic [ref=e310]: Hejlsberg
+          - generic [ref=e311]: consenso
+        - generic [ref=e312] [cursor=pointer]:
+          - generic [ref=e313]: K
+          - generic [ref=e314]: Knuth
+          - generic [ref=e315]: analise

@@ -1,0 +1,190 @@
+- generic [active] [ref=e1]:
+  - heading "01 - Chat Principal" [level=1] [ref=e2]
+  - paragraph [ref=e3]: Tela base de chat - sidebar 340px com header, mensagens, tool calls colapsaveis e input.
+  - navigation [ref=e4]:
+    - link "Home" [ref=e5] [cursor=pointer]:
+      - /url: 00-home.html
+    - link "Chat Principal" [ref=e6] [cursor=pointer]:
+      - /url: 01-chat-principal.html
+    - link "Streaming" [ref=e7] [cursor=pointer]:
+      - /url: 02-chat-streaming.html
+    - link "Diff Review" [ref=e8] [cursor=pointer]:
+      - /url: 03-chat-diff.html
+    - link "Tool Calls" [ref=e9] [cursor=pointer]:
+      - /url: 04-chat-tool-calls.html
+    - link "Error Recovery" [ref=e10] [cursor=pointer]:
+      - /url: 05-chat-error.html
+    - link "Slash Commands" [ref=e11] [cursor=pointer]:
+      - /url: 06-slash-commands.html
+    - link "@Context" [ref=e12] [cursor=pointer]:
+      - /url: 07-context-system.html
+    - link "Agent Manager" [ref=e13] [cursor=pointer]:
+      - /url: 08-agent-manager.html
+    - link "Settings" [ref=e14] [cursor=pointer]:
+      - /url: 09-settings.html
+    - link "Welcome" [ref=e15] [cursor=pointer]:
+      - /url: 10-welcome.html
+    - link "Setup Wizard" [ref=e16] [cursor=pointer]:
+      - /url: 11-setup-wizard.html
+    - link "Inline Editing" [ref=e17] [cursor=pointer]:
+      - /url: 12-inline-editing.html
+    - link "Historico" [ref=e18] [cursor=pointer]:
+      - /url: 13-history.html
+    - link "MCP Servers" [ref=e19] [cursor=pointer]:
+      - /url: 14-mcp-servers.html
+    - link "Atalhos" [ref=e20] [cursor=pointer]:
+      - /url: 15-shortcuts.html
+    - link "Mode Selector" [ref=e21] [cursor=pointer]:
+      - /url: 16-modes.html
+    - link "Checkpoint" [ref=e22] [cursor=pointer]:
+      - /url: 17-checkpoint.html
+    - link "Notificacoes" [ref=e23] [cursor=pointer]:
+      - /url: 18-notifications.html
+  - generic [ref=e24]:
+    - generic [ref=e25]:
+      - generic [ref=e26]: Chat Principal - Sidebar 340px + Editor
+      - generic [ref=e27]: P0
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31] [cursor=pointer]: 📁
+          - generic [ref=e32] [cursor=pointer]: 🔍
+          - generic [ref=e33] [cursor=pointer]: 🔀
+          - generic [ref=e34] [cursor=pointer]: 🐛
+          - generic [ref=e35] [cursor=pointer]: 📦
+          - generic [ref=e36] [cursor=pointer]: 💬
+          - generic [ref=e37] [cursor=pointer]: ⚙️
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]: ⚡ XForge Code AI
+            - generic [ref=e41]:
+              - generic [ref=e42] [cursor=pointer]: +
+              - generic [ref=e43] [cursor=pointer]: 👥
+              - generic [ref=e44] [cursor=pointer]: ⚙️
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - generic [ref=e47]:
+                - generic [ref=e48]: R
+                - paragraph [ref=e51]: Crie uma API de pagamentos com .NET 8 usando Clean Architecture
+              - generic [ref=e52]:
+                - generic [ref=e53]: X
+                - paragraph [ref=e56]: Vou criar a API de pagamentos com Clean Architecture. Primeiro, vou analisar o projeto existente...
+              - generic [ref=e57]:
+                - generic [ref=e58]: R
+                - paragraph [ref=e61]: Use PostgreSQL e XForge.MediatR
+              - generic [ref=e62]:
+                - generic [ref=e63]: X
+                - generic [ref=e64]:
+                  - paragraph [ref=e66]: Perfeito! Vou estruturar o projeto com PostgreSQL e XForge.MediatR.
+                  - generic [ref=e68] [cursor=pointer]:
+                    - generic [ref=e69]: 📁
+                    - generic [ref=e70]: read_file
+                    - generic [ref=e71]: ✔ Completo
+                  - generic [ref=e73] [cursor=pointer]:
+                    - generic [ref=e74]: 📁
+                    - generic [ref=e75]: list_files
+                    - generic [ref=e76]: ✔ Completo
+                  - generic [ref=e77]:
+                    - generic [ref=e78] [cursor=pointer]:
+                      - generic [ref=e79]: ⚙️
+                      - generic [ref=e80]: bash
+                      - generic [ref=e81]: ✔ Completo (2.3s)
+                    - generic [ref=e82]:
+                      - text: dotnet new sln -n PaymentApi
+                      - text: dotnet new classlib -n PaymentApi.Domain
+                      - text: dotnet sln add PaymentApi.Domain
+            - generic [ref=e84]:
+              - textbox "Como posso ajudar? (@ para adicionar contexto)" [ref=e85]
+              - button "➡" [ref=e86] [cursor=pointer]
+        - generic [ref=e87]:
+          - generic [ref=e88]:
+            - generic [ref=e89] [cursor=pointer]: Program.cs
+            - generic [ref=e90] [cursor=pointer]:
+              - text: Payment.cs
+              - generic [ref=e91]: ×
+            - generic [ref=e92] [cursor=pointer]: appsettings.json
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - text: "1"
+              - text: "2"
+              - text: "3"
+              - text: "4"
+              - text: "5"
+              - text: "6"
+              - text: "7"
+              - text: "8"
+              - text: "9"
+              - text: "10"
+              - text: "11"
+              - text: "12"
+              - text: "13"
+              - text: "14"
+              - text: "15"
+            - generic [ref=e95]:
+              - text: namespace PaymentApi.Domain.Entities
+              - text: "{"
+              - text: public class Payment
+              - text: "{"
+              - text: "public int Id { get; set; }"
+              - text: "public string Description { get; set; }"
+              - text: "public decimal Amount { get; set; }"
+              - text: "public DateTime CreatedAt { get; set; }"
+              - text: "public PaymentStatus Status { get; set; }"
+              - text: "}"
+              - text: "}"
+              - text: public enum PaymentStatus
+              - text: "{"
+              - text: Pending, Completed, Failed, Cancelled
+              - text: "}"
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]: ⚡ main
+          - generic [ref=e99]: ✔ 0 errors
+          - generic [ref=e100]: ○ 0 warnings
+        - generic [ref=e101]:
+          - generic [ref=e102]: Ln 15, Col 1
+          - generic [ref=e103]: UTF-8
+          - generic [ref=e104]: C#
+          - generic [ref=e105]: "⚡ XForge: Code"
+  - heading "Especificacoes" [level=2] [ref=e106]
+  - table [ref=e107]:
+    - rowgroup [ref=e108]:
+      - row "Elemento Especificacao Razao" [ref=e109]:
+        - columnheader "Elemento" [ref=e110]
+        - columnheader "Especificacao" [ref=e111]
+        - columnheader "Razao" [ref=e112]
+      - row "Sidebar 340px fixo Legivel sem distrair" [ref=e113]:
+        - cell "Sidebar" [ref=e114]
+        - cell "340px fixo" [ref=e115]
+        - cell "Legivel sem distrair" [ref=e116]
+      - row "Fonte chat 14px, 1.6 Legibilidade" [ref=e117]:
+        - cell "Fonte chat" [ref=e118]
+        - cell "14px, 1.6" [ref=e119]
+        - cell "Legibilidade" [ref=e120]
+      - row "Fonte codigo 13px monospace Diferenciacao" [ref=e121]:
+        - cell "Fonte codigo" [ref=e122]
+        - cell "13px monospace" [ref=e123]
+        - cell "Diferenciacao" [ref=e124]
+      - row "Avatar user Inicial R, azul Identificacao" [ref=e125]:
+        - cell "Avatar user" [ref=e126]
+        - cell "Inicial R, azul" [ref=e127]
+        - cell "Identificacao" [ref=e128]
+      - row "Avatar asst Inicial X, borda XForge identity" [ref=e129]:
+        - cell "Avatar asst" [ref=e130]
+        - cell "Inicial X, borda" [ref=e131]
+        - cell "XForge identity" [ref=e132]
+      - row "Tool calls Colapsavel Nao polui" [ref=e133]:
+        - cell "Tool calls" [ref=e134]
+        - cell "Colapsavel" [ref=e135]
+        - cell "Nao polui" [ref=e136]
+      - row "Input Auto-resize 100px Conforto" [ref=e137]:
+        - cell "Input" [ref=e138]
+        - cell "Auto-resize 100px" [ref=e139]
+        - cell "Conforto" [ref=e140]
+  - heading "Notas" [level=2] [ref=e141]
+  - list [ref=e143]:
+    - listitem [ref=e144]: Sidebar usa vscode.window.createWebviewView
+    - listitem [ref=e145]: "Header: Nova sessao, Agent Manager, Settings"
+    - listitem [ref=e146]: Tool calls colapsaveis
+    - listitem [ref=e147]: Ctrl+Enter envia, / slash commands, @ context
+    - listitem [ref=e148]: Status bar mostra modo XForge

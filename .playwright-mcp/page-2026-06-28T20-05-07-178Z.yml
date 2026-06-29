@@ -1,0 +1,395 @@
+- generic [active]:
+  - generic:
+    - banner [ref=e1]:
+      - generic [ref=e2]:
+        - link "Kilo Code Logo Kilo CodeDOCS" [ref=e3] [cursor=pointer]:
+          - /url: /docs/
+          - img "Kilo Code Logo" [ref=e4]
+          - generic [ref=e6]: Kilo CodeDOCS
+        - button "Search (Control+k)" [ref=e9] [cursor=pointer]:
+          - generic [ref=e10]:
+            - img [ref=e11]
+            - generic [ref=e14]: Search
+          - generic [ref=e15]:
+            - generic [ref=e16]: Ctrl
+            - generic [ref=e17]: K
+        - generic [ref=e18]:
+          - button "Using system theme" [ref=e19] [cursor=pointer]:
+            - img [ref=e20]
+          - link "GitHub" [ref=e22] [cursor=pointer]:
+            - /url: https://kilo.ai/github
+          - link "Sign in" [ref=e23] [cursor=pointer]:
+            - /url: https://app.kilo.ai
+      - generic [ref=e24]:
+        - navigation [ref=e25]:
+          - link "Get Started" [ref=e26] [cursor=pointer]:
+            - /url: /docs/getting-started
+            - text: Get Started
+          - link "Code with AI" [ref=e28] [cursor=pointer]:
+            - /url: /docs/code-with-ai
+          - link "Customize" [ref=e29] [cursor=pointer]:
+            - /url: /docs/customize
+          - link "Collaborate" [ref=e30] [cursor=pointer]:
+            - /url: /docs/collaborate
+          - link "Automate" [ref=e31] [cursor=pointer]:
+            - /url: /docs/automate
+          - link "Deploy & Secure" [ref=e32] [cursor=pointer]:
+            - /url: /docs/deploy-secure
+          - link "Kilo Gateway" [ref=e33] [cursor=pointer]:
+            - /url: /docs/gateway
+          - link "KiloClaw" [ref=e34] [cursor=pointer]:
+            - /url: /docs/kiloclaw
+          - link "Contributing" [ref=e35] [cursor=pointer]:
+            - /url: /docs/contributing
+        - generic [ref=e36]:
+          - button "Contributing" [ref=e38]:
+            - text: Contributing
+            - img [ref=e39]
+          - button "Help" [ref=e42]:
+            - text: Help
+            - img [ref=e43]
+      - paragraph [ref=e46]:
+        - text: The all-new Kilo Code extension is here, rebuilt on the
+        - link "Kilo CLI" [ref=e47] [cursor=pointer]:
+          - /url: /docs/code-with-ai/platforms/vscode/whats-new
+        - text: for speed, flexibility, and continued access to 500+ models via the Kilo Gateway →
+    - generic [ref=e48]:
+      - navigation [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - link "Home" [ref=e52] [cursor=pointer]:
+              - /url: /docs/
+              - generic [ref=e53]: Home
+            - button "Get Started" [ref=e54] [cursor=pointer]:
+              - generic [ref=e55]: Get Started
+              - img [ref=e57]
+            - button "Code with AI" [ref=e59] [cursor=pointer]:
+              - generic [ref=e60]: Code with AI
+              - img [ref=e62]
+            - button "Customize" [ref=e64] [cursor=pointer]:
+              - generic [ref=e65]: Customize
+              - img [ref=e67]
+            - button "Collaborate" [ref=e69] [cursor=pointer]:
+              - generic [ref=e70]: Collaborate
+              - img [ref=e72]
+            - button "Automate" [ref=e74] [cursor=pointer]:
+              - generic [ref=e75]: Automate
+              - img [ref=e77]
+            - button "Deploy & Secure" [ref=e79] [cursor=pointer]:
+              - generic [ref=e80]: Deploy & Secure
+              - img [ref=e82]
+            - button "AI Gateway" [ref=e84] [cursor=pointer]:
+              - generic [ref=e85]: AI Gateway
+              - img [ref=e87]
+            - button "KiloClaw" [ref=e89] [cursor=pointer]:
+              - generic [ref=e90]: KiloClaw
+              - img [ref=e92]
+            - button "Contributing" [ref=e94] [cursor=pointer]:
+              - generic [ref=e95]: Contributing
+              - img [ref=e97]
+          - generic [ref=e100]:
+            - generic [ref=e101]:
+              - generic [ref=e102]: Introduction
+              - list [ref=e103]:
+                - listitem [ref=e104]:
+                  - link "Overview" [ref=e105] [cursor=pointer]:
+                    - /url: /docs/getting-started
+                - listitem [ref=e106]:
+                  - link "Installation" [ref=e107] [cursor=pointer]:
+                    - /url: /docs/getting-started/installing
+                - listitem [ref=e108]:
+                  - link "Quickstart" [ref=e109] [cursor=pointer]:
+                    - /url: /docs/getting-started/quickstart
+            - generic [ref=e110]:
+              - generic [ref=e111]: Configuration
+              - list [ref=e112]:
+                - listitem [ref=e113]:
+                  - link "Setup & Authentication" [ref=e114] [cursor=pointer]:
+                    - /url: /docs/getting-started/setup-authentication
+                - listitem [ref=e115]:
+                  - link "Using Kilo for Free" [ref=e116] [cursor=pointer]:
+                    - /url: /docs/getting-started/using-kilo-for-free
+                - listitem [ref=e117]:
+                  - link "Bring Your Own Key (BYOK)" [ref=e118] [cursor=pointer]:
+                    - /url: /docs/getting-started/byok
+                - listitem [ref=e119]:
+                  - link "AI Providers" [ref=e120] [cursor=pointer]:
+                    - /url: /docs/ai-providers
+                - listitem [ref=e121]:
+                  - generic [ref=e122]:
+                    - link "Settings" [ref=e123] [cursor=pointer]:
+                      - /url: /docs/getting-started/settings
+                    - button "Collapse" [ref=e124] [cursor=pointer]:
+                      - img [ref=e125]
+                  - list [ref=e127]:
+                    - listitem [ref=e128]:
+                      - link "Auto-Approving Actions" [ref=e129] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/auto-approving-actions
+                    - listitem [ref=e130]:
+                      - link "Auto Cleanup Legacy" [ref=e131] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/auto-cleanup
+                        - text: Auto Cleanup
+                        - generic [ref=e132]: Legacy
+                    - listitem [ref=e133]:
+                      - link "System Notifications Legacy" [ref=e134] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/system-notifications
+                        - text: System Notifications
+                        - generic [ref=e135]: Legacy
+                    - listitem [ref=e136]:
+                      - link "Sandboxing" [ref=e137] [cursor=pointer]:
+                        - /url: /docs/getting-started/settings/sandboxing
+                - listitem [ref=e138]:
+                  - link "Adding Credits" [ref=e139] [cursor=pointer]:
+                    - /url: /docs/getting-started/adding-credits
+                - listitem [ref=e140]:
+                  - link "Cost Efficiency & Model Selection" [ref=e141] [cursor=pointer]:
+                    - /url: /docs/getting-started/rate-limits-and-costs
+                - listitem [ref=e142]:
+                  - link "Cost Controls and Usage Safeguards" [ref=e143] [cursor=pointer]:
+                    - /url: /docs/getting-started/cost-controls-and-usage-safeguards
+            - generic [ref=e144]:
+              - generic [ref=e145]: Help
+              - list [ref=e146]:
+                - listitem [ref=e147]:
+                  - generic [ref=e148]:
+                    - link "FAQ" [ref=e149] [cursor=pointer]:
+                      - /url: /docs/getting-started/faq
+                    - button "Expand" [ref=e150] [cursor=pointer]:
+                      - img [ref=e151]
+                - listitem [ref=e153]:
+                  - link "Migrating from Cursor" [ref=e154] [cursor=pointer]:
+                    - /url: /docs/getting-started/migrating
+                - listitem [ref=e155]:
+                  - generic [ref=e156]:
+                    - link "Troubleshooting" [ref=e157] [cursor=pointer]:
+                      - /url: /docs/getting-started/troubleshooting
+                    - button "Expand" [ref=e158] [cursor=pointer]:
+                      - img [ref=e159]
+                - listitem [ref=e161]:
+                  - link "Using Docs with Agents" [ref=e162] [cursor=pointer]:
+                    - /url: /docs/getting-started/using-docs-with-agents
+      - main [ref=e163]:
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - article [ref=e166]:
+              - heading "Auto-Approving Actions" [level=1] [ref=e167]
+              - generic [ref=e168]:
+                - generic [ref=e169]:
+                  - generic [ref=e170]: 🚨
+                  - generic [ref=e171]: Danger
+                - paragraph [ref=e173]:
+                  - strong [ref=e174]: "Security Warning:"
+                  - text: Auto-approve settings bypass confirmation prompts, giving Kilo Code direct access to your system. This can result in data loss, file corruption, or worse. Command line access is particularly dangerous, as it can potentially execute harmful operations that could damage your system or compromise security. Only enable auto-approval for actions you fully trust.
+              - paragraph [ref=e175]:
+                - text: Auto-approve settings speed up your workflow by eliminating repetitive confirmation prompts, but they significantly increase security risks. The
+                - strong [ref=e176]: VSCode (Legacy)
+                - text: ","
+                - strong [ref=e177]: VSCode
+                - text: ", and"
+                - strong [ref=e178]: CLI
+                - text: versions each handle permissions differently — choose the tab that matches your setup.
+              - generic [ref=e179]:
+                - generic [ref=e180]:
+                  - button "VSCode" [ref=e181]
+                  - button "CLI" [ref=e182]
+                  - button "VSCode (Legacy)" [ref=e183]
+                - generic [ref=e184]:
+                  - heading "Overview" [level=2] [ref=e185]
+                  - paragraph [ref=e186]:
+                    - text: The extension uses a granular, per-tool permission system. You can configure permissions through the
+                    - strong [ref=e187]: Settings → Auto Approve
+                    - text: tab, which provides a UI with per-tool
+                    - strong [ref=e188]: Allow / Ask / Deny
+                    - text: dropdowns.
+                  - paragraph [ref=e189]:
+                    - text: The UI reads and writes to the same
+                    - code [ref=e190]: kilo.jsonc
+                    - text: config files used by the CLI, so changes made in either place are reflected in both.
+                  - heading "Permission Levels" [level=2] [ref=e191]
+                  - paragraph [ref=e192]: "Each tool permission can be set to one of three values:"
+                  - table [ref=e194]:
+                    - rowgroup [ref=e195]:
+                      - row "Value Behavior" [ref=e196]:
+                        - columnheader "Value" [ref=e197]
+                        - columnheader "Behavior" [ref=e198]
+                    - rowgroup [ref=e199]:
+                      - row "\"allow\" The tool runs automatically without prompting" [ref=e200]:
+                        - cell "\"allow\"" [ref=e201]:
+                          - code [ref=e202]: "\"allow\""
+                        - cell "The tool runs automatically without prompting" [ref=e203]
+                      - row "\"ask\" Kilo pauses and asks for approval before running the tool" [ref=e204]:
+                        - cell "\"ask\"" [ref=e205]:
+                          - code [ref=e206]: "\"ask\""
+                        - cell "Kilo pauses and asks for approval before running the tool" [ref=e207]
+                      - row "\"deny\" The tool is blocked entirely" [ref=e208]:
+                        - cell "\"deny\"" [ref=e209]:
+                          - code [ref=e210]: "\"deny\""
+                        - cell "The tool is blocked entirely" [ref=e211]
+                  - paragraph [ref=e212]:
+                    - text: When no rule matches a permission check, the default action is
+                    - code [ref=e213]: ask
+                    - text: .
+                  - heading "Available Tool Permissions" [level=2] [ref=e214]
+                  - paragraph [ref=e215]: "The Auto Approve tab lists the following tool-specific permissions. Some tools are grouped together in the UI and share a single permission level:"
+                  - table [ref=e217]:
+                    - rowgroup [ref=e218]:
+                      - row "Permission Controls" [ref=e219]:
+                        - columnheader "Permission" [ref=e220]
+                        - columnheader "Controls" [ref=e221]
+                    - rowgroup [ref=e222]:
+                      - row "external_directory Accessing files outside the project directory" [ref=e223]:
+                        - cell "external_directory" [ref=e224]:
+                          - code [ref=e225]: external_directory
+                        - cell "Accessing files outside the project directory" [ref=e226]
+                      - row "bash Executing shell commands" [ref=e227]:
+                        - cell "bash" [ref=e228]:
+                          - code [ref=e229]: bash
+                        - cell "Executing shell commands" [ref=e230]
+                      - row "read Reading file contents" [ref=e231]:
+                        - cell "read" [ref=e232]:
+                          - code [ref=e233]: read
+                        - cell "Reading file contents" [ref=e234]
+                      - row "edit Editing existing files" [ref=e235]:
+                        - cell "edit" [ref=e236]:
+                          - code [ref=e237]: edit
+                        - cell "Editing existing files" [ref=e238]
+                      - row "glob File pattern matching / searching by name" [ref=e239]:
+                        - cell "glob" [ref=e240]:
+                          - code [ref=e241]: glob
+                        - cell "File pattern matching / searching by name" [ref=e242]
+                      - row "grep Searching file contents by regex" [ref=e243]:
+                        - cell "grep" [ref=e244]:
+                          - code [ref=e245]: grep
+                        - cell "Searching file contents by regex" [ref=e246]
+                      - row "task Launching sub-agents" [ref=e247]:
+                        - cell "task" [ref=e248]:
+                          - code [ref=e249]: task
+                        - cell "Launching sub-agents" [ref=e250]
+                      - row "agent_manager Starting Agent Manager local or worktree sessions" [ref=e251]:
+                        - cell "agent_manager" [ref=e252]:
+                          - code [ref=e253]: agent_manager
+                        - cell "Starting Agent Manager local or worktree sessions" [ref=e254]
+                      - row "skill Loading specialized skills" [ref=e255]:
+                        - cell "skill" [ref=e256]:
+                          - code [ref=e257]: skill
+                        - cell "Loading specialized skills" [ref=e258]
+                      - row "lsp Language server protocol operations" [ref=e259]:
+                        - cell "lsp" [ref=e260]:
+                          - code [ref=e261]: lsp
+                        - cell "Language server protocol operations" [ref=e262]
+                      - row "todoread / todowrite Reading and updating the todo list" [ref=e263]:
+                        - cell "todoread / todowrite" [ref=e264]:
+                          - code [ref=e265]: todoread
+                          - text: /
+                          - code [ref=e266]: todowrite
+                        - cell "Reading and updating the todo list" [ref=e267]
+                      - row "websearch Performing web searches" [ref=e268]:
+                        - cell "websearch" [ref=e269]:
+                          - code [ref=e270]: websearch
+                        - cell "Performing web searches" [ref=e271]
+                      - row "webfetch Fetching content from URLs" [ref=e272]:
+                        - cell "webfetch" [ref=e273]:
+                          - code [ref=e274]: webfetch
+                        - cell "Fetching content from URLs" [ref=e275]
+                      - row "doom_loop Allowing the agent to continue after repeated failures" [ref=e276]:
+                        - cell "doom_loop" [ref=e277]:
+                          - code [ref=e278]: doom_loop
+                        - cell "Allowing the agent to continue after repeated failures" [ref=e279]
+                  - heading "Runtime Permission Requests" [level=2] [ref=e280]
+                  - paragraph [ref=e281]:
+                    - text: When a tool is set to
+                    - code [ref=e282]: "\"ask\""
+                    - text: ", Kilo pauses and displays a permission prompt with two options:"
+                  - table [ref=e284]:
+                    - rowgroup [ref=e285]:
+                      - row "Option Behavior" [ref=e286]:
+                        - columnheader "Option" [ref=e287]
+                        - columnheader "Behavior" [ref=e288]
+                    - rowgroup [ref=e289]:
+                      - row "Run Allow this specific invocation" [ref=e290]:
+                        - cell "Run" [ref=e291]:
+                          - strong [ref=e292]: Run
+                        - cell "Allow this specific invocation" [ref=e293]
+                      - row "Deny Block this specific invocation" [ref=e294]:
+                        - cell "Deny" [ref=e295]:
+                          - strong [ref=e296]: Deny
+                        - cell "Block this specific invocation" [ref=e297]
+                  - paragraph [ref=e298]: Use the shield button in the prompt controls to toggle runtime auto-approve for permission prompts without opening Settings. When enabled, the shield is highlighted and pending permission prompts are approved automatically. The runtime state stays synced across the sidebar, open Kilo tabs, and Agent Manager session views.
+                  - paragraph [ref=e299]:
+                    - text: Expand
+                    - strong [ref=e300]: Manage Auto-Approve Rules
+                    - text: to add commands or patterns to your allowed or denied lists. These rules are then appended to the bottom of the approval rules in settings and the config file.
+                  - paragraph [ref=e301]:
+                    - text: For the
+                    - code [ref=e302]: agent_manager
+                    - text: "tool, runtime approvals use the requested mode as the pattern:"
+                    - code [ref=e303]: worktree
+                    - text: or
+                    - code [ref=e304]: local
+                    - text: .
+                  - heading "MCP Tool Permissions" [level=2] [ref=e305]
+                  - paragraph [ref=e306]:
+                    - text: MCP tools use the same
+                    - code [ref=e307]: allow
+                    - text: /
+                    - code [ref=e308]: ask
+                    - text: /
+                    - code [ref=e309]: deny
+                    - text: "permission system as built-in tools. Each MCP tool's permission key is its namespaced name:"
+                    - code [ref=e310]: "{server}_{tool}"
+                    - text: (e.g.
+                    - code [ref=e311]: github_create_pull_request
+                    - text: ). You can use glob patterns like
+                    - code [ref=e312]: github_*
+                    - text: for broad rules.
+                  - paragraph [ref=e313]:
+                    - text: For full details and examples, see
+                    - link "MCP Tool Permissions" [ref=e314] [cursor=pointer]:
+                      - /url: /docs/automate/mcp/using-in-kilo-code#auto-approve-tools
+                    - text: .
+                  - heading "Defaults" [level=2] [ref=e315]
+                  - paragraph [ref=e316]:
+                    - text: Most tools default to
+                    - code [ref=e317]: "\"*\": \"allow\""
+                    - text: "for a smooth out-of-the-box experience. Notable exceptions that prompt by default:"
+                  - list [ref=e318]:
+                    - listitem [ref=e319]:
+                      - strong [ref=e320]:
+                        - code [ref=e321]: .env
+                        - text: files
+                      - text: — reading
+                      - code [ref=e322]: .env
+                      - text: files prompts for approval. Files matching
+                      - code [ref=e323]: "*.env.*"
+                      - text: (e.g.,
+                      - code [ref=e324]: .env.local
+                      - text: ","
+                      - code [ref=e325]: .env.production
+                      - text: ) also trigger an ask, while
+                      - code [ref=e326]: "*.env.example"
+                      - text: is explicitly allowed.
+                    - listitem [ref=e327]:
+                      - strong [ref=e328]:
+                        - code [ref=e329]: external_directory
+                      - text: — accessing files outside the project prompts for approval
+                    - listitem [ref=e330]:
+                      - strong [ref=e331]:
+                        - code [ref=e332]: doom_loop
+                      - text: — prompts when the agent enters a repeated failure cycle
+            - generic [ref=e335]:
+              - button "Copy page" [ref=e336] [cursor=pointer]:
+                - img [ref=e337]
+                - generic [ref=e340]: Copy page
+              - button "Open markdown" [ref=e341] [cursor=pointer]:
+                - img [ref=e342]
+                - generic [ref=e345]: Open markdown
+              - button "Edit page" [ref=e346] [cursor=pointer]:
+                - img [ref=e347]
+                - generic [ref=e349]: Edit page
+          - generic [ref=e351]:
+            - button "Copy page" [ref=e352] [cursor=pointer]:
+              - img [ref=e353]
+              - generic [ref=e356]: Copy page
+            - button "More actions" [ref=e357] [cursor=pointer]:
+              - img [ref=e358]
+  - alert [ref=e360]

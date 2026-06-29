@@ -1,0 +1,83 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge Code AI - NOME_DA_PAGINA
+      - button "Ferramentas" [ref=e26] [cursor=pointer]:
+        - img [ref=e27]
+    - generic [ref=e29]:
+      - combobox "Agente" [ref=e30] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+        - option "Ask"
+      - combobox "Provider" [ref=e32] [cursor=pointer]:
+        - option "OpenRouter" [selected]
+        - option "Ollama"
+        - option "Anthropic"
+        - option "OpenAI"
+      - combobox "Modelo" [ref=e33] [cursor=pointer]:
+        - option "claude-sonnet-4" [selected]
+        - option "gpt-4o"
+        - option "qwen2.5:72b"
+        - option "deepseek-r1"
+      - button "Aprovacao automatica" [ref=e35]:
+        - img [ref=e36]
+      - button "Compactar contexto" [ref=e40]:
+        - img
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e47]: U
+        - generic [ref=e48]:
+          - generic [ref=e49]:
+            - generic [ref=e50]: Voce
+            - generic [ref=e51]: 12 tokens
+          - generic [ref=e52]: Mensagem do usuario aqui
+      - generic [ref=e53]:
+        - generic [ref=e54]: X
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - generic [ref=e57]: XForge
+            - generic [ref=e58]: Code
+            - generic [ref=e59]: 847 tokens
+          - generic [ref=e60]: Resposta do assistente aqui
+    - generic [ref=e61]:
+      - generic [ref=e62]:
+        - generic [ref=e63]: Produto.cs
+        - generic [ref=e64]: Controllers/
+      - generic [ref=e65]:
+        - textbox "Digite... (Enter envia, Shift+Enter nova linha) / comandos @ contexto" [ref=e66]
+        - generic [ref=e67]:
+          - button "Parar execucao" [ref=e68] [cursor=pointer]:
+            - img [ref=e69]
+          - button "Anexar arquivo" [ref=e71]:
+            - img
+          - button "Melhorar prompt" [ref=e73]:
+            - img
+      - generic [ref=e77]: claude-sonnet-4 · $0.02
+    - generic [ref=e78]:
+      - generic [ref=e79]: Sessao 1 · 5 ferramentas · 859 tokens · $0.02
+      - generic [ref=e80]: OK
+  - generic [ref=e81]:
+    - generic [ref=e83]:
+      - img "XF" [ref=e84]
+      - heading "NOME_DA_PAGINA" [level=1] [ref=e85]
+    - generic [ref=e86]:
+      - generic [ref=e87]:
+        - heading "Card de Exemplo" [level=3] [ref=e88]
+        - paragraph [ref=e89]: Este e um exemplo de conteudo da pagina. Substitua este bloco pelo conteudo real da sua pagina.
+      - generic [ref=e90]:
+        - heading "Outro Card" [level=3] [ref=e91]
+        - paragraph [ref=e92]: Voce pode adicionar quantos cards quiser aqui. O conteudo vai scrollar automaticamente.
+      - generic [ref=e93]:
+        - heading "Card Final" [level=3] [ref=e94]
+        - paragraph [ref=e95]: Este e o ultimo card de exemplo.

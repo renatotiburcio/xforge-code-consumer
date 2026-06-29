@@ -1,0 +1,798 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - link "Skip to content" [ref=e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=e6]:
+      - heading "Navigation Menu" [level=2] [ref=e7]
+      - generic [ref=e9]:
+        - button "Toggle navigation" [ref=e11] [cursor=pointer]
+        - link "Homepage" [ref=e17] [cursor=pointer]:
+          - /url: /
+          - img [ref=e18]
+        - generic [ref=e20]:
+          - link "Sign in" [ref=e21] [cursor=pointer]:
+            - /url: /login?return_to=https%3A%2F%2Fgithub.com%2FKilo-Org%2Fkilocode%2Fissues%3Fq%3Dagent%2Bmanager
+          - button "Appearance settings" [ref=e24] [cursor=pointer]:
+            - img
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e32]:
+          - img [ref=e33]
+          - link "Kilo-Org" [ref=e36] [cursor=pointer]:
+            - /url: /Kilo-Org
+          - generic [ref=e37]: /
+          - strong [ref=e38]:
+            - link "kilocode" [ref=e39] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode
+          - generic [ref=e40]: Public
+        - generic [ref=e41]:
+          - list:
+            - listitem [ref=e42]:
+              - link "You must be signed in to change notification settings" [ref=e43] [cursor=pointer]:
+                - /url: /login?return_to=%2FKilo-Org%2Fkilocode
+                - img [ref=e44]
+                - text: Notifications
+            - listitem [ref=e46]:
+              - link "Fork 2.8k" [ref=e47] [cursor=pointer]:
+                - /url: /login?return_to=%2FKilo-Org%2Fkilocode
+                - img [ref=e48]
+                - text: Fork
+                - generic "2,817" [ref=e50]: 2.8k
+            - listitem [ref=e51]:
+              - link "You must be signed in to star a repository" [ref=e53] [cursor=pointer]:
+                - /url: /login?return_to=%2FKilo-Org%2Fkilocode
+                - img [ref=e54]
+                - text: Star
+                - generic "24982 users starred this repository" [ref=e56]: 25k
+      - navigation "Repository" [ref=e57]:
+        - list [ref=e58]:
+          - listitem [ref=e59]:
+            - link "Code" [ref=e60] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode
+              - img [ref=e61]
+              - generic [ref=e63]: Code
+          - listitem [ref=e64]:
+            - link "Issues 645" [ref=e65] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/issues
+              - img [ref=e66]
+              - generic [ref=e69]: Issues
+              - generic "645" [ref=e70]
+          - listitem [ref=e71]:
+            - link "Pull requests 179" [ref=e72] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/pulls
+              - img [ref=e73]
+              - generic [ref=e75]: Pull requests
+              - generic "179" [ref=e76]
+          - listitem [ref=e77]:
+            - link "Discussions" [ref=e78] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/discussions
+              - img [ref=e79]
+              - generic [ref=e81]: Discussions
+          - listitem [ref=e82]:
+            - link "Actions" [ref=e83] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/actions
+              - img [ref=e84]
+              - generic [ref=e86]: Actions
+          - listitem [ref=e87]:
+            - link "Projects" [ref=e88] [cursor=pointer]:
+              - /url: /Kilo-Org/kilocode/projects
+              - img [ref=e89]
+              - generic [ref=e91]: Projects
+          - listitem [ref=e92]
+          - listitem [ref=e93]
+        - button "Additional navigation options" [ref=e97] [cursor=pointer]:
+          - img
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - navigation "Issue filters" [ref=e108]:
+            - list [ref=e109]:
+              - listitem [ref=e110]:
+                - link "Issues" [ref=e111] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=is%3Aissue+state%3Aopen
+                  - generic:
+                    - generic:
+                      - img
+                  - generic "Issues" [ref=e114]
+              - listitem [ref=e115]:
+                - link "Assigned to me" [ref=e116] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=is%3Aissue+state%3Aopen+assignee%3A%40me
+                  - generic:
+                    - generic:
+                      - img
+                  - generic "Assigned to me" [ref=e119]
+              - listitem [ref=e120]:
+                - link "Created by me" [ref=e121] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=is%3Aissue+state%3Aopen+author%3A%40me
+                  - generic:
+                    - generic:
+                      - img
+                  - generic "Created by me" [ref=e124]
+              - listitem [ref=e125]:
+                - link "Mentioned" [ref=e126] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=is%3Aissue+state%3Aopen+mentions%3A%40me
+                  - generic:
+                    - generic:
+                      - img
+                  - generic "Mentioned" [ref=e129]
+              - listitem [ref=e130]:
+                - link "Recent activity" [ref=e131] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=is%3Aissue+updated%3A%3E%40today-1w+sort%3Aupdated-desc
+                  - generic:
+                    - generic:
+                      - img
+                  - generic "Recent activity" [ref=e134]
+          - separator [ref=e135]
+          - navigation "Pages" [ref=e136]:
+            - list [ref=e137]:
+              - listitem [ref=e138]:
+                - link "Views" [ref=e139] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues/views
+                  - generic:
+                    - img
+                  - generic [ref=e141]: Views
+              - listitem [ref=e142]:
+                - link "Projects" [ref=e143] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/projects
+                  - generic:
+                    - img
+                  - generic [ref=e145]: Projects
+              - listitem [ref=e146]:
+                - link "Milestones" [ref=e147] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/milestones
+                  - generic:
+                    - img
+                  - generic [ref=e149]: Milestones
+              - listitem [ref=e150]:
+                - link "Labels" [ref=e151] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/labels
+                  - generic:
+                    - img
+                  - generic [ref=e153]: Labels
+        - generic [ref=e154]:
+          - navigation "Feedback" [ref=e155]:
+            - list [ref=e156]:
+              - listitem [ref=e157]:
+                - link "Feedback Preview" [ref=e158] [cursor=pointer]:
+                  - /url: https://gh.io/issues-sidebar-feedback
+                  - generic:
+                    - img
+                  - generic [ref=e159]:
+                    - generic [ref=e160]: Feedback
+                    - generic:
+                      - generic: Preview
+          - list [ref=e161]:
+            - listitem [ref=e162]:
+              - button "Collapse sidebar" [expanded] [ref=e163] [cursor=pointer]:
+                - generic:
+                  - img
+                - generic [ref=e165]: Collapse sidebar
+      - generic [ref=e170]:
+        - heading "Issues" [level=1] [ref=e171]
+        - generic [ref=e172]:
+          - generic [ref=e174]:
+            - form "Search Issues" [ref=e176]:
+              - generic [ref=e177]: Search Issues
+              - generic [ref=e179]:
+                - generic [ref=e180]:
+                  - generic [ref=e181]:
+                    - generic [ref=e182]:
+                      - generic [ref=e183]: agent
+                      - generic [ref=e185]: manager
+                    - combobox "Search Issues" [ref=e187]: agent manager
+                  - button "Clear filter" [ref=e188] [cursor=pointer]:
+                    - img [ref=e189]
+                - button "Search" [ref=e191] [cursor=pointer]:
+                  - img [ref=e192]
+            - button "New issue" [ref=e195]:
+              - generic [ref=e197]: New issue
+          - generic [ref=e198]:
+            - generic [ref=e201]:
+              - heading "Search results" [level=2] [ref=e202]
+              - generic [ref=e203]:
+                - list [ref=e205]:
+                  - listitem [ref=e206]:
+                    - link "Open (56)" [ref=e207] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20state%3Aopen
+                      - generic [ref=e208]: Open
+                      - generic [ref=e209]: "56"
+                      - generic [ref=e210]: (56)
+                  - listitem [ref=e211]:
+                    - link "Closed (858)" [ref=e212] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20state%3Aclosed
+                      - generic [ref=e213]: Closed
+                      - generic [ref=e214]: "858"
+                      - generic [ref=e215]: (858)
+                - toolbar "Actions" [ref=e216]:
+                  - generic [ref=e217]:
+                    - button "Filter by author" [ref=e219] [cursor=pointer]:
+                      - generic [ref=e220]:
+                        - generic [ref=e221]: Author
+                        - generic:
+                          - img
+                    - button "Filter by label" [ref=e223] [cursor=pointer]:
+                      - generic [ref=e224]:
+                        - generic [ref=e225]: Labels
+                        - generic:
+                          - img
+                    - button "Filter by project" [ref=e227] [cursor=pointer]:
+                      - generic [ref=e228]:
+                        - generic [ref=e229]: Projects
+                        - generic:
+                          - img
+                  - button "More Actions" [ref=e230] [cursor=pointer]:
+                    - img [ref=e231]
+              - list "Search results" [ref=e233]:
+                - 'listitem "feat(agent-manager): generate task-focused branch names: Status: Open (in progress). Kilo-Org/kilocodenumber 11741 #11741 In Kilo-Org/kilocode;· marius-kilocode opened on Jun 26, 2026. More information available below." [ref=e236]':
+                  - 'heading "feat(agent-manager): generate task-focused branch names" [level=3] [ref=e238]':
+                    - 'link "feat(agent-manager): generate task-focused branch names" [ref=e239] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11741
+                      - generic [ref=e240]: "feat(agent-manager): generate task-focused branch names"
+                  - generic [ref=e245]:
+                    - img [ref=e247]
+                    - generic [ref=e249]: "Status: Open (in progress)."
+                  - generic [ref=e253]:
+                    - generic [ref=e254]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e255]: number 11741
+                    - generic [ref=e256]:
+                      - generic [ref=e257]: "#11741"
+                      - generic [ref=e258]: In Kilo-Org/kilocode;
+                    - generic [ref=e259]:
+                      - text: ·
+                      - link "marius-kilocode" [ref=e260] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: opened on Jun 26, 20262 days ago
+                - 'listitem "fix(vscode): wait for microphone capture readiness: Status: Open (in progress). Kilo-Org/kilocodenumber 11738 #11738 In Kilo-Org/kilocode;· marius-kilocode opened on Jun 26, 2026. More information available below." [ref=e268]':
+                  - 'heading "fix(vscode): wait for microphone capture readiness" [level=3] [ref=e270]':
+                    - 'link "fix(vscode): wait for microphone capture readiness" [ref=e271] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11738
+                      - generic [ref=e272]: "fix(vscode): wait for microphone capture readiness"
+                  - generic [ref=e277]:
+                    - img [ref=e279]
+                    - generic [ref=e281]: "Status: Open (in progress)."
+                  - generic [ref=e285]:
+                    - generic [ref=e286]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e287]: number 11738
+                    - generic [ref=e288]:
+                      - generic [ref=e289]: "#11738"
+                      - generic [ref=e290]: In Kilo-Org/kilocode;
+                    - generic [ref=e291]:
+                      - text: ·
+                      - link "marius-kilocode" [ref=e292] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: opened on Jun 26, 20262 days ago
+                - 'listitem "fix(agent-manager): collapse sessions by default: Status: Open (in progress). Kilo-Org/kilocodenumber 11733 #11733 In Kilo-Org/kilocode;· marius-kilocode opened on Jun 26, 2026. More information available below." [ref=e300]':
+                  - 'heading "fix(agent-manager): collapse sessions by default" [level=3] [ref=e302]':
+                    - 'link "fix(agent-manager): collapse sessions by default" [ref=e303] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11733
+                      - generic [ref=e304]: "fix(agent-manager): collapse sessions by default"
+                  - generic [ref=e309]:
+                    - img [ref=e311]
+                    - generic [ref=e313]: "Status: Open (in progress)."
+                  - generic [ref=e317]:
+                    - generic [ref=e318]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e319]: number 11733
+                    - generic [ref=e320]:
+                      - generic [ref=e321]: "#11733"
+                      - generic [ref=e322]: In Kilo-Org/kilocode;
+                    - generic [ref=e323]:
+                      - text: ·
+                      - link "marius-kilocode" [ref=e324] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: opened on Jun 26, 20262 days ago
+                - 'listitem "fix(vscode): translate English locale fallbacks: Status: Closed (abandoned). Kilo-Org/kilocodenumber 11720 #11720 In Kilo-Org/kilocode;· by markijbema was closed on Jun 26, 2026. More information available below." [ref=e332]':
+                  - 'heading "fix(vscode): translate English locale fallbacks" [level=3] [ref=e334]':
+                    - 'link "fix(vscode): translate English locale fallbacks" [ref=e335] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11720
+                      - generic [ref=e336]: "fix(vscode): translate English locale fallbacks"
+                  - generic [ref=e341]:
+                    - img [ref=e343]
+                    - generic [ref=e345]: "Status: Closed (abandoned)."
+                  - generic [ref=e349]:
+                    - generic [ref=e350]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e351]: number 11720
+                    - generic [ref=e352]:
+                      - generic [ref=e353]: "#11720"
+                      - generic [ref=e354]: In Kilo-Org/kilocode;
+                    - generic [ref=e355]:
+                      - text: · by
+                      - link "markijbema" [ref=e356] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarkijbema
+                      - text: was closed on Jun 26, 20262 days ago
+                - 'listitem "feat(stack): Project Stack wizard — auto-detect and install technology-specific MCPs and skills: Status: Open (in progress). Kilo-Org/kilocodenumber 11712 #11712 In Kilo-Org/kilocode;· catrielmuller opened on Jun 26, 2026. More information available below." [ref=e364]':
+                  - 'heading "feat(stack): Project Stack wizard — auto-detect and install technology-specific MCPs and skills" [level=3] [ref=e366]':
+                    - 'link "feat(stack): Project Stack wizard — auto-detect and install technology-specific MCPs and skills" [ref=e367] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11712
+                      - generic [ref=e368]: "feat(stack): Project Stack wizard — auto-detect and install technology-specific MCPs and skills"
+                  - generic [ref=e373]:
+                    - img [ref=e375]
+                    - generic [ref=e377]: "Status: Open (in progress)."
+                  - generic [ref=e381]:
+                    - generic [ref=e382]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e383]: number 11712
+                    - generic [ref=e384]:
+                      - generic [ref=e385]: "#11712"
+                      - generic [ref=e386]: In Kilo-Org/kilocode;
+                    - generic [ref=e387]:
+                      - text: ·
+                      - link "catrielmuller" [ref=e388] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Acatrielmuller
+                      - text: opened on Jun 26, 20263 days ago
+                - 'listitem "Task tool subagent spawn blocks parent TUI with no cancel mechanism: Status: Open. #11708 In Kilo-Org/kilocode;· CivilHQ opened on Jun 25, 2026. More information available below." [ref=e396]':
+                  - heading "Task tool subagent spawn blocks parent TUI with no cancel mechanism" [level=3] [ref=e398]:
+                    - link "Task tool subagent spawn blocks parent TUI with no cancel mechanism" [ref=e399] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues/11708
+                      - generic [ref=e400]: Task tool subagent spawn blocks parent TUI with no cancel mechanism
+                  - generic [ref=e405]:
+                    - img [ref=e407]
+                    - generic [ref=e410]: "Status: Open."
+                  - generic [ref=e414]:
+                    - generic [ref=e415]:
+                      - generic [ref=e416]: "#11708"
+                      - generic [ref=e417]: In Kilo-Org/kilocode;
+                    - generic [ref=e418]:
+                      - text: ·
+                      - link "CivilHQ" [ref=e419] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3ACivilHQ
+                      - text: opened on Jun 25, 20263 days ago
+                - 'listitem "fix: remember sandbox state per session: Status: Merged (completed). Kilo-Org/kilocodenumber 11696 #11696 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 26, 2026. More information available below." [ref=e423]':
+                  - 'heading "fix: remember sandbox state per session" [level=3] [ref=e425]':
+                    - 'link "fix: remember sandbox state per session" [ref=e426] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11696
+                      - generic [ref=e427]: "fix: remember sandbox state per session"
+                  - generic [ref=e432]:
+                    - img [ref=e434]
+                    - generic [ref=e436]: "Status: Merged (completed)."
+                  - generic [ref=e440]:
+                    - generic [ref=e441]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e442]: number 11696
+                    - generic [ref=e443]:
+                      - generic [ref=e444]: "#11696"
+                      - generic [ref=e445]: In Kilo-Org/kilocode;
+                    - generic [ref=e446]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e447] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 26, 20262 days ago
+                - 'listitem "feat(agent-manager): add sandbox toggle to new worktree modal: Status: Merged (completed). Kilo-Org/kilocodenumber 11689 #11689 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 26, 2026. More information available below." [ref=e455]':
+                  - 'heading "feat(agent-manager): add sandbox toggle to new worktree modal" [level=3] [ref=e457]':
+                    - 'link "feat(agent-manager): add sandbox toggle to new worktree modal" [ref=e458] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11689
+                      - generic [ref=e459]: "feat(agent-manager): add sandbox toggle to new worktree modal"
+                  - generic [ref=e464]:
+                    - img [ref=e466]
+                    - generic [ref=e468]: "Status: Merged (completed)."
+                  - generic [ref=e472]:
+                    - generic [ref=e473]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e474]: number 11689
+                    - generic [ref=e475]:
+                      - generic [ref=e476]: "#11689"
+                      - generic [ref=e477]: In Kilo-Org/kilocode;
+                    - generic [ref=e478]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e479] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 26, 20262 days ago
+                - 'listitem "feat(agent-manager): add prompt enhancer to worktree dialog: Status: Open (in progress). Kilo-Org/kilocodenumber 11687 #11687 In Kilo-Org/kilocode;· marius-kilocode opened on Jun 25, 2026. More information available below." [ref=e487]':
+                  - 'heading "feat(agent-manager): add prompt enhancer to worktree dialog" [level=3] [ref=e489]':
+                    - 'link "feat(agent-manager): add prompt enhancer to worktree dialog" [ref=e490] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11687
+                      - generic [ref=e491]: "feat(agent-manager): add prompt enhancer to worktree dialog"
+                  - generic [ref=e496]:
+                    - img [ref=e498]
+                    - generic [ref=e500]: "Status: Open (in progress)."
+                  - generic [ref=e504]:
+                    - generic [ref=e505]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e506]: number 11687
+                    - generic [ref=e507]:
+                      - generic [ref=e508]: "#11687"
+                      - generic [ref=e509]: In Kilo-Org/kilocode;
+                    - generic [ref=e510]:
+                      - text: ·
+                      - link "marius-kilocode" [ref=e511] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: opened on Jun 25, 20263 days ago
+                - 'listitem "feat(vscode): add sandbox slash command: Status: Merged (completed). Kilo-Org/kilocodenumber 11681 #11681 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 25, 2026. More information available below." [ref=e519]':
+                  - 'heading "feat(vscode): add sandbox slash command" [level=3] [ref=e521]':
+                    - 'link "feat(vscode): add sandbox slash command" [ref=e522] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11681
+                      - generic [ref=e523]: "feat(vscode): add sandbox slash command"
+                  - generic [ref=e528]:
+                    - img [ref=e530]
+                    - generic [ref=e532]: "Status: Merged (completed)."
+                  - generic [ref=e536]:
+                    - generic [ref=e537]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e538]: number 11681
+                    - generic [ref=e539]:
+                      - generic [ref=e540]: "#11681"
+                      - generic [ref=e541]: In Kilo-Org/kilocode;
+                    - generic [ref=e542]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e543] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 25, 20263 days ago
+                - 'listitem "Add agent selection onboarding: Status: Closed (abandoned). Kilo-Org/kilocodenumber 11677 #11677 In Kilo-Org/kilocode;· by imanolmzd-svg was closed on Jun 26, 2026. More information available below." [ref=e551]':
+                  - heading "Add agent selection onboarding" [level=3] [ref=e553]:
+                    - link "Add agent selection onboarding" [ref=e554] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/pull/11677
+                      - generic [ref=e555]: Add agent selection onboarding
+                  - generic [ref=e560]:
+                    - img [ref=e562]
+                    - generic [ref=e564]: "Status: Closed (abandoned)."
+                  - generic [ref=e568]:
+                    - generic [ref=e569]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e570]: number 11677
+                    - generic [ref=e571]:
+                      - generic [ref=e572]: "#11677"
+                      - generic [ref=e573]: In Kilo-Org/kilocode;
+                    - generic [ref=e574]:
+                      - text: · by
+                      - link "imanolmzd-svg" [ref=e575] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Aimanolmzd-svg
+                      - text: was closed on Jun 26, 20262 days ago
+                - 'listitem "Scope the Auto Approve toolbar toggle to individual sessions: Status: Open. #11673 In Kilo-Org/kilocode;· marius-kilocode opened on Jun 25, 2026. More information available below." [ref=e583]':
+                  - heading "Scope the Auto Approve toolbar toggle to individual sessions" [level=3] [ref=e585]:
+                    - link "Scope the Auto Approve toolbar toggle to individual sessions" [ref=e586] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues/11673
+                      - generic [ref=e587]: Scope the Auto Approve toolbar toggle to individual sessions
+                  - generic [ref=e592]:
+                    - img [ref=e594]
+                    - generic [ref=e597]: "Status: Open."
+                  - generic [ref=e601]:
+                    - generic [ref=e602]:
+                      - generic [ref=e603]: "#11673"
+                      - generic [ref=e604]: In Kilo-Org/kilocode;
+                    - generic [ref=e605]:
+                      - text: ·
+                      - link "marius-kilocode" [ref=e606] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: opened on Jun 25, 20263 days ago
+                - 'listitem "fix: preserve sessions across sandbox changes: Status: Closed (abandoned). Kilo-Org/kilocodenumber 11662 #11662 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 25, 2026. More information available below." [ref=e610]':
+                  - 'heading "fix: preserve sessions across sandbox changes" [level=3] [ref=e612]':
+                    - 'link "fix: preserve sessions across sandbox changes" [ref=e613] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11662
+                      - generic [ref=e614]: "fix: preserve sessions across sandbox changes"
+                  - generic [ref=e619]:
+                    - img [ref=e621]
+                    - generic [ref=e623]: "Status: Closed (abandoned)."
+                  - generic [ref=e627]:
+                    - generic [ref=e628]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e629]: number 11662
+                    - generic [ref=e630]:
+                      - generic [ref=e631]: "#11662"
+                      - generic [ref=e632]: In Kilo-Org/kilocode;
+                    - generic [ref=e633]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e634] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 25, 20263 days ago
+                - 'listitem "feat(vscode): add native notebook tools: Status: Merged (completed). Kilo-Org/kilocodenumber 11644 #11644 In Kilo-Org/kilocode;· by markijbema was closed on Jun 25, 2026. More information available below." [ref=e642]':
+                  - 'heading "feat(vscode): add native notebook tools" [level=3] [ref=e644]':
+                    - 'link "feat(vscode): add native notebook tools" [ref=e645] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11644
+                      - generic [ref=e646]: "feat(vscode): add native notebook tools"
+                  - generic [ref=e651]:
+                    - img [ref=e653]
+                    - generic [ref=e655]: "Status: Merged (completed)."
+                  - generic [ref=e659]:
+                    - generic [ref=e660]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e661]: number 11644
+                    - generic [ref=e662]:
+                      - generic [ref=e663]: "#11644"
+                      - generic [ref=e664]: In Kilo-Org/kilocode;
+                    - generic [ref=e665]:
+                      - text: · by
+                      - link "markijbema" [ref=e666] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarkijbema
+                      - text: was closed on Jun 25, 20263 days ago
+                - 'listitem "feat(sandbox): add session sandbox controls: Status: Merged (completed). Kilo-Org/kilocodenumber 11628 #11628 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 24, 2026. More information available below." [ref=e674]':
+                  - 'heading "feat(sandbox): add session sandbox controls" [level=3] [ref=e676]':
+                    - 'link "feat(sandbox): add session sandbox controls" [ref=e677] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11628
+                      - generic [ref=e678]: "feat(sandbox): add session sandbox controls"
+                  - generic [ref=e683]:
+                    - img [ref=e685]
+                    - generic [ref=e687]: "Status: Merged (completed)."
+                  - generic [ref=e691]:
+                    - generic [ref=e692]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e693]: number 11628
+                    - generic [ref=e694]:
+                      - generic [ref=e695]: "#11628"
+                      - generic [ref=e696]: In Kilo-Org/kilocode;
+                    - generic [ref=e697]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e698] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 24, 20264 days ago
+                - 'listitem "release(jetbrains): v7.0.1-rc.13: Status: Merged (completed). Kilo-Org/kilocodenumber 11617 #11617 In Kilo-Org/kilocode;· by kilo-maintainer was closed on Jun 23, 2026. More information available below." [ref=e706]':
+                  - generic [ref=e707]:
+                    - 'heading "release(jetbrains): v7.0.1-rc.13" [level=3] [ref=e708]':
+                      - 'link "release(jetbrains): v7.0.1-rc.13" [ref=e709] [cursor=pointer]':
+                        - /url: /Kilo-Org/kilocode/pull/11617
+                        - generic [ref=e710]: "release(jetbrains): v7.0.1-rc.13"
+                    - link "jetbrains-release Required gate for JetBrains release publishing" [ref=e714] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20label%3Ajetbrains-release
+                      - generic [ref=e716]: jetbrains-release
+                      - generic [ref=e717]: Required gate for JetBrains release publishing
+                  - generic [ref=e721]:
+                    - img [ref=e723]
+                    - generic [ref=e725]: "Status: Merged (completed)."
+                  - generic [ref=e729]:
+                    - generic [ref=e730]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e731]: number 11617
+                    - generic [ref=e732]:
+                      - generic [ref=e733]: "#11617"
+                      - generic [ref=e734]: In Kilo-Org/kilocode;
+                    - generic [ref=e735]:
+                      - text: · by
+                      - link "kilo-maintainer" [ref=e736] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Aapp%2Fkilo-maintainer
+                      - text: was closed on Jun 23, 20265 days ago
+                - 'listitem "feat(cli): add Linux filesystem sandbox: Status: Merged (completed). Kilo-Org/kilocodenumber 11596 #11596 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 24, 2026. More information available below." [ref=e744]':
+                  - 'heading "feat(cli): add Linux filesystem sandbox" [level=3] [ref=e746]':
+                    - 'link "feat(cli): add Linux filesystem sandbox" [ref=e747] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11596
+                      - generic [ref=e748]: "feat(cli): add Linux filesystem sandbox"
+                  - generic [ref=e753]:
+                    - img [ref=e755]
+                    - generic [ref=e757]: "Status: Merged (completed)."
+                  - generic [ref=e761]:
+                    - generic [ref=e762]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e763]: number 11596
+                    - generic [ref=e764]:
+                      - generic [ref=e765]: "#11596"
+                      - generic [ref=e766]: In Kilo-Org/kilocode;
+                    - generic [ref=e767]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e768] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 24, 20264 days ago
+                - 'listitem "fix(cli): keep snapshot stalls from blocking turns: Status: Merged (completed). Kilo-Org/kilocodenumber 11594 #11594 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 24, 2026. More information available below." [ref=e776]':
+                  - 'heading "fix(cli): keep snapshot stalls from blocking turns" [level=3] [ref=e778]':
+                    - 'link "fix(cli): keep snapshot stalls from blocking turns" [ref=e779] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11594
+                      - generic [ref=e780]: "fix(cli): keep snapshot stalls from blocking turns"
+                  - generic [ref=e785]:
+                    - img [ref=e787]
+                    - generic [ref=e789]: "Status: Merged (completed)."
+                  - generic [ref=e793]:
+                    - generic [ref=e794]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e795]: number 11594
+                    - generic [ref=e796]:
+                      - generic [ref=e797]: "#11594"
+                      - generic [ref=e798]: In Kilo-Org/kilocode;
+                    - generic [ref=e799]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e800] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 24, 20264 days ago
+                - 'listitem "Sandbox: worktree-to-worktree isolation: Status: Closed (completed). #11544 In Kilo-Org/kilocode;· by marius-kilocode was closed on Jun 23, 2026. More information available below." [ref=e808]':
+                  - 'heading "Sandbox: worktree-to-worktree isolation" [level=3] [ref=e810]':
+                    - 'link "Sandbox: worktree-to-worktree isolation" [ref=e811] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/issues/11544
+                      - generic [ref=e812]: "Sandbox: worktree-to-worktree isolation"
+                  - generic [ref=e817]:
+                    - img [ref=e819]
+                    - generic [ref=e822]: "Status: Closed (completed)."
+                  - generic [ref=e826]:
+                    - generic [ref=e827]:
+                      - generic [ref=e828]: "#11544"
+                      - generic [ref=e829]: In Kilo-Org/kilocode;
+                    - generic [ref=e830]:
+                      - text: · by
+                      - link "marius-kilocode" [ref=e831] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: was closed on Jun 23, 20265 days ago
+                - 'listitem "Sandbox: worktree-to-worktree isolation: Status: Open. #11543 In Kilo-Org/kilocode;· marius-kilocode opened on Jun 22, 2026. More information available below." [ref=e835]':
+                  - 'heading "Sandbox: worktree-to-worktree isolation" [level=3] [ref=e837]':
+                    - 'link "Sandbox: worktree-to-worktree isolation" [ref=e838] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/issues/11543
+                      - generic [ref=e839]: "Sandbox: worktree-to-worktree isolation"
+                  - generic [ref=e844]:
+                    - img [ref=e846]
+                    - generic [ref=e849]: "Status: Open."
+                  - generic [ref=e853]:
+                    - generic [ref=e854]:
+                      - generic [ref=e855]: "#11543"
+                      - generic [ref=e856]: In Kilo-Org/kilocode;
+                    - generic [ref=e857]:
+                      - text: ·
+                      - link "marius-kilocode" [ref=e858] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: opened on Jun 22, 2026last week
+                - 'listitem "fix(agent-manager): keep subagents out of tabs: Status: Open (in progress). Kilo-Org/kilocodenumber 11536 #11536 In Kilo-Org/kilocode;· marius-kilocode opened on Jun 22, 2026. More information available below." [ref=e862]':
+                  - 'heading "fix(agent-manager): keep subagents out of tabs" [level=3] [ref=e864]':
+                    - 'link "fix(agent-manager): keep subagents out of tabs" [ref=e865] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/pull/11536
+                      - generic [ref=e866]: "fix(agent-manager): keep subagents out of tabs"
+                  - generic [ref=e871]:
+                    - img [ref=e873]
+                    - generic [ref=e875]: "Status: Open (in progress)."
+                  - generic [ref=e879]:
+                    - generic [ref=e880]:
+                      - text: Kilo-Org/kilocode
+                      - generic [ref=e881]: number 11536
+                    - generic [ref=e882]:
+                      - generic [ref=e883]: "#11536"
+                      - generic [ref=e884]: In Kilo-Org/kilocode;
+                    - generic [ref=e885]:
+                      - text: ·
+                      - link "marius-kilocode" [ref=e886] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Amarius-kilocode
+                      - text: opened on Jun 22, 2026last week
+                - 'listitem "[BUG] Subagent permission error shows non-existent rules that block allowed commands: Status: Open. #11523 In Kilo-Org/kilocode;· kazuyakuza opened on Jun 21, 2026. More information available below." [ref=e894]':
+                  - generic [ref=e895]:
+                    - heading "[BUG] Subagent permission error shows non-existent rules that block allowed commands" [level=3] [ref=e896]:
+                      - link "[BUG] Subagent permission error shows non-existent rules that block allowed commands" [ref=e897] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues/11523
+                        - generic [ref=e898]: "[BUG] Subagent permission error shows non-existent rules that block allowed commands"
+                    - link "bug Something isn't working" [ref=e902] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20label%3Abug
+                      - generic [ref=e904]: bug
+                      - generic [ref=e905]: Something isn't working
+                  - generic [ref=e909]:
+                    - img [ref=e911]
+                    - generic [ref=e914]: "Status: Open."
+                  - generic [ref=e918]:
+                    - generic [ref=e919]:
+                      - generic [ref=e920]: "#11523"
+                      - generic [ref=e921]: In Kilo-Org/kilocode;
+                    - generic [ref=e922]:
+                      - text: ·
+                      - link "kazuyakuza" [ref=e923] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Akazuyakuza
+                      - text: opened on Jun 21, 2026last week
+                - 'listitem "[FEATURE]: Add chat.readable_width config to let users set or disable the reading lane: Status: Open. #11490 In Kilo-Org/kilocode;· jrmhng87 opened on Jun 20, 2026. More information available below." [ref=e927]':
+                  - 'heading "[FEATURE]: Add chat.readable_width config to let users set or disable the reading lane" [level=3] [ref=e929]':
+                    - 'link "[FEATURE]: Add chat.readable_width config to let users set or disable the reading lane" [ref=e930] [cursor=pointer]':
+                      - /url: /Kilo-Org/kilocode/issues/11490
+                      - generic [ref=e931]: "[FEATURE]: Add chat.readable_width config to let users set or disable the reading lane"
+                  - generic [ref=e936]:
+                    - img [ref=e938]
+                    - generic [ref=e941]: "Status: Open."
+                  - generic [ref=e945]:
+                    - generic [ref=e946]:
+                      - generic [ref=e947]: "#11490"
+                      - generic [ref=e948]: In Kilo-Org/kilocode;
+                    - generic [ref=e949]:
+                      - text: ·
+                      - link "jrmhng87" [ref=e950] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Ajrmhng87
+                      - text: opened on Jun 20, 2026last week
+                - 'listitem "fix(vscode): chat auto-scroll won''t detach from latest message on small upward wheel scroll: Status: Open. #11485 In Kilo-Org/kilocode;· CriDos opened on Jun 19, 2026. More information available below." [ref=e954]':
+                  - generic [ref=e955]:
+                    - 'heading "fix(vscode): chat auto-scroll won''t detach from latest message on small upward wheel scroll" [level=3] [ref=e956]':
+                      - 'link "fix(vscode): chat auto-scroll won''t detach from latest message on small upward wheel scroll" [ref=e957] [cursor=pointer]':
+                        - /url: /Kilo-Org/kilocode/issues/11485
+                        - generic [ref=e958]: "fix(vscode): chat auto-scroll won't detach from latest message on small upward wheel scroll"
+                    - link "bug Something isn't working" [ref=e962] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20label%3Abug
+                      - generic [ref=e964]: bug
+                      - generic [ref=e965]: Something isn't working
+                  - generic [ref=e969]:
+                    - img [ref=e971]
+                    - generic [ref=e974]: "Status: Open."
+                  - generic [ref=e978]:
+                    - generic [ref=e979]:
+                      - generic [ref=e980]: "#11485"
+                      - generic [ref=e981]: In Kilo-Org/kilocode;
+                    - generic [ref=e982]:
+                      - text: ·
+                      - link "CriDos" [ref=e983] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3ACriDos
+                      - text: opened on Jun 19, 2026last week
+                - 'listitem "CLI UX Improvements & Feature Requests: Status: Open. #11466 In Kilo-Org/kilocode;· kilo-code-bot opened on Jun 19, 2026. More information available below." [ref=e987]':
+                  - generic [ref=e988]:
+                    - heading "CLI UX Improvements & Feature Requests" [level=3] [ref=e989]:
+                      - link "CLI UX Improvements & Feature Requests" [ref=e990] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues/11466
+                        - generic [ref=e991]: CLI UX Improvements & Feature Requests
+                    - link "enhancement New feature or request" [ref=e995] [cursor=pointer]:
+                      - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20label%3Aenhancement
+                      - generic [ref=e997]: enhancement
+                      - generic [ref=e998]: New feature or request
+                  - generic [ref=e1002]:
+                    - img [ref=e1004]
+                    - generic [ref=e1007]: "Status: Open."
+                  - generic [ref=e1011]:
+                    - generic [ref=e1012]:
+                      - generic [ref=e1013]: "#11466"
+                      - generic [ref=e1014]: In Kilo-Org/kilocode;
+                    - generic [ref=e1015]:
+                      - text: ·
+                      - link "kilo-code-bot" [ref=e1016] [cursor=pointer]:
+                        - /url: /Kilo-Org/kilocode/issues?q=agent%20manager%20author%3Aapp%2Fkilo-code-bot
+                      - text: opened on Jun 19, 2026last week
+            - navigation "Pagination" [ref=e1018]:
+              - generic [ref=e1019]:
+                - generic [ref=e1020]:
+                  - img [ref=e1021]
+                  - text: Previous
+                - link "Page 1" [ref=e1023] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=1
+                  - text: "1"
+                - link "Page 2" [ref=e1024] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=2
+                  - text: "2"
+                - link "Page 3" [ref=e1025] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=3
+                  - text: "3"
+                - link "Page 4" [ref=e1026] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=4
+                  - text: "4"
+                - link "Page 5" [ref=e1027] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=5
+                  - text: "5"
+                - link "Page 6" [ref=e1028] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=6
+                  - text: "6"
+                - link "Page 7" [ref=e1029] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=7
+                  - text: "7"
+                - link "Page 8..." [ref=e1030] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=8
+                  - text: "8"
+                - text: …
+                - link "Page 36" [ref=e1031] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=36
+                  - text: "36"
+                - link "Page 37" [ref=e1032] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=37
+                  - text: "37"
+                - link "Next Page" [ref=e1033] [cursor=pointer]:
+                  - /url: /Kilo-Org/kilocode/issues?q=agent+manager&page=2
+                  - text: Next
+                  - img [ref=e1034]
+  - contentinfo [ref=e1036]:
+    - heading "Footer" [level=2] [ref=e1037]
+    - generic [ref=e1038]:
+      - generic [ref=e1039]:
+        - link "GitHub Homepage" [ref=e1040] [cursor=pointer]:
+          - /url: https://github.com
+          - img [ref=e1041]
+        - generic [ref=e1043]: © 2026 GitHub, Inc.
+      - navigation "Footer" [ref=e1044]:
+        - heading "Footer navigation" [level=3] [ref=e1045]
+        - list "Footer navigation" [ref=e1046]:
+          - listitem [ref=e1047]:
+            - link "Terms" [ref=e1048] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/github-terms/github-terms-of-service
+          - listitem [ref=e1049]:
+            - link "Privacy" [ref=e1050] [cursor=pointer]:
+              - /url: https://docs.github.com/site-policy/privacy-policies/github-privacy-statement
+          - listitem [ref=e1051]:
+            - link "Security" [ref=e1052] [cursor=pointer]:
+              - /url: https://github.com/security
+          - listitem [ref=e1053]:
+            - link "Status" [ref=e1054] [cursor=pointer]:
+              - /url: https://www.githubstatus.com/
+          - listitem [ref=e1055]:
+            - link "Community" [ref=e1056] [cursor=pointer]:
+              - /url: https://github.community/
+          - listitem [ref=e1057]:
+            - link "Docs" [ref=e1058] [cursor=pointer]:
+              - /url: https://docs.github.com/
+          - listitem [ref=e1059]:
+            - link "Contact" [ref=e1060] [cursor=pointer]:
+              - /url: https://support.github.com?tags=dotcom-footer
+          - listitem [ref=e1061]:
+            - button "Manage cookies" [ref=e1063] [cursor=pointer]
+          - listitem [ref=e1064]:
+            - button "Do not share my personal information" [ref=e1066] [cursor=pointer]

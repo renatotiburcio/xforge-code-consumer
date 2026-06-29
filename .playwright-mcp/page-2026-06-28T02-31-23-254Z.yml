@@ -1,0 +1,94 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - button "Inicio" [ref=e3] [cursor=pointer]:
+      - img [ref=e4]
+    - button "Chat" [ref=e7] [cursor=pointer]:
+      - img [ref=e8]
+    - button "Agentes" [ref=e10] [cursor=pointer]:
+      - img [ref=e11]
+    - button "Config" [ref=e16] [cursor=pointer]:
+      - img [ref=e17]
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - img "XF" [ref=e23]
+        - generic [ref=e24]: XForge
+      - generic [ref=e25]:
+        - button "Historico" [ref=e26] [cursor=pointer]:
+          - img [ref=e27]
+        - button "Config" [ref=e30] [cursor=pointer]:
+          - img [ref=e31]
+    - generic [ref=e35]:
+      - img "XF" [ref=e36]
+      - generic [ref=e37]: XForge
+    - generic [ref=e38]:
+      - combobox [ref=e39] [cursor=pointer]:
+        - option "Code" [selected]
+        - option "Architect"
+      - combobox [ref=e40] [cursor=pointer]:
+        - option "OpenRouter" [selected]
+      - combobox [ref=e41] [cursor=pointer]:
+        - option "claude-sonnet-4" [selected]
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - img [ref=e45]
+        - generic [ref=e48]:
+          - generic [ref=e50]: Voce
+          - generic [ref=e51]: Cria um middleware de log que registra todas as requests
+      - generic [ref=e52]:
+        - img [ref=e54]
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - generic [ref=e58]: XForge
+            - generic [ref=e59]: erro
+          - generic [ref=e60]:
+            - generic [ref=e61]:
+              - img [ref=e62]
+              - text: Build falhou
+            - generic [ref=e64]: "CS0246: O tipo ou namespace nao foi encontrado: ILogger"
+            - generic [ref=e65]:
+              - button "Tentar novamente" [ref=e66] [cursor=pointer]
+              - button "Ver detalhes" [ref=e67] [cursor=pointer]
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - img [ref=e70]
+              - text: Self-Healing em acao
+            - list [ref=e73]:
+              - listitem [ref=e74]: Analisando erro CS0246
+              - listitem [ref=e76]: Adicionando using Microsoft.Extensions.Logging
+              - listitem [ref=e78]: Rebuildando projeto
+              - listitem [ref=e80]: Rodando testes
+          - generic [ref=e83]:
+            - generic [ref=e84]: Executando comando
+            - generic [ref=e85]: dotnet build --no-restore
+            - generic [ref=e86]: retry 1/3
+    - generic [ref=e87]:
+      - textbox "Digite... (Enter envia, Shift+Enter nova linha)" [ref=e88]
+      - generic [ref=e89]:
+        - generic [ref=e90]: "Self-healing: 2/4 passos"
+        - generic [ref=e91]:
+          - button "Parar execucao" [ref=e92] [cursor=pointer]:
+            - img [ref=e93]
+          - generic [ref=e95]: claude-sonnet-4
+  - generic [ref=e96]:
+    - generic [ref=e97]: 1using Microsoft.AspNetCore.Mvc;
+    - generic [ref=e98]: 2using XForge.MediatR;
+    - generic [ref=e99]: 3using Microsoft.Extensions.Logging;
+    - generic [ref=e100]: "4"
+    - generic [ref=e101]:
+      - text: 5namespace
+      - generic [ref=e102]: App.Middleware
+      - text: ;
+    - generic [ref=e103]: "6"
+    - generic [ref=e104]:
+      - text: 7public class
+      - generic [ref=e105]: RequestLoggingMiddleware
+    - generic [ref=e106]: "8{"
+    - generic [ref=e107]: 9 private readonly RequestDelegate _next;
+    - generic [ref=e108]: 10 private readonly ILogger _logger;
+    - generic [ref=e109]: "11"
+    - generic [ref=e110]: 12 public RequestLoggingMiddleware(RequestDelegate next, ILogger<RequestLoggingMiddleware> logger)
+    - generic [ref=e111]: "13 {"
+    - generic [ref=e112]: 14 _next = next;
+    - generic [ref=e113]: 15 _logger = logger;
+    - generic [ref=e114]: "16 }"
