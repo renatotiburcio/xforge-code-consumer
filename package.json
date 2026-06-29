@@ -1,0 +1,137 @@
+{
+  "name": "xforge-code-ai",
+  "displayName": "XForge Code AI",
+  "description": "AI-powered code assistant for VS Code with Genius Council Framework",
+  "version": "0.1.0",
+  "publisher": "xforge",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Chat",
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "ai",
+    "code",
+    "assistant",
+    "genius",
+    "council"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "xforge.openChat",
+        "title": "XForge: Open Chat",
+        "icon": "$(comment-discussion)"
+      },
+      {
+        "command": "xforge.openAgentManager",
+        "title": "XForge: Open Agent Manager",
+        "icon": "$(organization)"
+      },
+      {
+        "command": "xforge.openSettings",
+        "title": "XForge: Open Settings",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "xforge.openWelcome",
+        "title": "XForge: Open Welcome",
+        "icon": "$(home)"
+      },
+      {
+        "command": "xforge.newSession",
+        "title": "XForge: New Session",
+        "icon": "$(add)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "xforge-sidebar",
+          "title": "XForge Code AI",
+          "icon": "icons/xforge-activity.svg"
+        }
+      ]
+    },
+    "views": {
+      "xforge-sidebar": [
+        {
+          "type": "webview",
+          "id": "xforge.chatView",
+          "name": "Chat"
+        }
+      ]
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "xforge.openChat"
+        },
+        {
+          "command": "xforge.openAgentManager"
+        },
+        {
+          "command": "xforge.openSettings"
+        },
+        {
+          "command": "xforge.openWelcome"
+        },
+        {
+          "command": "xforge.newSession"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "XForge Code AI",
+      "properties": {
+        "xforge.provider": {
+          "type": "string",
+          "default": "openrouter",
+          "enum": [
+            "openrouter",
+            "openai",
+            "anthropic",
+            "ollama"
+          ],
+          "description": "Default AI provider"
+        },
+        "xforge.model": {
+          "type": "string",
+          "default": "claude-sonnet-4",
+          "description": "Default model to use"
+        },
+        "xforge.streaming": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable streaming responses"
+        },
+        "xforge.autoAccept": {
+          "type": "boolean",
+          "default": false,
+          "description": "Auto-accept suggestions"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "dependencies": {}
+}
