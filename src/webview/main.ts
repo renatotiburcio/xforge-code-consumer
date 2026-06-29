@@ -206,6 +206,10 @@ interface VsCodeMessageEvent {
             case 'currentSelection':
                 if (msg.selection) updateHeaderSelection(msg.selection);
                 break;
+            case 'refreshSidebar':
+                const sidebarList = document.getElementById('sidebarList');
+                if (sidebarList && msg.html) sidebarList.innerHTML = msg.html;
+                break;
         }
     });
 })();

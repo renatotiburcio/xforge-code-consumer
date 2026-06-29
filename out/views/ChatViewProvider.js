@@ -199,9 +199,8 @@ class ChatViewProvider {
                     '<div class="chat-sidebar" id="historyPanel">' +
                     '<div class="sidebar-header">' +
                     '<span class="sidebar-title">Historico</span>' +
-                    '<button class="sidebar-btn" onclick="window._toggleSidebar()">' + history + '</button>' +
                     '</div>' +
-                    '<div class="sidebar-list">' +
+                    '<div class="sidebar-list" id="sidebarList">' +
                     '<div class="session-new" onclick="window._newSession()">' + plus + 'Nova conversa</div>' +
                     sessionsHtml +
                     '</div>' +
@@ -280,7 +279,7 @@ class ChatViewProvider {
         const model = sel && sel.model ? sel.model : 'auto';
         const apiKey = this._globalState ? (0, apiProvider_1.resolveApiKey)(providerId, this._globalState) : '';
         const baseUrl = this._globalState ? (0, apiProvider_1.resolveBaseUrl)(providerId, this._globalState) : undefined;
-        console.log(`[xforge] callProvider: providerId=${providerId} model=${model} apiKey=${apiKey ? '[SET]' : '[EMPTY]'} baseUrl=${baseUrl || '[DEFAULT]'}`);
+        console.log(`[xforge] callProvider: providerId=${providerId} model=${model}`);
         const assistantId = this._generateId();
         const assistantMessage = { id: assistantId, role: 'assistant', content: '', timestamp: new Date() };
         this._session.messages.push(assistantMessage);
@@ -292,17 +291,45 @@ class ChatViewProvider {
                 providerId, model, messages, apiKey, baseUrl,
                 onToken: (token) => {
                     assistantMessage.content += token;
-                    this._appendAssistantMessage(assistantMessage.content);
                     this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token });
                 }
             });
             this._view.webview.postMessage({ type: 'streamEnd', id: assistantId, content: assistantMessage.content });
+            // Persist assistant message ONLY when stream is complete
+            this._persistAssistant(assistantMessage.content);
         }
         catch (err) {
             const msg = err instanceof Error ? err.message : 'Erro desconhecido';
-            assistantMessage.content = '**Erro:** ' + msg;
+            assistantMessage.content = '**Erro:** ' + msg + ' (provider: ' + providerId + ')';
             this._view.webview.postMessage({ type: 'streamEnd', id: assistantId, content: assistantMessage.content });
+            this._persistAssistant(assistantMessage.content);
         }
+    }
+    _persistAssistant(content) {
+        if (!this._globalState || !this._activeSessionId)
+            return;
+        const sessionIdx = this._sessions.findIndex(s => s.id === this._activeSessionId);
+        if (sessionIdx === -1) {
+            this._refreshSidebar();
+            return;
+        }
+        const session = this._sessions[sessionIdx];
+        // Find last assistant message and update its content
+        let updated = false;
+        for (let i = session.messages.length - 1; i >= 0; i--) {
+            if (session.messages[i].role === 'assistant') {
+                session.messages[i].content = content;
+                updated = true;
+                break;
+            }
+        }
+        if (!updated) {
+            session.messages.push({ role: 'assistant', content, timestamp: new Date().toISOString() });
+        }
+        session.updatedAt = new Date().toISOString();
+        (0, apiProvider_1.saveSessions)(this._globalState, this._sessions);
+        // Update sidebar in webview
+        this._refreshSidebar();
     }
     newSession() {
         this._session = this.createNewSession();
@@ -371,7 +398,27 @@ class ChatViewProvider {
     _refreshSidebar() {
         if (!this._view)
             return;
-        this._view.webview.postMessage({ type: 'sessionsUpdated' });
+        const trash = this._icon('trash');
+        const plus = this._icon('plus');
+        const activeId = this._activeSessionId;
+        const sessionsHtml = (this._sessions || []).slice(0, 30).map(s => {
+            const isActive = s.id === activeId ? ' active' : '';
+            const msgCount = s.messages ? s.messages.length : 0;
+            let lastMsg = '';
+            if (s.messages && s.messages.length > 0) {
+                const last = s.messages[s.messages.length - 1];
+                lastMsg = last.content.substring(0, 30).replace(/[\n<>]/g, ' ');
+            }
+            const date = s.updatedAt ? new Date(s.updatedAt).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }) : '';
+            return '<div class="session-item' + isActive + '" onclick="window._selectSession(\'' + s.id + '\')">' +
+                '<div class="session-info">' +
+                '<div class="session-name">' + (s.name || 'Sem nome') + '</div>' +
+                '</div>' +
+                '<button class="session-del" onclick="event.stopPropagation();window._deleteSession(\'' + s.id + '\')">' + trash + '</button>' +
+                '</div>';
+        }).join('');
+        const sidebarHtml = '<div class="session-new" onclick="window._newSession()">' + plus + 'Nova conversa</div>' + sessionsHtml;
+        this._view.webview.postMessage({ type: 'refreshSidebar', html: sidebarHtml });
     }
     _persistSession(userMessage) {
         if (!this._globalState)
