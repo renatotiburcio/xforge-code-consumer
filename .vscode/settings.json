@@ -1,3 +1,14 @@
-{
-    "liveServer.settings.port": 5501
+﻿{
+    "liveServer.settings.port": 5501,
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/out": false
+    },
+    "search.exclude": {
+        "**/out": true,
+        "**/node_modules": true
+    },
+    "editor.formatOnSave": false
 }
