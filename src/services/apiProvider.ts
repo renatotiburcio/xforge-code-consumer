@@ -127,6 +127,32 @@ export async function saveActiveSelection(globalState: vscode.Memento, providerI
     await globalState.update('xforge.selection', { providerId, model });
 }
 
+export interface SessionData {
+    id: string;
+    name: string;
+    messages: { role: string; content: string; timestamp: string }[];
+    providerId: string;
+    model: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
+export function loadSessions(globalState: vscode.Memento): SessionData[] {
+    return globalState.get<SessionData[]>('xforge.sessions', []);
+}
+
+export async function saveSessions(globalState: vscode.Memento, sessions: SessionData[]): Promise<void> {
+    await globalState.update('xforge.sessions', sessions);
+}
+
+export function loadActiveSessionId(globalState: vscode.Memento): string | null {
+    return globalState.get<string | null>('xforge.activeSessionId', null);
+}
+
+export async function saveActiveSessionId(globalState: vscode.Memento, sessionId: string | null): Promise<void> {
+    await globalState.update('xforge.activeSessionId', sessionId);
+}
+
 async function httpGetJson(url: string, headers?: Record<string, string>): Promise<any> {
     return new Promise((resolve, reject) => {
         const urlObj = new URL(url);

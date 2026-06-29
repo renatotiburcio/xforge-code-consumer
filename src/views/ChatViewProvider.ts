@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
-import { callProvider, resolveApiKey, resolveBaseUrl, loadActiveSelection, StoredProvider, getProviderConfig } from '../services/apiProvider';
+import { callProvider, resolveApiKey, resolveBaseUrl, loadActiveSelection, StoredProvider, getProviderConfig, SessionData, loadSessions, saveSessions, loadActiveSessionId, saveActiveSessionId } from '../services/apiProvider';
 
 export interface Message {
     id: string;
@@ -26,6 +26,8 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     private _session: Session;
     private _disposables: vscode.Disposable[] = [];
     private _viewContext: ViewContext = 'chat';
+    private _sessions: SessionData[] = [];
+    private _activeSessionId: string | null = null;
 
     constructor(
         private readonly _extensionUri: vscode.Uri,
@@ -64,6 +66,8 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                 }
             }, null, this._disposables
         );
+        this._sessions = this._globalState ? loadSessions(this._globalState) : [];
+        this._activeSessionId = this._globalState ? loadActiveSessionId(this._globalState) : null;
         this._pushSelectionToWebview();
     }
 
@@ -84,16 +88,15 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     private _getSharedStyles(): string {
         return [
             '* { margin:0; padding:0; box-sizing:border-box; }',
-            'html, body { height:100%; width:100%; overflow:hidden; font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif; font-size:13px; background:var(--vscode-sideBar-background,#1e1e1e); color:var(--vscode-foreground,#ccc); }',
-            '.chat-layout { display:flex; flex-direction:column; height:100%; font-size:13px; overflow:hidden; position:relative; }',
-            '.chat-view { display:flex; flex-direction:column; flex:1; min-height:0; overflow:hidden; }',
-            '.chat-header { display:flex; align-items:center; gap:6px; padding:8px 12px; background:var(--vscode-list-hoverBackground,#2a2d2e); border-bottom:1px solid var(--vscode-widget-border,#3c3c3c); cursor:pointer; user-select:none; flex-shrink:0; }',
+            'html, body { height:100%; width:100%; }',
+            'body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; font-size:13px; background:var(--vscode-sideBar-background,#1e1e1e); color:var(--vscode-foreground,#ccc); }',
+            '.chat-grid { display:grid; grid-template-rows:auto 1fr auto; height:100%; width:100%; }',
+            '.chat-header { display:flex; align-items:center; gap:6px; padding:8px 12px; background:var(--vscode-list-hoverBackgroundd2e); border-bottom:1px solid var(--vscode-widget-border,#3c3c3c); cursor:pointer; user-select:none; }',
             '.chat-header:hover { background:var(--vscode-list-activeSelectionBackground,#094771); }',
             '.chat-header .pname { font-weight:600; font-size:0.85rem; color:#fff; }',
             '.chat-header .mname { font-size:0.75rem; color:#888; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }',
             '.chat-header .chev { font-size:0.7rem; color:#888; }',
-            '.chat-messages-wrapper { position:relative; flex:1; overflow:hidden; min-height:0; }',
-            '.chat-messages { position:absolute; top:0; left:0; right:0; bottom:0; overflow-x:hidden; overflow-y:auto; padding:12px; }',
+            '.chat-container { overflow-y:auto; padding:12px; min-height:0; }',
             '.welcome { text-align:center; padding:2rem 1rem; }',
             '.welcome-icon { font-size:2.5rem; margin-bottom:0.5rem; }',
             '.welcome h2 { font-size:1rem; margin-bottom:0.5rem; color:#fff; }',
@@ -106,7 +109,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
             '.message-bubble { display:inline-block; max-width:85%; padding:8px 12px; border-radius:8px; font-size:0.8rem; line-height:1.5; word-wrap:break-word; }',
             '.message-user .message-bubble { background:#094771; color:#fff; }',
             '.message-assistant .message-bubble { background:#2a2d2e; }',
-            '.input-area { flex-shrink:0; padding:12px; border-top:1px solid var(--vscode-widget-border,#3c3c3c); background:var(--vscode-sideBar-background,#1e1e1e); }',
+            '.input-area { padding:12px; border-top:1px solid var(--vscode-widget-border,#3c3c3c); background:var(--vscode-sideBar-background,#1e1e1e); }',
             '.input-wrapper { display:flex; align-items:center; gap:6px; background:var(--vscode-input-background,#3c3c3c); border:1px solid var(--vscode-widget-border,#3c3c3c); border-radius:6px; padding:6px 8px; }',
             'textarea { flex:1; background:transparent; border:none; color:var(--vscode-input-foreground,#ccc); font-size:0.8rem; resize:none; outline:none; min-height:20px; max-height:100px; }',
             '.send-btn { width:28px; height:28px; border-radius:4px; border:none; background:var(--vscode-button-background,#0e639c); color:#fff; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }',
@@ -131,7 +134,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     private _getBodyForContext(): string {
         switch (this._viewContext) {
             case 'chat':
-                return '<div class="chat-layout"><div class="chat-view"><div class="chat-header" id="headerBtn" title="Trocar provider (XForge: Trocar Provider)"><span class="pname" id="headerProvider">OpenRouter</span><span class="mname" id="headerModel">auto</span><span class="chev">v</span></div><div class="chat-messages-wrapper"><div class="chat-messages" id="chatContainer"><div class="welcome" id="welcome"><div class="welcome-icon">></div><h2>Bem-vindo ao XForge Code AI</h2><p>Seu assistente</p><div class="quick-actions"><div class="quick-action" onclick="sendQuick("Crie uma API")">Nova API</div><div class="quick-action" onclick="sendQuick("Analise o projeto")">Analisar</div><div class="quick-action" onclick="sendQuick("Me ajude com testes")">Testes</div><div class="quick-action" onclick="sendQuick("/help")">Comandos</div></div></div></div></div><div class="input-area"><div class="input-wrapper"><textarea id="messageInput" placeholder="Mensagem... (@ contexto, / comandos)" rows="1"></textarea><button class="send-btn" id="sendBtn">></button></div></div></div></div>';
+                return '<div class="chat-grid"><div class="chat-header" id="headerBtn" title="Trocar provider (Ctrl+Shift+P → XForge: Trocar Provider)"><span class="pname" id="headerProvider">OpenRouter</span><span class="mname" id="headerModel">auto</span><span class="chev">v</span></div><div class="chat-container" id="chatContainer"><div class="welcome" id="welcome"><div class="welcome-icon">></div><h2>Bem-vindo ao XForge Code AI</h2><p>Seu assistente</p><div class="quick-actions"><div class="quick-action" onclick="sendQuick("Crie uma API")">Nova API</div><div class="quick-action" onclick="sendQuick("Analise o projeto")">Analisar</div><div class="quick-action" onclick="sendQuick("Me ajude com testes")">Testes</div><div class="quick-action" onclick="sendQuick("/help")">Comandos</div></div></div></div><div class="input-area"><div class="input-wrapper"><textarea id="messageInput" placeholder="Mensagem... (@ contexto, / comandos)" rows="1"></textarea><button class="send-btn" id="sendBtn">></button></div></div></div>';
             case 'welcome':
                 return '<div style="padding:2rem 1rem; text-align:center;"><div style="font-size:2.5rem; margin-bottom:1rem;">]</div><h2>Bem-vindo ao XForge</h2><p>Configure para comecar</p><button class="btn-primary" style="width:100%;" onclick="requestNewProvider()">Configurar</button></div>';
             case 'agent-manager':
@@ -157,6 +160,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
             this._view.webview.postMessage({ type: 'streamEnd', id: assistantMessage.id, content: response });
             return;
         }
+        this._persistSession(text);
         await this._callProvider(text);
     }
 
@@ -189,6 +193,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                 providerId, model, messages, apiKey, baseUrl,
                  onToken: (token) => {
                     assistantMessage.content += token;
+                    this._appendAssistantMessage(assistantMessage.content);
                     this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token });
                  }
             });
@@ -218,6 +223,41 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         let result = '';
         for (let i = 0; i < 32; i++) result += chars.charAt(Math.floor(Math.random() * chars.length));
         return result;
+    }
+
+    private _persistSession(userMessage: string): void {
+        if (!this._globalState) return;
+        const now = new Date().toISOString();
+        if (!this._activeSessionId) {
+            this._activeSessionId = 'sess_' + Date.now();
+            const sel = loadActiveSelection(this._globalState);
+            this._sessions.unshift({
+                id: this._activeSessionId,
+                name: userMessage.substring(0, 40),
+                messages: [],
+                providerId: sel.providerId,
+                model: sel.model,
+                createdAt: now,
+                updatedAt: now
+            });
+        }
+        const session = this._sessions.find(s => s.id === this._activeSessionId);
+        if (session) {
+            session.messages.push({ role: 'user', content: userMessage, timestamp: now });
+            session.updatedAt = now;
+        }
+        saveSessions(this._globalState, this._sessions);
+        saveActiveSessionId(this._globalState, this._activeSessionId);
+    }
+
+    private _appendAssistantMessage(text: string): void {
+        if (!this._globalState || !this._activeSessionId) return;
+        const session = this._sessions.find(s => s.id === this._activeSessionId);
+        if (session) {
+            session.messages.push({ role: 'assistant', content: text, timestamp: new Date().toISOString() });
+            session.updatedAt = new Date().toISOString();
+            saveSessions(this._globalState, this._sessions);
+        }
     }
 
     dispose() {

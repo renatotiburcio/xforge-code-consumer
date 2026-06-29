@@ -43,6 +43,10 @@ exports.loadSavedProviders = loadSavedProviders;
 exports.saveProviders = saveProviders;
 exports.loadActiveSelection = loadActiveSelection;
 exports.saveActiveSelection = saveActiveSelection;
+exports.loadSessions = loadSessions;
+exports.saveSessions = saveSessions;
+exports.loadActiveSessionId = loadActiveSessionId;
+exports.saveActiveSessionId = saveActiveSessionId;
 exports.fetchModels = fetchModels;
 exports.callProvider = callProvider;
 const http = __importStar(require("http"));
@@ -136,6 +140,18 @@ function loadActiveSelection(globalState) {
 }
 async function saveActiveSelection(globalState, providerId, model) {
     await globalState.update('xforge.selection', { providerId, model });
+}
+function loadSessions(globalState) {
+    return globalState.get('xforge.sessions', []);
+}
+async function saveSessions(globalState, sessions) {
+    await globalState.update('xforge.sessions', sessions);
+}
+function loadActiveSessionId(globalState) {
+    return globalState.get('xforge.activeSessionId', null);
+}
+async function saveActiveSessionId(globalState, sessionId) {
+    await globalState.update('xforge.activeSessionId', sessionId);
 }
 async function httpGetJson(url, headers) {
     return new Promise((resolve, reject) => {
