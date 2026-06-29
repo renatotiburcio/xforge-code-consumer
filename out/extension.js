@@ -37,27 +37,29 @@ exports.activate = activate;
 exports.deactivate = deactivate;
 const vscode = __importStar(require("vscode"));
 const ChatViewProvider_1 = require("./views/ChatViewProvider");
+const providerCommands_1 = require("./commands/providerCommands");
 function activate(context) {
     console.log('XForge Code AI is now active!');
-    const chatViewProvider = new ChatViewProvider_1.ChatViewProvider(context.extensionUri);
-    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.chatView', chatViewProvider, {
+    const globalState = context.globalState;
+    // Register Chat view with globalState for API key persistence
+    const chatProvider = new ChatViewProvider_1.ChatViewProvider(context.extensionUri, 'chat', globalState);
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.chatView', chatProvider, {
         webviewOptions: { retainContextWhenHidden: true }
     }));
-    context.subscriptions.push(vscode.commands.registerCommand('xforge.openChat', () => {
-        vscode.commands.executeCommand('xforge.chatView.focus');
-    }));
-    context.subscriptions.push(vscode.commands.registerCommand('xforge.openWelcome', () => {
-        vscode.commands.executeCommand('xforge.chatView.focus');
-    }));
-    context.subscriptions.push(vscode.commands.registerCommand('xforge.openSettings', () => {
-        vscode.commands.executeCommand('workbench.action.openSettings', 'xforge');
-    }));
-    context.subscriptions.push(vscode.commands.registerCommand('xforge.openAgentManager', () => {
-        vscode.window.showInformationMessage('Agent Manager - Coming soon!');
-    }));
-    context.subscriptions.push(vscode.commands.registerCommand('xforge.newSession', () => {
-        chatViewProvider.newSession();
-    }));
+    // Other views
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.welcomeView', new ChatViewProvider_1.WelcomeViewProvider()));
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.agentManagerView', new ChatViewProvider_1.AgentManagerViewProvider()));
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.settingsView', new ChatViewProvider_1.SettingsViewProvider(globalState)));
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.modesView', new ChatViewProvider_1.ModesViewProvider()));
+    // Commands
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.openChat', () => vscode.commands.executeCommand('xforge.chatView.focus')));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.openWelcome', () => vscode.commands.executeCommand('xforge.welcomeView.focus')));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.openSettings', () => vscode.commands.executeCommand('xforge.settingsView.focus')));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.openAgentManager', () => vscode.commands.executeCommand('xforge.agentManagerView.focus')));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.openModes', () => vscode.commands.executeCommand('xforge.modesView.focus')));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.newSession', () => chatProvider.newSession()));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.configureProvider', () => (0, providerCommands_1.configureProviderCommand)(globalState)));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.switchProvider', () => (0, providerCommands_1.showProviderQuickPick)(globalState, chatProvider)));
 }
 function deactivate() { }
 //# sourceMappingURL=extension.js.map
