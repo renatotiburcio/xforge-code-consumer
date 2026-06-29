@@ -59,7 +59,13 @@ class ChatViewProvider {
                     this._handleSendMessage(msg.text);
                     break;
                 case 'newSession':
-                    this.newSession();
+                    this._startNewSession();
+                    break;
+                case 'selectSession':
+                    this._loadSession(msg.sessionId);
+                    break;
+                case 'deleteSession':
+                    this._removeSession(msg.sessionId);
                     break;
                 case 'requestSwitch':
                     if (this._globalState) {
@@ -327,6 +333,47 @@ class ChatViewProvider {
         };
         const inner = icons[name] || '';
         return '<svg xmlns="http://www.w3.org/2000/svg" ' + s + '>' + inner + '</svg>';
+    }
+    _startNewSession() {
+        this._activeSessionId = null;
+        this._session = this.createNewSession();
+        if (this._view)
+            this._view.webview.postMessage({ type: 'clearMessages' });
+        this._refreshSidebar();
+    }
+    _loadSession(sessionId) {
+        const session = this._sessions.find(s => s.id === sessionId);
+        if (!session)
+            return;
+        this._activeSessionId = sessionId;
+        this._session = this.createNewSession();
+        if (this._globalState)
+            (0, apiProvider_1.saveActiveSessionId)(this._globalState, sessionId);
+        if (!this._view)
+            return;
+        this._view.webview.postMessage({ type: 'clearMessages' });
+        for (const msg of session.messages) {
+            const id = this._generateId();
+            const role = (msg.role === 'user' || msg.role === 'assistant' ? msg.role : 'user');
+            this._session.messages.push({ id, role, content: msg.content, timestamp: new Date(msg.timestamp) });
+            this._view.webview.postMessage({ type: 'streamStart', id });
+            this._view.webview.postMessage({ type: 'streamEnd', id, content: msg.content });
+        }
+        this._refreshSidebar();
+    }
+    _removeSession(sessionId) {
+        if (!this._globalState)
+            return;
+        this._sessions = this._sessions.filter(s => s.id !== sessionId);
+        (0, apiProvider_1.saveSessions)(this._globalState, this._sessions);
+        if (this._activeSessionId === sessionId)
+            this._activeSessionId = null;
+        this._refreshSidebar();
+    }
+    _refreshSidebar() {
+        if (!this._view)
+            return;
+        this._view.webview.postMessage({ type: 'sessionsUpdated' });
     }
     _persistSession(userMessage) {
         if (!this._globalState)

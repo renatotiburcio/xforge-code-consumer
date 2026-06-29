@@ -50,7 +50,9 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
             (msg) => {
                 switch (msg.type) {
                     case 'sendMessage': this._handleSendMessage(msg.text); break;
-                    case 'newSession': this.newSession(); break;
+                    case 'newSession': this._startNewSession(); break;
+                    case 'selectSession': this._loadSession(msg.sessionId); break;
+                    case 'deleteSession': this._removeSession(msg.sessionId); break;
                     case 'requestSwitch':
                         if (this._globalState) {
                             const m = require('../commands/providerCommands');
@@ -321,6 +323,44 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         };
         const inner = icons[name] || '';
         return '<svg xmlns="http://www.w3.org/2000/svg" ' + s + '>' + inner + '</svg>';
+    }
+
+    private _startNewSession(): void {
+        this._activeSessionId = null;
+        this._session = this.createNewSession();
+        if (this._view) this._view.webview.postMessage({ type: 'clearMessages' });
+        this._refreshSidebar();
+    }
+
+    private _loadSession(sessionId: string): void {
+        const session = this._sessions.find(s => s.id === sessionId);
+        if (!session) return;
+        this._activeSessionId = sessionId;
+        this._session = this.createNewSession();
+        if (this._globalState) saveActiveSessionId(this._globalState, sessionId);
+        if (!this._view) return;
+        this._view.webview.postMessage({ type: 'clearMessages' });
+        for (const msg of session.messages) {
+            const id = this._generateId();
+            const role = (msg.role === 'user' || msg.role === 'assistant' ? msg.role : 'user') as 'user' | 'assistant' | 'system';
+            this._session.messages.push({ id, role, content: msg.content, timestamp: new Date(msg.timestamp) });
+            this._view.webview.postMessage({ type: 'streamStart', id });
+            this._view.webview.postMessage({ type: 'streamEnd', id, content: msg.content });
+        }
+        this._refreshSidebar();
+    }
+
+    private _removeSession(sessionId: string): void {
+        if (!this._globalState) return;
+        this._sessions = this._sessions.filter(s => s.id !== sessionId);
+        saveSessions(this._globalState, this._sessions);
+        if (this._activeSessionId === sessionId) this._activeSessionId = null;
+        this._refreshSidebar();
+    }
+
+    private _refreshSidebar(): void {
+        if (!this._view) return;
+        this._view.webview.postMessage({ type: 'sessionsUpdated' });
     }
 
     private _persistSession(userMessage: string): void {
