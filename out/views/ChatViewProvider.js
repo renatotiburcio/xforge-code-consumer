@@ -38,17 +38,7 @@ const vscode = __importStar(require("vscode"));
 const path = __importStar(require("path"));
 const fs = __importStar(require("fs"));
 const apiProvider_1 = require("../services/apiProvider");
-function loadSvg(file, size = 14) {
-    try {
-        const svgPath = path.resolve(__dirname, '..', 'icons', file);
-        let content = fs.readFileSync(svgPath, 'utf-8').trim();
-        content = content.replace(/^<svg /, '<svg width="' + size + '" height="' + size + '" ');
-        return content;
-    }
-    catch {
-        return '';
-    }
-}
+const icons_1 = require("../webview/icons");
 class ChatViewProvider {
     constructor(_extensionUri, viewContext = 'chat', _globalState) {
         this._extensionUri = _extensionUri;
@@ -332,7 +322,7 @@ class ChatViewProvider {
         return result;
     }
     _icon(name, size = 14) {
-        const refIcon = loadSvg(name + '.svg', size);
+        const refIcon = (0, icons_1.icon)(name, size);
         if (refIcon)
             return refIcon;
         const s = 'xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';

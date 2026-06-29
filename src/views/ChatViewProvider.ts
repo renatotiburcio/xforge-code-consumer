@@ -2,17 +2,7 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 import * as fs from 'fs';
 import { callProvider, resolveApiKey, resolveBaseUrl, loadActiveSelection, StoredProvider, getProviderConfig, SessionData, loadSessions, saveSessions, loadActiveSessionId, saveActiveSessionId } from '../services/apiProvider';
-
-function loadSvg(file: string, size = 14): string {
-    try {
-        const svgPath = path.resolve(__dirname, '..', 'icons', file);
-        let content = fs.readFileSync(svgPath, 'utf-8').trim();
-        content = content.replace(/^<svg /, '<svg width="' + size + '" height="' + size + '" ');
-        return content;
-    } catch {
-        return '';
-    }
-}
+import { icon } from '../webview/icons';
 
 export interface Message {
     id: string;
@@ -322,7 +312,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     }
 
     private _icon(name: string, size = 14): string {
-        const refIcon = loadSvg(name + '.svg', size);
+        const refIcon = icon(name, size);
         if (refIcon) return refIcon;
         const s = 'xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"';
         const icons: Record<string, string> = {
