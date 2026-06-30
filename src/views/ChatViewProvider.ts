@@ -252,11 +252,98 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     private _handleCommand(cmd: string): string {
         const c = cmd.toLowerCase().trim();
         switch (c) {
-            case '/xforge': return '## XForge Code AI\n\nBem-vindo!';
-            case '/help': return '## Comandos\n- /menu\n- /analisar';
-            case '/analisar': return '## Analise\n\n*A implementar*';
-            default: return 'Comando nao reconhecido: ' + cmd;
+            case '/help':
+            case '/ajuda':
+                return this._cmdHelp();
+            case '/analisar':
+            case '/analyze':
+                return this._cmdAnalyze();
+            case '/limpar':
+            case '/clear':
+                this._startNewSession();
+                return 'Chat limpo.';
+            case '/provider':
+            case '/provedor':
+                return this._cmdProvider();
+            case '/configurar':
+            case '/config':
+                if (this._globalState) {
+                    const m = require('../commands/providerCommands');
+                    setTimeout(() => m.configureProviderCommand(this._globalState!, () => this.notifySelectionChanged()), 100);
+                }
+                return 'Abrindo configuracao de provider...';
+            case '/new':
+            case '/novo':
+                this._startNewSession();
+                return 'Nova sessao iniciada.';
+            case '/xforge':
+                return '## XForge Code AI v0.1.0\n\nSeu assistente de codigo.\n\nDigite /help para ver comandos.';
+            default:
+                return 'Comando nao reconhecido: `' + cmd + '`\n\nDigite /help para ver comandos disponiveis.';
         }
+    }
+
+    private _cmdHelp(): string {
+        return [
+            '## Comandos XForge',
+            '',
+            '**Atalhos rapidos:**',
+            '- `/help` ou `/ajuda` — mostra esta lista',
+            '- `/analisar` — analisa o projeto atual',
+            '- `/limpar` — limpa o chat',
+            '- `/provedor` — mostra provider/modelo ativo',
+            '- `/configurar` — abre configuracao de provider',
+            '- `/novo` — nova sessao',
+            '',
+            '**Contexto no chat:**',
+            '- `@file` — referencia arquivo',
+            '- `@branch` — referencia branch git',
+        ].join('\n');
+    }
+
+    private _cmdAnalyze(): string {
+        const folders = vscode.workspace.workspaceFolders;
+        if (!folders || folders.length === 0) {
+            return '## Analise de Projeto\n\nNenhum workspace abra no VS Code.';
+        }
+        const root = folders[0].uri.fsPath;
+        let stackHints: string[] = [];
+        try {
+            const files = fs.readdirSync(root);
+            if (files.includes('package.json')) stackHints.push('Node.js / TypeScript');
+            if (files.includes('requirements.txt') || files.includes('pyproject.toml')) stackHints.push('Python');
+            if (files.includes('go.mod')) stackHints.push('Go');
+            if (files.includes('Cargo.toml')) stackHints.push('Rust');
+            if (files.includes('pom.xml') || files.includes('build.gradle')) stackHints.push('Java / Kotlin');
+            if (files.includes('.sln') || files.includes('*.csproj')) stackHints.push('.NET');
+            if (files.includes('index.html')) stackHints.push('HTML / Frontend');
+            if ((fs.readdirSync(root).filter(f => f.endsWith('.ts') || f.endsWith('.tsx')).length) > 0) stackHints.push('TypeScript files detected');
+        } catch { /* ignore */ }
+        return [
+            '## Analise de Projeto',
+            '',
+            '**Root:** `' + root + '`',
+            '**Stack detectada:** ' + (stackHints.join(', ') || 'desconhecida'),
+            '**Workspace folders:** ' + folders.length,
+            '',
+            '*Use um provider para solicitar analise detalhada*',
+        ].join('\n');
+    }
+
+    private _cmdProvider(): string {
+        if (!this._globalState) return '## Provider\n\nMemoria nao disponivel.';
+        const sel = loadActiveSelection(this._globalState);
+        const cfg = getProviderConfig(sel.providerId);
+        const apiKey = resolveApiKey(sel.providerId, this._globalState);
+        return [
+            '## Provider Ativo',
+            '',
+            '**Provider:** ' + (cfg ? cfg.name : sel.providerId),
+            '**Modelo:** ' + sel.model,
+            '**API Key:** ' + (apiKey ? '[CONFIGURADA]' : '[NAO CONFIGURADA]'),
+            '',
+            'Para trocar, use `/configurar` ou no header do chat.',
+        ].join('\n');
     }
 
     private async _callProvider(userText: string) {
