@@ -38,8 +38,10 @@ exports.deactivate = deactivate;
 const vscode = __importStar(require("vscode"));
 const ChatViewProvider_1 = require("./views/ChatViewProvider");
 const providerCommands_1 = require("./commands/providerCommands");
+const XOUT = vscode.window.createOutputChannel('XForge', { log: true });
 function activate(context) {
-    console.log('XForge Code AI is now active!');
+    XOUT.appendLine('[xforge] ACTIVATE called');
+    vscode.window.showInformationMessage('XForge ativado!');
     const globalState = context.globalState;
     // Register Chat view with globalState for API key persistence
     const chatProvider = new ChatViewProvider_1.ChatViewProvider(context.extensionUri, 'chat', globalState);

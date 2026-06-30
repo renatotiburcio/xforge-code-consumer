@@ -8,9 +8,11 @@ import {
 } from './views/ChatViewProvider';
 import { configureProviderCommand, showProviderQuickPick } from './commands/providerCommands';
 
-export function activate(context: vscode.ExtensionContext) {
-    console.log('XForge Code AI is now active!');
+const XOUT = vscode.window.createOutputChannel('XForge', { log: true });
 
+export function activate(context: vscode.ExtensionContext) {
+    XOUT.appendLine('[xforge] ACTIVATE called');
+    vscode.window.showInformationMessage('XForge ativado!');
     const globalState = context.globalState;
 
     // Register Chat view with globalState for API key persistence
