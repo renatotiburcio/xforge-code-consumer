@@ -62,6 +62,8 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         // Carregar sessions ANTES de gerar HTML
         this._sessions = this._globalState ? loadSessions(this._globalState) : [];
         this._activeSessionId = this._globalState ? loadActiveSessionId(this._globalState) : null;
+        this._sessions = this._globalState ? loadSessions(this._globalState) : [];
+        this._activeSessionId = this._globalState ? loadActiveSessionId(this._globalState) : null;
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         webviewView.webview.onDidReceiveMessage(
             (msg) => {
@@ -247,6 +249,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     }
 
     private async _handleSendMessage(text: string) {
+        console.log('[xforge] handleSendMessage:', text.substring(0, 80));
         if (!text.trim() || !this._view) return;
         const userMessage: Message = { id: this._generateId(), role: 'user', content: text, timestamp: new Date() };
         this._session.messages.push(userMessage);
@@ -509,6 +512,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     }
 
     private _persistSession(userMessage: string): void {
+        console.log('[xforge] persistSession called:', userMessage.substring(0, 50));
         if (!this._globalState) return;
         const now = new Date().toISOString();
         // Verificar se a sessao ativa eh valida (existe no array e nao esta corrompida)

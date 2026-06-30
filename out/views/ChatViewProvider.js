@@ -68,6 +68,8 @@ class ChatViewProvider {
         // Carregar sessions ANTES de gerar HTML
         this._sessions = this._globalState ? (0, apiProvider_1.loadSessions)(this._globalState) : [];
         this._activeSessionId = this._globalState ? (0, apiProvider_1.loadActiveSessionId)(this._globalState) : null;
+        this._sessions = this._globalState ? (0, apiProvider_1.loadSessions)(this._globalState) : [];
+        this._activeSessionId = this._globalState ? (0, apiProvider_1.loadActiveSessionId)(this._globalState) : null;
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         webviewView.webview.onDidReceiveMessage((msg) => {
             switch (msg.type) {
@@ -259,6 +261,7 @@ class ChatViewProvider {
         }
     }
     async _handleSendMessage(text) {
+        console.log('[xforge] handleSendMessage:', text.substring(0, 80));
         if (!text.trim() || !this._view)
             return;
         const userMessage = { id: this._generateId(), role: 'user', content: text, timestamp: new Date() };
@@ -528,6 +531,7 @@ class ChatViewProvider {
         this._view.webview.postMessage({ type: 'refreshSidebar', html: sidebarHtml });
     }
     _persistSession(userMessage) {
+        console.log('[xforge] persistSession called:', userMessage.substring(0, 50));
         if (!this._globalState)
             return;
         const now = new Date().toISOString();
