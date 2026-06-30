@@ -24,56 +24,67 @@ export interface XforgeProviderSession {
 type ViewContext = 'chat' | 'welcome' | 'agent-manager' | 'settings' | 'modes';
 
 // ==================== CLEAN RESPONSE (stream-safe) ====================
+// Bloco completo <environment_details>...</environment_details>
+// Linhas Current time:/Working directory:/Workspace root folder:
+// Tudo isso eh metadata injetado por outras extensoes (Copilot/Cline) no texto
+// Precisamos limpar ANTES de enviar ao provider E limpar a resposta dele
+
 const ENV_BLOCK_START = '<environment_details>';
 const ENV_BLOCK_END = '</environment_details>';
-const ENV_TAG_RE = /<\/?environment_details>/gi;
-const ENV_KEY_LINE_RE = /^(Current time|Working directory|Workspace root|User Home Path|Active branch|Platform|Shell|OS|Default shell):.*$/gim;
 
 function clean(text: string): string {
     if (!text) return '';
-    let t = text;
-    // Remove blocos completos
-    t = t.replace(/<environment_details>[\s\S]*?<\/environment_details>/gi, '');
-    // Remove tags isoladas
-    t = t.replace(ENV_TAG_RE, '');
-    // Remove linhas-chave
-    t = t = t.replace(ENV_KEY_LINE_RE, '');
-    // Colapsa 3+ newlines em 1
-    t = t.replace(/\n{3,}/g, '\n\n');
-    return t.trim();
+    const idx1 = text.indexOf(ENV_BLOCK_START);
+    if (idx1 >= 0) {
+        const idx2 = text.indexOf(ENV_BLOCK_END, idx1 + ENV_BLOCK_START.length);
+        if (idx2 >= 0) {
+            const before = text.substring(0, idx1);
+            const after = text.substring(idx2 + ENV_BLOCK_END.length);
+            text = before + after;
+        } else if (idx1 >= 0) {
+            // Tag aberta mas nao fechada - descarta o que vem depois ate encontrar fechamento
+            const idx2 = text.indexOf(ENV_BLOCK_END, idx1 + ENV_BLOCK_START.length);
+            if (idx2 >= 0) {
+                text = text.substring(0, idx1) + text.substring(idx2 + ENV_BLOCK_END.length);
+            } else {
+                text = text.substring(0, idx1);
+            }
+        }
+    }
+    // Remove tags isolated (de bloco quebrado)
+    text = text.replace(/<\/?environment_details>/gi, '');
+    // Remove linhas-chave do metadata injetado
+    text = text.replace(/^(Current time|Working directory|Workspace root folder|User Home Path|Active branch|Platform|Shell|OS|Default shell):.*$/gim, '');
+    return text.trim();
 }
 
-// Buffer para blocos environment_details abertos mas nao fechados
+// Buffer para environment_details aberto
 let envBuffer = '';
 
-function cleanStreamingToken(token: string): { output: string; complete: boolean } {
+function cleanStreaming(token: string): string {
     envBuffer += token;
-    // Se ha bloco completo, extrair e limpar
-    const startIdx = envBuffer.indexOf(ENV_BLOCK_START);
-    const endIdx = envBuffer.indexOf(ENV_BLOCK_END);
-    
-    if (startIdx >= 0 && endIdx > startIdx) {
-        // Extrai tudo após o fechamento
-        const after = envBuffer.substring(endIdx + ENV_BLOCK_END.length);
+    const hasEnd = envBuffer.includes('</environment_details>');
+    const hasStart = envBuffer.includes('<environment_details>');
+    if (hasEnd) {
+        const idx1 = envBuffer.indexOf(ENV_BLOCK_START);
+        const idx2 = envBuffer.indexOf(ENV_BLOCK_END);
+        let out = '';
+        if (idx1 >= 0) {
+            out = clean(envBuffer.substring(0, idx1)) + clean(envBuffer.substring(idx2 + ENV_BLOCK_END.length));
+        } else {
+            out = clean(envBuffer.substring(0, idx2));
+        }
         envBuffer = '';
-        return { output: clean(after), complete: true };
+        return out;
     }
-    
-    if (startIdx >= 0) {
-        // Bloco aberto mas nao fechado — segura o output
-        return { output: '', complete: false };
-    }
-    
-    if (endIdx >= 0 && startIdx === -1) {
-        // Fechamento sem abertura (caso estranho) — ignora
-        envBuffer = '';
-        return { output: '', complete: true };
-    }
-    
-    // Sem bloco — safe pra output
-    const output = clean(envBuffer);
+    if (hasStart) return '';
+    const out2 = clean(envBuffer);
     envBuffer = '';
-    return { output, complete: true };
+    return out2;
+}
+
+function resetCleanBuffer(): void {
+    envBuffer = '';
 }
 
 // ==================== PROVIDER ====================
@@ -225,9 +236,9 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                 baseUrl: undefined,
                 onToken: (token) => {
                     assistantMessage.content += token;
-                    const result = cleanStreamingToken(token);
-                    if (result.output) {
-                        this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token: result.output });
+                    const cleaned = cleanStreaming(token);
+                    if (cleaned) {
+                        this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token: cleaned });
                     }
                 }
             });
