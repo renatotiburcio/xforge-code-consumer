@@ -40,9 +40,8 @@ const ChatViewProvider_1 = require("./views/ChatViewProvider");
 const providerCommands_1 = require("./commands/providerCommands");
 const XOUT = vscode.window.createOutputChannel('XForge', { log: true });
 function activate(context) {
-    XOUT.appendLine('[xforge] ACTIVATE called');
-    vscode.window.showInformationMessage('XForge ativado!');
-    const globalState = context.globalState;
+    vscode.window.showErrorMessage('XForge ativado! Se isto aparecer, extension host está ativo.');
+    process.stdout.write('=== XFORCE activate ===\n');
     // Register Chat view with globalState for API key persistence
     const chatProvider = new ChatViewProvider_1.ChatViewProvider(context.extensionUri, 'chat', globalState);
     context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.chatView', chatProvider, {

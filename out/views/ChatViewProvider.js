@@ -80,19 +80,17 @@ class ChatViewProvider {
         this._viewContext = viewContext;
     }
     resolveWebviewView(webviewView, _ctx, _token) {
-        xout.appendLine('[xforge] resolve');
+        console.info('[xforge] resolve');
         this._view = webviewView;
         webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
-        // Carregar sessions ANTES de gerar HTML
-        this._sessions = this._globalState ? (0, apiProvider_1.loadSessions)(this._globalState) : [];
-        this._activeSessionId = this._globalState ? (0, apiProvider_1.loadActiveSessionId)(this._globalState) : null;
         this._sessions = this._globalState ? (0, apiProvider_1.loadSessions)(this._globalState) : [];
         this._activeSessionId = this._globalState ? (0, apiProvider_1.loadActiveSessionId)(this._globalState) : null;
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         webviewView.webview.onDidReceiveMessage((msg) => {
-            xout.appendLine('[xforge] msg=' + msg.type);
+            console.info('[xforge] msg=' + msg.type);
             switch (msg.type) {
                 case 'sendMessage':
+                    console.info('[xforge] sendMessage text=' + (msg.text || '').substring(0, 60));
                     this._handleSendMessage(msg.text);
                     break;
                 case 'newSession':

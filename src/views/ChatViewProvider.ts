@@ -75,20 +75,17 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         _ctx: vscode.WebviewViewResolveContext,
         _token: vscode.CancellationToken
     ) {
-        xout.appendLine('[xforge] resolve');
+        console.info('[xforge] resolve');
         this._view = webviewView;
         webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
-        // Carregar sessions ANTES de gerar HTML
-        this._sessions = this._globalState ? loadSessions(this._globalState) : [];
-        this._activeSessionId = this._globalState ? loadActiveSessionId(this._globalState) : null;
         this._sessions = this._globalState ? loadSessions(this._globalState) : [];
         this._activeSessionId = this._globalState ? loadActiveSessionId(this._globalState) : null;
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         webviewView.webview.onDidReceiveMessage(
             (msg) => {
-                xout.appendLine('[xforge] msg=' + msg.type);
+                console.info('[xforge] msg=' + msg.type);
                 switch (msg.type) {
-                    case 'sendMessage': this._handleSendMessage(msg.text); break;
+                    case 'sendMessage': console.info('[xforge] sendMessage text=' + (msg.text || '').substring(0, 60)); this._handleSendMessage(msg.text); break;
                     case 'newSession': this._startNewSession(); break;
                     case 'selectSession': this._loadSession(msg.sessionId); break;
                     case 'deleteSession': this._removeSession(msg.sessionId); break;
