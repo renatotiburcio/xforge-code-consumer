@@ -57,6 +57,8 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         _ctx: vscode.WebviewViewResolveContext,
         _token: vscode.CancellationToken
     ) {
+        const xout = vscode.window.createOutputChannel('XForge', { log: true });
+        xout.appendLine('[xforge] resolve');
         this._view = webviewView;
         webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
         // Carregar sessions ANTES de gerar HTML
@@ -67,6 +69,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         webviewView.webview.onDidReceiveMessage(
             (msg) => {
+                xout.appendLine('[xforge] msg=' + msg.type);
                 switch (msg.type) {
                     case 'sendMessage': this._handleSendMessage(msg.text); break;
                     case 'newSession': this._startNewSession(); break;
