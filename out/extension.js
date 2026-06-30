@@ -40,8 +40,9 @@ const ChatViewProvider_1 = require("./views/ChatViewProvider");
 const providerCommands_1 = require("./commands/providerCommands");
 const XOUT = vscode.window.createOutputChannel('XForge', { log: true });
 function activate(context) {
-    vscode.window.showErrorMessage('XForge ativado! Se isto aparecer, extension host está ativo.');
-    process.stdout.write('=== XFORCE activate ===\n');
+    XOUT.appendLine('[xforge] ACTIVATE called');
+    vscode.window.showInformationMessage('XForge ativado!');
+    const globalState = context.globalState;
     // Register Chat view with globalState for API key persistence
     const chatProvider = new ChatViewProvider_1.ChatViewProvider(context.extensionUri, 'chat', globalState);
     context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.chatView', chatProvider, {
@@ -58,7 +59,10 @@ function activate(context) {
     context.subscriptions.push(vscode.commands.registerCommand('xforge.openSettings', () => vscode.commands.executeCommand('xforge.settingsView.focus')));
     context.subscriptions.push(vscode.commands.registerCommand('xforge.openAgentManager', () => vscode.commands.executeCommand('xforge.agentManagerView.focus')));
     context.subscriptions.push(vscode.commands.registerCommand('xforge.openModes', () => vscode.commands.executeCommand('xforge.modesView.focus')));
-    context.subscriptions.push(vscode.commands.registerCommand('xforge.newSession', () => chatProvider.newSession()));
+    context.subscriptions.push(vscode.commands.registerCommand('xforge.newSession', () => {
+        if ('_startNewSession' in chatProvider)
+            chatProvider._startNewSession();
+    }));
     context.subscriptions.push(vscode.commands.registerCommand('xforge.configureProvider', () => (0, providerCommands_1.configureProviderCommand)(globalState)));
     context.subscriptions.push(vscode.commands.registerCommand('xforge.switchProvider', () => (0, providerCommands_1.showProviderQuickPick)(globalState, chatProvider)));
 }

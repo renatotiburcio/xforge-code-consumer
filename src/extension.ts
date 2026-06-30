@@ -54,7 +54,9 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.commands.registerCommand('xforge.openModes', () => vscode.commands.executeCommand('xforge.modesView.focus'))
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand('xforge.newSession', () => chatProvider.newSession())
+        vscode.commands.registerCommand('xforge.newSession', () => {
+            if ('_startNewSession' in chatProvider) (chatProvider as any)._startNewSession();
+        })
     );
     context.subscriptions.push(
         vscode.commands.registerCommand('xforge.configureProvider', () => configureProviderCommand(globalState))
