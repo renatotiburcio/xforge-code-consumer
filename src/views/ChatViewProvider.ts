@@ -4,6 +4,24 @@ import * as fs from 'fs';
 import { callProvider, resolveApiKey, resolveBaseUrl, loadActiveSelection, StoredProvider, getProviderConfig, SessionData, loadSessions, saveSessions, loadActiveSessionId, saveActiveSessionId } from '../services/apiProvider';
 import { icon } from '../webview/icons';
 
+const xout = vscode.window.createOutputChannel('XForge', { log: true });
+
+/** Clean injected metadata from Kilocode and other providers */
+function cleanResponse(text: string): string {
+    if (!text) return text;
+    // Remove <environment_details>...</environment_details> block
+    text = text.replace(/<environment_details>[\s\S]*?<\/environment_details>\s*/gi, '');
+    // Remove "Current time:" lines
+    text = text.replace(/^Current time:.*$/gim, '');
+    // Remove "Working directory:" lines
+    text = text.replace(/^Working directory:.*$/gim, '');
+    // Remove "Workspace root folder:" lines
+    text = text.replace(/^Workspace root folder:.*$/gim, '');
+    // Remove leading/trailing whitespace
+    text = text.trim();
+    return text;
+}
+
 function loadSvg(file, size) {
   size = size || 14;
   try {
@@ -57,7 +75,6 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
         _ctx: vscode.WebviewViewResolveContext,
         _token: vscode.CancellationToken
     ) {
-        const xout = vscode.window.createOutputChannel('XForge', { log: true });
         xout.appendLine('[xforge] resolve');
         this._view = webviewView;
         webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
@@ -252,8 +269,12 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     }
 
     private async _handleSendMessage(text: string) {
-        console.log('[xforge] handleSendMessage:', text.substring(0, 80));
+        xout.appendLine('[xforge] handleSendMessage: ' + (text || '').substring(0, 50));
         if (!text.trim() || !this._view) return;
+        // Clean injected metadata FIRST
+        text = cleanResponse(text);
+        xout.appendLine('[xforge] after clean: ' + (text || '').substring(0, 50));
+        if (!text.trim()) return;
         const userMessage: Message = { id: this._generateId(), role: 'user', content: text, timestamp: new Date() };
         this._session.messages.push(userMessage);
         this._session.updatedAt = new Date();
@@ -388,9 +409,10 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                     this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token });
                 }
             });
-            this._view.webview.postMessage({ type: 'streamEnd', id: assistantId, content: assistantMessage.content });
+            const cleanedContent = cleanResponse(assistantMessage.content);
+            this._view.webview.postMessage({ type: 'streamEnd', id: assistantId, content: cleanedContent });
             // Persist assistant message ONLY when stream is complete
-            this._persistAssistant(assistantMessage.content);
+            this._persistAssistant(cleanedContent);
         } catch (err) {
             const msg = err instanceof Error ? err.message : 'Erro desconhecido';
             assistantMessage.content = '**Erro:** ' + msg + ' (provider: ' + providerId + ')';
