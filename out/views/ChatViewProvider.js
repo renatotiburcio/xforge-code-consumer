@@ -175,13 +175,15 @@ class ChatViewProvider {
                 baseUrl: undefined,
                 onToken: (token) => {
                     assistantMessage.content += token;
-                    this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token });
+                    const cleaned = clean(token);
+                    if (cleaned) {
+                        this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token: cleaned });
+                    }
                 }
             });
-            const cleaned = clean(assistantMessage.content);
-            this._view.webview.postMessage({ type: 'streamEnd', id: assistantId, content: cleaned });
+            this._view.webview.postMessage({ type: 'streamEnd', id: assistantId, content: clean(assistantMessage.content) });
             if (this._activeSessionId) {
-                (0, sessions_1.addMessageToSession)(this._activeSessionId, { role: 'assistant', content: cleaned, timestamp: new Date().toISOString() });
+                (0, sessions_1.addMessageToSession)(this._activeSessionId, { role: 'assistant', content: clean(assistantMessage.content), timestamp: new Date().toISOString() });
             }
         }
         catch (err) {
@@ -453,13 +455,184 @@ exports.ChatViewProvider = ChatViewProvider;
 ChatViewProvider.viewType = 'xforge.chatView';
 // ==================== Other ViewProviders ====================
 class WelcomeViewProvider {
+    constructor(_extensionUri) {
+        this._extensionUri = _extensionUri;
+    }
     resolveWebviewView(webviewView) {
-        webviewView.webview.options = { enableScripts: true };
-        webviewView.webview.html = '<!DOCTYPE html><html><head><style>body{display:flex;align-items:center;justify-content:center;height:100vh;background:var(--vscode-sideBar-background,#1e1e1e);color:var(--vscode-foreground,#ccc);font-family:sans-serif;font-size:13px;text-align:center}h2{margin-bottom:.5rem}p{color:#888;margin-bottom:1rem}.btn{padding:8px 16px;border:none;border-radius:4px;background:var(--vscode-button-background,#0e639c);color:#fff;cursor:pointer}</style></head><body><div><h2>Bem-vindo ao XForge</h2><p>Configure para começar</p><button class="btn" id="b">Configurar</button><script>const vs=acquireVsCodeApi();document.getElementById("b").onclick=()=>vs.postMessage({type:"openSettings"})</script></div></body></html>';
+        webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
+        webviewView.webview.html = this._getWelcomeHtml(webviewView.webview);
+        webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
+        webviewView.webview.html = this._getWelcomeHtml(webviewView.webview);
         webviewView.webview.onDidReceiveMessage((m) => {
+            if (m.type === 'newSession')
+                vscode.commands.executeCommand('xforge.openChat');
             if (m.type === 'openSettings')
                 vscode.commands.executeCommand('xforge.configureProvider');
+            if (m.type === 'openHistory')
+                vscode.commands.executeCommand('xforge.chatView.focus');
         });
+    }
+    _getWelcomeHtml(webview) {
+        return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1c2b3a 100%);
+    color: #e6edf3;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+.welcome-container {
+    text-align: center;
+    max-width: 320px;
+    width: 100%;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #1c2b40 0%, #0d1117 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.logo img {
+    width: 72px;
+    height: 72px;
+}
+.logo-placeholder {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.tagline {
+    font-size: 0.85rem;
+    color: #8b949e;
+    margin-bottom: 2rem;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.option {
+    padding: 12px 16px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.option:hover {
+    background: #30363d;
+    border-color: #58a6ff;
+}
+.option-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #58a6ff;
+}
+.option-icon svg {
+    width: 100%;
+    height: 100%;
+}
+.option-text {
+    flex: 1;
+}
+.option-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #e6edf3;
+}
+.option-desc {
+    font-size: 0.7rem;
+    color: #8b949e;
+    margin-top: 2px;
+}
+</style>
+</head>
+<body>
+<div class="welcome-container">
+    <div class="logo">
+        <span class="logo-placeholder">XF</span>
+    </div>
+    <h1>XForge Code AI</h1>
+    <p class="tagline">Seu assistente de código inteligente</p>
+    <div class="options">
+        <div class="option" onclick="_xfAction('newSession')">
+            <div class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <div class="option-text">
+                <div class="option-title">Nova Sessão</div>
+                <div class="option-desc">Iniciar uma conversa com IA</div>
+            </div>
+        </div>
+        <div class="option" onclick="_xfAction('openProject')">
+            <div class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/></svg>
+            </div>
+            <div class="option-text">
+                <div class="option-title">Abrir Projeto</div>
+                <div class="option-desc">Analisar projeto existente</div>
+            </div>
+        </div>
+        <div class="option" onclick="_xfAction('openDocs')">
+            <div class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 20.477 5.754 21 7.5 21s3.332-.477 4.5-1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 19.477 18.247 19 16.5 19c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <div class="option-text">
+                <div class="option-title">Com Documentação</div>
+                <div class="option-desc">Analisar docs/URLs junto</div>
+            </div>
+        </div>
+        <div class="option" onclick="_xfAction('openHistory')">
+            <div class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div class="option-text">
+                <div class="option-title">Sessões Recentes</div>
+                <div class="option-desc">Continuar conversa anterior</div>
+            </div>
+        </div>
+        <div class="option" onclick="_xfAction('openSettings')">
+            <div class="option-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09c0 .67.39 1.27 1 1.51a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9c.24.6.84 1 1.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            </div>
+            <div class="option-text">
+                <div class="option-title">Configurar</div>
+                <div class="option-desc">Providers, modelos e preferências</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+const vscode = acquireVsCodeApi();
+function _xfAction(action) { vscode.postMessage({ type: action }); }
+</script>
+</body>
+</html>`;
     }
 }
 exports.WelcomeViewProvider = WelcomeViewProvider;

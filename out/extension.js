@@ -49,7 +49,7 @@ function activate(context) {
         webviewOptions: { retainContextWhenHidden: true }
     }));
     // Other views
-    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.welcomeView', new ChatViewProvider_1.WelcomeViewProvider()));
+    context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.welcomeView', new ChatViewProvider_1.WelcomeViewProvider(context.extensionUri)));
     context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.agentManagerView', new ChatViewProvider_1.AgentManagerViewProvider()));
     context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.settingsView', new ChatViewProvider_1.SettingsViewProvider(globalState)));
     context.subscriptions.push(vscode.window.registerWebviewViewProvider('xforge.modesView', new ChatViewProvider_1.ModesViewProvider()));

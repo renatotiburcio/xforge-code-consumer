@@ -25,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     // Other views
     context.subscriptions.push(
-        vscode.window.registerWebviewViewProvider('xforge.welcomeView', new WelcomeViewProvider())
+        vscode.window.registerWebviewViewProvider('xforge.welcomeView', new WelcomeViewProvider(context.extensionUri))
     );
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider('xforge.agentManagerView', new AgentManagerViewProvider())
