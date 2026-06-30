@@ -39,6 +39,18 @@ const path = __importStar(require("path"));
 const fs = __importStar(require("fs"));
 const apiProvider_1 = require("../services/apiProvider");
 const icons_1 = require("../webview/icons");
+function loadSvg(file, size) {
+    size = size || 14;
+    try {
+        const svgPath = path.resolve(__dirname, '..', 'icons', file);
+        let content = fs.readFileSync(svgPath, 'utf-8').trim();
+        content = content.replace(/^<svg /, '<svg width="' + size + '" height="' + size + '" ');
+        return content;
+    }
+    catch (e) {
+        return '';
+    }
+}
 class ChatViewProvider {
     constructor(_extensionUri, viewContext = 'chat', _globalState) {
         this._extensionUri = _extensionUri;

@@ -4,6 +4,19 @@ import * as fs from 'fs';
 import { callProvider, resolveApiKey, resolveBaseUrl, loadActiveSelection, StoredProvider, getProviderConfig, SessionData, loadSessions, saveSessions, loadActiveSessionId, saveActiveSessionId } from '../services/apiProvider';
 import { icon } from '../webview/icons';
 
+function loadSvg(file, size) {
+  size = size || 14;
+  try {
+    const svgPath = path.resolve(__dirname, '..', 'icons', file);
+    let content = fs.readFileSync(svgPath, 'utf-8').trim();
+    content = content.replace(/^<svg /, '<svg width="' + size + '" height="' + size + '" ');
+    return content;
+  } catch (e) {
+    return '';
+  }
+}
+
+
 export interface Message {
     id: string;
     role: 'user' | 'assistant' | 'system';
