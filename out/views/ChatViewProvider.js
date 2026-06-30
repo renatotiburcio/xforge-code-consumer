@@ -42,7 +42,7 @@ const icons_1 = require("../webview/icons");
 function loadSvg(file, size) {
     size = size || 14;
     try {
-        const svgPath = path.resolve(__dirname, '..', 'icons', file);
+        const svgPath = path.resolve(__dirname, '..', '..', 'webview', 'icons', file);
         let content = fs.readFileSync(svgPath, 'utf-8').trim();
         content = content.replace(/^<svg /, '<svg width="' + size + '" height="' + size + '" ');
         return content;
@@ -65,6 +65,9 @@ class ChatViewProvider {
     resolveWebviewView(webviewView, _ctx, _token) {
         this._view = webviewView;
         webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
+        // Carregar sessions ANTES de gerar HTML
+        this._sessions = this._globalState ? (0, apiProvider_1.loadSessions)(this._globalState) : [];
+        this._activeSessionId = this._globalState ? (0, apiProvider_1.loadActiveSessionId)(this._globalState) : null;
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         webviewView.webview.onDidReceiveMessage((msg) => {
             switch (msg.type) {
@@ -94,8 +97,6 @@ class ChatViewProvider {
                     break;
             }
         }, null, this._disposables);
-        this._sessions = this._globalState ? (0, apiProvider_1.loadSessions)(this._globalState) : [];
-        this._activeSessionId = this._globalState ? (0, apiProvider_1.loadActiveSessionId)(this._globalState) : null;
         this._pushSelectionToWebview();
     }
     _pushSelectionToWebview() {
@@ -530,7 +531,12 @@ class ChatViewProvider {
         if (!this._globalState)
             return;
         const now = new Date().toISOString();
-        if (!this._activeSessionId) {
+        // Verificar se a sessao ativa eh valida (existe no array e nao esta corrompida)
+        const existingSession = this._activeSessionId
+            ? this._sessions.find(s => s.id === this._activeSessionId)
+            : null;
+        // Se nao tem sessao ativa, criar uma nova
+        if (!existingSession) {
             this._activeSessionId = 'sess_' + Date.now();
             const sel = (0, apiProvider_1.loadActiveSelection)(this._globalState);
             this._sessions.unshift({
@@ -542,14 +548,17 @@ class ChatViewProvider {
                 createdAt: now,
                 updatedAt: now
             });
+            console.log('[xforge] nova sessao criada:', this._activeSessionId, userMessage.substring(0, 40));
         }
         const session = this._sessions.find(s => s.id === this._activeSessionId);
         if (session) {
             session.messages.push({ role: 'user', content: userMessage, timestamp: now });
             session.updatedAt = now;
+            console.log('[xforge] persist: sessao=' + session.id + ' msgs=' + session.messages.length);
         }
         (0, apiProvider_1.saveSessions)(this._globalState, this._sessions);
         (0, apiProvider_1.saveActiveSessionId)(this._globalState, this._activeSessionId);
+        this._refreshSidebar();
     }
     _appendAssistantMessage(text) {
         if (!this._globalState || !this._activeSessionId)

@@ -7,7 +7,7 @@ import { icon } from '../webview/icons';
 function loadSvg(file, size) {
   size = size || 14;
   try {
-    const svgPath = path.resolve(__dirname, '..', 'icons', file);
+    const svgPath = path.resolve(__dirname, '..', '..', 'webview', 'icons', file);
     let content = fs.readFileSync(svgPath, 'utf-8').trim();
     content = content.replace(/^<svg /, '<svg width="' + size + '" height="' + size + '" ');
     return content;
@@ -59,6 +59,9 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     ) {
         this._view = webviewView;
         webviewView.webview.options = { enableScripts: true, localResourceRoots: [this._extensionUri] };
+        // Carregar sessions ANTES de gerar HTML
+        this._sessions = this._globalState ? loadSessions(this._globalState) : [];
+        this._activeSessionId = this._globalState ? loadActiveSessionId(this._globalState) : null;
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
         webviewView.webview.onDidReceiveMessage(
             (msg) => {
@@ -82,8 +85,6 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                 }
             }, null, this._disposables
         );
-        this._sessions = this._globalState ? loadSessions(this._globalState) : [];
-        this._activeSessionId = this._globalState ? loadActiveSessionId(this._globalState) : null;
         this._pushSelectionToWebview();
     }
 
@@ -510,7 +511,13 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
     private _persistSession(userMessage: string): void {
         if (!this._globalState) return;
         const now = new Date().toISOString();
-        if (!this._activeSessionId) {
+        // Verificar se a sessao ativa eh valida (existe no array e nao esta corrompida)
+        const existingSession = this._activeSessionId
+            ? this._sessions.find(s => s.id === this._activeSessionId)
+            : null;
+
+        // Se nao tem sessao ativa, criar uma nova
+        if (!existingSession) {
             this._activeSessionId = 'sess_' + Date.now();
             const sel = loadActiveSelection(this._globalState);
             this._sessions.unshift({
@@ -522,14 +529,18 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                 createdAt: now,
                 updatedAt: now
             });
+            console.log('[xforge] nova sessao criada:', this._activeSessionId, userMessage.substring(0, 40));
         }
+
         const session = this._sessions.find(s => s.id === this._activeSessionId);
         if (session) {
             session.messages.push({ role: 'user', content: userMessage, timestamp: now });
             session.updatedAt = now;
+            console.log('[xforge] persist: sessao=' + session.id + ' msgs=' + session.messages.length);
         }
         saveSessions(this._globalState, this._sessions);
         saveActiveSessionId(this._globalState, this._activeSessionId);
+        this._refreshSidebar();
     }
 
     private _appendAssistantMessage(text: string): void {
