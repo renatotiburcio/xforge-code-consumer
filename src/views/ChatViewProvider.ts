@@ -534,6 +534,7 @@ export class ChatViewProvider implements vscode.WebviewViewProvider {
                 '</div>';
         }).join('');
         const sidebarHtml = '<div class="session-new" onclick="window._newSession()">' + plus + 'Nova conversa</div>' + sessionsHtml;
+        xout.appendLine('[xforge] refreshSidebar html length=' + sidebarHtml.length + ' sessionsHtml count=' + (this._sessions||[]).length);
         this._view.webview.postMessage({ type: 'refreshSidebar', html: sidebarHtml });
     }
 
