@@ -533,6 +533,7 @@ class ChatViewProvider {
     _refreshSidebar() {
         if (!this._view)
             return;
+        xout.appendLine('[xforge] refreshSidebar: sessions=' + (this._sessions || []).length + ' activeId=' + this._activeSessionId);
         const trash = this._icon('trash');
         const plus = this._icon('plus');
         const activeId = this._activeSessionId;
@@ -556,15 +557,14 @@ class ChatViewProvider {
         this._view.webview.postMessage({ type: 'refreshSidebar', html: sidebarHtml });
     }
     _persistSession(userMessage) {
-        console.log('[xforge] persistSession called:', userMessage.substring(0, 50));
+        xout.appendLine('[xforge] persistSession: ' + (userMessage || '').substring(0, 50));
         if (!this._globalState)
             return;
         const now = new Date().toISOString();
-        // Verificar se a sessao ativa eh valida (existe no array e nao esta corrompida)
         const existingSession = this._activeSessionId
             ? this._sessions.find(s => s.id === this._activeSessionId)
             : null;
-        // Se nao tem sessao ativa, criar uma nova
+        xout.appendLine('[xforge] existingSession=' + (existingSession ? 'found' : 'null') + ' activeId=' + this._activeSessionId);
         if (!existingSession) {
             this._activeSessionId = 'sess_' + Date.now();
             const sel = (0, apiProvider_1.loadActiveSelection)(this._globalState);
@@ -577,7 +577,7 @@ class ChatViewProvider {
                 createdAt: now,
                 updatedAt: now
             });
-            console.log('[xforge] nova sessao criada:', this._activeSessionId, userMessage.substring(0, 40));
+            xout.appendLine('[xforge] criada nova sessao=' + this._activeSessionId);
         }
         const session = this._sessions.find(s => s.id === this._activeSessionId);
         if (session) {
