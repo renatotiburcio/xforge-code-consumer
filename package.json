@@ -63,8 +63,39 @@
       "xforge-sidebar": [
         {
           "type": "webview",
+          "id": "xforge.welcomeView",
+          "name": "Welcome",
+          "when": "true"
+        },
+        {
+          "type": "webview",
           "id": "xforge.chatView",
-          "name": "Chat"
+          "name": "Chat",
+          "when": "true"
+        },
+        {
+          "type": "webview",
+          "id": "xforge.historyView",
+          "name": "History",
+          "when": "true"
+        },
+        {
+          "type": "webview",
+          "id": "xforge.agentManagerView",
+          "name": "Agent Manager",
+          "when": "true"
+        },
+        {
+          "type": "webview",
+          "id": "xforge.settingsView",
+          "name": "Settings",
+          "when": "true"
+        },
+        {
+          "type": "webview",
+          "id": "xforge.modesView",
+          "name": "Modes",
+          "when": "true"
         }
       ]
     },

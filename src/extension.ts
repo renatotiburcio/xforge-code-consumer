@@ -3,6 +3,7 @@ import {
     ChatViewProvider,
     WelcomeViewProvider,
     AgentManagerViewProvider,
+    HistoryViewProvider,
     SettingsViewProvider,
     ModesViewProvider
 } from './views/ChatViewProvider';
@@ -29,6 +30,9 @@ export function activate(context: vscode.ExtensionContext) {
     );
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider('xforge.agentManagerView', new AgentManagerViewProvider())
+    );
+    context.subscriptions.push(
+        vscode.window.registerWebviewViewProvider('xforge.historyView', new HistoryViewProvider(globalState))
     );
     context.subscriptions.push(
         vscode.window.registerWebviewViewProvider('xforge.settingsView', new SettingsViewProvider(globalState))

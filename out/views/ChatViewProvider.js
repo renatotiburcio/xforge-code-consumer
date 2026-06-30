@@ -33,21 +33,57 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModesViewProvider = exports.SettingsViewProvider = exports.AgentManagerViewProvider = exports.WelcomeViewProvider = exports.ChatViewProvider = void 0;
+exports.HistoryViewProvider = exports.ModesViewProvider = exports.SettingsViewProvider = exports.AgentManagerViewProvider = exports.WelcomeViewProvider = exports.ChatViewProvider = void 0;
 const vscode = __importStar(require("vscode"));
 const fs = __importStar(require("fs"));
 const path = __importStar(require("path"));
 const apiProvider_1 = require("../services/apiProvider");
 const sessions_1 = require("../services/sessions");
-// ==================== CLEAN RESPONSE ====================
+// ==================== CLEAN RESPONSE (stream-safe) ====================
+const ENV_BLOCK_START = '<environment_details>';
+const ENV_BLOCK_END = '</environment_details>';
+const ENV_TAG_RE = /<\/?environment_details>/gi;
+const ENV_KEY_LINE_RE = /^(Current time|Working directory|Workspace root|User Home Path|Active branch|Platform|Shell|OS|Default shell):.*$/gim;
 function clean(text) {
     if (!text)
         return '';
-    return text
-        .replace(/<environment_details>[\s\S]*?<\/environment_details>\s*/gi, '')
-        .replace(/^(Current time|Working directory|Workspace root|Active branch|Platform|Workspace Path|User Home Path|Shell):.*$/gim, '')
-        .replace(/^\n{2,}/gm, '\n')
-        .trim();
+    let t = text;
+    // Remove blocos completos
+    t = t.replace(/<environment_details>[\s\S]*?<\/environment_details>/gi, '');
+    // Remove tags isoladas
+    t = t.replace(ENV_TAG_RE, '');
+    // Remove linhas-chave
+    t = t = t.replace(ENV_KEY_LINE_RE, '');
+    // Colapsa 3+ newlines em 1
+    t = t.replace(/\n{3,}/g, '\n\n');
+    return t.trim();
+}
+// Buffer para blocos environment_details abertos mas nao fechados
+let envBuffer = '';
+function cleanStreamingToken(token) {
+    envBuffer += token;
+    // Se ha bloco completo, extrair e limpar
+    const startIdx = envBuffer.indexOf(ENV_BLOCK_START);
+    const endIdx = envBuffer.indexOf(ENV_BLOCK_END);
+    if (startIdx >= 0 && endIdx > startIdx) {
+        // Extrai tudo após o fechamento
+        const after = envBuffer.substring(endIdx + ENV_BLOCK_END.length);
+        envBuffer = '';
+        return { output: clean(after), complete: true };
+    }
+    if (startIdx >= 0) {
+        // Bloco aberto mas nao fechado — segura o output
+        return { output: '', complete: false };
+    }
+    if (endIdx >= 0 && startIdx === -1) {
+        // Fechamento sem abertura (caso estranho) — ignora
+        envBuffer = '';
+        return { output: '', complete: true };
+    }
+    // Sem bloco — safe pra output
+    const output = clean(envBuffer);
+    envBuffer = '';
+    return { output, complete: true };
 }
 // ==================== PROVIDER ====================
 class ChatViewProvider {
@@ -175,9 +211,9 @@ class ChatViewProvider {
                 baseUrl: undefined,
                 onToken: (token) => {
                     assistantMessage.content += token;
-                    const cleaned = clean(token);
-                    if (cleaned) {
-                        this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token: cleaned });
+                    const result = cleanStreamingToken(token);
+                    if (result.output) {
+                        this._view?.webview.postMessage({ type: 'streamToken', id: assistantId, token: result.output });
                     }
                 }
             });
@@ -676,4 +712,75 @@ class ModesViewProvider {
 }
 exports.ModesViewProvider = ModesViewProvider;
 ModesViewProvider.viewType = 'xforge.modesView';
+class HistoryViewProvider {
+    constructor(_gs) {
+        this._gs = _gs;
+    }
+    resolveWebviewView(webviewView) {
+        webviewView.webview.options = { enableScripts: true };
+        this._render(webviewView);
+        webviewView.webview.onDidReceiveMessage((msg) => {
+            if (msg.type === 'selectSession') {
+                vscode.window.showInformationMessage('Sessão: ' + msg.sessionId);
+            }
+            if (msg.type === 'deleteSession') {
+                vscode.window.showInformationMessage('Deletar: ' + msg.sessionId);
+            }
+        });
+    }
+    _render(webviewView) {
+        const sessions = (0, sessions_1.loadSessions)();
+        const list = sessions.slice(0, 20).map(s => {
+            const date = new Date(s.updatedAt).toLocaleDateString('pt-BR');
+            const time = new Date(s.updatedAt).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+            const name = (s.name || 'Sem nome').replace(/[<>&]/g, '');
+            const msgCount = s.messages ? s.messages.length : 0;
+            return '<div class="session-row" onclick="_xfSelectSession(\'' + s.id + '\')">' +
+                '<div class="session-main">' +
+                '<div class="session-title">' + name + '</div>' +
+                '<div class="session-sub">' + date + ' · ' + time + ' · ' + msgCount + ' msgs</div>' +
+                '</div>' +
+                '<button class="session-del" onclick="event.stopPropagation();_xfDeleteSession(\'' + s.id + '\')">' +
+                '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6"/></svg>' +
+                '</button>' +
+                '</div>';
+        }).join('');
+        const html = `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--vscode-sideBar-background,#1e1e1e); color:var(--vscode-foreground,#ccc); font-size:13px; height:100vh; display:flex; flex-direction:column; }
+.header { padding:10px 12px; border-bottom:1px solid #333; flex-shrink:0; }
+.header h3 { font-size:0.85rem; color:#fff; margin:0; }
+.session-list { flex:1; overflow-y:auto; padding:4px 0; }
+.session-row { display:flex; align-items:center; padding:8px 12px; cursor:pointer; }
+.session-row:hover { background:#2a2d2e; }
+.session-main { flex:1; min-width:0; }
+.session-title { font-size:0.8rem; color:#fff; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.session-sub { font-size:0.7rem; color:#666; margin-top:2px; }
+.session-del { opacity:0; background:none; border:none; color:#888; cursor:pointer; padding:2px; border-radius:3px; flex-shrink:0; }
+.session-row:hover .session-del { opacity:1; }
+.session-del:hover { color:#ff6b6b; }
+.empty { text-align:center; padding:2rem; color:#666; }
+</style>
+</head>
+<body>
+<div class="header"><h3>Histórico de Sessões</h3></div>
+<div class="session-list">
+${list || '<div class="empty">Nenhuma sessão salva</div>'}
+</div>
+<script>
+const vscode = acquireVsCodeApi();
+function _xfSelectSession(id) { vscode.postMessage({ type: 'selectSession', sessionId: id }); }
+function _xfDeleteSession(id) { vscode.postMessage({ type: 'deleteSession', sessionId: id }); }
+</script>
+</body>
+</html>`;
+        webviewView.webview.html = html;
+    }
+}
+exports.HistoryViewProvider = HistoryViewProvider;
+HistoryViewProvider.viewType = 'xforge.historyView';
 //# sourceMappingURL=ChatViewProvider.js.map
